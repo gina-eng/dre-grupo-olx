@@ -102,6 +102,41 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
 .dlg-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-bottom:1px solid var(--border)}
 .dlg-b{padding:1rem 1.2rem}
 .dlg-b textarea{min-height:55vh;font-family:var(--mono);font-size:.78rem}
+/* Duas visoes: o botao esconde o que e execucao do projeto e deixa so o
+   que e estrategia do negocio. Bloco sem nenhuma pergunta de negocio some
+   junto com o chip de navegacao dele. */
+/* Filtro por visao. Cada pergunta carrega a classe da sua natureza:
+   q--e estrategica · q--i investigativa · q--p execucao do projeto.
+   Bloco e chip sem nenhuma pergunta da visao ativa recebem is-hidden
+   pelo JS, que e mais simples do que tentar exprimir isso em CSS. */
+body[data-view="e"] .q:not(.q--e){display:none}
+body[data-view="i"] .q:not(.q--i){display:none}
+.bloco.is-hidden,.chip.is-hidden{display:none}
+
+/* Seletor de visao: duas metades de largura igual e um indicador que desliza.
+   As colunas 1fr numa grade inline se igualam pela opcao mais larga, entao o
+   indicador e sempre exatamente metade e translada uma casa. */
+.seg{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;
+  padding:.2rem;background:var(--muted);border:1px solid var(--border);
+  border-radius:var(--radius-sm)}
+.seg{grid-template-columns:1fr 1fr 1fr}
+.seg input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.seg-o{position:relative;z-index:1;padding:.28rem .85rem;font-size:.82rem;line-height:1.25;
+  text-align:center;white-space:nowrap;color:var(--muted-fg);cursor:pointer;
+  border-radius:calc(var(--radius-sm) - .15rem);transition:color .16s;
+  -webkit-user-select:none;user-select:none}
+.seg-o:hover{color:var(--fg)}
+.seg input:checked+.seg-o{color:var(--fg);font-weight:500}
+.seg input:focus-visible+.seg-o{outline:2px solid var(--brand);outline-offset:1px}
+.seg-thumb{position:absolute;z-index:0;top:.2rem;bottom:.2rem;left:.2rem;
+  width:calc((100% - .4rem)/3);border-radius:calc(var(--radius-sm) - .15rem);
+  background:var(--card);border:1px solid var(--border-strong);
+  box-shadow:0 1px 2px rgba(15,18,22,.06);
+  transition:transform .2s cubic-bezier(.3,.7,.3,1)}
+.seg[data-v="i"] .seg-thumb{transform:translateX(100%)}
+.seg[data-v="full"] .seg-thumb{transform:translateX(200%)}
+@media (prefers-reduced-motion:reduce){.seg-thumb{transition:none}}
+
 @media print{
   .bar,.chips,.hero .atmos,.toast{display:none}
   .hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -114,6 +149,15 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
   <div class="bar-in">
     <div class="progress"><span id="pct">0%</span><span class="pbar"><i id="pfill"></i></span><span id="pcount">0 de 88</span></div>
     <span style="flex:1"></span>
+    <div class="seg" id="seg-visao" data-v="full" role="radiogroup" aria-label="Visão do formulário">
+      <input type="radio" name="visao" id="v-estr">
+      <label class="seg-o" for="v-estr">Estratégico</label>
+      <input type="radio" name="visao" id="v-inv">
+      <label class="seg-o" for="v-inv">Investigativas</label>
+      <input type="radio" name="visao" id="v-full" checked>
+      <label class="seg-o" for="v-full">Completo</label>
+      <span class="seg-thumb" aria-hidden="true"></span>
+    </div>
     <button class="btn" id="btn-clear" type="button">Limpar</button>
     <button class="btn btn-primary" id="btn-export" type="button">Exportar ata</button>
   </div>
@@ -150,7 +194,7 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
       <h2>Pendências de acesso</h2>
       <span class="eyebrow">editável, salva neste navegador</span>
     </div>
-    <p class="bloco-d">As contas que o método precisa liberar para as nove auditorias contratadas, agrupadas por onde o acesso é concedido. Onde deu para checar de
+    <p class="bloco-d">As contas que o método precisa liberar para os nove diagnósticos contratados, agrupadas por onde o acesso é concedido. Onde deu para checar de
       fato, o status é verificado e a linha traz a evidência em verde. Durante a sessão, edite qualquer
       campo, alterne o status no botão, acrescente o que aparecer e remova o que não fizer sentido.
       Tudo entra na ata exportada.</p>
@@ -235,7 +279,7 @@ BLOCOS.forEach(b => {
   b.qs.forEach((q, i) => {
     const id = b.n + "-" + i; total++;
     const val = state[id] || "";
-    html += '<div class="card q' + (q.c ? " crit" : "") + (val.trim() ? " done" : "") + '" data-q="' + id + '">' +
+    html += '<div class="card q q--' + (q.v || "p") + (q.c ? " crit" : "") + (val.trim() ? " done" : "") + '" data-q="' + id + '">' +
       '<div class="q-top"><span class="q-label" id="lbl-' + id + '">' + esc(q.q) + (q.c ? ' <span class="tag tag-crit">crítico</span>' : "") +
       '</span><span class="q-feeds">alimenta → ' + esc(q.f) + '</span></div>' +
       (q.h ? '<p class="q-hint">' + esc(q.h) + '</p>' : "") +
@@ -502,6 +546,38 @@ function markdown(){
 }
 
 const dlg = document.getElementById("dlg");
+// ---------- Visao do formulario: Estrategico, Investigativas ou Completo ----------
+(function () {
+  var seg = document.getElementById("seg-visao");
+  if (!seg) return;
+  var rEstr = document.getElementById("v-estr");
+  var rInv  = document.getElementById("v-inv");
+  var rFull = document.getElementById("v-full");
+
+  var n = { e: 0, i: 0, p: 0 }, nTotal = 0;
+  BLOCOS.forEach(function (b) {
+    b.qs.forEach(function (q) { nTotal++; n[q.v || "p"]++; });
+  });
+  rEstr.nextElementSibling.title = n.e + " perguntas que mudam a leitura do sistema de receita";
+  rInv.nextElementSibling.title  = n.i + " perguntas para fechar a árvore de produção de receita";
+  rFull.nextElementSibling.title = nTotal + " perguntas, o formulário inteiro";
+
+  function aplica() {
+    var v = rEstr.checked ? "e" : (rInv.checked ? "i" : "");
+    document.body.setAttribute("data-view", v);
+    seg.setAttribute("data-v", v || "full");
+    // bloco sem pergunta da visao ativa sai de cena junto com o chip dele
+    Array.prototype.forEach.call(document.querySelectorAll(".bloco"), function (sec) {
+      var mostra = !v || sec.querySelector(".q--" + v) !== null;
+      sec.classList.toggle("is-hidden", !mostra);
+      var chip = document.querySelector('.chip[href="#' + sec.id + '"]');
+      if (chip) chip.classList.toggle("is-hidden", !mostra);
+    });
+  }
+  seg.addEventListener("change", aplica);
+  aplica();
+})();
+
 document.getElementById("btn-export").onclick = () => {
   document.getElementById("dlg-txt").value = markdown();
   dlg.showModal();

@@ -8,6 +8,8 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 **Legenda de status:** ✅ recebido · 🟡 parcial · 🟠 solicitado, pendente · ⚪ não iniciado · 🔴 inexistente (registrar como evidência diagnóstica)
 
+**Material recebido até agora:** primeiro lote do data room baixado em **24/08/2026**, 9 arquivos nos blocos E e I. Índice, procedência e leitura inicial em [`assets/originais/README.md`](../assets/originais/README.md).
+
 ---
 
 ## 🔴 A. Visão de negócio e Fluxo de Receita — PRIORITÁRIO
@@ -55,11 +57,11 @@ o restante pode ser complementado nas duas primeiras semanas."
 ## E. Criativos Ads & Mensagens
 *Alimenta o diagnóstico (iv).*
 
-| # | Item | Status |
-|---|---|---|
-| E1 | Biblioteca de criativos veiculados nos últimos 6–12 meses | ⚪ |
-| E2 | Brandbook, diretrizes de marca e documento de proposta de valor (messaging house, se existir) | ⚪ |
-| E3 | Briefings das principais campanhas recentes | ⚪ |
+| # | Item | Status | Obs. |
+|---|---|---|---|
+| E1 | Biblioteca de criativos veiculados nos últimos 6–12 meses | 🟡 | 8 peças de **uma** campanha (Mês do Corretor 2026, SP, consideração, RE) recebidas em 24/08 — ver [originais](../assets/originais/README.md#bloco-e--criativos-anúncios-e-mensagens). Falta o resto da janela de 6–12 meses |
+| E2 | Brandbook, diretrizes de marca e documento de proposta de valor (messaging house, se existir) | ⚪ | |
+| E3 | Briefings das principais campanhas recentes | ⚪ | Sem os briefings não dá para saber qual era a hipótese por trás das variantes V1, V2 e V3 recebidas em E1 |
 
 ## F. Redes Sociais e Conteúdo Orgânico
 *Alimenta o diagnóstico (v).*
@@ -93,12 +95,12 @@ o restante pode ser complementado nas duas primeiras semanas."
 ## I. Páginas de Captura e Fluxos de Conversão
 *Alimenta o diagnóstico (viii).*
 
-| # | Item | Status |
-|---|---|---|
-| I1 | URLs das principais LPs e fluxos de conversão ativos | ⚪ |
-| I2 | Taxas de conversão por página / etapa | ⚪ |
-| I3 | Histórico de testes A/B realizados, se houver | ⚪ |
-| I4 | Acesso a ferramenta de comportamento (Hotjar, Clarity ou similar), se disponível | ⚪ |
+| # | Item | Status | Obs. |
+|---|---|---|---|
+| I1 | URLs das principais LPs e fluxos de conversão ativos | ⚪ | O teste de I3 cita a "LP Anuncie ZAP"; falta a relação completa e as URLs |
+| I2 | Taxas de conversão por página / etapa | ⚪ | |
+| I3 | Histórico de testes A/B realizados, se houver | 🟡 | 1 teste recebido em 24/08 (LP Anuncie ZAP, 17–23/03) — ver [originais](../assets/originais/README.md#bloco-i--páginas-de-captura-e-fluxos-de-conversão). Vieram só os slides de resultado: **sem volume absoluto de visitantes e de MQL**, não dá para recalcular a significância |
+| I4 | Acesso a ferramenta de comportamento (Hotjar, Clarity ou similar), se disponível | ⚪ | |
 
 ## 🔴 J. Pré-Vendas, Qualificação e Sales Engagement — PRIORITÁRIO
 *Alimenta o diagnóstico (ix). Bloco mais informativo para as travas de fundo de funil.*

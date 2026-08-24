@@ -2,6 +2,9 @@
 
 **E-mail oficial para liberação de todos os acessos:** `gina@v4company.com`
 **Nível de permissão solicitado:** leitura / visualização (padrão do método).
+**Conta de domínio OLX (desde 24/08):** `rafael.corazza-ext@olxbr.com`, compartilhada no time da V4
+por enquanto. É por ela que passa tudo o que o Grupo OLX restringe a e-mail corporativo, e é para ela
+que os acessos novos do lado da OLX devem ser concedidos.
 
 > **Regra do método:** a ausência de um acesso **não bloqueia** o projeto, mas é registrada como
 > **evidência diagnóstica** de maturidade e possível trava. Nenhum diagnóstico é feito com base em
@@ -14,8 +17,10 @@
 | Link | <https://drive.google.com/drive/folders/1Hrj2w5RlHbJaEVvLK0caHF9hx8LCPq44> |
 | Dono | Grupo OLX |
 | Restrição | Arquivos restritos a quem tem e-mail corporativo `@olxbr.com` |
-| Status | 🟡 **Bloqueado para a V4.** Michelle abriu chamado para criar contas `@olxbr.com` para 3 pessoas indicadas (Rafael Corazza, Anselmo Bueno, Guilherme Monteiro). Aguardando criação. |
-| Ação | Cobrar status no kick-off (24/08). É pré-requisito para a fase Identificar. |
+| Status | 🟡 **Parcialmente liberado (24/08).** A primeira das 3 contas `@olxbr.com` foi criada: `rafael.corazza-ext@olxbr.com`, credenciais enviadas por `ga-account@olxbr.com`. Faltam as de Anselmo Bueno e Guilherme Monteiro. |
+| Ação | ✅ Aberto e testado em 24/08: primeiro lote baixado, 9 arquivos dos blocos E e I. Índice em [`assets/originais/README.md`](../assets/originais/README.md). Cobrar as outras 2 contas no kick-off. |
+| Material já baixado | Bloco E: 8 peças da campanha Mês do Corretor 2026 (SP, consideração, RE). Bloco I: 1 teste A/B da LP Anuncie ZAP. |
+| Senha | **Não fica neste repositório.** Gerenciador de senhas da V4. Trocar no primeiro acesso e ligar 2FA: ela circulou por e-mail e por chat. |
 
 ## 2. Contas de mídia (Google / Meta)
 

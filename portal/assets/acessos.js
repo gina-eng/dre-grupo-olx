@@ -22,7 +22,7 @@ var ACESSOS_SEED = [
      "Google Search Console de cada propriedade B2B"
    ],
    v:"verificado em 24/08: o V4MOS passou a devolver 655 registros de campanha do Google Ads, então a ingestão está funcionando",
-   n:"O MCC entrou. Falta GA4, GTM e Search Console, que são o bloco H e a auditoria (vii), a prioritária. Atenção: as 8 campanhas visíveis têm sufixo pf e falam de aluguel e compra de imóvel, ou seja, parecem ser pessoa física, não o B2B do escopo. Confirmar no kick-off se a conta B2B é outra."},
+   n:"O MCC entrou. Falta GA4, GTM e Search Console, que são o bloco H e o diagnóstico (vii), o prioritário. Atenção: as 8 campanhas visíveis têm sufixo pf e falam de aluguel e compra de imóvel, ou seja, parecem ser pessoa física, não o B2B do escopo. Confirmar no kick-off se a conta B2B é outra. Desde 24/08 existe conta de domínio OLX (rafael.corazza-ext@olxbr.com): GA4, GTM e Search Console passam a ser pedidos para ela. O aceite do MCC, que já saiu, continua em gina@v4company.com."},
 
   {o:"Meta", f:"Mídia, redes sociais", r:"Michelle Morais", p:"", s:"pendente",
    itens:[
@@ -32,29 +32,31 @@ var ACESSOS_SEED = [
      "Business Suite, nível analista"
    ],
    v:"verificado em 24/08: nenhuma das duas contas aparece na conta Meta conectada, e os seis endpoints do Facebook no V4MOS devolvem vazio",
-   n:"As duas contas de anúncio seguem pendentes de aprovação do lado da OLX. É o que falta para fechar a auditoria (vi), já que o lado Google destravou. Alimenta também (iv) e (v)."},
+   n:"As duas contas de anúncio seguem pendentes de aprovação do lado da OLX. É o que falta para fechar o diagnóstico (vi), já que o lado Google destravou. Alimenta também (iv) e (v). Se a aprovação continuar travada, testar pela conta de domínio OLX (rafael.corazza-ext@olxbr.com), que dispensa aprovação de parceiro externo."},
 
-  {o:"Conta corporativa @olxbr.com", f:"Data room", r:"Michelle Morais", p:"", s:"pendente",
+  {o:"Conta corporativa @olxbr.com", f:"Data room", r:"Michelle Morais", p:"", s:"parcial",
    itens:[
-     "Contas para Rafael Corazza, Anselmo Bueno e Guilherme Monteiro",
-     "Pasta do data room no Google Drive"
+     "Conta de Rafael Corazza (rafael.corazza-ext@olxbr.com): CONCEDIDA, credenciais recebidas em 24/08 de ga-account@olxbr.com",
+     "Conta para Anselmo Bueno",
+     "Conta para Guilherme Monteiro",
+     "Pasta do data room no Google Drive: ABERTA e testada em 24/08, primeiro lote baixado"
    ],
-   v:"verificado em 24/08: a pasta do data room não abre com a conta Google conectada",
-   n:"Chamado aberto pela Michelle. É pré-requisito da fase Identificar: o Drive restringe os arquivos a e-mail corporativo."},
+   v:"verificado em 24/08: o data room abriu com a conta nova e o primeiro lote foi baixado, 9 arquivos dos blocos E e I (457 MB). Índice em assets/originais/README.md.",
+   n:"Decisão de 24/08: por enquanto a V4 opera pelo domínio OLX através desta única conta, compartilhada dentro do time. Isso destrava o data room e o que mais o Grupo OLX restringe a e-mail corporativo. Três consequências a tratar: trocar a senha no primeiro acesso e ligar 2FA, já que ela circulou por e-mail e por chat; seguir cobrando as contas de Anselmo Bueno e Guilherme Monteiro, porque login compartilhado não deixa rastro de quem leu o quê e enfraquece o controle de LGPD; e pedir todo acesso novo do lado da OLX para esta conta, não mais para gina@v4company.com. A senha não fica no repositório: gerenciador de senhas da V4. O data room deixou de ser bloqueio em 24/08: o primeiro lote entrou. O que sobra do bloqueio é a carga sobre uma pessoa só, porque só o Rafael tem login para ir buscar material novo lá."},
 
   {o:"Salesforce", f:"CRM e pré-vendas", r:"", p:"", s:"pendente",
    itens:[
      "Marketing Cloud, visualização: jornadas, bases e métricas de e-mail",
      "CRM comercial, leitura: pipeline, estágios e motivos de perda"
    ],
-   n:"Confirmar no kick-off se o CRM comercial também é Salesforce ou outra ferramenta. Alimenta as auditorias (i) e (ix), e o bloco J, prioritário."},
+   n:"Confirmar no kick-off se o CRM comercial também é Salesforce ou outra ferramenta. Alimenta os diagnósticos (i) e (ix), e o bloco J, prioritário."},
 
   {o:"Sales engagement e telefonia", f:"Pré-vendas", r:"", p:"", s:"pendente",
    itens:[
      "Plataforma de cadência e discagem",
      "Gravações de calls de qualificação, 10 a 15 recentes"
    ],
-   n:"Auditoria (ix). As gravações envolvem consentimento e LGPD, então é a de prazo mais imprevisível."},
+   n:"Diagnóstico (ix). As gravações envolvem consentimento e LGPD, então é o de prazo mais imprevisível."},
 
   {o:"Domínios B2B", f:"CRO, SEO e conversão", r:"", p:"", s:"pendente",
    itens:[
@@ -62,14 +64,14 @@ var ACESSOS_SEED = [
      "Ferramenta de comportamento (Hotjar, Clarity ou similar)",
      "Ferramenta de SEO (SEMrush, Ahrefs ou similar)"
    ],
-   n:"Auditorias (ii) e (viii). As duas ferramentas podem não existir: se não existirem, isso já é achado de maturidade."},
+   n:"Diagnósticos (ii) e (viii). As duas ferramentas podem não existir: se não existirem, isso já é achado de maturidade."},
 
   {o:"Demais canais sociais", f:"Redes sociais", r:"", p:"", s:"pendente",
    itens:[
      "LinkedIn, páginas da empresa",
      "YouTube, TikTok e outros canais ativos"
    ],
-   n:"Auditoria (v). Levantar no kick-off quais estão de fato ativos no B2B."},
+   n:"Diagnóstico (v). Levantar no kick-off quais estão de fato ativos no B2B."},
 
   {o:"Dados internos", f:"Dados", r:"", p:"", s:"pendente",
    itens:[

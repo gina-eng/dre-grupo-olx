@@ -8,7 +8,7 @@
     "ciclo_atual": 1,
     "fase_atual": "Onboarding",
     "semana_corrente": 1,
-    "version": 3,
+    "version": 4,
     "atualizado_em": "2026-08-24",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
@@ -156,10 +156,29 @@
   },
   "acessos": {
     "email_oficial_plataformas": "gina@v4company.com",
+    "conta_dominio_olx": {
+      "email": "rafael.corazza-ext@olxbr.com",
+      "titular": "Rafael Corazza",
+      "recebida_em": "2026-08-24",
+      "origem": "ga-account@olxbr.com, OLX Gestao de Acessos",
+      "uso": "por enquanto compartilhada no time da V4 para tudo que o Grupo OLX restringe a e-mail @olxbr.com, a começar pelo data room",
+      "senha": "não fica no repositório: gerenciador de senhas da V4, trocar no primeiro acesso e ligar 2FA"
+    },
     "contas_olxbr": [
-      "Rafael Corazza",
-      "Anselmo Bueno",
-      "Guilherme Monteiro"
+      {
+        "nome": "Rafael Corazza",
+        "email": "rafael.corazza-ext@olxbr.com",
+        "status": "criada",
+        "em": "2026-08-24"
+      },
+      {
+        "nome": "Anselmo Bueno",
+        "status": "pendente"
+      },
+      {
+        "nome": "Guilherme Monteiro",
+        "status": "pendente"
+      }
     ],
     "ver": "01-cliente/acessos-e-ferramentas.md"
   },
@@ -254,6 +273,11 @@
       "data": "2026-08-24",
       "version": 3,
       "evento": "V4MOS revalidado apos o aceite do MCC: Google Ads ingerindo 655 registros, Meta ainda vazio. Aberta a duvida de escopo sobre as campanhas parecerem B2C."
+    },
+    {
+      "data": "2026-08-24",
+      "version": 4,
+      "evento": "Conta de domínio OLX (rafael.corazza-ext@olxbr.com) concedida e data room aberto com ela. Primeiro lote baixado: 9 arquivos dos blocos E e I, organizados em assets/originais/. Checklist: E1 e I3 passaram a parcial."
     }
   ]
 }

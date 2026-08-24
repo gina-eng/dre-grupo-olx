@@ -33,5 +33,11 @@ tmp/
 # Cache de coletas das skills (regenerável)
 dados/cache/
 
+# Masters de vídeo do data room. Pesados demais para o git (455 MB em clipes de 10s
+# exportados a 30-51 Mbps). O repositório versiona proxies H.264 leves nos mesmos
+# caminhos; o master fica aqui, na máquina de quem baixou, e no data room da OLX,
+# que é a fonte canônica. SHA-256 de cada um em assets/originais/README.md.
+assets/originais/_masters/
+
 # Vercel
 .vercel/

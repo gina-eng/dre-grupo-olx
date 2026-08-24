@@ -10,6 +10,7 @@ Repositório central do projeto **Destrava Receita Estratégico (DR-E)** da V4 C
 - **Nenhuma credencial no repositório.** O `.gitignore` bloqueia `.env*`, `.credentials/`, `*credentials*.json`, `service-account*.json`, `*.pem`, `*.key`. Se precisar de segredo, use variável de ambiente.
 - Segredos deste projeto e onde vivem: **V4MOS** em `.credentials/clients.json` (chmod 600, fora do git — ver [`dre-v4mos`](.claude/skills/dre-v4mos/SKILL.md)); **senha do portal** na variável `PORTAL_SENHA` do projeto Vercel (ver [portal/PUBLICACAO.md](portal/PUBLICACAO.md)). Nenhum dos dois é versionado, e nenhum deve ser colado em documento, ata ou mensagem.
 - Não publique conteúdo deste repo em serviço externo (artifact, gist, paste) sem pedido explícito.
+- **Binário pesado não entra no git.** Vídeo e mídia grande do data room ficam em `assets/originais/_masters/`, que o `.gitignore` bloqueia. O repositório versiona um proxy leve no caminho equivalente, e o `README.md` da pasta guarda o SHA-256 do master para reencontrar o original.
 
 ## Estrutura
 
@@ -23,6 +24,7 @@ Repositório central do projeto **Destrava Receita Estratégico (DR-E)** da V4 C
 | `05-resultados/` | Revisões de ciclo, previsto vs. realizado | `dre-revisao-ciclo` |
 | `06-reunioes/` | Pautas e atas | `dre-comite`, `dre-tira-duvidas` |
 | `dados/` | **Estado de máquina**: `client.json`, `outputs/`, `cache/` | Só skills |
+| `assets/originais/` | Material bruto recebido do cliente, por bloco do checklist. Índice e procedência no README da pasta | Humano |
 | `.claude/skills/` | Skills `dre-*` (próprias) e `ee-*` (reaproveitadas) | — |
 | `PENDENCIAS.md` | Bloqueios abertos, com severidade, dono e prazo | Todos |
 

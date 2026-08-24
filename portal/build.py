@@ -30,6 +30,7 @@ def v(caminho):
 NAV = [
     ("painel",     "Painel",     "/"),
     ("kickoff",    "Kick-off",   "/kickoff"),
+    ("receita",    "Receita",    "/receita"),
     ("cronograma", "Cronograma", "/cronograma"),
     ("metricas",   "Métricas",   "/metricas"),
 ]

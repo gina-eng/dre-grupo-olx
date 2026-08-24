@@ -105,13 +105,20 @@ e **Autos** (B2B). O contrato menciona "domínios B2B" apenas no diagnóstico (i
 
 | Item | Status |
 |---|---|
-| Google Drive (data room) | 🟠 Restrito a `@olxbr.com`. Chamado aberto para criar contas para 3 pessoas da V4. **Aguardando.** |
+| Google Drive (data room) | 🟢 **Destravado em 24/08.** Abriu com `rafael.corazza-ext@olxbr.com` e o primeiro lote já foi baixado (9 arquivos, blocos E e I). Faltam as contas de Anselmo Bueno e Guilherme Monteiro: hoje só o Rafael consegue buscar material novo lá. |
 | VR09 — ZAP+ MCC VivaReal (526-656-0190) | 🟡 Convite enviado — **falta a V4 dar o aceite** |
 | VR — ZAP+ (612188193108418) | 🟠 Pendente de aprovação (OLX) |
 | OLX \| Autos \| B2B (1742214902479721) | 🟠 Pendente de aprovação (OLX) |
 
 **Ação:** verificar a caixa de `gina@v4company.com`, dar o aceite pendente e cobrar o restante.
+Nos acessos que ainda dependem da OLX, pedir a concessão para `rafael.corazza-ext@olxbr.com`,
+que é conta do domínio deles e não passa por aprovação de parceiro externo.
 **Responsável:** equipe de operações V4 · **Prazo:** 23/08
+
+> ⚠️ A senha da conta `@olxbr.com` chegou por e-mail e foi repassada por chat. Ela **não está neste
+> repositório** e não deve entrar. Trocar no primeiro acesso, ligar 2FA e guardar no gerenciador de
+> senhas da V4. Enquanto as outras 2 contas não saírem, o acesso ao data room é um login compartilhado:
+> não deixa rastro de quem leu o quê, o que é frágil para a obrigação de LGPD do contrato.
 
 ---
 

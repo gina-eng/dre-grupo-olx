@@ -98,6 +98,28 @@ td.fase{font-size:.78rem;color:var(--muted-fg);white-space:nowrap}
 .etapa b{font-weight:500;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em}
 .hol{display:inline-block;margin-top:.3rem;font-size:.72rem;color:var(--warn);font-family:var(--mono)}
 
+/* Tabela do Ciclo 1, dobrada nas quatro fases. Fechada por padrão: a leitura começa pela fase,
+   e as doze semanas só aparecem quando alguém pede a fase correspondente. */
+.fase-nota{font-size:.84rem;color:var(--muted-fg);margin-top:1.3rem;max-width:78ch}
+#wktab .fase-h th{padding:0;background:var(--muted);white-space:normal;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#wktab tbody:first-of-type .fase-h th{border-top:0}
+.fase-tog{display:flex;width:100%;align-items:baseline;gap:.7rem;padding:.7rem 1rem;
+  background:none;border:0;cursor:pointer;text-align:left;color:var(--fg);
+  font-family:var(--sans);text-transform:none;letter-spacing:normal}
+.fase-tog:hover{background:color-mix(in srgb,var(--brand) 7%,transparent)}
+.fase-tog:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+.fase-tog .seta{flex:none;align-self:center;width:.8rem;height:.8rem;color:var(--brand);
+  transition:transform .18s ease}
+.fase-tog[aria-expanded="true"] .seta{transform:rotate(90deg)}
+.fase-tog .nm{font-size:.95rem;font-weight:600;white-space:nowrap}
+.fase-tog .rg{font-family:var(--mono);font-size:.7rem;color:var(--muted-fg);white-space:nowrap}
+.fase-tog .rs{flex:1;min-width:0;font-size:.8rem;color:var(--muted-fg);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fase-tog .tag{align-self:center}
+.fase-tog .ct{font-family:var(--mono);font-size:.68rem;color:var(--muted-fg);white-space:nowrap}
+@media(max-width:900px){.fase-tog .rs{display:none}}
+
 .two{display:grid;gap:.75rem;margin-top:1.5rem}
 @media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
 .note{padding:1.15rem 1.25rem}
@@ -113,7 +135,8 @@ td.fase{font-size:.78rem;color:var(--muted-fg);white-space:nowrap}
 .rule p{font-size:.89rem}
 .rule p b{font-weight:600}
 @media print{.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  section.blk{break-inside:avoid}}
+  section.blk{break-inside:avoid}
+  #wktab thead[hidden],#wktab .fase-corpo[hidden]{display:revert!important}}
 </style>
 
 <main class="wrap"><div class="page">
@@ -258,111 +281,73 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       que o Gantt torna visível. A tabela abaixo traz a mesma informação em detalhe.</p>
   </div>
 
-  <div class="card scrollx" style="margin-top:1.4rem">
-    <table>
-      <thead><tr>
+  <p class="fase-nota">A tabela abaixo está dobrada nas <b>quatro fases</b> do ciclo, e começa fechada.
+    Clique na fase para abrir as semanas dela. As semanas 2 a 4 aparecem em Identificar e também em
+    Otimizar, porque as duas correm sobrepostas; a semana 12, de Recomeçar, aparece dentro de Expandir,
+    a mesma leitura do Gantt acima.</p>
+
+  <div class="card scrollx" style="margin-top:.85rem">
+    <table id="wktab">
+      <thead hidden><tr>
         <th style="width:3rem">Sem.</th><th style="width:8rem">Período</th><th style="width:7rem">Fase</th>
         <th>Entrega da V4</th><th>O que depende do Grupo OLX</th><th style="width:14rem">Critério de aceite</th>
       </tr></thead>
-      <tbody id="wk"></tbody>
     </table>
-  </div>
-  <div class="two">
-    <div class="card note warn">
-      <h3>Riscos de calendário já mapeados</h3>
-      <ul>
-        <li><b>Três segundas-feiras perdidas no Ciclo 1:</b> 7 set (Independência), 12 out (Aparecida) e 2 nov (Finados). São semanas de 4 dias úteis: as entregas dessas semanas já consideram isso.</li>
-        <li><b>O Ciclo 3 abre no Carnaval:</b> 8 e 9 de fevereiro de 2027. A semana 1 daquele ciclo perde 2 dias; vale antecipar a coleta de dados para janeiro.</li>
-        <li><b>Recesso de fim de ano</b> atravessa as semanas 6 e 7 do Ciclo 2. O Comitê 2 daquele ciclo deve ser puxado para antes do dia 18 de dezembro.</li>
-      </ul>
-    </div>
-    <div class="card note">
-      <h3>Datas a bloquear no kick-off</h3>
-      <ul>
-        <li><b>17 set</b>: Comitê 1, 2h, com o decisor presente.</li>
-        <li><b>8 out</b>: Comitê 2, presencial, 2h, com C-Level.</li>
-        <li><b>12 nov</b>: Comitê 3, 2h, com o decisor presente.</li>
-        <li>São datas propostas. Se alguma não couber, a substituta precisa sair da mesma reunião, remarcar em outubro custa uma fase inteira do ciclo.</li>
-      </ul>
-    </div>
   </div>
 </section>
 
 
-<section class="blk" id="auditorias">
-  <div class="blk-h"><h2>As nove auditorias contratadas</h2><span class="eyebrow">cláusula 1.2 · Ciclo 1</span></div>
+<section class="blk" id="diagnosticos">
+  <div class="blk-h"><h2>Os nove diagnósticos contratados</h2>
+    <span class="tag tag-crit">projetado</span>
+    <span class="eyebrow">cláusula 1.2 · Ciclo 1</span></div>
   <p class="lead">O contrato inclui nove diagnósticos técnicos. Eles não são entregas soltas: são a
-    camada analítica do diagnóstico das travas. Rodar as nove ao mesmo tempo cabe no papel e quebra na
-    execução: sete dependem de acesso que ainda não existe, todas consomem tempo do time do Grupo OLX,
-    e cada uma lê melhor o dado depois que a anterior fechou. Por isso elas saem em <b>três ondas</b>,
-    no máximo três em paralelo, e cada onda é amarrada à decisão que precisa sustentar.</p>
+    camada analítica da leitura das travas. Rodar os nove ao mesmo tempo cabe no papel e quebra na
+    execução: os acessos chegam em série, cada um consome tempo do time do Grupo OLX, e cada um lê
+    melhor o dado depois que o anterior fechou. Por isso saem em <b>duas ondas</b>, no máximo três em
+    paralelo.</p>
+  <p class="lead" style="margin-top:.7rem"><b>A ordem é projetada, não fixa.</b> Ela muda conforme o
+    próprio diagnóstico revelar onde o sistema trava: um achado da onda 1 pode puxar um diagnóstico da
+    onda 2 para a frente, ou adiar outro que deixou de ser decisivo. Isso é o método operando por
+    estado do sistema, não desvio de cronograma. A grade é revalidada a cada comitê.</p>
 
   <div class="two">
-    <div class="card note">
-      <h3>Por que o rastreamento vem primeiro</h3>
-      <ul>
-        <li>A auditoria <b>(vii)</b> determina se todo o resto é confiável. Se o GA4 e o GTM estiverem medindo errado, cada número das outras oito herda o erro.</li>
-        <li>Ela é a única que endereça a <b>Trava de Cegueira</b>, que é pré-condição do método: sem dado mínimo, o diagnóstico é achismo.</li>
-        <li>Por isso ela abre a semana 2, junto com a de mídia paga, que depende dos acessos mais demorados, e fecha na semana 3, antes de qualquer número entrar em material de comitê.</li>
-      </ul>
-    </div>
-    <div class="card note warn">
-      <h3>O que pode atrasar</h3>
-      <ul>
-        <li>Sete das nove dependem de acesso que ainda não foi concedido. As de mídia paga, rastreamento e pré-vendas são as três prioritárias e as três bloqueadas.</li>
-        <li>A <b>(ix)</b> precisa de gravações de call, que envolvem consentimento e LGPD: é a de prazo mais imprevisível, e por isso tem três semanas de janela em vez de duas.</li>
-        <li>A <b>(iii)</b> parte de linha de base zero, porque não há monitoramento de buscas generativas hoje. Ela fecha o conjunto: medir presença em IA antes de o posicionamento estar definido é levantar linha de base do termo errado.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="coms">
     <div class="card com">
-      <div class="com-top"><h3>Onda 1</h3><span class="when">semanas 2 a 5</span></div>
-      <p class="decide">Sustenta o Comitê 1: nomear a restrição com evidência.</p>
+      <div class="com-top"><h3>Onda 1</h3><span class="when">semanas 2 a 4</span></div>
+      <p class="decide">Fecha o caminho da aquisição até a captura, e sustenta o Comitê 1.</p>
       <ul>
-        <li><b>(vii)</b> rastreamento · <b>(vi)</b> mídia paga · <b>(ix)</b> pré-vendas · <b>(viii)</b> páginas de captura.</li>
-        <li>É a camada mais próxima do dinheiro, e as três prioritárias estão todas aqui.</li>
-        <li>O comitê não pede as nove fechadas: pede evidência suficiente para nomear uma restrição e refutar as concorrentes.</li>
+        <li><b>(vii)</b> rastreamento completo · <b>(viii)</b> páginas de captura · <b>(vi)</b> mídia paga.</li>
+        <li>É a espinha do fluxo de ganho: como se mede, onde o lead entra e o que se paga por ele. Sem os três, qualquer número do resto é leitura no escuro.</li>
+        <li>O rastreamento abre sozinho a semana 2: se o GA4 e o GTM medem errado, os outros oito herdam o erro.</li>
       </ul>
     </div>
     <div class="card com">
-      <div class="com-top"><h3>Onda 2</h3><span class="when">semanas 5 a 7</span></div>
-      <p class="decide">Sustenta o Comitê 2: posicionamento, ICP e proposta de valor.</p>
+      <div class="com-top"><h3>Onda 2</h3><span class="when">semanas 4 a 9</span></div>
+      <p class="decide">Completa o fluxo de ganho, do lead até a receita, e volta ao topo do funil.</p>
       <ul>
-        <li><b>(i)</b> CRM Marketing · <b>(iv)</b> criativos e mensagens · <b>(v)</b> redes e conteúdo orgânico.</li>
-        <li>São as auditorias que dizem o que o mercado ouve do Grupo OLX hoje, insumo direto do posicionamento na semana 6.</li>
-        <li>Rodam durante a execução assistida do plano de 30 dias, sem disputar acesso e agenda com ela.</li>
-      </ul>
-    </div>
-    <div class="card com">
-      <div class="com-top"><h3>Onda 3</h3><span class="when">semanas 7 a 9</span></div>
-      <p class="decide">Sustenta a fase Expandir e o Comitê 3.</p>
-      <ul>
-        <li><b>(ii)</b> CRO e SEO dos domínios B2B · <b>(iii)</b> GEO e buscas generativas.</li>
-        <li>São alavancas de prazo longo: alimentam o plano de 90 dias e a matriz de expansão, não a decisão sobre a restrição.</li>
-        <li>Fecham três semanas antes do Comitê 3, com tempo para virarem linha de base do Ciclo 2.</li>
+        <li>Nesta ordem: <b>(ix)</b> pré-vendas · <b>(i)</b> CRM Marketing · <b>(iv)</b> criativos e mensagens · <b>(v)</b> redes e conteúdo orgânico · <b>(ii)</b> CRO e SEO · <b>(iii)</b> GEO.</li>
+        <li>Segue o dinheiro primeiro: o que acontece com o lead depois da captura, e só então o que o mercado ouve do Grupo OLX hoje.</li>
+        <li>Alimenta o Comitê 2, o plano de 90 dias e a linha de base do Ciclo 2.</li>
       </ul>
     </div>
   </div>
 
   <div class="gantt-wrap">
-    <div class="gantt-scroll"><div class="gantt" id="gaud" role="group" aria-label="Execução das nove auditorias ao longo do Ciclo 1"></div></div>
+    <div class="gantt-scroll"><div class="gantt" id="gaud" role="group" aria-label="Execução dos nove diagnósticos ao longo do Ciclo 1"></div></div>
     <div class="g-legend">
       <span><i style="background:var(--brand)"></i>Onda 1, fecha para o Comitê 1</span>
-      <span><i style="background:color-mix(in srgb,var(--brand) 76%,var(--muted-fg))"></i>Onda 2, fecha para o Comitê 2</span>
-      <span><i style="background:color-mix(in srgb,var(--brand) 54%,var(--muted-fg))"></i>Onda 3, fecha para a expansão</span>
+      <span><i style="background:color-mix(in srgb,var(--brand) 76%,var(--muted-fg))"></i>Onda 2, completa o fluxo de ganho</span>
       <span><i style="border-radius:50%;background:var(--brand)"></i>Comitê</span>
     </div>
     <p class="g-nota">A última linha é a que importa para a agenda do Grupo OLX: <b>nenhuma semana tem
-      mais de três auditorias em paralelo</b>, e é essa carga que determina quanto tempo de time o
-      diagnóstico consome por semana, em entrevista, liberação de acesso e validação de achado.</p>
+      mais de três diagnósticos em paralelo</b>, e é essa carga que determina quanto tempo de time a
+      fase de diagnóstico consome por semana, em entrevista, liberação de acesso e validação de achado.</p>
   </div>
 
   <div class="card scrollx" style="margin-top:1.2rem">
     <table>
       <thead><tr>
-        <th style="width:2.5rem">#</th><th>Auditoria</th><th style="width:5rem">Semanas</th>
+        <th style="width:2.5rem">#</th><th>Diagnóstico</th><th style="width:5rem">Semanas</th>
         <th style="width:11rem">Fecha para</th>
         <th style="width:4rem">Bloco</th><th>Travas que informa</th><th>Depende de</th>
       </tr></thead>
@@ -398,43 +383,44 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 
 <script>
 
-// ---------- As nove auditorias contratadas ----------
-// Fonte: 02-diagnostico/auditorias-contratadas.md. A sequência segue a recomendação do
-// próprio documento: rastreamento primeiro, pré-vendas em seguida.
-var AUDITORIAS = [
+// ---------- Os nove diagnósticos contratados ----------
+// Fonte: 02-diagnostico/auditorias-contratadas.md. Onda 1 fecha o caminho da aquisição até a
+// captura e sustenta o Comitê 1; onda 2 completa o fluxo de ganho, do lead até a receita.
+// As janelas são projeção: mudam conforme o diagnóstico revela onde o sistema trava.
+var DIAGNOSTICOS = [
   {id:"vii", nome:"Rastreamento completo (GA4 e GTM)", de:2, ate:3, bloco:"H", prio:true, onda:1,
-   fecha:"Pré-condição de todas, gate na S3",
+   fecha:"Pré-condição de todos, gate na S3",
    travas:"Cegueira, pré-condição de todas", dep:"GA4 e GTM, nível analista"},
   {id:"vi",  nome:"Mídia paga (Google e Meta)", de:2, ate:4, bloco:"G", prio:true, onda:1,
    fecha:"Comitê 1",
    travas:"Exposição, Atenção, Qualificação", dep:"Contas Google e Meta, e o workspace V4MOS com dado"},
-  {id:"ix",  nome:"Pré-vendas, qualificação e sales engagement", de:3, ate:5, bloco:"J", prio:true, onda:1,
-   fecha:"Comitê 1, com leitura preliminar na S4",
-   travas:"Qualificação, Compromisso, Decisão", dep:"CRM, cadências e gravações de call"},
-  {id:"viii",nome:"Páginas de captura e fluxos de conversão", de:4, ate:5, bloco:"I", prio:false, onda:1,
-   fecha:"Plano de 30 dias saído do Comitê 1",
+  {id:"viii",nome:"Páginas de captura e fluxos de conversão", de:3, ate:4, bloco:"I", prio:true, onda:1,
+   fecha:"Comitê 1",
    travas:"Interesse, Compromisso", dep:"CMS e ferramenta de comportamento"},
+  {id:"ix",  nome:"Pré-vendas, qualificação e sales engagement", de:4, ate:6, bloco:"J", prio:false, onda:2,
+   fecha:"Plano de 30 dias e Comitê 2",
+   travas:"Qualificação, Compromisso, Decisão", dep:"CRM, cadências e gravações de call"},
   {id:"i",   nome:"CRM Marketing (Salesforce Marketing Cloud)", de:5, ate:6, bloco:"B", prio:false, onda:2,
    fecha:"Comitê 2",
    travas:"Interesse, Retenção", dep:"Marketing Cloud, visualização"},
   {id:"iv",  nome:"Criativos, anúncios e mensagens", de:6, ate:7, bloco:"E", prio:false, onda:2,
-   fecha:"Posicionamento, na S6, e Comitê 2",
+   fecha:"Comitê 2 e posicionamento",
    travas:"Atenção", dep:"Biblioteca de criativos e contas de mídia"},
-  {id:"v",   nome:"Redes sociais e conteúdo orgânico", de:6, ate:7, bloco:"F", prio:false, onda:2,
-   fecha:"Posicionamento, na S6, e Comitê 2",
+  {id:"v",   nome:"Redes sociais e conteúdo orgânico", de:7, ate:8, bloco:"F", prio:false, onda:2,
+   fecha:"Plano de 90 dias e fase Expandir",
    travas:"Exposição, Atenção", dep:"Business Suite, LinkedIn e demais canais"},
-  {id:"ii",  nome:"Ambientes CRO e SEO dos domínios B2B", de:7, ate:8, bloco:"C", prio:false, onda:3,
+  {id:"ii",  nome:"Ambientes CRO e SEO dos domínios B2B", de:7, ate:8, bloco:"C", prio:false, onda:2,
    fecha:"Plano de 90 dias e fase Expandir",
    travas:"Exposição, Interesse", dep:"Search Console e acesso ao CMS"},
-  {id:"iii", nome:"GEO, IA e buscas generativas", de:8, ate:9, bloco:"D", prio:false, onda:3,
+  {id:"iii", nome:"GEO, IA e buscas generativas", de:8, ate:9, bloco:"D", prio:false, onda:2,
    fecha:"Linha de base para o Ciclo 2",
    travas:"Exposição, Atenção", dep:"Nada externo: parte de linha de base zero"}
 ];
 
-// Comitês marcados no Gantt das auditorias. C3, na semana 12, fica fora: nenhuma auditoria
-// alcança essa altura do ciclo, e a marca ali só sujaria a leitura da carga semanal.
-var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
-               {s:7, l:"C2", t:"Comitê 2, semana 7: fecha a onda 2"}];
+// Comitês marcados no Gantt. C3, na semana 12, fica fora: nenhum diagnóstico alcança essa
+// altura do ciclo, e a marca ali só sujaria a leitura da carga semanal.
+var COM_DIAG = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
+                {s:7, l:"C2", t:"Comitê 2, semana 7: a onda 2 entra no material"}];
 
 (function () {
   var g = document.getElementById("gaud");
@@ -443,13 +429,13 @@ var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
     var head = document.createElement("div");
     head.className = "g-head";
     head.style.gridTemplateColumns = cols;
-    var h0 = document.createElement("span"); h0.textContent = "Auditoria"; head.appendChild(h0);
+    var h0 = document.createElement("span"); h0.textContent = "Diagnóstico"; head.appendChild(h0);
     for (var s = 1; s <= 12; s++) {
       var hs = document.createElement("span"); hs.textContent = "S" + s; head.appendChild(hs);
     }
     g.appendChild(head);
 
-    AUDITORIAS.forEach(function (a) {
+    DIAGNOSTICOS.forEach(function (a) {
       var row = document.createElement("div");
       row.className = "g-row";
       row.style.gridTemplateColumns = cols;
@@ -469,11 +455,11 @@ var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
       bar.textContent = "(" + a.id + ")";
       bar.style.left = ((a.de - 1) / 12 * 100) + "%";
       bar.style.width = ((a.ate - a.de + 1) / 12 * 100) + "%";
-      bar.setAttribute("aria-label", "Auditoria " + a.id + ", " + a.nome +
+      bar.setAttribute("aria-label", "Diagnóstico " + a.id + ", " + a.nome +
         ", semanas " + a.de + " a " + a.ate + ", onda " + a.onda +
-        (a.prio ? ", prioritária" : "") + ", fecha para " + a.fecha);
+        (a.prio ? ", prioritário" : "") + ", fecha para " + a.fecha + ". Janela projetada.");
       tr.appendChild(bar);
-      COM_AUD.forEach(function (c) {
+      COM_DIAG.forEach(function (c) {
         var mk = document.createElement("div");
         mk.className = "g-mark";
         mk.textContent = c.l;
@@ -486,8 +472,8 @@ var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
       g.appendChild(row);
     });
 
-    // Carga semanal: é o número que define quanto tempo do time do cliente o diagnóstico
-    // consome por semana, e o motivo de as nove não rodarem juntas.
+    // Carga semanal: é o número que define quanto tempo do time do cliente a fase de
+    // diagnóstico consome por semana, e o motivo de os nove não rodarem juntos.
     var carga = document.createElement("div");
     carga.className = "g-row g-carga";
     carga.style.gridTemplateColumns = cols;
@@ -495,16 +481,16 @@ var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
     cl.className = "g-lbl";
     cl.appendChild(document.createTextNode("Em paralelo"));
     var cs = document.createElement("small");
-    cs.textContent = "auditorias abertas na mesma semana";
+    cs.textContent = "diagnósticos abertos na mesma semana";
     cl.appendChild(cs);
     carga.appendChild(cl);
     for (var w = 1; w <= 12; w++) {
       var n = 0;
-      AUDITORIAS.forEach(function (a) { if (a.de <= w && a.ate >= w) n++; });
+      DIAGNOSTICOS.forEach(function (a) { if (a.de <= w && a.ate >= w) n++; });
       var cel = document.createElement("span");
       cel.className = "g-cnt" + (n ? "" : " vazio");
       cel.textContent = n ? n : "—";
-      cel.setAttribute("aria-label", n + " auditoria" + (n === 1 ? "" : "s") + " na semana " + w);
+      cel.setAttribute("aria-label", n + " diagnóstico" + (n === 1 ? "" : "s") + " na semana " + w);
       carga.appendChild(cel);
     }
     g.appendChild(carga);
@@ -512,12 +498,12 @@ var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
 
   var tb = document.getElementById("audtab");
   if (tb) {
-    AUDITORIAS.forEach(function (a) {
+    DIAGNOSTICOS.forEach(function (a) {
       var tr = document.createElement("tr");
-      if (a.prio) tr.className = "com-row";
+      if (a.prio) tr.className = "com-row";  // prioritário = onda 1, o que sustenta o Comitê 1
       tr.innerHTML =
         '<td class="wk">' + a.id + "</td>" +
-        "<td><strong>" + a.nome + "</strong>" + (a.prio ? ' <span class="tag tag-p0">prioritária</span>' : "") + "</td>" +
+        "<td><strong>" + a.nome + "</strong>" + (a.prio ? ' <span class="tag tag-p0">prioritário</span>' : "") + "</td>" +
         '<td class="dt">S' + a.de + (a.ate !== a.de ? " a S" + a.ate : "") + "</td>" +
         '<td style="font-size:.82rem">' + a.fecha + "</td>" +
         '<td class="wk">' + a.bloco + "</td>" +
@@ -672,14 +658,14 @@ var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
 
 const SEMANAS = [
  ["1","24–28 ago","Onboarding e visibilidade","Kick-off, alinhamento de governança e abertura do canal assíncrono. Levantamento de acessos e mapa de dados.","Nomear DRI por frente. Liberar acessos de plataforma. Confirmar o recorte de unidades no escopo.","Escopo e governança em ata; acessos solicitados"],
- ["2","31 ago – 4 set","Análise diagnóstica e pesquisa","Mapeamento do fluxo de receita por unidade. Início das auditorias de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
- ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual. Fecha a auditoria de rastreamento e entra a de pré-vendas.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set: Independência"],
- ["4","14–18 set","Validação e otimização","Consolidação causal, preparação e realização do <b>Comitê 1</b>. Fecha a auditoria de mídia paga, com leitura preliminar da de pré-vendas.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
- ["5","21–25 set","Validação e otimização","Início da execução assistida. Acompanhamento semanal das métricas da restrição. Fecham as auditorias de pré-vendas e de páginas de captura; abre a onda 2, pela de CRM Marketing.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
- ["6","28 set – 2 out","Posicionamento e planejamento","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura. Fecha a auditoria de CRM Marketing e entram as de criativos e redes sociais.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
- ["7","5–9 out","Posicionamento e planejamento","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial. A onda 2 das auditorias fecha e entra no material; abre a onda 3, pela de CRO e SEO.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
- ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput. Fecha a auditoria de CRO e SEO e entra a de buscas generativas.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out: N. Sra Aparecida"],
- ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão. Fecha a nona e última auditoria, de GEO: linha de base para o Ciclo 2.","Evidenciar mudanças reais de alocação, verba, pausa, prioridade.","Critérios intermediários atingidos"],
+ ["2","31 ago – 4 set","Análise diagnóstica e pesquisa","Mapeamento do fluxo de receita por unidade. Início dos diagnósticos de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
+ ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual. Fecha o diagnóstico de rastreamento e entra o de páginas de captura.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set: Independência"],
+ ["4","14–18 set","Validação e otimização","Consolidação causal, preparação e realização do <b>Comitê 1</b>. Fecham os diagnósticos de mídia paga e de páginas de captura, e a onda 2 abre pelo de pré-vendas.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
+ ["5","21–25 set","Validação e otimização","Início da execução assistida. Acompanhamento semanal das métricas da restrição. Entra o diagnóstico de CRM Marketing.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
+ ["6","28 set – 2 out","Posicionamento e planejamento","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura. Fecham os diagnósticos de pré-vendas e de CRM Marketing, e entra o de criativos e mensagens.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
+ ["7","5–9 out","Posicionamento e planejamento","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial. O diagnóstico de criativos fecha e entra no material; entram os de redes sociais e de CRO e SEO.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
+ ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput. Fecham os diagnósticos de redes sociais e de CRO e SEO, e entra o de buscas generativas.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out: N. Sra Aparecida"],
+ ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão. Fecha o nono e último diagnóstico, o de GEO: linha de base para o Ciclo 2.","Evidenciar mudanças reais de alocação, verba, pausa, prioridade.","Critérios intermediários atingidos"],
  ["10","26–30 out","Expandir e executar","Leitura de estabilização. Preparação da matriz de expansão do próximo ciclo.","Confirmar disponibilidade de recurso para o que for aprovado.","Processos implementados operando sem apoio diário"],
  ["11","2–6 nov","Expandir e executar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov: Finados"],
  ["12","9–13 nov","Recomeçar","<b>Comitê 3</b>: revisão consolidada, ROI do ciclo e definição da nova restrição.","Decisor presente. Decisão formal de continuidade em ata.","Nova restrição definida; ata assinada"]
@@ -695,18 +681,101 @@ function fasesDaSemana(s) {
   if (s === 12) f.push("Recomeçar");
   return f;
 }
-const tb = document.getElementById("wk");
-SEMANAS.forEach(s => {
-  const isCom = /Comitê/.test(s[3]);
-  const tr = document.createElement("tr");
-  if (isCom) tr.className = "com-row";
-  tr.innerHTML =
-    '<td class="wk">S' + s[0] + "</td>" +
+// As quatro fases do Ciclo 1, conforme 00-playbook/03-ciclo-90-dias-e-comites.md §1.
+// Identificar (1-4) e Otimizar (2-4) se sobrepõem de propósito, então as semanas 2 a 4 caem nos
+// dois blocos. Recomeçar (semana 12) fica dentro de Expandir (8-12), a mesma leitura do Gantt.
+// Os períodos vêm do próprio SEMANAS: início da primeira semana, fim da última.
+const FASES_TAB = [
+  {id:"identificar", nome:"Identificar", de:1,  ate:4,
+   resumo:"Descobrir onde está o gargalo real, não o percebido."},
+  {id:"otimizar",    nome:"Otimizar",    de:2,  ate:4,
+   resumo:"Extrair o máximo da restrição, sem novos investimentos."},
+  {id:"alinhar",     nome:"Alinhar",     de:5,  ate:7,
+   resumo:"Subordinar o sistema à restrição, inclusive pausando iniciativa boa."},
+  {id:"expandir",    nome:"Expandir",    de:8,  ate:12,
+   resumo:"Romper o teto da restrição. Inclui Recomeçar, na semana 12."}
+];
+
+const SETA = '<svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+  'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+  '<path d="m9 18 6-6-6-6"/></svg>';
+
+// "24–28 ago" e "31 ago – 4 set" viram "24 ago" e "4 set": o lado que interessa de cada ponta.
+function pontaIni(txt) {
+  const p = txt.split("–");
+  return /[a-z]/.test(p[0]) ? p[0].trim() : p[0].trim() + " " + p[1].trim().split(" ").slice(1).join(" ");
+}
+function pontaFim(txt) {
+  const p = txt.split("–");
+  const fim = p[p.length - 1].trim();
+  return /[a-z]/.test(fim) ? fim : fim + " " + p[0].trim().split(" ").slice(1).join(" ");
+}
+
+function celulasSemana(s) {
+  return '<td class="wk">S' + s[0] + "</td>" +
     '<td class="dt">' + s[1] + (s[6] ? '<span class="hol">' + s[6] + "</span>" : "") + "</td>" +
     '<td class="fase">' + fasesDaSemana(Number(s[0])).join("<br>") + "</td>" +
     "<td>" + s[3] + '<div class="etapa"><b>etapa</b> · ' + s[2] + "</div></td>" +
     '<td style="color:var(--muted-fg)">' + s[4] + "</td>" +
     '<td style="font-size:.8rem;color:var(--muted-fg)">' + s[5] + "</td>";
-  tb.appendChild(tr);
-});
+}
+
+const wktab = document.getElementById("wktab");
+if (wktab) {
+  const cabecalho = wktab.querySelector("thead");
+  const corpos = [];
+
+  FASES_TAB.forEach(f => {
+    const semanas = SEMANAS.filter(s => Number(s[0]) >= f.de && Number(s[0]) <= f.ate);
+    if (!semanas.length) return;
+    const coms = semanas.map(s => (s[3].match(/Comitê (\d)/) || [])[1]).filter(Boolean);
+    const periodo = pontaIni(semanas[0][1]) + " a " + pontaFim(semanas[semanas.length - 1][1]);
+
+    const corpo = document.createElement("tbody");
+    corpo.className = "fase-corpo";
+    corpo.id = "fase-" + f.id + "-semanas";
+    corpo.hidden = true;
+    semanas.forEach(s => {
+      const tr = document.createElement("tr");
+      if (/Comitê/.test(s[3])) tr.className = "com-row";
+      tr.innerHTML = celulasSemana(s);
+      corpo.appendChild(tr);
+    });
+
+    const bt = document.createElement("button");
+    bt.type = "button";
+    bt.className = "fase-tog";
+    bt.setAttribute("aria-expanded", "false");
+    bt.setAttribute("aria-controls", corpo.id);
+    bt.innerHTML = SETA +
+      '<span class="nm">' + f.nome + "</span>" +
+      '<span class="rg">S' + f.de + " a S" + f.ate + " · " + periodo + "</span>" +
+      '<span class="rs">' + f.resumo + "</span>" +
+      (coms.length ? '<span class="tag tag-crit">Comitê ' + coms.join(" e ") + "</span>" : "") +
+      '<span class="ct">' + semanas.length + " semana" + (semanas.length === 1 ? "" : "s") + "</span>";
+    bt.addEventListener("click", () => {
+      const aberto = bt.getAttribute("aria-expanded") === "true";
+      bt.setAttribute("aria-expanded", aberto ? "false" : "true");
+      corpo.hidden = aberto;
+      // O cabeçalho de colunas só faz sentido com alguma semana à vista.
+      cabecalho.hidden = corpos.every(c => c.hidden);
+    });
+
+    const th = document.createElement("th");
+    th.colSpan = 6;
+    th.scope = "colgroup";
+    th.appendChild(bt);
+    const linha = document.createElement("tr");
+    linha.className = "fase-h";
+    linha.appendChild(th);
+
+    const grupo = document.createElement("tbody");
+    grupo.className = "fase-grp";
+    grupo.appendChild(linha);
+
+    wktab.appendChild(grupo);
+    wktab.appendChild(corpo);
+    corpos.push(corpo);
+  });
+}
 </script>

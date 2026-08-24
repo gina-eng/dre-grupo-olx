@@ -25,20 +25,20 @@
 > ⚠️ O método avança **por estado do sistema, não por calendário**. As datas acima são
 > planejamento, não compromisso. Um comitê só acontece quando existe evidência para decidir.
 
-## As nove auditorias dentro do ciclo
+## Os nove diagnósticos dentro do ciclo
 
-As nove auditorias da cláusula 1.2 não rodam juntas: são **três ondas**, com no máximo três abertas
-por semana, cada uma amarrada à decisão que sustenta. Janelas e racional em
+Os nove diagnósticos da cláusula 1.2 não rodam juntos: são **duas ondas**, com no máximo três abertos
+por semana. Janelas e racional em
 [02-diagnostico/auditorias-contratadas.md](../02-diagnostico/auditorias-contratadas.md#sequência-e-janelas).
 
-| Onda | Semanas | Auditorias | Fecha para |
+| Onda | Semanas | Diagnósticos | O que fecha |
 |---|---|---|---|
-| 1 | S2–S5 | (vii) rastreamento, (vi) mídia paga, (ix) pré-vendas, (viii) LPs | Comitê 1 e o plano de 30 dias |
-| 2 | S5–S7 | (i) CRM Marketing, (iv) criativos, (v) redes sociais | Posicionamento e Comitê 2 |
-| 3 | S7–S9 | (ii) CRO/SEO, (iii) GEO | Fase Expandir, Comitê 3 e linha de base do Ciclo 2 |
+| 1 | S2–S4 | (vii) rastreamento, (viii) páginas de captura, (vi) mídia paga | O caminho da aquisição até a captura. Sustenta o Comitê 1 |
+| 2 | S4–S9 | (ix) pré-vendas, (i) CRM Marketing, (iv) criativos, (v) redes sociais, (ii) CRO/SEO, (iii) GEO | O fluxo de ganho do lead até a receita, e o topo do funil. Alimenta o Comitê 2, o plano de 90 dias e a linha de base do Ciclo 2 |
 
-> O Comitê 1 não depende das nove fechadas. Depende de evidência suficiente para nomear **uma**
-> restrição e refutar as concorrentes: por isso a onda 1 concentra o que está mais perto do dinheiro.
+> ⚠️ **Grade projetada.** A ordem muda conforme o diagnóstico revelar onde o sistema trava, e é
+> revalidada a cada comitê. O Comitê 1 não depende dos nove fechados: depende de evidência suficiente
+> para nomear **uma** restrição e refutar as concorrentes.
 
 ## Marcos contratuais
 

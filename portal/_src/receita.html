@@ -1,0 +1,483 @@
+<!--@ receita | Fluxo de Receita · Portal DR-E Grupo OLX | Árvore de Produção de Receita | Mapa editável do caminho do dinheiro no B2B do Grupo OLX. Nada aqui está confirmado: cada nó aponta a pergunta do bloco 3B que o fecha. | v0 · a confirmar no kick-off -->
+<style>
+.bar{top:3.5rem}
+/* Esta pagina nao tem indice para o trilho listar, e a arvore precisa da
+   largura toda: sem isto ela fica presa na coluna de ~1000px do documento e
+   corta nos dois lados. */
+.doc{grid-template-columns:minmax(0,1fr)!important;gap:0!important;max-width:none}
+.rail,.rail-abrir{display:none!important}
+
+/* ---------- árvore ----------
+   Cresce de baixo para cima: a semente na base, e cada nível abrindo os ramos
+   numa fileira horizontal acima do nó que os gerou. */
+/* Superfície de canvas: a área da árvore vira um viewport com pan e zoom
+   próprios. O palco é o alvo do transform e tem a largura do viewport em
+   escala 1, então a árvore continua se distribuindo em colunas por dentro. */
+.canvas{position:relative;width:100vw;margin-left:calc(50% - 50vw);
+  height:clamp(28rem,calc(100vh - 11rem),60rem);overflow:hidden;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background-color:var(--bg);
+  background-image:radial-gradient(circle,var(--border) 1px,transparent 1px);
+  background-size:24px 24px;cursor:grab;touch-action:none;overscroll-behavior:contain}
+.canvas.is-pan{cursor:grabbing}
+.stage{position:absolute;top:0;left:0;width:max-content;transform-origin:0 0;
+  padding:2rem clamp(1rem,3vw,2.5rem);will-change:transform}
+
+.hud{position:absolute;right:1rem;bottom:1rem;z-index:3;display:flex;align-items:center;
+  gap:.2rem;padding:.25rem;background:var(--card);border:1px solid var(--border);
+  border-radius:99px;box-shadow:var(--shadow-card)}
+.hud button{font:inherit;font-size:.78rem;line-height:1;border:0;background:transparent;
+  color:var(--muted-fg);border-radius:99px;padding:.4rem .6rem;cursor:pointer}
+.hud button:hover{background:var(--muted);color:var(--fg)}
+.hud button:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+.hud output{font-family:var(--mono);font-size:.72rem;color:var(--fg);
+  min-width:3rem;text-align:center;-webkit-user-select:none;user-select:none}
+.hud .sep{width:1px;height:1.1rem;background:var(--border);margin:0 .15rem}
+.dica{position:absolute;left:1rem;bottom:1rem;z-index:3;font-size:.7rem;color:var(--muted-fg);
+  background:color-mix(in srgb,var(--card) 85%,transparent);border:1px solid var(--border);
+  border-radius:99px;padding:.3rem .7rem;pointer-events:none}
+/* --g é a folga entre uma fileira e o nó que a gerou: metade dela é o tronco
+   que sobe do pai, metade é o que desce até cada filho, e a barra dos irmãos
+   fica na emenda. */
+.tree{--g:2.4rem;display:inline-block}
+.tree ul{position:relative;display:flex;justify-content:center;align-items:stretch;
+  list-style:none;margin:0;padding:0}
+.tree li{position:relative;display:flex;flex-direction:column-reverse;align-items:center;
+  padding:0 .45rem var(--g)}
+.tree li::before{content:"";position:absolute;left:50%;bottom:calc(var(--g)/2);
+  height:calc(var(--g)/2);border-left:1px solid var(--border-strong)}
+.tree li::after{content:"";position:absolute;left:0;right:0;bottom:calc(var(--g)/2);
+  border-top:1px solid var(--border-strong)}
+.tree li:first-child::after{left:50%}
+.tree li:last-child::after{right:50%}
+.tree li:only-child::after{display:none}
+.tree ul::before{content:"";position:absolute;left:50%;bottom:0;
+  height:calc(var(--g)/2);border-left:1px solid var(--border-strong)}
+/* a semente não tem nada abaixo dela */
+.tree > ul{align-items:flex-end}
+.tree > ul::before{display:none}
+.tree > ul > li{padding-bottom:0}
+.tree > ul > li::before,.tree > ul > li::after{display:none}
+
+/* ---------- nó ---------- */
+.nd{position:relative;width:12.5rem;flex:none;background:var(--card);
+  border:1px solid var(--border);border-left:3px solid var(--border-strong);
+  border-radius:var(--radius-sm);padding:.55rem .65rem;box-shadow:var(--shadow-card)}
+.nd:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px var(--accent)}
+.nd--raiz{border-left-color:var(--brand);background:var(--accent);
+  border-bottom:3px solid var(--brand)}
+.nd[data-s="confirmado"]{border-left-color:var(--ok)}
+.nd[data-s="hipotese"]{border-left-color:var(--warn)}
+.nd[data-s="aberto"]{border-left-color:var(--border-strong);border-left-style:dashed}
+.nd-t{font-size:.84rem;font-weight:500;line-height:1.35;outline:none;min-height:1.2em}
+.nd-t:empty::before{content:"Sem nome";color:var(--muted-fg);font-weight:400}
+.nd-n{font-size:.72rem;line-height:1.4;color:var(--muted-fg);margin-top:.25rem;outline:none}
+.nd-n:not(:focus){display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.nd-n:empty::before{content:"nota";color:var(--border-strong)}
+.nd-f{display:flex;align-items:center;gap:.35rem;margin-top:.45rem;flex-wrap:wrap}
+.nd-s{font:inherit;font-family:var(--mono);font-size:.64rem;text-transform:uppercase;
+  letter-spacing:.06em;border:1px solid var(--input);background:var(--bg);color:var(--muted-fg);
+  border-radius:99px;padding:.12rem .5rem;cursor:pointer}
+.nd[data-s="confirmado"] .nd-s{background:var(--ok-bg);color:var(--ok);
+  border-color:color-mix(in srgb,var(--ok) 40%,transparent);font-weight:600}
+.nd[data-s="hipotese"] .nd-s{background:var(--warn-bg);color:var(--warn);
+  border-color:color-mix(in srgb,var(--warn) 40%,transparent);font-weight:600}
+.nd-q{font-family:var(--mono);font-size:.64rem;color:var(--muted-fg);
+  border:1px solid var(--input);border-radius:99px;padding:.12rem .45rem;
+  text-decoration:none;cursor:pointer}
+.nd-q:hover{color:var(--brand-ink);border-color:var(--brand)}
+.nd-ops{display:flex;gap:.15rem;margin-left:auto;opacity:0;transition:opacity .12s}
+.nd:hover .nd-ops,.nd:focus-within .nd-ops{opacity:1}
+.nd-op{font:inherit;font-size:.8rem;line-height:1;width:1.3rem;height:1.3rem;display:grid;
+  place-items:center;border:1px solid var(--input);background:var(--bg);color:var(--muted-fg);
+  border-radius:.3rem;cursor:pointer;padding:0}
+.nd-op:hover{color:var(--fg);border-color:var(--border-strong)}
+.nd-op[data-op="del"]:hover{color:var(--brand-ink);border-color:var(--brand)}
+.nd-col{position:absolute;left:50%;top:-.65rem;transform:translateX(-50%);z-index:2;
+  width:1.15rem;height:1.15rem;border-radius:99px;border:1px solid var(--border-strong);
+  background:var(--card);color:var(--muted-fg);font:inherit;font-size:.62rem;line-height:1;
+  display:grid;place-items:center;cursor:pointer;padding:0;font-family:var(--mono)}
+.nd-col:hover{color:var(--fg);border-color:var(--fg)}
+li.is-col > ul{display:none}
+
+@media print{
+  .bar,.toast,.hud,.dica{display:none}
+  .canvas{height:auto;overflow:visible;border:0;background-image:none}
+  .stage{position:static;transform:none!important;padding:0}
+  .nd-ops,.nd-col{display:none}
+}
+</style>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="progress"><span id="rv-cont">0 nós</span></div>
+    <span style="flex:1"></span>
+    <button class="btn" id="rv-expand" type="button">Expandir tudo</button>
+    <button class="btn" id="rv-reset" type="button">Restaurar seed</button>
+    <button class="btn" id="rv-md" type="button">Exportar Markdown</button>
+    <button class="btn btn-primary" id="rv-json" type="button">Exportar JSON</button>
+  </div>
+</div>
+
+<div class="canvas" id="canvas">
+  <div class="stage" id="stage"><div class="tree" id="tree"></div></div>
+  <p class="dica">Arraste para mover · Ctrl ou &#8984; + rolagem para dar zoom</p>
+  <div class="hud">
+    <button id="cv-menos" type="button" title="Diminuir" aria-label="Diminuir zoom">&minus;</button>
+    <output id="cv-pct" aria-live="off">100%</output>
+    <button id="cv-mais" type="button" title="Aumentar" aria-label="Aumentar zoom">+</button>
+    <span class="sep"></span>
+    <button id="cv-fit" type="button" title="Enquadrar a árvore inteira">Ajustar</button>
+    <button id="cv-um" type="button" title="Voltar a 100%">100%</button>
+  </div>
+</div>
+
+<dialog id="dlg" aria-labelledby="dlg-tit">
+  <div class="dlg-h">
+    <strong id="dlg-tit">Exportar</strong>
+    <span><button class="btn" id="dlg-copy" type="button">Copiar</button>
+    <button class="btn" id="dlg-close" type="button">Fechar</button></span>
+  </div>
+  <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Conteúdo exportado"></textarea></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// ============================================================================
+// Arvore de producao de receita. Modelo unico em memoria, render inteiro a cada
+// mudanca estrutural: a arvore e pequena e isso elimina qualquer divergencia
+// entre DOM e estado. Texto e editado in loco e salvo com debounce.
+// ============================================================================
+const CHAVE = "dre-arvore-receita-v1";
+
+// s: aberto | hipotese | confirmado · q: pergunta do bloco 3B que fecha o no
+const SEED = {
+  t: "Receita B2B do Grupo OLX", s: "aberto", n: "O objeto do DR-E é o sistema de receita B2B, não o marketplace de consumidor. O caminho completo ainda não foi desenhado.", q: "3B-1",
+  c: [
+    { t: "Origem do valor: audiência B2C", s: "hipotese", n: "Num marketplace de dois lados o anunciante compra acesso a demanda. Se o tráfego de consumidor oscila, o B2B sente na renovação. Falta saber se existe métrica ligando os dois lados.", q: "3B-6", c: [] },
+
+    { t: "Frente Imóveis", s: "hipotese", n: "ZAP+, VivaReal e OLX Imóveis. Fonte: 01-cliente/perfil-grupo-olx.md. Falta saber se têm P&L separado ou consolidado.", q: "3B-2", c: [
+      { t: "Imobiliária", s: "aberto", n: "Contrato por empresa, com vários corretores e vários anúncios sob o mesmo pagante?", q: "3B-0", c: [
+        { t: "Plano por volume de anúncios", s: "aberto", n: "Unidade de valor: vaga, listing ativo, ou faixa de volume?", q: "3B-1", c: [] },
+        { t: "Destaque e impulsionamento", s: "aberto", n: "Compra avulsa ou pacote dentro do plano?", q: "3B-1", c: [] }
+      ]},
+      { t: "Corretor autônomo", s: "aberto", n: "Pagante pessoa física, ticket menor, provavelmente self-service. Confirmar se existe e qual o peso.", q: "3B-0", c: [] },
+      { t: "Incorporadora", s: "aberto", n: "Compra lançamento e mídia, não plano de listagem. Ciclo e ticket diferentes.", q: "3B-0", c: [
+        { t: "Contrato de mídia", s: "aberto", n: "Campanha por empreendimento? Preço por período ou por entrega?", q: "3B-1", c: [] }
+      ]}
+    ]},
+
+    { t: "Frente Autos", s: "hipotese", n: "OLX Autos, operação B2B. Fonte: perfil. Falta saber se o dealer paga plano, paga por anúncio, ou se existe comissão sobre a venda.", q: "3B-3", c: [
+      { t: "Concessionária", s: "aberto", n: "Volume alto, contrato por rede ou por loja?", q: "3B-0", c: [] },
+      { t: "Revenda / dealer", s: "aberto", n: "O termo dealer precisa ser definido pelo cliente: é revenda multimarca, é loja de bairro, é rede?", q: "3B-0", c: [] },
+      { t: "Vendedor pessoa física", s: "aberto", n: "Está dentro ou fora do escopo B2B? Se gera receita, entra na árvore.", q: "3B-0", c: [] },
+      { t: "Sobrou operação transacional?", s: "aberto", n: "Compra e venda direta de veículo mudaria a natureza da receita de assinatura para transação.", q: "3B-3", c: [] }
+    ]},
+
+    { t: "Canal indireto", s: "aberto", n: "Revenda, franquia, parceiro ou agência vendendo em nome do grupo. Se existir, essa receita não passa pelo funil próprio nem pelo CRM.", q: "3B-7", c: [] },
+
+    { t: "Formação do preço", s: "aberto", n: "Como o valor cobrado se forma e o que o faz subir dentro do mesmo cliente.", q: "3B-9", c: [
+      { t: "Tabela por porte e praça", s: "aberto", n: "Existe tabela? Varia por região?", q: "3B-9", c: [] },
+      { t: "Desconto praticado", s: "aberto", n: "A distância entre tabela e praticado costuma ser onde a Trava de Decisão aparece com evidência.", q: "3B-9", c: [] },
+      { t: "Alavanca de expansão", s: "aberto", n: "O que faz a fatura crescer sem cliente novo: mais anúncio, mais destaque, mais praça, upgrade.", q: "3B-4", c: [] },
+      { t: "Onde está a margem", s: "aberto", n: "Se a linha que mais fatura não é a que mais lucra, a priorização do Ciclo 1 muda de lugar.", q: "3B-5", c: [] }
+    ]},
+
+    { t: "Caminho do dinheiro até a conta", s: "aberto", n: "Cada troca de mão é um ponto de perda possível.", q: "3B-11", c: [
+      { t: "Contrato assinado", s: "aberto", n: "Quem prospecta, quem precifica, quem aprova desconto.", q: "3B-11", c: [] },
+      { t: "Faturamento", s: "aberto", n: "Recorrente, por pedido, antecipado?", q: "3B-11", c: [] },
+      { t: "Cobrança e inadimplência", s: "aberto", n: "Inadimplência é um dos modos de uma conta morrer sem cancelar.", q: "3B-10", c: [] },
+      { t: "Renovação", s: "aberto", n: "Ativa ou automática, e quem cuida.", q: "3B-10", c: [] }
+    ]},
+
+    { t: "Linhas fora da árvore", s: "aberto", n: "Dados, API, parcerias, licenciamento, programática. O que sobrar aqui é o que a leitura do sistema estaria ignorando.", q: "3B-12", c: [] }
+  ]
+};
+
+const ORDEM = ["aberto", "hipotese", "confirmado"];
+const ROTULO = { aberto: "aberto", hipotese: "hipótese", confirmado: "confirmado" };
+
+let arvore = carregar();
+
+function carregar() {
+  try {
+    const cru = localStorage.getItem(CHAVE);
+    if (cru) return JSON.parse(cru);
+  } catch (e) {}
+  return JSON.parse(JSON.stringify(SEED));
+}
+function salvar() {
+  try { localStorage.setItem(CHAVE, JSON.stringify(arvore)); } catch (e) {}
+}
+let tSalva;
+function salvarDepois() { clearTimeout(tSalva); tSalva = setTimeout(salvar, 400); }
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"]/g, c =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+// caminho e um array de indices a partir da raiz: [] e a raiz, [0,2] o terceiro
+// filho do primeiro filho. Serializado no data-p do no.
+function achar(caminho) {
+  let no = arvore;
+  for (const i of caminho) no = no.c[i];
+  return no;
+}
+function pai(caminho) { return achar(caminho.slice(0, -1)); }
+
+function noHtml(no, caminho) {
+  const p = caminho.join(",");
+  const raiz = caminho.length === 0;
+  const temFilho = no.c && no.c.length;
+  return '<div class="nd' + (raiz ? " nd--raiz" : "") + '" data-s="' + esc(no.s || "aberto") +
+    '" data-p="' + p + '">' +
+    '<div class="nd-t" contenteditable="plaintext-only" data-campo="t" role="textbox" aria-label="Nome do nó">' + esc(no.t) + '</div>' +
+    '<div class="nd-n" contenteditable="plaintext-only" data-campo="n" role="textbox" aria-label="Nota">' + esc(no.n || "") + '</div>' +
+    '<div class="nd-f">' +
+      '<button class="nd-s" type="button" data-op="status" title="Circular entre aberto, hipótese e confirmado">' + ROTULO[no.s || "aberto"] + '</button>' +
+      (no.q ? '<a class="nd-q" href="/kickoff#b3B" title="Fecha na pergunta ' + esc(no.q) + ' do bloco 3B">' + esc(no.q) + '</a>' : "") +
+      '<span class="nd-ops">' +
+        '<button class="nd-op" type="button" data-op="filho" title="Adicionar filho" aria-label="Adicionar filho">+</button>' +
+        (raiz ? "" : '<button class="nd-op" type="button" data-op="irmao" title="Adicionar irmão abaixo" aria-label="Adicionar irmão">&#8629;</button>') +
+        (raiz ? "" : '<button class="nd-op" type="button" data-op="sobe" title="Mover para cima" aria-label="Mover para cima">&#8593;</button>') +
+        (raiz ? "" : '<button class="nd-op" type="button" data-op="desce" title="Mover para baixo" aria-label="Mover para baixo">&#8595;</button>') +
+        (raiz ? "" : '<button class="nd-op" type="button" data-op="del" title="Remover" aria-label="Remover">&times;</button>') +
+      '</span>' +
+    '</div>' +
+    (temFilho ? '<button class="nd-col" type="button" data-op="col" title="Recolher ou expandir" aria-label="Recolher ou expandir">' + (no.col ? "+" : "&minus;") + '</button>' : "") +
+    '</div>';
+}
+
+function ramoHtml(no, caminho) {
+  const filhos = no.c && no.c.length
+    ? '<ul>' + no.c.map((f, i) => ramoHtml(f, caminho.concat(i))).join("") + '</ul>'
+    : "";
+  return '<li' + (no.col ? ' class="is-col"' : "") + '>' + noHtml(no, caminho) + filhos + '</li>';
+}
+
+function render() {
+  document.getElementById("tree").innerHTML = '<ul>' + ramoHtml(arvore, []) + '</ul>';
+  const c = contar(arvore);
+  document.getElementById("rv-cont").textContent =
+    c.total + " nós · " + c.aberto + " abertos · " + c.hipotese + " hipóteses · " + c.confirmado + " confirmados";
+}
+
+function contar(no, acc) {
+  acc = acc || { total: 0, aberto: 0, hipotese: 0, confirmado: 0 };
+  acc.total++;
+  acc[no.s || "aberto"]++;
+  (no.c || []).forEach(f => contar(f, acc));
+  return acc;
+}
+
+function novo() { return { t: "", s: "aberto", n: "", q: "", c: [] }; }
+
+// ---------- edição ----------
+const tree = document.getElementById("tree");
+
+tree.addEventListener("input", e => {
+  const campo = e.target.dataset.campo;
+  if (!campo) return;
+  const cam = e.target.closest(".nd").dataset.p;
+  const no = achar(cam === "" ? [] : cam.split(",").map(Number));
+  no[campo] = e.target.textContent;
+  salvarDepois();
+});
+
+tree.addEventListener("click", e => {
+  const b = e.target.closest("[data-op]");
+  if (!b) return;
+  const nd = b.closest(".nd");
+  const cam = nd.dataset.p === "" ? [] : nd.dataset.p.split(",").map(Number);
+  const no = achar(cam);
+  const op = b.dataset.op;
+
+  if (op === "status") {
+    no.s = ORDEM[(ORDEM.indexOf(no.s || "aberto") + 1) % ORDEM.length];
+  } else if (op === "col") {
+    no.col = !no.col;
+  } else if (op === "filho") {
+    no.c = no.c || []; no.c.push(novo()); no.col = false;
+  } else if (op === "irmao") {
+    const p = pai(cam), i = cam[cam.length - 1];
+    p.c.splice(i + 1, 0, novo());
+  } else if (op === "sobe" || op === "desce") {
+    const p = pai(cam), i = cam[cam.length - 1];
+    const j = op === "sobe" ? i - 1 : i + 1;
+    if (j < 0 || j >= p.c.length) return;
+    p.c.splice(j, 0, p.c.splice(i, 1)[0]);
+  } else if (op === "del") {
+    const quantos = contar(no).total;
+    const aviso = quantos > 1
+      ? "Remover este nó e os " + (quantos - 1) + " abaixo dele?"
+      : "Remover este nó?";
+    if (!confirm(aviso)) return;
+    const p = pai(cam);
+    p.c.splice(cam[cam.length - 1], 1);
+  } else {
+    return;
+  }
+  salvar();
+  render();
+});
+
+// ---------- exportação ----------
+function md(no, nivel) {
+  const ind = "  ".repeat(nivel);
+  const marca = no.s === "confirmado" ? "" : (no.s === "hipotese" ? " `[E]`" : " `[aberto]`");
+  let s = ind + "- **" + (no.t || "sem nome") + "**" + marca +
+          (no.q ? " `" + no.q + "`" : "") + "\n";
+  if (no.n) s += ind + "  " + no.n + "\n";
+  (no.c || []).forEach(f => { s += md(f, nivel + 1); });
+  return s;
+}
+
+function exportarMd() {
+  const c = contar(arvore);
+  return "# Árvore de produção de receita — Grupo OLX\n\n" +
+    "> **v0, não confirmada.** " + c.confirmado + " nós confirmados, " + c.hipotese +
+    " hipóteses e " + c.aberto + " abertos, de " + c.total + ".\n" +
+    "> Cada nó não confirmado aponta a pergunta do bloco 3B do kick-off que o fecha.\n" +
+    "> Hipótese é marcada `[E]` conforme a regra 2 do repositório.\n\n" +
+    md(arvore, 0) +
+    "\n---\n\nFonte: `portal/receita`. Exportado do mapa editável do portal.\n";
+}
+
+const dlg = document.getElementById("dlg");
+const dlgTxt = document.getElementById("dlg-txt");
+const toast = document.getElementById("toast");
+function aviso(t) {
+  toast.textContent = t; toast.classList.add("on");
+  setTimeout(() => toast.classList.remove("on"), 2200);
+}
+function abrir(titulo, texto) {
+  document.getElementById("dlg-tit").textContent = titulo;
+  dlgTxt.value = texto;
+  dlg.showModal();
+}
+document.getElementById("rv-md").onclick = () => abrir("Markdown para 03-estrategia/", exportarMd());
+document.getElementById("rv-json").onclick = () =>
+  abrir("JSON para dados/outputs/", JSON.stringify({ arvore: arvore }, null, 2));
+document.getElementById("dlg-close").onclick = () => dlg.close();
+document.getElementById("dlg-copy").onclick = async () => {
+  try { await navigator.clipboard.writeText(dlgTxt.value); aviso("Copiado."); }
+  catch (e) { dlgTxt.select(); aviso("Selecionado: use Cmd+C."); }
+};
+
+document.getElementById("rv-reset").onclick = () => {
+  if (!confirm("Descartar as edições e voltar à semente inicial?")) return;
+  arvore = JSON.parse(JSON.stringify(SEED));
+  salvar(); render(); aviso("Semente restaurada.");
+};
+
+document.getElementById("rv-expand").onclick = function () {
+  let algumRecolhido = false;
+  (function varre(no) {
+    if (no.col) algumRecolhido = true;
+    (no.c || []).forEach(varre);
+  })(arvore);
+  (function aplica(no) {
+    if (no.c && no.c.length) no.col = !algumRecolhido;
+    (no.c || []).forEach(aplica);
+  })(arvore);
+  this.textContent = algumRecolhido ? "Recolher tudo" : "Expandir tudo";
+  salvar(); render();
+};
+
+// ---------- viewport: pan e zoom ----------
+// Transform no palco, nao zoom nem scroll: assim o zoom pode ancorar no ponteiro
+// e o arrasto nao briga com a rolagem da pagina.
+const CHAVE_V = "dre-arvore-receita-view";
+const canvas = document.getElementById("canvas");
+const stage  = document.getElementById("stage");
+const pct    = document.getElementById("cv-pct");
+const MIN = 0.2, MAX = 2;
+
+let k = 1, tx = 0, ty = 0;
+
+function aplica() {
+  stage.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + k + ")";
+  pct.textContent = Math.round(k * 100) + "%";
+}
+function guarda() {
+  try { localStorage.setItem(CHAVE_V, JSON.stringify({ k: k, tx: tx, ty: ty })); } catch (e) {}
+}
+function limita(v) { return Math.min(MAX, Math.max(MIN, v)); }
+
+// zoom ancorado num ponto do viewport: o ponto sob o cursor nao se move
+function zoomEm(px, py, fator) {
+  const novo = limita(k * fator);
+  if (novo === k) return;
+  tx = px - (px - tx) * (novo / k);
+  ty = py - (py - ty) * (novo / k);
+  k = novo;
+  aplica(); guarda();
+}
+function zoomCentro(fator) {
+  zoomEm(canvas.clientWidth / 2, canvas.clientHeight / 2, fator);
+}
+
+function ajustar() {
+  const anterior = stage.style.transform;
+  stage.style.transform = "none";
+  const w = stage.offsetWidth, h = stage.offsetHeight;
+  stage.style.transform = anterior;
+  if (!w || !h) return;
+  const margem = 24;
+  k = limita(Math.min((canvas.clientWidth - margem) / w, (canvas.clientHeight - margem) / h, 1));
+  tx = (canvas.clientWidth - w * k) / 2;
+  ty = (canvas.clientHeight - h * k) / 2;
+  aplica(); guarda();
+}
+
+// rolagem: com Ctrl ou Command da zoom, sem eles move o palco
+canvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  const r = canvas.getBoundingClientRect();
+  if (e.ctrlKey || e.metaKey) {
+    zoomEm(e.clientX - r.left, e.clientY - r.top, Math.exp(-e.deltaY * 0.01));
+  } else {
+    tx -= e.deltaX; ty -= e.deltaY;
+    aplica(); guarda();
+  }
+}, { passive: false });
+
+// arrasto: so no vazio do canvas, nunca em cima de um no em edicao
+let arrastando = false, ax = 0, ay = 0;
+canvas.addEventListener("pointerdown", e => {
+  if (e.button !== 0 && e.button !== 1) return;
+  if (e.target.closest(".nd") || e.target.closest(".hud")) return;
+  arrastando = true; ax = e.clientX - tx; ay = e.clientY - ty;
+  canvas.classList.add("is-pan");
+  canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener("pointermove", e => {
+  if (!arrastando) return;
+  tx = e.clientX - ax; ty = e.clientY - ay;
+  aplica();
+});
+function soltar() {
+  if (!arrastando) return;
+  arrastando = false; canvas.classList.remove("is-pan"); guarda();
+}
+canvas.addEventListener("pointerup", soltar);
+canvas.addEventListener("pointercancel", soltar);
+
+document.getElementById("cv-menos").onclick = () => zoomCentro(1 / 1.2);
+document.getElementById("cv-mais").onclick  = () => zoomCentro(1.2);
+document.getElementById("cv-fit").onclick   = ajustar;
+document.getElementById("cv-um").onclick    = () => { zoomCentro(1 / k); };
+
+render();
+(function () {
+  let salvo = null;
+  try { salvo = JSON.parse(localStorage.getItem(CHAVE_V)); } catch (e) {}
+  if (salvo && typeof salvo.k === "number") {
+    k = limita(salvo.k); tx = salvo.tx || 0; ty = salvo.ty || 0; aplica();
+  } else {
+    ajustar();
+  }
+})();
+</script>
