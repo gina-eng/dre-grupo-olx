@@ -1,5 +1,18 @@
 <!--@ painel | Portal DR-E Grupo OLX | | Painel do projeto Destrava Receita Estratégico do Grupo OLX. | -->
 <style>
+/* O painel é vermelho nos dois temas. Sem isto, o color-scheme:light do base.css
+   (correto nas páginas internas) pinta a barra de rolagem de branco — uma faixa
+   clara colada na borda direita da página vermelha. Vale também para o repique de
+   overscroll do macOS, que mostra o fundo do body. */
+:root{color-scheme:dark}
+body{background:#5c0009}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:rgba(70,0,7,.6)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.28);border-radius:99px;
+  border:3px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.42);background-clip:content-box}
+:root{scrollbar-color:rgba(255,255,255,.3) rgba(70,0,7,.6);scrollbar-width:thin}
+
 .red-page{position:relative;color:#fff;min-height:100vh}
 .red-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
   background:
