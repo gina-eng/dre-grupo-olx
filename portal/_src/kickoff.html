@@ -1,7 +1,25 @@
-<!--@ kickoff | Kick-off · Portal DR-E Grupo OLX | Formulário de Kick-off | 88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno — instrumento de condução da sessão. | 24 ago 2026 · 2h -->
+<!--@ kickoff | Kick-off · Portal DR-E Grupo OLX | Formulário de Kick-off | 88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno: instrumento de condução da sessão. | 24 ago 2026 · 2h -->
 <style>
 .bar{top:3.5rem}
 /* ---------- formulário ---------- */
+/* ---------- pendências de acesso (lista editável) ---------- */
+.pa-top{display:flex;gap:.75rem;align-items:center;flex-wrap:wrap;margin-top:1.1rem}
+.pa-top .btn{margin-left:auto}
+.pa-tab{width:100%}
+.pa-tab td{vertical-align:middle}
+.pa-tab input[type=text]{border-color:transparent;background:transparent;padding:.35rem .4rem}
+.pa-tab input[type=text]:hover{border-color:var(--input);background:var(--bg)}
+.pa-tab input[type=text]:focus{border-color:var(--brand);background:var(--bg)}
+.pa-st{font:inherit;font-size:.78rem;font-family:var(--mono);border:1px solid var(--input);
+  background:var(--bg);color:var(--fg);border-radius:99px;padding:.2rem .5rem;cursor:pointer}
+.pa-st[data-v="ok"]{background:var(--ok-bg);color:var(--ok);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+.pa-st[data-v="andamento"]{background:var(--warn-bg);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 35%,transparent)}
+.pa-st[data-v="bloqueado"]{background:var(--accent);color:var(--brand-ink);border-color:color-mix(in srgb,var(--brand) 35%,transparent)}
+.pa-del{border:0;background:transparent;color:var(--muted-fg);cursor:pointer;font-size:1rem;
+  line-height:1;padding:.3rem .45rem;border-radius:.35rem}
+.pa-del:hover{background:var(--accent);color:var(--brand-ink)}
+.pa-resumo{font-family:var(--mono);font-size:.75rem;color:var(--muted-fg)}
+
 .intro{max-width:76rem;margin:0 auto;padding:1.75rem 1.25rem 0}
 .intro-card{padding:1.5rem 1.6rem;display:grid;gap:1rem;grid-template-columns:1fr}
 @media(min-width:820px){.intro-card{grid-template-columns:1.4fr 1fr;gap:2.5rem}}
@@ -84,11 +102,11 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
   <div class="card intro-card">
     <div>
       <p class="eyebrow" style="margin-bottom:.5rem">Como usar</p>
-      <p>Preencha durante a sessão. As respostas ficam salvas neste navegador automaticamente —
+      <p>Preencha durante a sessão. As respostas ficam salvas neste navegador automaticamente,
         ninguém mais as vê. Ao final, <b>Exportar ata</b> gera o Markdown pronto para colar em
         <span style="font-family:var(--mono);font-size:.85em">06-reunioes/</span> no repositório e para
         alimentar a skill <span style="font-family:var(--mono);font-size:.85em">/dre-onboarding</span>.</p>
-      <p style="margin-top:.7rem">Pergunta sem resposta não é falha da sessão — é pendência com dono e
+      <p style="margin-top:.7rem">Pergunta sem resposta não é falha da sessão, é pendência com dono e
         prazo. O que não fechar aqui vira linha em <span style="font-family:var(--mono);font-size:.85em">PENDENCIAS.md</span>.</p>
     </div>
     <div class="legend">
@@ -103,6 +121,33 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
 <main class="wrap"><div class="page">
   <nav class="chips" id="chips" aria-label="Blocos"></nav>
   <div id="blocos"></div>
+
+
+  <section class="bloco" id="b-acessos">
+    <div class="bloco-h">
+      <span class="idx">A+</span>
+      <h2>Pendências de acesso</h2>
+      <span class="eyebrow">editável, salva neste navegador</span>
+    </div>
+    <p class="bloco-d">A lista nasce com os acessos que já sabemos estar pendentes. Durante a sessão,
+      edite qualquer campo, mude o status no botão, acrescente o que aparecer e remova o que não fizer
+      sentido. Tudo entra na ata exportada.</p>
+    <div class="pa-top">
+      <span class="pa-resumo" id="pa-resumo"></span>
+      <button class="btn" id="pa-reset" type="button">Restaurar lista inicial</button>
+      <button class="btn btn-primary" id="pa-add" type="button">+ Adicionar acesso</button>
+    </div>
+    <div class="card scrollx" style="margin-top:.8rem">
+      <table class="pa-tab">
+        <thead><tr>
+          <th style="width:16rem">Acesso ou plataforma</th><th style="width:9rem">Frente</th>
+          <th style="width:11rem">Responsável (OLX)</th><th style="width:7rem">Prazo</th>
+          <th style="width:8rem">Status</th><th style="width:2.5rem"></th>
+        </tr></thead>
+        <tbody id="pa-body"></tbody>
+      </table>
+    </div>
+  </section>
 
   <section class="bloco" id="b-dados">
     <div class="bloco-h">
@@ -146,6 +191,12 @@ let total = 0;
 const chips = document.getElementById("chips");
 const host  = document.getElementById("blocos");
 
+[{n:"A+", t:"Pendências de acesso", id:"b-acessos"}].forEach(function (x) {
+  const a = document.createElement("a");
+  a.className = "chip"; a.href = "#" + x.id;
+  a.innerHTML = "<b>" + x.n + "</b>" + x.t;
+  chips.appendChild(a);
+});
 BLOCOS.forEach(b => {
   const a = document.createElement("a");
   a.className = "chip"; a.href = "#b" + b.n;
@@ -173,6 +224,94 @@ BLOCOS.forEach(b => {
   host.appendChild(sec);
 });
 
+
+// ---------- Pendências de acesso: lista editável, persistida com o resto do formulário ----------
+var PA_KEY = "dre-olx-acessos-v1";
+var PA_INICIAL = [
+  {o:"Conta @olxbr.com para Rafael Corazza",           f:"Data room",   r:"Michelle Morais", p:"", s:"andamento"},
+  {o:"Conta @olxbr.com para Anselmo Bueno",            f:"Data room",   r:"Michelle Morais", p:"", s:"andamento"},
+  {o:"Conta @olxbr.com para Guilherme Monteiro",       f:"Data room",   r:"Michelle Morais", p:"", s:"andamento"},
+  {o:"Google Ads (contas B2B)",                        f:"Mídia paga",  r:"", p:"", s:"bloqueado"},
+  {o:"Meta Ads (Business Manager)",                    f:"Mídia paga",  r:"", p:"", s:"bloqueado"},
+  {o:"GA4 (propriedades dos domínios B2B)",            f:"Rastreamento",r:"", p:"", s:"bloqueado"},
+  {o:"Google Tag Manager",                             f:"Rastreamento",r:"", p:"", s:"bloqueado"},
+  {o:"Google Search Console",                          f:"CRO e SEO",   r:"", p:"", s:"bloqueado"},
+  {o:"Salesforce Marketing Cloud",                     f:"CRM",         r:"", p:"", s:"bloqueado"},
+  {o:"CRM de vendas (pipeline e motivos de perda)",    f:"Pré-vendas",  r:"", p:"", s:"bloqueado"},
+  {o:"Plataforma de sales engagement e telefonia",     f:"Pré-vendas",  r:"", p:"", s:"bloqueado"},
+  {o:"CMS dos domínios B2B",                           f:"CRO e SEO",   r:"", p:"", s:"bloqueado"},
+  {o:"Workspace V4MOS (ingestão das contas de mídia)", f:"Dados",       r:"", p:"", s:"bloqueado"}
+];
+var PA_ST = ["bloqueado", "andamento", "ok"];
+var PA_ROT = {bloqueado:"bloqueado", andamento:"em andamento", ok:"liberado"};
+
+var paLista;
+try { paLista = JSON.parse(localStorage.getItem(PA_KEY)); } catch (e) { paLista = null; }
+if (!Array.isArray(paLista)) paLista = PA_INICIAL.map(function (x) { return Object.assign({}, x); });
+function paSalva() { try { localStorage.setItem(PA_KEY, JSON.stringify(paLista)); } catch (e) {} }
+
+var paBody = document.getElementById("pa-body");
+function paRender() {
+  paBody.innerHTML = "";
+  paLista.forEach(function (it, i) {
+    var tr = document.createElement("tr");
+    function campo(chave, ph, largura) {
+      var td = document.createElement("td");
+      var inp = document.createElement("input");
+      inp.type = "text"; inp.value = it[chave] || ""; inp.placeholder = ph;
+      inp.setAttribute("aria-label", ph + " da linha " + (i + 1));
+      inp.addEventListener("input", function () { paLista[i][chave] = inp.value; paSalva(); paResumo(); });
+      td.appendChild(inp); if (largura) td.style.width = largura;
+      return td;
+    }
+    tr.appendChild(campo("o", "Acesso ou plataforma"));
+    tr.appendChild(campo("f", "Frente"));
+    tr.appendChild(campo("r", "Responsável"));
+    tr.appendChild(campo("p", "dd/mm"));
+
+    var tds = document.createElement("td");
+    var bs = document.createElement("button");
+    bs.type = "button"; bs.className = "pa-st";
+    bs.dataset.v = it.s || "bloqueado";
+    bs.textContent = PA_ROT[bs.dataset.v];
+    bs.setAttribute("aria-label", "Status da linha " + (i + 1) + ": " + PA_ROT[bs.dataset.v] + ". Clique para alternar.");
+    bs.addEventListener("click", function () {
+      var k = (PA_ST.indexOf(paLista[i].s) + 1) % PA_ST.length;
+      paLista[i].s = PA_ST[k]; paSalva(); paRender();
+    });
+    tds.appendChild(bs); tr.appendChild(tds);
+
+    var tdx = document.createElement("td");
+    var bx = document.createElement("button");
+    bx.type = "button"; bx.className = "pa-del"; bx.textContent = "\u00d7";
+    bx.setAttribute("aria-label", "Remover a linha " + (i + 1));
+    bx.addEventListener("click", function () {
+      paLista.splice(i, 1); paSalva(); paRender();
+    });
+    tdx.appendChild(bx); tr.appendChild(tdx);
+    paBody.appendChild(tr);
+  });
+  paResumo();
+}
+function paResumo() {
+  var c = {bloqueado:0, andamento:0, ok:0};
+  paLista.forEach(function (x) { c[x.s] = (c[x.s] || 0) + 1; });
+  document.getElementById("pa-resumo").textContent =
+    paLista.length + " acessos · " + c.ok + " liberados · " + c.andamento + " em andamento · " + c.bloqueado + " bloqueados";
+}
+document.getElementById("pa-add").onclick = function () {
+  paLista.push({o:"", f:"", r:"", p:"", s:"bloqueado"});
+  paSalva(); paRender();
+  var ins = paBody.querySelectorAll("tr:last-child input");
+  if (ins.length) ins[0].focus();
+};
+document.getElementById("pa-reset").onclick = function () {
+  if (!confirm("Restaurar a lista inicial? O que você editou nesta tabela será perdido.")) return;
+  paLista = PA_INICIAL.map(function (x) { return Object.assign({}, x); });
+  paSalva(); paRender(); say("Lista de acessos restaurada.");
+};
+paRender();
+
 const dbody = document.getElementById("dados-body");
 BLOCOS_DADOS.forEach(d => {
   const tr = document.createElement("tr");
@@ -181,8 +320,8 @@ BLOCOS_DADOS.forEach(d => {
     "<td><strong>" + esc(d.nome) + "</strong></td>" +
     '<td style="color:var(--muted-fg)">' + esc(d.itens) + "</td>" +
     '<td style="color:var(--muted-fg);font-size:.8rem">' + esc(d.alim) + "</td>" +
-    '<td><input type="text" data-id="D-' + d.id + '-dri" aria-label="Responsável pelo bloco ' + d.id + ' — ' + esc(d.nome) + '" value="' + esc(state["D-" + d.id + "-dri"] || "") + '" placeholder="nome"></td>' +
-    '<td><input type="text" data-id="D-' + d.id + '-prazo" aria-label="Prazo do bloco ' + d.id + ' — ' + esc(d.nome) + '" value="' + esc(state["D-" + d.id + "-prazo"] || "") + '" placeholder="dd/mm"></td>';
+    '<td><input type="text" data-id="D-' + d.id + '-dri" aria-label="Responsável pelo bloco ' + d.id + ': ' + esc(d.nome) + '" value="' + esc(state["D-" + d.id + "-dri"] || "") + '" placeholder="nome"></td>' +
+    '<td><input type="text" data-id="D-' + d.id + '-prazo" aria-label="Prazo do bloco ' + d.id + ': ' + esc(d.nome) + '" value="' + esc(state["D-" + d.id + "-prazo"] || "") + '" placeholder="dd/mm"></td>';
   dbody.appendChild(tr);
 });
 
@@ -213,19 +352,25 @@ function say(m){
 }
 
 function markdown(){
-  const L = ["# Ata — Kick-off DR-E · Grupo OLX", "", "> Gerado pelo formulário de kick-off. Revisar antes de circular.", ""];
+  const L = ["# Ata: Kick-off DR-E · Grupo OLX", "", "> Gerado pelo formulário de kick-off. Revisar antes de circular.", ""];
   BLOCOS.forEach(b => {
     L.push("## " + b.n + ". " + b.t, "");
     b.qs.forEach((q, i) => {
       const v = (state[b.n + "-" + i] || "").trim();
-      L.push("**" + q.q + "**  ", "_alimenta: " + q.f + "_", "", v || "> ⚠️ Não respondido — abrir pendência com dono e prazo.", "");
+      L.push("**" + q.q + "**  ", "_alimenta: " + q.f + "_", "", v || "> ⚠️ Não respondido: abrir pendência com dono e prazo.", "");
     });
   });
+  L.push("## Pendências de acesso", "", "| Acesso | Frente | Responsável | Prazo | Status |", "|---|---|---|---|---|");
+  paLista.forEach(function (a) {
+    L.push("| " + (a.o || "").replace(/\|/g, "/") + " | " + (a.f || "") + " | " + (a.r || "") +
+           " | " + (a.p || "") + " | " + (PA_ROT[a.s] || a.s) + " |");
+  });
+  L.push("");
   L.push("## Checklist de dados e acessos", "", "| # | Bloco | Responsável | Prazo |", "|---|---|---|---|");
   BLOCOS_DADOS.forEach(d => {
     L.push("| " + d.id + (d.prio ? " (P0)" : "") + " | " + d.nome + " | " +
-      ((state["D-" + d.id + "-dri"] || "").trim() || "—") + " | " +
-      ((state["D-" + d.id + "-prazo"] || "").trim() || "—") + " |");
+      ((state["D-" + d.id + "-dri"] || "").trim() || "") + " | " +
+      ((state["D-" + d.id + "-prazo"] || "").trim() || "") + " |");
   });
   return L.join("\n");
 }
@@ -239,7 +384,7 @@ document.getElementById("dlg-close").onclick = () => dlg.close();
 document.getElementById("dlg-copy").onclick = async () => {
   const t = document.getElementById("dlg-txt");
   try { await navigator.clipboard.writeText(t.value); say("Ata copiada."); }
-  catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado — use Cmd+C."); }
+  catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado: use Cmd+C."); }
 };
 document.getElementById("btn-clear").onclick = () => {
   if (!confirm("Apagar todas as respostas deste navegador? Não dá para desfazer.")) return;

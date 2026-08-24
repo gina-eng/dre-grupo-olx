@@ -1,7 +1,7 @@
 <!--@ painel | Portal DR-E Grupo OLX | | Painel do projeto Destrava Receita Estratégico do Grupo OLX. | -->
 <style>
 /* O painel é vermelho nos dois temas. Sem isto, o color-scheme:light do base.css
-   (correto nas páginas internas) pinta a barra de rolagem de branco — uma faixa
+   (correto nas páginas internas) pinta a barra de rolagem de branco, uma faixa
    clara colada na borda direita da página vermelha. Vale também para o repique de
    overscroll do macOS, que mostra o fundo do body. */
 :root{color-scheme:dark}
@@ -62,7 +62,7 @@ body{background:#5c0009}
 .door .st-pill.warn{background:rgba(255,236,150,.22);border-color:rgba(255,236,150,.45)}
 
 
-/* O rodapé é irmão de .red-page, mas o .red-bg é fixed e cobre a viewport inteira —
+/* O rodapé é irmão de .red-page, mas o .red-bg é fixed e cobre a viewport inteira,
    então ele também cai sobre o vermelho e precisa de cor própria. */
 /* Fundo próprio: o .red-bg é fixed e os blocos decorativos passam por baixo do rodapé,
    clareando o vermelho. Opaco aqui remove a dependência do que estiver atrás. */
@@ -83,9 +83,9 @@ body > footer strong{color:#fff}
       kick-off, o calendário dos quatro ciclos e o catálogo de métricas que sustenta o diagnóstico.</p>
 
     <div class="status">
-      <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel">—</span></div>
+      <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel"></span></div>
       <div class="st"><span class="k">Ciclo</span><b class="v">1 de 4</b><span class="n" id="sem">Fase Identificar</span></div>
-      <div class="st"><span class="k">Próximo comitê</span><b class="v">17 set 2026</b><span class="n" id="com-rel">Comitê 1 — data proposta, a fechar hoje</span></div>
+      <div class="st"><span class="k">Próximo comitê</span><b class="v">17 set 2026</b><span class="n" id="com-rel">Comitê 1: data proposta, a fechar hoje</span></div>
       <div class="st"><span class="k">Encerramento</span><b class="v">24 ago 2027</b><span class="n">12 comitês contratados</span></div>
     </div>
   </section>
@@ -96,7 +96,7 @@ body > footer strong{color:#fff}
       <h2>Kick-off</h2>
       <p>88 perguntas em 11 blocos e o checklist dos dez blocos de dados, cada linha com responsável e
         prazo. Exporta a ata pronta ao final.</p>
-      <span class="foot"><span class="go">Abrir →</span><span class="st-pill" id="kf-prog">—</span></span>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill" id="kf-prog"></span></span>
     </a>
     <a class="door" href="/cronograma">
       <span class="k">Material de cliente</span>
@@ -159,7 +159,7 @@ body > footer strong{color:#fff}
 </script>
 
 <script>
-// Blocos de vidro em deriva: mesma composição do portal de referência —
+// Blocos de vidro em deriva: mesma composição do portal de referência,
 // oscilação senoidal contínua somada a uma paralaxe que segue o ponteiro com suavização.
 (function () {
   var RECTS = [

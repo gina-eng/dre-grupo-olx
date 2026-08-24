@@ -61,7 +61,7 @@ a{color:var(--brand-ink)}
 .atmos{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 /* Sem saturate(): saturate(170%) levava rgb(200,20,45) a rgb(255,0,34) e derrubava o
    contraste do texto que passa por cima destes blocos para ~2,4:1. Alphas reduzidos
-   pelo mesmo motivo — o efeito de vidro continua, sem clarear o vermelho. */
+   pelo mesmo motivo: o efeito de vidro continua, sem clarear o vermelho. */
 .liquid-rect{position:absolute;border-radius:.75rem;
   background:linear-gradient(140deg, rgba(255,225,190,.09), rgba(255,205,160,.02)),
              linear-gradient(200deg, rgba(255,160,90,.05), rgba(255,255,255,.01));

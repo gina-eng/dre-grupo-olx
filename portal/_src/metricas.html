@@ -93,14 +93,14 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
 
 <div class="stats">
   <div class="stat"><b id="s-tot">78</b><span>métricas catalogadas</span></div>
-  <div class="stat"><b id="s-p0">51</b><span>P0 — bloqueiam o Comitê 1</span></div>
-  <div class="stat"><b id="s-p1">24</b><span>P1 — sustentam sob escrutínio</span></div>
-  <div class="stat"><b id="s-p2">3</b><span>P2 — desejáveis</span></div>
+  <div class="stat"><b id="s-p0">51</b><span>P0: bloqueiam o Comitê 1</span></div>
+  <div class="stat"><b id="s-p1">24</b><span>P1: sustentam sob escrutínio</span></div>
+  <div class="stat"><b id="s-p2">3</b><span>P2: desejáveis</span></div>
 </div>
 
 <section class="blk" style="margin-top:3rem">
   <div class="blk-h"><h2>Convenções</h2><span class="eyebrow">ler antes de preencher</span></div>
-  <p class="lead">O dicionário é organizado de baixo para cima no funil — da métrica mais perto do
+  <p class="lead">O dicionário é organizado de baixo para cima no funil, da métrica mais perto do
     dinheiro para a mais distante. Essa ordem não é estética: é a ordem de investigação. Uma trava de
     retenção contamina a leitura de tudo que vem antes dela, e resolver exposição com decisão quebrada
     só aumenta o custo do desperdício.</p>
@@ -111,7 +111,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
     <span>+ Unit Economics (transversal)</span>
   </div>
   <p style="margin-top:.6rem;font-size:.82rem;color:var(--muted-fg)">Destacadas, as três camadas mais
-    próximas da receita — por onde a investigação começa. Em material que chega ao cliente, a trava é
+    próximas da receita: por onde a investigação começa. Em material que chega ao cliente, a trava é
     sempre citada pelo nome, nunca pelo número.</p>
 
   <div class="conv">
@@ -126,9 +126,9 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
     <div class="card cbox">
       <h3>Granularidade e histórico</h3>
       <dl>
-        <dt>U</dt><dd>Unidade de negócio — Imóveis (ZAP+, VivaReal, OLX Imóveis) e Autos</dd>
-        <dt>S</dt><dd>Segmento de cliente — imobiliária, corretor, incorporadora, revenda, concessionária</dd>
-        <dt>C</dt><dd>Canal — Google, Meta, orgânico, direto, CRM, outbound</dd>
+        <dt>U</dt><dd>Unidade de negócio: Imóveis (ZAP+, VivaReal, OLX Imóveis) e Autos</dd>
+        <dt>S</dt><dd>Segmento de cliente: imobiliária, corretor, incorporadora, revenda, concessionária</dd>
+        <dt>C</dt><dd>Canal: Google, Meta, orgânico, direto, CRM, outbound</dd>
         <dt>M</dt><dd>Mês fechado</dd>
         <dt>Série</dt><dd>Mínimo 12 meses · ideal 24 · diagnóstico robusto 36</dd>
       </dl>
@@ -146,10 +146,10 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
   </div>
 
   <div class="card warnbox">
-    <h3>Esta é a versão 0 — validar no kick-off</h3>
+    <h3>Esta é a versão 0: validar no kick-off</h3>
     <p>O catálogo foi construído sobre a leitura de que a receita B2B do Grupo OLX vem de plano ou
       assinatura de anunciante, com motion sales-led. Essa leitura ainda não foi confirmada pela OLX.
-      Se o modelo de receita for outro — take rate por transação, lead avulso, mídia — as camadas de
+      Se o modelo de receita for outro, take rate por transação, lead avulso, mídia, as camadas de
       Decisão e Retenção mudam de forma relevante. As perguntas que confirmam isso estão no bloco 03
       do formulário de kick-off, e a versão 1 deste dicionário sai da mesma reunião.</p>
   </div>
@@ -198,7 +198,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
 
 <section class="blk">
   <div class="blk-h"><h2>Como entregar os dados</h2><span class="eyebrow">formato de recebimento</span></div>
-  <p class="lead">Um arquivo por unidade de negócio, em formato longo — uma linha por combinação de
+  <p class="lead">Um arquivo por unidade de negócio, em formato longo, uma linha por combinação de
     métrica, recorte e mês. Formato longo evita a planilha de 200 colunas que ninguém consegue
     validar, e permite conferir a série mês a mês contra o faturamento declarado.</p>
   <div class="card tpl">
@@ -218,8 +218,8 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
       </tbody>
     </table></div>
     <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.9rem">Três regras que economizam uma
-      rodada inteira de retrabalho: <b>célula sem dado fica vazia</b>, nunca zero — zero é um valor, e
-      distorce média e tendência. <b>Toda quebra de série vai em <code>observacao</code></b> — troca de
+      rodada inteira de retrabalho: <b>célula sem dado fica vazia</b>, nunca zero: zero é um valor, e
+      distorce média e tendência. <b>Toda quebra de série vai em <code>observacao</code></b>: troca de
       sistema, mudança de definição, fusão de base. E <b>número estimado vem marcado</b>, para não
       entrar no forecast como se fosse medido.</p>
   </div>
@@ -350,15 +350,15 @@ function buildCsv(){
 document.getElementById("csv").onclick = () => {
   const n = visible().length;
   document.getElementById("dlg-sub").textContent =
-    n === M.length ? "As 78 métricas." : n + " métricas — o recorte filtrado.";
+    n === M.length ? "As 78 métricas." : n + " métricas: o recorte filtrado.";
   document.getElementById("dlg-txt").value = buildCsv();
   dlg.showModal();
 };
 document.getElementById("dlg-close").onclick = () => dlg.close();
 document.getElementById("dlg-copy").onclick = async () => {
   const t = document.getElementById("dlg-txt");
-  try { await navigator.clipboard.writeText(t.value); say("CSV copiado — cole numa planilha."); }
-  catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado — use Cmd+C."); }
+  try { await navigator.clipboard.writeText(t.value); say("CSV copiado: cole numa planilha."); }
+  catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado: use Cmd+C."); }
 };
 
 

@@ -1,5 +1,5 @@
 // Portão de senha do portal. Roda no edge da Vercel, antes de qualquer arquivo estático.
-// A senha vive na variável de ambiente PORTAL_SENHA do projeto — nunca no repositório.
+// A senha vive na variável de ambiente PORTAL_SENHA do projeto, nunca no repositório.
 export const config = {
   matcher: '/((?!_vercel|favicon\\.ico).*)',
 }

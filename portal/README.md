@@ -1,10 +1,10 @@
-# Portal DR-E — Grupo OLX
+# Portal DR-E: Grupo OLX
 
 Sistema único com os três módulos do projeto. Site estático, sem build step.
 
 ```
 portal/
-├── index.html          Painel — status do ciclo, portas e pendências
+├── index.html          Painel: status do ciclo, portas e pendências
 ├── kickoff/            Formulário de kick-off (interno)
 ├── cronograma/         Cronograma de 12 meses (cliente)
 ├── metricas/           Dicionário de métricas (cliente)
@@ -16,7 +16,7 @@ portal/
 
 ## Editar
 
-Nunca edite os `index.html` gerados — eles são sobrescritos. Edite o fragmento
+Nunca edite os `index.html` gerados: eles são sobrescritos. Edite o fragmento
 correspondente em `_src/` e rode:
 
 ```bash
@@ -30,7 +30,7 @@ Cada fragmento abre com uma linha de metadados que alimenta o `<head>` e a faixa
 ```
 
 O conteúdo do formulário vive em `assets/form-data.js`; o das métricas, em `assets/metrics-data.js`.
-Alterar uma pergunta ou uma métrica é editar o array — o HTML se regenera sozinho no navegador.
+Alterar uma pergunta ou uma métrica é editar o array, o HTML se regenera sozinho no navegador.
 
 ## Rodar local
 

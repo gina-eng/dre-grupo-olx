@@ -2,7 +2,7 @@
 
 ## Portal (canônico)
 
-**<https://portal-dre-grupo-olx.vercel.app>** — protegido por senha.
+**<https://portal-dre-grupo-olx.vercel.app>**: protegido por senha.
 
 | | |
 |---|---|
@@ -18,7 +18,7 @@ Duas camadas, verificadas ponta a ponta:
   Só a conta dona abre. Um link de build vazado não serve para nada.
 
 Password protection nativa da Vercel exigiria o add-on *Advanced Deployment Protection*, que não está
-habilitado nem no escopo pessoal nem no time V4 Company — daí o middleware.
+habilitado nem no escopo pessoal nem no time V4 Company, daí o middleware.
 
 ### Trocar a senha
 
@@ -42,7 +42,7 @@ vercel deploy --prod
 ## Versões em artifact (sem senha)
 
 Publicadas antes do portal. Continuam válidas e são a saída para quando não dá para pedir que alguém
-digite senha. Nascem privadas — compartilhar exige ação explícita no menu de cada página.
+digite senha. Nascem privadas: compartilhar exige ação explícita no menu de cada página.
 
 | Material | Link |
 |---|---|
@@ -55,22 +55,22 @@ digite senha. Nascem privadas — compartilhar exige ação explícita no menu d
 
 ## O que cada módulo é
 
-**Painel** — status do ciclo calculado na hora, as três portas e o quadro do que precisa fechar no
+**Painel**: status do ciclo calculado na hora, as três portas e o quadro do que precisa fechar no
 kick-off. A porta do kick-off mostra quantas respostas já existem no navegador de quem está olhando.
 
-**Kick-off** (interno) — 88 perguntas em 11 blocos e o checklist dos dez blocos de dados com
+**Kick-off** (interno): 88 perguntas em 11 blocos e o checklist dos dez blocos de dados com
 responsável e prazo. Cada pergunta declara o que alimenta. Exporta a ata em Markdown para
 `06-reunioes/` e para a skill `/dre-onboarding`.
 
-**Cronograma** (cliente) — 4 ciclos de 12 semanas, 24/ago/26 → 23/jul/27, com 4 semanas de reserva.
+**Cronograma** (cliente): 4 ciclos de 12 semanas, 24/ago/26 → 23/jul/27, com 4 semanas de reserva.
 Fecha duas pendências: **12 comitês** = 3 por ciclo × 4 ciclos, e os **4 presenciais** são o Comitê 2
-de cada ciclo. Datas propostas: 17/set, 08/out e 12/nov/2026. Mapeia os riscos de calendário — o
+de cada ciclo. Datas propostas: 17/set, 08/out e 12/nov/2026. Mapeia os riscos de calendário, o
 Ciclo 1 perde três segundas (07/set, 12/out, 02/nov) e o Ciclo 3 abre no Carnaval de 2027.
 
-**Métricas** (cliente) — 78 métricas, 51 delas P0, organizadas de baixo para cima no funil, no mesmo
+**Métricas** (cliente): 78 métricas, 51 delas P0, organizadas de baixo para cima no funil, no mesmo
 formato do dicionário do Grupo Lupo.
 
 > ⚠️ O dicionário é **v0**. Pressupõe receita B2B por plano ou assinatura de anunciante com motion
-> sales-led — leitura ainda não confirmada pela OLX (`briefing.modelo_receita` segue `null` em
+> sales-led: leitura ainda não confirmada pela OLX (`briefing.modelo_receita` segue `null` em
 > [dados/client.json](../dados/client.json)). As perguntas que confirmam isso estão no bloco 03 do
 > formulário; a v1 sai do próprio kick-off.

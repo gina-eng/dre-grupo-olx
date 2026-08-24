@@ -7,6 +7,7 @@
 <title>Cronograma · Portal DR-E Grupo OLX</title>
 <meta name="description" content="Quatro ciclos de 90 dias, os três comitês de cada ciclo e o Ciclo 1 semana a semana.">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-icon.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
@@ -17,20 +18,76 @@
 <body>
 <header class="topbar">
   <div class="topbar-in">
-    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
-    </button>
-    <a class="brand" href="/" aria-label="Início"><img src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279"></a>
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <a class="brand" href="/" aria-label="Início">
+      <img class="logo-escuro" src="/assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279">
+    </a>
     <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/cronograma" aria-current="page">Cronograma</a><a class="tab" href="/metricas">Métricas</a></nav>
     <span class="spacer"></span>
     <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
   </div>
 </header>
-<nav class="drawer" id="drawer" aria-label="Navegação"><a href="/">Painel</a><a href="/kickoff">Kick-off</a><a href="/cronograma" aria-current="page">Cronograma</a><a href="/metricas">Métricas</a></nav>
+<div class="drawer-bd" id="drawer-bd" hidden></div>
+<nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
+  <div class="drawer-h">
+    <img src="/assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
+    <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="drawer-b">
+    <p class="side-label">Portal</p>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/cronograma" aria-current="page">Cronograma</a><a class="nav-item" href="/metricas">Métricas</a>
+    <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
+    <div id="dtoc"></div>
+  </div>
+</nav>
+
 <div class="crumb"><div class="crumb-in">
   <h1>Cronograma de 12 meses</h1><p class="desc">Quatro ciclos de 90 dias, os três comitês de cada ciclo e o Ciclo 1 semana a semana.</p><span class="meta">24 ago 2026 → 24 ago 2027</span>
 </div></div>
-<style>
+<div class="doc"><div class="doc-main"><style>
+
+/* ---------- Gantt ---------- */
+.gantt-wrap{margin-top:1.5rem;border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--card);box-shadow:var(--shadow-card);overflow:hidden}
+.gantt-scroll{overflow-x:auto}
+.gantt{min-width:46rem;padding:0 0 .25rem}
+.g-head{display:grid;border-bottom:1px solid var(--border);background:var(--muted)}
+.g-head span{padding:.5rem .4rem;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;
+  letter-spacing:.1em;color:var(--muted-fg);text-align:center;border-left:1px solid var(--border)}
+.g-head span:first-child{text-align:left;border-left:0;padding-left:1rem}
+.g-row{display:grid;align-items:center;border-bottom:1px solid var(--border);min-height:2.6rem}
+.g-row:last-child{border-bottom:0}
+.g-lbl{padding:.5rem 1rem;font-size:.84rem;font-weight:500;white-space:nowrap}
+.g-lbl small{display:block;font-weight:400;font-size:.72rem;color:var(--muted-fg);font-family:var(--mono)}
+.g-track{position:relative;height:2.6rem;--col:calc(100% / 12)}
+.g-track::before{content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(to right,var(--border) 0 1px,transparent 1px var(--col))}
+.g-bar{position:absolute;top:50%;transform:translateY(-50%);height:1.4rem;border-radius:99px;
+  display:flex;align-items:center;padding:0 .6rem;font-size:.7rem;font-weight:500;color:#fff;
+  white-space:nowrap;overflow:hidden;box-shadow:0 1px 2px rgba(15,18,22,.12)}
+.g-bar.c1{background:var(--brand)}
+.g-bar.c2{background:color-mix(in srgb,var(--brand) 76%,var(--muted-fg))}
+.g-bar.c3{background:color-mix(in srgb,var(--brand) 54%,var(--muted-fg))}
+.g-bar.c4{background:color-mix(in srgb,var(--brand) 34%,var(--muted-fg))}
+.g-bar.reserva{background:repeating-linear-gradient(45deg,var(--muted) 0 6px,var(--card) 6px 12px);
+  color:var(--muted-fg);border:1px dashed var(--border-strong);box-shadow:none}
+.g-bar.fase{background:color-mix(in srgb,var(--brand) 22%,var(--card));color:var(--brand-ink);
+  border:1px solid color-mix(in srgb,var(--brand) 45%,transparent);box-shadow:none}
+.g-bar.fase.forte{background:color-mix(in srgb,var(--brand) 88%,var(--card));color:#fff;border-color:transparent}
+.g-mark{position:absolute;top:50%;transform:translate(-50%,-50%);width:1.35rem;height:1.35rem;
+  border-radius:50%;background:var(--brand);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-family:var(--mono);font-size:.62rem;font-weight:600;
+  border:2px solid var(--card);box-shadow:0 1px 3px rgba(15,18,22,.25);z-index:2}
+.g-hol{position:absolute;top:0;bottom:0;width:2px;background:color-mix(in srgb,var(--warn) 70%,transparent)}
+.g-hol::after{content:attr(data-l);position:absolute;top:.1rem;left:.25rem;font-family:var(--mono);
+  font-size:.6rem;color:var(--warn);white-space:nowrap}
+.g-legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:.75rem 1rem;border-top:1px solid var(--border);
+  background:var(--muted);font-size:.76rem;color:var(--muted-fg)}
+.g-legend span{display:inline-flex;align-items:center;gap:.4rem}
+.g-legend i{width:.85rem;height:.85rem;border-radius:3px;display:inline-block}
+.g-nota{padding:.7rem 1rem;font-size:.8rem;color:var(--muted-fg);border-top:1px solid var(--border)}
+
 section.blk{margin-top:4rem;scroll-margin-top:2rem}
 .blk-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
 .blk-h h2{font-size:1.45rem;flex:1}
@@ -107,7 +164,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 
 <div class="stats">
   <div class="stat"><b>4</b><span>ciclos de 90 dias</span></div>
-  <div class="stat"><b>12</b><span>comitês — 3 por ciclo</span></div>
+  <div class="stat"><b>12</b><span>comitês: 3 por ciclo</span></div>
   <div class="stat"><b>4</b><span>presenciais no método padrão <em style="font-style:normal;opacity:.7">(a confirmar)</em></span></div>
   <div class="stat"><b>9</b><span>diagnósticos técnicos contratados</span></div>
 </div>
@@ -117,6 +174,17 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   <p class="lead">Cada ciclo é fechado: começa com um diagnóstico completo do sistema de receita e
     termina com uma decisão formal em ata sobre o que foi resolvido e qual é a próxima restrição.
     Nenhum ciclo herda conclusão do anterior sem reexame.</p>
+  <div class="gantt-wrap">
+    <div class="gantt-scroll"><div class="gantt" id="g12" role="group" aria-label="Linha do tempo dos quatro ciclos ao longo de 12 meses"></div></div>
+    <div class="g-legend">
+      <span><i style="background:var(--brand)"></i>Ciclo em execução</span>
+      <span><i style="background:repeating-linear-gradient(45deg,var(--muted) 0 4px,var(--card) 4px 8px);border:1px dashed var(--border-strong)"></i>Reserva</span>
+      <span><i style="border-radius:50%;background:var(--brand)"></i>Comitê</span>
+    </div>
+    <p class="g-nota">Cada ciclo abre com diagnóstico completo e fecha com decisão em ata. Os três comitês
+      de cada um estão marcados na barra. A reserva ao final absorve feriados e remarcações.</p>
+  </div>
+
   <div class="cyc">
     <div class="card cycle c1"><span class="rail"></span>
       <h3>Ciclo 1</h3><p class="dates">24 ago – 13 nov 2026</p>
@@ -128,7 +196,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
         entre continuar otimizando ou expandir.</p></div>
     <div class="card cycle c3"><span class="rail"></span>
       <h3>Ciclo 3</h3><p class="dates">8 fev – 30 abr 2027</p>
-      <p>Segunda restrição em regime. O sistema já mudou de estado — o diagnóstico agora parte de
+      <p>Segunda restrição em regime. O sistema já mudou de estado: o diagnóstico agora parte de
         dados gerados dentro do projeto.</p></div>
     <div class="card cycle c4"><span class="rail"></span>
       <h3>Ciclo 4</h3><p class="dates">3 mai – 23 jul 2027</p>
@@ -141,7 +209,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       <ul>
         <li>É o menor intervalo em que uma mudança estrutural aparece em métrica de receita, e não em métrica de atividade.</li>
         <li>É curto o bastante para que uma hipótese errada custe um trimestre, não um ano.</li>
-        <li>Fecha com decisão formal — o ciclo seguinte nunca começa por interpretação retroativa do anterior.</li>
+        <li>Fecha com decisão formal: o ciclo seguinte nunca começa por interpretação retroativa do anterior.</li>
       </ul>
     </div>
     <div class="card note">
@@ -159,7 +227,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   <div class="blk-h"><h2>A anatomia de um ciclo</h2><span class="eyebrow">5 fases · 12 semanas</span></div>
   <p class="lead">As mesmas cinco fases se repetem em todo ciclo, e a ordem não é negociável: expandir
     antes de esgotar a otimização multiplica custo sem multiplicar receita. Duas delas se sobrepõem de
-    propósito — a otimização começa assim que a primeira evidência aparece, sem esperar o diagnóstico
+    propósito: a otimização começa assim que a primeira evidência aparece, sem esperar o diagnóstico
     fechar.</p>
   <div class="phases">
     <div class="phase"><span class="n">Semanas 1–4</span><h3>Identificar</h3>
@@ -167,7 +235,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
     <div class="phase"><span class="n">Semanas 2–4</span><h3>Otimizar</h3>
       <p>Extrair o máximo da restrição <em>sem novos investimentos</em>. Onde há dinheiro na mesa que ninguém está vendo.</p></div>
     <div class="phase"><span class="n">Semanas 5–7</span><h3>Alinhar</h3>
-      <p>Subordinar o sistema à restrição — inclusive pausando iniciativa boa que não contribui para ela. A fase mais difícil, gerencialmente.</p></div>
+      <p>Subordinar o sistema à restrição, inclusive pausando iniciativa boa que não contribui para ela. A fase mais difícil, gerencialmente.</p></div>
     <div class="phase"><span class="n">Semanas 8–12</span><h3>Expandir</h3>
       <p>Romper o teto da restrição, com decisão baseada em causalidade comprovada. Só depois de evidência de saturação.</p></div>
     <div class="phase"><span class="n">Semana 12</span><h3>Recomeçar</h3>
@@ -177,7 +245,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 
 <section class="blk">
   <div class="blk-h"><h2>Os três comitês</h2><span class="eyebrow">pontos de decisão · 2h cada</span></div>
-  <p class="lead">Comitê não é apresentação de resultado — é o momento em que uma decisão é tomada e
+  <p class="lead">Comitê não é apresentação de resultado, é o momento em que uma decisão é tomada e
     registrada em ata. Se ao final ninguém decidiu nada, o comitê falhou. Por isso a presença do
     decisor é condição, não preferência.</p>
   <div class="coms">
@@ -186,7 +254,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       <p class="decide">Decide: qual é a restrição, e o que atacamos sem recurso novo.</p>
       <ul>
         <li>Diagnóstico apresentado nas três camadas: dados, experiência real e leitura sistêmica.</li>
-        <li>Validação lógica da trava — hipóteses concorrentes são eliminadas contra evidência.</li>
+        <li>Validação lógica da trava: hipóteses concorrentes são eliminadas contra evidência.</li>
         <li>Regra do bloco: nesta etapa não entram soluções que dependam de aumentar capacidade.</li>
         <li>Sai com plano de 30 dias, cada ação com responsável nomeado e métrica.</li>
       </ul>
@@ -197,7 +265,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       <ul>
         <li>Execução do plano anterior lida item a item, com a causa de cada desvio.</li>
         <li>Teste de saturação: o sistema já extraiu o máximo com os recursos atuais?</li>
-        <li>Ausência de melhoria pode significar falha de execução, não saturação — a distinção muda a decisão.</li>
+        <li>Ausência de melhoria pode significar falha de execução, não saturação, a distinção muda a decisão.</li>
         <li>Um <em>não</em> aqui não é falha do ciclo. É o método funcionando.</li>
       </ul>
     </div>
@@ -205,7 +273,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       <div class="com-top"><h3>Comitê 3</h3><span class="when">12 nov 2026</span></div>
       <p class="decide">Decide: qual é a próxima restrição, e o que levamos do ciclo.</p>
       <ul>
-        <li>Cada iniciativa classificada em manter, ajustar ou abandonar — nada fica sem classificação.</li>
+        <li>Cada iniciativa classificada em manter, ajustar ou abandonar, nada fica sem classificação.</li>
         <li>Fluxo de receita relido: onde o sistema desacelera agora que a primeira trava cedeu.</li>
         <li>Trava anterior classificada em resolvida, parcialmente resolvida ou não resolvida.</li>
         <li>Plano de 30 dias já orientado à nova restrição, para continuidade sem intervalo.</li>
@@ -218,6 +286,18 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   <div class="blk-h"><h2>Ciclo 1, semana a semana</h2><span class="eyebrow">24 ago – 13 nov 2026</span></div>
   <p class="lead">A coluna que mais importa é a terceira: o que depende do Grupo OLX. Praticamente todo
     atraso em projeto de diagnóstico vem de dado que não chegou, não de análise que não ficou pronta.</p>
+  <div class="gantt-wrap">
+    <div class="gantt-scroll"><div class="gantt" id="g1" role="group" aria-label="Gantt do Ciclo 1: cinco fases ao longo de doze semanas"></div></div>
+    <div class="g-legend">
+      <span><i style="background:color-mix(in srgb,var(--brand) 88%,var(--card))"></i>Fase ativa</span>
+      <span><i style="border-radius:50%;background:var(--brand)"></i>Comitê</span>
+      <span><i style="width:2px;border-radius:0;background:color-mix(in srgb,var(--warn) 70%,transparent)"></i>Feriado nacional</span>
+    </div>
+    <p class="g-nota"><b>Identificar e Otimizar se sobrepõem de propósito</b>: a otimização começa assim
+      que a primeira evidência aparece, sem esperar o diagnóstico fechar. É a leitura do playbook, e é o
+      que o Gantt torna visível. A tabela abaixo traz a mesma informação em detalhe.</p>
+  </div>
+
   <div class="card scrollx" style="margin-top:1.4rem">
     <table>
       <thead><tr>
@@ -231,7 +311,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
     <div class="card note warn">
       <h3>Riscos de calendário já mapeados</h3>
       <ul>
-        <li><b>Três segundas-feiras perdidas no Ciclo 1:</b> 7 set (Independência), 12 out (Aparecida) e 2 nov (Finados). São semanas de 4 dias úteis — as entregas dessas semanas já consideram isso.</li>
+        <li><b>Três segundas-feiras perdidas no Ciclo 1:</b> 7 set (Independência), 12 out (Aparecida) e 2 nov (Finados). São semanas de 4 dias úteis: as entregas dessas semanas já consideram isso.</li>
         <li><b>O Ciclo 3 abre no Carnaval:</b> 8 e 9 de fevereiro de 2027. A semana 1 daquele ciclo perde 2 dias; vale antecipar a coleta de dados para janeiro.</li>
         <li><b>Recesso de fim de ano</b> atravessa as semanas 6 e 7 do Ciclo 2. O Comitê 2 daquele ciclo deve ser puxado para antes do dia 18 de dezembro.</li>
       </ul>
@@ -239,10 +319,10 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
     <div class="card note">
       <h3>Datas a bloquear no kick-off</h3>
       <ul>
-        <li><b>17 set</b> — Comitê 1, 2h, com o decisor presente.</li>
-        <li><b>8 out</b> — Comitê 2, presencial, 2h, com C-Level.</li>
-        <li><b>12 nov</b> — Comitê 3, 2h, com o decisor presente.</li>
-        <li>São datas propostas. Se alguma não couber, a substituta precisa sair da mesma reunião — remarcar em outubro custa uma fase inteira do ciclo.</li>
+        <li><b>17 set</b>: Comitê 1, 2h, com o decisor presente.</li>
+        <li><b>8 out</b>: Comitê 2, presencial, 2h, com C-Level.</li>
+        <li><b>12 nov</b>: Comitê 3, 2h, com o decisor presente.</li>
+        <li>São datas propostas. Se alguma não couber, a substituta precisa sair da mesma reunião, remarcar em outubro custa uma fase inteira do ciclo.</li>
       </ul>
     </div>
   </div>
@@ -263,10 +343,10 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
         memória da reunião é a principal fonte de retrabalho no ciclo seguinte.</p></div>
     <div class="card rule"><span class="k">Uma restrição</span>
       <p>O sistema tem <b>uma</b> trava governante por vez. Material que aponta três focos simultâneos
-        está errado por construção — e o gate reprova.</p></div>
+        está errado por construção: e o gate reprova.</p></div>
     <div class="card rule"><span class="k">Obrigação de meio</span>
       <p>A V4 responde pela aplicação integral do método, pela profundidade do diagnóstico e pelo
-        cumprimento das entregas e prazos. A execução das ações dentro da operação é do Grupo OLX —
+        cumprimento das entregas e prazos. A execução das ações dentro da operação é do Grupo OLX,
         e é por isso que cada ação sai do comitê com um responsável nomeado.</p></div>
   </div>
 </section>
@@ -274,21 +354,162 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 </div></main>
 
 <script>
+// Gantt: posições calculadas das datas reais, para não divergirem da tabela abaixo.
+(function () {
+  var MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  function d(a, m, dia) { return new Date(a, m - 1, dia); }
+  function dias(a, b) { return Math.round((b - a) / 86400000); }
+  function el(tag, cls, txt) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (txt != null) e.textContent = txt;
+    return e;
+  }
+  function fmt(dt) { return dt.getDate() + " " + MES[dt.getMonth()]; }
+
+  var g12 = document.getElementById("g12");
+  if (g12) {
+    var ini = d(2026, 8, 24), fim = d(2027, 8, 24), total = dias(ini, fim);
+    var pos = function (dt) { return dias(ini, dt) / total * 100; };
+    var cols = "168px repeat(12, minmax(46px, 1fr))";
+
+    var head = el("div", "g-head");
+    head.style.gridTemplateColumns = cols;
+    head.appendChild(el("span", null, "Ciclo"));
+    for (var i = 0; i < 12; i++) {
+      var m = new Date(2026, 7 + i, 1);
+      head.appendChild(el("span", null, MES[m.getMonth()] + (m.getMonth() === 0 ? "/27" : "")));
+    }
+    g12.appendChild(head);
+
+    var CICLOS = [
+      {n:1, ini:d(2026,8,24),  fim:d(2026,11,13), coms:[d(2026,9,17), d(2026,10,8), d(2026,11,12)]},
+      {n:2, ini:d(2026,11,16), fim:d(2027,2,5),   coms:[]},
+      {n:3, ini:d(2027,2,8),   fim:d(2027,4,30),  coms:[]},
+      {n:4, ini:d(2027,5,3),   fim:d(2027,7,23),  coms:[]}
+    ];
+    CICLOS.forEach(function (c) {
+      var row = el("div", "g-row");
+      row.style.gridTemplateColumns = cols;
+      var lbl = el("div", "g-lbl");
+      lbl.appendChild(document.createTextNode("Ciclo " + c.n));
+      lbl.appendChild(el("small", null, fmt(c.ini) + " a " + fmt(c.fim)));
+      row.appendChild(lbl);
+      var tr = el("div", "g-track");
+      tr.style.gridColumn = "2 / -1";
+      var bar = el("div", "g-bar c" + c.n, "Ciclo " + c.n);
+      bar.style.left = pos(c.ini) + "%";
+      bar.style.width = (pos(c.fim) - pos(c.ini)) + "%";
+      bar.setAttribute("aria-label", "Ciclo " + c.n + ", de " + fmt(c.ini) + " a " + fmt(c.fim));
+      tr.appendChild(bar);
+      c.coms.forEach(function (dt, k) {
+        var mk = el("div", "g-mark", "C" + (k + 1));
+        mk.style.left = pos(dt) + "%";
+        mk.title = "Comitê " + (k + 1) + ", " + fmt(dt);
+        mk.setAttribute("aria-label", mk.title);
+        tr.appendChild(mk);
+      });
+      row.appendChild(tr);
+      g12.appendChild(row);
+    });
+
+    var rr = el("div", "g-row");
+    rr.style.gridTemplateColumns = cols;
+    var rl = el("div", "g-lbl");
+    rl.appendChild(document.createTextNode("Reserva"));
+    rl.appendChild(el("small", null, "26 jul a 24 ago"));
+    rr.appendChild(rl);
+    var rt = el("div", "g-track");
+    rt.style.gridColumn = "2 / -1";
+    var rb = el("div", "g-bar reserva", "4 semanas");
+    rb.style.left = pos(d(2027, 7, 26)) + "%";
+    rb.style.width = (100 - pos(d(2027, 7, 26))) + "%";
+    rb.setAttribute("aria-label", "Reserva de quatro semanas, de 26 de julho a 24 de agosto de 2027");
+    rt.appendChild(rb);
+    rr.appendChild(rt);
+    g12.appendChild(rr);
+  }
+
+  var g1 = document.getElementById("g1");
+  if (g1) {
+    var cols1 = "168px repeat(12, minmax(40px, 1fr))";
+    var head1 = el("div", "g-head");
+    head1.style.gridTemplateColumns = cols1;
+    head1.appendChild(el("span", null, "Fase"));
+    for (var s = 1; s <= 12; s++) head1.appendChild(el("span", null, "S" + s));
+    g1.appendChild(head1);
+
+    // Intervalos do playbook, seção 1. Identificar e Otimizar se sobrepõem de propósito.
+    var FASES = [
+      {nome:"Identificar", de:1,  ate:4},
+      {nome:"Otimizar",    de:2,  ate:4},
+      {nome:"Alinhar",     de:5,  ate:7},
+      {nome:"Expandir",    de:8,  ate:12},
+      {nome:"Recomeçar",   de:12, ate:12}
+    ];
+    var COMS = {"4":["C1","17 set"], "7":["C2","8 out"], "12":["C3","12 nov"]};
+    var FER = {"3":"7 set", "8":"12 out", "11":"2 nov"};
+
+    FASES.forEach(function (f) {
+      var row = el("div", "g-row");
+      row.style.gridTemplateColumns = cols1;
+      var lbl = el("div", "g-lbl");
+      lbl.appendChild(document.createTextNode(f.nome));
+      lbl.appendChild(el("small", null, f.de === f.ate ? "semana " + f.de : "semanas " + f.de + " a " + f.ate));
+      row.appendChild(lbl);
+      var tr = el("div", "g-track");
+      tr.style.gridColumn = "2 / -1";
+      var bar = el("div", "g-bar fase forte", f.nome);
+      bar.style.left = ((f.de - 1) / 12 * 100) + "%";
+      bar.style.width = ((f.ate - f.de + 1) / 12 * 100) + "%";
+      bar.setAttribute("aria-label", f.nome + ", " + (f.de === f.ate ? "semana " + f.de : "semanas " + f.de + " a " + f.ate));
+      tr.appendChild(bar);
+      row.appendChild(tr);
+      g1.appendChild(row);
+    });
+
+    var rowc = el("div", "g-row");
+    rowc.style.gridTemplateColumns = cols1;
+    var lc = el("div", "g-lbl");
+    lc.appendChild(document.createTextNode("Comitês"));
+    lc.appendChild(el("small", null, "datas propostas"));
+    rowc.appendChild(lc);
+    var tc = el("div", "g-track");
+    tc.style.gridColumn = "2 / -1";
+    Object.keys(FER).forEach(function (k) {
+      var h = el("div", "g-hol");
+      h.style.left = ((Number(k) - 0.85) / 12 * 100) + "%";
+      h.setAttribute("data-l", FER[k]);
+      h.title = "Feriado nacional em " + FER[k] + ", semana " + k;
+      tc.appendChild(h);
+    });
+    Object.keys(COMS).forEach(function (k) {
+      var mk = el("div", "g-mark", COMS[k][0]);
+      mk.style.left = ((Number(k) - 0.5) / 12 * 100) + "%";
+      mk.title = "Comitê " + COMS[k][0].slice(1) + ", semana " + k + ", " + COMS[k][1];
+      mk.setAttribute("aria-label", mk.title);
+      tc.appendChild(mk);
+    });
+    rowc.appendChild(tc);
+    g1.appendChild(rowc);
+  }
+})();
+
 const SEMANAS = [
  ["1","24–28 ago","Onboarding e visibilidade","Kick-off, alinhamento de governança e abertura do canal assíncrono. Levantamento de acessos e mapa de dados.","Nomear DRI por frente. Liberar acessos de plataforma. Confirmar o recorte de unidades no escopo.","Escopo e governança em ata; acessos solicitados"],
  ["2","31 ago – 4 set","Análise diagnóstica e pesquisa","Mapeamento do fluxo de receita por unidade. Início das auditorias de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
- ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set — Independência"],
+ ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set: Independência"],
  ["4","14–18 set","Validação e otimização","Consolidação causal, preparação e realização do <b>Comitê 1</b>.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
  ["5","21–25 set","Validação e otimização","Início da execução assistida. Acompanhamento semanal das métricas da restrição.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
  ["6","28 set – 2 out","Posicionamento e planejamento","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
  ["7","5–9 out","Posicionamento e planejamento","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
- ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out — N. Sra Aparecida"],
- ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão.","Evidenciar mudanças reais de alocação — verba, pausa, prioridade.","Critérios intermediários atingidos"],
+ ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out: N. Sra Aparecida"],
+ ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão.","Evidenciar mudanças reais de alocação, verba, pausa, prioridade.","Critérios intermediários atingidos"],
  ["10","26–30 out","Expandir e executar","Leitura de estabilização. Preparação da matriz de expansão do próximo ciclo.","Confirmar disponibilidade de recurso para o que for aprovado.","Processos implementados operando sem apoio diário"],
- ["11","2–6 nov","Expandir e executar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov — Finados"],
+ ["11","2–6 nov","Expandir e executar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov: Finados"],
  ["12","9–13 nov","Recomeçar","<b>Comitê 3</b>: revisão consolidada, ROI do ciclo e definição da nova restrição.","Decisor presente. Decisão formal de continuidade em ata.","Nova restrição definida; ata assinada"]
 ];
-// Fases conforme 00-playbook/03-ciclo-90-dias-e-comites.md §1 — Identificar (1–4) e
+// Fases conforme 00-playbook/03-ciclo-90-dias-e-comites.md §1: Identificar (1–4) e
 // Otimizar (2–4) se sobrepõem; Expandir (8–12) cobre a semana de Recomeçar (12).
 function fasesDaSemana(s) {
   const f = [];
@@ -314,11 +535,14 @@ SEMANAS.forEach(s => {
   tb.appendChild(tr);
 });
 </script>
-
+</div><aside class="rail" aria-label="Índice da página">
+  <p class="side-label" id="toc-label" hidden>Nesta página</p>
+  <div id="toc"></div>
+</aside></div>
 <footer><div class="wrap">
   <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
      iniciado em 24 de agosto de 2026.</p>
-  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX —
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX,
      não repassar sem autorização escrita.</p>
 </div></footer>
 </body>
