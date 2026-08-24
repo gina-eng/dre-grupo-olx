@@ -61,7 +61,12 @@
 .pa-st[data-v="concedido"]{background:var(--ok-bg);color:var(--ok);border-color:color-mix(in srgb,var(--ok) 40%,transparent);font-weight:600}
 .pa-st[data-v="pendente"]{background:var(--accent);color:var(--brand-ink);border-color:color-mix(in srgb,var(--brand) 35%,transparent)}
 .pa-st[data-v="inexistente"]{background:var(--muted);color:var(--muted-fg);text-decoration:line-through}
-.pa-nota{display:block;margin-top:.15rem;font-size:.72rem;color:var(--muted-fg);line-height:1.35}
+textarea.pa-nota{display:block;width:100%;margin-top:.2rem;font:inherit;font-size:.72rem;
+  color:var(--muted-fg);line-height:1.4;background:transparent;border:1px solid transparent;
+  border-radius:.35rem;padding:.25rem .4rem;resize:none;overflow:hidden;min-height:1.6rem}
+textarea.pa-nota:hover{border-color:var(--input);background:var(--bg)}
+textarea.pa-nota:focus{border-color:var(--brand);background:var(--bg);color:var(--fg);outline:none}
+textarea.pa-nota::placeholder{color:var(--border-strong)}
 .pa-ver{display:block;margin-top:.2rem;font-size:.7rem;line-height:1.35;font-family:var(--mono);
   color:var(--ok);background:var(--ok-bg);border-radius:.3rem;padding:.15rem .35rem}
 .pa-del{border:0;background:transparent;color:var(--muted-fg);cursor:pointer;font-size:1rem;
@@ -296,12 +301,22 @@ function paLinha(it, i) {
     return td;
   }
   var tdo = campo("o", "Acesso ou plataforma");
-  if (it.n) {
-    var nota = document.createElement("small");
-    nota.className = "pa-nota";
-    nota.textContent = it.n;
-    tdo.appendChild(nota);
+  var nota = document.createElement("textarea");
+  nota.className = "pa-nota";
+  nota.rows = 1;
+  nota.value = it.n || "";
+  nota.placeholder = "Observação, quem depende, o que está travando";
+  nota.setAttribute("aria-label", "Observação da linha " + (i + 1));
+  function ajusta() {
+    nota.style.height = "auto";
+    nota.style.height = nota.scrollHeight + "px";
   }
+  nota.addEventListener("input", function () {
+    paLista[i].n = nota.value; paSalva(); ajusta();
+  });
+  tdo.appendChild(nota);
+  // Só dá para medir a altura depois de estar no documento.
+  requestAnimationFrame(ajusta);
   if (it.v) {
     var ver = document.createElement("small");
     ver.className = "pa-ver";
@@ -418,10 +433,13 @@ function markdown(){
       L.push("**" + q.q + "**  ", "_alimenta: " + q.f + "_", "", v || "> ⚠️ Não respondido: abrir pendência com dono e prazo.", "");
     });
   });
-  L.push("## Pendências de acesso", "", "| Acesso | Frente | Responsável | Prazo | Status |", "|---|---|---|---|---|");
+  L.push("## Pendências de acesso", "",
+         "| Acesso | Frente | Responsável | Prazo | Status | Observação |",
+         "|---|---|---|---|---|---|");
   paLista.forEach(function (a) {
-    L.push("| " + (a.o || "").replace(/\|/g, "/") + " | " + (a.f || "") + " | " + (a.r || "") +
-           " | " + (a.p || "") + " | " + (ACESSOS_ROTULO[a.s] || a.s) + " |");
+    var lp = function (x) { return String(x || "").replace(/\|/g, "/").replace(/\n/g, " "); };
+    L.push("| " + (lp(a.o) || "-") + " | " + lp(a.f) + " | " + lp(a.r) + " | " + lp(a.p) +
+           " | " + (ACESSOS_ROTULO[a.s] || a.s) + " | " + lp([a.n, a.v].filter(Boolean).join(" ")) + " |");
   });
   L.push("");
   L.push("## Checklist de dados e acessos", "", "| # | Bloco | Responsável | Prazo |", "|---|---|---|---|");
