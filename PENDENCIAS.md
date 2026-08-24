@@ -156,6 +156,26 @@ cláusula 3.1 usa numeração romana (**I** e **II**). A referência cruzada est
 
 ---
 
+## 🔴 11. V4MOS conectado, porém sem nenhum dado de mídia
+
+Integração configurada e **verificada em 24/08/2026**: autenticação OK nos seis endpoints
+(`facebook/ads/{campaigns,ad,creatives}` e `google/ads/{campaigns,keywords,gender}`).
+Os dois controles de sanidade passam — secret inválido devolve `401`, organização inexistente
+devolve `403`. Mas os seis endpoints devolvem `200` com `data: []` em **qualquer** janela,
+inclusive sem filtro de data.
+
+| | |
+|---|---|
+| **Leitura** | O workspace existe e a credencial é válida; nenhuma conta de mídia foi ingerida no V4MOS |
+| **Causa provável** | Bloco G (Mídia Paga) pendente — os acessos às contas Google e Meta ainda não foram concedidos a `gina@v4company.com` |
+| **Risco** | Ler `data: []` como "investimento = 0" e concluir que a OLX não investe em mídia. Erro grave e evitável |
+| **Ação** | Cobrar o bloco G no kick-off, com dono e prazo. Até fechar, o diagnóstico de mídia depende de exportação manual |
+| **Responsável** | Michelle Morais (acessos) · Guilherme Monteiro (validação técnica) |
+| **Prazo** | Kick-off de 24/08/2026 |
+
+> Enquanto isso não fechar, as travas de **Exposição**, **Atenção** e **Qualificação** ficam sem
+> camada analítica de mídia, e o CAC do forecast fica sem fonte primária.
+
 ## Itens resolvidos
 
 *(mover para cá com data e responsável quando fechados)*

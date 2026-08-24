@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Portal DR-E Grupo OLX</title>
 <meta name="description" content="Painel do projeto Destrava Receita Estratégico do Grupo OLX.">
-<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
@@ -32,33 +32,33 @@
 .red-page{position:relative;color:#fff;min-height:100vh}
 .red-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
   background:
-    radial-gradient(80% 60% at 20% 10%, rgba(237,51,69,.90), transparent 60%),
+    radial-gradient(80% 60% at 20% 10%, rgba(214,17,49,.85), transparent 60%),
     radial-gradient(70% 50% at 85% 20%, rgba(183,0,38,.85), transparent 55%),
     radial-gradient(100% 70% at 50% 110%, rgba(120,0,4,.90), transparent 60%),
     linear-gradient(135deg,#970013,#d6002e)}
 .red-bg::after{content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 30% 0, rgba(255,255,255,.22), transparent 35%),
-             radial-gradient(circle at 80% 100%, rgba(255,255,255,.10), transparent 40%)}
+  background:radial-gradient(circle at 30% 0, rgba(255,255,255,.10), transparent 35%),
+             radial-gradient(circle at 80% 100%, rgba(255,255,255,.05), transparent 40%)}
 .top{padding:3.25rem 0 2.5rem;text-align:center}
 .top .mark{height:3rem;width:auto;margin:0 auto 1.5rem;display:block}
 .top h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;color:#fff}
-.top p.sub{margin:1rem auto 0;max-width:44rem;color:rgba(255,255,255,.85);font-size:1.02rem}
+.top p.sub{margin:1rem auto 0;max-width:44rem;color:#fff;font-size:1.02rem}
 
 .status{display:grid;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);
   border-radius:var(--radius);overflow:hidden;grid-template-columns:repeat(2,1fr);margin-top:2.25rem;
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 @media(min-width:820px){.status{grid-template-columns:repeat(4,1fr)}}
-.st{background:rgba(255,255,255,.10);padding:.95rem 1.1rem;text-align:left}
-.st .k{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.7)}
+.st{background:rgba(102,0,10,.5);padding:.95rem 1.1rem;text-align:left}
+.st .k{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.9)}
 .st .v{display:block;margin-top:.3rem;font-size:1.12rem;font-weight:600;letter-spacing:-.02em;color:#fff}
-.st .n{display:block;margin-top:.1rem;font-size:.76rem;color:rgba(255,255,255,.72)}
+.st .n{display:block;margin-top:.1rem;font-size:.76rem;color:rgba(255,255,255,.9)}
 
 .doors{display:grid;gap:.9rem;margin-top:2.5rem}
 @media(min-width:900px){.doors{grid-template-columns:repeat(3,1fr)}}
 .door{display:flex;flex-direction:column;gap:.7rem;padding:1.4rem 1.5rem;text-decoration:none;color:#fff;
   border-radius:1rem;border:1px solid rgba(255,255,255,.16);position:relative;overflow:hidden;
-  background:linear-gradient(140deg, rgba(255,255,255,.14), rgba(255,255,255,.03)),
-             linear-gradient(rgba(198,0,30,.82), rgba(121,0,12,.94));
+  background:linear-gradient(140deg, rgba(255,255,255,.07), rgba(255,255,255,.02)),
+             linear-gradient(rgba(158,0,24,.92), rgba(105,0,10,.97));
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   box-shadow:inset 0 1px rgba(255,255,255,.22), 0 12px 40px rgba(150,0,18,.28);
   transition:transform .16s ease, box-shadow .16s ease, border-color .16s}
@@ -66,36 +66,41 @@
   box-shadow:inset 0 1px rgba(255,255,255,.3), 0 18px 50px rgba(150,0,18,.4)}
 .door:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .door .k{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;
-  color:rgba(255,255,255,.75)}
+  color:#fff}
 .door h2{font-size:1.35rem;color:#fff}
-.door p{font-size:.89rem;color:rgba(255,255,255,.82);flex:1}
+.door p{font-size:.89rem;color:rgba(255,255,255,.92);flex:1}
 .door .foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;
-  padding-top:.7rem;border-top:1px solid rgba(255,255,255,.16);font-size:.8rem;color:rgba(255,255,255,.82)}
+  padding-top:.7rem;border-top:1px solid rgba(255,255,255,.2);font-size:.8rem;color:rgba(255,255,255,.92)}
 .door .go{font-weight:500;color:#fff;display:inline-flex;align-items:center;gap:.3rem}
 .door .st-pill{font-family:var(--mono);font-size:.7rem;padding:.15rem .5rem;border-radius:9999px;
   background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);white-space:nowrap}
 .door .st-pill.warn{background:rgba(255,236,150,.22);border-color:rgba(255,236,150,.45)}
 
-.panel{margin-top:2.75rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.09);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+.panel{margin-top:2.75rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.22);
+  background:rgba(102,0,10,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
   overflow:hidden}
 .panel-h{padding:1.05rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.16);
   display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap}
 .panel-h h2{font-size:1.05rem;color:#fff}
 .panel-h span{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;
-  color:rgba(255,255,255,.68)}
+  color:rgba(255,255,255,.88)}
 .pend{display:grid;gap:1px;background:rgba(255,255,255,.14)}
 @media(min-width:780px){.pend{grid-template-columns:1fr 1fr}}
-.pi{background:rgba(255,255,255,.05);padding:.95rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start}
+.pi{background:rgba(102,0,10,.72);padding:.95rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start}
 .pi .sev{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;padding:.14rem .42rem;border-radius:9999px;
   border:1px solid rgba(255,255,255,.3);color:#fff;white-space:nowrap;margin-top:.15rem}
 .pi .sev.alta{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.5);font-weight:600}
-.pi p{font-size:.86rem;color:rgba(255,255,255,.88)}
+.pi p{font-size:.86rem;color:rgba(255,255,255,.95)}
 .pi p b{color:#fff;font-weight:600}
-.pi p em{display:block;margin-top:.2rem;font-style:normal;font-size:.78rem;color:rgba(255,255,255,.65)}
+.pi p em{display:block;margin-top:.2rem;font-style:normal;font-size:.78rem;color:rgba(255,255,255,.86)}
 
-.red-page footer{border-top:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.66);margin-top:3.5rem}
-.red-page footer strong{color:rgba(255,255,255,.9)}
+/* O rodapé é irmão de .red-page, mas o .red-bg é fixed e cobre a viewport inteira —
+   então ele também cai sobre o vermelho e precisa de cor própria. */
+/* Fundo próprio: o .red-bg é fixed e os blocos decorativos passam por baixo do rodapé,
+   clareando o vermelho. Opaco aqui remove a dependência do que estiver atrás. */
+body > footer{border-top:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.92);
+  background:rgba(92,0,9,.82);margin-top:3.5rem;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+body > footer strong{color:#fff}
 </style>
 
 <div class="red-page">
@@ -110,7 +115,7 @@
   </div>
 </div>
 
-<div class="wrap">
+<main class="wrap">
   <section class="top">
     <img class="mark" src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279">
     <span class="pill">Grupo OLX · Ciclo 1</span>
@@ -121,8 +126,8 @@
     <div class="status">
       <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel">—</span></div>
       <div class="st"><span class="k">Ciclo</span><b class="v">1 de 4</b><span class="n" id="sem">Fase Identificar</span></div>
-      <div class="st"><span class="k">Próximo comitê</span><b class="v">17 set 2026</b><span class="n" id="com-rel">Comitê 1 — validação da trava</span></div>
-      <div class="st"><span class="k">Encerramento</span><b class="v">24 ago 2027</b><span class="n">12 comitês · 4 presenciais</span></div>
+      <div class="st"><span class="k">Próximo comitê</span><b class="v">17 set 2026</b><span class="n" id="com-rel">Comitê 1 — data proposta, a fechar hoje</span></div>
+      <div class="st"><span class="k">Encerramento</span><b class="v">24 ago 2027</b><span class="n">12 comitês contratados</span></div>
     </div>
   </section>
 
@@ -161,7 +166,7 @@
       <div class="pi"><span class="sev alta">alta</span><p><b>Blocos A, G, H e J.</b> Receita e funil, mídia paga, rastreamento e pré-vendas.<em>Sem eles o diagnóstico não fecha e o Comitê 1 não acontece.</em></p></div>
     </div>
   </section>
-</div>
+</main>
 </div>
 
 <script>
@@ -179,14 +184,24 @@
   var dk = dias(ko);
   document.getElementById("ko-rel").textContent = frase(dk);
 
+  // Fases conforme 00-playbook/03-ciclo-90-dias-e-comites.md §1. Identificar (1-4) e
+  // Otimizar (2-4) se sobrepõem de propósito, e Expandir (8-12) cobre Recomeçar (12).
+  function fasesDaSemana(s) {
+    var f = [];
+    if (s >= 1 && s <= 4) f.push("Identificar");
+    if (s >= 2 && s <= 4) f.push("Otimizar");
+    if (s >= 5 && s <= 7) f.push("Alinhar");
+    if (s >= 8 && s <= 12) f.push("Expandir");
+    if (s === 12) f.push("Recomeçar");
+    return f;
+  }
   var semana = dk > 0 ? 0 : Math.floor((hoje - ko) / 604800000) + 1;
   var el = document.getElementById("sem");
   if (semana >= 1 && semana <= 12) {
-    var fase = semana <= 3 ? "Identificar" : semana <= 7 ? "Otimizar" :
-               semana <= 9 ? "Alinhar" : semana <= 11 ? "Expandir" : "Recomeçar";
-    el.textContent = "Semana " + semana + " · fase " + fase;
+    var f = fasesDaSemana(semana);
+    el.textContent = "Semana " + semana + " · " + (f.length > 1 ? "fases " : "fase ") + f.join(" + ");
   }
-  document.getElementById("com-rel").textContent = "Comitê 1 · " + frase(dias(c1));
+  document.getElementById("com-rel").textContent = "Comitê 1 · " + frase(dias(c1)) + " (proposta)";
 
   var n = window.dreProgresso ? window.dreProgresso() : 0;
   var p = document.getElementById("kf-prog");

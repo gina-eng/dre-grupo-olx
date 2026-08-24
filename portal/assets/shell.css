@@ -3,7 +3,7 @@
   background:linear-gradient(135deg,#970013,#d6002e);
   border-bottom:1px solid rgba(255,255,255,.15)}
 .topbar::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(60% 140% at 15% 0%, rgba(237,51,69,.85), transparent 70%),
+  background:radial-gradient(60% 140% at 15% 0%, rgba(214,17,49,.8), transparent 70%),
              radial-gradient(50% 120% at 88% 100%, rgba(120,0,4,.7), transparent 65%)}
 .topbar-in{position:relative;z-index:1;max-width:76rem;margin:0 auto;
   display:flex;align-items:center;gap:1rem;padding:0 1.25rem;height:3.5rem}
@@ -11,7 +11,7 @@
 .brand img{height:1.5rem;width:auto;display:block}
 .tabs{display:none;align-items:center;gap:.15rem;flex:1}
 @media(min-width:860px){.tabs{display:flex}}
-.tab{border-radius:.375rem;padding:.35rem .7rem;font-size:.86rem;color:rgba(255,255,255,.82);
+.tab{border-radius:.375rem;padding:.35rem .7rem;font-size:.86rem;color:rgba(255,255,255,.95);
   text-decoration:none;transition:background .14s,color .14s;white-space:nowrap}
 .tab:hover{background:rgba(255,255,255,.15);color:#fff}
 .tab[aria-current="page"]{background:rgba(255,255,255,.2);color:#fff;font-weight:500}
@@ -22,6 +22,8 @@
   transition:background .14s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .icobtn:hover{background:rgba(255,255,255,.26)}
 .icobtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* O anel padrão é var(--brand) — invisível sobre a topbar vermelha (1,0:1). */
+.topbar a:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:.375rem}
 .menu-btn{display:inline-flex}
 @media(min-width:860px){.menu-btn{display:none}}
 .drawer{position:fixed;inset:3.5rem 0 auto 0;z-index:45;background:var(--card);

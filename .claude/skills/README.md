@@ -26,6 +26,7 @@ Duas famílias, um mesmo estado.
 | [`dre-comite`](dre-comite/SKILL.md) | 3/4/5 | Preparação, roteiro e ata dos Comitês 1, 2 e 3 |
 | [`dre-matriz-expansao`](dre-matriz-expansao/SKILL.md) | 4 — Expandir | Hipóteses de expansão por impacto × esforço × risco |
 | [`dre-tira-duvidas`](dre-tira-duvidas/SKILL.md) | transversal | Assessoria assíncrona dentro do SLA de 12h úteis |
+| [`dre-v4mos`](dre-v4mos/SKILL.md) | 1 — Identificar | Puxa dados reais de mídia paga (Meta e Google) do data hub da V4 |
 | [`dre-revisao-ciclo`](dre-revisao-ciclo/SKILL.md) | 5 — Recomeçar | Manter/Ajustar/Abandonar, previsto vs. realizado, nova restrição |
 
 ### Sequência típica do Ciclo 1
@@ -84,5 +85,8 @@ O conteúdo metodológico das `ee-*` **não** foi alterado. Se o repo de origem 
 Em [`.claude/scripts/`](../scripts/): `v4mos_fetch.sh`, `meta_ads_fetch.{sh,py}`, `page_audit.{sh,py}`, `page_audit_deep.{sh,py}`, `ig_organic_audit.{sh,py}`, `build_forecast_v4_completo.py`, `validate_output.py`.
 
 Dependências Python em `requirements.txt`, `requirements-deep.txt`, `requirements-meta.txt`.
+
+As credenciais do V4MOS ficam em `.credentials/clients.json`, na raiz do repositório, chaveadas pelo
+`workspace_id`. Ver [`dre-v4mos`](dre-v4mos/SKILL.md).
 
 > Os scripts que tocam plataformas do cliente precisam de credenciais. **Nenhuma credencial vai para o repositório** — o `.gitignore` bloqueia `.env*`, `.credentials/`, `*credentials*.json`, `service-account*.json`, `*.pem` e `*.key`.

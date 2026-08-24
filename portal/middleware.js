@@ -43,9 +43,12 @@ export default function middleware(request) {
   const [esquema, codificado] = cabecalho.split(' ')
   if (esquema !== 'Basic' || !codificado) return desafio()
 
+  // atob devolve latin-1; a senha precisa ser relida como UTF-8, senão qualquer
+  // caractere acentuado é comparado errado (o header anuncia charset="UTF-8").
   let decodificado
   try {
-    decodificado = atob(codificado)
+    const bytes = Uint8Array.from(atob(codificado), c => c.charCodeAt(0))
+    decodificado = new TextDecoder('utf-8').decode(bytes)
   } catch {
     return desafio()
   }

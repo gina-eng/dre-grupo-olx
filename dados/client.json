@@ -8,13 +8,29 @@
     "ciclo_atual": 1,
     "fase_atual": "Onboarding",
     "semana_corrente": 1,
-    "version": 1,
-    "atualizado_em": "2026-08-24"
+    "version": 2,
+    "atualizado_em": "2026-08-24",
+    "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
   "briefing": {
     "unidades_negocio": [
-      {"nome": "Imóveis", "marcas": ["ZAP+", "VivaReal"], "modelo": "marketplace / assinatura", "no_escopo": null},
-      {"nome": "Autos B2B", "marcas": ["OLX Autos"], "modelo": "B2B", "no_escopo": true}
+      {
+        "nome": "Imóveis",
+        "marcas": [
+          "ZAP+",
+          "VivaReal"
+        ],
+        "modelo": "marketplace / assinatura",
+        "no_escopo": null
+      },
+      {
+        "nome": "Autos B2B",
+        "marcas": [
+          "OLX Autos"
+        ],
+        "modelo": "B2B",
+        "no_escopo": true
+      }
     ],
     "modelo_receita": null,
     "ticket_medio": null,
@@ -25,34 +41,114 @@
     "fonte": "01-cliente/perfil-grupo-olx.md · 01-cliente/historico-onboarding.md"
   },
   "contrato": {
-    "valor_total": 752000.00,
+    "valor_total": 752000.0,
     "parcelas": [
-      {"nome": "Na contratação", "valor": 376000.00, "condicao": "ato da assinatura"},
-      {"nome": "Sucesso de Implementação", "valor": 376000.00, "condicao": "12º mês, conclusão integral do escopo, 30 dias do faturamento"}
+      {
+        "nome": "Na contratação",
+        "valor": 376000.0,
+        "condicao": "ato da assinatura"
+      },
+      {
+        "nome": "Sucesso de Implementação",
+        "valor": 376000.0,
+        "condicao": "12º mês, conclusão integral do escopo, 30 dias do faturamento"
+      }
     ],
-    "divergencia_valor": {"acordado_email": 740000.00, "contrato": 752000.00, "delta": 12000.00, "status": "aberta"},
+    "divergencia_valor": {
+      "acordado_email": 740000.0,
+      "contrato": 752000.0,
+      "delta": 12000.0,
+      "status": "aberta"
+    },
     "diagnosticos_contratados": [
-      {"id": "i", "nome": "CRM Marketing (Salesforce Marketing Cloud)", "bloco_dados": "B", "status": "pendente"},
-      {"id": "ii", "nome": "Ambientes CRO/SEO (domínios B2B)", "bloco_dados": "C", "status": "pendente"},
-      {"id": "iii", "nome": "GEO — IA e Buscas Generativas", "bloco_dados": "D", "status": "pendente"},
-      {"id": "iv", "nome": "Criativos Ads & Mensagens", "bloco_dados": "E", "status": "pendente"},
-      {"id": "v", "nome": "Redes Sociais e Conteúdo Orgânico", "bloco_dados": "F", "status": "pendente"},
-      {"id": "vi", "nome": "Mídia Paga (Google e Meta)", "bloco_dados": "G", "status": "pendente", "prioritario": true},
-      {"id": "vii", "nome": "Rastreamento Completo (GA4 e GTM)", "bloco_dados": "H", "status": "pendente", "prioritario": true},
-      {"id": "viii", "nome": "Páginas de Captura (LPs) e Fluxos de Conversão", "bloco_dados": "I", "status": "pendente"},
-      {"id": "ix", "nome": "Pré-Vendas, Qualificação e Sales Engagement", "bloco_dados": "J", "status": "pendente", "prioritario": true}
+      {
+        "id": "i",
+        "nome": "CRM Marketing (Salesforce Marketing Cloud)",
+        "bloco_dados": "B",
+        "status": "pendente"
+      },
+      {
+        "id": "ii",
+        "nome": "Ambientes CRO/SEO (domínios B2B)",
+        "bloco_dados": "C",
+        "status": "pendente"
+      },
+      {
+        "id": "iii",
+        "nome": "GEO — IA e Buscas Generativas",
+        "bloco_dados": "D",
+        "status": "pendente"
+      },
+      {
+        "id": "iv",
+        "nome": "Criativos Ads & Mensagens",
+        "bloco_dados": "E",
+        "status": "pendente"
+      },
+      {
+        "id": "v",
+        "nome": "Redes Sociais e Conteúdo Orgânico",
+        "bloco_dados": "F",
+        "status": "pendente"
+      },
+      {
+        "id": "vi",
+        "nome": "Mídia Paga (Google e Meta)",
+        "bloco_dados": "G",
+        "status": "pendente",
+        "prioritario": true
+      },
+      {
+        "id": "vii",
+        "nome": "Rastreamento Completo (GA4 e GTM)",
+        "bloco_dados": "H",
+        "status": "pendente",
+        "prioritario": true
+      },
+      {
+        "id": "viii",
+        "nome": "Páginas de Captura (LPs) e Fluxos de Conversão",
+        "bloco_dados": "I",
+        "status": "pendente"
+      },
+      {
+        "id": "ix",
+        "nome": "Pré-Vendas, Qualificação e Sales Engagement",
+        "bloco_dados": "J",
+        "status": "pendente",
+        "prioritario": true
+      }
     ],
     "sla_horas_uteis": 12,
     "comites_ano": 12,
     "comites_presenciais_ano": 4,
-    "bonus": {"gatilho": "cumprimento integral do escopo", "divergencia_registrada": true, "ver": "PENDENCIAS.md"},
+    "bonus": {
+      "gatilho": "cumprimento integral do escopo",
+      "divergencia_registrada": true,
+      "ver": "PENDENCIAS.md"
+    },
     "fonte": "04-execucao/contrato-e-escopo.md"
   },
   "stakeholders": {
-    "decisor": {"nome": "Mirella Mendonça", "cargo": "Marketing Director", "empresa": "OLX Brasil"},
-    "ponto_focal": {"nome": "Michelle Morais", "cargo": "Operações / facilitação", "empresa": "OLX Brasil"},
-    "consultor_dre": {"nome": "Anselmo José Marangoni Brandão Bueno", "empresa": "V4"},
-    "sponsor_v4": {"nome": "Gustavo Figueiredo", "cargo": "Sócio & COO", "empresa": "V4"},
+    "decisor": {
+      "nome": "Mirella Mendonça",
+      "cargo": "Marketing Director",
+      "empresa": "OLX Brasil"
+    },
+    "ponto_focal": {
+      "nome": "Michelle Morais",
+      "cargo": "Operações / facilitação",
+      "empresa": "OLX Brasil"
+    },
+    "consultor_dre": {
+      "nome": "Anselmo José Marangoni Brandão Bueno",
+      "empresa": "V4"
+    },
+    "sponsor_v4": {
+      "nome": "Gustavo Figueiredo",
+      "cargo": "Sócio & COO",
+      "empresa": "V4"
+    },
     "growth_planner": null,
     "c_level_comites": null,
     "dris_por_frente": {},
@@ -60,19 +156,81 @@
   },
   "acessos": {
     "email_oficial_plataformas": "gina@v4company.com",
-    "contas_olxbr": ["Rafael Corazza", "Anselmo Bueno", "Guilherme Monteiro"],
+    "contas_olxbr": [
+      "Rafael Corazza",
+      "Anselmo Bueno",
+      "Guilherme Monteiro"
+    ],
     "ver": "01-cliente/acessos-e-ferramentas.md"
   },
-  "conectores": {"fetched_at": null},
+  "conectores": {
+    "fetched_at": null,
+    "v4mos": {
+      "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61",
+      "api": "https://api.data.v4.marketing/v1",
+      "credenciais": ".credentials/clients.json (fora do repositório, chmod 600)",
+      "status": "autenticado, sem dado",
+      "verificado_em": "2026-08-24",
+      "endpoints": {
+        "facebook/ads/campaigns": 0,
+        "facebook/ads/ad": 0,
+        "facebook/ads/creatives": 0,
+        "google/ads/campaigns": 0,
+        "google/ads/keywords": 0,
+        "google/ads/gender": 0
+      },
+      "nota": "Credencial valida (secret errado devolve 401) e organizacao autorizada (org inexistente devolve 403). Os seis endpoints devolvem 200 com data=[] e hasNextPage=false em qualquer janela, inclusive sem filtro de data. O workspace existe mas ainda nao tem dado de midia ingerido — coerente com o bloco G (Midia Paga) do checklist, que segue pendente."
+    }
+  },
   "travas": {
-    "cegueira": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "exposicao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "atencao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "interesse": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "qualificacao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "compromisso": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "decisao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
-    "retencao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null}
+    "cegueira": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "exposicao": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "atencao": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "interesse": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "qualificacao": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "compromisso": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "decisao": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    },
+    "retencao": {
+      "score": null,
+      "dimensoes": {},
+      "evidencias": [],
+      "diagnosticado_em": null
+    }
   },
   "restricao_identificada": null,
   "consolidacao_causal": null,
@@ -82,6 +240,15 @@
     }
   },
   "history": [
-    {"data": "2026-08-24", "version": 1, "evento": "Estado inicial criado a partir da documentação organizada do repositório (contrato, e-mails de onboarding, perfil do cliente)."}
+    {
+      "data": "2026-08-24",
+      "version": 1,
+      "evento": "Estado inicial criado a partir da documentação organizada do repositório (contrato, e-mails de onboarding, perfil do cliente)."
+    },
+    {
+      "data": "2026-08-24",
+      "version": 2,
+      "evento": "Integracao V4MOS configurada e verificada: autenticacao OK nos seis endpoints, workspace sem dado ingerido. Credenciais fora do repositorio."
+    }
   ]
 }

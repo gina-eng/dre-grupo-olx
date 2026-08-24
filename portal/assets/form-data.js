@@ -12,7 +12,7 @@ const BLOCOS = [
  {q:"Quem é o ponto focal operacional, e há um por unidade de negócio?", t:"t", f:"Governança"},
  {q:"DRI por frente — CRM/Marketing Cloud, CRO/SEO, mídia paga, tracking, pré-vendas, dados/BI", h:"Nome de pessoa, nunca de área. Área não responde por nada.", t:"L", f:"Todas as auditorias", c:1},
  {q:"Quem participa dos comitês e quem tem poder de veto?", t:"L", f:"Comitês"},
- {q:"Qual C-Level da OLX participa dos comitês presenciais?", h:"O contrato prevê 4 comitês presenciais/ano com C-Level.", t:"t", f:"Comitês"},
+ {q:"Qual C-Level da OLX participa dos comitês presenciais?", h:"O método padrão DR-E prevê 4 presenciais/ano com C-Level — o contrato não faz a distinção. Pendência aberta.", t:"t", f:"Comitês"},
  {q:"Como funciona o ciclo de aprovação interna — jurídico, compliance, segurança da informação, privacidade?", h:"Define o prazo real de liberação de dado e acesso.", t:"L", f:"Cronograma"},
  {q:"Existe algum ritual de gestão já rodando em que o DR-E deve se encaixar?", h:"Comitê de crescimento, weekly de marketing, QBR. Evita ritual paralelo concorrente.", t:"L", f:"Cronograma"},
  {q:"Há outras consultorias ou agências atuando nas mesmas frentes?", h:"Fronteira de escopo e risco de recomendação conflitante.", t:"L", f:"Escopo"}
@@ -56,7 +56,7 @@ const BLOCOS = [
  {q:"Como funciona a renovação? Quem cuida? É ativa ou automática?", t:"L", f:"Retenção", c:1},
  {q:"Motivos de cancelamento são registrados?", t:"L", f:"Retenção", c:1}
 ]},
-{n:"05", t:"Marketing, canais e comunicação", d:"Insumo direto de seis das nove auditorias contratadas.", tempo:"20 min", qs:[
+{n:"05", t:"Marketing, canais e comunicação", d:"Insumo direto de sete das nove auditorias contratadas.", tempo:"20 min", qs:[
  {q:"Verba mensal de mídia por unidade e por canal", h:"Bloco G — prioritário.", t:"L", f:"Auditoria (vi)", c:1},
  {q:"Quem opera a mídia — time interno, agência, ou os dois? Quem é o DRI?", t:"L", f:"Auditoria (vi)", c:1},
  {q:"Quais contas de anúncio existem e qual o status de acesso de cada uma?", h:"Os acessos vão para gina@v4company.com.", t:"L", f:"Acessos", c:1},
@@ -90,7 +90,7 @@ const BLOCOS = [
 ]},
 {n:"08", t:"Ritual, agenda e comunicação", d:"Agenda de comitê que não é bloqueada hoje vira remarcação em outubro.", tempo:"10 min", qs:[
  {q:"Datas dos 3 comitês do Ciclo 1 — bloquear agenda agora", h:"Referência: Comitê 1 na semana 4–5, Comitê 2 na 6–7, Comitê 3 na 12.", t:"L", f:"Cronograma", c:1},
- {q:"Formato de cada comitê — presencial ou remoto, e onde", h:"O contrato prevê 4 presenciais por ano.", t:"L", f:"Cronograma", c:1},
+ {q:"Formato de cada comitê — presencial ou remoto, e onde", h:"O método padrão DR-E prevê 8 online + 4 presenciais; o contrato fala em 12 encontros sem distinguir. Fechar a distribuição hoje.", t:"L", f:"Cronograma", c:1},
  {q:"Canal de comunicação assíncrona — qual ferramenta, quem entra?", t:"t", f:"Assessoria"},
  {q:"O SLA de 12 horas úteis atende? Qual a expectativa de vocês?", h:"Alinhar antes que vire atrito.", t:"t", f:"Assessoria", c:1},
  {q:"Cadência e formato de reporte entre comitês", t:"L", f:"Assessoria"},
@@ -98,7 +98,7 @@ const BLOCOS = [
 ]},
 {n:"09", t:"Pendências contratuais a fechar", d:"Cinco pontos abertos identificados na leitura do contrato. Levar resolvidos daqui, ou com dono e prazo.", tempo:"15 min", qs:[
  {q:"Valor do contrato: e-mail acordou R$ 740.000, contrato registra R$ 752.000 (Δ R$ 12.000). Qual prevalece?", t:"L", f:"Contrato", c:1},
- {q:"Gatilho do Bônus de Sucesso: existem três definições incompatíveis nos documentos. Qual é a válida?", h:"Cumprimento integral do escopo, resultado atingido, ou conclusão da execução? Define R$ 376.000.", t:"L", f:"Contrato", c:1},
+ {q:"Gatilho do Bônus de Sucesso: existem três definições incompatíveis nos documentos. Qual é a válida?", h:"Contrato cl. 3.3 (cumprimento integral do escopo) · SOW padrão DR-E (expansão comprovada de 2 das 8 travas em D+370) · e-mail Mirella 10/08 (KPIs a construir no diagnóstico). Define R$ 376.000.", t:"L", f:"Contrato", c:1},
  {q:"A janela de garantia (cláusula 2.3) fecha no primeiro encontro. A OLX está ciente?", h:"Registrar em ata que foi comunicado hoje.", t:"L", f:"Contrato", c:1},
  {q:"A cláusula 1.2 fala em 7 travas; o método opera com 8 (a 8ª é a Cegueira, pré-condição). Alinhar redação.", t:"L", f:"Contrato"},
  {q:"Contas @olxbr.com para Rafael Corazza, Anselmo Bueno e Guilherme Monteiro — status e prazo", t:"t", f:"Acessos", c:1}

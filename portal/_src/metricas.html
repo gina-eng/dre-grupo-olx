@@ -1,6 +1,5 @@
 <!--@ metricas | Métricas · Portal DR-E Grupo OLX | Dicionário de Métricas | As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade e formato de entrega. | v0 · validar no kick-off -->
 <style>
-.filters{top:3.5rem}
 section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
 .blk-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
 .blk-h h2{font-size:1.4rem;flex:1}
@@ -16,7 +15,7 @@ section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
 .conv{display:grid;gap:.75rem;margin-top:1.5rem}
 @media(min-width:820px){.conv{grid-template-columns:1fr 1fr}}
 .cbox{padding:1.15rem 1.25rem}
-.cbox h4{font-size:.98rem;margin-bottom:.6rem}
+.cbox h3{font-size:.98rem;margin-bottom:.6rem}
 .cbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.4rem .85rem;font-size:.86rem}
 .cbox dt{font-family:var(--mono);font-size:.72rem;color:var(--brand-ink);letter-spacing:.04em;padding-top:.18rem;white-space:nowrap}
 .cbox dd{margin:0;color:var(--muted-fg)}
@@ -25,7 +24,7 @@ section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
   border:1px solid var(--border-strong);background:var(--muted);color:var(--muted-fg)}
 .funil span.money{border-color:var(--brand);color:var(--brand-ink);background:var(--accent)}
 
-.filters{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);
+.filters{position:sticky;top:3.5rem;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border);margin-top:1.5rem;padding:.7rem 0}
 .filters-in{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
@@ -37,6 +36,20 @@ section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
   border:1px solid var(--border-strong);border-radius:9999px;padding:.3rem .8rem}
 #q:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 14%,transparent)}
 .count{font-family:var(--mono);font-size:.75rem;color:var(--muted-fg);white-space:nowrap}
+/* Em tela estreita a barra chegava a 231px de altura fixa. Os filtros de camada
+   ficam recolhidos atrás de um <details>; prioridade e busca continuam à mão. */
+@media(max-width:560px){
+  #tcolapso{width:100%}
+  #tcolapso summary{cursor:pointer;font-size:.78rem;color:var(--muted-fg);padding:.2rem 0;list-style:none}
+  #tcolapso summary::-webkit-details-marker{display:none}
+  #tcolapso summary::before{content:"▸ ";color:var(--brand-ink)}
+  #tcolapso[open] summary::before{content:"▾ "}
+  #tfilters{display:flex;flex-wrap:wrap;gap:.35rem;padding-top:.4rem}
+}
+@media(min-width:561px){
+  #tcolapso summary{display:none}
+  #tcolapso{display:contents}
+}
 
 tr.grp td{background:var(--muted);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
   letter-spacing:.12em;color:var(--brand-ink);font-weight:600;padding:.5rem .7rem}
@@ -47,21 +60,21 @@ td.fonte{font-size:.8rem;color:var(--muted-fg)}
 .empty{padding:2.5rem;text-align:center;color:var(--muted-fg);font-size:.9rem}
 
 .bars td.b{padding-right:0}
-.bar{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--muted);min-width:9rem}
-.bar i{display:block;height:100%}
-.bar .p0{background:var(--brand)}
-.bar .p1{background:color-mix(in srgb,var(--warn) 70%,var(--muted))}
-.bar .p2{background:var(--border-strong)}
+.bar-prio{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--muted);min-width:9rem}
+.bar-prio i{display:block;height:100%}
+.bar-prio .p0{background:var(--brand)}
+.bar-prio .p1{background:color-mix(in srgb,var(--warn) 70%,var(--muted))}
+.bar-prio .p2{background:var(--border-strong)}
 
 .tpl{padding:1.2rem 1.3rem;margin-top:1.4rem}
 .tpl code{font-family:var(--mono);font-size:.8rem;background:var(--muted);padding:.1rem .3rem;border-radius:4px}
 .warnbox{padding:1.15rem 1.25rem;margin-top:1.4rem;border-color:color-mix(in srgb,var(--warn) 40%,var(--border));background:var(--warn-bg)}
-.warnbox h4{color:var(--warn);font-size:.98rem;margin-bottom:.5rem}
+.warnbox h3{color:var(--warn);font-size:.98rem;margin-bottom:.5rem}
 .warnbox p{font-size:.88rem;color:color-mix(in srgb,var(--warn) 80%,var(--fg))}
-.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(200%);
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(calc(100% + 2rem));visibility:hidden;
   background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:9999px;font-size:.85rem;
   transition:transform .25s;z-index:80;box-shadow:0 8px 30px rgba(0,0,0,.25)}
-.toast.on{transform:translateX(-50%) translateY(0)}
+.toast.on{transform:translateX(-50%) translateY(0);visibility:visible}
 dialog{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--fg);
   max-width:min(62rem,92vw);width:100%;padding:0}
 dialog::backdrop{background:rgba(15,18,22,.55)}
@@ -69,7 +82,7 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
 .dlg-b{padding:1rem 1.2rem}
 .dlg-b textarea{width:100%;min-height:55vh;font-family:var(--mono);font-size:.76rem;line-height:1.5;
   color:var(--fg);background:var(--bg);border:1px solid var(--input);border-radius:var(--radius-sm);padding:.6rem;resize:vertical}
-@media print{.filters,.bar,.toast{display:none}.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media print{.filters,.bar-prio,.toast{display:none}.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 
 <main class="wrap"><div class="page">
@@ -103,7 +116,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
 
   <div class="conv">
     <div class="card cbox">
-      <h4>Prioridades</h4>
+      <h3>Prioridades</h3>
       <dl>
         <dt>P0</dt><dd>Essencial para nomear a trava governante no Comitê 1. Sem ela, o diagnóstico não fecha e o comitê não acontece.</dd>
         <dt>P1</dt><dd>Importante para sustentar a recomendação sob escrutínio do board.</dd>
@@ -111,7 +124,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
       </dl>
     </div>
     <div class="card cbox">
-      <h4>Granularidade e histórico</h4>
+      <h3>Granularidade e histórico</h3>
       <dl>
         <dt>U</dt><dd>Unidade de negócio — Imóveis (ZAP+, VivaReal, OLX Imóveis) e Autos</dd>
         <dt>S</dt><dd>Segmento de cliente — imobiliária, corretor, incorporadora, revenda, concessionária</dd>
@@ -123,7 +136,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
   </div>
 
   <div class="card cbox" style="margin-top:.75rem">
-    <h4>Fontes esperadas</h4>
+    <h3>Fontes esperadas</h3>
     <p style="font-size:.87rem;color:var(--muted-fg)">Salesforce Sales Cloud (pipeline, motivos de
       perda, ciclo) · Salesforce Marketing Cloud (jornadas e métricas de e-mail) · GA4 e GTM (sessões,
       eventos, conversão) · Google Ads e Meta Ads (investimento e performance) · Google Search Console
@@ -133,7 +146,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
   </div>
 
   <div class="card warnbox">
-    <h4>Esta é a versão 0 — validar no kick-off</h4>
+    <h3>Esta é a versão 0 — validar no kick-off</h3>
     <p>O catálogo foi construído sobre a leitura de que a receita B2B do Grupo OLX vem de plano ou
       assinatura de anunciante, com motion sales-led. Essa leitura ainda não foi confirmada pela OLX.
       Se o modelo de receita for outro — take rate por transação, lead avulso, mídia — as camadas de
@@ -150,7 +163,7 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
       <button class="fbtn" type="button" data-p="P1" aria-pressed="false">P1</button>
       <button class="fbtn" type="button" data-p="P2" aria-pressed="false">P2</button>
       <span style="width:.6rem"></span>
-      <span id="tfilters"></span>
+      <details id="tcolapso" open><summary>Filtrar por camada</summary><span id="tfilters"></span></details>
       <input id="q" type="text" placeholder="Buscar métrica, fonte ou definição…" aria-label="Buscar">
       <span class="count" id="count"></span>
       <button class="btn" id="csv" type="button">Copiar CSV</button>
@@ -216,14 +229,14 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<dialog id="dlg">
+<dialog id="dlg" aria-labelledby="dlg-tit">
   <div class="dlg-h">
-    <span><strong>Dicionário em CSV</strong>
+    <span><strong id="dlg-tit">Dicionário em CSV</strong>
       <span id="dlg-sub" style="color:var(--muted-fg);font-size:.84rem;margin-left:.5rem"></span></span>
     <span><button class="btn" id="dlg-copy" type="button">Copiar</button>
     <button class="btn" id="dlg-close" type="button">Fechar</button></span>
   </div>
-  <div class="dlg-b"><textarea id="dlg-txt" readonly></textarea></div>
+  <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Dicionário de métricas em CSV"></textarea></div>
 </dialog>
 
 <script src="/assets/metrics-data.js"></script>
@@ -304,7 +317,7 @@ ORDEM.forEach(t => {
     '<td class="num">' + rs.length + "</td>" +
     '<td class="num" style="color:var(--brand-ink);font-weight:600">' + c0 + "</td>" +
     '<td class="num">' + c1 + "</td><td class=\"num\">" + c2 + "</td>" +
-    '<td class="b"><span class="bar">' +
+    '<td class="b"><span class="bar-prio">' +
       '<i class="p0" style="width:' + (c0 / rs.length * 100) + '%"></i>' +
       '<i class="p1" style="width:' + (c1 / rs.length * 100) + '%"></i>' +
       '<i class="p2" style="width:' + (c2 / rs.length * 100) + '%"></i></span></td>';
@@ -323,7 +336,11 @@ document.getElementById("s-p2").textContent = g2;
 
 const dlg = document.getElementById("dlg");
 const toast = document.getElementById("toast");
-function say(m){ toast.textContent = m; toast.classList.add("on"); setTimeout(() => toast.classList.remove("on"), 2200); }
+function say(m){
+  toast.classList.add("on");
+  requestAnimationFrame(() => { toast.textContent = m; });
+  setTimeout(() => toast.classList.remove("on"), 2200);
+}
 
 function buildCsv(){
   const head = ["trava","macrofase","metrica","unidade","fonte","granularidade","prioridade","o_que_mede"];

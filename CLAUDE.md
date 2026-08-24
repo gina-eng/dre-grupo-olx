@@ -8,6 +8,7 @@ Repositório central do projeto **Destrava Receita Estratégico (DR-E)** da V4 C
 - Cláusula 5.3 do contrato: é vedado subcontratar atividades de tratamento de dados sem autorização expressa prévia da OLX.
 - Acessos de plataforma são concedidos **apenas** a `gina@v4company.com`.
 - **Nenhuma credencial no repositório.** O `.gitignore` bloqueia `.env*`, `.credentials/`, `*credentials*.json`, `service-account*.json`, `*.pem`, `*.key`. Se precisar de segredo, use variável de ambiente.
+- Segredos deste projeto e onde vivem: **V4MOS** em `.credentials/clients.json` (chmod 600, fora do git — ver [`dre-v4mos`](.claude/skills/dre-v4mos/SKILL.md)); **senha do portal** na variável `PORTAL_SENHA` do projeto Vercel (ver [portal/PUBLICACAO.md](portal/PUBLICACAO.md)). Nenhum dos dois é versionado, e nenhum deve ser colado em documento, ata ou mensagem.
 - Não publique conteúdo deste repo em serviço externo (artifact, gist, paste) sem pedido explícito.
 
 ## Estrutura

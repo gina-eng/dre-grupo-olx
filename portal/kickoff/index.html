@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Kick-off · Portal DR-E Grupo OLX</title>
 <meta name="description" content="88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno — instrumento de condução da sessão.">
-<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
@@ -47,7 +47,7 @@
   font-size:.75rem;color:var(--muted-fg);text-decoration:none;transition:.14s;display:inline-flex;gap:.35rem;align-items:center}
 .chip:hover{border-color:var(--brand);color:var(--brand-ink)}
 .chip b{font-family:var(--mono);font-size:.68rem;color:var(--brand-ink);font-weight:500}
-.bloco{margin-top:2.75rem;scroll-margin-top:4.5rem}
+.bloco{margin-top:2.75rem;scroll-margin-top:7.5rem}
 .bloco-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
 .bloco-h .idx{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--brand-ink);letter-spacing:-.03em}
 .bloco-h h2{font-size:1.4rem;flex:1}
@@ -65,6 +65,16 @@
   .bar-in{gap:.5rem}
   .progress .pbar{width:70px}
 }
+/* Abaixo de ~410px a .bar-in quebrava em duas linhas (55px -> 98px) e a barra sticky
+   passava a cobrir o título do bloco ao clicar num chip. Duas travas: manter a barra
+   em uma linha, e ainda assim recuar mais o alvo do scroll. */
+@media(max-width:430px){
+  .bar-in{flex-wrap:nowrap}
+  .progress #pcount{display:none}
+  .progress .pbar{width:44px}
+  .btn{padding:.4rem .55rem}
+  .bloco{scroll-margin-top:10rem}
+}
 .q.crit{border-left:3px solid var(--brand)}
 textarea,input[type=text]{width:100%;font:inherit;font-size:.9rem;color:var(--fg);background:var(--bg);
   border:1px solid var(--input);border-radius:var(--radius-sm);padding:.55rem .65rem;resize:vertical}
@@ -74,10 +84,10 @@ textarea:focus,input:focus{border-color:var(--brand);outline:none;box-shadow:0 0
 .q.done .q-label::after{content:"✓";color:var(--ok);margin-left:.4rem;font-weight:600}
 .dados td input{margin:0}
 .dados .idcell{font-family:var(--mono);font-weight:600;color:var(--brand-ink)}
-.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(200%);
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(calc(100% + 2rem));visibility:hidden;
   background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:9999px;font-size:.85rem;
   transition:transform .25s;z-index:80;box-shadow:0 8px 30px rgba(0,0,0,.25)}
-.toast.on{transform:translateX(-50%) translateY(0)}
+.toast.on{transform:translateX(-50%) translateY(0);visibility:visible}
 dialog{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--fg);
   max-width:min(62rem,92vw);width:100%;padding:0}
 dialog::backdrop{background:rgba(15,18,22,.55)}
@@ -143,20 +153,15 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
   </section>
 </div></main>
 
-<footer><div class="wrap">
-  <p>Destrava Receita Estratégico · V4 Company × Grupo OLX · Ciclo 1, Semana 1.
-     Documento de trabalho interno — contém informação confidencial da OLX Brasil.</p>
-</div></footer>
-
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<dialog id="dlg">
+<dialog id="dlg" aria-labelledby="dlg-tit">
   <div class="dlg-h">
-    <strong>Ata em Markdown</strong>
+    <strong id="dlg-tit">Ata em Markdown</strong>
     <span><button class="btn" id="dlg-copy" type="button">Copiar</button>
     <button class="btn" id="dlg-close" type="button">Fechar</button></span>
   </div>
-  <div class="dlg-b"><textarea id="dlg-txt" readonly></textarea></div>
+  <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Ata do kick-off em Markdown"></textarea></div>
 </dialog>
 
 <script src="/assets/form-data.js"></script>
@@ -186,12 +191,12 @@ BLOCOS.forEach(b => {
     const id = b.n + "-" + i; total++;
     const val = state[id] || "";
     html += '<div class="card q' + (q.c ? " crit" : "") + (val.trim() ? " done" : "") + '" data-q="' + id + '">' +
-      '<div class="q-top"><span class="q-label">' + esc(q.q) + (q.c ? ' <span class="tag tag-crit">crítico</span>' : "") +
+      '<div class="q-top"><span class="q-label" id="lbl-' + id + '">' + esc(q.q) + (q.c ? ' <span class="tag tag-crit">crítico</span>' : "") +
       '</span><span class="q-feeds">alimenta → ' + esc(q.f) + '</span></div>' +
       (q.h ? '<p class="q-hint">' + esc(q.h) + '</p>' : "") +
       (q.t === "t"
-        ? '<input type="text" data-id="' + id + '" value="' + esc(val) + '">'
-        : '<textarea data-id="' + id + '">' + esc(val) + '</textarea>') +
+        ? '<input type="text" data-id="' + id + '" aria-labelledby="lbl-' + id + '" value="' + esc(val) + '">'
+        : '<textarea data-id="' + id + '" aria-labelledby="lbl-' + id + '">' + esc(val) + '</textarea>') +
       '</div>';
   });
   html += "</div>";
@@ -207,8 +212,8 @@ BLOCOS_DADOS.forEach(d => {
     "<td><strong>" + esc(d.nome) + "</strong></td>" +
     '<td style="color:var(--muted-fg)">' + esc(d.itens) + "</td>" +
     '<td style="color:var(--muted-fg);font-size:.8rem">' + esc(d.alim) + "</td>" +
-    '<td><input type="text" data-id="D-' + d.id + '-dri" value="' + esc(state["D-" + d.id + "-dri"] || "") + '" placeholder="nome"></td>' +
-    '<td><input type="text" data-id="D-' + d.id + '-prazo" value="' + esc(state["D-" + d.id + "-prazo"] || "") + '" placeholder="dd/mm"></td>';
+    '<td><input type="text" data-id="D-' + d.id + '-dri" aria-label="Responsável pelo bloco ' + d.id + ' — ' + esc(d.nome) + '" value="' + esc(state["D-" + d.id + "-dri"] || "") + '" placeholder="nome"></td>' +
+    '<td><input type="text" data-id="D-' + d.id + '-prazo" aria-label="Prazo do bloco ' + d.id + ' — ' + esc(d.nome) + '" value="' + esc(state["D-" + d.id + "-prazo"] || "") + '" placeholder="dd/mm"></td>';
   dbody.appendChild(tr);
 });
 
@@ -230,7 +235,13 @@ document.addEventListener("input", e => {
 });
 
 const toast = document.getElementById("toast");
-function say(m){ toast.textContent = m; toast.classList.add("on"); setTimeout(() => toast.classList.remove("on"), 2200); }
+function say(m){
+  // Mostra a região primeiro e só então escreve: leitores de tela anunciam a mutação
+  // de uma live region já presente, não uma que reentra na árvore já preenchida.
+  toast.classList.add("on");
+  requestAnimationFrame(() => { toast.textContent = m; });
+  setTimeout(() => toast.classList.remove("on"), 2200);
+}
 
 function markdown(){
   const L = ["# Ata — Kick-off DR-E · Grupo OLX", "", "> Gerado pelo formulário de kick-off. Revisar antes de circular.", ""];

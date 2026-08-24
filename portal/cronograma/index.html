@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Cronograma · Portal DR-E Grupo OLX</title>
 <meta name="description" content="Quatro ciclos de 90 dias, os três comitês de cada ciclo e o Ciclo 1 semana a semana.">
-<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
@@ -59,7 +59,7 @@ section.blk{margin-top:4rem;scroll-margin-top:2rem}
 @media(min-width:900px){.phases{grid-template-columns:repeat(5,1fr)}}
 .phase{background:var(--card);padding:1.05rem 1.1rem}
 .phase .n{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink)}
-.phase h4{margin-top:.35rem;font-size:1rem}
+.phase h3{margin-top:.35rem;font-size:1rem}
 .phase p{margin-top:.45rem;font-size:.83rem;color:var(--muted-fg)}
 
 .coms{display:grid;gap:.75rem;margin-top:1.5rem}
@@ -77,15 +77,17 @@ tr.com-row .wk{color:var(--brand-ink)}
 .wk{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .dt{font-family:var(--mono);font-size:.78rem;color:var(--muted-fg);white-space:nowrap}
 td.fase{font-size:.78rem;color:var(--muted-fg);white-space:nowrap}
+.etapa{font-size:.75rem;color:var(--muted-fg);margin-top:.35rem}
+.etapa b{font-weight:500;font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.1em}
 .hol{display:inline-block;margin-top:.3rem;font-size:.72rem;color:var(--warn);font-family:var(--mono)}
 
 .two{display:grid;gap:.75rem;margin-top:1.5rem}
 @media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
 .note{padding:1.15rem 1.25rem}
-.note h4{font-size:.98rem;margin-bottom:.5rem}
+.note h3{font-size:.98rem;margin-bottom:.5rem}
 .note ul{margin:0;padding-left:1.05rem;font-size:.87rem;color:var(--muted-fg);display:grid;gap:.4rem}
 .note.warn{border-color:color-mix(in srgb,var(--warn) 40%,var(--border));background:var(--warn-bg)}
-.note.warn h4{color:var(--warn)}
+.note.warn h3{color:var(--warn)}
 .note.warn ul{color:color-mix(in srgb,var(--warn) 80%,var(--fg))}
 .rules{display:grid;gap:.6rem;margin-top:1.5rem}
 .rule{display:flex;gap:.9rem;align-items:flex-start;padding:.95rem 1.15rem}
@@ -106,7 +108,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 <div class="stats">
   <div class="stat"><b>4</b><span>ciclos de 90 dias</span></div>
   <div class="stat"><b>12</b><span>comitês — 3 por ciclo</span></div>
-  <div class="stat"><b>4</b><span>comitês presenciais com C-Level</span></div>
+  <div class="stat"><b>4</b><span>presenciais no método padrão <em style="font-style:normal;opacity:.7">(a confirmar)</em></span></div>
   <div class="stat"><b>9</b><span>diagnósticos técnicos contratados</span></div>
 </div>
 
@@ -135,7 +137,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   </div>
   <div class="two">
     <div class="card note">
-      <h4>Por que 90 dias</h4>
+      <h3>Por que 90 dias</h3>
       <ul>
         <li>É o menor intervalo em que uma mudança estrutural aparece em métrica de receita, e não em métrica de atividade.</li>
         <li>É curto o bastante para que uma hipótese errada custe um trimestre, não um ano.</li>
@@ -143,7 +145,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       </ul>
     </div>
     <div class="card note">
-      <h4>A folga de quatro semanas</h4>
+      <h3>A folga de quatro semanas</h3>
       <ul>
         <li>Quatro ciclos de 12 semanas ocupam 48 das 52 semanas do contrato.</li>
         <li>As 4 semanas restantes (26 jul – 24 ago 2027) são reserva para feriados, recessos e remarcações.</li>
@@ -155,19 +157,21 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 
 <section class="blk">
   <div class="blk-h"><h2>A anatomia de um ciclo</h2><span class="eyebrow">5 fases · 12 semanas</span></div>
-  <p class="lead">As mesmas cinco fases se repetem em todo ciclo. A ordem não é negociável: expandir
-    antes de esgotar a otimização multiplica custo sem multiplicar receita.</p>
+  <p class="lead">As mesmas cinco fases se repetem em todo ciclo, e a ordem não é negociável: expandir
+    antes de esgotar a otimização multiplica custo sem multiplicar receita. Duas delas se sobrepõem de
+    propósito — a otimização começa assim que a primeira evidência aparece, sem esperar o diagnóstico
+    fechar.</p>
   <div class="phases">
-    <div class="phase"><span class="n">Semanas 1–3</span><h4>Identificar</h4>
-      <p>Mapear o fluxo de receita ponta a ponta e diagnosticar as 8 travas com dado e com experiência real de cliente.</p></div>
-    <div class="phase"><span class="n">Semanas 4–7</span><h4>Otimizar</h4>
-      <p>Extrair o máximo da restrição sem recursos novos. Ajuste de processo, priorização, eliminação de desperdício.</p></div>
-    <div class="phase"><span class="n">Semanas 8–9</span><h4>Alinhar</h4>
-      <p>Instalar os rituais, indicadores e responsabilidades que sustentam a mudança depois que a consultoria sai da sala.</p></div>
-    <div class="phase"><span class="n">Semanas 10–11</span><h4>Expandir</h4>
-      <p>Só depois de evidência de saturação. Ampliar o que provou funcionar, com critério de validação intermediária.</p></div>
-    <div class="phase"><span class="n">Semana 12</span><h4>Recomeçar</h4>
-      <p>Ler o ciclo inteiro, classificar cada iniciativa e nomear a próxima restrição com o mesmo rigor da primeira.</p></div>
+    <div class="phase"><span class="n">Semanas 1–4</span><h3>Identificar</h3>
+      <p>Descobrir onde está o gargalo real, não o percebido. Fluxo de receita ponta a ponta, as 8 travas com dado e experiência real, e confirmação por impulso controlado.</p></div>
+    <div class="phase"><span class="n">Semanas 2–4</span><h3>Otimizar</h3>
+      <p>Extrair o máximo da restrição <em>sem novos investimentos</em>. Onde há dinheiro na mesa que ninguém está vendo.</p></div>
+    <div class="phase"><span class="n">Semanas 5–7</span><h3>Alinhar</h3>
+      <p>Subordinar o sistema à restrição — inclusive pausando iniciativa boa que não contribui para ela. A fase mais difícil, gerencialmente.</p></div>
+    <div class="phase"><span class="n">Semanas 8–12</span><h3>Expandir</h3>
+      <p>Romper o teto da restrição, com decisão baseada em causalidade comprovada. Só depois de evidência de saturação.</p></div>
+    <div class="phase"><span class="n">Semana 12</span><h3>Recomeçar</h3>
+      <p>Encerra o ciclo e abre o próximo ao mesmo tempo: classifica cada iniciativa e nomeia a próxima restrição com o mesmo rigor da primeira.</p></div>
   </div>
 </section>
 
@@ -199,7 +203,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
     </div>
     <div class="card com">
       <div class="com-top"><h3>Comitê 3</h3><span class="when">12 nov 2026</span></div>
-      <p class="decide">Decide: o que a próxima restrição, e o que levamos do ciclo.</p>
+      <p class="decide">Decide: qual é a próxima restrição, e o que levamos do ciclo.</p>
       <ul>
         <li>Cada iniciativa classificada em manter, ajustar ou abandonar — nada fica sem classificação.</li>
         <li>Fluxo de receita relido: onde o sistema desacelera agora que a primeira trava cedeu.</li>
@@ -217,15 +221,15 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   <div class="card scrollx" style="margin-top:1.4rem">
     <table>
       <thead><tr>
-        <th style="width:3rem">Sem.</th><th style="width:8rem">Período</th><th>Entrega da V4</th>
-        <th>O que depende do Grupo OLX</th><th style="width:15rem">Critério de aceite</th>
+        <th style="width:3rem">Sem.</th><th style="width:8rem">Período</th><th style="width:7rem">Fase</th>
+        <th>Entrega da V4</th><th>O que depende do Grupo OLX</th><th style="width:14rem">Critério de aceite</th>
       </tr></thead>
       <tbody id="wk"></tbody>
     </table>
   </div>
   <div class="two">
     <div class="card note warn">
-      <h4>Riscos de calendário já mapeados</h4>
+      <h3>Riscos de calendário já mapeados</h3>
       <ul>
         <li><b>Três segundas-feiras perdidas no Ciclo 1:</b> 7 set (Independência), 12 out (Aparecida) e 2 nov (Finados). São semanas de 4 dias úteis — as entregas dessas semanas já consideram isso.</li>
         <li><b>O Ciclo 3 abre no Carnaval:</b> 8 e 9 de fevereiro de 2027. A semana 1 daquele ciclo perde 2 dias; vale antecipar a coleta de dados para janeiro.</li>
@@ -233,7 +237,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       </ul>
     </div>
     <div class="card note">
-      <h4>Datas a bloquear no kick-off</h4>
+      <h3>Datas a bloquear no kick-off</h3>
       <ul>
         <li><b>17 set</b> — Comitê 1, 2h, com o decisor presente.</li>
         <li><b>8 out</b> — Comitê 2, presencial, 2h, com C-Level.</li>
@@ -271,19 +275,30 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 
 <script>
 const SEMANAS = [
- ["1","24–28 ago","Identificar","Kick-off, alinhamento de governança e abertura do canal assíncrono. Levantamento de acessos e mapa de dados.","Nomear DRI por frente. Liberar acessos de plataforma. Confirmar o recorte de unidades no escopo.","Escopo e governança em ata; acessos solicitados"],
- ["2","31 ago – 4 set","Identificar","Mapeamento do fluxo de receita por unidade. Início das auditorias de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
- ["3","7–11 set","Identificar","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set — Independência"],
- ["4","14–18 set","Otimizar","Consolidação causal, preparação e realização do <b>Comitê 1</b>.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
- ["5","21–25 set","Otimizar","Início da execução assistida. Acompanhamento semanal das métricas da restrição.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
- ["6","28 set – 2 out","Otimizar","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
- ["7","5–9 out","Alinhar","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
- ["8","12–16 out","Expandir","Execução do cronograma e monitoramento semanal do throughput.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out — N. Sra Aparecida"],
- ["9","19–23 out","Expandir","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão.","Evidenciar mudanças reais de alocação — verba, pausa, prioridade.","Critérios intermediários atingidos"],
- ["10","26–30 out","Expandir","Leitura de estabilização. Preparação da matriz de expansão do próximo ciclo.","Confirmar disponibilidade de recurso para o que for aprovado.","Processos implementados operando sem apoio diário"],
- ["11","2–6 nov","Recomeçar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov — Finados"],
+ ["1","24–28 ago","Onboarding e visibilidade","Kick-off, alinhamento de governança e abertura do canal assíncrono. Levantamento de acessos e mapa de dados.","Nomear DRI por frente. Liberar acessos de plataforma. Confirmar o recorte de unidades no escopo.","Escopo e governança em ata; acessos solicitados"],
+ ["2","31 ago – 4 set","Análise diagnóstica e pesquisa","Mapeamento do fluxo de receita por unidade. Início das auditorias de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
+ ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set — Independência"],
+ ["4","14–18 set","Validação e otimização","Consolidação causal, preparação e realização do <b>Comitê 1</b>.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
+ ["5","21–25 set","Validação e otimização","Início da execução assistida. Acompanhamento semanal das métricas da restrição.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
+ ["6","28 set – 2 out","Posicionamento e planejamento","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
+ ["7","5–9 out","Posicionamento e planejamento","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
+ ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out — N. Sra Aparecida"],
+ ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão.","Evidenciar mudanças reais de alocação — verba, pausa, prioridade.","Critérios intermediários atingidos"],
+ ["10","26–30 out","Expandir e executar","Leitura de estabilização. Preparação da matriz de expansão do próximo ciclo.","Confirmar disponibilidade de recurso para o que for aprovado.","Processos implementados operando sem apoio diário"],
+ ["11","2–6 nov","Expandir e executar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov — Finados"],
  ["12","9–13 nov","Recomeçar","<b>Comitê 3</b>: revisão consolidada, ROI do ciclo e definição da nova restrição.","Decisor presente. Decisão formal de continuidade em ata.","Nova restrição definida; ata assinada"]
 ];
+// Fases conforme 00-playbook/03-ciclo-90-dias-e-comites.md §1 — Identificar (1–4) e
+// Otimizar (2–4) se sobrepõem; Expandir (8–12) cobre a semana de Recomeçar (12).
+function fasesDaSemana(s) {
+  const f = [];
+  if (s >= 1 && s <= 4) f.push("Identificar");
+  if (s >= 2 && s <= 4) f.push("Otimizar");
+  if (s >= 5 && s <= 7) f.push("Alinhar");
+  if (s >= 8 && s <= 12) f.push("Expandir");
+  if (s === 12) f.push("Recomeçar");
+  return f;
+}
 const tb = document.getElementById("wk");
 SEMANAS.forEach(s => {
   const isCom = /Comitê/.test(s[3]);
@@ -292,7 +307,8 @@ SEMANAS.forEach(s => {
   tr.innerHTML =
     '<td class="wk">S' + s[0] + "</td>" +
     '<td class="dt">' + s[1] + (s[6] ? '<span class="hol">' + s[6] + "</span>" : "") + "</td>" +
-    "<td>" + s[3] + '<div class="fase" style="margin-top:.35rem">' + s[2] + "</div></td>" +
+    '<td class="fase">' + fasesDaSemana(Number(s[0])).join("<br>") + "</td>" +
+    "<td>" + s[3] + '<div class="etapa"><b>etapa</b> · ' + s[2] + "</div></td>" +
     '<td style="color:var(--muted-fg)">' + s[4] + "</td>" +
     '<td style="font-size:.8rem;color:var(--muted-fg)">' + s[5] + "</td>";
   tb.appendChild(tr);

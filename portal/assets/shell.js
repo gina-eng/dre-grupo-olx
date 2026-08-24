@@ -41,7 +41,10 @@
     try {
       var s = JSON.parse(localStorage.getItem("dre-olx-kickoff-v1") || "{}");
       var n = 0;
-      Object.keys(s).forEach(function (k) { if (String(s[k]).trim()) n++; });
+      // As chaves "D-*" são o checklist de dados A-J, não as 88 perguntas.
+      Object.keys(s).forEach(function (k) {
+        if (k.indexOf("D-") !== 0 && String(s[k]).trim()) n++;
+      });
       return n;
     } catch (e) { return 0; }
   };
