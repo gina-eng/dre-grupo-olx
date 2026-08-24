@@ -21,6 +21,7 @@ __pycache__/
 credentials.json
 *credentials*.json
 service-account*.json
+.credentials/
 *.pem
 *.key
 
@@ -28,3 +29,6 @@ service-account*.json
 tmp/
 *.tmp
 ~$*
+
+# Cache de coletas das skills (regenerável)
+dados/cache/

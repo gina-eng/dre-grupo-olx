@@ -1,0 +1,87 @@
+{
+  "slug": "grupo-olx",
+  "meta": {
+    "cliente": "Grupo OLX",
+    "produto": "DR-E",
+    "inicio": "2026-08-24",
+    "duracao_meses": 12,
+    "ciclo_atual": 1,
+    "fase_atual": "Onboarding",
+    "semana_corrente": 1,
+    "version": 1,
+    "atualizado_em": "2026-08-24"
+  },
+  "briefing": {
+    "unidades_negocio": [
+      {"nome": "Imóveis", "marcas": ["ZAP+", "VivaReal"], "modelo": "marketplace / assinatura", "no_escopo": null},
+      {"nome": "Autos B2B", "marcas": ["OLX Autos"], "modelo": "B2B", "no_escopo": true}
+    ],
+    "modelo_receita": null,
+    "ticket_medio": null,
+    "ciclo_venda_dias": null,
+    "receita_declarada_12m": null,
+    "foco_declarado": "B2B — declarado por Mirella Mendonça em e-mail de 10/08/2026",
+    "hipotese_cliente": null,
+    "fonte": "01-cliente/perfil-grupo-olx.md · 01-cliente/historico-onboarding.md"
+  },
+  "contrato": {
+    "valor_total": 752000.00,
+    "parcelas": [
+      {"nome": "Na contratação", "valor": 376000.00, "condicao": "ato da assinatura"},
+      {"nome": "Sucesso de Implementação", "valor": 376000.00, "condicao": "12º mês, conclusão integral do escopo, 30 dias do faturamento"}
+    ],
+    "divergencia_valor": {"acordado_email": 740000.00, "contrato": 752000.00, "delta": 12000.00, "status": "aberta"},
+    "diagnosticos_contratados": [
+      {"id": "i", "nome": "CRM Marketing (Salesforce Marketing Cloud)", "bloco_dados": "B", "status": "pendente"},
+      {"id": "ii", "nome": "Ambientes CRO/SEO (domínios B2B)", "bloco_dados": "C", "status": "pendente"},
+      {"id": "iii", "nome": "GEO — IA e Buscas Generativas", "bloco_dados": "D", "status": "pendente"},
+      {"id": "iv", "nome": "Criativos Ads & Mensagens", "bloco_dados": "E", "status": "pendente"},
+      {"id": "v", "nome": "Redes Sociais e Conteúdo Orgânico", "bloco_dados": "F", "status": "pendente"},
+      {"id": "vi", "nome": "Mídia Paga (Google e Meta)", "bloco_dados": "G", "status": "pendente", "prioritario": true},
+      {"id": "vii", "nome": "Rastreamento Completo (GA4 e GTM)", "bloco_dados": "H", "status": "pendente", "prioritario": true},
+      {"id": "viii", "nome": "Páginas de Captura (LPs) e Fluxos de Conversão", "bloco_dados": "I", "status": "pendente"},
+      {"id": "ix", "nome": "Pré-Vendas, Qualificação e Sales Engagement", "bloco_dados": "J", "status": "pendente", "prioritario": true}
+    ],
+    "sla_horas_uteis": 12,
+    "comites_ano": 12,
+    "comites_presenciais_ano": 4,
+    "bonus": {"gatilho": "cumprimento integral do escopo", "divergencia_registrada": true, "ver": "PENDENCIAS.md"},
+    "fonte": "04-execucao/contrato-e-escopo.md"
+  },
+  "stakeholders": {
+    "decisor": {"nome": "Mirella Mendonça", "cargo": "Marketing Director", "empresa": "OLX Brasil"},
+    "ponto_focal": {"nome": "Michelle Morais", "cargo": "Operações / facilitação", "empresa": "OLX Brasil"},
+    "consultor_dre": {"nome": "Anselmo José Marangoni Brandão Bueno", "empresa": "V4"},
+    "sponsor_v4": {"nome": "Gustavo Figueiredo", "cargo": "Sócio & COO", "empresa": "V4"},
+    "growth_planner": null,
+    "c_level_comites": null,
+    "dris_por_frente": {},
+    "fonte": "01-cliente/stakeholders.md"
+  },
+  "acessos": {
+    "email_oficial_plataformas": "gina@v4company.com",
+    "contas_olxbr": ["Rafael Corazza", "Anselmo Bueno", "Guilherme Monteiro"],
+    "ver": "01-cliente/acessos-e-ferramentas.md"
+  },
+  "conectores": {"fetched_at": null},
+  "travas": {
+    "cegueira": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "exposicao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "atencao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "interesse": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "qualificacao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "compromisso": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "decisao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null},
+    "retencao": {"score": null, "dimensoes": {}, "evidencias": [], "diagnosticado_em": null}
+  },
+  "restricao_identificada": null,
+  "consolidacao_causal": null,
+  "progress": {
+    "skills": {
+      "dre-onboarding": "in_progress"
+    }
+  },
+  "history": [
+    {"data": "2026-08-24", "version": 1, "evento": "Estado inicial criado a partir da documentação organizada do repositório (contrato, e-mails de onboarding, perfil do cliente)."}
+  ]
+}
