@@ -8,7 +8,7 @@
     "ciclo_atual": 1,
     "fase_atual": "Onboarding",
     "semana_corrente": 1,
-    "version": 2,
+    "version": 3,
     "atualizado_em": "2026-08-24",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
@@ -169,17 +169,17 @@
       "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61",
       "api": "https://api.data.v4.marketing/v1",
       "credenciais": ".credentials/clients.json (fora do repositório, chmod 600)",
-      "status": "autenticado, sem dado",
+      "status": "autenticado, Google ingerindo, Meta vazio",
       "verificado_em": "2026-08-24",
       "endpoints": {
+        "google/ads/campaigns": 655,
+        "google/ads/keywords": ">0",
+        "google/ads/gender": ">0",
         "facebook/ads/campaigns": 0,
         "facebook/ads/ad": 0,
-        "facebook/ads/creatives": 0,
-        "google/ads/campaigns": 0,
-        "google/ads/keywords": 0,
-        "google/ads/gender": 0
+        "facebook/ads/creatives": 0
       },
-      "nota": "Credencial valida (secret errado devolve 401) e organizacao autorizada (org inexistente devolve 403). Os seis endpoints devolvem 200 com data=[] e hasNextPage=false em qualquer janela, inclusive sem filtro de data. O workspace existe mas ainda nao tem dado de midia ingerido — coerente com o bloco G (Midia Paga) do checklist, que segue pendente."
+      "nota": "Apos o aceite do convite do MCC VivaReal, o lado Google passou a ingerir: 655 registros de campanha, 8 campanhas, 16/05/2025 a 22/06/2026, R$ 1,91 mi e 7,1 mi de cliques. Meta segue vazio, coerente com as duas contas de anuncio pendentes. As campanhas visiveis tem sufixo 'pf' e tema de aluguel e compra, o que sugere B2C: ver PENDENCIAS 12."
     }
   },
   "travas": {
@@ -249,6 +249,11 @@
       "data": "2026-08-24",
       "version": 2,
       "evento": "Integracao V4MOS configurada e verificada: autenticacao OK nos seis endpoints, workspace sem dado ingerido. Credenciais fora do repositorio."
+    },
+    {
+      "data": "2026-08-24",
+      "version": 3,
+      "evento": "V4MOS revalidado apos o aceite do MCC: Google Ads ingerindo 655 registros, Meta ainda vazio. Aberta a duvida de escopo sobre as campanhas parecerem B2C."
     }
   ]
 }

@@ -1,22 +1,23 @@
 {
-  "_comment": "Fonte da verdade dos acessos do DR-E Grupo OLX, agrupados por conta. Editado pelo portal em /kickoff, que grava aqui via /api/acessos. Editar a mao tambem funciona: o portal le este arquivo.",
+  "_comment": "Fonte da verdade dos acessos do DR-E Grupo OLX, agrupados por conta. Editado pelo portal em /kickoff, que grava aqui via /api/acessos.",
   "atualizado_em": "2026-08-24",
-  "atualizado_por": "claude (semente agrupada por conta)",
+  "atualizado_por": "claude (aceite do MCC confirmado, V4MOS revalidado)",
   "acessos": [
     {
       "o": "Google",
       "f": "Mídia, rastreamento, SEO",
       "r": "Michelle Morais",
       "p": "",
-      "s": "pendente",
+      "s": "parcial",
       "itens": [
-        "Google Ads, contas B2B em leitura",
-        "Google Ads, VR09 ZAP+ MCC VivaReal (526-656-0190): convite enviado, falta a V4 aceitar",
+        "Google Ads, VR09 ZAP+ MCC VivaReal (526-656-0190): CONCEDIDO, aceite feito em gina@v4company.com",
+        "Google Ads, demais contas B2B em leitura",
         "GA4, propriedades dos domínios B2B, nível analista",
         "Google Tag Manager, contêineres publicados",
         "Google Search Console de cada propriedade B2B"
       ],
-      "n": "Uma liberação por produto, mas tudo sob a mesma conta gina@v4company.com. Alimenta as auditorias (ii), (vi) e (vii), e os blocos G e H, os dois prioritários."
+      "v": "verificado em 24/08: o V4MOS passou a devolver 655 registros de campanha do Google Ads, então a ingestão está funcionando",
+      "n": "O MCC entrou. Falta GA4, GTM e Search Console, que são o bloco H e a auditoria (vii), a prioritária. Atenção: as 8 campanhas visíveis têm sufixo pf e falam de aluguel e compra de imóvel, ou seja, parecem ser pessoa física, não o B2B do escopo. Confirmar no kick-off se a conta B2B é outra."
     },
     {
       "o": "Meta",
@@ -30,8 +31,8 @@
         "Business Manager, acesso de parceiro",
         "Business Suite, nível analista"
       ],
-      "v": "verificado em 24/08: nenhuma das duas contas aparece na conta Meta conectada",
-      "n": "As duas contas de anúncio estão pendentes de aprovação do lado da OLX. Alimenta as auditorias (iv), (v) e (vi)."
+      "v": "verificado em 24/08: nenhuma das duas contas aparece na conta Meta conectada, e os seis endpoints do Facebook no V4MOS devolvem vazio",
+      "n": "As duas contas de anúncio seguem pendentes de aprovação do lado da OLX. É o que falta para fechar a auditoria (vi), já que o lado Google destravou. Alimenta também (iv) e (v)."
     },
     {
       "o": "Conta corporativa @olxbr.com",

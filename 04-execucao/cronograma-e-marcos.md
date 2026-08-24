@@ -25,6 +25,21 @@
 > ⚠️ O método avança **por estado do sistema, não por calendário**. As datas acima são
 > planejamento, não compromisso. Um comitê só acontece quando existe evidência para decidir.
 
+## As nove auditorias dentro do ciclo
+
+As nove auditorias da cláusula 1.2 não rodam juntas: são **três ondas**, com no máximo três abertas
+por semana, cada uma amarrada à decisão que sustenta. Janelas e racional em
+[02-diagnostico/auditorias-contratadas.md](../02-diagnostico/auditorias-contratadas.md#sequência-e-janelas).
+
+| Onda | Semanas | Auditorias | Fecha para |
+|---|---|---|---|
+| 1 | S2–S5 | (vii) rastreamento, (vi) mídia paga, (ix) pré-vendas, (viii) LPs | Comitê 1 e o plano de 30 dias |
+| 2 | S5–S7 | (i) CRM Marketing, (iv) criativos, (v) redes sociais | Posicionamento e Comitê 2 |
+| 3 | S7–S9 | (ii) CRO/SEO, (iii) GEO | Fase Expandir, Comitê 3 e linha de base do Ciclo 2 |
+
+> O Comitê 1 não depende das nove fechadas. Depende de evidência suficiente para nomear **uma**
+> restrição e refutar as concorrentes: por isso a onda 1 concentra o que está mais perto do dinheiro.
+
 ## Marcos contratuais
 
 | Marco | Referência |

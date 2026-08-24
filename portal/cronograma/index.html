@@ -82,6 +82,12 @@
 .g-hol{position:absolute;top:0;bottom:0;width:2px;background:color-mix(in srgb,var(--warn) 70%,transparent)}
 .g-hol::after{content:attr(data-l);position:absolute;top:.1rem;left:.25rem;font-family:var(--mono);
   font-size:.6rem;color:var(--warn);white-space:nowrap}
+.g-carga{background:var(--muted)}
+.g-carga .g-lbl{color:var(--muted-fg);font-size:.8rem}
+.g-cnt{align-self:stretch;display:flex;align-items:center;justify-content:center;
+  border-left:1px solid var(--border);font-family:var(--mono);font-size:.76rem;font-weight:600;
+  font-variant-numeric:tabular-nums;color:var(--brand-ink)}
+.g-cnt.vazio{color:var(--muted-fg);font-weight:400}
 .g-legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;padding:.75rem 1rem;border-top:1px solid var(--border);
   background:var(--muted);font-size:.76rem;color:var(--muted-fg)}
 .g-legend span{display:inline-flex;align-items:center;gap:.4rem}
@@ -332,8 +338,10 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 <section class="blk" id="auditorias">
   <div class="blk-h"><h2>As nove auditorias contratadas</h2><span class="eyebrow">cláusula 1.2 · Ciclo 1</span></div>
   <p class="lead">O contrato inclui nove diagnósticos técnicos. Eles não são entregas soltas: são a
-    camada analítica do diagnóstico das travas, e por isso precisam fechar antes do Comitê 1, na
-    semana 4. A ordem não é arbitrária.</p>
+    camada analítica do diagnóstico das travas. Rodar as nove ao mesmo tempo cabe no papel e quebra na
+    execução: sete dependem de acesso que ainda não existe, todas consomem tempo do time do Grupo OLX,
+    e cada uma lê melhor o dado depois que a anterior fechou. Por isso elas saem em <b>três ondas</b>,
+    no máximo três em paralelo, e cada onda é amarrada à decisão que precisa sustentar.</p>
 
   <div class="two">
     <div class="card note">
@@ -341,15 +349,45 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       <ul>
         <li>A auditoria <b>(vii)</b> determina se todo o resto é confiável. Se o GA4 e o GTM estiverem medindo errado, cada número das outras oito herda o erro.</li>
         <li>Ela é a única que endereça a <b>Trava de Cegueira</b>, que é pré-condição do método: sem dado mínimo, o diagnóstico é achismo.</li>
-        <li>Por isso ela abre a semana 2, junto com a de mídia paga, que depende dos acessos mais demorados.</li>
+        <li>Por isso ela abre a semana 2, junto com a de mídia paga, que depende dos acessos mais demorados, e fecha na semana 3, antes de qualquer número entrar em material de comitê.</li>
       </ul>
     </div>
     <div class="card note warn">
       <h3>O que pode atrasar</h3>
       <ul>
         <li>Sete das nove dependem de acesso que ainda não foi concedido. As de mídia paga, rastreamento e pré-vendas são as três prioritárias e as três bloqueadas.</li>
-        <li>A <b>(ix)</b> precisa de gravações de call, que envolvem consentimento e LGPD: é a de prazo mais imprevisível.</li>
-        <li>A <b>(iii)</b> parte de linha de base zero, porque não há monitoramento de buscas generativas hoje.</li>
+        <li>A <b>(ix)</b> precisa de gravações de call, que envolvem consentimento e LGPD: é a de prazo mais imprevisível, e por isso tem três semanas de janela em vez de duas.</li>
+        <li>A <b>(iii)</b> parte de linha de base zero, porque não há monitoramento de buscas generativas hoje. Ela fecha o conjunto: medir presença em IA antes de o posicionamento estar definido é levantar linha de base do termo errado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="coms">
+    <div class="card com">
+      <div class="com-top"><h3>Onda 1</h3><span class="when">semanas 2 a 5</span></div>
+      <p class="decide">Sustenta o Comitê 1: nomear a restrição com evidência.</p>
+      <ul>
+        <li><b>(vii)</b> rastreamento · <b>(vi)</b> mídia paga · <b>(ix)</b> pré-vendas · <b>(viii)</b> páginas de captura.</li>
+        <li>É a camada mais próxima do dinheiro, e as três prioritárias estão todas aqui.</li>
+        <li>O comitê não pede as nove fechadas: pede evidência suficiente para nomear uma restrição e refutar as concorrentes.</li>
+      </ul>
+    </div>
+    <div class="card com">
+      <div class="com-top"><h3>Onda 2</h3><span class="when">semanas 5 a 7</span></div>
+      <p class="decide">Sustenta o Comitê 2: posicionamento, ICP e proposta de valor.</p>
+      <ul>
+        <li><b>(i)</b> CRM Marketing · <b>(iv)</b> criativos e mensagens · <b>(v)</b> redes e conteúdo orgânico.</li>
+        <li>São as auditorias que dizem o que o mercado ouve do Grupo OLX hoje, insumo direto do posicionamento na semana 6.</li>
+        <li>Rodam durante a execução assistida do plano de 30 dias, sem disputar acesso e agenda com ela.</li>
+      </ul>
+    </div>
+    <div class="card com">
+      <div class="com-top"><h3>Onda 3</h3><span class="when">semanas 7 a 9</span></div>
+      <p class="decide">Sustenta a fase Expandir e o Comitê 3.</p>
+      <ul>
+        <li><b>(ii)</b> CRO e SEO dos domínios B2B · <b>(iii)</b> GEO e buscas generativas.</li>
+        <li>São alavancas de prazo longo: alimentam o plano de 90 dias e a matriz de expansão, não a decisão sobre a restrição.</li>
+        <li>Fecham três semanas antes do Comitê 3, com tempo para virarem linha de base do Ciclo 2.</li>
       </ul>
     </div>
   </div>
@@ -357,17 +395,22 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   <div class="gantt-wrap">
     <div class="gantt-scroll"><div class="gantt" id="gaud" role="group" aria-label="Execução das nove auditorias ao longo do Ciclo 1"></div></div>
     <div class="g-legend">
-      <span><i style="background:var(--brand)"></i>Prioritária, destrava o diagnóstico</span>
-      <span><i style="background:color-mix(in srgb,var(--brand) 45%,var(--card));border:1px solid color-mix(in srgb,var(--brand) 45%,transparent)"></i>Demais</span>
-      <span><i style="border-radius:50%;background:var(--brand)"></i>Comitê 1, prazo de todas</span>
+      <span><i style="background:var(--brand)"></i>Onda 1, fecha para o Comitê 1</span>
+      <span><i style="background:color-mix(in srgb,var(--brand) 76%,var(--muted-fg))"></i>Onda 2, fecha para o Comitê 2</span>
+      <span><i style="background:color-mix(in srgb,var(--brand) 54%,var(--muted-fg))"></i>Onda 3, fecha para a expansão</span>
+      <span><i style="border-radius:50%;background:var(--brand)"></i>Comitê</span>
     </div>
+    <p class="g-nota">A última linha é a que importa para a agenda do Grupo OLX: <b>nenhuma semana tem
+      mais de três auditorias em paralelo</b>, e é essa carga que determina quanto tempo de time o
+      diagnóstico consome por semana, em entrevista, liberação de acesso e validação de achado.</p>
   </div>
 
   <div class="card scrollx" style="margin-top:1.2rem">
     <table>
       <thead><tr>
-        <th style="width:2.5rem">#</th><th>Auditoria</th><th style="width:5rem">Semana</th>
-        <th style="width:5rem">Bloco</th><th>Travas que informa</th><th>Depende de</th>
+        <th style="width:2.5rem">#</th><th>Auditoria</th><th style="width:5rem">Semanas</th>
+        <th style="width:11rem">Fecha para</th>
+        <th style="width:4rem">Bloco</th><th>Travas que informa</th><th>Depende de</th>
       </tr></thead>
       <tbody id="audtab"></tbody>
     </table>
@@ -405,25 +448,39 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 // Fonte: 02-diagnostico/auditorias-contratadas.md. A sequência segue a recomendação do
 // próprio documento: rastreamento primeiro, pré-vendas em seguida.
 var AUDITORIAS = [
-  {id:"vii", nome:"Rastreamento completo (GA4 e GTM)", de:2, ate:3, bloco:"H", prio:true,
+  {id:"vii", nome:"Rastreamento completo (GA4 e GTM)", de:2, ate:3, bloco:"H", prio:true, onda:1,
+   fecha:"Pré-condição de todas, gate na S3",
    travas:"Cegueira, pré-condição de todas", dep:"GA4 e GTM, nível analista"},
-  {id:"vi",  nome:"Mídia paga (Google e Meta)", de:2, ate:3, bloco:"G", prio:true,
+  {id:"vi",  nome:"Mídia paga (Google e Meta)", de:2, ate:4, bloco:"G", prio:true, onda:1,
+   fecha:"Comitê 1",
    travas:"Exposição, Atenção, Qualificação", dep:"Contas Google e Meta, e o workspace V4MOS com dado"},
-  {id:"ix",  nome:"Pré-vendas, qualificação e sales engagement", de:2, ate:4, bloco:"J", prio:true,
+  {id:"ix",  nome:"Pré-vendas, qualificação e sales engagement", de:3, ate:5, bloco:"J", prio:true, onda:1,
+   fecha:"Comitê 1, com leitura preliminar na S4",
    travas:"Qualificação, Compromisso, Decisão", dep:"CRM, cadências e gravações de call"},
-  {id:"ii",  nome:"Ambientes CRO e SEO dos domínios B2B", de:3, ate:4, bloco:"C", prio:false,
-   travas:"Exposição, Interesse", dep:"Search Console e acesso ao CMS"},
-  {id:"viii",nome:"Páginas de captura e fluxos de conversão", de:3, ate:4, bloco:"I", prio:false,
+  {id:"viii",nome:"Páginas de captura e fluxos de conversão", de:4, ate:5, bloco:"I", prio:false, onda:1,
+   fecha:"Plano de 30 dias saído do Comitê 1",
    travas:"Interesse, Compromisso", dep:"CMS e ferramenta de comportamento"},
-  {id:"i",   nome:"CRM Marketing (Salesforce Marketing Cloud)", de:3, ate:4, bloco:"B", prio:false,
+  {id:"i",   nome:"CRM Marketing (Salesforce Marketing Cloud)", de:5, ate:6, bloco:"B", prio:false, onda:2,
+   fecha:"Comitê 2",
    travas:"Interesse, Retenção", dep:"Marketing Cloud, visualização"},
-  {id:"iv",  nome:"Criativos, anúncios e mensagens", de:3, ate:4, bloco:"E", prio:false,
+  {id:"iv",  nome:"Criativos, anúncios e mensagens", de:6, ate:7, bloco:"E", prio:false, onda:2,
+   fecha:"Posicionamento, na S6, e Comitê 2",
    travas:"Atenção", dep:"Biblioteca de criativos e contas de mídia"},
-  {id:"v",   nome:"Redes sociais e conteúdo orgânico", de:3, ate:4, bloco:"F", prio:false,
+  {id:"v",   nome:"Redes sociais e conteúdo orgânico", de:6, ate:7, bloco:"F", prio:false, onda:2,
+   fecha:"Posicionamento, na S6, e Comitê 2",
    travas:"Exposição, Atenção", dep:"Business Suite, LinkedIn e demais canais"},
-  {id:"iii", nome:"GEO, IA e buscas generativas", de:3, ate:4, bloco:"D", prio:false,
+  {id:"ii",  nome:"Ambientes CRO e SEO dos domínios B2B", de:7, ate:8, bloco:"C", prio:false, onda:3,
+   fecha:"Plano de 90 dias e fase Expandir",
+   travas:"Exposição, Interesse", dep:"Search Console e acesso ao CMS"},
+  {id:"iii", nome:"GEO, IA e buscas generativas", de:8, ate:9, bloco:"D", prio:false, onda:3,
+   fecha:"Linha de base para o Ciclo 2",
    travas:"Exposição, Atenção", dep:"Nada externo: parte de linha de base zero"}
 ];
+
+// Comitês marcados no Gantt das auditorias. C3, na semana 12, fica fora: nenhuma auditoria
+// alcança essa altura do ciclo, e a marca ali só sujaria a leitura da carga semanal.
+var COM_AUD = [{s:4, l:"C1", t:"Comitê 1, semana 4: fecha a onda 1"},
+               {s:7, l:"C2", t:"Comitê 2, semana 7: fecha a onda 2"}];
 
 (function () {
   var g = document.getElementById("gaud");
@@ -454,23 +511,49 @@ var AUDITORIAS = [
       tr.className = "g-track";
       tr.style.gridColumn = "2 / -1";
       var bar = document.createElement("div");
-      bar.className = "g-bar " + (a.prio ? "c1" : "fase");
+      bar.className = "g-bar c" + a.onda;
       bar.textContent = "(" + a.id + ")";
       bar.style.left = ((a.de - 1) / 12 * 100) + "%";
       bar.style.width = ((a.ate - a.de + 1) / 12 * 100) + "%";
       bar.setAttribute("aria-label", "Auditoria " + a.id + ", " + a.nome +
-        ", semanas " + a.de + " a " + a.ate + (a.prio ? ", prioritária" : ""));
+        ", semanas " + a.de + " a " + a.ate + ", onda " + a.onda +
+        (a.prio ? ", prioritária" : "") + ", fecha para " + a.fecha);
       tr.appendChild(bar);
-      var mk = document.createElement("div");
-      mk.className = "g-mark";
-      mk.textContent = "C1";
-      mk.style.left = (3.5 / 12 * 100) + "%";
-      mk.title = "Comitê 1, semana 4: prazo de todas as auditorias";
-      mk.setAttribute("aria-label", mk.title);
-      tr.appendChild(mk);
+      COM_AUD.forEach(function (c) {
+        var mk = document.createElement("div");
+        mk.className = "g-mark";
+        mk.textContent = c.l;
+        mk.style.left = ((c.s - 0.5) / 12 * 100) + "%";
+        mk.title = c.t;
+        mk.setAttribute("aria-label", c.t);
+        tr.appendChild(mk);
+      });
       row.appendChild(tr);
       g.appendChild(row);
     });
+
+    // Carga semanal: é o número que define quanto tempo do time do cliente o diagnóstico
+    // consome por semana, e o motivo de as nove não rodarem juntas.
+    var carga = document.createElement("div");
+    carga.className = "g-row g-carga";
+    carga.style.gridTemplateColumns = cols;
+    var cl = document.createElement("div");
+    cl.className = "g-lbl";
+    cl.appendChild(document.createTextNode("Em paralelo"));
+    var cs = document.createElement("small");
+    cs.textContent = "auditorias abertas na mesma semana";
+    cl.appendChild(cs);
+    carga.appendChild(cl);
+    for (var w = 1; w <= 12; w++) {
+      var n = 0;
+      AUDITORIAS.forEach(function (a) { if (a.de <= w && a.ate >= w) n++; });
+      var cel = document.createElement("span");
+      cel.className = "g-cnt" + (n ? "" : " vazio");
+      cel.textContent = n ? n : "—";
+      cel.setAttribute("aria-label", n + " auditoria" + (n === 1 ? "" : "s") + " na semana " + w);
+      carga.appendChild(cel);
+    }
+    g.appendChild(carga);
   }
 
   var tb = document.getElementById("audtab");
@@ -482,6 +565,7 @@ var AUDITORIAS = [
         '<td class="wk">' + a.id + "</td>" +
         "<td><strong>" + a.nome + "</strong>" + (a.prio ? ' <span class="tag tag-p0">prioritária</span>' : "") + "</td>" +
         '<td class="dt">S' + a.de + (a.ate !== a.de ? " a S" + a.ate : "") + "</td>" +
+        '<td style="font-size:.82rem">' + a.fecha + "</td>" +
         '<td class="wk">' + a.bloco + "</td>" +
         '<td style="color:var(--muted-fg)">' + a.travas + "</td>" +
         '<td style="color:var(--muted-fg);font-size:.8rem">' + a.dep + "</td>";
@@ -489,6 +573,7 @@ var AUDITORIAS = [
     });
   }
 })();
+
 
 // Gantt: posições calculadas das datas reais, para não divergirem da tabela abaixo.
 (function () {
@@ -634,13 +719,13 @@ var AUDITORIAS = [
 const SEMANAS = [
  ["1","24–28 ago","Onboarding e visibilidade","Kick-off, alinhamento de governança e abertura do canal assíncrono. Levantamento de acessos e mapa de dados.","Nomear DRI por frente. Liberar acessos de plataforma. Confirmar o recorte de unidades no escopo.","Escopo e governança em ata; acessos solicitados"],
  ["2","31 ago – 4 set","Análise diagnóstica e pesquisa","Mapeamento do fluxo de receita por unidade. Início das auditorias de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
- ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set: Independência"],
- ["4","14–18 set","Validação e otimização","Consolidação causal, preparação e realização do <b>Comitê 1</b>.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
- ["5","21–25 set","Validação e otimização","Início da execução assistida. Acompanhamento semanal das métricas da restrição.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
- ["6","28 set – 2 out","Posicionamento e planejamento","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
- ["7","5–9 out","Posicionamento e planejamento","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
- ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out: N. Sra Aparecida"],
- ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão.","Evidenciar mudanças reais de alocação, verba, pausa, prioridade.","Critérios intermediários atingidos"],
+ ["3","7–11 set","Análise diagnóstica e pesquisa","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual. Fecha a auditoria de rastreamento e entra a de pré-vendas.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set: Independência"],
+ ["4","14–18 set","Validação e otimização","Consolidação causal, preparação e realização do <b>Comitê 1</b>. Fecha a auditoria de mídia paga, com leitura preliminar da de pré-vendas.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
+ ["5","21–25 set","Validação e otimização","Início da execução assistida. Acompanhamento semanal das métricas da restrição. Fecham as auditorias de pré-vendas e de páginas de captura; abre a onda 2, pela de CRM Marketing.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
+ ["6","28 set – 2 out","Posicionamento e planejamento","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura. Fecha a auditoria de CRM Marketing e entram as de criativos e redes sociais.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
+ ["7","5–9 out","Posicionamento e planejamento","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial. A onda 2 das auditorias fecha e entra no material; abre a onda 3, pela de CRO e SEO.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
+ ["8","12–16 out","Expandir e executar","Execução do cronograma e monitoramento semanal do throughput. Fecha a auditoria de CRO e SEO e entra a de buscas generativas.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out: N. Sra Aparecida"],
+ ["9","19–23 out","Expandir e executar","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão. Fecha a nona e última auditoria, de GEO: linha de base para o Ciclo 2.","Evidenciar mudanças reais de alocação, verba, pausa, prioridade.","Critérios intermediários atingidos"],
  ["10","26–30 out","Expandir e executar","Leitura de estabilização. Preparação da matriz de expansão do próximo ciclo.","Confirmar disponibilidade de recurso para o que for aprovado.","Processos implementados operando sem apoio diário"],
  ["11","2–6 nov","Expandir e executar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov: Finados"],
  ["12","9–13 nov","Recomeçar","<b>Comitê 3</b>: revisão consolidada, ROI do ciclo e definição da nova restrição.","Decisor presente. Decisão formal de continuidade em ata.","Nova restrição definida; ata assinada"]

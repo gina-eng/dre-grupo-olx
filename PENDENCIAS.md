@@ -156,25 +156,51 @@ cláusula 3.1 usa numeração romana (**I** e **II**). A referência cruzada est
 
 ---
 
-## 🔴 11. V4MOS conectado, porém sem nenhum dado de mídia
+## 🟠 11. V4MOS com o Google ingerido, Meta ainda vazio
 
-Integração configurada e **verificada em 24/08/2026**: autenticação OK nos seis endpoints
-(`facebook/ads/{campaigns,ad,creatives}` e `google/ads/{campaigns,keywords,gender}`).
-Os dois controles de sanidade passam — secret inválido devolve `401`, organização inexistente
-devolve `403`. Mas os seis endpoints devolvem `200` com `data: []` em **qualquer** janela,
-inclusive sem filtro de data.
+Revalidado em **24/08/2026**, depois de a V4 aceitar o convite do MCC VivaReal.
+
+| Lado | Estado |
+|---|---|
+| **Google Ads** | ✅ Ingerindo. 655 registros de campanha, 8 campanhas distintas, de 16/05/2025 a 22/06/2026, R$ 1,91 mi de investimento e 7,1 mi de cliques |
+| **Meta Ads** | 🟠 Vazio. Os seis endpoints do Facebook devolvem `data: []`, coerente com as duas contas de anúncio ainda pendentes de aprovação na OLX |
+
+**Ação:** cobrar a aprovação das contas `612188193108418` (VR ZAP+) e `1742214902479721`
+(OLX Autos B2B). Sem elas, a auditoria (vi) fecha só pela metade e o CAC do forecast
+fica sem o custo de Meta.
+
+---
+
+## 🔴 12. As campanhas visíveis no Google Ads parecem ser B2C, não B2B
+
+Achado ao ler o primeiro dado real que chegou pelo V4MOS. As 8 campanhas do MCC recém-liberado:
+
+```
+dsageralbr_gg_se_bg_ld_ao_wb_re_vr_pf
+pmaxaluguelsp_gg_pm_bg_la_ao_wb_re_vr_pf
+pmaxcomprasp_gg_pm_bg_lc_ao_wb_re_vr_pf
+pmaxgeralbr_gg_pc_bg_ld_ao_wb_re_vr_pf
+pmaxsp_gg_pc_bg_ld_ao_wb_re_vr_pf
+senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf
+senbcompramcmvsp_gg_pc_bg_lc_ao_wb_re_vr_pf
+senbcomprasp_gg_pc_bg_lc_ao_wb_re_vr_pf
+```
+
+Duas leituras na nomenclatura, ambas apontando para consumidor final:
+
+- Todas terminam em **`vr_pf`**. Se `pf` for pessoa física, é o oposto do recorte contratado.
+- Os temas são **aluguel**, **compra** e **MCMV**, que é jornada de quem procura imóvel,
+  não de imobiliária que anuncia.
 
 | | |
 |---|---|
-| **Leitura** | O workspace existe e a credencial é válida; nenhuma conta de mídia foi ingerida no V4MOS |
-| **Causa provável** | Bloco G (Mídia Paga) pendente — os acessos às contas Google e Meta ainda não foram concedidos a `gina@v4company.com` |
-| **Risco** | Ler `data: []` como "investimento = 0" e concluir que a OLX não investe em mídia. Erro grave e evitável |
-| **Ação** | Cobrar o bloco G no kick-off, com dono e prazo. Até fechar, o diagnóstico de mídia depende de exportação manual |
-| **Responsável** | Michelle Morais (acessos) · Guilherme Monteiro (validação técnica) |
-| **Prazo** | Kick-off de 24/08/2026 |
+| **Por que importa** | O foco declarado pela Mirella em 10/08 é **B2B**. Se a conta liberada é a de captação de consumidor, o diagnóstico de mídia estaria medindo o funil errado |
+| **Hipótese alternativa** | O B2B da OLX pode ser servido por outra conta, ou a mídia B2B pode ser residual e a aquisição de anunciante vir de outro canal, o que já seria um achado |
+| **Ação** | Confirmar no kick-off: o que significa o sufixo `pf` na convenção interna, e qual conta carrega a mídia de captação de anunciante |
+| **Responsável** | Michelle Morais · **Prazo:** kick-off de 24/08/2026 |
 
-> Enquanto isso não fechar, as travas de **Exposição**, **Atenção** e **Qualificação** ficam sem
-> camada analítica de mídia, e o CAC do forecast fica sem fonte primária.
+> Não conclua nada a partir disso antes da confirmação. É leitura de nomenclatura, não de
+> dado de negócio, e nomenclatura de campanha erra com frequência.
 
 ## Itens resolvidos
 
