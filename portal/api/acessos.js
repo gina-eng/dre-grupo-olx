@@ -55,7 +55,7 @@ async function ler() {
 function valida(acessos) {
   if (!Array.isArray(acessos)) return 'esperava uma lista de acessos';
   if (acessos.length > 200) return 'lista longa demais';
-  const status = ['concedido', 'pendente', 'inexistente'];
+  const status = ['concedido', 'parcial', 'pendente', 'inexistente'];
   for (const a of acessos) {
     if (!a || typeof a !== 'object') return 'linha inválida';
     for (const c of ['o', 'f', 'r', 'p', 'n']) {
@@ -63,6 +63,12 @@ function valida(acessos) {
       if (typeof a[c] === 'string' && a[c].length > 2000) return `campo ${c} longo demais`;
     }
     if (!status.includes(a.s)) return `status inválido: ${a.s}`;
+    if (a.itens != null) {
+      if (!Array.isArray(a.itens) || a.itens.length > 40) return 'itens inválidos';
+      for (const x of a.itens) {
+        if (typeof x !== 'string' || x.length > 500) return 'item inválido';
+      }
+    }
   }
   return null;
 }

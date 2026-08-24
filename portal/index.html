@@ -71,6 +71,7 @@ body{background:#5c0009}
   padding:.12rem .45rem;border-radius:99px;white-space:nowrap;font-weight:600}
 .acs-i b.ok{background:#d6f5e3;color:#0b4a2c}
 .acs-i b.pd{background:rgba(255,255,255,.24);color:#fff}
+.acs-i b.pr{background:#ffe9c2;color:#5c3a00}
 .acs-i span{flex:1}
 .acs-i em{display:block;font-style:normal;font-size:.74rem;color:rgba(255,255,255,.82);margin-top:.12rem}
 .acs-f{padding:.8rem 1.3rem;border-top:1px solid rgba(255,255,255,.2);font-size:.82rem;color:#fff}
@@ -309,7 +310,7 @@ body > footer strong{color:#fff}
   liga();
 })();
 </script>
-<script src="/assets/acessos.js?v=93fb9df3"></script>
+<script src="/assets/acessos.js?v=9a852070"></script>
 <script>
 // Resumo dos acessos, lendo a mesma fonte da lista editável do Kick-off.
 (async function () {
@@ -323,24 +324,29 @@ body > footer strong{color:#fff}
     if (Array.isArray(d.acessos)) { l = d.acessos; fonte = d.atualizado_em || "repositório"; }
   } catch (e) {}
   var c = acessosContagem(l);
-  n.textContent = c.concedido + " de " + c.total + (c.concedido === 1 ? " concedido" : " concedidos") +
-                  " · " + fonte;
+  n.textContent = c.total + " contas · " + c.concedido + " concedidas, " +
+                  c.parcial + " parciais, " + c.pendente + " pendentes · " + fonte;
   host.innerHTML = "";
   l.slice().sort(function (a, b) {
     if (a.s !== b.s) return a.s === "concedido" ? -1 : 1;
     return 0;
-  }).slice(0, 6).forEach(function (it) {
+  }).slice(0, 8).forEach(function (it) {
     var d = document.createElement("div"); d.className = "acs-i";
     var b = document.createElement("b");
-    b.className = it.s === "concedido" ? "ok" : "pd";
-    b.textContent = it.s === "concedido" ? "concedido" : "pendente";
+    b.className = it.s === "concedido" ? "ok" : it.s === "parcial" ? "pr" : "pd";
+    b.textContent = ACESSOS_ROTULO[it.s] || it.s;
     var s = document.createElement("span"); s.textContent = it.o;
+    if (it.itens && it.itens.length) {
+      var q = document.createElement("em");
+      q.textContent = it.itens.length + (it.itens.length === 1 ? " item" : " itens");
+      s.appendChild(q);
+    }
     if (it.v) { var e = document.createElement("em"); e.textContent = it.v; s.appendChild(e); }
     d.appendChild(b); d.appendChild(s); host.appendChild(d);
   });
-  if (l.length > 6) {
+  if (l.length > 8) {
     var d = document.createElement("div"); d.className = "acs-i";
-    var b = document.createElement("b"); b.className = "pd"; b.textContent = "+ " + (l.length - 6);
+    var b = document.createElement("b"); b.className = "pd"; b.textContent = "+ " + (l.length - 8);
     var s = document.createElement("span"); s.textContent = "outros acessos na lista completa";
     d.appendChild(b); d.appendChild(s); host.appendChild(d);
   }
