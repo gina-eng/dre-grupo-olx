@@ -7,6 +7,7 @@
     radial-gradient(70% 50% at 85% 20%, rgba(183,0,38,.85), transparent 55%),
     radial-gradient(100% 70% at 50% 110%, rgba(120,0,4,.90), transparent 60%),
     linear-gradient(135deg,#970013,#d6002e)}
+.atmos .liquid-rect{will-change:transform}
 .red-bg::after{content:"";position:absolute;inset:0;
   background:radial-gradient(circle at 30% 0, rgba(255,255,255,.10), transparent 35%),
              radial-gradient(circle at 80% 100%, rgba(255,255,255,.05), transparent 40%)}
@@ -47,23 +48,6 @@
   background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);white-space:nowrap}
 .door .st-pill.warn{background:rgba(255,236,150,.22);border-color:rgba(255,236,150,.45)}
 
-.panel{margin-top:2.75rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.22);
-  background:rgba(102,0,10,.62);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
-  overflow:hidden}
-.panel-h{padding:1.05rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.16);
-  display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap}
-.panel-h h2{font-size:1.05rem;color:#fff}
-.panel-h span{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;
-  color:rgba(255,255,255,.88)}
-.pend{display:grid;gap:1px;background:rgba(255,255,255,.14)}
-@media(min-width:780px){.pend{grid-template-columns:1fr 1fr}}
-.pi{background:rgba(102,0,10,.72);padding:.95rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start}
-.pi .sev{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;padding:.14rem .42rem;border-radius:9999px;
-  border:1px solid rgba(255,255,255,.3);color:#fff;white-space:nowrap;margin-top:.15rem}
-.pi .sev.alta{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.5);font-weight:600}
-.pi p{font-size:.86rem;color:rgba(255,255,255,.95)}
-.pi p b{color:#fff;font-weight:600}
-.pi p em{display:block;margin-top:.2rem;font-style:normal;font-size:.78rem;color:rgba(255,255,255,.86)}
 
 /* O rodapé é irmão de .red-page, mas o .red-bg é fixed e cobre a viewport inteira —
    então ele também cai sobre o vermelho e precisa de cor própria. */
@@ -75,16 +59,7 @@ body > footer strong{color:#fff}
 </style>
 
 <div class="red-page">
-<div class="red-bg" aria-hidden="true">
-  <div class="atmos">
-    <div class="liquid-rect" style="left:-4%;top:6%;width:250px;height:190px"></div>
-    <div class="liquid-rect" style="left:8%;top:30%;width:160px;height:160px"></div>
-    <div class="liquid-rect" style="left:-3%;top:62%;width:270px;height:200px"></div>
-    <div class="liquid-rect" style="left:79%;top:3%;width:220px;height:180px"></div>
-    <div class="liquid-rect" style="left:90%;top:34%;width:180px;height:230px"></div>
-    <div class="liquid-rect" style="left:78%;top:70%;width:260px;height:200px"></div>
-  </div>
-</div>
+<div class="red-bg" aria-hidden="true"><div class="atmos" id="atmos"></div></div>
 
 <main class="wrap">
   <section class="top">
@@ -126,17 +101,6 @@ body > footer strong{color:#fff}
     </a>
   </nav>
 
-  <section class="panel">
-    <div class="panel-h"><h2>O que precisa fechar no kick-off</h2><span>5 pendências contratuais · 4 blocos de dados prioritários</span></div>
-    <div class="pend">
-      <div class="pi"><span class="sev alta">alta</span><p><b>Valor do contrato.</b> O e-mail acordou R$ 740.000; o contrato registra R$ 752.000.<em>Diferença de R$ 12.000 sem origem documentada.</em></p></div>
-      <div class="pi"><span class="sev alta">alta</span><p><b>Gatilho do bônus.</b> Três definições incompatíveis entre os documentos.<em>Define quando os R$ 376.000 da segunda parcela são devidos.</em></p></div>
-      <div class="pi"><span class="sev alta">alta</span><p><b>Janela de garantia.</b> A cláusula 2.3 encerra a garantia no primeiro encontro.<em>Precisa ser comunicado hoje e registrado em ata.</em></p></div>
-      <div class="pi"><span class="sev">média</span><p><b>Escopo por unidade.</b> O contrato não delimita quais unidades entram.<em>Maior risco de retrabalho do Ciclo 1.</em></p></div>
-      <div class="pi"><span class="sev">média</span><p><b>Numeração das travas.</b> A cláusula 1.2 fala em 7; o método opera com 8.<em>A oitava é a Cegueira, que é pré-condição e não restrição.</em></p></div>
-      <div class="pi"><span class="sev alta">alta</span><p><b>Blocos A, G, H e J.</b> Receita e funil, mídia paga, rastreamento e pré-vendas.<em>Sem eles o diagnóstico não fecha e o Comitê 1 não acontece.</em></p></div>
-    </div>
-  </section>
 </main>
 </div>
 
@@ -178,5 +142,87 @@ body > footer strong{color:#fff}
   var p = document.getElementById("kf-prog");
   p.textContent = n === 0 ? "não iniciado" : n + " respostas";
   if (n === 0) p.classList.add("warn");
+})();
+</script>
+
+<script>
+// Blocos de vidro em deriva: mesma composição do portal de referência —
+// oscilação senoidal contínua somada a uma paralaxe que segue o ponteiro com suavização.
+(function () {
+  var RECTS = [
+    {x:-4,y: 3,w:260,h:200,depth:.50,dirX: 1,dirY: 1,delay:0.0,freqX:.28,freqY:.34,ampX:16,ampY:22},
+    {x: 7,y:16,w:160,h:160,depth:.90,dirX:-1,dirY: 1,delay:1.1,freqX:.42,freqY:.50,ampX:20,ampY:18},
+    {x:-2,y:34,w:280,h:180,depth:.40,dirX:-1,dirY:-1,delay:2.0,freqX:.22,freqY:.30,ampX:18,ampY:16},
+    {x:10,y:50,w:200,h:240,depth:.75,dirX: 1,dirY: 1,delay:0.6,freqX:.38,freqY:.26,ampX:14,ampY:24},
+    {x:-5,y:70,w:260,h:220,depth:.45,dirX: 1,dirY:-1,delay:2.7,freqX:.24,freqY:.32,ampX:16,ampY:20},
+    {x: 6,y:88,w:180,h:180,depth:.85,dirX:-1,dirY: 1,delay:1.6,freqX:.50,freqY:.40,ampX:22,ampY:16},
+    {x:78,y: 1,w:220,h:180,depth:.45,dirX: 1,dirY: 1,delay:1.4,freqX:.30,freqY:.28,ampX:16,ampY:20},
+    {x:90,y:20,w:180,h:240,depth:.70,dirX:-1,dirY: 1,delay:0.3,freqX:.44,freqY:.38,ampX:18,ampY:22},
+    {x:76,y:40,w:260,h:200,depth:.55,dirX:-1,dirY:-1,delay:2.2,freqX:.26,freqY:.30,ampX:14,ampY:18},
+    {x:88,y:58,w:200,h:180,depth:.80,dirX: 1,dirY: 1,delay:0.9,freqX:.40,freqY:.32,ampX:20,ampY:16},
+    {x:80,y:78,w:280,h:220,depth:.50,dirX: 1,dirY:-1,delay:3.1,freqX:.22,freqY:.28,ampX:16,ampY:22},
+    {x:92,y:92,w:160,h:160,depth:.95,dirX:-1,dirY: 1,delay:2.4,freqX:.48,freqY:.42,ampX:20,ampY:18}
+  ];
+
+  var host = document.getElementById("atmos");
+  if (!host) return;
+
+  var nos = RECTS.map(function (r) {
+    var d = document.createElement("div");
+    d.className = "liquid-rect";
+    d.style.left = r.x + "%";
+    d.style.top = r.y + "%";
+    d.style.width = r.w + "px";
+    d.style.height = r.h + "px";
+    host.appendChild(d);
+    return d;
+  });
+
+  // Quem pediu menos movimento fica com a composição estática.
+  var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var raf = 0, rodando = false, t0 = 0, faseAcum = 0;
+  var alvoX = 0, alvoY = 0, sX = 0, sY = 0;
+
+  function ponteiro(e) {
+    alvoX = e.clientX / window.innerWidth - 0.5;
+    alvoY = e.clientY / window.innerHeight - 0.5;
+  }
+
+  function quadro() {
+    if (!rodando) return;
+    var s = (performance.now() - t0) / 1000;
+    sX += (alvoX - sX) * 0.06;
+    sY += (alvoY - sY) * 0.06;
+    for (var i = 0; i < nos.length; i++) {
+      var r = RECTS[i];
+      var dx = Math.sin(s * r.freqX + r.delay) * r.ampX + sX * r.depth * 70 * r.dirX;
+      var dy = Math.cos(s * r.freqY + 0.7 * r.delay) * r.ampY + sY * r.depth * 70 * r.dirY;
+      nos[i].style.transform = "translate3d(" + dx.toFixed(2) + "px," + dy.toFixed(2) + "px,0)";
+    }
+    raf = requestAnimationFrame(quadro);
+  }
+
+  function liga() {
+    if (rodando || mq.matches) return;
+    rodando = true;
+    t0 = performance.now() - faseAcum;
+    raf = requestAnimationFrame(quadro);
+    window.addEventListener("mousemove", ponteiro, { passive: true });
+  }
+  function desliga() {
+    if (!rodando) return;
+    rodando = false;
+    faseAcum = performance.now() - t0;   // retoma a fase de onde parou
+    cancelAnimationFrame(raf);
+    window.removeEventListener("mousemove", ponteiro);
+  }
+
+  // Não gastar quadro com a aba em segundo plano.
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) desliga(); else liga();
+  });
+  if (mq.addEventListener) mq.addEventListener("change", function () { mq.matches ? desliga() : liga(); });
+
+  liga();
 })();
 </script>
