@@ -32,3 +32,6 @@ tmp/
 
 # Cache de coletas das skills (regenerável)
 dados/cache/
+
+# Vercel
+.vercel/

@@ -1,0 +1,269 @@
+<!--@ cronograma | Cronograma · Portal DR-E Grupo OLX | Cronograma de 12 meses | Quatro ciclos de 90 dias, os três comitês de cada ciclo e o Ciclo 1 semana a semana. | 24 ago 2026 → 24 ago 2027 -->
+<style>
+section.blk{margin-top:4rem;scroll-margin-top:2rem}
+.blk-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
+.blk-h h2{font-size:1.45rem;flex:1}
+.lead{margin-top:.9rem;color:var(--muted-fg);font-size:.95rem;max-width:68ch}
+
+.stats{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--card);padding:1.15rem 1.2rem}
+.stat b{display:block;font-size:1.85rem;font-weight:600;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{display:block;margin-top:.25rem;font-size:.8rem;color:var(--muted-fg)}
+
+.cyc{display:grid;gap:.75rem;margin-top:1.5rem}
+@media(min-width:900px){.cyc{grid-template-columns:repeat(4,1fr)}}
+.cycle{padding:1.1rem 1.2rem;position:relative;overflow:hidden}
+.cycle .rail{position:absolute;inset:0 auto 0 0;width:3px;background:var(--brand)}
+.cycle.c2 .rail{background:color-mix(in srgb,var(--brand) 72%,var(--muted))}
+.cycle.c3 .rail{background:color-mix(in srgb,var(--brand) 48%,var(--muted))}
+.cycle.c4 .rail{background:color-mix(in srgb,var(--brand) 26%,var(--muted))}
+.cycle h3{font-size:1rem;margin-bottom:.15rem}
+.cycle .dates{font-family:var(--mono);font-size:.76rem;color:var(--brand-ink);letter-spacing:-.01em}
+.cycle p{margin-top:.6rem;font-size:.84rem;color:var(--muted-fg)}
+
+.phases{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;margin-top:1.5rem}
+@media(min-width:900px){.phases{grid-template-columns:repeat(5,1fr)}}
+.phase{background:var(--card);padding:1.05rem 1.1rem}
+.phase .n{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-ink)}
+.phase h4{margin-top:.35rem;font-size:1rem}
+.phase p{margin-top:.45rem;font-size:.83rem;color:var(--muted-fg)}
+
+.coms{display:grid;gap:.75rem;margin-top:1.5rem}
+@media(min-width:900px){.coms{grid-template-columns:repeat(3,1fr)}}
+.com{padding:1.2rem 1.25rem;display:flex;flex-direction:column;gap:.6rem}
+.com-top{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem}
+.com h3{font-size:1.05rem}
+.com .when{font-family:var(--mono);font-size:.74rem;color:var(--brand-ink);white-space:nowrap}
+.com .decide{background:var(--accent);color:var(--accent-fg);border-radius:var(--radius-sm);
+  padding:.55rem .7rem;font-size:.84rem;font-weight:500}
+.com ul{margin:0;padding-left:1.05rem;font-size:.84rem;color:var(--muted-fg);display:grid;gap:.3rem}
+
+tr.com-row td{background:var(--accent)}
+tr.com-row .wk{color:var(--brand-ink)}
+.wk{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dt{font-family:var(--mono);font-size:.78rem;color:var(--muted-fg);white-space:nowrap}
+td.fase{font-size:.78rem;color:var(--muted-fg);white-space:nowrap}
+.hol{display:inline-block;margin-top:.3rem;font-size:.72rem;color:var(--warn);font-family:var(--mono)}
+
+.two{display:grid;gap:.75rem;margin-top:1.5rem}
+@media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
+.note{padding:1.15rem 1.25rem}
+.note h4{font-size:.98rem;margin-bottom:.5rem}
+.note ul{margin:0;padding-left:1.05rem;font-size:.87rem;color:var(--muted-fg);display:grid;gap:.4rem}
+.note.warn{border-color:color-mix(in srgb,var(--warn) 40%,var(--border));background:var(--warn-bg)}
+.note.warn h4{color:var(--warn)}
+.note.warn ul{color:color-mix(in srgb,var(--warn) 80%,var(--fg))}
+.rules{display:grid;gap:.6rem;margin-top:1.5rem}
+.rule{display:flex;gap:.9rem;align-items:flex-start;padding:.95rem 1.15rem}
+.rule .k{font-family:var(--mono);font-size:.7rem;color:var(--brand-ink);letter-spacing:.1em;
+  text-transform:uppercase;padding-top:.15rem;white-space:nowrap;min-width:7.5rem}
+.rule p{font-size:.89rem}
+.rule p b{font-weight:600}
+@media print{.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section.blk{break-inside:avoid}}
+</style>
+
+<main class="wrap"><div class="page">
+
+<p class="lead" style="max-width:70ch;font-size:1.02rem;margin-bottom:1.5rem">O DR-E não trabalha uma
+lista de melhorias. A cada 90 dias o sistema de receita é lido inteiro, uma única restrição é nomeada
+com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calendário desse ritmo.</p>
+
+<div class="stats">
+  <div class="stat"><b>4</b><span>ciclos de 90 dias</span></div>
+  <div class="stat"><b>12</b><span>comitês — 3 por ciclo</span></div>
+  <div class="stat"><b>4</b><span>comitês presenciais com C-Level</span></div>
+  <div class="stat"><b>9</b><span>diagnósticos técnicos contratados</span></div>
+</div>
+
+<section class="blk">
+  <div class="blk-h"><h2>Os quatro ciclos</h2><span class="eyebrow">visão de 12 meses</span></div>
+  <p class="lead">Cada ciclo é fechado: começa com um diagnóstico completo do sistema de receita e
+    termina com uma decisão formal em ata sobre o que foi resolvido e qual é a próxima restrição.
+    Nenhum ciclo herda conclusão do anterior sem reexame.</p>
+  <div class="cyc">
+    <div class="card cycle c1"><span class="rail"></span>
+      <h3>Ciclo 1</h3><p class="dates">24 ago – 13 nov 2026</p>
+      <p>Linha de base. Mapeamento do fluxo de receita, diagnóstico das 8 travas, validação lógica da
+        primeira restrição e plano de 90 dias.</p></div>
+    <div class="card cycle c2"><span class="rail"></span>
+      <h3>Ciclo 2</h3><p class="dates">16 nov 2026 – 5 fev 2027</p>
+      <p>Primeira leitura de previsto contra realizado. Revisão do forecast com evidência e decisão
+        entre continuar otimizando ou expandir.</p></div>
+    <div class="card cycle c3"><span class="rail"></span>
+      <h3>Ciclo 3</h3><p class="dates">8 fev – 30 abr 2027</p>
+      <p>Segunda restrição em regime. O sistema já mudou de estado — o diagnóstico agora parte de
+        dados gerados dentro do projeto.</p></div>
+    <div class="card cycle c4"><span class="rail"></span>
+      <h3>Ciclo 4</h3><p class="dates">3 mai – 23 jul 2027</p>
+      <p>Consolidação. Verificação do throughput acumulado, do ROI do contrato e definição da
+        continuidade.</p></div>
+  </div>
+  <div class="two">
+    <div class="card note">
+      <h4>Por que 90 dias</h4>
+      <ul>
+        <li>É o menor intervalo em que uma mudança estrutural aparece em métrica de receita, e não em métrica de atividade.</li>
+        <li>É curto o bastante para que uma hipótese errada custe um trimestre, não um ano.</li>
+        <li>Fecha com decisão formal — o ciclo seguinte nunca começa por interpretação retroativa do anterior.</li>
+      </ul>
+    </div>
+    <div class="card note">
+      <h4>A folga de quatro semanas</h4>
+      <ul>
+        <li>Quatro ciclos de 12 semanas ocupam 48 das 52 semanas do contrato.</li>
+        <li>As 4 semanas restantes (26 jul – 24 ago 2027) são reserva para feriados, recessos e remarcações.</li>
+        <li>Reserva não é ociosidade: a assessoria assíncrona continua rodando nela.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>A anatomia de um ciclo</h2><span class="eyebrow">5 fases · 12 semanas</span></div>
+  <p class="lead">As mesmas cinco fases se repetem em todo ciclo. A ordem não é negociável: expandir
+    antes de esgotar a otimização multiplica custo sem multiplicar receita.</p>
+  <div class="phases">
+    <div class="phase"><span class="n">Semanas 1–3</span><h4>Identificar</h4>
+      <p>Mapear o fluxo de receita ponta a ponta e diagnosticar as 8 travas com dado e com experiência real de cliente.</p></div>
+    <div class="phase"><span class="n">Semanas 4–7</span><h4>Otimizar</h4>
+      <p>Extrair o máximo da restrição sem recursos novos. Ajuste de processo, priorização, eliminação de desperdício.</p></div>
+    <div class="phase"><span class="n">Semanas 8–9</span><h4>Alinhar</h4>
+      <p>Instalar os rituais, indicadores e responsabilidades que sustentam a mudança depois que a consultoria sai da sala.</p></div>
+    <div class="phase"><span class="n">Semanas 10–11</span><h4>Expandir</h4>
+      <p>Só depois de evidência de saturação. Ampliar o que provou funcionar, com critério de validação intermediária.</p></div>
+    <div class="phase"><span class="n">Semana 12</span><h4>Recomeçar</h4>
+      <p>Ler o ciclo inteiro, classificar cada iniciativa e nomear a próxima restrição com o mesmo rigor da primeira.</p></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Os três comitês</h2><span class="eyebrow">pontos de decisão · 2h cada</span></div>
+  <p class="lead">Comitê não é apresentação de resultado — é o momento em que uma decisão é tomada e
+    registrada em ata. Se ao final ninguém decidiu nada, o comitê falhou. Por isso a presença do
+    decisor é condição, não preferência.</p>
+  <div class="coms">
+    <div class="card com">
+      <div class="com-top"><h3>Comitê 1</h3><span class="when">17 set 2026</span></div>
+      <p class="decide">Decide: qual é a restrição, e o que atacamos sem recurso novo.</p>
+      <ul>
+        <li>Diagnóstico apresentado nas três camadas: dados, experiência real e leitura sistêmica.</li>
+        <li>Validação lógica da trava — hipóteses concorrentes são eliminadas contra evidência.</li>
+        <li>Regra do bloco: nesta etapa não entram soluções que dependam de aumentar capacidade.</li>
+        <li>Sai com plano de 30 dias, cada ação com responsável nomeado e métrica.</li>
+      </ul>
+    </div>
+    <div class="card com">
+      <div class="com-top"><h3>Comitê 2</h3><span class="when">8 out 2026 · presencial</span></div>
+      <p class="decide">Decide: a restrição saturou? Expandimos ou seguimos otimizando?</p>
+      <ul>
+        <li>Execução do plano anterior lida item a item, com a causa de cada desvio.</li>
+        <li>Teste de saturação: o sistema já extraiu o máximo com os recursos atuais?</li>
+        <li>Ausência de melhoria pode significar falha de execução, não saturação — a distinção muda a decisão.</li>
+        <li>Um <em>não</em> aqui não é falha do ciclo. É o método funcionando.</li>
+      </ul>
+    </div>
+    <div class="card com">
+      <div class="com-top"><h3>Comitê 3</h3><span class="when">12 nov 2026</span></div>
+      <p class="decide">Decide: o que a próxima restrição, e o que levamos do ciclo.</p>
+      <ul>
+        <li>Cada iniciativa classificada em manter, ajustar ou abandonar — nada fica sem classificação.</li>
+        <li>Fluxo de receita relido: onde o sistema desacelera agora que a primeira trava cedeu.</li>
+        <li>Trava anterior classificada em resolvida, parcialmente resolvida ou não resolvida.</li>
+        <li>Plano de 30 dias já orientado à nova restrição, para continuidade sem intervalo.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Ciclo 1, semana a semana</h2><span class="eyebrow">24 ago – 13 nov 2026</span></div>
+  <p class="lead">A coluna que mais importa é a terceira: o que depende do Grupo OLX. Praticamente todo
+    atraso em projeto de diagnóstico vem de dado que não chegou, não de análise que não ficou pronta.</p>
+  <div class="card scrollx" style="margin-top:1.4rem">
+    <table>
+      <thead><tr>
+        <th style="width:3rem">Sem.</th><th style="width:8rem">Período</th><th>Entrega da V4</th>
+        <th>O que depende do Grupo OLX</th><th style="width:15rem">Critério de aceite</th>
+      </tr></thead>
+      <tbody id="wk"></tbody>
+    </table>
+  </div>
+  <div class="two">
+    <div class="card note warn">
+      <h4>Riscos de calendário já mapeados</h4>
+      <ul>
+        <li><b>Três segundas-feiras perdidas no Ciclo 1:</b> 7 set (Independência), 12 out (Aparecida) e 2 nov (Finados). São semanas de 4 dias úteis — as entregas dessas semanas já consideram isso.</li>
+        <li><b>O Ciclo 3 abre no Carnaval:</b> 8 e 9 de fevereiro de 2027. A semana 1 daquele ciclo perde 2 dias; vale antecipar a coleta de dados para janeiro.</li>
+        <li><b>Recesso de fim de ano</b> atravessa as semanas 6 e 7 do Ciclo 2. O Comitê 2 daquele ciclo deve ser puxado para antes do dia 18 de dezembro.</li>
+      </ul>
+    </div>
+    <div class="card note">
+      <h4>Datas a bloquear no kick-off</h4>
+      <ul>
+        <li><b>17 set</b> — Comitê 1, 2h, com o decisor presente.</li>
+        <li><b>8 out</b> — Comitê 2, presencial, 2h, com C-Level.</li>
+        <li><b>12 nov</b> — Comitê 3, 2h, com o decisor presente.</li>
+        <li>São datas propostas. Se alguma não couber, a substituta precisa sair da mesma reunião — remarcar em outubro custa uma fase inteira do ciclo.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Como o ritual funciona entre os comitês</h2><span class="eyebrow">regras do método</span></div>
+  <div class="rules">
+    <div class="card rule"><span class="k">Assessoria</span>
+      <p>Consultoria assíncrona contínua, em canal dedicado, com <b>SLA de 12 horas úteis</b> para
+        resposta. Ajustes táticos são autorizados por ali; mudança de estratégia central só em comitê.</p></div>
+    <div class="card rule"><span class="k">Quality gate</span>
+      <p>Antes de <b>cada</b> comitê, o material passa por validação de um Growth Planner que não
+        participou da análise. Ele testa a robustez causal e a rastreabilidade de cada número.
+        Material reprovado não vai a comitê.</p></div>
+    <div class="card rule"><span class="k">Ata</span>
+      <p>Toda decisão é registrada com o racional, quem decidiu e o prazo. Decisão que só existe na
+        memória da reunião é a principal fonte de retrabalho no ciclo seguinte.</p></div>
+    <div class="card rule"><span class="k">Uma restrição</span>
+      <p>O sistema tem <b>uma</b> trava governante por vez. Material que aponta três focos simultâneos
+        está errado por construção — e o gate reprova.</p></div>
+    <div class="card rule"><span class="k">Obrigação de meio</span>
+      <p>A V4 responde pela aplicação integral do método, pela profundidade do diagnóstico e pelo
+        cumprimento das entregas e prazos. A execução das ações dentro da operação é do Grupo OLX —
+        e é por isso que cada ação sai do comitê com um responsável nomeado.</p></div>
+  </div>
+</section>
+
+</div></main>
+
+<script>
+const SEMANAS = [
+ ["1","24–28 ago","Identificar","Kick-off, alinhamento de governança e abertura do canal assíncrono. Levantamento de acessos e mapa de dados.","Nomear DRI por frente. Liberar acessos de plataforma. Confirmar o recorte de unidades no escopo.","Escopo e governança em ata; acessos solicitados"],
+ ["2","31 ago – 4 set","Identificar","Mapeamento do fluxo de receita por unidade. Início das auditorias de rastreamento e mídia paga.","Entregar os blocos prioritários: receita 24 meses, funil, mídia paga e rastreamento.","Receita derivada do funil bate com a declarada"],
+ ["3","7–11 set","Identificar","Diagnóstico das 8 travas nas camadas analítica e experiencial. Sizing de mercado e concorrentes. Árvore da Realidade Atual.","Disponibilizar time comercial para entrevistas e liberar gravações de call.","Trava prioritária validada pela CRT e assinada em ata","7 set — Independência"],
+ ["4","14–18 set","Otimizar","Consolidação causal, preparação e realização do <b>Comitê 1</b>.","Decisor presente no comitê. Validar ou refutar a leitura da restrição.","Injeção aprovada em comitê; plano de 30 dias com responsáveis"],
+ ["5","21–25 set","Otimizar","Início da execução assistida. Acompanhamento semanal das métricas da restrição.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
+ ["6","28 set – 2 out","Otimizar","Posicionamento, ICP e proposta de valor. Árvores de Pré-Requisitos e da Realidade Futura.","Validar ICP e proposta de valor com quem vende todo dia.","Árvore de Transição fechada"],
+ ["7","5–9 out","Alinhar","Forecast de 12 meses, cronograma de 90 dias e <b>Comitê 2</b> presencial.","C-Level presente. Decisão de expansão ou de seguir otimizando.","Plano de 90 dias assinado; decisão registrada"],
+ ["8","12–16 out","Expandir","Execução do cronograma e monitoramento semanal do throughput.","Manter o ritmo de execução; sinalizar desvio de escopo.","Sem desvio de escopo","12 out — N. Sra Aparecida"],
+ ["9","19–23 out","Expandir","Acompanhamento e ajustes táticos. Validação intermediária das alavancas de expansão.","Evidenciar mudanças reais de alocação — verba, pausa, prioridade.","Critérios intermediários atingidos"],
+ ["10","26–30 out","Expandir","Leitura de estabilização. Preparação da matriz de expansão do próximo ciclo.","Confirmar disponibilidade de recurso para o que for aprovado.","Processos implementados operando sem apoio diário"],
+ ["11","2–6 nov","Recomeçar","Diagnóstico final do ciclo, revisão de aprendizados e novo fluxo de receita.","Fechar os números do trimestre para a leitura de previsto contra realizado.","Cada iniciativa classificada","2 nov — Finados"],
+ ["12","9–13 nov","Recomeçar","<b>Comitê 3</b>: revisão consolidada, ROI do ciclo e definição da nova restrição.","Decisor presente. Decisão formal de continuidade em ata.","Nova restrição definida; ata assinada"]
+];
+const tb = document.getElementById("wk");
+SEMANAS.forEach(s => {
+  const isCom = /Comitê/.test(s[3]);
+  const tr = document.createElement("tr");
+  if (isCom) tr.className = "com-row";
+  tr.innerHTML =
+    '<td class="wk">S' + s[0] + "</td>" +
+    '<td class="dt">' + s[1] + (s[6] ? '<span class="hol">' + s[6] + "</span>" : "") + "</td>" +
+    "<td>" + s[3] + '<div class="fase" style="margin-top:.35rem">' + s[2] + "</div></td>" +
+    '<td style="color:var(--muted-fg)">' + s[4] + "</td>" +
+    '<td style="font-size:.8rem;color:var(--muted-fg)">' + s[5] + "</td>";
+  tb.appendChild(tr);
+});
+</script>

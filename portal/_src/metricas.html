@@ -1,0 +1,349 @@
+<!--@ metricas | Métricas · Portal DR-E Grupo OLX | Dicionário de Métricas | As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade e formato de entrega. | v0 · validar no kick-off -->
+<style>
+.filters{top:3.5rem}
+section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
+.blk-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
+.blk-h h2{font-size:1.4rem;flex:1}
+.lead{margin-top:.9rem;color:var(--muted-fg);font-size:.94rem;max-width:68ch}
+
+.stats{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--card);padding:1.15rem 1.2rem}
+.stat b{display:block;font-size:1.85rem;font-weight:600;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{display:block;margin-top:.25rem;font-size:.8rem;color:var(--muted-fg)}
+
+.conv{display:grid;gap:.75rem;margin-top:1.5rem}
+@media(min-width:820px){.conv{grid-template-columns:1fr 1fr}}
+.cbox{padding:1.15rem 1.25rem}
+.cbox h4{font-size:.98rem;margin-bottom:.6rem}
+.cbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.4rem .85rem;font-size:.86rem}
+.cbox dt{font-family:var(--mono);font-size:.72rem;color:var(--brand-ink);letter-spacing:.04em;padding-top:.18rem;white-space:nowrap}
+.cbox dd{margin:0;color:var(--muted-fg)}
+.funil{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.3rem}
+.funil span{font-family:var(--mono);font-size:.72rem;padding:.18rem .5rem;border-radius:9999px;
+  border:1px solid var(--border-strong);background:var(--muted);color:var(--muted-fg)}
+.funil span.money{border-color:var(--brand);color:var(--brand-ink);background:var(--accent)}
+
+.filters{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);margin-top:1.5rem;padding:.7rem 0}
+.filters-in{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap}
+.fbtn{border:1px solid var(--border-strong);background:var(--card);color:var(--muted-fg);
+  border-radius:9999px;padding:.28rem .68rem;font:inherit;font-size:.78rem;cursor:pointer;transition:.14s}
+.fbtn:hover{border-color:var(--brand);color:var(--brand-ink)}
+.fbtn[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+#q{flex:1;min-width:11rem;font:inherit;font-size:.84rem;color:var(--fg);background:var(--card);
+  border:1px solid var(--border-strong);border-radius:9999px;padding:.3rem .8rem}
+#q:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 14%,transparent)}
+.count{font-family:var(--mono);font-size:.75rem;color:var(--muted-fg);white-space:nowrap}
+
+tr.grp td{background:var(--muted);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--brand-ink);font-weight:600;padding:.5rem .7rem}
+td.met{font-weight:500}
+td.mede{color:var(--muted-fg);font-size:.82rem}
+td.un,td.gran{font-family:var(--mono);font-size:.76rem;color:var(--muted-fg);white-space:nowrap}
+td.fonte{font-size:.8rem;color:var(--muted-fg)}
+.empty{padding:2.5rem;text-align:center;color:var(--muted-fg);font-size:.9rem}
+
+.bars td.b{padding-right:0}
+.bar{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--muted);min-width:9rem}
+.bar i{display:block;height:100%}
+.bar .p0{background:var(--brand)}
+.bar .p1{background:color-mix(in srgb,var(--warn) 70%,var(--muted))}
+.bar .p2{background:var(--border-strong)}
+
+.tpl{padding:1.2rem 1.3rem;margin-top:1.4rem}
+.tpl code{font-family:var(--mono);font-size:.8rem;background:var(--muted);padding:.1rem .3rem;border-radius:4px}
+.warnbox{padding:1.15rem 1.25rem;margin-top:1.4rem;border-color:color-mix(in srgb,var(--warn) 40%,var(--border));background:var(--warn-bg)}
+.warnbox h4{color:var(--warn);font-size:.98rem;margin-bottom:.5rem}
+.warnbox p{font-size:.88rem;color:color-mix(in srgb,var(--warn) 80%,var(--fg))}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(200%);
+  background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:9999px;font-size:.85rem;
+  transition:transform .25s;z-index:80;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.toast.on{transform:translateX(-50%) translateY(0)}
+dialog{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--fg);
+  max-width:min(62rem,92vw);width:100%;padding:0}
+dialog::backdrop{background:rgba(15,18,22,.55)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-bottom:1px solid var(--border)}
+.dlg-b{padding:1rem 1.2rem}
+.dlg-b textarea{width:100%;min-height:55vh;font-family:var(--mono);font-size:.76rem;line-height:1.5;
+  color:var(--fg);background:var(--bg);border:1px solid var(--input);border-radius:var(--radius-sm);padding:.6rem;resize:vertical}
+@media print{.filters,.bar,.toast{display:none}.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+<main class="wrap"><div class="page">
+
+<p class="lead" style="max-width:70ch;font-size:1.02rem;margin-bottom:1.5rem">Catálogo das métricas
+necessárias para diagnosticar as travas de receita do negócio B2B do Grupo OLX. Cada linha diz o que a
+métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comitê 1 ou não.</p>
+
+<div class="stats">
+  <div class="stat"><b id="s-tot">78</b><span>métricas catalogadas</span></div>
+  <div class="stat"><b id="s-p0">51</b><span>P0 — bloqueiam o Comitê 1</span></div>
+  <div class="stat"><b id="s-p1">24</b><span>P1 — sustentam sob escrutínio</span></div>
+  <div class="stat"><b id="s-p2">3</b><span>P2 — desejáveis</span></div>
+</div>
+
+<section class="blk" style="margin-top:3rem">
+  <div class="blk-h"><h2>Convenções</h2><span class="eyebrow">ler antes de preencher</span></div>
+  <p class="lead">O dicionário é organizado de baixo para cima no funil — da métrica mais perto do
+    dinheiro para a mais distante. Essa ordem não é estética: é a ordem de investigação. Uma trava de
+    retenção contamina a leitura de tudo que vem antes dela, e resolver exposição com decisão quebrada
+    só aumenta o custo do desperdício.</p>
+
+  <div class="funil" style="margin-top:1.1rem">
+    <span class="money">T1 Retenção</span><span class="money">T2 Decisão</span><span class="money">T3 Compromisso</span>
+    <span>T4 Qualificação</span><span>T5 Interesse</span><span>T6 Atenção</span><span>T7 Exposição</span>
+    <span>+ Unit Economics (transversal)</span>
+  </div>
+  <p style="margin-top:.6rem;font-size:.82rem;color:var(--muted-fg)">Destacadas, as três camadas mais
+    próximas da receita — por onde a investigação começa. Em material que chega ao cliente, a trava é
+    sempre citada pelo nome, nunca pelo número.</p>
+
+  <div class="conv">
+    <div class="card cbox">
+      <h4>Prioridades</h4>
+      <dl>
+        <dt>P0</dt><dd>Essencial para nomear a trava governante no Comitê 1. Sem ela, o diagnóstico não fecha e o comitê não acontece.</dd>
+        <dt>P1</dt><dd>Importante para sustentar a recomendação sob escrutínio do board.</dd>
+        <dt>P2</dt><dd>Desejável quando disponível. Não bloqueia o diagnóstico.</dd>
+      </dl>
+    </div>
+    <div class="card cbox">
+      <h4>Granularidade e histórico</h4>
+      <dl>
+        <dt>U</dt><dd>Unidade de negócio — Imóveis (ZAP+, VivaReal, OLX Imóveis) e Autos</dd>
+        <dt>S</dt><dd>Segmento de cliente — imobiliária, corretor, incorporadora, revenda, concessionária</dd>
+        <dt>C</dt><dd>Canal — Google, Meta, orgânico, direto, CRM, outbound</dd>
+        <dt>M</dt><dd>Mês fechado</dd>
+        <dt>Série</dt><dd>Mínimo 12 meses · ideal 24 · diagnóstico robusto 36</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card cbox" style="margin-top:.75rem">
+    <h4>Fontes esperadas</h4>
+    <p style="font-size:.87rem;color:var(--muted-fg)">Salesforce Sales Cloud (pipeline, motivos de
+      perda, ciclo) · Salesforce Marketing Cloud (jornadas e métricas de e-mail) · GA4 e GTM (sessões,
+      eventos, conversão) · Google Ads e Meta Ads (investimento e performance) · Google Search Console
+      e Trends (orgânico e share of search) · plataforma de sales engagement e telefonia (cadência e
+      conexão) · BI interno (base ativa, cross-unidade) · ERP e financeiro (receita, margem, custo
+      variável) · plataforma (anúncios ativos e leads entregues por anunciante).</p>
+  </div>
+
+  <div class="card warnbox">
+    <h4>Esta é a versão 0 — validar no kick-off</h4>
+    <p>O catálogo foi construído sobre a leitura de que a receita B2B do Grupo OLX vem de plano ou
+      assinatura de anunciante, com motion sales-led. Essa leitura ainda não foi confirmada pela OLX.
+      Se o modelo de receita for outro — take rate por transação, lead avulso, mídia — as camadas de
+      Decisão e Retenção mudam de forma relevante. As perguntas que confirmam isso estão no bloco 03
+      do formulário de kick-off, e a versão 1 deste dicionário sai da mesma reunião.</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Catálogo</h2><span class="eyebrow">78 métricas</span></div>
+  <div class="filters">
+    <div class="filters-in">
+      <button class="fbtn" type="button" data-p="P0" aria-pressed="false">P0</button>
+      <button class="fbtn" type="button" data-p="P1" aria-pressed="false">P1</button>
+      <button class="fbtn" type="button" data-p="P2" aria-pressed="false">P2</button>
+      <span style="width:.6rem"></span>
+      <span id="tfilters"></span>
+      <input id="q" type="text" placeholder="Buscar métrica, fonte ou definição…" aria-label="Buscar">
+      <span class="count" id="count"></span>
+      <button class="btn" id="csv" type="button">Copiar CSV</button>
+          </div>
+  </div>
+  <div class="card scrollx" style="margin-top:1rem">
+    <table>
+      <thead><tr>
+        <th>Métrica</th><th style="width:5rem">Unidade</th><th style="width:14rem">Fonte principal</th>
+        <th style="width:6rem">Granul.</th><th style="width:4rem">Prio.</th><th>O que mede</th>
+      </tr></thead>
+      <tbody id="body"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>Nenhuma métrica encontrada com esses filtros.</div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Cobertura por camada</h2><span class="eyebrow">onde o diagnóstico é mais exigente</span></div>
+  <p class="lead">A concentração de métricas P0 em Retenção, Decisão e Qualificação não é acaso: são as
+    camadas onde a receita se realiza ou se perde de forma mensurável. Camadas de topo toleram mais
+    estimativa; camadas de baixo, não.</p>
+  <div class="card scrollx" style="margin-top:1.2rem">
+    <table class="bars">
+      <thead><tr><th>Camada</th><th style="width:9rem">Macrofase</th><th style="width:4rem">Total</th>
+        <th style="width:4rem">P0</th><th style="width:4rem">P1</th><th style="width:4rem">P2</th>
+        <th style="width:12rem">Composição</th></tr></thead>
+      <tbody id="resumo"></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Como entregar os dados</h2><span class="eyebrow">formato de recebimento</span></div>
+  <p class="lead">Um arquivo por unidade de negócio, em formato longo — uma linha por combinação de
+    métrica, recorte e mês. Formato longo evita a planilha de 200 colunas que ninguém consegue
+    validar, e permite conferir a série mês a mês contra o faturamento declarado.</p>
+  <div class="card tpl">
+    <p style="font-size:.88rem;margin-bottom:.7rem">Colunas do arquivo:</p>
+    <div class="scrollx"><table>
+      <thead><tr><th>Coluna</th><th>Conteúdo</th><th>Exemplo</th></tr></thead>
+      <tbody>
+        <tr><td><code>trava</code></td><td>Camada do diagnóstico</td><td class="un">T2 Decisão</td></tr>
+        <tr><td><code>metrica</code></td><td>Nome exato como consta neste dicionário</td><td class="un">Win rate (proposta → contrato)</td></tr>
+        <tr><td><code>unidade</code></td><td>Unidade de medida</td><td class="un">%</td></tr>
+        <tr><td><code>un_negocio</code></td><td>Imóveis ou Autos</td><td class="un">Imóveis</td></tr>
+        <tr><td><code>segmento</code></td><td>Segmento de cliente, quando aplicável</td><td class="un">Imobiliária</td></tr>
+        <tr><td><code>canal</code></td><td>Canal, quando aplicável</td><td class="un">Google Ads</td></tr>
+        <tr><td><code>mes</code></td><td>Mês fechado, AAAA-MM</td><td class="un">2026-07</td></tr>
+        <tr><td><code>valor</code></td><td>Número puro, sem símbolo nem separador de milhar</td><td class="un">27.4</td></tr>
+        <tr><td><code>observacao</code></td><td>Ressalva, quebra de série ou mudança de metodologia</td><td class="un">troca de CRM em mar/26</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.9rem">Três regras que economizam uma
+      rodada inteira de retrabalho: <b>célula sem dado fica vazia</b>, nunca zero — zero é um valor, e
+      distorce média e tendência. <b>Toda quebra de série vai em <code>observacao</code></b> — troca de
+      sistema, mudança de definição, fusão de base. E <b>número estimado vem marcado</b>, para não
+      entrar no forecast como se fosse medido.</p>
+  </div>
+</section>
+
+</div></main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="dlg">
+  <div class="dlg-h">
+    <span><strong>Dicionário em CSV</strong>
+      <span id="dlg-sub" style="color:var(--muted-fg);font-size:.84rem;margin-left:.5rem"></span></span>
+    <span><button class="btn" id="dlg-copy" type="button">Copiar</button>
+    <button class="btn" id="dlg-close" type="button">Fechar</button></span>
+  </div>
+  <div class="dlg-b"><textarea id="dlg-txt" readonly></textarea></div>
+</dialog>
+
+<script src="/assets/metrics-data.js"></script>
+<script>
+const ORDEM = ["T1 Retenção","T2 Decisão","T3 Compromisso","T4 Qualificação","T5 Interesse","T6 Atenção","T7 Exposição","Unit Economics"];
+const MACRO = {};
+M.forEach(r => { MACRO[r[0]] = r[1]; });
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const fp = new Set(), ft = new Set();
+const tf = document.getElementById("tfilters");
+ORDEM.forEach(t => {
+  const b = document.createElement("button");
+  b.className = "fbtn"; b.type = "button"; b.dataset.t = t; b.setAttribute("aria-pressed", "false");
+  b.textContent = t === "Unit Economics" ? "Unit Econ." : t;
+  tf.appendChild(b);
+});
+
+const body = document.getElementById("body");
+const empty = document.getElementById("empty");
+const qEl = document.getElementById("q");
+
+function visible(){
+  const q = qEl.value.trim().toLowerCase();
+  return M.filter(r =>
+    (!fp.size || fp.has(r[6])) &&
+    (!ft.size || ft.has(r[0])) &&
+    (!q || (r[2] + " " + r[4] + " " + r[7]).toLowerCase().includes(q)));
+}
+
+function render(){
+  const rows = visible();
+  body.innerHTML = "";
+  let last = null;
+  ORDEM.forEach(t => {
+    rows.filter(r => r[0] === t).forEach(r => {
+      if (last !== t) {
+        const g = document.createElement("tr");
+        g.className = "grp";
+        g.innerHTML = '<td colspan="6">' + esc(t) + " · " + esc(MACRO[t]) + "</td>";
+        body.appendChild(g); last = t;
+      }
+      const tr = document.createElement("tr");
+      tr.innerHTML =
+        '<td class="met">' + esc(r[2]) + "</td>" +
+        '<td class="un">' + esc(r[3]) + "</td>" +
+        '<td class="fonte">' + esc(r[4]) + "</td>" +
+        '<td class="gran">' + esc(r[5]) + "</td>" +
+        '<td><span class="tag ' + (r[6] === "P0" ? "tag-p0" : r[6] === "P1" ? "tag-p1" : "") + '">' + r[6] + "</span></td>" +
+        '<td class="mede">' + esc(r[7]) + "</td>";
+      body.appendChild(tr);
+    });
+  });
+  empty.hidden = rows.length > 0;
+  document.getElementById("count").textContent = rows.length + " de " + M.length;
+}
+
+document.addEventListener("click", e => {
+  const b = e.target.closest(".fbtn"); if (!b) return;
+  const set = b.dataset.p ? fp : ft, key = b.dataset.p || b.dataset.t;
+  if (set.has(key)) set.delete(key); else set.add(key);
+  b.setAttribute("aria-pressed", set.has(key) ? "true" : "false");
+  render();
+});
+qEl.addEventListener("input", render);
+
+const resumo = document.getElementById("resumo");
+let tot = 0, g0 = 0, g1 = 0, g2 = 0;
+ORDEM.forEach(t => {
+  const rs = M.filter(r => r[0] === t);
+  const c0 = rs.filter(r => r[6] === "P0").length,
+        c1 = rs.filter(r => r[6] === "P1").length,
+        c2 = rs.filter(r => r[6] === "P2").length;
+  tot += rs.length; g0 += c0; g1 += c1; g2 += c2;
+  const tr = document.createElement("tr");
+  tr.innerHTML = "<td><strong>" + esc(t) + "</strong></td>" +
+    '<td class="fonte">' + esc(MACRO[t]) + "</td>" +
+    '<td class="num">' + rs.length + "</td>" +
+    '<td class="num" style="color:var(--brand-ink);font-weight:600">' + c0 + "</td>" +
+    '<td class="num">' + c1 + "</td><td class=\"num\">" + c2 + "</td>" +
+    '<td class="b"><span class="bar">' +
+      '<i class="p0" style="width:' + (c0 / rs.length * 100) + '%"></i>' +
+      '<i class="p1" style="width:' + (c1 / rs.length * 100) + '%"></i>' +
+      '<i class="p2" style="width:' + (c2 / rs.length * 100) + '%"></i></span></td>';
+  resumo.appendChild(tr);
+});
+const tr = document.createElement("tr");
+tr.innerHTML = '<td><strong>Total</strong></td><td></td><td class="num"><strong>' + tot +
+  '</strong></td><td class="num" style="color:var(--brand-ink)"><strong>' + g0 +
+  '</strong></td><td class="num">' + g1 + '</td><td class="num">' + g2 + "</td><td></td>";
+resumo.appendChild(tr);
+
+document.getElementById("s-tot").textContent = tot;
+document.getElementById("s-p0").textContent = g0;
+document.getElementById("s-p1").textContent = g1;
+document.getElementById("s-p2").textContent = g2;
+
+const dlg = document.getElementById("dlg");
+const toast = document.getElementById("toast");
+function say(m){ toast.textContent = m; toast.classList.add("on"); setTimeout(() => toast.classList.remove("on"), 2200); }
+
+function buildCsv(){
+  const head = ["trava","macrofase","metrica","unidade","fonte","granularidade","prioridade","o_que_mede"];
+  const q = s => '"' + String(s).replace(/"/g, '""') + '"';
+  return [head.map(q).join(",")].concat(visible().map(r => r.map(q).join(","))).join("\n");
+}
+document.getElementById("csv").onclick = () => {
+  const n = visible().length;
+  document.getElementById("dlg-sub").textContent =
+    n === M.length ? "As 78 métricas." : n + " métricas — o recorte filtrado.";
+  document.getElementById("dlg-txt").value = buildCsv();
+  dlg.showModal();
+};
+document.getElementById("dlg-close").onclick = () => dlg.close();
+document.getElementById("dlg-copy").onclick = async () => {
+  const t = document.getElementById("dlg-txt");
+  try { await navigator.clipboard.writeText(t.value); say("CSV copiado — cole numa planilha."); }
+  catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado — use Cmd+C."); }
+};
+
+
+render();
+</script>

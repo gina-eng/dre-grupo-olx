@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Portal DR-E Grupo OLX</title>
+<meta name="description" content="Painel do projeto Destrava Receita Estratégico do Grupo OLX.">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="/assets/shell.css">
+<script src="/assets/shell.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+    </button>
+    <a class="brand" href="/" aria-label="Início"><img src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279"></a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/" aria-current="page">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="Navegação"><a href="/" aria-current="page">Painel</a><a href="/kickoff">Kick-off</a><a href="/cronograma">Cronograma</a><a href="/metricas">Métricas</a></nav>
+
+<style>
+.red-page{position:relative;color:#fff;min-height:100vh}
+.red-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
+  background:
+    radial-gradient(80% 60% at 20% 10%, rgba(237,51,69,.90), transparent 60%),
+    radial-gradient(70% 50% at 85% 20%, rgba(183,0,38,.85), transparent 55%),
+    radial-gradient(100% 70% at 50% 110%, rgba(120,0,4,.90), transparent 60%),
+    linear-gradient(135deg,#970013,#d6002e)}
+.red-bg::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 30% 0, rgba(255,255,255,.22), transparent 35%),
+             radial-gradient(circle at 80% 100%, rgba(255,255,255,.10), transparent 40%)}
+.top{padding:3.25rem 0 2.5rem;text-align:center}
+.top .mark{height:3rem;width:auto;margin:0 auto 1.5rem;display:block}
+.top h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;color:#fff}
+.top p.sub{margin:1rem auto 0;max-width:44rem;color:rgba(255,255,255,.85);font-size:1.02rem}
+
+.status{display:grid;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);
+  border-radius:var(--radius);overflow:hidden;grid-template-columns:repeat(2,1fr);margin-top:2.25rem;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+@media(min-width:820px){.status{grid-template-columns:repeat(4,1fr)}}
+.st{background:rgba(255,255,255,.10);padding:.95rem 1.1rem;text-align:left}
+.st .k{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.7)}
+.st .v{display:block;margin-top:.3rem;font-size:1.12rem;font-weight:600;letter-spacing:-.02em;color:#fff}
+.st .n{display:block;margin-top:.1rem;font-size:.76rem;color:rgba(255,255,255,.72)}
+
+.doors{display:grid;gap:.9rem;margin-top:2.5rem}
+@media(min-width:900px){.doors{grid-template-columns:repeat(3,1fr)}}
+.door{display:flex;flex-direction:column;gap:.7rem;padding:1.4rem 1.5rem;text-decoration:none;color:#fff;
+  border-radius:1rem;border:1px solid rgba(255,255,255,.16);position:relative;overflow:hidden;
+  background:linear-gradient(140deg, rgba(255,255,255,.14), rgba(255,255,255,.03)),
+             linear-gradient(rgba(198,0,30,.82), rgba(121,0,12,.94));
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  box-shadow:inset 0 1px rgba(255,255,255,.22), 0 12px 40px rgba(150,0,18,.28);
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s}
+.door:hover,.door:focus-visible{transform:translateY(-3px);border-color:rgba(255,255,255,.4);
+  box-shadow:inset 0 1px rgba(255,255,255,.3), 0 18px 50px rgba(150,0,18,.4)}
+.door:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.door .k{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;
+  color:rgba(255,255,255,.75)}
+.door h2{font-size:1.35rem;color:#fff}
+.door p{font-size:.89rem;color:rgba(255,255,255,.82);flex:1}
+.door .foot{display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+  padding-top:.7rem;border-top:1px solid rgba(255,255,255,.16);font-size:.8rem;color:rgba(255,255,255,.82)}
+.door .go{font-weight:500;color:#fff;display:inline-flex;align-items:center;gap:.3rem}
+.door .st-pill{font-family:var(--mono);font-size:.7rem;padding:.15rem .5rem;border-radius:9999px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);white-space:nowrap}
+.door .st-pill.warn{background:rgba(255,236,150,.22);border-color:rgba(255,236,150,.45)}
+
+.panel{margin-top:2.75rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.09);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  overflow:hidden}
+.panel-h{padding:1.05rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.16);
+  display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap}
+.panel-h h2{font-size:1.05rem;color:#fff}
+.panel-h span{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;
+  color:rgba(255,255,255,.68)}
+.pend{display:grid;gap:1px;background:rgba(255,255,255,.14)}
+@media(min-width:780px){.pend{grid-template-columns:1fr 1fr}}
+.pi{background:rgba(255,255,255,.05);padding:.95rem 1.3rem;display:flex;gap:.8rem;align-items:flex-start}
+.pi .sev{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;padding:.14rem .42rem;border-radius:9999px;
+  border:1px solid rgba(255,255,255,.3);color:#fff;white-space:nowrap;margin-top:.15rem}
+.pi .sev.alta{background:rgba(255,255,255,.24);border-color:rgba(255,255,255,.5);font-weight:600}
+.pi p{font-size:.86rem;color:rgba(255,255,255,.88)}
+.pi p b{color:#fff;font-weight:600}
+.pi p em{display:block;margin-top:.2rem;font-style:normal;font-size:.78rem;color:rgba(255,255,255,.65)}
+
+.red-page footer{border-top:1px solid rgba(255,255,255,.16);color:rgba(255,255,255,.66);margin-top:3.5rem}
+.red-page footer strong{color:rgba(255,255,255,.9)}
+</style>
+
+<div class="red-page">
+<div class="red-bg" aria-hidden="true">
+  <div class="atmos">
+    <div class="liquid-rect" style="left:-4%;top:6%;width:250px;height:190px"></div>
+    <div class="liquid-rect" style="left:8%;top:30%;width:160px;height:160px"></div>
+    <div class="liquid-rect" style="left:-3%;top:62%;width:270px;height:200px"></div>
+    <div class="liquid-rect" style="left:79%;top:3%;width:220px;height:180px"></div>
+    <div class="liquid-rect" style="left:90%;top:34%;width:180px;height:230px"></div>
+    <div class="liquid-rect" style="left:78%;top:70%;width:260px;height:200px"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="top">
+    <img class="mark" src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279">
+    <span class="pill">Grupo OLX · Ciclo 1</span>
+    <h1>Uma restrição por vez</h1>
+    <p class="sub">Painel do Destrava Receita Estratégico. Aqui ficam o instrumento de levantamento do
+      kick-off, o calendário dos quatro ciclos e o catálogo de métricas que sustenta o diagnóstico.</p>
+
+    <div class="status">
+      <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel">—</span></div>
+      <div class="st"><span class="k">Ciclo</span><b class="v">1 de 4</b><span class="n" id="sem">Fase Identificar</span></div>
+      <div class="st"><span class="k">Próximo comitê</span><b class="v">17 set 2026</b><span class="n" id="com-rel">Comitê 1 — validação da trava</span></div>
+      <div class="st"><span class="k">Encerramento</span><b class="v">24 ago 2027</b><span class="n">12 comitês · 4 presenciais</span></div>
+    </div>
+  </section>
+
+  <nav class="doors" aria-label="Módulos">
+    <a class="door" href="/kickoff">
+      <span class="k">Instrumento interno</span>
+      <h2>Kick-off</h2>
+      <p>88 perguntas em 11 blocos e o checklist dos dez blocos de dados, cada linha com responsável e
+        prazo. Exporta a ata pronta ao final.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill" id="kf-prog">—</span></span>
+    </a>
+    <a class="door" href="/cronograma">
+      <span class="k">Material de cliente</span>
+      <h2>Cronograma</h2>
+      <p>Doze meses em quatro ciclos de 90 dias, o Ciclo 1 semana a semana e o que depende do Grupo OLX
+        em cada uma delas.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill">12 comitês</span></span>
+    </a>
+    <a class="door" href="/metricas">
+      <span class="k">Material de cliente</span>
+      <h2>Métricas</h2>
+      <p>As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade e o formato
+        em que os dados devem chegar.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill warn">v0 · validar hoje</span></span>
+    </a>
+  </nav>
+
+  <section class="panel">
+    <div class="panel-h"><h2>O que precisa fechar no kick-off</h2><span>5 pendências contratuais · 4 blocos de dados prioritários</span></div>
+    <div class="pend">
+      <div class="pi"><span class="sev alta">alta</span><p><b>Valor do contrato.</b> O e-mail acordou R$ 740.000; o contrato registra R$ 752.000.<em>Diferença de R$ 12.000 sem origem documentada.</em></p></div>
+      <div class="pi"><span class="sev alta">alta</span><p><b>Gatilho do bônus.</b> Três definições incompatíveis entre os documentos.<em>Define quando os R$ 376.000 da segunda parcela são devidos.</em></p></div>
+      <div class="pi"><span class="sev alta">alta</span><p><b>Janela de garantia.</b> A cláusula 2.3 encerra a garantia no primeiro encontro.<em>Precisa ser comunicado hoje e registrado em ata.</em></p></div>
+      <div class="pi"><span class="sev">média</span><p><b>Escopo por unidade.</b> O contrato não delimita quais unidades entram.<em>Maior risco de retrabalho do Ciclo 1.</em></p></div>
+      <div class="pi"><span class="sev">média</span><p><b>Numeração das travas.</b> A cláusula 1.2 fala em 7; o método opera com 8.<em>A oitava é a Cegueira, que é pré-condição e não restrição.</em></p></div>
+      <div class="pi"><span class="sev alta">alta</span><p><b>Blocos A, G, H e J.</b> Receita e funil, mídia paga, rastreamento e pré-vendas.<em>Sem eles o diagnóstico não fecha e o Comitê 1 não acontece.</em></p></div>
+    </div>
+  </section>
+</div>
+</div>
+
+<script>
+(function () {
+  var hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+  function dias(alvo) { return Math.round((alvo - hoje) / 86400000); }
+  function frase(d, rotulo) {
+    if (d === 0) return "é hoje";
+    if (d === 1) return "amanhã";
+    if (d > 1) return "em " + d + " dias";
+    if (d === -1) return "ontem";
+    return "há " + Math.abs(d) + " dias";
+  }
+  var ko = new Date(2026, 7, 24), c1 = new Date(2026, 8, 17);
+  var dk = dias(ko);
+  document.getElementById("ko-rel").textContent = frase(dk);
+
+  var semana = dk > 0 ? 0 : Math.floor((hoje - ko) / 604800000) + 1;
+  var el = document.getElementById("sem");
+  if (semana >= 1 && semana <= 12) {
+    var fase = semana <= 3 ? "Identificar" : semana <= 7 ? "Otimizar" :
+               semana <= 9 ? "Alinhar" : semana <= 11 ? "Expandir" : "Recomeçar";
+    el.textContent = "Semana " + semana + " · fase " + fase;
+  }
+  document.getElementById("com-rel").textContent = "Comitê 1 · " + frase(dias(c1));
+
+  var n = window.dreProgresso ? window.dreProgresso() : 0;
+  var p = document.getElementById("kf-prog");
+  p.textContent = n === 0 ? "não iniciado" : n + " respostas";
+  if (n === 0) p.classList.add("warn");
+})();
+</script>
+
+<footer><div class="wrap">
+  <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
+     iniciado em 24 de agosto de 2026.</p>
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX —
+     não repassar sem autorização escrita.</p>
+</div></footer>
+</body>
+</html>

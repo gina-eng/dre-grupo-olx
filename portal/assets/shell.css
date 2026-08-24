@@ -1,0 +1,44 @@
+/* ---------- chrome do sistema ---------- */
+.topbar{position:sticky;top:0;z-index:50;color:#fff;
+  background:linear-gradient(135deg,#970013,#d6002e);
+  border-bottom:1px solid rgba(255,255,255,.15)}
+.topbar::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(60% 140% at 15% 0%, rgba(237,51,69,.85), transparent 70%),
+             radial-gradient(50% 120% at 88% 100%, rgba(120,0,4,.7), transparent 65%)}
+.topbar-in{position:relative;z-index:1;max-width:76rem;margin:0 auto;
+  display:flex;align-items:center;gap:1rem;padding:0 1.25rem;height:3.5rem}
+.brand{display:flex;align-items:center;flex:0 0 auto}
+.brand img{height:1.5rem;width:auto;display:block}
+.tabs{display:none;align-items:center;gap:.15rem;flex:1}
+@media(min-width:860px){.tabs{display:flex}}
+.tab{border-radius:.375rem;padding:.35rem .7rem;font-size:.86rem;color:rgba(255,255,255,.82);
+  text-decoration:none;transition:background .14s,color .14s;white-space:nowrap}
+.tab:hover{background:rgba(255,255,255,.15);color:#fff}
+.tab[aria-current="page"]{background:rgba(255,255,255,.2);color:#fff;font-weight:500}
+.topbar .spacer{flex:1}
+.icobtn{display:inline-flex;align-items:center;justify-content:center;height:2rem;min-width:2rem;
+  padding:0 .55rem;gap:.35rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.14);color:#fff;font:inherit;font-size:.78rem;cursor:pointer;
+  transition:background .14s;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.icobtn:hover{background:rgba(255,255,255,.26)}
+.icobtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.menu-btn{display:inline-flex}
+@media(min-width:860px){.menu-btn{display:none}}
+.drawer{position:fixed;inset:3.5rem 0 auto 0;z-index:45;background:var(--card);
+  border-bottom:1px solid var(--border);padding:.5rem;display:none;box-shadow:var(--shadow-card)}
+.drawer.on{display:block}
+.drawer a{display:block;padding:.6rem .75rem;border-radius:.5rem;color:var(--fg);
+  text-decoration:none;font-size:.92rem}
+.drawer a:hover{background:var(--muted)}
+.drawer a[aria-current="page"]{color:var(--brand-ink);background:var(--accent);font-weight:500}
+
+/* faixa de contexto abaixo da topbar, nas páginas internas */
+.crumb{border-bottom:1px solid var(--border);background:var(--card)}
+.crumb-in{max-width:76rem;margin:0 auto;padding:.85rem 1.25rem;display:flex;
+  align-items:baseline;gap:.75rem;flex-wrap:wrap}
+.crumb h1{font-size:1.15rem;letter-spacing:-.025em}
+.crumb .desc{color:var(--muted-fg);font-size:.85rem;flex:1;min-width:14rem}
+.crumb .meta{font-family:var(--mono);font-size:.74rem;color:var(--muted-fg);white-space:nowrap}
+
+.wrap{max-width:76rem;margin:0 auto;padding:0 1.25rem}
+.page{padding:2rem 0 1rem}

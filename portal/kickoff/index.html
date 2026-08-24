@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kick-off · Portal DR-E Grupo OLX</title>
+<meta name="description" content="88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno — instrumento de condução da sessão.">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="/assets/shell.css">
+<script src="/assets/shell.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+    </button>
+    <a class="brand" href="/" aria-label="Início"><img src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279"></a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff" aria-current="page">Kick-off</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+<nav class="drawer" id="drawer" aria-label="Navegação"><a href="/">Painel</a><a href="/kickoff" aria-current="page">Kick-off</a><a href="/cronograma">Cronograma</a><a href="/metricas">Métricas</a></nav>
+<div class="crumb"><div class="crumb-in">
+  <h1>Formulário de Kick-off</h1><p class="desc">88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno — instrumento de condução da sessão.</p><span class="meta">24 ago 2026 · 2h</span>
+</div></div>
+<style>
+.bar{top:3.5rem}
+/* ---------- formulário ---------- */
+.intro{max-width:76rem;margin:0 auto;padding:1.75rem 1.25rem 0}
+.intro-card{padding:1.5rem 1.6rem;display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:820px){.intro-card{grid-template-columns:1.4fr 1fr;gap:2.5rem}}
+.intro-card p{color:var(--muted-fg);font-size:.92rem}
+.legend{display:flex;flex-direction:column;gap:.55rem;font-size:.82rem;color:var(--muted-fg)}
+.legend div{display:flex;gap:.6rem;align-items:flex-start}
+.progress{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--muted-fg);font-family:var(--mono)}
+.pbar{width:120px;height:5px;border-radius:99px;background:var(--muted);overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--brand);transition:width .2s}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;padding:1.5rem 0 0}
+.chip{border:1px solid var(--border);background:var(--card);border-radius:9999px;padding:.25rem .65rem;
+  font-size:.75rem;color:var(--muted-fg);text-decoration:none;transition:.14s;display:inline-flex;gap:.35rem;align-items:center}
+.chip:hover{border-color:var(--brand);color:var(--brand-ink)}
+.chip b{font-family:var(--mono);font-size:.68rem;color:var(--brand-ink);font-weight:500}
+.bloco{margin-top:2.75rem;scroll-margin-top:4.5rem}
+.bloco-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
+.bloco-h .idx{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--brand-ink);letter-spacing:-.03em}
+.bloco-h h2{font-size:1.4rem;flex:1}
+.bloco-d{margin-top:.7rem;color:var(--muted-fg);font-size:.9rem;max-width:62ch}
+.qs{display:flex;flex-direction:column;gap:.75rem;margin-top:1.1rem}
+.q{padding:1rem 1.1rem;display:grid;gap:.55rem}
+.q-top{display:flex;gap:.75rem;align-items:flex-start;justify-content:space-between}
+.q-label{font-size:.98rem;font-weight:500;line-height:1.4;flex:1}
+.q-hint{color:var(--muted-fg);font-size:.83rem;max-width:70ch}
+.q-feeds{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-fg);white-space:nowrap;padding-top:.2rem}
+@media(max-width:720px){
+  .q-top{flex-direction:column;gap:.35rem}
+  .q-feeds{white-space:normal;order:-1;padding-top:0}
+  .bar-in{gap:.5rem}
+  .progress .pbar{width:70px}
+}
+.q.crit{border-left:3px solid var(--brand)}
+textarea,input[type=text]{width:100%;font:inherit;font-size:.9rem;color:var(--fg);background:var(--bg);
+  border:1px solid var(--input);border-radius:var(--radius-sm);padding:.55rem .65rem;resize:vertical}
+textarea{min-height:4.5rem;line-height:1.5}
+textarea:focus,input:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 14%,transparent)}
+.q.done{background:var(--card-2)}
+.q.done .q-label::after{content:"✓";color:var(--ok);margin-left:.4rem;font-weight:600}
+.dados td input{margin:0}
+.dados .idcell{font-family:var(--mono);font-weight:600;color:var(--brand-ink)}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(200%);
+  background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:9999px;font-size:.85rem;
+  transition:transform .25s;z-index:80;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.toast.on{transform:translateX(-50%) translateY(0)}
+dialog{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);color:var(--fg);
+  max-width:min(62rem,92vw);width:100%;padding:0}
+dialog::backdrop{background:rgba(15,18,22,.55)}
+.dlg-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.2rem;border-bottom:1px solid var(--border)}
+.dlg-b{padding:1rem 1.2rem}
+.dlg-b textarea{min-height:55vh;font-family:var(--mono);font-size:.78rem}
+@media print{
+  .bar,.chips,.hero .atmos,.toast{display:none}
+  .hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .q{break-inside:avoid;box-shadow:none}
+  textarea{min-height:3rem}
+}
+</style>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="progress"><span id="pct">0%</span><span class="pbar"><i id="pfill"></i></span><span id="pcount">0 de 88</span></div>
+    <span style="flex:1"></span>
+    <button class="btn" id="btn-clear" type="button">Limpar</button>
+    <button class="btn btn-primary" id="btn-export" type="button">Exportar ata</button>
+  </div>
+</div>
+
+<div class="intro">
+  <div class="card intro-card">
+    <div>
+      <p class="eyebrow" style="margin-bottom:.5rem">Como usar</p>
+      <p>Preencha durante a sessão. As respostas ficam salvas neste navegador automaticamente —
+        ninguém mais as vê. Ao final, <b>Exportar ata</b> gera o Markdown pronto para colar em
+        <span style="font-family:var(--mono);font-size:.85em">06-reunioes/</span> no repositório e para
+        alimentar a skill <span style="font-family:var(--mono);font-size:.85em">/dre-onboarding</span>.</p>
+      <p style="margin-top:.7rem">Pergunta sem resposta não é falha da sessão — é pendência com dono e
+        prazo. O que não fechar aqui vira linha em <span style="font-family:var(--mono);font-size:.85em">PENDENCIAS.md</span>.</p>
+    </div>
+    <div class="legend">
+      <p class="eyebrow">Legenda</p>
+      <div><span class="tag tag-crit">crítico</span><span>Não sair da sala sem isso fechado ou com dono e prazo.</span></div>
+      <div><span class="q-feeds" style="padding:0">alimenta →</span><span>O entregável ou a trava que depende desta resposta.</span></div>
+      <div><span style="color:var(--ok);font-weight:600">✓</span><span>Respondida. O contador no topo acompanha.</span></div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap"><div class="page">
+  <nav class="chips" id="chips" aria-label="Blocos"></nav>
+  <div id="blocos"></div>
+
+  <section class="bloco" id="b-dados">
+    <div class="bloco-h">
+      <span class="idx">A–J</span>
+      <h2>Checklist de dados e acessos</h2>
+      <span class="eyebrow">percorrer bloco a bloco · 15 min</span>
+    </div>
+    <p class="bloco-d">Os dez blocos solicitados por e-mail em 11/08. Quatro são prioritários porque
+      destravam o diagnóstico: sem <b>A</b> o funil não valida contra o faturamento; sem <b>H</b> nenhum
+      outro dado é confiável. Cada linha precisa sair com responsável e data.</p>
+    <div class="card scrollx" style="margin-top:1.1rem">
+      <table class="dados">
+        <thead><tr><th>#</th><th>Bloco</th><th>O que inclui</th><th>Alimenta</th><th style="width:11rem">Responsável (OLX)</th><th style="width:8rem">Prazo</th></tr></thead>
+        <tbody id="dados-body"></tbody>
+      </table>
+    </div>
+  </section>
+</div></main>
+
+<footer><div class="wrap">
+  <p>Destrava Receita Estratégico · V4 Company × Grupo OLX · Ciclo 1, Semana 1.
+     Documento de trabalho interno — contém informação confidencial da OLX Brasil.</p>
+</div></footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="dlg">
+  <div class="dlg-h">
+    <strong>Ata em Markdown</strong>
+    <span><button class="btn" id="dlg-copy" type="button">Copiar</button>
+    <button class="btn" id="dlg-close" type="button">Fechar</button></span>
+  </div>
+  <div class="dlg-b"><textarea id="dlg-txt" readonly></textarea></div>
+</dialog>
+
+<script src="/assets/form-data.js"></script>
+<script>
+const KEY = "dre-olx-kickoff-v1";
+let state = {};
+try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) { state = {}; }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let total = 0;
+
+const chips = document.getElementById("chips");
+const host  = document.getElementById("blocos");
+
+BLOCOS.forEach(b => {
+  const a = document.createElement("a");
+  a.className = "chip"; a.href = "#b" + b.n;
+  a.innerHTML = "<b>" + b.n + "</b>" + esc(b.t);
+  chips.appendChild(a);
+  const sec = document.createElement("section");
+  sec.className = "bloco"; sec.id = "b" + b.n;
+  let html = '<div class="bloco-h"><span class="idx">' + b.n + '</span><h2>' + esc(b.t) +
+             '</h2><span class="eyebrow">' + esc(b.tempo) + '</span></div>' +
+             '<p class="bloco-d">' + esc(b.d) + '</p><div class="qs">';
+  b.qs.forEach((q, i) => {
+    const id = b.n + "-" + i; total++;
+    const val = state[id] || "";
+    html += '<div class="card q' + (q.c ? " crit" : "") + (val.trim() ? " done" : "") + '" data-q="' + id + '">' +
+      '<div class="q-top"><span class="q-label">' + esc(q.q) + (q.c ? ' <span class="tag tag-crit">crítico</span>' : "") +
+      '</span><span class="q-feeds">alimenta → ' + esc(q.f) + '</span></div>' +
+      (q.h ? '<p class="q-hint">' + esc(q.h) + '</p>' : "") +
+      (q.t === "t"
+        ? '<input type="text" data-id="' + id + '" value="' + esc(val) + '">'
+        : '<textarea data-id="' + id + '">' + esc(val) + '</textarea>') +
+      '</div>';
+  });
+  html += "</div>";
+  sec.innerHTML = html;
+  host.appendChild(sec);
+});
+
+const dbody = document.getElementById("dados-body");
+BLOCOS_DADOS.forEach(d => {
+  const tr = document.createElement("tr");
+  tr.innerHTML =
+    '<td class="idcell">' + d.id + (d.prio ? ' <span class="tag tag-p0">P0</span>' : "") + "</td>" +
+    "<td><strong>" + esc(d.nome) + "</strong></td>" +
+    '<td style="color:var(--muted-fg)">' + esc(d.itens) + "</td>" +
+    '<td style="color:var(--muted-fg);font-size:.8rem">' + esc(d.alim) + "</td>" +
+    '<td><input type="text" data-id="D-' + d.id + '-dri" value="' + esc(state["D-" + d.id + "-dri"] || "") + '" placeholder="nome"></td>' +
+    '<td><input type="text" data-id="D-' + d.id + '-prazo" value="' + esc(state["D-" + d.id + "-prazo"] || "") + '" placeholder="dd/mm"></td>';
+  dbody.appendChild(tr);
+});
+
+function refresh(){
+  let done = 0;
+  BLOCOS.forEach(b => b.qs.forEach((q, i) => { if ((state[b.n + "-" + i] || "").trim()) done++; }));
+  const p = total ? Math.round(done / total * 100) : 0;
+  document.getElementById("pct").textContent = p + "%";
+  document.getElementById("pfill").style.width = p + "%";
+  document.getElementById("pcount").textContent = done + " de " + total;
+}
+
+document.addEventListener("input", e => {
+  const id = e.target.dataset.id; if (!id) return;
+  state[id] = e.target.value; save();
+  const card = e.target.closest(".q");
+  if (card) card.classList.toggle("done", !!e.target.value.trim());
+  refresh();
+});
+
+const toast = document.getElementById("toast");
+function say(m){ toast.textContent = m; toast.classList.add("on"); setTimeout(() => toast.classList.remove("on"), 2200); }
+
+function markdown(){
+  const L = ["# Ata — Kick-off DR-E · Grupo OLX", "", "> Gerado pelo formulário de kick-off. Revisar antes de circular.", ""];
+  BLOCOS.forEach(b => {
+    L.push("## " + b.n + ". " + b.t, "");
+    b.qs.forEach((q, i) => {
+      const v = (state[b.n + "-" + i] || "").trim();
+      L.push("**" + q.q + "**  ", "_alimenta: " + q.f + "_", "", v || "> ⚠️ Não respondido — abrir pendência com dono e prazo.", "");
+    });
+  });
+  L.push("## Checklist de dados e acessos", "", "| # | Bloco | Responsável | Prazo |", "|---|---|---|---|");
+  BLOCOS_DADOS.forEach(d => {
+    L.push("| " + d.id + (d.prio ? " (P0)" : "") + " | " + d.nome + " | " +
+      ((state["D-" + d.id + "-dri"] || "").trim() || "—") + " | " +
+      ((state["D-" + d.id + "-prazo"] || "").trim() || "—") + " |");
+  });
+  return L.join("\n");
+}
+
+const dlg = document.getElementById("dlg");
+document.getElementById("btn-export").onclick = () => {
+  document.getElementById("dlg-txt").value = markdown();
+  dlg.showModal();
+};
+document.getElementById("dlg-close").onclick = () => dlg.close();
+document.getElementById("dlg-copy").onclick = async () => {
+  const t = document.getElementById("dlg-txt");
+  try { await navigator.clipboard.writeText(t.value); say("Ata copiada."); }
+  catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado — use Cmd+C."); }
+};
+document.getElementById("btn-clear").onclick = () => {
+  if (!confirm("Apagar todas as respostas deste navegador? Não dá para desfazer.")) return;
+  state = {}; save();
+  document.querySelectorAll("[data-id]").forEach(el => { el.value = ""; });
+  document.querySelectorAll(".q").forEach(el => el.classList.remove("done"));
+  refresh(); say("Respostas apagadas.");
+};
+
+refresh();
+</script>
+
+<footer><div class="wrap">
+  <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
+     iniciado em 24 de agosto de 2026.</p>
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX —
+     não repassar sem autorização escrita.</p>
+</div></footer>
+</body>
+</html>
