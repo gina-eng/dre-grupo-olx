@@ -15,7 +15,7 @@ Contrato de 12 meses, R$ 752.000, 12 comitês, 9 diagnósticos técnicos contrat
 | Saber quem é quem | [01-cliente/stakeholders.md](01-cliente/stakeholders.md) |
 | Saber o que está travado | [PENDENCIAS.md](PENDENCIAS.md) |
 | Executar o método com o Claude | `/dre-continuar` — índice em [.claude/skills/README.md](.claude/skills/README.md) |
-| Conduzir o kick-off | [materiais/](materiais/) — formulário, cronograma e dicionário de métricas |
+| Conduzir o kick-off | [portal-dre-grupo-olx.vercel.app](https://portal-dre-grupo-olx.vercel.app) — painel com os três módulos (senha) |
 
 ## Estrutura
 
@@ -28,7 +28,7 @@ Contrato de 12 meses, R$ 752.000, 12 comitês, 9 diagnósticos técnicos contrat
 | [04-execucao/](04-execucao/) | Contrato e escopo, cronograma e marcos |
 | [05-resultados/](05-resultados/) | Revisões de ciclo, previsto vs. realizado, ROI |
 | [06-reunioes/](06-reunioes/) | Pautas e atas de kick-off, comitês e assessoria assíncrona |
-| [materiais/](materiais/) | Páginas publicadas na identidade Destrava Receita: formulário de kick-off, cronograma e dicionário de métricas |
+| [portal/](portal/) | Portal publicado na Vercel: painel, formulário de kick-off, cronograma e dicionário de métricas |
 | [dados/](dados/) | Estado de máquina consumido pelas skills: `client.json`, `outputs/`, `cache/` |
 | [.claude/](.claude/) | Skills, scripts e templates que operam o método |
 | [PENDENCIAS.md](PENDENCIAS.md) | Bloqueios abertos, com severidade, responsável e prazo |
