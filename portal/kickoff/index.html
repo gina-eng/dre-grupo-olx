@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
 <link rel="stylesheet" href="/assets/base.css?v=14e03a76">
-<link rel="stylesheet" href="/assets/shell.css?v=c2591b79">
-<script src="/assets/shell.js?v=9beb3b07"></script>
+<link rel="stylesheet" href="/assets/shell.css?v=c92a13dd">
+<script src="/assets/shell.js?v=cd5ac90c"></script>
 </head>
 <body>
 <header class="topbar">
@@ -45,7 +45,7 @@
 <div class="crumb"><div class="crumb-in">
   <h1>Formulário de Kick-off</h1><p class="desc">88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno: instrumento de condução da sessão.</p><span class="meta">24 ago 2026 · 2h</span>
 </div></div>
-<div class="doc"><div class="doc-main"><style>
+<div class="doc" id="doc"><div class="doc-main"><style>
 .bar{top:3.5rem}
 /* ---------- formulário ---------- */
 /* ---------- pendências de acesso (lista editável) ---------- */
@@ -227,8 +227,8 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
   <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Ata do kick-off em Markdown"></textarea></div>
 </dialog>
 
-<script src="/assets/acessos.js"></script>
-<script src="/assets/form-data.js"></script>
+<script src="/assets/acessos.js?v=d0a7e15c"></script>
+<script src="/assets/form-data.js?v=d6103e17"></script>
 <script>
 const KEY = "dre-olx-kickoff-v1";
 let state = {};
@@ -455,9 +455,13 @@ document.getElementById("btn-clear").onclick = () => {
 refresh();
 </script>
 </div><aside class="rail" aria-label="Índice da página">
-  <p class="side-label" id="toc-label" hidden>Nesta página</p>
+  <div class="rail-top">
+    <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    <button class="rail-tog" id="rail-tog" type="button" aria-label="Recolher o índice"
+            aria-expanded="true" aria-controls="toc" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
   <div id="toc"></div>
-</aside></div>
+</aside></div><button class="rail-abrir" id="rail-abrir" type="button" hidden>Nesta página</button>
 <footer><div class="wrap">
   <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
      iniciado em 24 de agosto de 2026.</p>

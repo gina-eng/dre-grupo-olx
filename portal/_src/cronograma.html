@@ -57,10 +57,10 @@ section.blk{margin-top:4rem;scroll-margin-top:2rem}
 .cyc{display:grid;gap:.75rem;margin-top:1.5rem}
 @media(min-width:900px){.cyc{grid-template-columns:repeat(4,1fr)}}
 .cycle{padding:1.1rem 1.2rem;position:relative;overflow:hidden}
-.cycle .rail{position:absolute;inset:0 auto 0 0;width:3px;background:var(--brand)}
-.cycle.c2 .rail{background:color-mix(in srgb,var(--brand) 72%,var(--muted))}
-.cycle.c3 .rail{background:color-mix(in srgb,var(--brand) 48%,var(--muted))}
-.cycle.c4 .rail{background:color-mix(in srgb,var(--brand) 26%,var(--muted))}
+.cycle .faixa{position:absolute;inset:0 auto 0 0;width:3px;background:var(--brand)}
+.cycle.c2 .faixa{background:color-mix(in srgb,var(--brand) 72%,var(--muted))}
+.cycle.c3 .faixa{background:color-mix(in srgb,var(--brand) 48%,var(--muted))}
+.cycle.c4 .faixa{background:color-mix(in srgb,var(--brand) 26%,var(--muted))}
 .cycle h3{font-size:1rem;margin-bottom:.15rem}
 .cycle .dates{font-family:var(--mono);font-size:.76rem;color:var(--brand-ink);letter-spacing:-.01em}
 .cycle p{margin-top:.6rem;font-size:.84rem;color:var(--muted-fg)}
@@ -140,19 +140,19 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   </div>
 
   <div class="cyc">
-    <div class="card cycle c1"><span class="rail"></span>
+    <div class="card cycle c1"><span class="faixa"></span>
       <h3>Ciclo 1</h3><p class="dates">24 ago – 13 nov 2026</p>
       <p>Linha de base. Mapeamento do fluxo de receita, diagnóstico das 8 travas, validação lógica da
         primeira restrição e plano de 90 dias.</p></div>
-    <div class="card cycle c2"><span class="rail"></span>
+    <div class="card cycle c2"><span class="faixa"></span>
       <h3>Ciclo 2</h3><p class="dates">16 nov 2026 – 5 fev 2027</p>
       <p>Primeira leitura de previsto contra realizado. Revisão do forecast com evidência e decisão
         entre continuar otimizando ou expandir.</p></div>
-    <div class="card cycle c3"><span class="rail"></span>
+    <div class="card cycle c3"><span class="faixa"></span>
       <h3>Ciclo 3</h3><p class="dates">8 fev – 30 abr 2027</p>
       <p>Segunda restrição em regime. O sistema já mudou de estado: o diagnóstico agora parte de
         dados gerados dentro do projeto.</p></div>
-    <div class="card cycle c4"><span class="rail"></span>
+    <div class="card cycle c4"><span class="faixa"></span>
       <h3>Ciclo 4</h3><p class="dates">3 mai – 23 jul 2027</p>
       <p>Consolidação. Verificação do throughput acumulado, do ROI do contrato e definição da
         continuidade.</p></div>

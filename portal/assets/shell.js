@@ -93,6 +93,29 @@
       if (r) r.hidden = false;
     });
 
+    // Recolher o índice: o conteúdo passa a ocupar a largura toda.
+    var doc = document.getElementById("doc"),
+        tog = document.getElementById("rail-tog"),
+        aba = document.getElementById("rail-abrir"),
+        RKEY = "dre-olx-trilho";
+    if (doc && tog && aba) {
+      tog.hidden = false;
+      var aplicar = function (recolhido, focar) {
+        doc.classList.toggle("sem-trilho", recolhido);
+        tog.setAttribute("aria-expanded", recolhido ? "false" : "true");
+        tog.setAttribute("aria-label", recolhido ? "Mostrar o índice" : "Recolher o índice");
+        aba.hidden = !recolhido;
+        aba.classList.toggle("on", recolhido);
+        try { localStorage.setItem(RKEY, recolhido ? "1" : "0"); } catch (e) {}
+        if (focar) (recolhido ? aba : tog).focus();
+      };
+      var guardado = null;
+      try { guardado = localStorage.getItem(RKEY); } catch (e) {}
+      aplicar(guardado === "1", false);
+      tog.addEventListener("click", function () { aplicar(true, true); });
+      aba.addEventListener("click", function () { aplicar(false, true); });
+    }
+
     if (!("IntersectionObserver" in window)) return;
     var visiveis = new Set();
     function realca() {

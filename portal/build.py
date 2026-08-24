@@ -111,8 +111,15 @@ def crumb(h, d, m):
 
 def rail():
     """Trilho de índice da página, à direita. Preenchido em runtime por shell.js."""
-    return """<aside class="rail" aria-label="Índice da página">
-  <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    seta = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" '
+            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+            '<path d="m9 18 6-6-6-6"/></svg>')
+    return f"""<aside class="rail" aria-label="Índice da página">
+  <div class="rail-top">
+    <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    <button class="rail-tog" id="rail-tog" type="button" aria-label="Recolher o índice"
+            aria-expanded="true" aria-controls="toc" hidden>{seta}</button>
+  </div>
   <div id="toc"></div>
 </aside>"""
 
@@ -139,15 +146,20 @@ def build():
         if slug not in {s for s, _, _ in NAV}:
             sys.exit(f"{f.name}: slug '{slug}' não está no NAV")
         body = raw[m.end():]
-        # assets referenciados dentro dos fragmentos tambem ganham versao
-        for a in ("/assets/logo.svg", "/assets/logo-dark.svg", "/assets/favicon.svg"):
-            body = body.replace(f'src="{a}"', f'src="{v(a)}"')
+        # Todo asset referenciado dentro do fragmento ganha versao. Sem isto o
+        # form-data.js e o acessos.js ficariam presos ao cache immutable de um ano.
+        body = re.sub(
+            r'(src|href)="(/assets/[^"?]+)"',
+            lambda m: f'{m.group(1)}="{v(m.group(2))}"',
+            body,
+        )
         out = ROOT / ("index.html" if slug == "painel" else f"{slug}/index.html")
         out.parent.mkdir(parents=True, exist_ok=True)
         if slug == "painel":
             corpo = body
         else:
-            corpo = f'<div class="doc"><div class="doc-main">{body}</div>{rail()}</div>'
+            corpo = (f'<div class="doc" id="doc"><div class="doc-main">{body}</div>{rail()}</div>'
+                     '<button class="rail-abrir" id="rail-abrir" type="button" hidden>Nesta página</button>')
         out.write_text(DOC.format(
             fav=v("/assets/favicon.svg"), apple=v("/assets/apple-icon.png"),
             basecss=v("/assets/base.css"), shellcss=v("/assets/shell.css"),
