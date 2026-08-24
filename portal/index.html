@@ -6,22 +6,22 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Portal DR-E Grupo OLX</title>
 <meta name="description" content="Painel do projeto Destrava Receita Estratégico do Grupo OLX.">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/apple-icon.png" sizes="180x180">
+<link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
-<link rel="stylesheet" href="/assets/base.css">
-<link rel="stylesheet" href="/assets/shell.css">
-<script src="/assets/shell.js"></script>
+<link rel="stylesheet" href="/assets/base.css?v=14e03a76">
+<link rel="stylesheet" href="/assets/shell.css?v=c2591b79">
+<script src="/assets/shell.js?v=9beb3b07"></script>
 </head>
 <body>
 <header class="topbar topbar--red">
   <div class="topbar-in">
     <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
     <a class="brand" href="/" aria-label="Início">
-      <img class="logo-escuro" src="/assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
-      <img class="logo-claro" src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
     </a>
     <nav class="tabs" aria-label="Seções"><a class="tab" href="/" aria-current="page">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/metricas">Métricas</a></nav>
     <span class="spacer"></span>
@@ -31,7 +31,7 @@
 <div class="drawer-bd" id="drawer-bd" hidden></div>
 <nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
   <div class="drawer-h">
-    <img src="/assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
+    <img src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
     <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
   </div>
   <div class="drawer-b">
@@ -57,6 +57,24 @@ body{background:#5c0009}
 ::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.42);background-clip:content-box}
 :root{scrollbar-color:rgba(255,255,255,.3) rgba(70,0,7,.6);scrollbar-width:thin}
 
+.acs{margin-top:2.5rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.24);
+  background:rgba(121,0,12,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overflow:hidden}
+.acs-h{padding:1rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.2);display:flex;
+  align-items:baseline;gap:.85rem;flex-wrap:wrap}
+.acs-h h2{font-size:1.05rem;color:#fff}
+.acs-h .n{font-family:var(--mono);font-size:.72rem;color:#fff;margin-left:auto}
+.acs-l{display:grid;gap:1px;background:rgba(255,255,255,.16)}
+@media(min-width:760px){.acs-l{grid-template-columns:1fr 1fr}}
+.acs-i{background:rgba(121,0,12,.5);padding:.7rem 1.3rem;display:flex;gap:.7rem;align-items:baseline;
+  font-size:.85rem;color:#fff}
+.acs-i b{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.12rem .45rem;border-radius:99px;white-space:nowrap;font-weight:600}
+.acs-i b.ok{background:#d6f5e3;color:#0b4a2c}
+.acs-i b.pd{background:rgba(255,255,255,.24);color:#fff}
+.acs-i span{flex:1}
+.acs-i em{display:block;font-style:normal;font-size:.74rem;color:rgba(255,255,255,.82);margin-top:.12rem}
+.acs-f{padding:.8rem 1.3rem;border-top:1px solid rgba(255,255,255,.2);font-size:.82rem;color:#fff}
+.acs-f a{color:#fff;font-weight:500}
 .red-page{position:relative;color:#fff;min-height:100vh}
 .red-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
   background:
@@ -73,11 +91,11 @@ body{background:#5c0009}
 .top h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;color:#fff}
 .top p.sub{margin:1rem auto 0;max-width:44rem;color:#fff;font-size:1.02rem}
 
-.status{display:grid;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.2);
+.status{display:grid;gap:1px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.24);
   border-radius:var(--radius);overflow:hidden;grid-template-columns:repeat(2,1fr);margin-top:2.25rem;
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 @media(min-width:820px){.status{grid-template-columns:repeat(4,1fr)}}
-.st{background:rgba(102,0,10,.5);padding:.95rem 1.1rem;text-align:left}
+.st{background:rgba(255,255,255,.10);padding:.95rem 1.1rem;text-align:left}
 .st .k{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.9)}
 .st .v{display:block;margin-top:.3rem;font-size:1.12rem;font-weight:600;letter-spacing:-.02em;color:#fff}
 .st .n{display:block;margin-top:.1rem;font-size:.76rem;color:rgba(255,255,255,.9)}
@@ -86,8 +104,8 @@ body{background:#5c0009}
 @media(min-width:900px){.doors{grid-template-columns:repeat(3,1fr)}}
 .door{display:flex;flex-direction:column;gap:.7rem;padding:1.4rem 1.5rem;text-decoration:none;color:#fff;
   border-radius:1rem;border:1px solid rgba(255,255,255,.16);position:relative;overflow:hidden;
-  background:linear-gradient(140deg, rgba(255,255,255,.07), rgba(255,255,255,.02)),
-             linear-gradient(rgba(158,0,24,.92), rgba(105,0,10,.97));
+  background:linear-gradient(140deg, rgba(255,255,255,.12), rgba(255,255,255,.02)),
+             linear-gradient(rgba(198,0,30,.85), rgba(121,0,12,.95));
   -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
   box-shadow:inset 0 1px rgba(255,255,255,.22), 0 12px 40px rgba(150,0,18,.28);
   transition:transform .16s ease, box-shadow .16s ease, border-color .16s}
@@ -120,7 +138,7 @@ body > footer strong{color:#fff}
 
 <main class="wrap">
   <section class="top">
-    <img class="mark" src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279">
+    <img class="mark" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
     <span class="pill">Grupo OLX · Ciclo 1</span>
     <h1>Uma restrição por vez</h1>
     <p class="sub">Painel do Destrava Receita Estratégico. Aqui ficam o instrumento de levantamento do
@@ -157,6 +175,12 @@ body > footer strong{color:#fff}
       <span class="foot"><span class="go">Abrir →</span><span class="st-pill warn">v0 · validar hoje</span></span>
     </a>
   </nav>
+
+  <section class="acs">
+    <div class="acs-h"><h2>Acessos</h2><span class="n" id="acs-n"></span></div>
+    <div class="acs-l" id="acs-l"></div>
+    <p class="acs-f">Lista completa e editável em <a href="/kickoff#b-acessos">Kick-off, Pendências de acesso</a>.</p>
+  </section>
 
 </main>
 </div>
@@ -281,6 +305,35 @@ body > footer strong{color:#fff}
   if (mq.addEventListener) mq.addEventListener("change", function () { mq.matches ? desliga() : liga(); });
 
   liga();
+})();
+</script>
+<script src="/assets/acessos.js"></script>
+<script>
+// Resumo dos acessos, lendo a mesma fonte da lista editável do Kick-off.
+(function () {
+  if (typeof acessosLer !== "function") return;
+  var l = acessosLer(), c = acessosContagem(l);
+  var n = document.getElementById("acs-n"), host = document.getElementById("acs-l");
+  if (!n || !host) return;
+  n.textContent = c.concedido + " de " + c.total + (c.concedido === 1 ? " concedido" : " concedidos");
+  l.slice().sort(function (a, b) {
+    if (a.s !== b.s) return a.s === "concedido" ? -1 : 1;
+    return 0;
+  }).slice(0, 6).forEach(function (it) {
+    var d = document.createElement("div"); d.className = "acs-i";
+    var b = document.createElement("b");
+    b.className = it.s === "concedido" ? "ok" : "pd";
+    b.textContent = it.s === "concedido" ? "concedido" : "pendente";
+    var s = document.createElement("span"); s.textContent = it.o;
+    if (it.v) { var e = document.createElement("em"); e.textContent = it.v; s.appendChild(e); }
+    d.appendChild(b); d.appendChild(s); host.appendChild(d);
+  });
+  if (l.length > 6) {
+    var d = document.createElement("div"); d.className = "acs-i";
+    var b = document.createElement("b"); b.className = "pd"; b.textContent = "+ " + (l.length - 6);
+    var s = document.createElement("span"); s.textContent = "outros acessos na lista completa";
+    d.appendChild(b); d.appendChild(s); host.appendChild(d);
+  }
 })();
 </script>
 

@@ -5,10 +5,27 @@ Cada fragmento começa com uma linha de metadados:
     <!--@ slug | Título da aba | Título da página | Descrição | Meta lateral -->
 seguida do markup. Rode `python3 build.py` na pasta portal/.
 """
-import pathlib, re, sys
+import hashlib, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).parent
 SRC  = ROOT / "_src"
+
+_HASHES = {}
+
+def v(caminho):
+    """Anexa um hash do conteúdo à URL do asset.
+
+    Sem isto, o navegador de quem já visitou o portal continua usando o CSS e o JS
+    antigos do cache (a regra de max-age em vercel.json), e um deploy novo parece
+    não ter mudado nada, porque só o HTML e revalidado.
+    """
+    if caminho not in _HASHES:
+        f = ROOT / caminho.lstrip("/")
+        try:
+            _HASHES[caminho] = hashlib.sha256(f.read_bytes()).hexdigest()[:8]
+        except OSError:
+            _HASHES[caminho] = "0"
+    return f"{caminho}?v={_HASHES[caminho]}"
 
 NAV = [
     ("painel",     "Painel",     "/"),
@@ -25,14 +42,14 @@ DOC = """<!doctype html>
 <meta name="robots" content="noindex, nofollow">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/assets/apple-icon.png" sizes="180x180">
+<link rel="icon" href="{fav}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{apple}" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
-<link rel="stylesheet" href="/assets/base.css">
-<link rel="stylesheet" href="/assets/shell.css">
-<script src="/assets/shell.js"></script>
+<link rel="stylesheet" href="{basecss}">
+<link rel="stylesheet" href="{shellcss}">
+<script src="{shelljs}"></script>
 </head>
 <body>
 {topbar}
@@ -61,8 +78,8 @@ def topbar(active):
   <div class="topbar-in">
     <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer">{menu}</button>
     <a class="brand" href="/" aria-label="Início">
-      <img class="logo-escuro" src="/assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
-      <img class="logo-claro" src="/assets/logo.svg" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-escuro" src="{v("/assets/logo-dark.svg")}" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="{v("/assets/logo.svg")}" alt="Destrava Receita" width="722" height="279">
     </a>
     <nav class="tabs" aria-label="Seções">{''.join(tabs)}</nav>
     <span class="spacer"></span>
@@ -72,7 +89,7 @@ def topbar(active):
 <div class="drawer-bd" id="drawer-bd" hidden></div>
 <nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
   <div class="drawer-h">
-    <img src="/assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
+    <img src="{v("/assets/logo-dark.svg")}" alt="Destrava Receita" width="722" height="279">
     <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação">{fechar}</button>
   </div>
   <div class="drawer-b">
@@ -122,6 +139,9 @@ def build():
         if slug not in {s for s, _, _ in NAV}:
             sys.exit(f"{f.name}: slug '{slug}' não está no NAV")
         body = raw[m.end():]
+        # assets referenciados dentro dos fragmentos tambem ganham versao
+        for a in ("/assets/logo.svg", "/assets/logo-dark.svg", "/assets/favicon.svg"):
+            body = body.replace(f'src="{a}"', f'src="{v(a)}"')
         out = ROOT / ("index.html" if slug == "painel" else f"{slug}/index.html")
         out.parent.mkdir(parents=True, exist_ok=True)
         if slug == "painel":
@@ -129,6 +149,9 @@ def build():
         else:
             corpo = f'<div class="doc"><div class="doc-main">{body}</div>{rail()}</div>'
         out.write_text(DOC.format(
+            fav=v("/assets/favicon.svg"), apple=v("/assets/apple-icon.png"),
+            basecss=v("/assets/base.css"), shellcss=v("/assets/shell.css"),
+            shelljs=v("/assets/shell.js"),
             title=title, desc=cd.replace('"', "&quot;"),
             topbar=topbar(slug), crumb=crumb(ch, cd, cm),
             body=corpo, footer=FOOTER), encoding="utf-8")

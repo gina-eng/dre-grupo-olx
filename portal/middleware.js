@@ -1,5 +1,6 @@
-// Portão de senha do portal. Roda no edge da Vercel, antes de qualquer arquivo estático.
-// A senha vive na variável de ambiente PORTAL_SENHA do projeto, nunca no repositório.
+// Portão de acesso do portal. Roda no edge da Vercel, antes de qualquer arquivo estático.
+// Os pares usuário/senha vivem na variável de ambiente PORTAL_CREDENCIAIS do projeto,
+// no formato "usuario:senha,usuario:senha". Nunca no repositório.
 export const config = {
   matcher: '/((?!_vercel|favicon\\.ico).*)',
 }
@@ -20,7 +21,7 @@ function desafio() {
   )
 }
 
-// Comparação de tempo constante: não vaza o tamanho nem o prefixo da senha.
+// Comparação de tempo constante: não vaza o tamanho nem o prefixo do segredo.
 function iguais(a, b) {
   const ea = new TextEncoder().encode(a)
   const eb = new TextEncoder().encode(b)
@@ -30,10 +31,23 @@ function iguais(a, b) {
   return dif === 0
 }
 
+function credenciais() {
+  const bruto = process.env.PORTAL_CREDENCIAIS || ''
+  return bruto
+    .split(',')
+    .map(par => par.trim())
+    .filter(Boolean)
+    .map(par => {
+      const i = par.indexOf(':')
+      return i === -1 ? null : { usuario: par.slice(0, i), senha: par.slice(i + 1) }
+    })
+    .filter(Boolean)
+}
+
 export default function middleware(request) {
-  const esperada = process.env.PORTAL_SENHA
-  if (!esperada) {
-    return new Response('PORTAL_SENHA não configurada no projeto.', {
+  const validas = credenciais()
+  if (!validas.length) {
+    return new Response('PORTAL_CREDENCIAIS não configurada no projeto.', {
       status: 500,
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
     })
@@ -43,7 +57,7 @@ export default function middleware(request) {
   const [esquema, codificado] = cabecalho.split(' ')
   if (esquema !== 'Basic' || !codificado) return desafio()
 
-  // atob devolve latin-1; a senha precisa ser relida como UTF-8, senão qualquer
+  // atob devolve latin-1; o par precisa ser relido como UTF-8, senão qualquer
   // caractere acentuado é comparado errado (o header anuncia charset="UTF-8").
   let decodificado
   try {
@@ -54,9 +68,17 @@ export default function middleware(request) {
   }
 
   const sep = decodificado.indexOf(':')
-  const senha = sep === -1 ? '' : decodificado.slice(sep + 1)
-  if (!iguais(senha, esperada)) return desafio()
+  if (sep === -1) return desafio()
+  const usuario = decodificado.slice(0, sep)
+  const senha = decodificado.slice(sep + 1)
 
-  // Autenticado: segue para o arquivo estático.
+  // Percorre todas as credenciais mesmo após encontrar a certa, para o tempo de
+  // resposta não revelar qual usuário existe.
+  let ok = false
+  for (const c of validas) {
+    if (iguais(usuario, c.usuario) & iguais(senha, c.senha)) ok = true
+  }
+  if (!ok) return desafio()
+
   return undefined
 }

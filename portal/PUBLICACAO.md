@@ -4,11 +4,13 @@
 
 **<https://portal-dre-grupo-olx.vercel.app>**: protegido por senha.
 
-| | |
-|---|---|
-| Usuário | qualquer coisa (o middleware só confere a senha) |
-| Senha | guardada no gerenciador de senhas; no projeto vive como a variável `PORTAL_SENHA` |
-| Projeto Vercel | `portal-dre-grupo-olx`, escopo `gina-6479s-projects` |
+| Para | Usuário | Senha |
+|---|---|---|
+| Time V4 | `v4` | guardada em `.credentials/portal.md` |
+| Grupo OLX | `olx` | guardada em `.credentials/portal.md` |
+
+O middleware valida o par completo, não só a senha, então dá para revogar o acesso da OLX sem
+mexer no da V4. No projeto Vercel os dois pares vivem na variável `PORTAL_CREDENCIAIS`.
 
 Duas camadas, verificadas ponta a ponta:
 

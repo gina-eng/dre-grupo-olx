@@ -1,11 +1,4 @@
 const BLOCOS = [
-{n:"00", t:"Registro da sessão", d:"Quem esteve, quem decide, quem lavra a ata. Sem isso a ata não vale como registro de decisão.", tempo:"5 min", qs:[
- {q:"Data, horário de início e término", t:"t", f:"Ata"},
- {q:"Local (endereço) e formato", t:"t", f:"Ata"},
- {q:"Participantes do Grupo OLX: nome, cargo, área", t:"L", f:"Governança"},
- {q:"Participantes da V4: nome e papel no método", t:"L", f:"Governança"},
- {q:"Quem lavra a ata e em quantos dias ela circula?", t:"t", f:"Ata", c:1}
-]},
 {n:"01", t:"Governança e decisão", d:"O DR-E é um método de decisão. Sem decisor identificado e presente, o comitê vira reunião de status.", tempo:"20 min", qs:[
  {q:"Quem é o decisor final do projeto?", h:"Confirmar se é a Mirella ou se existe instância acima. Quem assina a ata de comitê?", t:"t", f:"Comitês", c:1},
  {q:"Quem aprova mudança de escopo, de investimento ou de prioridade?", h:"Pode ser diferente do decisor do projeto.", t:"t", f:"Comitês", c:1},
