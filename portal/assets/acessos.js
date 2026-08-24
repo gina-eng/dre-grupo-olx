@@ -82,3 +82,34 @@ function acessosContagem(l) {
   c.faltando = c.pendente;
   return c;
 }
+
+// ---------- Estado compartilhado ----------
+// A fonte da verdade é dados/acessos.json no repositório, servido por /api/acessos.
+// O localStorage vira apenas rascunho local: se a rede falhar, nada se perde.
+var acessosSha = null;
+
+async function acessosBuscarRemoto() {
+  var r = await fetch("/api/acessos", {headers: {Accept: "application/json"}});
+  if (!r.ok) throw new Error("HTTP " + r.status);
+  var d = await r.json();
+  acessosSha = d.sha || null;
+  return d;
+}
+
+async function acessosGravarRemoto(lista, autor) {
+  var r = await fetch("/api/acessos", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({acessos: lista, sha: acessosSha, autor: autor})
+  });
+  var d = null;
+  try { d = await r.json(); } catch (e) {}
+  if (r.status === 409) {
+    var err = new Error((d && d.erro) || "conflito");
+    err.conflito = true; err.atual = d && d.atual;
+    throw err;
+  }
+  if (!r.ok) throw new Error((d && d.erro) || ("HTTP " + r.status));
+  acessosSha = d.sha || null;
+  return d;
+}

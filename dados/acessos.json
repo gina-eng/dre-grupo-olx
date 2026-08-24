@@ -1,0 +1,195 @@
+{
+  "_comment": "Fonte da verdade dos acessos do DR-E Grupo OLX. Editado pelo portal em /kickoff, que grava aqui via /api/acessos. Editar a mao tambem funciona: o portal le este arquivo.",
+  "atualizado_em": "2026-08-24",
+  "atualizado_por": "claude (semente inicial)",
+  "acessos": [
+    {
+      "o": "Contas @olxbr.com para Rafael Corazza, Anselmo Bueno e Guilherme Monteiro",
+      "f": "Data room",
+      "r": "Michelle Morais",
+      "p": "",
+      "s": "pendente",
+      "n": "Chamado aberto pela Michelle, aguardando criação. Pré-requisito da fase Identificar."
+    },
+    {
+      "o": "Google Drive, pasta do data room",
+      "f": "Data room",
+      "r": "Michelle Morais",
+      "p": "",
+      "s": "pendente",
+      "v": "verificado em 24/08: a pasta não abre com a conta Google conectada",
+      "n": "Restrita a e-mail @olxbr.com, depende das contas acima."
+    },
+    {
+      "o": "Google Ads, VR09 ZAP+ MCC VivaReal (526-656-0190)",
+      "f": "Mídia paga",
+      "r": "Operações V4",
+      "p": "23/08",
+      "s": "pendente",
+      "n": "Convite enviado pela OLX. Falta a V4 dar o aceite em gina@v4company.com. Prazo vencido."
+    },
+    {
+      "o": "Meta Ads, VR ZAP+ (612188193108418)",
+      "f": "Mídia paga",
+      "r": "Michelle Morais",
+      "p": "",
+      "s": "pendente",
+      "v": "verificado em 24/08: não aparece entre as contas da conta Meta conectada",
+      "n": "Pendente de aprovação do lado da OLX."
+    },
+    {
+      "o": "Meta Ads, OLX | Autos | B2B (1742214902479721)",
+      "f": "Mídia paga",
+      "r": "Michelle Morais",
+      "p": "",
+      "s": "pendente",
+      "v": "verificado em 24/08: não aparece entre as contas da conta Meta conectada",
+      "n": "Pendente de aprovação do lado da OLX."
+    },
+    {
+      "o": "Google Ads, demais contas B2B (leitura)",
+      "f": "Mídia paga",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (vi). Bloco G, prioritário."
+    },
+    {
+      "o": "Meta Business Manager, acesso de parceiro",
+      "f": "Mídia paga",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Necessário para ver estrutura de campanhas e públicos."
+    },
+    {
+      "o": "GA4, propriedades dos domínios B2B, nível analista",
+      "f": "Rastreamento",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (vii). Bloco H, prioritário: sem isto nenhum outro dado é confiável."
+    },
+    {
+      "o": "Google Tag Manager, contêineres publicados",
+      "f": "Rastreamento",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (vii). Bloco H, prioritário."
+    },
+    {
+      "o": "Google Search Console de cada propriedade B2B",
+      "f": "CRO e SEO",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (ii)."
+    },
+    {
+      "o": "Salesforce Marketing Cloud (visualização)",
+      "f": "CRM Marketing",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (i). Jornadas ativas, bases e métricas de e-mail."
+    },
+    {
+      "o": "CRM comercial, pipeline e motivos de perda (leitura)",
+      "f": "Pré-vendas",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (ix). Bloco J, prioritário."
+    },
+    {
+      "o": "Ferramenta de sales engagement e telefonia",
+      "f": "Pré-vendas",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (ix). Cadências e taxa de conexão."
+    },
+    {
+      "o": "Gravações de calls de qualificação, 10 a 15 recentes",
+      "f": "Pré-vendas",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Camada experiencial do diagnóstico. Verificar consentimento e LGPD."
+    },
+    {
+      "o": "Meta Business Suite (analista)",
+      "f": "Redes sociais",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (v)."
+    },
+    {
+      "o": "LinkedIn, páginas da empresa",
+      "f": "Redes sociais",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (v)."
+    },
+    {
+      "o": "Demais canais ativos (YouTube, TikTok)",
+      "f": "Redes sociais",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (v)."
+    },
+    {
+      "o": "CMS dos domínios B2B",
+      "f": "CRO e SEO",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditorias (ii) e (viii). Necessário para auditar LPs e fluxos."
+    },
+    {
+      "o": "Ferramenta de comportamento (Hotjar, Clarity ou similar)",
+      "f": "LPs e conversão",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Auditoria (viii). Pode não existir."
+    },
+    {
+      "o": "Ferramenta de SEO (SEMrush, Ahrefs ou similar)",
+      "f": "CRO e SEO",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Pode não existir."
+    },
+    {
+      "o": "V4MOS, workspace do Grupo OLX",
+      "f": "Dados",
+      "r": "Guilherme Monteiro",
+      "p": "",
+      "s": "concedido",
+      "v": "verificado em 24/08: autenticação OK nos seis endpoints, secret inválido devolve 401 e organização inexistente devolve 403",
+      "n": "Acesso funciona, mas o workspace não tem nenhum dado de mídia ingerido. Ver PENDENCIAS 11."
+    },
+    {
+      "o": "BI interno ou fonte única de verdade",
+      "f": "Dados",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Bloco A. Se não existir, é sintoma da Trava de Cegueira."
+    },
+    {
+      "o": "ERP e financeiro, custo variável e margem",
+      "f": "Dados",
+      "r": "",
+      "p": "",
+      "s": "pendente",
+      "n": "Bloco A. Insumo de margem de contribuição e unit economics."
+    }
+  ]
+}

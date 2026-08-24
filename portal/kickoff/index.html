@@ -73,6 +73,12 @@ textarea.pa-nota::placeholder{color:var(--border-strong)}
   line-height:1;padding:.3rem .45rem;border-radius:.35rem}
 .pa-del:hover{background:var(--accent);color:var(--brand-ink)}
 .pa-resumo{font-family:var(--mono);font-size:.75rem;color:var(--muted-fg)}
+.pa-sync{font-family:var(--mono);font-size:.72rem;padding:.15rem .5rem;border-radius:99px;white-space:nowrap}
+.pa-sync[data-e="lendo"]{background:var(--muted);color:var(--muted-fg)}
+.pa-sync[data-e="sincronizado"]{background:var(--ok-bg);color:var(--ok)}
+.pa-sync[data-e="rascunho"]{background:var(--warn-bg);color:var(--warn)}
+.pa-sync[data-e="erro"]{background:var(--accent);color:var(--brand-ink)}
+.pa-sync[data-e="somenteleitura"]{background:var(--muted);color:var(--muted-fg)}
 
 .intro{max-width:76rem;margin:0 auto;padding:1.75rem 1.25rem 0}
 .intro-card{padding:1.5rem 1.6rem;display:grid;gap:1rem;grid-template-columns:1fr}
@@ -188,8 +194,10 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
       Tudo entra na ata exportada.</p>
     <div class="pa-top">
       <span class="pa-resumo" id="pa-resumo"></span>
+      <span class="pa-sync" id="pa-sync"></span>
       <button class="btn" id="pa-reset" type="button">Restaurar lista inicial</button>
-      <button class="btn btn-primary" id="pa-add" type="button">+ Adicionar acesso</button>
+      <button class="btn" id="pa-add" type="button">+ Adicionar acesso</button>
+      <button class="btn btn-primary" id="pa-salvar" type="button">Salvar no repositório</button>
     </div>
     <div class="card scrollx" style="margin-top:.8rem">
       <table class="pa-tab">
@@ -232,7 +240,7 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
   <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Ata do kick-off em Markdown"></textarea></div>
 </dialog>
 
-<script src="/assets/acessos.js?v=d0a7e15c"></script>
+<script src="/assets/acessos.js?v=93fb9df3"></script>
 <script src="/assets/form-data.js?v=d6103e17"></script>
 <script>
 const KEY = "dre-olx-kickoff-v1";
@@ -295,7 +303,7 @@ function paLinha(it, i) {
     inp.placeholder = ph;
     inp.setAttribute("aria-label", ph + " da linha " + (i + 1));
     inp.addEventListener("input", function () {
-      paLista[i][chave] = inp.value; paSalva(); paResumo();
+      paLista[i][chave] = inp.value; paSalva(); paResumo(); paMarcarSujo();
     });
     td.appendChild(inp);
     return td;
@@ -312,7 +320,7 @@ function paLinha(it, i) {
     nota.style.height = nota.scrollHeight + "px";
   }
   nota.addEventListener("input", function () {
-    paLista[i].n = nota.value; paSalva(); ajusta();
+    paLista[i].n = nota.value; paSalva(); ajusta(); paMarcarSujo();
   });
   tdo.appendChild(nota);
   // Só dá para medir a altura depois de estar no documento.
@@ -338,7 +346,7 @@ function paLinha(it, i) {
   bs.addEventListener("click", function () {
     var k = (ACESSOS_STATUS.indexOf(paLista[i].s) + 1) % ACESSOS_STATUS.length;
     paLista[i].s = ACESSOS_STATUS[k];
-    paSalva(); paRender();
+    paSalva(); paRender(); paMarcarSujo();
   });
   tds.appendChild(bs);
   tr.appendChild(tds);
@@ -350,7 +358,7 @@ function paLinha(it, i) {
   bx.textContent = "\u00d7";
   bx.setAttribute("aria-label", "Remover a linha " + (i + 1));
   bx.addEventListener("click", function () {
-    paLista.splice(i, 1); paSalva(); paRender();
+    paLista.splice(i, 1); paSalva(); paRender(); paMarcarSujo();
   });
   tdx.appendChild(bx);
   tr.appendChild(tdx);
@@ -371,8 +379,8 @@ function paResumo() {
 }
 
 document.getElementById("pa-add").onclick = function () {
-  paLista.push({o: "", f: "", r: "", p: "", s: "naoiniciado", n: ""});
-  paSalva(); paRender();
+  paLista.push({o: "", f: "", r: "", p: "", s: "pendente", n: ""});
+  paSalva(); paRender(); paMarcarSujo();
   var ins = paBody.querySelectorAll("tr:last-child input");
   if (ins.length) ins[0].focus();
 };
@@ -384,6 +392,70 @@ document.getElementById("pa-reset").onclick = function () {
 };
 
 paRender();
+
+// ---------- Sincronização com o repositório ----------
+var paSync = document.getElementById("pa-sync");
+var paBtnSalvar = document.getElementById("pa-salvar");
+var paSujo = false;
+var paPodeEditar = true;
+
+function paEstado(e, texto) {
+  paSync.dataset.e = e;
+  paSync.textContent = texto;
+}
+
+function paMarcarSujo() {
+  paSujo = true;
+  if (paPodeEditar) paEstado("rascunho", "alterações não salvas");
+}
+
+(async function paCarregar() {
+  paEstado("lendo", "lendo do repositório");
+  try {
+    var d = await acessosBuscarRemoto();
+    if (Array.isArray(d.acessos)) {
+      paLista = d.acessos;
+      paSalva();
+      paRender();
+    }
+    paEstado("sincronizado", "sincronizado" + (d.atualizado_em ? ", " + d.atualizado_em : ""));
+  } catch (e) {
+    paEstado("erro", "sem conexão com o repositório, usando cópia local");
+  }
+})();
+
+paBtnSalvar.onclick = async function () {
+  paBtnSalvar.disabled = true;
+  paEstado("lendo", "salvando");
+  try {
+    var d = await acessosGravarRemoto(paLista, "portal");
+    if (Array.isArray(d.acessos)) { paLista = d.acessos; paSalva(); paRender(); }
+    paSujo = false;
+    paEstado("sincronizado", "salvo em " + (d.atualizado_em || "agora"));
+    say("Lista salva no repositório.");
+  } catch (e) {
+    if (e.conflito && e.atual && Array.isArray(e.atual.acessos)) {
+      paEstado("erro", "outra pessoa salvou antes");
+      if (confirm("Alguém salvou a lista enquanto você editava.\n\nOK carrega a versão do repositório e descarta as suas mudanças.\nCancelar mantém as suas na tela, para você copiar o que precisa.")) {
+        paLista = e.atual.acessos; acessosSha = e.atual.sha; paSalva(); paRender();
+        paSujo = false; paEstado("sincronizado", "recarregado do repositório");
+      }
+    } else if (String(e.message).indexOf("403") > -1 || /somente o login/i.test(e.message)) {
+      paPodeEditar = false;
+      paEstado("somenteleitura", "somente leitura neste login");
+      say("Só o login v4 pode salvar.");
+    } else {
+      paEstado("erro", "falhou: " + e.message);
+      say("Não consegui salvar: " + e.message);
+    }
+  } finally {
+    paBtnSalvar.disabled = false;
+  }
+};
+
+window.addEventListener("beforeunload", function (ev) {
+  if (paSujo) { ev.preventDefault(); ev.returnValue = ""; }
+});
 
 const dbody = document.getElementById("dados-body");
 BLOCOS_DADOS.forEach(d => {

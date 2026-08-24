@@ -309,15 +309,23 @@ body > footer strong{color:#fff}
   liga();
 })();
 </script>
-<script src="/assets/acessos.js?v=d0a7e15c"></script>
+<script src="/assets/acessos.js?v=93fb9df3"></script>
 <script>
 // Resumo dos acessos, lendo a mesma fonte da lista editável do Kick-off.
-(function () {
+(async function () {
   if (typeof acessosLer !== "function") return;
-  var l = acessosLer(), c = acessosContagem(l);
   var n = document.getElementById("acs-n"), host = document.getElementById("acs-l");
   if (!n || !host) return;
-  n.textContent = c.concedido + " de " + c.total + (c.concedido === 1 ? " concedido" : " concedidos");
+  var l = acessosLer(), fonte = "cópia local";
+  // A fonte da verdade é o repositório; a cópia local é só o que sobra se a rede falhar.
+  try {
+    var d = await acessosBuscarRemoto();
+    if (Array.isArray(d.acessos)) { l = d.acessos; fonte = d.atualizado_em || "repositório"; }
+  } catch (e) {}
+  var c = acessosContagem(l);
+  n.textContent = c.concedido + " de " + c.total + (c.concedido === 1 ? " concedido" : " concedidos") +
+                  " · " + fonte;
+  host.innerHTML = "";
   l.slice().sort(function (a, b) {
     if (a.s !== b.s) return a.s === "concedido" ? -1 : 1;
     return 0;

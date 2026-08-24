@@ -328,6 +328,52 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
   </div>
 </section>
 
+
+<section class="blk" id="auditorias">
+  <div class="blk-h"><h2>As nove auditorias contratadas</h2><span class="eyebrow">cláusula 1.2 · Ciclo 1</span></div>
+  <p class="lead">O contrato inclui nove diagnósticos técnicos. Eles não são entregas soltas: são a
+    camada analítica do diagnóstico das travas, e por isso precisam fechar antes do Comitê 1, na
+    semana 4. A ordem não é arbitrária.</p>
+
+  <div class="two">
+    <div class="card note">
+      <h3>Por que o rastreamento vem primeiro</h3>
+      <ul>
+        <li>A auditoria <b>(vii)</b> determina se todo o resto é confiável. Se o GA4 e o GTM estiverem medindo errado, cada número das outras oito herda o erro.</li>
+        <li>Ela é a única que endereça a <b>Trava de Cegueira</b>, que é pré-condição do método: sem dado mínimo, o diagnóstico é achismo.</li>
+        <li>Por isso ela abre a semana 2, junto com a de mídia paga, que depende dos acessos mais demorados.</li>
+      </ul>
+    </div>
+    <div class="card note warn">
+      <h3>O que pode atrasar</h3>
+      <ul>
+        <li>Sete das nove dependem de acesso que ainda não foi concedido. As de mídia paga, rastreamento e pré-vendas são as três prioritárias e as três bloqueadas.</li>
+        <li>A <b>(ix)</b> precisa de gravações de call, que envolvem consentimento e LGPD: é a de prazo mais imprevisível.</li>
+        <li>A <b>(iii)</b> parte de linha de base zero, porque não há monitoramento de buscas generativas hoje.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gantt-wrap">
+    <div class="gantt-scroll"><div class="gantt" id="gaud" role="group" aria-label="Execução das nove auditorias ao longo do Ciclo 1"></div></div>
+    <div class="g-legend">
+      <span><i style="background:var(--brand)"></i>Prioritária, destrava o diagnóstico</span>
+      <span><i style="background:color-mix(in srgb,var(--brand) 45%,var(--card));border:1px solid color-mix(in srgb,var(--brand) 45%,transparent)"></i>Demais</span>
+      <span><i style="border-radius:50%;background:var(--brand)"></i>Comitê 1, prazo de todas</span>
+    </div>
+  </div>
+
+  <div class="card scrollx" style="margin-top:1.2rem">
+    <table>
+      <thead><tr>
+        <th style="width:2.5rem">#</th><th>Auditoria</th><th style="width:5rem">Semana</th>
+        <th style="width:5rem">Bloco</th><th>Travas que informa</th><th>Depende de</th>
+      </tr></thead>
+      <tbody id="audtab"></tbody>
+    </table>
+  </div>
+</section>
+
 <section class="blk">
   <div class="blk-h"><h2>Como o ritual funciona entre os comitês</h2><span class="eyebrow">regras do método</span></div>
   <div class="rules">
@@ -354,6 +400,96 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
 </div></main>
 
 <script>
+
+// ---------- As nove auditorias contratadas ----------
+// Fonte: 02-diagnostico/auditorias-contratadas.md. A sequência segue a recomendação do
+// próprio documento: rastreamento primeiro, pré-vendas em seguida.
+var AUDITORIAS = [
+  {id:"vii", nome:"Rastreamento completo (GA4 e GTM)", de:2, ate:3, bloco:"H", prio:true,
+   travas:"Cegueira, pré-condição de todas", dep:"GA4 e GTM, nível analista"},
+  {id:"vi",  nome:"Mídia paga (Google e Meta)", de:2, ate:3, bloco:"G", prio:true,
+   travas:"Exposição, Atenção, Qualificação", dep:"Contas Google e Meta, e o workspace V4MOS com dado"},
+  {id:"ix",  nome:"Pré-vendas, qualificação e sales engagement", de:2, ate:4, bloco:"J", prio:true,
+   travas:"Qualificação, Compromisso, Decisão", dep:"CRM, cadências e gravações de call"},
+  {id:"ii",  nome:"Ambientes CRO e SEO dos domínios B2B", de:3, ate:4, bloco:"C", prio:false,
+   travas:"Exposição, Interesse", dep:"Search Console e acesso ao CMS"},
+  {id:"viii",nome:"Páginas de captura e fluxos de conversão", de:3, ate:4, bloco:"I", prio:false,
+   travas:"Interesse, Compromisso", dep:"CMS e ferramenta de comportamento"},
+  {id:"i",   nome:"CRM Marketing (Salesforce Marketing Cloud)", de:3, ate:4, bloco:"B", prio:false,
+   travas:"Interesse, Retenção", dep:"Marketing Cloud, visualização"},
+  {id:"iv",  nome:"Criativos, anúncios e mensagens", de:3, ate:4, bloco:"E", prio:false,
+   travas:"Atenção", dep:"Biblioteca de criativos e contas de mídia"},
+  {id:"v",   nome:"Redes sociais e conteúdo orgânico", de:3, ate:4, bloco:"F", prio:false,
+   travas:"Exposição, Atenção", dep:"Business Suite, LinkedIn e demais canais"},
+  {id:"iii", nome:"GEO, IA e buscas generativas", de:3, ate:4, bloco:"D", prio:false,
+   travas:"Exposição, Atenção", dep:"Nada externo: parte de linha de base zero"}
+];
+
+(function () {
+  var g = document.getElementById("gaud");
+  if (g) {
+    var cols = "300px repeat(12, minmax(34px, 1fr))";
+    var head = document.createElement("div");
+    head.className = "g-head";
+    head.style.gridTemplateColumns = cols;
+    var h0 = document.createElement("span"); h0.textContent = "Auditoria"; head.appendChild(h0);
+    for (var s = 1; s <= 12; s++) {
+      var hs = document.createElement("span"); hs.textContent = "S" + s; head.appendChild(hs);
+    }
+    g.appendChild(head);
+
+    AUDITORIAS.forEach(function (a) {
+      var row = document.createElement("div");
+      row.className = "g-row";
+      row.style.gridTemplateColumns = cols;
+      var lbl = document.createElement("div");
+      lbl.className = "g-lbl";
+      lbl.appendChild(document.createTextNode("(" + a.id + ") " + a.nome));
+      var sm = document.createElement("small");
+      sm.textContent = "bloco " + a.bloco + " · " + a.travas;
+      lbl.appendChild(sm);
+      row.appendChild(lbl);
+
+      var tr = document.createElement("div");
+      tr.className = "g-track";
+      tr.style.gridColumn = "2 / -1";
+      var bar = document.createElement("div");
+      bar.className = "g-bar " + (a.prio ? "c1" : "fase");
+      bar.textContent = "(" + a.id + ")";
+      bar.style.left = ((a.de - 1) / 12 * 100) + "%";
+      bar.style.width = ((a.ate - a.de + 1) / 12 * 100) + "%";
+      bar.setAttribute("aria-label", "Auditoria " + a.id + ", " + a.nome +
+        ", semanas " + a.de + " a " + a.ate + (a.prio ? ", prioritária" : ""));
+      tr.appendChild(bar);
+      var mk = document.createElement("div");
+      mk.className = "g-mark";
+      mk.textContent = "C1";
+      mk.style.left = (3.5 / 12 * 100) + "%";
+      mk.title = "Comitê 1, semana 4: prazo de todas as auditorias";
+      mk.setAttribute("aria-label", mk.title);
+      tr.appendChild(mk);
+      row.appendChild(tr);
+      g.appendChild(row);
+    });
+  }
+
+  var tb = document.getElementById("audtab");
+  if (tb) {
+    AUDITORIAS.forEach(function (a) {
+      var tr = document.createElement("tr");
+      if (a.prio) tr.className = "com-row";
+      tr.innerHTML =
+        '<td class="wk">' + a.id + "</td>" +
+        "<td><strong>" + a.nome + "</strong>" + (a.prio ? ' <span class="tag tag-p0">prioritária</span>' : "") + "</td>" +
+        '<td class="dt">S' + a.de + (a.ate !== a.de ? " a S" + a.ate : "") + "</td>" +
+        '<td class="wk">' + a.bloco + "</td>" +
+        '<td style="color:var(--muted-fg)">' + a.travas + "</td>" +
+        '<td style="color:var(--muted-fg);font-size:.8rem">' + a.dep + "</td>";
+      tb.appendChild(tr);
+    });
+  }
+})();
+
 // Gantt: posições calculadas das datas reais, para não divergirem da tabela abaixo.
 (function () {
   var MES = ["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
