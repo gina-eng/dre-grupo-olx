@@ -1,0 +1,512 @@
+<title>Checklist de Liberação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+/* ============================================================
+   Checklist de Liberação — V4 Company / Grupo OLX
+   Face acionável do documento "Acessos e níveis de dado".
+   Lá se explica por quê, aqui se trabalha item a item.
+   ============================================================ */
+
+:root{
+  --ground:#FBF9F9; --card:#FFFFFF; --sunk:#F4F0F1;
+  --ink:#1A1416; --muted:#6E6268; --faint:#8F858A;
+  --border:#E4DEDF; --border-strong:#CFC6C8;
+  --brand:#970013; --brand-ink:#7A0010; --brand-wash:#FBEFF0;
+  --ok:#2F6B4F; --ok-wash:#EBF3EE;
+  --warn:#8A5A00; --warn-wash:#FBF2E2;
+  --crit:#A32218; --crit-wash:#FBEDEB;
+  --shadow:0 1px 2px rgba(26,20,22,.06);
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#151112; --card:#1D1819; --sunk:#221C1E;
+    --ink:#F2ECED; --muted:#A99EA2; --faint:#877C80;
+    --border:#332B2D; --border-strong:#483E41;
+    --brand:#E4677A; --brand-ink:#F09AA7; --brand-wash:#2C1A1E;
+    --ok:#7BBE9B; --ok-wash:#1A2620;
+    --warn:#D9A442; --warn-wash:#2A2114;
+    --crit:#E8827A; --crit-wash:#2E1B1A;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#151112; --card:#1D1819; --sunk:#221C1E;
+  --ink:#F2ECED; --muted:#A99EA2; --faint:#877C80;
+  --border:#332B2D; --border-strong:#483E41;
+  --brand:#E4677A; --brand-ink:#F09AA7; --brand-wash:#2C1A1E;
+  --ok:#7BBE9B; --ok-wash:#1A2620;
+  --warn:#D9A442; --warn-wash:#2A2114;
+  --crit:#E8827A; --crit-wash:#2E1B1A;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--serif);
+  font-size:16px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:58rem;margin:0 auto;
+  padding:clamp(1.5rem,4vw,3.5rem) clamp(1.1rem,4vw,2.5rem) 5rem;
+  display:flex;flex-direction:column;gap:2.6rem}
+
+h1,h2,h3,h4,.lbl,.pill,.num,button{font-family:var(--sans)}
+h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0;max-width:68ch}
+.lbl{font-size:.68rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brand-ink)}
+.mono{font-family:var(--mono);font-size:.88em}
+strong{font-weight:600}
+
+.head{display:flex;flex-direction:column;gap:1rem;
+  padding-bottom:1.6rem;border-bottom:3px solid var(--ink)}
+.head h1{font-size:clamp(2rem,5.5vw,3rem);font-weight:700;letter-spacing:-.028em}
+.head .sub{font-size:clamp(1rem,2.2vw,1.14rem);color:var(--muted);max-width:62ch}
+.head-meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:var(--mono);
+  font-size:.74rem;color:var(--faint);padding-top:.5rem;border-top:1px solid var(--border)}
+.head-meta b{color:var(--ink);font-weight:500}
+
+.prog{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  padding:.9rem 1.15rem;background:var(--sunk);border:1px solid var(--border);border-radius:3px}
+.prog .cnt{font-family:var(--mono);font-size:.95rem;font-weight:500;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.prog .track{flex:1;min-width:8rem;height:6px;background:var(--border-strong);
+  border-radius:99px;overflow:hidden}
+.prog .fill{height:100%;width:0;background:var(--brand);transition:width .25s ease}
+.prog .hint{font-size:.78rem;color:var(--faint);font-family:var(--sans)}
+.prog button{font:inherit;font-size:.76rem;font-weight:500;color:var(--muted);
+  background:var(--card);border:1px solid var(--border-strong);border-radius:2px;
+  padding:.32rem .7rem;cursor:pointer}
+.prog button:hover{color:var(--ink);border-color:var(--faint)}
+
+section{display:flex;flex-direction:column;gap:1.05rem}
+.sec-h{display:flex;align-items:baseline;gap:.85rem;flex-wrap:wrap;
+  padding-bottom:.6rem;border-bottom:1px solid var(--border-strong)}
+.sec-h .num{font-family:var(--mono);font-size:.9rem;font-weight:500;color:var(--brand)}
+.sec-h h2{font-size:1.34rem;font-weight:600;letter-spacing:-.018em;flex:1;min-width:13rem}
+.sec-h .tally{font-family:var(--mono);font-size:.75rem;color:var(--faint)}
+.destrava{font-size:.9rem;color:var(--muted)}
+.destrava b{font-family:var(--sans);font-weight:600;color:var(--ink)}
+
+.note{border:1px solid var(--border);border-left:4px solid var(--brand);
+  background:var(--brand-wash);padding:1rem 1.2rem;border-radius:3px;
+  display:flex;flex-direction:column;gap:.45rem}
+.note.ok{border-left-color:var(--ok);background:var(--ok-wash)}
+.note p{font-size:.91rem}
+.note b{font-family:var(--sans);font-weight:600}
+
+.list{display:flex;flex-direction:column;border:1px solid var(--border-strong);
+  border-radius:3px;overflow:hidden;background:var(--card);box-shadow:var(--shadow)}
+.it{display:grid;grid-template-columns:auto 1fr;gap:.3rem .8rem;
+  padding:1rem 1.15rem;border-bottom:1px solid var(--border);align-items:start}
+.it:last-child{border-bottom:0}
+.it > input[type="checkbox"]{grid-row:span 4;margin:.3rem 0 0;width:1.05rem;height:1.05rem;
+  accent-color:var(--brand);cursor:pointer;flex:none}
+.it-top{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .7rem}
+.it-top .id{font-family:var(--mono);font-size:.73rem;color:var(--brand);font-weight:500}
+.it-top h4{font-size:.99rem;font-weight:600;flex:1;min-width:11rem}
+.it .meta{font-family:var(--mono);font-size:.73rem;color:var(--faint)}
+.it .why{font-size:.88rem;color:var(--muted)}
+.it.done{opacity:.5}
+.it.done .it-top h4{text-decoration:line-through}
+
+.pill{font-size:.65rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  padding:.16rem .48rem;border-radius:2px;white-space:nowrap;border:1px solid transparent}
+.pill.adm{background:var(--crit-wash);color:var(--crit);border-color:var(--crit)}
+.pill.exp{background:var(--warn-wash);color:var(--warn);border-color:var(--warn)}
+.pill.ler{background:var(--sunk);color:var(--muted);border-color:var(--border-strong)}
+.pill.ok{background:var(--ok-wash);color:var(--ok);border-color:var(--ok)}
+.pill.crit{background:var(--crit-wash);color:var(--crit);border-color:var(--crit)}
+.pill.warn{background:var(--warn-wash);color:var(--warn);border-color:var(--warn)}
+
+.contas{display:grid;gap:1px;background:var(--border);margin-top:.5rem;
+  border:1px solid var(--border);border-radius:2px;overflow:hidden}
+@media(min-width:560px){.contas{grid-template-columns:1fr 1fr}}
+.conta{background:var(--sunk);padding:.55rem .8rem;display:flex;align-items:baseline;
+  gap:.5rem;flex-wrap:wrap;font-size:.88rem}
+.conta .nm{font-family:var(--sans);font-weight:600;flex:1;min-width:8rem}
+.conta .em{font-family:var(--mono);font-size:.7rem;color:var(--faint);width:100%}
+
+footer{border-top:1px solid var(--border-strong);padding-top:1.4rem;
+  display:flex;flex-direction:column;gap:.65rem}
+footer p{font-size:.85rem;color:var(--muted)}
+footer a{color:var(--brand-ink)}
+input:focus-visible,button:focus-visible,a:focus-visible{
+  outline:2px solid var(--brand);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media print{
+  body{background:#fff}
+  .prog{display:none}
+  .list,.note,.contas{break-inside:avoid}
+  .it{break-inside:avoid}
+  .it.done{opacity:1}
+  .wrap{gap:1.9rem;padding-top:0}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="head">
+    <span class="lbl">V4 Company &middot; Grupo OLX &middot; Destrava Receita, Ciclo 1</span>
+    <h1>Checklist de liberação</h1>
+    <p class="sub">Os dezessete itens necessários para destravar as nove auditorias contratadas,
+      com o nível de permissão de cada um. A justificativa técnica está no documento
+      <em>Acessos e níveis de dado</em>, enviado junto com este.</p>
+    <div class="head-meta">
+      <span>Emitido em <b>25 ago 2026</b></span>
+      <span>Idealmente até <b>26 ago 2026</b></span>
+      <span>Comitê 1 em <b>17 set 2026</b></span>
+      <span><b>17</b> itens</span>
+    </div>
+  </header>
+
+  <div class="prog">
+    <span class="cnt" id="cnt">0 de 17</span>
+    <span class="track"><span class="fill" id="fill"></span></span>
+    <span class="hint">Marcação local, só para o seu controle. Ela não é enviada para a V4.</span>
+    <button type="button" id="reset">Limpar marcações</button>
+  </div>
+
+  <section>
+    <div class="sec-h"><span class="num">00</span><h2>Contexto</h2></div>
+    <div class="note">
+      <p><b>Prazo único: idealmente até 26 de agosto.</b>
+        As nove auditorias funcionam em cadeia, e as primeiras alimentam as seguintes. Se algum
+        item não puder sair até lá, a informação mais útil é qual: com ela reorganizamos a
+        sequência e o cronograma segue de pé.</p>
+      <p><b>Cinco itens pedem nível administrativo ou proprietário.</b>
+        Eles são necessários para integrar as contas à nossa plataforma de análise de dados, o
+        V4MOS. Conectar é ato administrativo nas plataformas do Google e da Meta. Depois de
+        conectada, a integração apenas lê, e o acesso pode voltar a leitura.</p>
+      <p><b>O bloco 1 é prioridade máxima.</b>
+        É pré-requisito técnico das outras oito auditorias: se a medição estiver incorreta,
+        cada leitura seguinte herda o mesmo erro.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <span class="num">01</span><h2>Medição</h2>
+      <span class="tally">prioridade alta &middot; 3 itens</span>
+    </div>
+    <p class="destrava"><b>Destrava:</b> (vii) Rastreamento Completo &nbsp;·&nbsp;
+      <b>Conceder para:</b> <span class="mono">gina@v4company.com</span></p>
+
+    <div class="list">
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">1.1</span><h4>Google Analytics 4</h4>
+          <span class="pill adm">Editor</span></div>
+        <p class="meta">Propriedades dos domínios B2B &middot; Administrador se houver vínculo com Google Ads</p>
+        <p class="why">Nível Analista lê os relatórios, mas não permite verificar os fluxos de
+          dados e as configurações de conversão, que são o objeto desta auditoria.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">1.2</span><h4>Google Tag Manager</h4>
+          <span class="pill adm">Publicar</span></div>
+        <p class="meta">Contêineres publicados &middot; Admin de conta se for server-side</p>
+        <p class="why">Iniciamos com leitura. A permissão de publicação passa a ser necessária
+          apenas quando houver correção de medição já aprovada por vocês.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">1.3</span><h4>Google Search Console</h4>
+          <span class="pill adm">Proprietário</span></div>
+        <p class="meta">Cada propriedade B2B</p>
+        <p class="why">Perfis inferiores leem os relatórios na interface, mas não autorizam a
+          extração de dados via API.</p>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <span class="num">02</span><h2>Contas do domínio @olxbr.com</h2>
+      <span class="tally">1 item, 3 contas pendentes</span>
+    </div>
+    <p class="destrava"><b>Habilita</b> a execução das etapas seguintes</p>
+
+    <div class="list">
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">2.1</span><h4>Contas nominais para o time da V4</h4>
+          <span class="pill ler">Usuário padrão</span></div>
+        <p class="meta">Mesmo padrão da conta já criada &middot; sem privilégio administrativo</p>
+        <div class="contas">
+          <div class="conta"><span class="nm">Rafael Corazza</span><span class="pill ok">Concluído</span>
+            <span class="em">rafael.corazza-ext@olxbr.com</span></div>
+          <div class="conta"><span class="nm">Anselmo Bueno</span><span class="pill warn">Em andamento</span>
+            <span class="em">aguardando criação</span></div>
+          <div class="conta"><span class="nm">Guilherme Monteiro</span><span class="pill warn">Em andamento</span>
+            <span class="em">aguardando criação</span></div>
+          <div class="conta"><span class="nm">Leonardo Rosa</span><span class="pill crit">Pendente</span>
+            <span class="em">leonardo.rosa@v4company.com</span></div>
+        </div>
+        <p class="why">Enquanto houver um login só, apenas uma pessoa consegue buscar material
+          novo no data room, o que concentra o projeto num ponto. E login compartilhado não
+          deixa registro de quem acessou o quê, que é o rastro que sustenta a obrigação de
+          proteção de dados do contrato.</p>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <span class="num">03</span><h2>Mídia paga</h2>
+      <span class="tally">3 itens</span>
+    </div>
+    <p class="destrava"><b>Destrava:</b> (vi) Mídia Paga, (iv) Criativos e (v) Redes Sociais</p>
+
+    <div class="list">
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">3.1</span><h4>Meta Ads, conta VR ZAP+</h4>
+          <span class="pill adm">Admin do BM</span></div>
+        <p class="meta">ID 612188193108418 &middot; pendente desde 21/08</p>
+        <p class="why">Nível Admin do Business Manager para conceder acesso de parceiro à V4 e
+          conectar os ativos ao V4MOS. Hoje a integração devolve vazio no lado Meta, então a
+          auditoria de mídia fecha pela metade e o custo de aquisição fica sem a parcela de Meta.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">3.2</span><h4>Meta Ads, conta OLX Autos B2B</h4>
+          <span class="pill adm">Admin do BM</span></div>
+        <p class="meta">ID 1742214902479721 &middot; pendente desde 21/08</p>
+        <p class="why">Mesmo nível e mesma justificativa do item anterior. É, além disso, o único
+          acesso mapeado que cobre a unidade de Autos.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">3.3</span><h4>Google Ads, captação de anunciantes</h4>
+          <span class="pill adm">Administrativo</span></div>
+        <p class="meta">Conta a identificar &middot; ver item 6.1</p>
+        <p class="why">Nível administrativo para aceitar a integração. Depois de estabelecida a
+          conexão, o acesso pode ser reduzido para leitura.</p>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <span class="num">04</span><h2>Comercial e CRM</h2>
+      <span class="tally">3 itens</span>
+    </div>
+    <p class="destrava"><b>Destrava:</b> (ix) Pré-Vendas e (i) CRM Marketing &nbsp;·&nbsp;
+      acesso com permissão de exportar relatórios</p>
+
+    <div class="list">
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">4.1</span><h4>CRM comercial</h4>
+          <span class="pill exp">Leitura e exportação</span></div>
+        <p class="meta">Pipeline, estágios e motivos de perda</p>
+        <p class="why">Confirmar também se a ferramenta utilizada é o Salesforce ou outra. É o
+          acesso que valida o funil contra o faturamento declarado.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">4.2</span><h4>Salesforce Marketing Cloud</h4>
+          <span class="pill exp">Leitura e exportação</span></div>
+        <p class="meta">Jornadas, bases e métricas de retenção</p>
+        <p class="why">É a única das nove auditorias contratadas que toca diretamente a camada
+          de retenção.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">4.3</span><h4>Gravações de calls</h4>
+          <span class="pill ler">10 a 15 amostras</span></div>
+        <p class="meta">Ligações recentes de qualificação</p>
+        <p class="why">Para avaliação da camada experiencial de pré-vendas. Envolve checagem de
+          consentimento, então vale iniciar hoje mesmo que a entrega venha depois: é o item de
+          prazo mais imprevisível da lista.</p>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <span class="num">05</span><h2>Web e conteúdo</h2>
+      <span class="tally">2 itens</span>
+    </div>
+    <p class="destrava"><b>Destrava:</b> (ii) CRO e SEO e (viii) Páginas de Captura</p>
+
+    <div class="list">
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">5.1</span><h4>CMS e domínios</h4>
+          <span class="pill ler">Leitura</span></div>
+        <p class="meta">Leitura do CMS e relação de domínios e subdomínios B2B</p>
+        <p class="why">Sem o mapeamento dos domínios não conseguimos delimitar o perímetro do
+          diagnóstico de conversão e de busca.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">5.2</span><h4>Ferramentas de SEO e comportamento</h4>
+          <span class="pill ler">Leitura</span></div>
+        <p class="meta">SEMrush ou Ahrefs &middot; Hotjar ou Clarity &middot; caso utilizem</p>
+        <p class="why">Se não existirem, a resposta já é o dado: registramos como linha de base
+          e seguimos, sem pendência aberta.</p>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <span class="num">06</span><h2>Data room e pontos de atenção</h2>
+      <span class="tally">5 itens</span>
+    </div>
+    <p class="destrava">Confirmações e materiais. Não são acessos, e alguns podem ter outro dono
+      interno.</p>
+
+    <div class="list">
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">6.1</span><h4>Nomenclatura do Google Ads</h4>
+          <span class="pill crit">Confirmação</span></div>
+        <p class="meta">MCC VivaReal &middot; 526-656-0190</p>
+        <p class="why">A conta exibe 8 campanhas ativas com o sufixo <span class="mono">pf</span>,
+          que descreve jornada B2C: aluguel, compra e Minha Casa Minha Vida. Esta é a conta
+          correta de captação B2B, ou existe outra estrutura focada em anunciantes? Sem essa
+          confirmação, a auditoria de mídia mediria o funil errado.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">6.2</span><h4>Janela de dados do Google Ads</h4>
+          <span class="pill crit">Confirmação</span></div>
+        <p class="meta">Série termina em 22/06/2026</p>
+        <p class="why">Trata-se do limite de ingestão da integração, ou há uma lacuna real nos
+          dados depois dessa data?</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">6.3</span><h4>Arquivos do data room</h4>
+          <span class="pill crit">Confirmação</span></div>
+        <p class="meta">Primeiro lote baixado: 9 arquivos</p>
+        <p class="why">Este volume encerra os materiais de criativos e de páginas de captura, ou
+          haverá novo envio? Precisamos saber para planejar o que resta pedir.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">6.4</span><h4>Dados absolutos do teste A/B</h4>
+          <span class="pill exp">Material</span></div>
+        <p class="meta">Página Anuncie ZAP &middot; teste de 17 a 23 de março &middot; auditoria (viii)</p>
+        <p class="why">Precisamos dos totais de visitantes e conversões por variante para
+          recalcular a significância estatística. Recebemos os percentuais; sem o denominador
+          não é possível afirmar se a diferença foi resultado real ou variação normal do período.</p>
+      </label>
+
+      <label class="it">
+        <input type="checkbox">
+        <div class="it-top"><span class="id">6.5</span><h4>Biblioteca de criativos e briefings</h4>
+          <span class="pill exp">Material</span></div>
+        <p class="meta">Últimos 6 a 12 meses &middot; auditoria (iv)</p>
+        <p class="why">Amostras do período, incluindo peças de baixa performance, e os briefings
+          das variantes V1, V2 e V3 para análise de hipóteses. Uma campanha só, como a que
+          recebemos, não permite ler diversidade nem fadiga criativa.</p>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="num">07</span><h2>Duas coisas que facilitam</h2></div>
+    <div class="note ok">
+      <p><b>“Não existe” é uma resposta completa.</b>
+        Se algum item não existe, não é extraível ou não pode ser compartilhado, basta dizer.
+        Registramos como leitura de maturidade e seguimos em frente. Resposta rápida vale mais
+        do que pendência que fica aberta por semanas.</p>
+      <p><b>Prazo inviável também é informação útil.</b>
+        Preferimos reorganizar a ordem do diagnóstico com antecedência a descobrir a
+        indisponibilidade na semana do comitê.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="lbl">Privacidade e uso</span>
+    <p>Os acessos solicitados são usados exclusivamente para a finalidade contratual e restritos
+      aos profissionais estritamente necessários, sob compromisso de confidencialidade. Onde o
+      nível administrativo é necessário, ele serve para estabelecer a integração de dados, e
+      nenhuma alteração de configuração, campanha, verba ou publicação acontece sem aprovação
+      prévia e explícita do Grupo OLX. Credenciais ficam em gerenciador de senhas, com troca
+      obrigatória ao término da prestação, e a OLX pode revogar ou reduzir qualquer permissão a
+      qualquer tempo.</p>
+    <p>Encarregado de proteção de dados da V4:
+      <a href="mailto:lgpd@v4company.com.br">lgpd@v4company.com.br</a>.
+      A justificativa técnica de cada item está no documento <em>Acessos e níveis de dado</em>.</p>
+  </footer>
+
+</div>
+
+<script>
+// Marcação local por item. É conveniência de quem trabalha a lista,
+// não estado compartilhado: nada sai do navegador de quem marcou.
+(function () {
+  var CHAVE = "olx-checklist-liberacao-v3";
+  var itens = Array.prototype.slice.call(document.querySelectorAll(".it"));
+  var cnt = document.getElementById("cnt");
+  var fill = document.getElementById("fill");
+  var reset = document.getElementById("reset");
+
+  function ler() {
+    try {
+      var cru = localStorage.getItem(CHAVE);
+      return cru ? JSON.parse(cru) : {};
+    } catch (e) { return {}; }
+  }
+  function gravar(estado) {
+    try { localStorage.setItem(CHAVE, JSON.stringify(estado)); } catch (e) {}
+  }
+
+  var estado = ler();
+
+  function chave(it) {
+    var id = it.querySelector(".id");
+    return id ? id.textContent.trim() : "";
+  }
+
+  function pintar() {
+    var feitos = 0;
+    itens.forEach(function (it) {
+      var box = it.querySelector('input[type="checkbox"]');
+      if (box.checked) feitos++;
+      it.classList.toggle("done", box.checked);
+    });
+    cnt.textContent = feitos + " de " + itens.length;
+    fill.style.width = (itens.length ? (feitos / itens.length) * 100 : 0) + "%";
+  }
+
+  itens.forEach(function (it) {
+    var box = it.querySelector('input[type="checkbox"]');
+    var k = chave(it);
+    box.checked = !!estado[k];
+    box.addEventListener("change", function () {
+      estado[k] = box.checked;
+      gravar(estado);
+      pintar();
+    });
+  });
+
+  reset.addEventListener("click", function () {
+    estado = {};
+    gravar(estado);
+    itens.forEach(function (it) { it.querySelector('input[type="checkbox"]').checked = false; });
+    pintar();
+  });
+
+  pintar();
+}());
+</script>

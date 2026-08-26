@@ -1,0 +1,554 @@
+<title>Acessos e Níveis de Dado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+/* ============================================================
+   Acessos e Níveis de Dado — V4 Company / Grupo OLX
+   Documento de argumentação: por que cada acesso precisa do
+   nível pedido. Tratamento utilitário, oxblood da identidade
+   do portal do projeto.
+   ============================================================ */
+
+:root{
+  --ground:#FBF9F9; --card:#FFFFFF; --sunk:#F4F0F1;
+  --ink:#1A1416; --muted:#6E6268; --faint:#8F858A;
+  --border:#E4DEDF; --border-strong:#CFC6C8;
+  --brand:#970013; --brand-ink:#7A0010; --brand-wash:#FBEFF0;
+  --ok:#2F6B4F; --ok-wash:#EBF3EE;
+  --warn:#8A5A00; --warn-wash:#FBF2E2;
+  --crit:#A32218; --crit-wash:#FBEDEB;
+  --shadow:0 1px 2px rgba(26,20,22,.06);
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#151112; --card:#1D1819; --sunk:#221C1E;
+    --ink:#F2ECED; --muted:#A99EA2; --faint:#877C80;
+    --border:#332B2D; --border-strong:#483E41;
+    --brand:#E4677A; --brand-ink:#F09AA7; --brand-wash:#2C1A1E;
+    --ok:#7BBE9B; --ok-wash:#1A2620;
+    --warn:#D9A442; --warn-wash:#2A2114;
+    --crit:#E8827A; --crit-wash:#2E1B1A;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#151112; --card:#1D1819; --sunk:#221C1E;
+  --ink:#F2ECED; --muted:#A99EA2; --faint:#877C80;
+  --border:#332B2D; --border-strong:#483E41;
+  --brand:#E4677A; --brand-ink:#F09AA7; --brand-wash:#2C1A1E;
+  --ok:#7BBE9B; --ok-wash:#1A2620;
+  --warn:#D9A442; --warn-wash:#2A2114;
+  --crit:#E8827A; --crit-wash:#2E1B1A;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--serif);
+  font-size:16px;line-height:1.6;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:60rem;margin:0 auto;
+  padding:clamp(1.5rem,4vw,3.5rem) clamp(1.1rem,4vw,2.5rem) 5rem;
+  display:flex;flex-direction:column;gap:2.9rem}
+
+h1,h2,h3,h4,.lbl,.pill,th,.num{font-family:var(--sans)}
+h1,h2,h3,h4{text-wrap:balance;margin:0;line-height:1.2}
+p{margin:0;max-width:68ch}
+.lbl{font-size:.68rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--brand-ink)}
+.mono{font-family:var(--mono);font-size:.88em}
+strong{font-weight:600}
+
+.head{display:flex;flex-direction:column;gap:1rem;
+  padding-bottom:1.6rem;border-bottom:3px solid var(--ink)}
+.head h1{font-size:clamp(2rem,5.5vw,3rem);font-weight:700;letter-spacing:-.028em}
+.head .sub{font-size:clamp(1rem,2.2vw,1.14rem);color:var(--muted);max-width:62ch}
+.head-meta{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:var(--mono);
+  font-size:.74rem;color:var(--faint);padding-top:.5rem;border-top:1px solid var(--border)}
+.head-meta b{color:var(--ink);font-weight:500}
+
+section{display:flex;flex-direction:column;gap:1.15rem}
+.sec-h{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;
+  padding-bottom:.6rem;border-bottom:1px solid var(--border-strong)}
+.sec-h .num{font-family:var(--mono);font-size:.9rem;font-weight:500;color:var(--brand)}
+.sec-h h2{font-size:1.42rem;font-weight:600;letter-spacing:-.018em;flex:1;min-width:14rem}
+.lead{color:var(--muted)}
+
+/* dois tipos de nível */
+.duo{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:3px;overflow:hidden}
+@media(min-width:720px){.duo{grid-template-columns:1fr 1fr}}
+.duo > div{background:var(--card);padding:1.15rem 1.25rem;display:flex;
+  flex-direction:column;gap:.4rem}
+.duo h4{font-size:1rem;font-weight:600}
+.duo .k{font-family:var(--mono);font-size:.72rem;color:var(--brand);
+  letter-spacing:.06em;text-transform:uppercase}
+.duo p{font-size:.92rem;color:var(--muted)}
+
+/* escala de profundidade */
+.levels{display:flex;flex-direction:column;gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:3px;overflow:hidden}
+.lvl{background:var(--card);padding:.95rem 1.15rem;display:grid;gap:.15rem .95rem;
+  grid-template-columns:auto 1fr}
+.lvl .n{grid-row:span 2;font-family:var(--mono);font-size:.78rem;color:var(--faint);
+  padding-top:.2rem;white-space:nowrap}
+.lvl h4{font-size:.96rem;font-weight:600}
+.lvl p{font-size:.89rem;color:var(--muted)}
+.lvl.is-goal{background:var(--brand-wash)}
+.lvl.is-goal .n,.lvl.is-goal h4{color:var(--brand-ink)}
+.lvl .bar{grid-column:1/-1;height:3px;margin-top:.55rem;background:var(--border-strong)}
+.lvl:nth-child(1) .bar{width:22%}
+.lvl:nth-child(2) .bar{width:55%}
+.lvl:nth-child(3) .bar{width:100%;background:var(--brand)}
+
+.note{border:1px solid var(--border);border-left:4px solid var(--brand);
+  background:var(--brand-wash);padding:1.05rem 1.25rem;border-radius:3px;
+  display:flex;flex-direction:column;gap:.5rem}
+.note.ok{border-left-color:var(--ok);background:var(--ok-wash)}
+.note p{font-size:.93rem}
+.note b{font-family:var(--sans);font-weight:600}
+
+/* item detalhado */
+.item{border:1px solid var(--border-strong);border-radius:3px;
+  background:var(--card);box-shadow:var(--shadow);overflow:hidden}
+.item-h{display:flex;flex-wrap:wrap;align-items:center;gap:.55rem 1rem;
+  padding:.9rem 1.25rem;background:var(--sunk);border-bottom:1px solid var(--border)}
+.item-h h3{font-size:1.06rem;font-weight:600;flex:1;min-width:12rem;letter-spacing:-.012em}
+.item-h .id{font-family:var(--mono);font-size:.74rem;color:var(--faint);
+  width:100%;margin-top:-.3rem}
+.pill{font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.2rem .55rem;border-radius:2px;white-space:nowrap;border:1px solid transparent}
+.pill.warn{background:var(--warn-wash);color:var(--warn);border-color:var(--warn)}
+.pill.crit{background:var(--crit-wash);color:var(--crit);border-color:var(--crit)}
+.pill.ok{background:var(--ok-wash);color:var(--ok);border-color:var(--ok)}
+.split{display:grid;gap:1px;background:var(--border)}
+@media(min-width:720px){.split{grid-template-columns:1fr 1fr}}
+.half{background:var(--card);padding:1.1rem 1.25rem;display:flex;
+  flex-direction:column;gap:.5rem}
+.half .lbl{color:var(--faint)}
+.half.have .lbl{color:var(--ok)}
+.half.gap .lbl{color:var(--crit)}
+.half p,.half li{font-size:.92rem}
+.half ul{margin:0;padding-left:1.1rem;display:flex;flex-direction:column;gap:.35rem}
+.ask{padding:1.1rem 1.25rem;background:var(--brand-wash);
+  border-top:1px solid var(--border);display:flex;flex-direction:column;gap:.55rem}
+.ask .lbl{color:var(--brand-ink)}
+.ask ol{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:.35rem}
+.ask li,.ask p{font-size:.92rem}
+.stack{display:flex;flex-direction:column;gap:1.4rem}
+
+.tw{overflow-x:auto;border:1px solid var(--border-strong);border-radius:3px;
+  background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:36rem;font-size:.9rem}
+th,td{text-align:left;padding:.68rem .9rem;border-bottom:1px solid var(--border);
+  vertical-align:top}
+th{font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);background:var(--sunk);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.k{font-family:var(--mono);font-size:.8rem;color:var(--brand);white-space:nowrap}
+td.lv{font-family:var(--sans);font-size:.85rem;font-weight:600;white-space:nowrap}
+td.lv.adm{color:var(--crit)}
+td.lv.ler{color:var(--muted);font-weight:400}
+td.who{white-space:nowrap;font-family:var(--sans);font-size:.85rem;font-weight:500}
+
+.status{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:3px;overflow:hidden}
+@media(min-width:660px){.status{grid-template-columns:repeat(2,1fr)}}
+.st{background:var(--card);padding:.85rem 1.1rem;display:flex;align-items:baseline;
+  gap:.6rem;flex-wrap:wrap}
+.st .nm{font-family:var(--sans);font-weight:600;font-size:.95rem;flex:1;min-width:9rem}
+.st .em{font-family:var(--mono);font-size:.72rem;color:var(--faint);width:100%}
+
+footer{border-top:1px solid var(--border-strong);padding-top:1.5rem;
+  display:flex;flex-direction:column;gap:.7rem}
+footer p{font-size:.85rem;color:var(--muted)}
+footer a{color:var(--brand-ink)}
+a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+@media print{
+  body{background:#fff}
+  .item,.tw,.duo,.levels,.status{break-inside:avoid}
+  .wrap{gap:2.1rem;padding-top:0}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="head">
+    <span class="lbl">V4 Company &middot; Grupo OLX &middot; Destrava Receita, Ciclo 1</span>
+    <h1>Acessos e níveis de dado</h1>
+    <p class="sub">Por que cada acesso precisa do nível pedido, e o que cada um destrava
+      nas nove auditorias contratadas. A lista de trabalho está no
+      <em>Checklist de liberação</em>, enviado junto com este.</p>
+    <div class="head-meta">
+      <span>Emitido em <b>25 ago 2026</b></span>
+      <span>Liberações idealmente até <b>26 ago</b></span>
+      <span>Comitê 1 em <b>17 set 2026</b></span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-h"><span class="num">01</span><h2>Dois sentidos de "nível"</h2></div>
+    <p class="lead">Este documento usa a palavra nível em dois sentidos, e eles pedem coisas
+      diferentes de vocês. Vale separar antes de entrar na lista, porque a maior parte das
+      dúvidas sobre um pedido de acesso nasce da confusão entre os dois.</p>
+
+    <div class="duo">
+      <div>
+        <span class="k">Sentido 1</span>
+        <h4>Nível de permissão</h4>
+        <p>O que a plataforma deixa a gente fazer. Cinco itens pedem nível administrativo ou
+          proprietário, e não porque vamos alterar alguma coisa: é que estabelecer uma
+          integração é, no Google e na Meta, um ato administrativo. Depois de ligada, a
+          integração apenas lê.</p>
+      </div>
+      <div>
+        <span class="k">Sentido 2</span>
+        <h4>Profundidade do dado</h4>
+        <p>O que o material entregue deixa a gente concluir. Parte do que já recebemos está
+          liberado, mas num formato que responde perguntas já feitas e não permite fazer as
+          perguntas novas do diagnóstico.</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <p><b>O prazo é único e vale para tudo: idealmente até 26 de agosto.</b>
+        As nove auditorias funcionam em cadeia, e as primeiras alimentam as seguintes. Cada dia
+        de espera na liberação sai do tempo de análise, não de folga. Se algum item não puder
+        sair até lá, a informação mais útil que vocês podem nos dar é qual: com ela
+        reorganizamos a sequência das auditorias e o cronograma segue de pé.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="num">02</span><h2>Nível de permissão, item a item</h2></div>
+    <p class="lead">A V4 opera sobre uma plataforma de análise de dados própria, o V4MOS, que lê
+      as contas de mídia por integração direta e não por exportação manual. É o que permite
+      acompanhar o comportamento das campanhas ao longo do ciclo, em vez de olhar a foto do mês
+      passado, e é dela que sai a leitura de investimento e de custo de aquisição levada aos
+      comitês. Conectar uma conta a essa plataforma exige perfil administrativo. Operá-la
+      depois, não.</p>
+
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Acesso</th><th>Basta para analisar</th><th>Nível pedido</th><th>Por que o nível maior</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Google Analytics 4</td><td>Analista</td>
+            <td class="lv adm">Editor<br>ou Administrador</td>
+            <td>Analista lê os relatórios, mas não permite verificar os fluxos de dados e as configurações de conversão, que são exatamente o objeto da auditoria. Administrador se houver vínculo ativo com o Google Ads.</td>
+          </tr>
+          <tr>
+            <td>Google Tag Manager</td><td>Leitura</td>
+            <td class="lv adm">Publicar<br>ou Admin</td>
+            <td>Iniciamos com leitura. A permissão de publicação passa a ser necessária apenas quando houver correção de medição já aprovada por vocês. Admin de conta se existir contêiner server-side.</td>
+          </tr>
+          <tr>
+            <td>Google Search Console</td><td>Usuário completo</td>
+            <td class="lv adm">Proprietário</td>
+            <td>Perfis inferiores leem os relatórios na interface, mas não autorizam a extração de dados via API, que é como consolidamos a busca junto com o resto.</td>
+          </tr>
+          <tr>
+            <td>Meta Ads, as duas contas</td><td>Ver desempenho</td>
+            <td class="lv adm">Admin do<br>Business Manager</td>
+            <td>Perfil de visualização vê os relatórios, mas não autoriza um parceiro externo nem conecta os ativos ao V4MOS, que é o passo que falta hoje.</td>
+          </tr>
+          <tr>
+            <td>Google Ads, captação de anunciante</td><td>Somente leitura</td>
+            <td class="lv adm">Administrativo</td>
+            <td>Necessário para aceitar a integração. Depois de estabelecida a conexão, o acesso pode ser reduzido para leitura.</td>
+          </tr>
+          <tr>
+            <td>CRM comercial</td><td>Leitura</td>
+            <td class="lv">Leitura<br>com exportação</td>
+            <td>Não entra na integração. A permissão de exportar relatórios evita uma segunda rodada de pedidos a cada recorte novo.</td>
+          </tr>
+          <tr>
+            <td>Salesforce Marketing Cloud</td><td>Leitura</td>
+            <td class="lv">Leitura<br>com exportação</td>
+            <td>Mesma situação acima.</td>
+          </tr>
+          <tr>
+            <td>CMS e ferramentas de SEO e comportamento</td><td>Leitura</td>
+            <td class="lv ler">Leitura</td>
+            <td>Nada além de leitura é necessário nesta fase.</td>
+          </tr>
+          <tr>
+            <td>Contas do domínio @olxbr.com</td><td>&mdash;</td>
+            <td class="lv ler">Usuário padrão</td>
+            <td>Sem privilégio administrativo. São contas de pessoa, não de sistema.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note ok">
+      <p><b>O que vale para qualquer nível concedido.</b>
+        Uso exclusivo para a finalidade contratual, restrito aos profissionais estritamente
+        necessários e sob compromisso de confidencialidade. Nenhuma alteração de configuração,
+        campanha, verba ou publicação acontece sem aprovação prévia e explícita de vocês.
+        Credenciais em gerenciador de senhas, com troca obrigatória ao término da prestação.
+        O Grupo OLX pode revogar ou reduzir qualquer permissão a qualquer momento, inclusive
+        logo após a configuração da integração.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="num">03</span><h2>Profundidade do dado</h2></div>
+    <p class="lead">O segundo sentido de nível. Acesso concedido e dado utilizável não são a
+      mesma coisa: parte do material que já recebemos está liberado, mas num formato que não
+      permite concluir.</p>
+
+    <div class="levels">
+      <div class="lvl">
+        <span class="n">Nível 1</span>
+        <h4>Material consolidado</h4>
+        <p>Apresentação, PDF, slide de resultado. Traz a conclusão de quem produziu.
+          Serve para entender contexto e histórico.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="lvl">
+        <span class="n">Nível 2</span>
+        <h4>Relatório agregado</h4>
+        <p>Totais por mês, por campanha ou por área. Mostra tendência.
+          Não permite cortar por segmento, safra, praça ou canal.</p>
+        <div class="bar"></div>
+      </div>
+      <div class="lvl is-goal">
+        <span class="n">Nível 3</span>
+        <h4>Dado na granularidade da linha, ou acesso à ferramenta</h4>
+        <p>Permite recortar, cruzar e testar hipóteses que ninguém formulou ainda.
+          É o único nível em que o diagnóstico das travas funciona.</p>
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <p>Quatro itens já liberados ou já entregues estão hoje no nível 1 ou 2. Abaixo, o que cada
+      um já permite, o que ainda não permite, e o pedido que resolve a diferença.</p>
+
+    <div class="stack">
+
+      <article class="item">
+        <div class="item-h">
+          <h3>Google Ads, MCC VivaReal</h3>
+          <span class="pill warn">Liberado, escopo a confirmar</span>
+          <span class="id">VR09 ZAP+ &middot; 526-656-0190</span>
+        </div>
+        <div class="split">
+          <div class="half have">
+            <span class="lbl">O que já permite</span>
+            <p>A conta está liberada e a integração ingere normalmente: 655 registros de
+              campanha, 8 campanhas distintas, de 16/05/2025 a 22/06/2026, R$ 1,91 milhão
+              investidos e 7,1 milhões de cliques. Lemos investimento, estrutura e performance
+              dessas campanhas.</p>
+          </div>
+          <div class="half gap">
+            <span class="lbl">O que ainda não permite</span>
+            <p>As 8 campanhas visíveis terminam com o sufixo <span class="mono">pf</span> e
+              tratam de aluguel, compra e Minha Casa Minha Vida, que descreve a jornada de quem
+              procura imóvel. O escopo contratado é a receita de anunciante. Com o que está
+              visível hoje, a auditoria de mídia leria o funil de consumidor.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="lbl">O pedido</span>
+          <ol>
+            <li>Esta é a conta correta de captação B2B, ou existe outra estrutura focada em anunciantes?</li>
+            <li>Se existir outra, conceder nível administrativo nela para estabelecer a integração.</li>
+            <li>Confirmar se a série terminar em 22/06/2026 é o limite de ingestão ou uma lacuna real de dado.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-h">
+          <h3>Data room no Google Drive</h3>
+          <span class="pill warn">Primeiro lote recebido</span>
+          <span class="id">9 arquivos, blocos de criativos e páginas de captura</span>
+        </div>
+        <div class="split">
+          <div class="half have">
+            <span class="lbl">O que já permite</span>
+            <p>A pasta abriu, foi testada, e o primeiro lote já foi baixado. O canal funciona.</p>
+          </div>
+          <div class="half gap">
+            <span class="lbl">O que ainda não permite</span>
+            <p>Não sabemos se o que está publicado encerra os materiais de criativos e de páginas
+              de captura, ou se ainda haverá novo envio. Sem isso não conseguimos planejar o que
+              resta pedir nem em que ordem.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="lbl">O pedido</span>
+          <ol>
+            <li>Confirmar se o volume atual encerra esses blocos ou se haverá novo envio, e com que data.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-h">
+          <h3>Teste A/B da página Anuncie ZAP</h3>
+          <span class="pill crit">Recebido em nível 1</span>
+          <span class="id">Teste de 17 a 23 de março &middot; auditoria (viii)</span>
+        </div>
+        <div class="split">
+          <div class="half have">
+            <span class="lbl">O que já permite</span>
+            <p>Recebemos os slides de resultado. Sabemos qual variante foi declarada vencedora e
+              qual foi a diferença percentual reportada entre elas.</p>
+          </div>
+          <div class="half gap">
+            <span class="lbl">O que ainda não permite</span>
+            <p>Vieram os percentuais, não os totais de visitantes e de conversões por variante.
+              Sem o denominador não é possível recalcular a significância estatística, ou seja,
+              não dá para afirmar se a diferença entre as variantes foi resultado real ou
+              variação normal do período.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="lbl">O pedido</span>
+          <ol>
+            <li>Totais de visitantes e de conversões por variante, no período completo do teste.</li>
+          </ol>
+          <p style="font-size:.88rem;color:var(--muted)">É o menor item deste documento e o
+            melhor exemplo do que ele pede: não é dado novo, é o mesmo dado um nível abaixo.
+            Se a decisão de página foi tomada sobre um teste sem significância, a recomendação
+            de otimização muda de direção.</p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="item-h">
+          <h3>Biblioteca de criativos</h3>
+          <span class="pill warn">Amostra parcial</span>
+          <span class="id">8 peças de 1 campanha &middot; auditoria (iv)</span>
+        </div>
+        <div class="split">
+          <div class="half have">
+            <span class="lbl">O que já permite</span>
+            <p>Recebemos 8 peças da campanha Mês do Corretor 2026, recorte São Paulo, etapa de
+              consideração, com três variantes da mesma mensagem.</p>
+          </div>
+          <div class="half gap">
+            <span class="lbl">O que ainda não permite</span>
+            <p>Uma campanha não é amostra: diversidade, fadiga e evolução de mensagem só se leem
+              numa janela de 6 a 12 meses. E sem os briefings não há como saber qual era a
+              hipótese por trás das variantes V1, V2 e V3, ou seja, não dá para dizer se o teste
+              respondeu à pergunta que o motivou.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="lbl">O pedido</span>
+          <ol>
+            <li>Amostras dos últimos 6 a 12 meses, incluindo as peças de baixa performance.</li>
+            <li>Briefings das variantes V1, V2 e V3, e das campanhas principais do período.</li>
+          </ol>
+          <p style="font-size:.88rem;color:var(--muted)">As peças que não funcionaram informam
+            tanto quanto as que funcionaram, e costumam ser as que ficam de fora quando o pedido
+            não é explícito.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="num">04</span><h2>O que cada bloco destrava</h2></div>
+    <p class="lead">O mapa entre os acessos e as nove auditorias contratadas. A ordem não é
+      arbitrária: o bloco 1 é pré-requisito técnico dos outros oito.</p>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Bloco</th><th>Acessos</th><th>Auditorias que destrava</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="k">1 &middot; Medição</td>
+            <td>Analytics, Tag Manager, Search Console</td>
+            <td><strong>(vii) Rastreamento Completo.</strong> Pré-requisito técnico de todas as
+              outras oito: se a medição estiver incorreta, cada leitura seguinte herda o mesmo
+              erro sem que ninguém perceba.</td>
+          </tr>
+          <tr>
+            <td class="k">2 &middot; Contas do domínio</td>
+            <td>Três contas nominais @olxbr.com</td>
+            <td>Nenhuma auditoria em si. Habilita a execução das outras e distribui o trabalho,
+              que hoje depende de um login só.</td>
+          </tr>
+          <tr>
+            <td class="k">3 &middot; Mídia paga</td>
+            <td>Meta Ads (2 contas), Google Ads de captação</td>
+            <td><strong>(vi) Mídia Paga</strong>, e alimenta <strong>(iv) Criativos</strong> e
+              <strong>(v) Redes Sociais</strong>. Hoje o lado Meta devolve vazio, então a
+              auditoria fecha pela metade e o custo de aquisição fica sem a parcela de Meta.</td>
+          </tr>
+          <tr>
+            <td class="k">4 &middot; Comercial e CRM</td>
+            <td>CRM comercial, Marketing Cloud, gravações de call</td>
+            <td><strong>(ix) Pré-Vendas</strong> e <strong>(i) CRM Marketing.</strong> A (i) é a
+              única das nove que toca diretamente a camada de retenção.</td>
+          </tr>
+          <tr>
+            <td class="k">5 &middot; Web e conteúdo</td>
+            <td>CMS e domínios, ferramentas de SEO e comportamento</td>
+            <td><strong>(ii) CRO e SEO</strong> e <strong>(viii) Páginas de Captura.</strong></td>
+          </tr>
+          <tr>
+            <td class="k">6 &middot; Data room</td>
+            <td>Materiais e confirmações</td>
+            <td>Completa <strong>(iv)</strong> e <strong>(viii)</strong>, e resolve a dúvida de
+              escopo que hoje pesa sobre <strong>(vi)</strong>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.9rem;color:var(--muted)">A auditoria <strong>(iii) GEO, IA e buscas
+      generativas</strong> não depende de acesso externo: parte de linha de base zero e usa os
+      insumos dos blocos 1 e 5.</p>
+  </section>
+
+  <section>
+    <div class="sec-h"><span class="num">05</span><h2>Contas do domínio: onde estamos</h2></div>
+    <div class="status">
+      <div class="st"><span class="nm">Rafael Corazza</span><span class="pill ok">Concluído</span>
+        <span class="em">rafael.corazza-ext@olxbr.com</span></div>
+      <div class="st"><span class="nm">Anselmo Bueno</span><span class="pill warn">Em andamento</span>
+        <span class="em">aguardando criação</span></div>
+      <div class="st"><span class="nm">Guilherme Monteiro</span><span class="pill warn">Em andamento</span>
+        <span class="em">aguardando criação</span></div>
+      <div class="st"><span class="nm">Leonardo Rosa</span><span class="pill crit">Pendente</span>
+        <span class="em">leonardo.rosa@v4company.com</span></div>
+    </div>
+    <p>Enquanto houver um login só, duas coisas seguem frágeis. A primeira é de prazo: apenas
+      uma pessoa consegue buscar material novo no data room, o que concentra o projeto inteiro
+      num ponto. A segunda protege a OLX: login compartilhado não deixa registro de qual pessoa
+      acessou qual arquivo, e é esse rastro que sustenta a obrigação de proteção de dados
+      prevista no contrato. Com contas nominais, cada acesso fica atribuído a alguém.</p>
+  </section>
+
+  <footer>
+    <span class="lbl">Privacidade e uso</span>
+    <p>Os acessos solicitados são usados exclusivamente para a finalidade contratual e restritos
+      aos profissionais estritamente necessários, sob compromisso de confidencialidade. Onde o
+      nível administrativo é necessário, ele serve para estabelecer a integração de dados, e
+      nenhuma alteração de configuração, campanha, verba ou publicação acontece sem aprovação
+      prévia e explícita do Grupo OLX. Credenciais ficam em gerenciador de senhas, com troca
+      obrigatória ao término da prestação ou em suspeita de incidente, e armazenamento residual
+      máximo de 30 dias após o encerramento. A OLX pode revogar ou reduzir qualquer permissão a
+      qualquer tempo.</p>
+    <p>Encarregado de proteção de dados da V4:
+      <a href="mailto:lgpd@v4company.com.br">lgpd@v4company.com.br</a>.
+      A lista de trabalho item a item está no <em>Checklist de liberação</em>.</p>
+    <p>A ausência de um acesso não interrompe o projeto. Quando um dado não existe ou não pode
+      ser produzido, isso é registrado como leitura de maturidade e entra no diagnóstico com essa
+      interpretação, em vez de virar pendência aberta. Por isso, um “não temos” respondido rápido
+      vale mais do que uma pendência que fica em aberto.</p>
+  </footer>
+
+</div>
