@@ -16,7 +16,7 @@ Reconstruído a partir da thread de e-mail *"Onboarding V4 e Grupo OLX"*
 | **20/08/2026** | Gustavo (V4) | Informa os quatro nomes: Rafael Corazza (Coordenador PE&G), Anselmo Bueno (Consultor PE&G), Guilherme Monteiro (Gestor de Mídia e Performance) e ele próprio (COO). Esclarece que `gina@v4company.com` é o e-mail conjunto da equipe de operações, usado para centralizar e distribuir acessos. |
 | **21/08/2026** | Michelle (OLX) | **Atualização de acessos:** Drive criado (limitação para terceiros — chamado aberto para criar contas `@olxbr.com` para as 3 pessoas indicadas). Acessos às plataformas liberados **somente** para `gina@v4company.com` — pede verificação e aceite. Lista contas de Imóveis (VR09 ZAP+ MCC VivaReal — convite enviado; VR ZAP+ — pendente) e Autos (OLX \| Autos \| B2B — pendente). |
 | **22/08/2026** | Gustavo (V4) | Agradece o envio. Move a conversa para o Google Chat. |
-| **24/08/2026** | Ambos | 🔜 **Kick-off presencial.** |
+| **24/08/2026** | Ambos | ✅ **Kick-off presencial realizado**, 16h–18h, Av. Paulista. Registro em [06-reunioes/2026-08-24-kickoff.md](../06-reunioes/2026-08-24-kickoff.md) e na [transcrição completa](../06-reunioes/2026-08-24-kickoff-transcricao.md). |
 
 ## Decisões já tomadas (registrar em ata no kick-off)
 
