@@ -8,6 +8,7 @@ de receita do Grupo OLX.
 | [checklist-dados-e-acessos.md](checklist-dados-e-acessos.md) | Os 10 blocos de dados (A–J) e o status de cada item |
 | [auditorias-contratadas.md](auditorias-contratadas.md) | Os 9 diagnósticos técnicos do contrato, insumos e sequência |
 | [jornada-do-cliente-profissional.md](jornada-do-cliente-profissional.md) | A jornada em 6 etapas apresentada pela OLX em 28/08, com as seis taxas declaradas e o que elas abrem |
+| [lacunas-do-fluxo-de-receita.md](lacunas-do-fluxo-de-receita.md) | **Caderno vivo**: o que falta ou está errado no fluxo (L) e o que entra no formulário (F) |
 
 ## A produzir nesta pasta
 
