@@ -86,6 +86,41 @@ Cada uma muda a leitura acima se for respondida de um jeito ou de outro.
 Nenhuma delas é pergunta de opinião — todas se respondem com consulta ao sistema, e cinco delas
 com os acessos já pedidos.
 
+## Atualização com a transcrição da sessão
+
+A [transcrição de 28/08](../06-reunioes/2026-08-28-jornada-do-cliente-transcricao.md) responde
+três das sete ambiguidades e **corrige duas leituras** do slide.
+
+| # | Situação |
+|---|---|
+| 1 · 89% anúncio ou cliente | **Continua aberta**, e agora confirmada como sendo sobre **anúncio**: *"89% dos anúncios de imóveis não recebem nenhum lead"* (Carolina, 00:18:09). A distribuição por cliente segue sem medida |
+| 2 · o que concentra os leads nos 11% | Aberta |
+| 3 · a que se refere o 12% | **Respondida e decomposta**: é dos que saem no primeiro mês sem nunca ter publicado, e a média esconde as pontas — até **20%** no canal online contra **8–10%** em inside e field sales (Lu Machim e Leonardo Costa, 00:15:30). O vazamento é do autosserviço |
+| 4 · churn de logo ou de receita | Aberta |
+| 5 · o resto dos 50% + 25%/10% | **Respondida**: o restante é todo do time comercial, dividido entre inside sales e field sales, com field focado em cliente de maior valor (Carolina, 00:12:41) |
+| 6 · os 20% que não pagam são recuperados | Aberta |
+| 7 · quanto é a "alta taxa de abono e contestação" | Aberta |
+
+### Duas correções ao slide
+
+**O denominador dos 80% é mais estreito do que o slide sugere.** Não é "dos clientes que fecham
+contrato": é dos que **fecharam contrato e geraram cobrança**. Carolina, 00:15:30: *"dos 100% que
+fizeram a contratação e geraram um boleto ou qualquer coisa do tipo, desses 100%, 80 pagam"*.
+
+**Esquecimento não é causa de churn na proporção que o slide sugere.** A caixa de churn traz
+"boleto facilita esquecimento" ao lado dos 8–10%, mas a transcrição separa: o esquecimento responde
+por **20% dos atrasos**, e o principal motivo de churn continua sendo **baixa performance**
+(Carolina, 00:22:16).
+
+### E uma definição que muda a leitura de retenção
+
+Cliente que **paga e não usa não é churn** — é inativo gerando receita (Carolina e Leonardo Rosa,
+00:22:16). Os 8–10% medem, portanto, **interrupção de pagamento**, não abandono de uso. A
+insatisfação silenciosa de quem paga sem publicar não aparece em lugar nenhum dessa métrica, e é
+justamente o perfil que os 89% sem lead produzem.
+
+---
+
 ## Como usar este documento
 
 1. **Não citar percentual daqui em material de cliente sem a marca `[D]`.** São números de

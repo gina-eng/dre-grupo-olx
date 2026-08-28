@@ -5,7 +5,7 @@ Atas, pautas e decisões. Nomenclatura: `AAAA-MM-DD-<nome-do-encontro>.md`.
 | Data | Encontro | Status |
 |---|---|---|
 | [2026-08-24](2026-08-24-kickoff.md) | Kick-off / Comitê de Receitas (presencial) — [transcrição completa](2026-08-24-kickoff-transcricao.md) | ✅ Realizado · ata a preencher |
-| [2026-08-28](2026-08-28-jornada-do-cliente.md) | Jornada do cliente — mapeamento do fluxo de receita com o time de operação | 🔜 Hoje |
+| [2026-08-28](2026-08-28-jornada-do-cliente.md) | Jornada do cliente — sessão educacional de fluxo, com o time de operação — [transcrição](2026-08-28-jornada-do-cliente-transcricao.md) | ✅ Realizado · ata escrita |
 
 ## Por que toda reunião vira ata
 

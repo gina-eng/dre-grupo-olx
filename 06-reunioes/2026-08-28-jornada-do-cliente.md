@@ -7,7 +7,7 @@
 | **Fase do método** | 1 — Identificar · **camada experiencial** do POP Fluxo de Receita (`.claude/skills/dre-fluxo-receita/`) |
 | **Serve a** | Comitê 1 de identificação da restrição, **10/09** — faltam 12 dias |
 | **Entregável que ela alimenta** | `dados/outputs/dre-fluxo-receita.json` + `02-diagnostico/fluxo-de-receita.md` |
-| **Status** | 🔜 Hoje |
+| **Status** | ✅ Realizado · 01:05:30 · [transcrição completa](2026-08-28-jornada-do-cliente-transcricao.md) |
 
 ## O que esta reunião é — e o que ela não é
 
@@ -126,33 +126,113 @@ Ordem deliberada: começa pelo denominador da base, termina na margem.
 
 ## Ata
 
-*(preencher após o encontro)*
+Fonte: [transcrição integral](2026-08-28-jornada-do-cliente-transcricao.md), 01:05:30, sessão
+remota com nome em cada fala.
 
 ### Presentes
 
+**Grupo OLX:** Carolina Dallolio (operações comerciais, conduziu a sessão) · Michelle Morais (CRM,
+apresentou a jornada granular de canais) · Lu Machim (dashboards) · Leonardo Costa (produtos,
+monetização RE) · Iuna Scheffler (planejamento) · Matheus Rodrigues (FP&A) · Mirella Mendonça
+**V4:** Leonardo Rosa (consultor focal) · Gustavo Figueiredo (COO) · Rafael Corazza (coordenador)
+
+A sessão foi enquadrada pela própria Carolina como **educacional**, não como entrega de
+diagnóstico: *"vamos fazer uma sessão rápida, educacional, só para poupar a dor de cabeça de
+vocês"* (00:00:06). E como **conceito**, não funil: *"não estou trazendo nenhuma visão de funil,
+uma visão de jornada mesmo do nosso cliente profissional"* (00:04:20).
+
 ### Fluxo mapeado
 
-A OLX apresentou a jornada **como conceito**, em 6 etapas, com uma taxa declarada por etapa.
-Descrição e leitura em
-[02-diagnostico/jornada-do-cliente-profissional.md](../02-diagnostico/jornada-do-cliente-profissional.md);
-original em [assets/originais/A-visao-de-negocio-e-fluxo-de-receita/](../assets/originais/A-visao-de-negocio-e-fluxo-de-receita/).
-Falta a transcrição da sessão para atribuir fala, compromisso e DRI.
+Dois materiais, que se encaixam:
+
+1. **Jornada do cliente profissional**, 6 etapas com uma taxa cada — leitura em
+   [02-diagnostico/jornada-do-cliente-profissional.md](../02-diagnostico/jornada-do-cliente-profissional.md),
+   original em [assets/originais/A-visao-de-negocio-e-fluxo-de-receita/](../assets/originais/A-visao-de-negocio-e-fluxo-de-receita/).
+2. **FLUXOS: Autos & Imóveis**, o diagrama granular de canais que Michelle apresentou, em três
+   versões de detalhe crescente. **A aritmética fecha nó a nó, em 97%** — ver
+   [lacunas-do-fluxo-de-receita.md](../02-diagnostico/lacunas-do-fluxo-de-receita.md) §1.
+
+E a fonte do dado apareceu: **os dashboards existem**. Lu Machim apresentou o funil B2B com MQL,
+SQL e vendas, taxa de qualificação e de conversão, por vertical, por canal, por time comercial e
+por período, com processamento diário às 3h, mais o dashboard do canal online com sessões,
+vitrines, checkouts e vendas. Isso muda o trabalho da V4 de **coletar** para **extrair**.
 
 ### Números obtidos
 
-| Etapa | Volume | Taxa | Tempo | Fonte | `[E]` |
-|---|---|---|---|---|---|
+Todos **declarados** em reunião, ainda não apurados contra o sistema.
+
+| Onde | Número | Fonte na transcrição |
+|---|---|---|
+| Entrada | 50% da base chega por prospecção comercial ativa | 00:05:42 |
+| Contratação | canal online = 25% da receita de Autos, 10% de Imóveis; o resto é do time comercial | 00:12:41 |
+| Pagamento | 80% dos que contratam **e geram cobrança** pagam a primeira fatura | 00:15:30 |
+| Publicação | 12% saem no 1º mês sem publicar — até **20%** no online, **8–10%** no assistido | 00:15:30 |
+| Leads | 89% dos anúncios de Imóveis não recebem nenhum lead | 00:18:09 |
+| Recorrência | churn de 8–10%, concentrado no 1º mês; baixa performance é o principal motivo | 00:22:16 |
+| Meios de pagamento | metade da base em boleto, ~40% cartão, resto Pix; sem diferenciação de preço | 00:21:16 |
+| Atrasos | esquecimento responde por 20% dos **atrasos** (não do churn) | 00:22:16 |
+| Canais | CRM 29% · Direto 36% · Pago 16% · Orgânico 5% · Outros 11% | slide FLUXOS |
+| App | Autos 60–70% usam app; Imóveis 20–30% | 00:38:26 |
+| Entrega | proxy de performance na OLX: 3 leads em 7 dias; Imóveis não tem número | 00:53:50 |
+
+### Definições fechadas
+
+- **MQL**: nome, e-mail, telefone, em alguns canais documento.
+- **SQL**: elegibilidade comercial — em Imóveis, ser imobiliária ou corretor com CNPJ do setor.
+- **Churn**: interrupção de pagamento. Quem paga e não usa **não** é churn, é inativo gerando receita.
+- **POS**: point of sale online — login, vitrine, checkout.
+- **Modelo de anúncio**: Autos por **inserção** (o anúncio é consumido); Imóveis por **slot** (reaproveitável).
+
+### Achado da sessão
+
+**O canal Direto, maior fatia do mapa com 36%, é em parte artefato de mensuração.** O próprio slide
+anota: *"teste de campanha paga para WhatsApp: entra tudo como Direto"* e *"perde atribuição: entra
+tudo como Direto"*. Logo, **Pago (16%) está subestimado** e CAC por canal não existe hoje. É Trava
+de Cegueira com evidência formal produzida pelo cliente.
 
 ### Nós da árvore alterados
 
-| Nó | De | Para | O que mudou |
-|---|---|---|---|
+*(a aplicar em `portal/_src/receita.html` — ver a lista de atualizações pendentes)*
 
 ### Lacunas → PENDENCIAS
 
 | # | O que falta | DRI | Prazo |
 |---|---|---|---|
+| 1 | Links dos dashboards de funil B2B e de canal online | Leonardo Rosa | — |
+| 2 | Investimento de mídia por canal (fora do dashboard, controle à parte) | Mirella Mendonça | — |
+| 3 | Dimensionar quanto do "Direto" é campanha paga sem atribuição | a definir | — |
+| 4 | Arquivo original da jornada (está no Drive) e do slide de FLUXOS | Carolina Dallolio | — |
+
+Prazos não foram acordados na sessão; **não inventar**. Fechar no grupo antes de virar linha de
+[PENDENCIAS.md](../PENDENCIAS.md).
 
 ### Oportunidades parqueadas (Comitê 2)
 
+- **Reempacotamento de produtos em RE**: destaque saturado sendo a demanda nº 1 de upgrade; estudo
+  de torná-lo produto escasso, fora do plano padrão. Lá fora, 50% da receita de marketplace vem de
+  destaque (00:59:26).
+- **Meio de pagamento como alavanca**: cupom para Pix, cliente pequeno só cartão ou Pix, migração
+  compulsória de crônico em atraso, financiadora para ticket acima de R$ 50 mil (01:00:35).
+- **Canibalização privado × profissional**: teste de reduzir gratuidade de Autos de 4 para 2
+  anúncios/ano (00:52:15).
+- **Upgrade self-service**, hoje inexistente (00:41:15).
+- **Volta ao Paper Lead no mercado primário**, com foco no Sudeste — decisão tomada na OLX no mesmo
+  dia (00:03:02). Conversa direto com as decisões 5 e 6 do kick-off.
+
 ### Próximos passos
+
+| # | Ação | DRI |
+|---|---|---|
+| 1 | Compartilhar o Miro com e-mails de boas-vindas e materiais educacionais | Leonardo Costa |
+| 2 | Compartilhar os materiais do GT de onboarding | Michelle Morais |
+| 3 | Conectar o responsável de produto de Autos (Bruno) ao grupo | Iuna Scheffler |
+| 4 | Verificar as réguas de comunicação de Autos | Leonardo Costa |
+| 5 | Formalizar por e-mail os acessos por plataforma | Michelle Morais |
+| 6 | Compartilhar no grupo os links dos dashboards de domínio | Leonardo Rosa |
+| 7 | Revisar o material de reempacotamento e receitas não recorrentes | Leonardo Rosa + Rafael Corazza |
+
+### Modo de operação acordado
+
+Leonardo Rosa assumiu o papel de **consultor focal**: a OLX aciona direto no grupo, e a V4 traduz
+para a metodologia. Dúvida substancial vira agenda pontual com o especialista da área, em vez de
+travar o diagnóstico (00:56:15 e 00:58:27).
