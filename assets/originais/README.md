@@ -17,6 +17,9 @@ Material bruto que veio do **data room do Grupo OLX** (Google Drive). Nada aqui 
 | Lote | `drive-download-20260824T172625Z-1-003` |
 | Volume | 9 arquivos, 457 MB no original (14 MB versionados, ver abaixo) |
 
+> Nem tudo aqui veio desse lote. O material do **bloco A** foi apresentado em reunião e capturado
+> da tela, não baixado do Drive — a procedência de cada item está na seção do seu bloco.
+
 Este é o **primeiro lote** que efetivamente abriu com a conta corporativa nova. Ele confirma que o
 data room está acessível: o item ficou aberto em `dados/acessos.json` até aqui e agora está fechado.
 
@@ -29,6 +32,7 @@ de cada arquivo está registrado nas tabelas abaixo, então nada se perde.
 
 ```
 assets/originais/
+├── A-visao-de-negocio-e-fluxo-de-receita/  bloco A · alimenta o fluxo de receita
 ├── E-criativos-ads-e-mensagens/     bloco E · alimenta o diagnóstico (iv)
 ├── I-paginas-de-captura/            bloco I · alimenta o diagnóstico (viii)
 └── _masters/                        vídeos originais · FORA do git
@@ -50,6 +54,25 @@ então dá para provar que o original é o mesmo quando alguém for buscá-lo.
 room ou peça a quem tem `_masters/` local. Não recomprima a partir do proxy.
 
 ---
+
+## Bloco A · Visão de negócio e fluxo de receita
+
+**Item:** jornada do cliente profissional, o mapa em 6 etapas que o Grupo OLX apresentou.
+**Cobre:** o item **A2** do checklist, *parcialmente* — dá as etapas e uma taxa por etapa, não dá
+volume absoluto nem série de 12–24 meses.
+
+| Arquivo | O que é | Origem |
+|---|---|---|
+| `A-visao-de-negocio-e-fluxo-de-receita/jornada-do-cliente-profissional.png` | Slide "Jornada do cliente profissional", 1978×1118 | Apresentado pelo Grupo OLX na sessão de jornada de **28/08/2026**, capturado da tela |
+
+![Jornada do cliente profissional](A-visao-de-negocio-e-fluxo-de-receita/jornada-do-cliente-profissional.png)
+
+Este é o primeiro material do cliente que traz **taxa por etapa do fluxo**. A leitura, o que ele
+fecha e as sete ambiguidades que ele abre estão em
+[`02-diagnostico/jornada-do-cliente-profissional.md`](../../02-diagnostico/jornada-do-cliente-profissional.md).
+
+> Os seis percentuais do slide são **declarados**, não apurados. Não viram dado antes de bater
+> contra CRM, faturamento e plataformas.
 
 ## Bloco E · Criativos, anúncios e mensagens
 
@@ -166,5 +189,6 @@ Drive. Serve para provar que o arquivo não mudou e para reencontrar a origem.
 | `E-criativos-ads-e-mensagens/mes-do-corretor-2026-sp-consideracao/v3/1080x1920-com-cta.mp4` | `f21279362e6e4860…` | `E. Criativos Ads & Mensagens/Peças/RE/Mês do Corretor 2026/Mês do Corretor _ Peças consideração SP/Motion/V3/1080x1920 com CTA.mp4` |
 | `E-criativos-ads-e-mensagens/mes-do-corretor-2026-sp-consideracao/v3/1080x1920-sem-cta.mp4` | `02bbcfef42672a26…` | `E. Criativos Ads & Mensagens/Peças/RE/Mês do Corretor 2026/Mês do Corretor _ Peças consideração SP/Motion/V3/1080x1920.mp4` |
 | `E-criativos-ads-e-mensagens/mes-do-corretor-2026-sp-consideracao/v3/1200x628-com-cta.mp4` | `2284356e512da371…` | `E. Criativos Ads & Mensagens/Peças/RE/Mês do Corretor 2026/Mês do Corretor _ Peças consideração SP/Motion/V3/1200x628 com CTA.mp4` |
+| `A-visao-de-negocio-e-fluxo-de-receita/jornada-do-cliente-profissional.png` | `fb8d738564bb2b10…` | não veio do data room — captura de tela da apresentação de 28/08 |
 | `I-paginas-de-captura/teste-ab-imoveis/2026-03-teste-ab-lp-anuncie-zap.pptx` | `4f7c85fe6821206d…` | `I. Páginas de Captura e Fluxos de Conversão/Testes a-b imóveis/Copy of A_B Test Results - Landing Page_.pptx` |
 
