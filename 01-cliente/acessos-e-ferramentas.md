@@ -26,28 +26,30 @@ que os acessos novos do lado da OLX devem ser concedidos.
 
 | Unidade | Conta | ID | Status (21/08/2026) |
 |---|---|---|---|
-| Imóveis | VR09 — ZAP+ MCC VivaReal | 526-656-0190 | 🟡 Convite enviado — **dar aceite** |
-| Imóveis | VR — ZAP+ | 612188193108418 | 🟠 Pendente de aprovação (lado OLX) |
+| Imóveis | VR09 · ZAP+ MCC VivaReal | 526-656-0190 | 🟢 Aceite feito, ingerindo no V4MOS |
+| Imóveis | VR · ZAP+ | 612188193108418 | 🟠 Pendente de aprovação (lado OLX) |
 | Autos | OLX \| Autos \| B2B | 1742214902479721 | 🟠 Pendente de aprovação (lado OLX) |
 
-> **Ação imediata:** verificar recebimento em `gina@v4company.com`, dar o aceite nos convites e
-> confirmar se está tudo ok. Solicitado por Michelle em 21/08/2026 e ainda não confirmado.
+> **Situação em 31/08:** o aceite da MCC saiu e o lado Google ingere. As duas contas de Meta seguem
+> pendentes de aprovação da OLX, os seis endpoints de Facebook do V4MOS continuam devolvendo vazio.
+> O GA4 mostrou que existem ao menos **7 outras contas de Google Ads** na operação do grupo, nenhuma
+> liberada. Ver [PENDÊNCIAS 12](../PENDENCIAS.md).
 
 ## 3. Acessos previstos por frente (solicitados, status a consolidar)
 
 | Frente | Acesso | Status |
 |---|---|---|
 | CRM Marketing | Salesforce Marketing Cloud (visualização) | ⚪ A confirmar |
-| CRO/SEO | Google Search Console de cada propriedade B2B | ⚪ A confirmar |
-| CRO/SEO | Ferramenta de SEO interna (SEMrush / Ahrefs / similar) | ⚪ A confirmar — pode não existir |
-| Mídia paga | Google Ads (leitura) | 🟡 Em liberação |
+| CRO/SEO | Google Search Console de cada propriedade B2B | 🟠 Sem concessão (verificado 31/08) |
+| CRO/SEO | Ferramenta de SEO interna (SEMrush / Ahrefs / similar) | ⚪ A confirmar · pode não existir |
+| Mídia paga | Google Ads (leitura) | 🟡 Só a MCC VR09 (526-656-0190). O GA4 revelou 7 outras contas vinculadas ao ZapImóveis, ver PENDÊNCIAS 12 |
 | Mídia paga | Meta Ads (leitura) | 🟡 Em liberação |
 | Redes sociais | Meta Business Suite (analista) | ⚪ A confirmar |
 | Redes sociais | LinkedIn Company Page(s) | ⚪ A confirmar |
 | Redes sociais | Demais canais ativos (YouTube, TikTok…) | ⚪ A confirmar |
-| Tracking | GA4 — propriedade(s), nível analista | ⚪ A confirmar |
-| Tracking | GTM — contêiner(es) publicados, leitura | ⚪ A confirmar |
-| LPs / Conversão | Ferramenta de comportamento (Hotjar / Clarity / similar) | ⚪ A confirmar — pode não existir |
+| Tracking | GA4 · propriedade(s), nível analista | ✅ **Liberado em leitura (31/08)**, 26 propriedades em 3 contas: Grupo OLX `285763706`, OLX `70177409`, Viva Real `126375`. Nível de permissão **a confirmar** na interface, ver PENDÊNCIAS 13 |
+| Tracking | GTM · contêiner(es) publicados, leitura | 🟠 Sem concessão (verificado 31/08) |
+| LPs / Conversão | Ferramenta de comportamento (Hotjar / Clarity / similar) | ⚪ A confirmar · pode não existir |
 | Pré-vendas / Comercial | CRM comercial (leitura) | ⚪ A confirmar |
 | Pré-vendas / Comercial | Ferramenta de sales engagement (se houver) | ⚪ A confirmar |
 | Pré-vendas / Comercial | Gravações de calls de qualificação (10–15 recentes) | ⚪ A confirmar |
@@ -58,10 +60,10 @@ que os acessos novos do lado da OLX devem ser concedidos.
 
 | Ferramenta | Uso | Link |
 |---|---|---|
-| V4.Marketing | Cockpit do cliente: ciclo, fase, trava, comitês, métricas de throughput. Preenchimento obrigatório na Semana 1 | — |
+| V4.Marketing | Cockpit do cliente: ciclo, fase, trava, comitês, métricas de throughput. Preenchimento obrigatório na Semana 1 | - |
 | Sistema Destrava Receita (RevenueFlow) | Elaboração e revisão do Forecast | <https://v4-revenueflow.lovable.app/> |
-| HOPS / MKT.Lab | Pipeline operacional do franqueado | — |
-| Banco de Evidências | Repositório de artefatos curados por trava e setor | — |
+| HOPS / MKT.Lab | Pipeline operacional do franqueado | - |
+| Banco de Evidências | Repositório de artefatos curados por trava e setor | - |
 
 ## 5. Governança de credenciais (cláusulas 5.7–5.10 do contrato)
 
