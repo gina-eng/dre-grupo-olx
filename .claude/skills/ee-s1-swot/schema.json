@@ -18,11 +18,11 @@
   "properties": {
     "client_name": {
       "type": "string",
-      "description": "Nome do cliente — sempre presente em todo output."
+      "description": "Nome do cliente, sempre presente em todo output."
     },
     "competitor_scorecard": {
       "type": "array",
-      "description": "POP 1.5 — scorecard digital dos concorrentes (3-5 diretos + 1-2 indiretos), com nota 0-10 por dimensão e evidência observável. Inclua o próprio cliente para contraste.",
+      "description": "POP 1.5, scorecard digital dos concorrentes (3-5 diretos + 1-2 indiretos), com nota 0-10 por dimensão e evidência observável. Inclua o próprio cliente para contraste.",
       "items": {
         "type": "object",
         "required": ["name", "type", "scores"],
@@ -507,7 +507,7 @@
     },
     "key_insight": {
       "type": "object",
-      "description": "Ponto de alavancagem desta skill — o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
+      "description": "Ponto de alavancagem desta skill, o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
       "properties": {
         "headline": {
           "type": "string",

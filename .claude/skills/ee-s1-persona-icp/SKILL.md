@@ -7,19 +7,19 @@ week: 1
 estimated_time: "45-60 min"
 ---
 
-# Persona e ICP — Perfil do Cliente Ideal (POP 1.7)
+# Persona e ICP · Perfil do Cliente Ideal (POP 1.7)
 
 Você é um especialista em Jobs-to-be-Done e pesquisa de cliente. Vai construir, junto com o operador, o perfil do cliente ideal (ICP) e a persona que vai orientar TODA a comunicação, criativos e estratégia de mídia do cliente.
 
-> **Posição no fluxo:** Semana 1 — skill raiz, comum a todos os modelos de venda (e-commerce / inside-sales / pdv). É dependência de quase tudo que vem depois.
+> **Posição no fluxo:** Semana 1, skill raiz, comum a todos os modelos de venda (e-commerce / inside-sales / pdv). É dependência de quase tudo que vem depois.
 > **IMPORTANCIA:** Este é o documento mais referenciado em todos os squads seguintes. Se o ICP estiver errado, tudo que vem depois estará errado. Invista tempo aqui.
 
 ## Dados necessários
 
 Leia os seguintes arquivos do diretório do cliente:
 
-1. `dados/client.json` (seção `briefing`) — dados base do cliente (OBRIGATORIO)
-2. `dados/client.json` (seção `connectors`) — se existir, extraia `MarketingProfile` para pré-popular dados
+1. `dados/client.json` (seção `briefing`), dados base do cliente (OBRIGATORIO)
+2. `dados/client.json` (seção `connectors`), se existir, extraia `MarketingProfile` para pré-popular dados
 
 Extraia do briefing:
 - `identification.name` → nome do cliente
@@ -42,7 +42,7 @@ Carregue todos os dados do `dados/client.json` (seção `briefing`) e conectores
 
 Se algum campo crítico estiver faltando (`identification.segment`, `product.main_product`, `icp.best_customers` com < 20 caracteres), apresente TUDO que já tem e pergunte APENAS o que falta, numa única interação. Não faça uma pergunta por vez. Se todos os campos críticos estão preenchidos, prossiga sem parar.
 
-Gere o output COMPLETO de uma vez — ICP, Persona, Canais, e Mensagens-chave. Consulte `references/jtbd-framework.md` para aplicar o framework corretamente. Consulte `references/exemplos-bom-vs-ruim.md` para calibrar especificidade.
+Gere o output COMPLETO de uma vez, ICP, Persona, Canais, e Mensagens-chave. Consulte `references/jtbd-framework.md` para aplicar o framework corretamente. Consulte `references/exemplos-bom-vs-ruim.md` para calibrar especificidade.
 
 O output completo inclui:
 
@@ -63,7 +63,7 @@ O output completo inclui:
 #### Jobs-to-be-Done (SEÇÃO MAIS IMPORTANTE)
 Aplique o framework JTBD rigorosamente:
 
-- **Job funcional:** O que a pessoa precisa FAZER. Não é "comprar [produto]" — é a tarefa que precisa ser cumprida. Use o formato: "Quando [situação], eu quero [motivação], para que [resultado esperado]."
+- **Job funcional:** O que a pessoa precisa FAZER. Não é "comprar [produto]", é a tarefa que precisa ser cumprida. Use o formato: "Quando [situação], eu quero [motivação], para que [resultado esperado]."
 - **Job emocional:** Como a pessoa quer se SENTIR durante e após a compra. Segurança? Alívio? Orgulho? Confiança?
 - **Job social:** Como a pessoa quer ser VISTA pelos outros. Status? Competência? Cuidado? Modernidade?
 
@@ -82,31 +82,31 @@ Aplique o framework JTBD rigorosamente:
 - **Nome fictício:** Escolha um nome comum para o perfil demográfico identificado
 - **Descrição da foto:** Descreva como seria a foto de perfil dessa pessoa. Seja específico: idade aparente, expressão, contexto (escritório, loja, casa), vestuário
 - **História:** 1 parágrafo (4-6 linhas) contando a situação atual desta pessoa, seus desafios, e por que ela precisa da solução. Use storytelling, não bullet points
-- **Frase-citação:** Uma frase que essa persona diria sobre o problema que o cliente resolve. Deve soar autêntica — como se fosse transcrita de uma entrevista real. Use linguagem coloquial
+- **Frase-citação:** Uma frase que essa persona diria sobre o problema que o cliente resolve. Deve soar autêntica, como se fosse transcrita de uma entrevista real. Use linguagem coloquial
 
 **C) Onde Encontrar Este ICP**
 
-- **Canais digitais:** Canais ESPECÍFICOS (não genéricos como "redes sociais" — especifique: "grupos de Facebook de [tema]", "hashtags [x] no Instagram")
+- **Canais digitais:** Canais ESPECÍFICOS (não genéricos como "redes sociais", especifique: "grupos de Facebook de [tema]", "hashtags [x] no Instagram")
 - **Palavras-chave:** Termos que essa persona digitaria no Google/YouTube
 - **Influenciadores/referências:** Perfis, podcasts, canais que acompanha
 - **Comunidades:** Grupos, fóruns, associações de classe, eventos
 
-**D-pre1) Anti-Persona (OBRIGATÓRIO — 2-3 perfis)**
+**D-pre1) Anti-Persona (OBRIGATÓRIO · 2-3 perfis)**
 
-A persona define quem você QUER atender. A anti-persona define quem você NÃO QUER atender — clientes que consomem recurso, geram atrito e não convertem. Sem anti-persona definida, a equipe não sabe quando dizer "não".
+A persona define quem você QUER atender. A anti-persona define quem você NÃO QUER atender, clientes que consomem recurso, geram atrito e não convertem. Sem anti-persona definida, a equipe não sabe quando dizer "não".
 
 Para cada anti-persona (2-3):
 - **profile_name** (ou **label**): apelido descritivo (ex: "Caçador de preço", "Emergência única")
 - **description** (ou **who**): 2-3 linhas sobre o comportamento típico
 - **signals** (ou **red_flags**): lista de 3-6 sinais concretos que o time observa na triagem (ex: "pede desconto antes do diagnóstico", "pergunta só preço por WhatsApp sem contexto")
 - **why_not**: por que não é cliente ideal (custo de atendimento, ticket baixo, alta rotatividade, objeção que não resolve)
-- **operational_rule**: regra prática — como o time identifica e o que faz (ex: "Se pedir desconto antes do diagnóstico, encaminhar para tabela padrão")
+- **operational_rule**: regra prática, como o time identifica e o que faz (ex: "Se pedir desconto antes do diagnóstico, encaminhar para tabela padrão")
 
 > Use **profile_name/description/signals** como padrão. O renderer aceita os alternativos (label/who/red_flags) para compatibilidade, mas prefira o conjunto principal.
 
-Feche com um `operational_rule` geral — a regra-mãe que alinha o time.
+Feche com um `operational_rule` geral, a regra-mãe que alinha o time.
 
-**D-pre2) Buyer Journey (OBRIGATÓRIO — 5-6 estágios)**
+**D-pre2) Buyer Journey (OBRIGATÓRIO, 5-6 estágios)**
 
 Mapeie a jornada de decisão da persona do gatilho ao pós-compra. Cada estágio com:
 - **Stage:** nome (ex: Gatilho, Pesquisa, Consideração, Decisão, Pós-compra, Recompra)
@@ -117,33 +117,33 @@ Mapeie a jornada de decisão da persona do gatilho ao pós-compra. Cada estágio
 - **[Cliente] intervention:** como o cliente intervém nesse estágio (conteúdo, anúncio, contato)
 - **Friction today:** qual o atrito/problema atual nesse estágio
 - **Duration estimate:** quanto tempo típico (horas, dias, semanas)
-- **volume_index (OBRIGATÓRIO):** volume relativo de oportunidades que chega a este estágio, índice 0-100 (Gatilho = 100, descendo até o pós-compra). É uma projeção `[E]` ESPECÍFICA do cliente — a maior queda deve coincidir com o `critical_leakage_point`. ⚠️ Sem `volume_index` em todos os estágios, o portal renderiza um funil genérico (~32% de queda por estágio) IDÊNTICO em todo cliente. Adicione também `volume_basis` (ex.: "oportunidades/mês — índice 0-100, projeção [E]"). No nível de `buyer_journey`, marque `volume_is_real: false` na Semana 1 (são projeções a calibrar com o mapa real de conversões na Semana 3).
+- **volume_index (OBRIGATÓRIO):** volume relativo de oportunidades que chega a este estágio, índice 0-100 (Gatilho = 100, descendo até o pós-compra). É uma projeção `[E]` ESPECÍFICA do cliente, a maior queda deve coincidir com o `critical_leakage_point`. ⚠️ Sem `volume_index` em todos os estágios, o portal renderiza um funil genérico (~32% de queda por estágio) IDÊNTICO em todo cliente. Adicione também `volume_basis` (ex.: "oportunidades/mês, índice 0-100, projeção [E]"). No nível de `buyer_journey`, marque `volume_is_real: false` na Semana 1 (são projeções a calibrar com o mapa real de conversões na Semana 3).
 
 Feche com `critical_leakage_point`: onde o cliente mais perde leads HOJE. Pode ser:
 - **String livre** (preferido quando o vazamento é qualitativo): ex. `"O maior vazamento é na Consideração: a persona pesquisa 3-7 dias e a clínica não aparece no Google Maps local"`.
-- **Objeto estruturado** (use quando tiver número de perda): `{stage, evidence, estimated_loss_pct}`. Quando usar o objeto, **`stage` deve ser o NOME de um estágio existente** (ex.: "Pesquisa") — não a frase de diagnóstico inteira — senão o funil do portal não consegue destacar o estágio nem mostrar a % de perda. Ponha a explicação em `evidence`.
+- **Objeto estruturado** (use quando tiver número de perda): `{stage, evidence, estimated_loss_pct}`. Quando usar o objeto, **`stage` deve ser o NOME de um estágio existente** (ex.: "Pesquisa"), não a frase de diagnóstico inteira, senão o funil do portal não consegue destacar o estágio nem mostrar a % de perda. Ponha a explicação em `evidence`.
 
-**D-pre3) Willingness-to-Pay (OBRIGATÓRIO — por serviço principal)**
+**D-pre3) Willingness-to-Pay (OBRIGATÓRIO · por serviço principal)**
 
 Para cada serviço/produto principal (3-5), use o SHAPE PREFERIDO (mais rico que o legado):
 - **service**: nome do serviço
 - **current_ticket_range**: faixa de ticket atual praticada (ex: `"R$180-250"`)
 - **perceived_fair_range**: faixa que a persona percebe como justa (ex: `"R$180-300"`)
 - **premium_ceiling**: teto premium aceito COM justificativa (ex: `"R$400 com exame complementar incluso"`)
-- **elasticity**: palavra-chave + nuance separada por `—` (ex: `"baixa — aceita pagar mais se entender o porquê"`). O portal usa a palavra-chave como tag colorida e o texto após o travessão como nota.
+- **elasticity**: palavra-chave + nuance separada por `,` (ex: `"baixa, aceita pagar mais se entender o porquê"`). O portal usa a palavra-chave como tag colorida e o texto após o travessão como nota.
 - **pricing_lever**: o que justifica cobrar mais (especialização, tempo de consulta, garantia, bundle)
 
-> Os campos legados (`current_price`, `fair_range`, `premium_range`) ainda funcionam, mas **prefira** o shape novo — ele comunica range (não ponto) e o teto com justificativa, que é o que a análise realmente pede.
+> Os campos legados (`current_price`, `fair_range`, `premium_range`) ainda funcionam, mas **prefira** o shape novo, ele comunica range (não ponto) e o teto com justificativa, que é o que a análise realmente pede.
 
-Isso não é exercício de pricing — é alinhar posicionamento e copy ao WTP real da persona.
+Isso não é exercício de pricing, é alinhar posicionamento e copy ao WTP real da persona.
 
-**D-pre4) Objection Library (OBRIGATÓRIO — 5-7 objeções)**
+**D-pre4) Objection Library (OBRIGATÓRIO, 5-7 objeções)**
 
 Catálogo de objeções reais da persona. Para cada:
 - **Objection:** como ela diz (linguagem do cliente)
 - **Subtext:** o que ela REALMENTE está dizendo (medo, dúvida, experiência anterior)
 - **Bad response:** resposta automática que NÃO funciona e por quê
-- **Good response:** resposta que funciona — pequena história, dado, reframe
+- **Good response:** resposta que funciona, pequena história, dado, reframe
 - **When to use:** em que canal/momento essa resposta é usada
 
 Essa library alimenta copy, SDR, scripts de atendimento e FAQs.
@@ -163,10 +163,10 @@ Para cada opção:
 
 Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além dos campos acima, SEMPRE inclua:
 
-- **`summary_headline`** (string, max 200 char) — manchete com o veredito do ICP/Persona. Específica, com dados reais.
+- **`summary_headline`** (string, max 200 char), manchete com o veredito do ICP/Persona. Específica, com dados reais.
   - Ex: "Mariana (35-50, tutora de gatos premium) é o ICP. Ignorada pelos concorrentes que tratam cão e gato igual."
 
-- **`summary_highlights`** (4-6 itens) — KPIs visuais. Sugestões para persona-ICP:
+- **`summary_highlights`** (4-6 itens), KPIs visuais. Sugestões para persona-ICP:
   - `posicao`: faixa etária/renda da persona, ticket médio atual vs premium ceiling
   - `competicao`: nº de concorrentes que atendem o mesmo ICP declaradamente
   - `janela`: tempo de decisão médio (buyer journey duration)
@@ -174,17 +174,17 @@ Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além d
   - `risco`: objeção mais comum / leakage point mais crítico
   - Cada item: `{category, label, value, subtext, tone}` (tons: `green|yellow|red|blue|gray`)
 
-- **`summary_key_findings`** (3-5 itens) — achados categorizados:
+- **`summary_key_findings`** (3-5 itens), achados categorizados:
   - `vantagem | contexto | ameaca | acao`
   - Cubra pelo menos 3 dos 4 tipos.
 
 ### Ponto de alavancagem
 
-Em persona-ICP, o ponto de alavancagem é a **combinação {persona principal + dor mais ignorada pelos concorrentes + frase-citação}** — o que o time precisa internalizar para mudar comunicação/atendimento. Estruture como:
+Em persona-ICP, o ponto de alavancagem é a **combinação {persona principal + dor mais ignorada pelos concorrentes + frase-citação}**, o que o time precisa internalizar para mudar comunicação/atendimento. Estruture como:
 
 ```json
 "key_insight": {
-  "headline": "Frase-manchete (ex: 'Mariana paga R$400 se entender o porquê — e ninguém explica')",
+  "headline": "Frase-manchete (ex: 'Mariana paga R$400 se entender o porquê, e ninguém explica')",
   "context": "2-3 linhas explicando o insight",
   "numbered_reasons": ["(1) razão A", "(2) razão B", "(3) razão C"],
   "discussion_anchor": "Por que este é o ponto para o stakeholder decidir"
@@ -204,12 +204,12 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] Consistente com outputs anteriores (se houver)?
 - [ ] Cada dor tem > 20 caracteres e usa linguagem do cliente (não jargão)?
 - [ ] Jobs-to-be-Done seguem formato "Quando [situação], eu quero [motivação], para que [resultado]"?
-- [ ] Nenhum item genérico — se trocar o nome do cliente e ainda servir, refaça?
+- [ ] Nenhum item genérico, se trocar o nome do cliente e ainda servir, refaça?
 - [ ] Persona tem frase-citação que soa como fala real (não corporativês)?
 - [ ] Canais são específicos (não "redes sociais" nem "Google")?
 - [ ] Mensagens-chave têm <= 15 palavras cada?
@@ -233,14 +233,14 @@ Se falhou → regenere silenciosamente. Não avise o operador.
 
 Apresente o output COMPLETO ao operador de uma vez.
 
-**DECISÃO 1:** Mensagem-chave — qual direção?
-- Opção A: "[mensagem funcional]" — foco no resultado prático
-- Opção B: "[mensagem emocional]" — foco no sentimento
-- Opção C: "[mensagem social]" — foco na percepção
+**DECISÃO 1:** Mensagem-chave, qual direção?
+- Opção A: "[mensagem funcional]", foco no resultado prático
+- Opção B: "[mensagem emocional]", foco no sentimento
+- Opção C: "[mensagem social]", foco na percepção
 
-**RECOMENDAÇÃO:** Opção [X]. [Justificativa baseada nos dados — ex: concorrentes já ocupam o território emocional, a funcional diferencia mais. Explique por que as outras são mais fracas.]
+**RECOMENDAÇÃO:** Opção [X]. [Justificativa baseada nos dados, ex: concorrentes já ocupam o território emocional, a funcional diferencia mais. Explique por que as outras são mais fracas.]
 
-**PROVOCAÇÃO:** [Pergunta contraintuitiva que força o operador a pensar — ex: "Se a persona ouvisse essas 3 frases num feed, qual faria ela parar o scroll? E o cliente tem coragem de bancar essa promessa?"]
+**PROVOCAÇÃO:** [Pergunta contraintuitiva que força o operador a pensar, ex: "Se a persona ouvisse essas 3 frases num feed, qual faria ela parar o scroll? E o cliente tem coragem de bancar essa promessa?"]
 
 **DECISÃO 2:** Ajustes no ICP/Persona
 - O ICP faz sentido com o que você conhece deste cliente?

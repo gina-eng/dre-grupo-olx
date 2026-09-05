@@ -1,4 +1,4 @@
-# Framework de Scoring — Maturidade Digital
+# Framework de Scoring · Maturidade Digital
 
 ## Visao Geral
 
@@ -11,7 +11,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 | Midia Paga | 25% | Principal alavanca de resultado de curto prazo |
 | Criativos | 20% | Qualidade dos criativos impacta diretamente CPA e CTR |
 | CRO (Conversao) | 25% | De nada adianta trazer trafego se nao converte |
-| CRM | 15% | Retenção e reativação — receita recorrente |
+| CRM | 15% | Retenção e reativação · receita recorrente |
 | SEO | 15% | Aquisição orgânica e autoridade de longo prazo |
 
 ### Classificacoes
@@ -39,7 +39,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 | Budget allocation | 15% | Sem critério / "R$X por dia" | Baseado em feeling | Baseado em CPA meta | Alocação dinâmica por ROAS | Alocação por margem de contribuição |
 | Performance (ROAS/CPA) | 20% | CPA 5x+ acima da meta | CPA 2-5x acima | CPA até 2x acima | CPA na meta | CPA abaixo da meta com escala |
 
-### Benchmarks por Segmento — Mídia Paga
+### Benchmarks por Segmento · Mídia Paga
 
 | Segmento | Score médio | CPA referência | ROAS referência |
 |----------|-------------|----------------|-----------------|
@@ -69,7 +69,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 | Copy | 20% | Sem copy ou genérica | Copy básica sem hook | Hook + benefício | Hook + benefício + prova social + CTA | Framework de copy com variações A/B |
 | Renovação | 20% | Mesmo criativo há 3+ meses | Troca a cada 2-3 meses | Troca mensal | Troca semanal | Iteração contínua com dados |
 
-### Benchmarks por Segmento — Criativos
+### Benchmarks por Segmento · Criativos
 
 | Segmento | Score médio | Volume típico | Formato dominante |
 |----------|-------------|---------------|-------------------|
@@ -81,7 +81,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 
 ---
 
-## Pilar 3: CRO — Conversão (Peso 25%)
+## Pilar 3: CRO · Conversão (Peso 25%)
 
 ### Critérios de Avaliação
 
@@ -95,7 +95,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 | Objeções | 10% | Não trata objeções | FAQ básico | FAQ + garantia | Tratamento de objeções ao longo da página | Prova social contextual + FAQ + chat + garantia |
 | Tracking | 10% | Sem Analytics | GA4 básico | GA4 + eventos de conversão | GA4 + funil completo + heatmap | Full tracking + atribuição + testes A/B |
 
-### Benchmarks por Segmento — CRO
+### Benchmarks por Segmento · CRO
 
 | Segmento | Score médio | Taxa de conversão referência (site) |
 |----------|-------------|--------------------------------------|
@@ -120,7 +120,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 | Dados/Higiene | 20% | Sem dados ou dados sujos | Dados básicos (nome + telefone) | Dados completos + segmentação | Enriquecimento + limpeza periódica | CDP com visão 360 do cliente |
 | Métricas | 20% | Sem métricas | Sabe quantos leads entram | Taxa de conversão por etapa | LTV + churn + velocidade de pipeline | Dashboard em tempo real + predições |
 
-### Benchmarks por Segmento — CRM
+### Benchmarks por Segmento · CRM
 
 | Segmento | Score médio | Ferramenta típica |
 |----------|-------------|-------------------|
@@ -144,7 +144,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 | Local SEO | 15% | Sem GMB | GMB criado mas incompleto | GMB completo + fotos | GMB otimizado + reviews | GMB dominante + pack local |
 | Keywords | 15% | Não ranqueia para nada | Ranqueia para marca própria | Ranqueia para 5-10 termos | Ranqueia top 10 para termos relevantes | Domina 50+ keywords no nicho |
 
-### Benchmarks por Segmento — SEO
+### Benchmarks por Segmento · SEO
 
 | Segmento | Score médio | Importância relativa |
 |----------|-------------|---------------------|
@@ -157,7 +157,7 @@ O score de maturidade digital avalia 5 pilares do marketing digital de um negoci
 
 ---
 
-## Score Geral — Cálculo
+## Score Geral · Cálculo
 
 ```
 score_geral = (midia_paga * 0.25) + (criativos * 0.20) + (cro * 0.25) + (crm * 0.15) + (seo * 0.15)

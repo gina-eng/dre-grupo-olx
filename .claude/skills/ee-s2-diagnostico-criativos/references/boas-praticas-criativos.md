@@ -4,7 +4,7 @@ Guia para avaliar e produzir criativos de anuncios pagos para PMEs brasileiras, 
 
 ## Principio #1: O criativo e o anuncio
 
-Em performance marketing, o criativo nao e "a arte". E o anuncio inteiro. Se o criativo nao funciona, nada funciona — segmentacao perfeita + budget alto + LP otimizada = zero resultado se o criativo nao para o scroll.
+Em performance marketing, o criativo nao e "a arte". E o anuncio inteiro. Se o criativo nao funciona, nada funciona, segmentacao perfeita + budget alto + LP otimizada = zero resultado se o criativo nao para o scroll.
 
 ## Anatomia de um criativo de performance
 
@@ -76,7 +76,7 @@ O criativo precisa parecer feito PARA aquele ICP especifico. Sinais de coerencia
 3. "Ver precos" / "Ver planos"
 4. "Baixar [material]"
 5. "Falar com especialista"
-6. "Saiba mais" (o mais fraco — evite)
+6. "Saiba mais" (o mais fraco, evite)
 
 ### Qualidade visual
 
@@ -153,22 +153,22 @@ Para cada criativo, passe por este checklist:
 
 ## Erros fatais (eliminam o criativo)
 
-1. **Logo como hook** — Ninguem para o scroll por um logo que nao conhece
-2. **Texto ilegivel em mobile** — Se nao da pra ler no celular, nao existe
-3. **Sem CTA** — Bonito mas nao converte
-4. **Foto de stock obvia** — Perde confianca instantaneamente
-5. **Informacao errada** — Preco, telefone, oferta expirada
-6. **Muito texto na imagem** — Meta penaliza a entrega
-7. **Audio ruim em video** — Melhor sem audio do que com audio estourado
-8. **Duracao longa sem hook** — Video >30s que so fica bom a partir dos 15s
+1. **Logo como hook**: Ninguem para o scroll por um logo que nao conhece
+2. **Texto ilegivel em mobile**: Se nao da pra ler no celular, nao existe
+3. **Sem CTA**: Bonito mas nao converte
+4. **Foto de stock obvia**: Perde confianca instantaneamente
+5. **Informacao errada**: Preco, telefone, oferta expirada
+6. **Muito texto na imagem**: Meta penaliza a entrega
+7. **Audio ruim em video**: Melhor sem audio do que com audio estourado
+8. **Duracao longa sem hook**: Video >30s que so fica bom a partir dos 15s
 
 ## Tendencias 2025-2026 em criativos de performance
 
-1. **UGC (User Generated Content)** — Conteudo que parece organico performa melhor que producao polida
-2. **Video vertical curto** — 15-30 segundos, formato reels/stories
-3. **Hooks de texto na tela** — Texto grande + imagem de fundo, estilo meme
-4. **Antes/depois** — Continua sendo o formato mais poderoso para transformacao
-5. **Depoimento em video** — Cliente real falando direto pra camera
-6. **Static creative revival** — Imagens estaticas com copy forte voltando a competir com video
-7. **AI-generated variations** — Multiplas variacoes de hook/copy para teste rapido
-8. **Dark post testing** — Testar criativos sem publicar no perfil
+1. **UGC (User Generated Content)**: Conteudo que parece organico performa melhor que producao polida
+2. **Video vertical curto**: 15-30 segundos, formato reels/stories
+3. **Hooks de texto na tela**: Texto grande + imagem de fundo, estilo meme
+4. **Antes/depois**: Continua sendo o formato mais poderoso para transformacao
+5. **Depoimento em video**: Cliente real falando direto pra camera
+6. **Static creative revival**: Imagens estaticas com copy forte voltando a competir com video
+7. **AI-generated variations**: Multiplas variacoes de hook/copy para teste rapido
+8. **Dark post testing**: Testar criativos sem publicar no perfil

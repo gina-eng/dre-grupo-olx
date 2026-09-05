@@ -1,6 +1,6 @@
 # ICP e Persona: Exemplos Bom vs Ruim
 
-Este documento serve de calibracao para garantir que o ICP gerado seja especifico, concreto e util — nao generico e descartavel.
+Este documento serve de calibracao para garantir que o ICP gerado seja especifico, concreto e util, nao generico e descartavel.
 
 ---
 
@@ -19,7 +19,7 @@ Este documento serve de calibracao para garantir que o ICP gerado seja especific
 **Jobs-to-be-Done:** "Quer ficar mais bonita e se sentir bem consigo mesma."
 
 **Problemas:**
-- Tudo e obvio — qualquer clinica poderia usar
+- Tudo e obvio, qualquer clinica poderia usar
 - "Mulheres 25-55" e metade da populacao feminina
 - O job e tao generico que serve para academia, salao, dermatologista
 - A persona nao e uma pessoa, e um estereotipo
@@ -34,9 +34,9 @@ Este documento serve de calibracao para garantir que o ICP gerado seja especific
 - Gastam R$500-2000/mes com autocuidado (salao, academia, dermato)
 - Pesquisam no Instagram e Google antes, mas a decisao final vem de indicacao de amiga
 
-**Persona:** Fernanda, 41 anos, advogada tributarista. Trabalha 50h/semana. Percebeu sulcos nasogenianos e flacidez no pescoco depois dos 40. Ja fez botox e preenchimento, mas procura algo mais "natural" — tem medo de ficar com cara de "fez procedimento". Segue @dracarolinebittencourt e @renatavasconcellos no Instagram. Pesquisa "harmonizacao facial natural Curitiba" no Google. A ultima clinica que foi, o medico nem olhou direito pra ela — atendeu em 15 minutos e cobrou R$2.500.
+**Persona:** Fernanda, 41 anos, advogada tributarista. Trabalha 50h/semana. Percebeu sulcos nasogenianos e flacidez no pescoco depois dos 40. Ja fez botox e preenchimento, mas procura algo mais "natural", tem medo de ficar com cara de "fez procedimento". Segue @dracarolinebittencourt e @renatavasconcellos no Instagram. Pesquisa "harmonizacao facial natural Curitiba" no Google. A ultima clinica que foi, o medico nem olhou direito pra ela, atendeu em 15 minutos e cobrou R$2.500.
 
-**Frase:** "Eu so quero parecer descansada. Nao quero que ninguem note que fiz algo — quero que perguntem se eu voltei de ferias."
+**Frase:** "Eu so quero parecer descansada. Nao quero que ninguem note que fiz algo, quero que perguntem se eu voltei de ferias."
 
 **Jobs-to-be-Done:**
 - Funcional: "Quando olho no espelho e vejo sinais de cansaco que nao saem com creme, quero um tratamento que me rejuvenesca de forma gradual e natural, para que eu continue parecendo eu mesma, so que melhor."
@@ -76,11 +76,11 @@ Este documento serve de calibracao para garantir que o ICP gerado seja especific
 - Pagam contador mas nao tem visao de DRE em tempo real
 - Principal canal de venda: iFood + balcao (hibrido)
 - Decisor: dono que tambem opera (cozinha ou salao)
-- Nao tem gerente financeiro — faz tudo ele mesmo ou com 1 auxiliar
+- Nao tem gerente financeiro, faz tudo ele mesmo ou com 1 auxiliar
 
 **Persona:** Toninho, 38 anos, dono do "Sabor & Arte" (restaurante contemporaneo em Campinas). Fatura R$180k/mes mas nao sabe quanto sobra. O iFood come 27% do faturamento mas responde por 45% dos pedidos. Tem 14 funcionarios e a folha de pagamento e seu maior custo. Usa uma planilha que o sobrinho fez no Google Sheets, mas so atualiza quando "da tempo" (nunca). O contador manda o DRE com 40 dias de atraso. Na semana passada, vendeu 30 pratos do dia que davam prejuizo por prato porque nao tinha ficha tecnica atualizada.
 
-**Frase:** "Eu trabalho 14 horas por dia e no final do mes nao sei se dei lucro ou prejuizo. So descubro quando o contador manda o balancete — ai ja era."
+**Frase:** "Eu trabalho 14 horas por dia e no final do mes nao sei se dei lucro ou prejuizo. So descubro quando o contador manda o balancete, ai ja era."
 
 **Jobs:**
 - Funcional: "Quando chego no restaurante as 7h e preciso decidir o que comprar e quanto produzir, quero ver os numeros de ontem e a projecao da semana em 2 minutos, para que eu nao compre demais nem falte insumo no sabado."
@@ -114,7 +114,7 @@ Este documento serve de calibracao para garantir que o ICP gerado seja especific
 - Segmentos com alta rotatividade: varejo, alimentacao, logistica, call center
 - Faturamento entre R$2M-R$20M/ano
 - Ja sofreram pelo menos 1 processo trabalhista nos ultimos 2 anos
-- Nao tem departamento juridico interno — usam advogado sob demanda
+- Nao tem departamento juridico interno, usam advogado sob demanda
 - Decisor: dono ou diretor administrativo/financeiro
 - Localizacao: Grande Sao Paulo (ate 40km do escritorio para reunioes presenciais)
 
@@ -145,17 +145,17 @@ Este documento serve de calibracao para garantir que o ICP gerado seja especific
 **ICP:**
 - Homens 26-38 anos, renda individual R$4k-R$10k/mes
 - Treinam musculacao 4-6x/semana ha mais de 2 anos (nao sao iniciantes)
-- Ja usam whey e creatina — buscam suplementacao mais avancada
+- Ja usam whey e creatina, buscam suplementacao mais avancada
 - Gastam R$200-R$600/mes em suplementos
-- Compram online (70% das compras) — preco e informacao sao decisivos
-- Leem rotulo e comparam composicao — nao compram so pela marca
+- Compram online (70% das compras), preco e informacao sao decisivos
+- Leem rotulo e comparam composicao, nao compram so pela marca
 - Seguem canais de "evidencia cientifica" no YouTube (Leandro Twin, Paulo Muzy)
 - Decisao de compra: comparam 3-4 marcas no Google/Amazon, leem reviews, confiam em creators que mostram evidencia
 - Regiao: sudeste e sul (70% do faturamento)
 
 **Persona:** Gustavo, 31 anos, analista de dados em SP. Treina as 6h da manha antes do trabalho, 5x/semana, ha 4 anos. Ja passou pela fase de comprar o whey mais barato e percebeu que qualidade faz diferenca. Gasta R$400/mes em suplementos. Tem planilha de periodizacao e acompanha macros no MyFitnessPal. Na ultima Black Friday, comprou 3 potes de whey isolado por R$89/cada e ficou satisfeito. Pesquisa composicao no site antes de comprar. Desconfia de marcas que usam "blend proprietario" sem abrir a formula.
 
-**Frase:** "Eu nao compro suplemento por marketing — eu compro por rotulo. Me mostra a dosagem e a evidencia que eu decido."
+**Frase:** "Eu nao compro suplemento por marketing, eu compro por rotulo. Me mostra a dosagem e a evidencia que eu decido."
 
 **Jobs:**
 - Funcional: "Quando estou montando meu proximo ciclo de suplementacao, quero comparar composicao e custo-beneficio entre marcas rapidamente, para que eu nao pague mais por menos produto efetivo."
@@ -179,14 +179,14 @@ Este documento serve de calibracao para garantir que o ICP gerado seja especific
 
 **ICP:**
 - Mulheres 28-45 anos, maes que estao em casa (licenca, desemprego, ou escolheram sair do CLT)
-- Renda familiar R$4k-R$8k/mes — precisam complementar renda, nao e hobby
+- Renda familiar R$4k-R$8k/mes, precisam complementar renda, nao e hobby
 - Ja fazem bolos para familia/amigos mas nunca venderam profissionalmente
 - Moram em cidades medias (50k-500k habitantes) onde encomenda de bolo e forte
 - Dispostas a investir R$200-R$500 num curso se tiver garantia de retorno
 - Pesquisam no Instagram (buscam perfis de confeiteiras) e YouTube (tutoriais gratis)
 - Gatilho de compra: alguem elogiou um bolo que fizeram e disse "voce devia vender"
 
-**Persona:** Renata, 34 anos, mae de 2 filhos (3 e 6 anos), mora em Londrina-PR. Saiu do emprego de auxiliar administrativa ha 1 ano quando nasceu o segundo filho. Faz bolos de aniversario para a familia desde sempre. Mes passado, fez o bolo do aniversario da filha da vizinha e recebeu R$150. Ficou animada mas nao sabe precificar, nao tem Instagram profissional, e tem medo de pegar encomenda e "dar errado". Gasta 2h por dia vendo Reels de confeitaria e pensa "eu consigo fazer isso". O marido apoia mas quer ver resultado — "se for pra gastar com curso, tem que se pagar".
+**Persona:** Renata, 34 anos, mae de 2 filhos (3 e 6 anos), mora em Londrina-PR. Saiu do emprego de auxiliar administrativa ha 1 ano quando nasceu o segundo filho. Faz bolos de aniversario para a familia desde sempre. Mes passado, fez o bolo do aniversario da filha da vizinha e recebeu R$150. Ficou animada mas nao sabe precificar, nao tem Instagram profissional, e tem medo de pegar encomenda e "dar errado". Gasta 2h por dia vendo Reels de confeitaria e pensa "eu consigo fazer isso". O marido apoia mas quer ver resultado, "se for pra gastar com curso, tem que se pagar".
 
 **Frase:** "Todo mundo fala que meu bolo e o melhor, mas eu nao sei cobrar. Tenho medo de montar o Instagram e ninguem encomendar."
 

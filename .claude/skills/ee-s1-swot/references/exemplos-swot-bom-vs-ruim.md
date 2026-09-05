@@ -21,7 +21,7 @@ Para cada item da SWOT, aplique este teste:
 | RUIM (genérico) | BOM (específico) |
 |------------------|-------------------|
 | "Equipe qualificada" | "Dra. Marina é referência em harmonização facial natural no PR, com 12K seguidores orgânicos e lista de espera de 3 semanas" |
-| "Localização privilegiada" | "Localizada no Batel (bairro nobre), a 200m do Shopping Pátio Batel — 80% dos clientes citam proximidade como fator de escolha" |
+| "Localização privilegiada" | "Localizada no Batel (bairro nobre), a 200m do Shopping Pátio Batel, 80% dos clientes citam proximidade como fator de escolha" |
 | "Bom atendimento" | "NPS de 92 medido mensalmente. 67% dos clientes vieram por indicação. Taxa de retorno para segundo procedimento: 45% em 6 meses" |
 | "Variedade de serviços" | "Única clínica da região que combina dermatologia + estética + nutrologia no mesmo espaço, permitindo protocolo integrado" |
 
@@ -29,10 +29,10 @@ Para cada item da SWOT, aplique este teste:
 
 | RUIM (genérico) | BOM (específico) |
 |------------------|-------------------|
-| "Marketing fraco" | "Score de mídia paga 22/100 — roda R$3k/mês no Meta sem pixel configurado, CPA de R$180 (3x a média do setor)" |
-| "Falta de tecnologia" | "Agendamento é por WhatsApp manual. 30% dos contatos não são respondidos em 24h. Sem CRM — leads se perdem entre as 3 recepcionistas" |
+| "Marketing fraco" | "Score de mídia paga 22/100, roda R$3k/mês no Meta sem pixel configurado, CPA de R$180 (3x a média do setor)" |
+| "Falta de tecnologia" | "Agendamento é por WhatsApp manual. 30% dos contatos não são respondidos em 24h. Sem CRM, leads se perdem entre as 3 recepcionistas" |
 | "Pouca presença digital" | "Instagram com 2.4K seguidores, frequência irregular (2-3 posts/mês). Nenhum conteúdo de bastidores ou resultado. Concorrente principal tem 18K seguidores" |
-| "Precisa melhorar processos" | "Protocolo de follow-up pós-procedimento é informal — pacientes só voltam se ligarem por conta própria. Sem automação de reativação" |
+| "Precisa melhorar processos" | "Protocolo de follow-up pós-procedimento é informal, pacientes só voltam se ligarem por conta própria. Sem automação de reativação" |
 
 ### OPORTUNIDADES
 
@@ -40,15 +40,15 @@ Para cada item da SWOT, aplique este teste:
 |------------------|-------------------|
 | "Mercado em crescimento" | "Mercado de estética em Curitiba cresceu 23% em 2025. Busca por 'harmonização facial Curitiba' aumentou 47% no Google Trends vs. ano anterior" |
 | "Usar redes sociais" | "Reels de antes/depois geram 5-10x mais engajamento que posts regulares no nicho. Concorrentes locais não exploram UGC de pacientes (oportunidade de diferenciação)" |
-| "Expandir serviços" | "Pacientes frequentes perguntam por bioestimuladores de colágeno (Sculptra) — procedimento de ticket R$3-5k que a clínica ainda não oferece mas a Dra. Marina é habilitada" |
-| "Atrair novos clientes" | "40% da base mora no Batel/Água Verde. Campanha geo-localizada no Meta para raio de 5km nunca foi feita — concorrente X captura esse tráfego local" |
+| "Expandir serviços" | "Pacientes frequentes perguntam por bioestimuladores de colágeno (Sculptra), procedimento de ticket R$3-5k que a clínica ainda não oferece mas a Dra. Marina é habilitada" |
+| "Atrair novos clientes" | "40% da base mora no Batel/Água Verde. Campanha geo-localizada no Meta para raio de 5km nunca foi feita, concorrente X captura esse tráfego local" |
 
 ### AMEAÇAS
 
 | RUIM (genérico) | BOM (específico) |
 |------------------|-------------------|
 | "Concorrência forte" | "Clínica Belissima (concorrente direto) abriu 2a unidade a 800m, investindo R$20k/mês em Meta Ads com vídeos profissionais. Capturando público do Batel" |
-| "Crise econômica" | "Ticket médio de R$1.500/procedimento posiciona no segmento premium. Em cenário de contração, público A/B corta estética antes de necessidades — risco de queda de 15-25% em demanda" |
+| "Crise econômica" | "Ticket médio de R$1.500/procedimento posiciona no segmento premium. Em cenário de contração, público A/B corta estética antes de necessidades, risco de queda de 15-25% em demanda" |
 | "Mudanças regulatórias" | "CFM está revisando normas de publicidade médica para 2026. Se aprovar restrição de antes/depois no Instagram (como já ocorre em alguns CRMs), principal canal de aquisição fica comprometido" |
 | "Problemas com fornecedores" | "80% dos insumos vêm de 1 distribuidor (Galderma). Atraso de 15 dias na entrega em fevereiro forçou cancelamento de 8 procedimentos e perda estimada de R$12k" |
 
@@ -79,8 +79,8 @@ Para cada item da SWOT, aplique este teste:
 | RUIM | BOM |
 |------|-----|
 | "Crescer nas redes" | "TikTok Shop lança no Brasil em 2026. Concorrentes diretos ainda não têm presença. Conteúdo de 'review honesto de suplemento' tem média de 500K views na plataforma" |
-| "Lançar novos produtos" | "Creatina monohidratada creapure (matéria-prima premium alemã) — único SKU que esgota todo mês. Lançar versão 500g (hoje só tem 300g) pode capturar R$80k/mês adicionais com base na demanda reprimida" |
-| "Parcerias" | "3 criadores com 100K-500K seguidores no nicho fitness mencionaram a marca organicamente no último trimestre. Nenhum é patrocinado — programa de embaixadores custaria ~R$15k/mês para formalizar" |
+| "Lançar novos produtos" | "Creatina monohidratada creapure (matéria-prima premium alemã), único SKU que esgota todo mês. Lançar versão 500g (hoje só tem 300g) pode capturar R$80k/mês adicionais com base na demanda reprimida" |
+| "Parcerias" | "3 criadores com 100K-500K seguidores no nicho fitness mencionaram a marca organicamente no último trimestre. Nenhum é patrocinado, programa de embaixadores custaria ~R$15k/mês para formalizar" |
 | "Vender mais" | "Clube de assinatura com 10% de desconto + frete grátis. Benchmark: marcas com subscription no setor convertem 25-30% da base ativa. Estimativa: R$120k/mês recorrente em 6 meses" |
 
 ### AMEAÇAS
@@ -90,7 +90,7 @@ Para cada item da SWOT, aplique este teste:
 | "Muita concorrência" | "Growth Supplements captou R$15M em investimento e está subsidiando frete grátis + cupom de primeira compra agressivamente. Market share deles cresceu 8pp no último ano" |
 | "Mudanças no mercado" | "CPM médio no Meta para e-commerce fitness subiu 42% em 2025. Com ROAS já em queda, margem líquida pode ficar abaixo de 8% em 6 meses se tendência ee-continuar" |
 | "Regulação" | "ANVISA publicou consulta pública sobre rotulagem de suplementos esportivos. Se aprovada, obrigaria reformulação de 12 dos 47 SKUs (custo estimado R$200k + 4 meses)" |
-| "Economia" | "Câmbio acima de R$6.00 impacta matéria-prima importada (whey WPC/WPI vem dos EUA). Cada R$0.50 de alta no dólar comprime R$2.30/kg no custo — margem bruta cai 3pp" |
+| "Economia" | "Câmbio acima de R$6.00 impacta matéria-prima importada (whey WPC/WPI vem dos EUA). Cada R$0.50 de alta no dólar comprime R$2.30/kg no custo, margem bruta cai 3pp" |
 
 ---
 
@@ -102,14 +102,14 @@ Para cada item da SWOT, aplique este teste:
 |------|-----|
 | "Comida boa" | "Chef Renato foi finalista do prêmio Prazeres da Mesa 2024 na categoria 'Melhor Novo Restaurante Interior SP'. Nota 4.7/5 no Google (312 reviews)" |
 | "Boa localização" | "Cambuí (bairro gastronômico de Campinas). A 50m da rua mais movimentada de bares/restaurantes. 3 estacionamentos conveniados num raio de 200m" |
-| "Ambiente agradável" | "Projeto arquitetônico premiado (escritório SuperLimão). O espaço é fotografado e postado organicamente — 40% dos posts marcados no Instagram são do ambiente, não da comida" |
+| "Ambiente agradável" | "Projeto arquitetônico premiado (escritório SuperLimão). O espaço é fotografado e postado organicamente, 40% dos posts marcados no Instagram são do ambiente, não da comida" |
 | "Equipe dedicada" | "Sommelier residente (único restaurante contemporâneo de Campinas com sommelier fixo). Carta de vinhos curada com 85 rótulos, ticket médio de bebida R$78" |
 
 ### FRAQUEZAS
 
 | RUIM | BOM |
 |------|-----|
-| "Custos altos" | "Food cost em 38% (meta do setor: 28-32%). Menu degustação de 7 etapas usa ingredientes sazonais importados — margem bruta do degustação é 12pp menor que pratos à la carte" |
+| "Custos altos" | "Food cost em 38% (meta do setor: 28-32%). Menu degustação de 7 etapas usa ingredientes sazonais importados, margem bruta do degustação é 12pp menor que pratos à la carte" |
 | "Pouco marketing" | "Instagram com 4.8K seguidores mas sem padrão visual. Últimas 20 fotos foram tiradas com celular em iluminação ruim. Concorrente Chez Claude tem 22K com fotógrafo semanal" |
 | "Capacidade limitada" | "52 lugares. Sexta e sábado lotam (taxa de ocupação 95%). Terça e quarta ficam em 40%. Sem estratégia de preenchimento para dias fracos (desconto, evento, menu especial)" |
 | "Dependência do iFood" | "iFood responde por 35% do faturamento mas cobra 27% de comissão. Margem líquida do delivery: 4% (vs. 18% do salão). Sem app próprio ou pedido direto" |
@@ -128,8 +128,8 @@ Para cada item da SWOT, aplique este teste:
 | RUIM | BOM |
 |------|-----|
 | "Concorrência" | "3 novos restaurantes contemporâneos abriram no Cambuí nos últimos 12 meses, incluindo o 'Raíz' (chef ex-D.O.M.) com investimento estimado de R$2M e campanha de lançamento agressiva" |
-| "Custos subindo" | "Azeite extra-virgem subiu 80% em 12 meses. Proteínas nobres (wagyu, polvo) subiram 25%. Sem repasse no menu desde fev/2025 — margem comprimindo mês a mês" |
-| "Economia" | "Campinas tem concentração de funcionários do setor de TI (40% dos clientes do jantar). Layoffs no setor em 2025 reduziram frequência de jantar fora — ticket médio caiu 8% QoQ" |
+| "Custos subindo" | "Azeite extra-virgem subiu 80% em 12 meses. Proteínas nobres (wagyu, polvo) subiram 25%. Sem repasse no menu desde fev/2025, margem comprimindo mês a mês" |
+| "Economia" | "Campinas tem concentração de funcionários do setor de TI (40% dos clientes do jantar). Layoffs no setor em 2025 reduziram frequência de jantar fora, ticket médio caiu 8% QoQ" |
 | "Mudanças" | "iFood anunciou aumento de comissão de 27% para 30% a partir de jul/2026. Impacto estimado: R$4.5k/mês a menos de margem. Se subir para 33% (rumor), delivery fica no breakeven" |
 
 ---

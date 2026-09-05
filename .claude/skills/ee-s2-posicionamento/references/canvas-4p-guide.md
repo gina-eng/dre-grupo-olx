@@ -2,10 +2,10 @@
 
 O Canvas 4P nao e o mix de marketing academico. E uma ferramenta de POSICIONAMENTO que traduz a estrategia em decisoes operacionais de comunicacao e canal.
 
-## PRODUTO — O que entregamos de verdade
+## PRODUTO · O que entregamos de verdade
 
 ### Perguntas-chave
-- O que o cliente COMPRA vs o que ele QUER? (ninguem compra "broca de 6mm" — compra "buraco na parede")
+- O que o cliente COMPRA vs o que ele QUER? (ninguem compra "broca de 6mm", compra "buraco na parede")
 - Qual e a transformacao? Descreva o ANTES e o DEPOIS do cliente
 - O que NAO entregamos? (isso e tao importante quanto o que entregamos)
 
@@ -15,7 +15,7 @@ O Canvas 4P nao e o mix de marketing academico. E uma ferramenta de POSICIONAMEN
 Nao liste features. Descreva o resultado que o cliente experimenta.
 
 Ruim: "Gestao de midias sociais com 20 posts por mes"
-Bom: "Presenca digital profissional que gera leads quentes — o cliente para de depender de indicacao"
+Bom: "Presenca digital profissional que gera leads quentes, o cliente para de depender de indicacao"
 
 **"Qual transformacao o cliente vive"**
 Formato antes/depois:
@@ -33,9 +33,9 @@ DEPOIS: Recebe 30+ leads por mes do digital, sabe exatamente quanto custa cada l
 
 **"O que NAO entregamos"**
 Isso cria confianca e evita expectativa errada. Exemplos:
-- "Nao fazemos milagre em 7 dias — resultados consistentes aparecem a partir do mes 2"
+- "Nao fazemos milagre em 7 dias, resultados consistentes aparecem a partir do mes 2"
 - "Nao atendemos empresas que querem ser as mais baratas do mercado"
-- "Nao criamos conteudo para TikTok — nosso foco e performance no Meta e Google"
+- "Nao criamos conteudo para TikTok, nosso foco e performance no Meta e Google"
 
 ### Armadilhas
 - Listar features em vez de beneficios
@@ -44,7 +44,7 @@ Isso cria confianca e evita expectativa errada. Exemplos:
 
 ---
 
-## PRECO — Posicionamento, nao tabela
+## PRECO · Posicionamento, nao tabela
 
 ### Posicionamentos possiveis
 
@@ -83,7 +83,7 @@ Tecnicas comuns para PMEs:
 
 ---
 
-## PRACA (CANAIS) — Onde encontrar o ICP
+## PRACA (CANAIS) · Onde encontrar o ICP
 
 ### Como escolher o canal principal
 
@@ -118,14 +118,14 @@ O canal de suporte complementa o principal:
 
 ---
 
-## PROMOCAO — Como comunicar
+## PROMOCAO · Como comunicar
 
 ### Tom e estilo de comunicacao
 
 | Tom | Descricao | Quando usar | Exemplo |
 |---|---|---|---|
 | **Tecnico/profissional** | Dados, metodologia, credibilidade | B2B, saude, financeiro | "Reduzimos o CAC medio em 40% com otimizacao de funil" |
-| **Proximo/informal** | Conversa, humor leve, empatia | Varejo, servicos locais, wellness | "A gente sabe como e dificil — por isso simplificamos tudo" |
+| **Proximo/informal** | Conversa, humor leve, empatia | Varejo, servicos locais, wellness | "A gente sabe como e dificil, por isso simplificamos tudo" |
 | **Aspiracional/premium** | Exclusividade, resultado, status | Luxo, estetica, coaching | "Para quem nao aceita o comum" |
 | **Didatico/educativo** | Ensina, gera autoridade, conquista confianca | SaaS, consultoria, educacao | "Antes de contratar qualquer agencia, entenda isso..." |
 | **Direto/performance** | CTA forte, urgencia, oferta clara | E-commerce, lancamentos, promocoes | "50 vagas. Comeca segunda. Inscricao aberta." |
@@ -139,7 +139,7 @@ O objetivo no topo e PARAR o scroll e gerar curiosidade. Nao vender.
 2. **Dado chocante:** "83% das clinicas de estetica perdem dinheiro com anuncios mal feitos"
 3. **Pergunta provocativa:** "Quanto custa cada lead que voce perde por nao ter uma LP?"
 4. **Resultado concreto:** "Como a [tipo de empresa] saiu de 5 para 50 leads/mes em 90 dias"
-5. **Contra-intuitivo:** "O problema nao e seu anuncio — e o que acontece DEPOIS do clique"
+5. **Contra-intuitivo:** "O problema nao e seu anuncio, e o que acontece DEPOIS do clique"
 
 ### Mensagem de fundo de funil
 

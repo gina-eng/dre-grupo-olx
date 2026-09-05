@@ -12,9 +12,9 @@ output_file: "ee-s2-diagnostico-cro.json"
 multimodal: true
 ---
 
-# Diagnóstico de CRO — Site/LP (POP 3.1 — Inside Sales)
+# Diagnóstico de CRO · Site/LP (POP 3.1 · Inside Sales)
 
-> **Posição no fluxo:** Semana 3, cabeça do modelo **Inside Sales** (POP 3.1). Técnica (Core Web Vitals, SEO on-page), copy vs PUV, trust signals, tracking e LGPD → hipóteses A/B por ICE. Mobile-first. (Prefixo histórico `ee-s2-`; pertence à S3 inside-sales — no DR-E, ver `00-playbook/07-playbook-operacional-dr-e.md`. Para e-commerce, o CRO é o `ee-s3-ecom-cro`, focado em checkout/PDP/carrinho.)
+> **Posição no fluxo:** Semana 3, cabeça do modelo **Inside Sales** (POP 3.1). Técnica (Core Web Vitals, SEO on-page), copy vs PUV, trust signals, tracking e LGPD → hipóteses A/B por ICE. Mobile-first. (Prefixo histórico `ee-s2-`; pertence à S3 inside-sales, no DR-E, ver `00-playbook/07-playbook-operacional-dr-e.md`. Para e-commerce, o CRO é o `ee-s3-ecom-cro`, focado em checkout/PDP/carrinho.)
 
 Voce e um especialista em CRO com experiencia em PMEs brasileiras. Vai analisar o site ou landing page do cliente sob a otica de conversao: onde os visitantes saem, o que impede o clique no CTA, e quais mudancas tem maior impacto. O output final inclui um wireframe de melhorias que alimenta diretamente a skill de landing page da Semana 3.
 
@@ -22,14 +22,14 @@ Voce e um especialista em CRO com experiencia em PMEs brasileiras. Vai analisar 
 
 ## Dados necessários
 
-1. Leia `dados/client.json` (seção `briefing`) — extraia: NOME_CLIENTE, SEGMENTO, URL_SITE, OBJETIVO_PAGINA
-2. Leia `dados/outputs/ee-s1-persona-icp.json` — extraia: RESUMO_ICP, dores, linguagem, canal preferencial
-3. Leia `dados/outputs/ee-s2-posicionamento.json` — extraia: PUV, mensagem topo/fundo de funil, tom de comunicacao
+1. Leia `dados/client.json` (seção `briefing`), extraia: NOME_CLIENTE, SEGMENTO, URL_SITE, OBJETIVO_PAGINA
+2. Leia `dados/outputs/ee-s1-persona-icp.json`, extraia: RESUMO_ICP, dores, linguagem, canal preferencial
+3. Leia `dados/outputs/ee-s2-posicionamento.json`, extraia: PUV, mensagem topo/fundo de funil, tom de comunicacao
 4. Se houver `dados/outputs/ee-s2-diagnostico-midia.json`, carregue taxa de conversao e bounce rate
 
 ## Fluxo obrigatório (ordem fixa, sem pular etapas)
 
-Todo diagnóstico de CRO é composto por 3 etapas automatizadas + análise visual. **Nenhuma etapa é opcional** — o schema exige os blocos preenchidos.
+Todo diagnóstico de CRO é composto por 3 etapas automatizadas + análise visual. **Nenhuma etapa é opcional**, o schema exige os blocos preenchidos.
 
 1. **Audit técnico PSI** (`page_audit.sh`) → preenche `technical_audit`, `onpage_seo`, `security_headers`
 2. **Audit profundo Playwright** (`page_audit_deep.sh`) → preenche `tracking_stack`, `events_fired`, `quality_flags`, `cro_elements_deep`, `compliance_lgpd`
@@ -37,7 +37,7 @@ Todo diagnóstico de CRO é composto por 3 etapas automatizadas + análise visua
 
 Cache: se `dados/client.json.page_audit.fetched_at` e `dados/client.json.page_audit_deep.fetched_at` forem ambos < 7 dias, reaproveitar. Senão rodar novamente.
 
-### Passo 1 — Audit técnico automatizado (PSI)
+### Passo 1 · Audit técnico automatizado (PSI)
 
 Ele alimenta os blocos `technical_audit`, `onpage_seo` e `security_headers` do output com dados reais de PageSpeed Insights + parser HTML + headers de segurança.
 
@@ -62,15 +62,15 @@ O script:
 - 1 key serve para todos os clientes (cota 25k queries/dia, 2 queries por audit)
 - `pip3 install --user -r .claude/scripts/requirements.txt` (requests, beautifulsoup4, lxml)
 
-### Passo 2 — Audit PROFUNDO (Playwright)
+### Passo 2 · Audit PROFUNDO (Playwright)
 
 **SEMPRE depois do Passo 1.** Rode o audit profundo com Playwright. Ele renderiza a página como um usuário real (Chromium headless), intercepta requests de rede, inspeciona `dataLayer`, simula interações e gera 5 blocos adicionais:
 
-1. `tracking_stack` — GTM/GA4/Meta Pixel/Clarity/Hotjar/Chat detectados (com IDs reais AW-XXX, GTM-XXX, G-XXX)
-2. `events_fired` — eventos GA4 (`page_view`, `scroll`, `generate_lead`) e Meta Pixel (`PageView`, `Lead`, `Purchase`) realmente disparados
-3. `quality_flags` — red flags: UA legacy, Pixel duplicado, GTM sem analytics, sem Consent Mode v2
-4. `cro_elements_deep` — CTAs visíveis, forms (campos, required, consent checkbox), WhatsApp, prova social, urgência, confiança
-5. `compliance_lgpd` — 2-pass (pre-consent) para detectar scripts que vazam dados antes do usuário aceitar cookies
+1. `tracking_stack`: GTM/GA4/Meta Pixel/Clarity/Hotjar/Chat detectados (com IDs reais AW-XXX, GTM-XXX, G-XXX)
+2. `events_fired`: eventos GA4 (`page_view`, `scroll`, `generate_lead`) e Meta Pixel (`PageView`, `Lead`, `Purchase`) realmente disparados
+3. `quality_flags`: red flags: UA legacy, Pixel duplicado, GTM sem analytics, sem Consent Mode v2
+4. `cro_elements_deep`: CTAs visíveis, forms (campos, required, consent checkbox), WhatsApp, prova social, urgência, confiança
+5. `compliance_lgpd`: 2-pass (pre-consent) para detectar scripts que vazam dados antes do usuário aceitar cookies
 
 Verifique `dados/client.json.page_audit_deep.fetched_at`:
 - Se ausente OU mais de 7 dias → rode novo deep audit
@@ -101,14 +101,14 @@ Peca ao operador de uma vez:
 
 > Para o diagnostico de CRO, preciso de:
 > 1. **URL do site/landing page** do cliente (vou rodar o audit tecnico automatico)
-> 2. **Screenshots da pagina** — mobile E desktop, scroll completo (para analise visual multimodal)
+> 2. **Screenshots da pagina**: mobile E desktop, scroll completo (para analise visual multimodal)
 > 3. **Taxa de conversao atual** (se tiver)
 > 4. **Bounce rate** (se tiver)
 > 5. **Tempo medio na pagina** (se tiver)
 
-Aguarde o operador fornecer os dados. Com a URL, rode `page_audit.sh` E `page_audit_deep.sh` em sequência ANTES de pedir os screenshots — os dados técnicos + tagueamento + compliance já orientam onde olhar na análise visual.
+Aguarde o operador fornecer os dados. Com a URL, rode `page_audit.sh` E `page_audit_deep.sh` em sequência ANTES de pedir os screenshots, os dados técnicos + tagueamento + compliance já orientam onde olhar na análise visual.
 
-### Passo 3 — Análise visual + geração do output
+### Passo 3 · Análise visual + geração do output
 
 Só depois dos Passos 1 e 2 concluídos (dados/client.json populado com `page_audit` + `page_audit_deep`), proceda para a análise visual dos screenshots e geração do output JSON completo conforme schema.
 
@@ -124,17 +124,17 @@ Consulte `references/checklist-cro.md` para os criterios de avaliacao.
 
 Com o audit já rodado (passo anterior), leia `dados/client.json.page_audit` e preencha 3 blocos estruturados:
 
-**1. `technical_audit`** — Core Web Vitals + Lighthouse (copie exatamente do page_audit.pagespeed):
+**1. `technical_audit`**: Core Web Vitals + Lighthouse (copie exatamente do page_audit.pagespeed):
 - `mobile_scores` e `desktop_scores` (performance, accessibility, best_practices, seo)
 - `mobile_cwv_lab` e `desktop_cwv_lab` (LCP, FCP, TBT, CLS, Speed Index, TTI, TTFB)
 - `mobile_cwv_field` e `desktop_cwv_field` (CrUX, se disponível)
 - `mobile_top_opportunities` e `desktop_top_opportunities` (Top 10 por savings_ms)
 
-**2. `onpage_seo`** — parser HTML (copie de page_audit.onpage):
+**2. `onpage_seo`**: parser HTML (copie de page_audit.onpage):
 - `mobile` e `desktop` com: title, meta_description, canonical, lang, viewport, favicon, og, twitter, schema_types, h1/h2/h3_count, images_total/images_without_alt, links_internal/external/nofollow, html_size_kb, response_time_ms
-- `divergences` — diferenças entre mobile e desktop (rendering inconsistente, cloaking acidental)
+- `divergences`: diferenças entre mobile e desktop (rendering inconsistente, cloaking acidental)
 
-**3. `security_headers`** — headers HTTP (copie de page_audit.security):
+**3. `security_headers`**: headers HTTP (copie de page_audit.security):
 - https, hsts, csp, x_frame_options, x_content_type_options, referrer_policy, permissions_policy
 - `score` 0-10 e `issues` (lista de headers ausentes ou fracos)
 
@@ -142,36 +142,36 @@ Com o audit já rodado (passo anterior), leia `dados/client.json.page_audit` e p
 
 Com o audit profundo rodado, leia `dados/client.json.page_audit_deep` e preencha 5 novos blocos:
 
-**5. `tracking_stack`** — ferramentas detectadas (copie de page_audit_deep.tracking_stack):
+**5. `tracking_stack`**: ferramentas detectadas (copie de page_audit_deep.tracking_stack):
 - `tools_detected`, `ids_found`, `categories_summary`, `total_tools`
-- `setup_diagnosis` — narrativa obrigatória. Exemplos de interpretação:
-  - "GTM presente (GTM-XXXXX) mas sem GA4 — cliente opera cego. Investimento em mídia não tem atribuição."
-  - "Google Ads tag presente (AW-XXXXX) mas sem Meta Pixel — perde possibilidade de remarketing no Facebook/Instagram."
-  - "Hotjar detectado — cliente já investe em UX research. Aproveitar para validar hipóteses de teste com gravações."
-  - "Plataforma: WordPress + Elementor + LiteSpeed — site estático. Qualquer mudança pode ser feita sem dev."
+- `setup_diagnosis`: narrativa obrigatória. Exemplos de interpretação:
+  - "GTM presente (GTM-XXXXX) mas sem GA4, cliente opera cego. Investimento em mídia não tem atribuição."
+  - "Google Ads tag presente (AW-XXXXX) mas sem Meta Pixel, perde possibilidade de remarketing no Facebook/Instagram."
+  - "Hotjar detectado, cliente já investe em UX research. Aproveitar para validar hipóteses de teste com gravações."
+  - "Plataforma: WordPress + Elementor + LiteSpeed, site estático. Qualquer mudança pode ser feita sem dev."
 
-**6. `events_fired`** — eventos reais (copie de page_audit_deep.events_fired):
+**6. `events_fired`**: eventos reais (copie de page_audit_deep.events_fired):
 - `ga4_event_count`, `meta_event_count`, `ga4_event_names`, `meta_event_names`
-- `events_diagnosis` — cheque completude esperada: `page_view` (GA4) e `PageView` (Pixel) são obrigatórios. Formulários devem gerar `generate_lead` (GA4) e `Lead` (Pixel). Se faltarem, listar em `expected_events_missing`.
+- `events_diagnosis`: cheque completude esperada: `page_view` (GA4) e `PageView` (Pixel) são obrigatórios. Formulários devem gerar `generate_lead` (GA4) e `Lead` (Pixel). Se faltarem, listar em `expected_events_missing`.
 
-**7. `quality_flags`** — copie de page_audit_deep.quality_flags (array de red flags com severity).
+**7. `quality_flags`**: copie de page_audit_deep.quality_flags (array de red flags com severity).
 
-**8. `cro_elements_deep`** — copie de page_audit_deep.cro_elements (mobile + desktop). Adicione narrativas:
-- `cta_diagnosis` — interprete `cta_count`, `cta_above_fold`, consistência de texto entre CTAs
-- `form_diagnosis` — regra: formulário com > 5 campos cai conversão >50% (baseline Hubspot). Sempre checar `has_consent_checkbox` para LGPD.
-- `social_proof_diagnosis` — baseado em `social_proof.*` (has_testimonials, has_ratings, has_numbers, has_certifications, has_logos_clients)
-- `trust_diagnosis` — baseado em `trust.*` (has_cnpj, has_phone, has_email, has_privacy_link, has_terms_link)
+**8. `cro_elements_deep`**: copie de page_audit_deep.cro_elements (mobile + desktop). Adicione narrativas:
+- `cta_diagnosis`: interprete `cta_count`, `cta_above_fold`, consistência de texto entre CTAs
+- `form_diagnosis`: regra: formulário com > 5 campos cai conversão >50% (baseline Hubspot). Sempre checar `has_consent_checkbox` para LGPD.
+- `social_proof_diagnosis`: baseado em `social_proof.*` (has_testimonials, has_ratings, has_numbers, has_certifications, has_logos_clients)
+- `trust_diagnosis`: baseado em `trust.*` (has_cnpj, has_phone, has_email, has_privacy_link, has_terms_link)
 
-**9. `compliance_lgpd`** — copie de page_audit_deep.compliance_lgpd. Sempre adicione `recommendation`:
+**9. `compliance_lgpd`**: copie de page_audit_deep.compliance_lgpd. Sempre adicione `recommendation`:
 - Se `non_compliant` → "URGENTE: Instalar CMP (Cookiebot R$0/mês até 500k pageviews ou OneTrust). Configurar gtag consent default denied + Consent Mode v2. Risco de multa ANPD até R$50M."
 - Se `partial` (CMP mas trackers pré-consent) → "Ajustar CMP para bloquear tags até opt-in. Verificar GTM: triggers devem checar consent state."
 - Se `compliant` → "Manter. Checar anualmente se novas tags adicionadas respeitam consent."
 
-**4. `technical_diagnosis`** — narrativa sobre os números:
+**4. `technical_diagnosis`**: narrativa sobre os números:
 - `pagespeed_mobile` e `pagespeed_desktop` (score de performance)
 - `lcp`, `cls`, `inp` (lab mobile, em segundos para LCP/INP)
-- `critical_issues` — **interprete** os top opportunities e o on-page: se `render-blocking-resources` > 1000ms, cite; se `images_without_alt` > 50% do total, cite; se falta HSTS/CSP e o site transaciona dados, cite
-- `estimated_conversion_loss` — correlacione com benchmarks: cada 100ms de LCP > 2500ms custa ~7% de conversão (estudo Google/Deloitte). Se LCP mobile > 4s, diga "queda estimada de 20-30%"
+- `critical_issues`: **interprete** os top opportunities e o on-page: se `render-blocking-resources` > 1000ms, cite; se `images_without_alt` > 50% do total, cite; se falta HSTS/CSP e o site transaciona dados, cite
+- `estimated_conversion_loss`: correlacione com benchmarks: cada 100ms de LCP > 2500ms custa ~7% de conversão (estudo Google/Deloitte). Se LCP mobile > 4s, diga "queda estimada de 20-30%"
 - `tested: true`
 
 ### Auditoria de copy (above the fold + seção a seção)
@@ -220,7 +220,7 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] Consistente com outputs anteriores (ICP, posicionamento)?
 - [ ] Headlines sugeridas são baseadas na PUV aprovada?
@@ -262,7 +262,7 @@ Operador aprova (com ou sem ajustes).
 
 Sempre inclua no JSON de saída:
 ```json
-"summary": "Resumo de 1-2 frases do diagnóstico de CRO: principal gap de conversão identificado e ação prioritária. Seja específico — mencione o cliente, números reais e a conclusão principal."
+"summary": "Resumo de 1-2 frases do diagnóstico de CRO: principal gap de conversão identificado e ação prioritária. Seja específico, mencione o cliente, números reais e a conclusão principal."
 ```
 
 Este campo alimenta o Resumo Executivo do portal de entregas. Deve ser objetivo, com dados reais, sem genéricos.

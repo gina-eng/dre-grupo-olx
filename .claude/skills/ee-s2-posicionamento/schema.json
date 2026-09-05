@@ -29,7 +29,7 @@
     "summary_headline": {
       "type": "string",
       "maxLength": 200,
-      "description": "Manchete com o veredito do posicionamento em 1 frase (ex: '[Cliente] ocupa território [Especialista Premium do nicho] — janela de 12-18 meses antes da concorrência chegar')."
+      "description": "Manchete com o veredito do posicionamento em 1 frase (ex: '[Cliente] ocupa território [Especialista Premium do nicho], janela de 12-18 meses antes da concorrência chegar')."
     },
     "summary_highlights": {
       "type": "array",
@@ -417,7 +417,7 @@
     },
     "key_insight": {
       "type": "object",
-      "description": "Ponto de alavancagem — território × janela de oportunidade.",
+      "description": "Ponto de alavancagem, território × janela de oportunidade.",
       "required": [
         "headline",
         "context",

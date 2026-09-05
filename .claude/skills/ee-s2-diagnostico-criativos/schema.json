@@ -79,7 +79,7 @@
             "type": "integer",
             "minimum": 1,
             "maximum": 5,
-            "description": "Score do hook — capacidade de parar o scroll (1-5)"
+            "description": "Score do hook, capacidade de parar o scroll (1-5)"
           },
           "hook_comment": {
             "type": "string",
@@ -109,7 +109,7 @@
             "type": "integer",
             "minimum": 1,
             "maximum": 5,
-            "description": "Score do CTA — clareza e visibilidade (1-5)"
+            "description": "Score do CTA, clareza e visibilidade (1-5)"
           },
           "cta_comment": {
             "type": "string",
@@ -188,7 +188,7 @@
               },
               "video_url": {
                 "type": ["string", "null"],
-                "description": "URL do CDN Meta (se for video) — renderer embeda direto via <video>"
+                "description": "URL do CDN Meta (se for video), renderer embeda direto via <video>"
               },
               "ads_library_id": {
                 "type": ["string", "null"],
@@ -350,7 +350,7 @@
     },
     "competitor_patterns_missing": {
       "type": "array",
-      "description": "Padroes recorrentes dos concorrentes que o cliente NAO usa — lista priorizada de gaps acionaveis. Mesma logica do ee-s2-diagnostico-organico-ig para coerencia cross-outputs.",
+      "description": "Padroes recorrentes dos concorrentes que o cliente NAO usa, lista priorizada de gaps acionaveis. Mesma logica do ee-s2-diagnostico-organico-ig para coerencia cross-outputs.",
       "items": {
         "type": "object",
         "required": [
@@ -512,7 +512,7 @@
     "summary_headline": {
       "type": "string",
       "maxLength": 200,
-      "description": "Manchete em 1 linha com o veredito da analise. Ex: '[Cliente]: 7 de 10 criativos falham no hook — oportunidade de redesenho antes de escalar midia'. Ver PADRAO-OUTPUT.md."
+      "description": "Manchete em 1 linha com o veredito da analise. Ex: '[Cliente]: 7 de 10 criativos falham no hook, oportunidade de redesenho antes de escalar midia'. Ver PADRAO-OUTPUT.md."
     },
     "summary_highlights": {
       "type": "array",
@@ -566,7 +566,7 @@
     },
     "key_insight": {
       "type": "object",
-      "description": "Ponto de alavancagem desta skill — para diagnostico de criativos, e o padrao criativo mais impactante (problema recorrente ou sucesso a amplificar) OU o gap mais assimetrico vs concorrente. Ver PADRAO-OUTPUT.md.",
+      "description": "Ponto de alavancagem desta skill, para diagnostico de criativos, e o padrao criativo mais impactante (problema recorrente ou sucesso a amplificar) OU o gap mais assimetrico vs concorrente. Ver PADRAO-OUTPUT.md.",
       "properties": {
         "headline": {
           "type": "string",

@@ -1,4 +1,4 @@
-# DR-E — Grupo OLX
+# DR-E · Grupo OLX
 
 Repositório central do projeto **DR-E (Destrava Receita Estratégico)** da V4 Company para o **Grupo OLX**.
 Contrato de 12 meses, R$ 752.000, 12 comitês, 9 diagnósticos técnicos contratados.
@@ -10,12 +10,12 @@ Contrato de 12 meses, R$ 752.000, 12 comitês, 9 diagnósticos técnicos contrat
 
 | Se você quer… | Vá para |
 |---|---|
-| Entender o método | [00-playbook/](00-playbook/) — comece pelo [README do playbook](00-playbook/README.md) |
+| Entender o método | [00-playbook/](00-playbook/), comece pelo [README do playbook](00-playbook/README.md) |
 | Saber o que foi contratado | [04-execucao/contrato-e-escopo.md](04-execucao/contrato-e-escopo.md) e [02-diagnostico/auditorias-contratadas.md](02-diagnostico/auditorias-contratadas.md) |
 | Saber quem é quem | [01-cliente/stakeholders.md](01-cliente/stakeholders.md) |
 | Saber o que está travado | [PENDENCIAS.md](PENDENCIAS.md) |
-| Executar o método com o Claude | `/dre-continuar` — índice em [.claude/skills/README.md](.claude/skills/README.md) |
-| Conduzir o kick-off | [portal-dre-grupo-olx.vercel.app](https://portal-dre-grupo-olx.vercel.app) — painel com os três módulos (senha) |
+| Executar o método com o Claude | `/dre-continuar` · índice em [.claude/skills/README.md](.claude/skills/README.md) |
+| Conduzir o kick-off | [portal-dre-grupo-olx.vercel.app](https://portal-dre-grupo-olx.vercel.app), painel com os três módulos (senha) |
 
 ## Estrutura
 
@@ -33,7 +33,7 @@ Contrato de 12 meses, R$ 752.000, 12 comitês, 9 diagnósticos técnicos contrat
 | [.claude/](.claude/) | Skills, scripts e templates que operam o método |
 | [PENDENCIAS.md](PENDENCIAS.md) | Bloqueios abertos, com severidade, responsável e prazo |
 
-## Playbook — índice rápido
+## Playbook: índice rápido
 
 | Doc | Assunto |
 |---|---|
@@ -51,10 +51,10 @@ Contrato de 12 meses, R$ 752.000, 12 comitês, 9 diagnósticos técnicos contrat
 - Documentos em **Markdown**, `kebab-case`, com data quando fizer sentido: `2026-08-24-kickoff.md`.
 - Arquivos originais (PDF, XLSX, PPTX) em `assets/originais/`; o conteúdo relevante é transcrito em Markdown na pasta temática.
 - Todo número carrega fonte. Estimativa é marcada com `[E]`.
-- Travas são citadas **pelo nome**, nunca pelo número — as fontes da V4 usam três numerações conflitantes.
+- Travas são citadas **pelo nome**, nunca pelo número, as fontes da V4 usam três numerações conflitantes.
 - Regras completas de trabalho no repo: [CLAUDE.md](CLAUDE.md).
 
 ## Status
 
 🟢 Documentação organizada e skills instaladas. Kick-off em **24/08/2026**.
-Ciclo 1 — fase de Onboarding. Pendências ativas em [PENDENCIAS.md](PENDENCIAS.md).
+Ciclo 1, fase de Onboarding. Pendências ativas em [PENDENCIAS.md](PENDENCIAS.md).

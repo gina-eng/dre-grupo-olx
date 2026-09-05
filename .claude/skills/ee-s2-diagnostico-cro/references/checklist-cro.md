@@ -2,7 +2,7 @@
 
 ## Como usar este checklist
 
-Use este checklist como referencia ao auditar landing pages. Nem todos os itens se aplicam a todos os casos — priorize os que tem maior impacto para o segmento e ICP do cliente.
+Use este checklist como referencia ao auditar landing pages. Nem todos os itens se aplicam a todos os casos, priorize os que tem maior impacto para o segmento e ICP do cliente.
 
 A auditoria segue 5 dimensoes:
 1. Performance tecnica
@@ -44,21 +44,21 @@ A auditoria segue 5 dimensoes:
 [ ] Sem JavaScript blocante na renderizacao
 [ ] Fonts carregando rapido (preload ou system fonts)
 [ ] Meta tags basicas (title, description, og:image)
-[ ] Mobile responsive (nao apenas "funciona" — "fica bom")
-[ ] Formulario funcional (testado — envia de verdade)
+[ ] Mobile responsive (nao apenas "funciona", "fica bom")
+[ ] Formulario funcional (testado, envia de verdade)
 [ ] Tracking instalado (GA4, Pixel Meta, Tag Manager)
 ```
 
 ### Causas comuns de lentidao em LPs de PMEs
 
-1. **Imagens nao otimizadas** — JPGs de 3MB direto da camera. Solucao: WebP, max 200KB, lazy load
-2. **Slider/carrossel pesado** — Plugins de carrossel com JS pesado. Solucao: imagem estatica ou CSS puro
-3. **Fonts externas** — Google Fonts sem preload. Solucao: preload ou hospedar localmente
-4. **WordPress com 30 plugins** — Cada plugin adiciona JS/CSS. Solucao: remover nao essenciais
-5. **Video autoplay** — Video pesado carregando no hero. Solucao: thumbnail + play on click
-6. **Hosting ruim** — Shared hosting lento. Solucao: Vercel, Netlify, ou VPS
-7. **Chat widgets** — Tawk.to, Intercom carregando JS pesado. Solucao: lazy load ou remover
-8. **Animations pesadas** — CSS/JS animations que causam repaints. Solucao: transform/opacity only
+1. **Imagens nao otimizadas**: JPGs de 3MB direto da camera. Solucao: WebP, max 200KB, lazy load
+2. **Slider/carrossel pesado**: Plugins de carrossel com JS pesado. Solucao: imagem estatica ou CSS puro
+3. **Fonts externas**: Google Fonts sem preload. Solucao: preload ou hospedar localmente
+4. **WordPress com 30 plugins**: Cada plugin adiciona JS/CSS. Solucao: remover nao essenciais
+5. **Video autoplay**: Video pesado carregando no hero. Solucao: thumbnail + play on click
+6. **Hosting ruim**: Shared hosting lento. Solucao: Vercel, Netlify, ou VPS
+7. **Chat widgets**: Tawk.to, Intercom carregando JS pesado. Solucao: lazy load ou remover
+8. **Animations pesadas**: CSS/JS animations que causam repaints. Solucao: transform/opacity only
 
 ---
 
@@ -99,7 +99,7 @@ O hero e responsavel por 80% da decisao de ficar ou sair. A regra e: em 5 segund
    Ex: "Cansou de gastar com anuncio sem retorno? Performance real sem contrato de fidelidade"
 
 3. **PUV direta:** "[O que faz] de um jeito [como ninguem faz]"
-   Ex: "Implante dental em sessao unica com sedacao — sem medo, sem espera"
+   Ex: "Implante dental em sessao unica com sedacao, sem medo, sem espera"
 
 4. **Especializacao:** "[Servico] para [nicho especifico]"
    Ex: "Contabilidade exclusiva para e-commerces que faturam R$ 50K-2M/mes"
@@ -174,16 +174,16 @@ Para PMEs, confianca e o maior obstaculo de conversao. O visitante nao conhece a
 
 ### Hierarquia de sinais de confianca (do mais forte ao mais fraco)
 
-1. **Depoimentos com video** — Mais dificil de falsificar
-2. **Avaliacoes Google (link para Google Meu Negocio)** — Verificavel
-3. **Depoimentos com nome + foto + empresa** — Crivel
-4. **Logos de clientes conhecidos** — Transferencia de confianca
-5. **Selos e certificacoes** (ISO, CRO, OAB, etc.) — Autoridade
-6. **Numero de clientes / projetos** — Prova de volume
-7. **CNPJ e endereco** — Empresa real
-8. **Politica de privacidade** — Profissionalismo
-9. **Garantia explicita** — Reduz risco percebido
-10. **SSL (cadeado)** — Basico, mas ausencia e fatal
+1. **Depoimentos com video**: Mais dificil de falsificar
+2. **Avaliacoes Google (link para Google Meu Negocio)**: Verificavel
+3. **Depoimentos com nome + foto + empresa**: Crivel
+4. **Logos de clientes conhecidos**: Transferencia de confianca
+5. **Selos e certificacoes** (ISO, CRO, OAB, etc.), Autoridade
+6. **Numero de clientes / projetos**: Prova de volume
+7. **CNPJ e endereco**: Empresa real
+8. **Politica de privacidade**: Profissionalismo
+9. **Garantia explicita**: Reduz risco percebido
+10. **SSL (cadeado)**: Basico, mas ausencia e fatal
 
 ### Score de confianca
 
@@ -221,14 +221,14 @@ Para PMEs, confianca e o maior obstaculo de conversao. O visitante nao conhece a
 
 ### Erros de UX mais comuns em LPs de PMEs
 
-1. **Formulario longo** — Nome, email, telefone, cidade, como conheceu, mensagem. Solucao: nome + telefone (ou so WhatsApp)
-2. **CTA generico** — "Enviar" em vez de "Agendar minha consulta gratis"
-3. **Multiplos CTAs conflitantes** — "Agendar" + "Ver precos" + "Baixar e-book" + "Seguir no Instagram". Solucao: 1 CTA principal
-4. **Informacao demais** — Pagina com 10 secoes e 5000 palavras. Solucao: cortar pela metade
-5. **Pop-up agressivo** — Abre antes do visitante ler qualquer coisa. Solucao: exit intent ou scroll-trigger
-6. **Sem WhatsApp** — PME brasileira sem WhatsApp e como loja sem porta. Obrigatorio.
-7. **Fundo escuro com texto claro** — Cansa a leitura em scroll longo. Solucao: fundo claro, texto escuro
-8. **Auto-play de audio/video** — Irrita e faz fechar. Solucao: mudo ou click-to-play
+1. **Formulario longo**: Nome, email, telefone, cidade, como conheceu, mensagem. Solucao: nome + telefone (ou so WhatsApp)
+2. **CTA generico**: "Enviar" em vez de "Agendar minha consulta gratis"
+3. **Multiplos CTAs conflitantes**: "Agendar" + "Ver precos" + "Baixar e-book" + "Seguir no Instagram". Solucao: 1 CTA principal
+4. **Informacao demais**: Pagina com 10 secoes e 5000 palavras. Solucao: cortar pela metade
+5. **Pop-up agressivo**: Abre antes do visitante ler qualquer coisa. Solucao: exit intent ou scroll-trigger
+6. **Sem WhatsApp**: PME brasileira sem WhatsApp e como loja sem porta. Obrigatorio.
+7. **Fundo escuro com texto claro**: Cansa a leitura em scroll longo. Solucao: fundo claro, texto escuro
+8. **Auto-play de audio/video**: Irrita e faz fechar. Solucao: mudo ou click-to-play
 
 ---
 

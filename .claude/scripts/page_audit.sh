@@ -1,5 +1,5 @@
 #!/bin/bash
-# page_audit.sh — Orquestra a auditoria tecnica de uma URL
+# page_audit.sh · Orquestra a auditoria tecnica de uma URL
 # Uso:  page_audit.sh <client_dir> <url>
 # Ex:   page_audit.sh clientes/<slug-do-cliente> https://www.site-do-cliente.com.br
 #
@@ -47,7 +47,7 @@ if [ -n "$PSI_API_KEY" ]; then
   echo ">> Rodando auditoria (PSI mobile+desktop + on-page + security) em paralelo..."
   PSI_API_KEY="$PSI_API_KEY" python3 "$PY_SCRIPT" "$URL" "$RAW_OUT"
 else
-  echo ">> Sem PSI_API_KEY — rodando apenas on-page + security (PageSpeed sera pulado)..."
+  echo ">> Sem PSI_API_KEY, rodando apenas on-page + security (PageSpeed sera pulado)..."
   python3 "$PY_SCRIPT" "$URL" "$RAW_OUT" --skip-psi
 fi
 

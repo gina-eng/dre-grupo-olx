@@ -19,7 +19,7 @@ canônico e registra os aliases.
 
 | Trava (nome canônico) | Fundamentos DR-OTE | "As Travas de Receita" / POPs | Fluxo de Estratégia |
 |---|---|---|---|
-| Cegueira | T0 | Trava 0 | — |
+| Cegueira | T0 | Trava 0 | - |
 | Exposição | T1 | Trava 7 | Trava 2 |
 | Atenção | T2 | Trava 6 | Trava 3 |
 | Interesse | T3 | Trava 5 | Trava 4 |
@@ -37,13 +37,13 @@ canônico e registra os aliases.
 
 ## 3. As 8 travas
 
-### Cegueira — falta de visibilidade
+### Cegueira: falta de visibilidade
 A empresa não possui dados, indicadores ou visibilidade suficiente para diagnosticar o sistema.
 Não distingue lead de cliente, não enxerga CAC, LTV, payback ou ROIC.
-**Não é uma restrição de receita — é uma pré-condição.** Sem dados mínimos, qualquer diagnóstico é achismo.
+**Não é uma restrição de receita, é uma pré-condição.** Sem dados mínimos, qualquer diagnóstico é achismo.
 A resolução (estruturação de métricas básicas) é obrigatória antes de qualquer intervenção.
 
-### Exposição — o mercado não vê a empresa
+### Exposição: o mercado não vê a empresa
 Capacidade do sistema de estar presente nos canais onde o ICP está, com frequência adequada,
 competindo por *share of voice*.
 
@@ -52,46 +52,46 @@ competindo por *share of voice*.
 - **Dimensões de score:** (A) Alcance mensal · (B) Frequência e consistência · (C) Share of voice vs. concorrentes · (D) Diversidade de canais · (E) Regularidade estratégica.
 - **Entrada visual obrigatória:** Mapa de Exposição Competitiva (cliente vs. 2+ concorrentes por canal).
 
-### Atenção — quem vê não se importa
+### Atenção: quem vê não se importa
 Capacidade de interromper o padrão automático do público. Atenção **não é** impressão, alcance
-ou visualização automática — é interrupção de padrão, foco voluntário, primeiros segundos sustentados.
+ou visualização automática, é interrupção de padrão, foco voluntário, primeiros segundos sustentados.
 
 - **Sintomas:** CTR abaixo da média do canal; CPM alto com baixo engajamento; baixo tempo médio de visualização; alto CPL sem aumento de volume; criativos genéricos; headline vaga; comunicação igual à concorrência.
 - **Dimensões de score:** (A) CTR/resposta inicial · (B) Diferenciação · (C) Clareza da promessa · (D) Força de interrupção · (E) Competitividade.
-- **Entrada visual obrigatória:** Painel Comparativo de Atenção (headline, promessa, visual, gatilho principal — cliente vs. concorrentes).
+- **Entrada visual obrigatória:** Painel Comparativo de Atenção (headline, promessa, visual, gatilho principal, cliente vs. concorrentes).
 
-### Interesse — chega, mas não aprofunda
+### Interesse: chega, mas não aprofunda
 Nível de envolvimento cognitivo e emocional que mantém o cliente na jornada.
 
 - **Sintomas:** alta rejeição; baixo tempo de permanência; baixa taxa de scroll; baixo consumo de conteúdo; leads que não respondem após o primeiro material; oferta antes da construção de valor.
 - **Dimensões de score:** (A) Tempo de permanência · (B) Estrutura narrativa · (C) Educação e diagnóstico · (D) Provas e diferenciação · (E) Sustentação do engajamento.
 - **Entrada visual obrigatória:** Mapa de Profundidade de Interesse por etapa da jornada.
 
-### Qualificação — quem age não tem perfil
+### Qualificação: quem age não tem perfil
 Processo pelo qual o sistema define o ICP, atrai perfis coerentes e prioriza oportunidades com
-maior probabilidade de gerar throughput sustentável. **Não é "perguntar orçamento"** — é coerência
+maior probabilidade de gerar throughput sustentável. **Não é "perguntar orçamento"**, é coerência
 estratégica entre oferta e público.
 
 - **Sintomas:** alta geração de leads com baixa conversão; volume de leads "sem orçamento"; ticket médio abaixo do planejado; ICP não documentado; comercial reclama da qualidade dos leads.
 - **Dimensões de score:** (A) ICP documentado e claro · (B) Alinhamento ICP vs. leads · (C) Alinhamento ICP vs. clientes · (D) Processo de qualificação · (E) Capacidade de desqualificar.
 - **Entrada visual obrigatória:** Matriz ICP vs. Realidade (ticket, segmento, porte, dor principal, capacidade de pagamento).
 
-### Compromisso — o lead some antes de decidir
+### Compromisso: o lead some antes de decidir
 Ação do cliente que prova intenção real e reduz incerteza: agendar, comparecer, enviar dados,
-dar sinal, fazer check-in. **Compromisso é um passo que custa algo** — tempo, esforço, fricção.
+dar sinal, fazer check-in. **Compromisso é um passo que custa algo**, tempo, esforço, fricção.
 
 - **Sintomas:** alta taxa de no-show; alta taxa de "não responde"; baixa taxa de agendamento após qualificação; queda entre lead qualificado → reunião realizada; muito follow para pouco avanço.
 - **Dimensões de score:** (A) Tempo até 1º contato · (B) Conversão para agendamento · (C) Taxa de comparecimento · (D) Cadência e qualidade de follow-up · (E) Arquitetura do compromisso. *Nota acima de 3 exige evidência formal.*
 - **Entrada visual obrigatória:** Linha do Tempo do Compromisso (mín. 1 caso por modelo de venda; ideal 3).
 
-### Decisão — chega ao fim, mas não fecha
+### Decisão: chega ao fim, mas não fecha
 Momento em que o cliente assume compromisso financeiro. Decisão não é interesse; decisão é conversão.
 
 - **Sintomas:** baixa taxa de fechamento; alto volume de propostas abertas; ciclo de vendas longo; muitos "vou pensar"; proposta genérica; ausência de deadline; follow-up irregular.
 - **Dimensões de score:** (A) Taxa de conversão · (B) Tempo médio de decisão · (C) Estrutura da proposta · (D) Follow-up estruturado · (E) Arquitetura de urgência.
 - **Entrada visual obrigatória:** Matriz de Decisão (clareza da proposta, prazo, follow-up, resolução de objeções, CTA).
 
-### Retenção — vende, mas não se repete
+### Retenção: vende, mas não se repete
 Capacidade de manter clientes economicamente ativos e gerar receita recorrente ou repetida.
 Venda isolada não caracteriza retenção.
 
@@ -104,8 +104,8 @@ Venda isolada não caracteriza retenção.
 
 Cada trava é diagnosticada em **duas camadas**:
 
-1. **Camada analítica** — dados solicitados ao cliente, comparados com benchmarks setoriais e histórico da própria conta.
-2. **Camada experiencial** — validação prática por modelo de venda:
+1. **Camada analítica**: dados solicitados ao cliente, comparados com benchmarks setoriais e histórico da própria conta.
+2. **Camada experiencial**: validação prática por modelo de venda:
    - **Inside Sales:** cliente oculto (primeiro contato, qualificação, proposta, follow-up, pós-venda).
    - **Vendas Online:** jornada real até checkout, mapeando fricções.
    - **PDV:** visita presencial, observação de abordagem e comunicação visual.
@@ -129,7 +129,7 @@ Toda trava diagnosticada termina numa hipótese formulada como **política organ
 
 Exemplos: *"Evitar investimento constante em mídia"*, *"Priorizar volume de leads em vez de
 qualidade"*, *"Evitar pressão de fechamento"*. **Evitar causas operacionais superficiais**
-(ex.: "as pessoas não fazem") — causas-raiz são falhas de estrutura, processo, definição
+(ex.: "as pessoas não fazem"), causas-raiz são falhas de estrutura, processo, definição
 estratégica ou priorização.
 
 ### Determinação preliminar
@@ -169,7 +169,7 @@ Avaliação paralela ao diagnóstico de travas, em três dimensões:
 
 | Nível | Característica |
 |---|---|
-| 1 — Inicial | Presença digital básica, processos informais, baixo uso de dados |
-| 2 — Em estruturação | Canais ativos porém pouco integrados; processos parcialmente definidos; dados usados reativamente |
-| 3 — Estruturado | Canais claros e integrados; processos documentados e repetíveis; uso consistente de indicadores |
-| 4 — Avançado | Estratégia orientada por dados; automação significativa; alta previsibilidade e capacidade de escala |
+| 1 · Inicial | Presença digital básica, processos informais, baixo uso de dados |
+| 2 · Em estruturação | Canais ativos porém pouco integrados; processos parcialmente definidos; dados usados reativamente |
+| 3 · Estruturado | Canais claros e integrados; processos documentados e repetíveis; uso consistente de indicadores |
+| 4 · Avançado | Estratégia orientada por dados; automação significativa; alta previsibilidade e capacidade de escala |

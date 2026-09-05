@@ -1,4 +1,4 @@
-# Contrato e Escopo — Grupo OLX
+# Contrato e Escopo · Grupo OLX
 
 Fonte: *Contrato de Prestação de Serviços de Consultoria* (DR-E).
 Documento original em [assets/originais/](../assets/originais/).
@@ -8,11 +8,11 @@ Documento original em [assets/originais/](../assets/originais/).
 | | |
 |---|---|
 | **CONTRATADA** | V4 COMPANY S.A. · CNPJ 16.961.448/0001-01 · Rua Sérgio Fernandes Borges Soares, 1000, Ed. E2, sala 214, Distrito Industrial, Campinas/SP, CEP 13054-709 |
-| **CONTRATANTE** | Grupo OLX — *qualificação completa a preencher no instrumento* |
+| **CONTRATANTE** | Grupo OLX, *qualificação completa a preencher no instrumento* |
 
 ## 2. Objeto
 
-**Destrava Receita Estratégico (DR-E)** — programa de consultoria estratégica de marketing digital.
+**Destrava Receita Estratégico (DR-E)**: programa de consultoria estratégica de marketing digital.
 
 | Parâmetro | Definição contratual |
 |---|---|
@@ -27,7 +27,7 @@ Documento original em [assets/originais/](../assets/originais/).
 ## 3. Entregáveis contratados (cláusula 1.2)
 
 **Entregáveis estratégicos:**
-- Diagnóstico completo das **7 travas** que bloqueiam o crescimento *(nota: o método opera com 8 — ver [PENDENCIAS.md](../PENDENCIAS.md))*
+- Diagnóstico completo das **7 travas** que bloqueiam o crescimento *(nota: o método opera com 8, ver [PENDENCIAS.md](../PENDENCIAS.md))*
 - Mapeamento do Fluxo de Receita
 - Definição de Posicionamento e Estratégia
 - Plano de Ação priorizado
@@ -53,8 +53,8 @@ Detalhamento operacional em [02-diagnostico/auditorias-contratadas.md](../02-dia
 | Item | Valor |
 |---|---|
 | **Investimento total** | **R$ 752.000,00** |
-| I — Na contratação (50%) | R$ 376.000,00 — no ato da assinatura |
-| II — Sucesso de Implementação (50%) | R$ 376.000,00 — faturado no **12º mês**, mediante conclusão integral da execução e disponibilização das entregas. Pagamento à vista, parcela única, **30 dias do faturamento** |
+| I · Na contratação (50%) | R$ 376.000,00, no ato da assinatura |
+| II: Sucesso de Implementação (50%) | R$ 376.000,00, faturado no **12º mês**, mediante conclusão integral da execução e disponibilização das entregas. Pagamento à vista, parcela única, **30 dias do faturamento** |
 
 > 🔴 **Divergência a resolver:** o e-mail de 10/08/2026 de Mirella Mendonça registra
 > **R$ 740 mil** como valor acordado. O contrato traz **R$ 752 mil** (Δ R$ 12.000).
@@ -62,8 +62,8 @@ Detalhamento operacional em [02-diagnostico/auditorias-contratadas.md](../02-dia
 
 ### Bônus de Sucesso de Implementação (cláusula 3.3)
 
-O investimento tem duas parcelas: **(i)** Valor Fixo — contraprestação pelos serviços;
-**(ii)** Bônus de Sucesso de Implementação — variável, **condicionado ao cumprimento integral do escopo**,
+O investimento tem duas parcelas: **(i)** Valor Fixo, contraprestação pelos serviços;
+**(ii)** Bônus de Sucesso de Implementação, variável, **condicionado ao cumprimento integral do escopo**,
 devido ao final da primeira vigência.
 
 > 🔴 **Divergência crítica.** Três definições diferentes de gatilho do bônus circulam:
@@ -130,7 +130,7 @@ A V4 não responde por conclusões decorrentes de informações incorretas, inco
 ## 8. Propriedade intelectual (cláusula 6)
 
 - Toda a PI do ecossistema V4 (metodologia, tecnologias proprietárias, material desenvolvido) permanece **patrimônio exclusivo da V4**.
-- À OLX é assegurado, mediante adimplência, o direito de **usar internamente** os materiais produzidos — vedada cessão, sublicenciamento, comercialização ou exploração econômica em favor de terceiros.
+- À OLX é assegurado, mediante adimplência, o direito de **usar internamente** os materiais produzidos, vedada cessão, sublicenciamento, comercialização ou exploração econômica em favor de terceiros.
 - Licença de uso **não exclusiva, intransferível e limitada**.
 - Obrigações de não utilização da PI têm **prazo indeterminado** e sobrevivem ao término do contrato.
 
@@ -139,13 +139,13 @@ A V4 não responde por conclusões decorrentes de informações incorretas, inco
 | Item | Condição |
 |---|---|
 | Notificações | Por e-mail aos endereços indicados |
-| Cessão | Vedada sem anuência — **ressalvada a cessão da V4 para outra franquia da rede** |
+| Cessão | Vedada sem anuência, **ressalvada a cessão da V4 para outra franquia da rede** |
 | Não aliciamento | Vigora por **2 anos** após o encerramento da parceria ou saída do colaborador (multa do art. 608 CC) |
 | Responsabilidade | Limitada a danos **diretos** por conduta culposa; teto = valor já pago referente ao período em que ocorreu o dano |
 | Devolução de arquivos | 30 dias após a rescisão; depois a V4 pode descartar sem aviso |
 | Avaliação subjetiva | Satisfação/utilidade percebida **não constitui** critério de inadimplemento |
 | Natureza da relação | Não estabelece sociedade, joint venture, vínculo empregatício ou exclusividade |
-| Título executivo | Sim — art. 784, III, CPC |
+| Título executivo | Sim, art. 784, III, CPC |
 | Foro | Comarca da sede da **CONTRATADA** (Campinas/SP) |
 | Assinatura eletrônica | Válida, inclusive sem certificado ICP-Brasil (MP 2.200-2/2001, art. 10 §2º) |
 

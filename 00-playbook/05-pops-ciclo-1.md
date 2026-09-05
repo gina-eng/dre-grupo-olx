@@ -1,4 +1,4 @@
-# POPs — Ciclo 1
+# POPs · Ciclo 1
 
 Procedimentos Operacionais Padrão, na ordem de execução. Área responsável: **PE&G**.
 Estrutura padrão de cada POP: Objetivo · Escopo · Responsabilidades (RACI) · Entradas ·
@@ -14,9 +14,9 @@ Estabelecer o canal oficial de comunicação.
 - **Observação:** decisões relevantes, alinhamentos e encaminhamentos **sempre** registrados neste canal, para rastreabilidade.
 
 ### 2. Preenchimento do V4.Marketing · 0,5h · DRI: Consultor (garantir que o cliente preencha)
-Coletar informações estruturais do negócio — base mínima de entendimento do contexto comercial e operacional.
+Coletar informações estruturais do negócio, base mínima de entendimento do contexto comercial e operacional.
 
-### 3. Growth Class / Kick-off — Comitê de Receitas · 4h (DR-E) · DRI: Consultor
+### 3. Growth Class / Kick-off · Comitê de Receitas · 4h (DR-E) · DRI: Consultor
 
 | Bloco | Tempo |
 |---|---|
@@ -24,7 +24,7 @@ Coletar informações estruturais do negócio — base mínima de entendimento d
 | Apresentação do consultor | 3 min |
 | Dinâmica de apresentação do time do cliente (nome, cargo, área, principal desafio percebido) | 5–10 min |
 | Sumário da reunião | 3 min |
-| Apresentação do STEP (portfólio V4 — SABER/TER/EXECUTAR) | 5 min |
+| Apresentação do STEP (portfólio V4, SABER/TER/EXECUTAR) | 5 min |
 | Explicação do produto (TOC, fluxo de receita, trava → injeção → plano) | 7 min |
 | Escopo contratado | 5 min |
 | Cronograma | 5 min |
@@ -66,7 +66,7 @@ Solicitar por **categoria**, para reduzir fricção:
 sistema inteiro? · O problema é falta de demanda ou incapacidade de conversão/entrega? · O fluxo cresce
 de forma linear ou aos trancos?
 
-**Indicador de qualidade:** fluxo mapeado com base na realidade — **não no desejado**.
+**Indicador de qualidade:** fluxo mapeado com base na realidade, **não no desejado**.
 
 ### 6. Diagnóstico completo das travas · 2h por trava · DRI: Consultor + GP
 Um POP por trava. Ver [02-travas-de-receita.md](02-travas-de-receita.md) para sintomas, dimensões de
@@ -74,10 +74,10 @@ score, entrada visual obrigatória e ferramentas de cada uma.
 
 ### 7. Definição de Maturidade Digital · 1h · DRI: Consultor
 Três dimensões: Canais Digitais · Processos e Automação · Uso de Dados e Inteligência.
-Classificação em 4 níveis. Avaliação baseada em **evidências objetivas e práticas reais — não discurso**.
+Classificação em 4 níveis. Avaliação baseada em **evidências objetivas e práticas reais, não discurso**.
 
 ### 8. Auditorias contratadas · DRI: especialistas
-Executar conforme contratado. No Grupo OLX são **9 diagnósticos** — ver
+Executar conforme contratado. No Grupo OLX são **9 diagnósticos**, ver
 [02-diagnostico/auditorias-contratadas.md](../02-diagnostico/auditorias-contratadas.md).
 
 ### 9. Revisão do material elaborado · 0,5h · DRI: GP
@@ -113,15 +113,15 @@ Ver [04-toolkit-ltp.md](04-toolkit-ltp.md).
 
 ## Módulo: Comitê 1 (Semana 3–5)
 
-### 16. Aprovação de Material — Comitê 1 · 2h · DRI: GP + Consultor
+### 16. Aprovação de Material · Comitê 1 · 2h · DRI: GP + Consultor
 Gate obrigatório. Ver [03-ciclo-90-dias-e-comites.md § Gate de qualidade](03-ciclo-90-dias-e-comites.md#3-gate-de-qualidade-da-matriz-obrigatório).
 
-### 17. Realização do Comitê 1 — Validação e Otimização · 4h (DR-E) · DRI: GP + Consultor
+### 17. Realização do Comitê 1 · Validação e Otimização · 4h (DR-E) · DRI: GP + Consultor
 
 ## Módulo: Posicionamento Estratégico (Semanas 6–7)
 
 ### 18. Análise SWOT · 1h
-No método, a SWOT **não substitui** diagnóstico de travas, CRT nem definição de injeções —
+No método, a SWOT **não substitui** diagnóstico de travas, CRT nem definição de injeções,
 ela **organiza o contexto** onde essas decisões são tomadas.
 Regras: não confundir fraqueza interna com ameaça externa · não listar desejos como forças ·
 não listar oportunidades sem capacidade interna mínima · priorizar impacto estratégico, não quantidade.
@@ -142,13 +142,13 @@ solução · resultado esperado mensurável.
 ICP = recorte que maximiza a relação entre valor gerado, valor capturado e esforço operacional.
 Não é "quem pode comprar", é quem **deveria** comprar.
 Etapas: análise de clientes existentes → padrões comuns → aderência à oferta → esforço operacional → ICP prioritário (**um**, não uma lista).
-> ICP não é só valor gerado — é **valor gerado por unidade de esforço**.
+> ICP não é só valor gerado, é **valor gerado por unidade de esforço**.
 
 ### 22. Fluxo de Estratégia (Aquisição, Engajamento, Monetização, Retenção) · 1,5h
 Cada macroetapa deve ter papel claro, alimentar a próxima e operar dentro da capacidade do sistema.
 Consolidação obrigatória: *O fluxo está equilibrado ou há sobrecarga? Onde o crescimento trava quando escala?*
 
-## Módulo: LTP — parte 2 (Semanas 6–7)
+## Módulo: LTP: parte 2 (Semanas 6–7)
 
 ### 23. Árvore de Pré-Requisitos (PRT) · 1h
 ### 24. Definição da Injeção + FRT · 3h
@@ -160,7 +160,7 @@ Consolidação obrigatória: *O fluxo está equilibrado ou há sobrecarga? Onde 
 ### 27. Elaboração de Forecast · 2h
 Sistema: <https://v4-revenueflow.lovable.app/>
 
-**Princípio central:** o forecast **não nasce da meta do cliente — nasce da matemática do sistema atual.**
+**Princípio central:** o forecast **não nasce da meta do cliente, nasce da matemática do sistema atual.**
 
 | Etapa | Conteúdo |
 |---|---|
@@ -174,7 +174,7 @@ Sistema: <https://v4-revenueflow.lovable.app/>
 | 8. Grande Forecast | Tabela técnica: receita mensal e acumulada, delta, atingimento, incrementos, evolução do funil |
 
 > **Regra crítica:** o faturamento gerado pelo funil **deve bater** com o faturamento mensal declarado
-> e com o faturamento anual dos últimos 12 meses. Se houver divergência, os dados estão inconsistentes —
+> e com o faturamento anual dos últimos 12 meses. Se houver divergência, os dados estão inconsistentes,
 > ajustar as métricas até validar a matemática do sistema.
 
 > **Regra do tempo de efeito máximo:** tempo menor → maior impacto acumulado.
@@ -184,7 +184,7 @@ Sistema: <https://v4-revenueflow.lovable.app/>
 > entre o cenário atual e o projetado é a alavanca que decidimos mexer."
 
 ### 28. Preparação da Matriz de Expansão · 2h
-Transformar a discussão de crescimento — normalmente intuitiva — em processo estruturado.
+Transformar a discussão de crescimento, normalmente intuitiva, em processo estruturado.
 Cada hipótese de expansão explicita: qual mudança será realizada · qual problema resolve ·
 como impacta o sistema de receita · qual resultado esperado.
 Avaliação: **impacto** (efeito direto sobre a restrição) × **esforço** (tempo, complexidade, novos
@@ -192,8 +192,8 @@ recursos, dependência de terceiros) × **risco**.
 
 ## Módulo: Comitê 2 (Semanas 6–7)
 
-### 29. Aprovação de Material — Comitê 2 · 5h (DR-E, com C-Level) · DRI: GP + Consultor + C-Level
-### 30. Realização do Comitê 2 — Definição de Expansão · 10h (DR-E, presencial) · DRI: GP + Consultor + C-Level
+### 29. Aprovação de Material · Comitê 2 · 5h (DR-E, com C-Level) · DRI: GP + Consultor + C-Level
+### 30. Realização do Comitê 2 · Definição de Expansão · 10h (DR-E, presencial) · DRI: GP + Consultor + C-Level
 
 ## Módulo: Execução e acompanhamento (Semanas 4–11, contínuo)
 
@@ -209,11 +209,11 @@ Ajustes táticos são permitidos desde que **não alterem a estratégia central 
 
 ### 34. Diagnóstico Final e Material de Apresentação da Trava · 1h · DRI: GP + Consultor
 Etapa predominantemente interna. Narrativa em três níveis:
-1. **Compreensão do sistema** — fluxo de receita e indicadores
-2. **Exposição dos problemas** — onde perde eficiência, acumula demanda, gera desperdício
-3. **Explicação causal** — por que a trava identificada é o principal limitador
+1. **Compreensão do sistema**: fluxo de receita e indicadores
+2. **Exposição dos problemas**: onde perde eficiência, acumula demanda, gera desperdício
+3. **Explicação causal**: por que a trava identificada é o principal limitador
 
-> A conclusão deve **emergir naturalmente**, como consequência lógica das evidências —
+> A conclusão deve **emergir naturalmente**, como consequência lógica das evidências,
 > não por convencimento forçado.
 
 Antes do comitê: simular a apresentação, identificar pontos de dúvida e preparar respostas para
@@ -226,5 +226,5 @@ Identificar padrões operacionais: tipos de ação que geram maior impacto · ga
 execução · limitações estruturais do time ou processo.
 
 ### 36. Preparação da Matriz de Expansão (fechamento) · 0,5h
-### 37. Aprovação de Material — Comitê 3 · 2h · DRI: GP + Consultor
-### 38. Realização do Comitê 3 — Definição Final da Trava · 4h (DR-E) · DRI: Consultor + GP
+### 37. Aprovação de Material · Comitê 3 · 2h · DRI: GP + Consultor
+### 38. Realização do Comitê 3 · Definição Final da Trava · 4h (DR-E) · DRI: Consultor + GP

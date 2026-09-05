@@ -1,4 +1,4 @@
-# Toolkit LTP — Logical Thinking Process
+# Toolkit LTP · Logical Thinking Process
 
 O LTP não é um conjunto de ferramentas visuais. É um **processo disciplinado de raciocínio**
 baseado em causa e efeito, criado para transformar intuição difusa em lógica explícita.
@@ -6,7 +6,7 @@ baseado em causa e efeito, criado para transformar intuição difusa em lógica 
 Origem: Teoria das Restrições (Goldratt), formalizado por **H. William Dettmer**.
 Enquanto a TOC responde *onde focar*, o LTP responde *como pensar*.
 
-> **Os diagramas não são o pensamento — são a representação dele.** Quando o foco se desloca para o
+> **Os diagramas não são o pensamento, são a representação dele.** Quando o foco se desloca para o
 > desenho, o método se perde.
 
 ## Quando usar
@@ -32,7 +32,7 @@ forte carga política ou emocional.
 > **Ordem importa.** Cada etapa prepara cognitivamente a próxima. Pular etapas gera análises frágeis
 > e soluções enviesadas.
 
-## 1. UDEs — Efeitos Indesejáveis
+## 1. UDEs · Efeitos Indesejáveis
 
 Ponto de partida. Um UDE é um **padrão recorrente**, não um evento isolado.
 
@@ -50,16 +50,16 @@ Coletar **8 a 15 UDEs**. Somente fatos observáveis, nunca opiniões.
 *Exemplos:* leads chegam mas não convertem · o time comercial reclama da qualidade dos leads ·
 vendas demoram para fechar · CAC está alto · o cliente não consegue escalar investimento.
 
-## 2. CRT — Árvore da Realidade Atual
+## 2. CRT · Árvore da Realidade Atual
 
 **Estrutura:** Causas-raízes → Efeitos intermediários → Efeitos indesejáveis (UDEs)
 
 **Passo a passo:**
 1. Coletar e validar os UDEs.
-2. **Identificar efeitos convergentes** — vários problemas apontando para a mesma causa. Pergunta-chave: *"Se corrigirmos isso, quantos desses problemas deixam de existir?"* Quando um ponto explica vários efeitos → possível trava.
-3. **Diferenciar causa de sintoma** — teste lógico: *"Isso acontece PORQUE outra coisa está acontecendo?"* Se sim, é efeito, não causa-raiz.
-4. **Chegar às causas-raízes** — normalmente falhas de estrutura, processo, definição estratégica ou priorização. **Nunca "as pessoas não fazem".**
-5. **Validar com o cliente** — *"Se essa causa-raiz não existisse, esses efeitos desapareceriam?"*
+2. **Identificar efeitos convergentes**: vários problemas apontando para a mesma causa. Pergunta-chave: *"Se corrigirmos isso, quantos desses problemas deixam de existir?"* Quando um ponto explica vários efeitos → possível trava.
+3. **Diferenciar causa de sintoma**: teste lógico: *"Isso acontece PORQUE outra coisa está acontecendo?"* Se sim, é efeito, não causa-raiz.
+4. **Chegar às causas-raízes**: normalmente falhas de estrutura, processo, definição estratégica ou priorização. **Nunca "as pessoas não fazem".**
+5. **Validar com o cliente**: *"Se essa causa-raiz não existisse, esses efeitos desapareceriam?"*
 
 **Como explicar ao cliente:**
 > "Aqui não estamos buscando culpados. Estamos mostrando como o sistema está configurado hoje
@@ -83,12 +83,12 @@ Objetivo Comum (A)
 As ações D e D' parecem necessárias, mas são mutuamente excludentes.
 
 **Passo a passo:**
-1. Identificar o conflito central — *"Onde vocês sentem que precisam escolher entre duas coisas importantes?"* (crescer rápido vs. manter qualidade; escalar mídia vs. manter ROI)
+1. Identificar o conflito central, *"Onde vocês sentem que precisam escolher entre duas coisas importantes?"* (crescer rápido vs. manter qualidade; escalar mídia vs. manter ROI)
 2. Definir o objetivo comum (A)
-3. Identificar necessidades (B e C) — *"Por que cada lado acredita que sua escolha é necessária?"*
+3. Identificar necessidades (B e C), *"Por que cada lado acredita que sua escolha é necessária?"*
 4. Identificar ações em conflito (D e D')
 5. Validar o conflito com o cliente
-6. **Identificar premissas** — *"Por que acreditam que essa ação é a única forma? Isso é sempre verdade? O que teria que mudar para que ambas as necessidades fossem atendidas?"*
+6. **Identificar premissas**: *"Por que acreditam que essa ação é a única forma? Isso é sempre verdade? O que teria que mudar para que ambas as necessidades fossem atendidas?"*
 7. **Desafiar premissas e gerar a injeção**
 
 **Como explicar ao cliente:**
@@ -98,7 +98,7 @@ As ações D e D' parecem necessárias, mas são mutuamente excludentes.
 
 ## 4. Injeção
 
-A Injeção é a **nova regra do sistema**. Não é uma ação isolada — é mudança de política, critério
+A Injeção é a **nova regra do sistema**. Não é uma ação isolada, é mudança de política, critério
 ou lógica decisória que elimina a causa-raiz.
 
 **Uma boa injeção:**
@@ -111,7 +111,7 @@ ou lógica decisória que elimina a causa-raiz.
 **Origens possíveis da injeção:** CRT direta (lacuna estrutural) · Goal Tree (requisito inexistente) ·
 Nuvem de Conflito (quebra de conflito) · Auditoria/dados (ausência objetiva de estrutura).
 
-## 5. FRT — Árvore da Realidade Futura
+## 5. FRT · Árvore da Realidade Futura
 
 **Estrutura:** Injeção → Efeitos intermediários → Efeitos desejados
 
@@ -128,13 +128,13 @@ Nuvem de Conflito (quebra de conflito) · Auditoria/dados (ausência objetiva de
 
 **Nenhuma solução é considerada válida sem passar pela FRT.**
 
-## 6. PRT — Árvore de Pré-Requisitos
+## 6. PRT · Árvore de Pré-Requisitos
 
 **Usar somente quando há obstáculos relevantes:** injeção estrutural ou complexa · resistência do
 cliente · faltam recursos, pessoas ou sistema · mudança envolve várias áreas · cliente diz "não dá
 para fazer agora".
 
-**Não usar quando** a injeção é simples, não há resistência e a implementação é direta — nesse caso,
+**Não usar quando** a injeção é simples, não há resistência e a implementação é direta, nesse caso,
 ir direto para a Árvore de Transição.
 
 **Estrutura:** Injeção → Obstáculos → Condições necessárias para superá-los

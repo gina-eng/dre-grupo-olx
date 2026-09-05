@@ -1,4 +1,4 @@
-# Criterios de Avaliacao — Cliente Oculto
+# Criterios de Avaliacao · Cliente Oculto
 
 Framework completo para avaliacao de mystery shopping em PMEs brasileiras. Cada criterio tem peso, escala de nota, e exemplos concretos de cada faixa de avaliacao.
 
@@ -38,12 +38,12 @@ Framework completo para avaliacao de mystery shopping em PMEs brasileiras. Cada 
 
 | Nota | Descricao | Exemplo |
 |------|-----------|---------|
-| 9-10 | Personalizada, calorosa, com pergunta de contexto. Se apresentou pelo nome. | "Oi, Marcos! Sou a Ana da [empresa]. Vi que voce tem interesse em [produto]. Me conta um pouco da sua situacao — em que posso te ajudar?" |
+| 9-10 | Personalizada, calorosa, com pergunta de contexto. Se apresentou pelo nome. | "Oi, Marcos! Sou a Ana da [empresa]. Vi que voce tem interesse em [produto]. Me conta um pouco da sua situacao, em que posso te ajudar?" |
 | 7-8 | Boa abordagem, se apresentou, mas poderia ser mais personalizada. | "Ola, tudo bem? Sou o Pedro da [empresa]. Como posso te ajudar?" |
 | 5-6 | Generica mas educada. Nao se apresentou ou nao fez pergunta. | "Ola, obrigado pelo contato! Segue nosso catalogo." |
 | 3-4 | Fria ou mecanica. Parece copiar e colar. | "Boa tarde. Qual servico deseja?" |
 | 1-2 | Rude, confusa ou incoerente. | "Oi" (e espera o lead puxar a conversa) |
-| 0 | Nao houve abordagem. Lead nao foi respondido. | — |
+| 0 | Nao houve abordagem. Lead nao foi respondido. | - |
 
 **O que observar:**
 - O atendente se apresentou pelo nome?
@@ -66,7 +66,7 @@ Framework completo para avaliacao de mystery shopping em PMEs brasileiras. Cada 
 | 5-6 | Fez 1-2 perguntas basicas e ja partiu para a apresentacao. | "Voce quer o servico X ou Y?" e ja enviou proposta |
 | 3-4 | Nao perguntou nada. Apresentou o produto direto. | Mandou catalogo/precos sem perguntar o que o lead precisa |
 | 1-2 | Ignorou o que o lead disse e falou de outra coisa. | Lead fala do problema, atendente responde com promocao |
-| 0 | Nao houve interacao suficiente para avaliar. | — |
+| 0 | Nao houve interacao suficiente para avaliar. | - |
 
 **O que observar:**
 - Quantas perguntas foram feitas antes de apresentar o produto?
@@ -110,7 +110,7 @@ Framework completo para avaliacao de mystery shopping em PMEs brasileiras. Cada 
 | 5-6 | Tentou justificar, mas ficou na superficie. Ou foi direto para desconto. | "O preco e justo pelo que oferecemos" ou "posso ver um desconto" |
 | 3-4 | Ficou defensivo ou desconfortavel com a objecao. | "E esse o preco, nao tem como mudar" ou silencio constrangedor |
 | 1-2 | Deu desconto imediatamente sem justificar. Ou ignorou a objecao. | "Te faco por X, pode ser?" (sem perguntar por que achou caro) |
-| 0 | Nao houve objecao de preco (lead nao chegou a esse ponto) ou atendente sumiu. | — |
+| 0 | Nao houve objecao de preco (lead nao chegou a esse ponto) ou atendente sumiu. | - |
 
 **O que observar:**
 - O atendente perguntou POR QUE achou caro? (comparando com o que?)
@@ -154,8 +154,8 @@ Framework completo para avaliacao de mystery shopping em PMEs brasileiras. Cada 
 | 7-8 | Follow-up em ate 24 horas com conteudo relevante. | "Oi, continuando nossa conversa de ontem, montei uma proposta personalizada pra voce." |
 | 5-6 | Follow-up generico em 24-48 horas. | "Oi, tudo bem? Pensou na proposta?" |
 | 3-4 | Follow-up apenas apos 3+ dias. | "Ola, ainda tem interesse?" (4 dias depois) |
-| 1-2 | Nenhum follow-up em 1 semana. | — |
-| 0 | Nenhum follow-up em 2+ semanas. Lead esquecido. | — |
+| 1-2 | Nenhum follow-up em 1 semana. | - |
+| 0 | Nenhum follow-up em 2+ semanas. Lead esquecido. | - |
 
 **O que observar:**
 - Houve follow-up sem o lead pedir?
@@ -201,5 +201,5 @@ Nota final = (C1 x 0.20) + (C2 x 0.15) + (C3 x 0.15) + (C4 x 0.10) + (C5 x 0.15)
 2. **Responda com atraso realista:** Um lead real nao responde instantaneamente a cada mensagem.
 3. **Demonstre hesitacao real:** Faca perguntas que um comprador cauteloso faria.
 4. **Nao facilite:** Se o atendente nao perguntar algo, nao ofereça a informacao espontaneamente.
-5. **Teste o "vou pensar":** Essa frase e o teste definitivo — o follow-up (ou falta dele) revela muito.
+5. **Teste o "vou pensar":** Essa frase e o teste definitivo, o follow-up (ou falta dele) revela muito.
 6. **Documente tudo:** Print de tela com horarios visíveis e a melhor evidencia.

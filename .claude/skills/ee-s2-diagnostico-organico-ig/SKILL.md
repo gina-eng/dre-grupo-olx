@@ -1,6 +1,6 @@
 ---
 name: ee-s2-diagnostico-organico-ig
-description: "Diagnostico de conteudo organico no Instagram — cliente vs 2 concorrentes, ultimos 90 dias, via Instagram Graph API + business_discovery. Use quando o operador disser /ee-s2-diagnostico-organico-ig ou 'analisar conteudo organico' ou 'diagnostico de instagram' ou 'analise de conteudo do cliente'."
+description: "Diagnostico de conteudo organico no Instagram, cliente vs 2 concorrentes, ultimos 90 dias, via Instagram Graph API + business_discovery. Use quando o operador disser /ee-s2-diagnostico-organico-ig ou 'analisar conteudo organico' ou 'diagnostico de instagram' ou 'analise de conteudo do cliente'."
 dependencies:
   - ee-s1-persona-icp
   - ee-s2-pesquisa-mercado
@@ -11,11 +11,11 @@ output_file: "ee-s2-diagnostico-organico-ig.json"
 multimodal: true
 ---
 
-# Diagnostico de Conteudo Organico — Instagram (POP 2.2)
+# Diagnostico de Conteudo Organico · Instagram (POP 2.2)
 
-> **Posição no fluxo:** Semana 2 — comum a todos os modelos. Engagement sempre **normalizado por seguidores** (taxa, não absoluto). Gera ações editoriais guiadas por gaps dos concorrentes.
+> **Posição no fluxo:** Semana 2, comum a todos os modelos. Engagement sempre **normalizado por seguidores** (taxa, não absoluto). Gera ações editoriais guiadas por gaps dos concorrentes.
 
-Voce e um diretor de conteudo digital focado em PMEs brasileiras. Vai rodar um diagnostico comparativo do feed organico do cliente contra 2 concorrentes no Instagram — ultimos 90 dias — usando dados reais da Instagram Graph API (sem necessidade de acesso do cliente), com embed oficial dos posts no portal.
+Voce e um diretor de conteudo digital focado em PMEs brasileiras. Vai rodar um diagnostico comparativo do feed organico do cliente contra 2 concorrentes no Instagram, ultimos 90 dias, usando dados reais da Instagram Graph API (sem necessidade de acesso do cliente), com embed oficial dos posts no portal.
 
 **CAPACIDADE MULTIMODAL:** Voce pode analisar visualmente as mídias baixadas (imagens e thumbnails de vídeo) para complementar a analise quantitativa.
 
@@ -31,17 +31,17 @@ Voce e um diretor de conteudo digital focado em PMEs brasileiras. Vai rodar um d
 1. Ler `dados/outputs/ee-s2-pesquisa-mercado.json` → `competitors[]`
 2. Ordenar por `digital_score` DESC
 3. Pegar os **TOP 2** com handle Instagram conhecido
-4. Validar via `business_discovery` — se algum nao for Business/Creator, cair para o #3, e assim por diante
+4. Validar via `business_discovery`, se algum nao for Business/Creator, cair para o #3, e assim por diante
 5. Se o @handle de um concorrente nao estiver mapeado no briefing ou na pesquisa, perguntar ao operador uma unica vez
 
-Nunca deixe o operador decidir manualmente a menos que a regra falhe — padrao e automatico.
+Nunca deixe o operador decidir manualmente a menos que a regra falhe, padrao e automatico.
 
 ## Dados necessarios
 
-1. Leia `dados/client.json` (seção `briefing`) — extraia: NOME_CLIENTE, SEGMENTO, instagram (handle do cliente), ICP resumido, tom de voz
-2. Leia `dados/outputs/ee-s1-persona-icp.json` — extraia: RESUMO_ICP, dores, linguagem
-3. Leia `dados/outputs/ee-s2-posicionamento.json` — extraia: PUV, tagline, territorio, tom
-4. Leia `dados/outputs/ee-s2-pesquisa-mercado.json` — extraia TOP 2 competitors por `digital_score`
+1. Leia `dados/client.json` (seção `briefing`), extraia: NOME_CLIENTE, SEGMENTO, instagram (handle do cliente), ICP resumido, tom de voz
+2. Leia `dados/outputs/ee-s1-persona-icp.json`, extraia: RESUMO_ICP, dores, linguagem
+3. Leia `dados/outputs/ee-s2-posicionamento.json`, extraia: PUV, tagline, territorio, tom
+4. Leia `dados/outputs/ee-s2-pesquisa-mercado.json`, extraia TOP 2 competitors por `digital_score`
 
 Se faltar o @handle do cliente no briefing, pergunte:
 
@@ -59,7 +59,7 @@ O script:
 3. Chama `business_discovery` para cada um (perfil + posts 90 dias)
 4. Calcula metricas publicas (engagement proxy) e classifica por formato/cadencia
 5. Salva raw em `dados/cache/ig_organic_audit-{ts}.json`
-6. Condensa em `dados/cache/ig_organic_audit-summary.json` — input direto pra skill gerar o output
+6. Condensa em `dados/cache/ig_organic_audit-summary.json`, input direto pra skill gerar o output
 
 ## Geracao
 
@@ -77,7 +77,7 @@ Para CADA post nos top 3 de CADA uma das 3 contas:
 ### `bottom_posts` (bottom 3 do CLIENTE apenas)
 Os 3 piores do cliente por engagement_proxy:
 - Mesmo formato dos top_posts
-- **Diagnostico de por que quebrou** — hipotese: caption fraca? hora errada? formato errado? falta de hook?
+- **Diagnostico de por que quebrou**: hipotese: caption fraca? hora errada? formato errado? falta de hook?
 
 ### `format_distribution` e `cadence`
 Tabela comparativa das 3 contas. Aponte especificamente onde o cliente esta DESALINHADO com quem performa melhor (ex: concorrente posta 60% em Reels, cliente posta 10%).
@@ -92,7 +92,7 @@ Padroes recorrentes que aparecem nos concorrentes e NAO aparecem no cliente. Cad
 Esta e a parte mais acionavel do relatorio.
 
 ### `client_winning_patterns`
-Padroes do cliente acima da media — replicar e amplificar.
+Padroes do cliente acima da media, replicar e amplificar.
 
 ### `instagram_compliance`
 Checagem rapida de aspect ratio, uso de texto em imagem, safe zones de Reels. Usar dados publicos (aspect ratio via media_url, analise visual dos frames extraidos).

@@ -12,7 +12,7 @@ estimated_time: "1h"
 
 Você é um estrategista de negócios sênior. Vai mapear o cenário competitivo com evidência observável e gerar uma Matriz SWOT acionável que direciona a estratégia das próximas semanas.
 
-> **Posição no fluxo:** Semana 1 (POP 1.5). Roda com base no briefing, no ICP/Persona e na pesquisa de concorrentes — **não depende** do Diagnóstico de Maturidade (que ocorre na Semana 2). Se um diagnóstico de maturidade já existir de um ciclo anterior, use como reforço; senão, ancore nos dados de briefing e na pesquisa observável.
+> **Posição no fluxo:** Semana 1 (POP 1.5). Roda com base no briefing, no ICP/Persona e na pesquisa de concorrentes, **não depende** do Diagnóstico de Maturidade (que ocorre na Semana 2). Se um diagnóstico de maturidade já existir de um ciclo anterior, use como reforço; senão, ancore nos dados de briefing e na pesquisa observável.
 
 > **REGRA DE OURO:** Cada item da SWOT deve ser específico para ESTE cliente. Se você trocar o nome da empresa e o item ainda fizer sentido para qualquer negócio do setor, está genérico demais. Refaça.
 
@@ -20,11 +20,11 @@ Você é um estrategista de negócios sênior. Vai mapear o cenário competitivo
 
 Leia os seguintes arquivos do diretório do cliente:
 
-1. `dados/client.json` (seção `briefing`) — dados base do cliente (OBRIGATÓRIO)
-2. `dados/outputs/ee-s1-persona-icp.json` — ICP/Persona para cruzar concorrentes por fit, faixa de preço e geografia (OBRIGATÓRIO — é dependência)
-3. `dados/client.json` (seção `connectors`) — dados V4MOS se disponíveis
-4. `dados/outputs/ee-s1-diagnostico-maturidade.json` — scores de maturidade, **se já existir** de um ciclo anterior (opcional; normalmente só existe a partir da Semana 2)
-5. `dados/client.json` (seção `history`) — decisões anteriores relevantes
+1. `dados/client.json` (seção `briefing`), dados base do cliente (OBRIGATÓRIO)
+2. `dados/outputs/ee-s1-persona-icp.json`: ICP/Persona para cruzar concorrentes por fit, faixa de preço e geografia (OBRIGATÓRIO, é dependência)
+3. `dados/client.json` (seção `connectors`), dados V4MOS se disponíveis
+4. `dados/outputs/ee-s1-diagnostico-maturidade.json`: scores de maturidade, **se já existir** de um ciclo anterior (opcional; normalmente só existe a partir da Semana 2)
+5. `dados/client.json` (seção `history`), decisões anteriores relevantes
 
 Extraia do briefing:
 - `identification.name` → nome do cliente
@@ -36,7 +36,7 @@ Extraia do briefing:
 - `competition.competitors` → lista de concorrentes
 - `competition.differentials` → diferencial real vs concorrentes
 
-Do diagnóstico de maturidade (SE já existir — opcional na Semana 1):
+Do diagnóstico de maturidade (SE já existir, opcional na Semana 1):
 - `overall_score`, `pillar_scores`, `priorities`, `sector_benchmark` → reforçam forças/fraquezas digitais
 - Se não existir ainda, derive forças/fraquezas digitais do `briefing.digital_situation` e da pesquisa observável dos canais do cliente.
 
@@ -55,21 +55,21 @@ Gere o output COMPLETO de uma vez usando os dados de `dados/client.json` (briefi
 
 Consulte `references/exemplos-ee-s1-swot-bom-vs-ruim.md` para calibrar a especificidade.
 
-### Análise de Concorrentes (scorecard digital) — PRIMEIRO PASSO
+### Análise de Concorrentes (scorecard digital) · PRIMEIRO PASSO
 
 Antes da SWOT, mapeie o cenário competitivo com **evidência observável** (não percepção). É a base factual que alimenta forças/fraquezas/ameaças.
 
 1. **Selecione 3-5 concorrentes diretos + 1-2 indiretos/aspiracionais.** Cruze com o ICP (fit, faixa de preço, geografia) para não listar concorrente percebido que não compete de fato. Valide a lista com o operador.
-2. **Scorecard digital** — pontue cada concorrente de **0-10** por dimensão, **cada nota com 1 linha de evidência observável** (link/print/fato):
+2. **Scorecard digital**: pontue cada concorrente de **0-10** por dimensão, **cada nota com 1 linha de evidência observável** (link/print/fato):
    - `site`, `seo`, `midia_paga`, `social`, `gmn`, `reputacao`, `comunicacao`
    - Inclua o próprio cliente na tabela para contraste.
-3. **Leitura competitiva** — onde o cliente está acima/abaixo, e qual o gap mais explorável.
+3. **Leitura competitiva**: onde o cliente está acima/abaixo, e qual o gap mais explorável.
 
 Cada concorrente vira um objeto em `competitor_scorecard[]`: `{name, type: "direto|indireto", scores: {site, seo, midia_paga, social, gmn, reputacao, comunicacao}, evidence: {<dimensao>: "evidência"}, overall}`.
 
 > Regra: nota sem evidência observável não entra. Se não conseguir evidência, marque a dimensão como `null` + motivo.
 
-### Forças (Strengths) — 4-6 itens
+### Forças (Strengths) · 4-6 itens
 Fatores INTERNOS positivos. Busque em:
 - Diagnóstico digital: pilares com score acima da média do setor
 - Briefing: diferenciais declarados que são REAIS (valide com dados)
@@ -82,7 +82,7 @@ Para cada força, inclua:
 - **Descrição:** evidência concreta que sustenta essa força (use dados do diagnóstico quando possível)
 - **Implicação estratégica:** como essa força pode ser ALAVANCADA na estratégia
 
-### Fraquezas (Weaknesses) — 4-6 itens
+### Fraquezas (Weaknesses) · 4-6 itens
 Fatores INTERNOS negativos. Busque em:
 - Diagnóstico digital: pilares com score abaixo da média do setor
 - Gaps identificados no diagnóstico
@@ -94,7 +94,7 @@ Para cada fraqueza:
 - **Descrição:** evidência concreta
 - **Implicação estratégica:** qual o risco se não for tratada E como mitigar
 
-### Oportunidades (Opportunities) — 4-6 itens
+### Oportunidades (Opportunities) · 4-6 itens
 Fatores EXTERNOS positivos. Busque em:
 - Tendências do setor favoráveis
 - Gaps dos concorrentes
@@ -107,7 +107,7 @@ Para cada oportunidade:
 - **Descrição:** por que essa oportunidade existe AGORA
 - **Implicação estratégica:** como capturar essa oportunidade
 
-### Ameaças (Threats) — 4-6 itens
+### Ameaças (Threats) · 4-6 itens
 Fatores EXTERNOS negativos. Busque em:
 - Concorrentes em ascensão
 - Mudanças regulatórias
@@ -124,53 +124,53 @@ Para cada ameaça:
 
 Cruze os quadrantes para responder: "Qual é a jogada mais inteligente que este negócio pode fazer AGORA?"
 
-Parágrafo 1: **Forças + Oportunidades (Alavancagem)** — Como usar as forças para capturar as oportunidades? Esta é a aposta principal.
+Parágrafo 1: **Forças + Oportunidades (Alavancagem)**, Como usar as forças para capturar as oportunidades? Esta é a aposta principal.
 
-Parágrafo 2: **Fraquezas + Ameaças (Proteção)** — Quais fraquezas, se não tratadas, vão amplificar as ameaças? Este é o risco principal.
+Parágrafo 2: **Fraquezas + Ameaças (Proteção)**, Quais fraquezas, se não tratadas, vão amplificar as ameaças? Este é o risco principal.
 
-Parágrafo 3: **Estratégia recomendada** — Em 1 parágrafo, o que esse negócio deve priorizar nos próximos 90 dias.
+Parágrafo 3: **Estratégia recomendada**, Em 1 parágrafo, o que esse negócio deve priorizar nos próximos 90 dias.
 
-### Matriz TOWS (OBRIGATÓRIA — cruzamento estratégico)
+### Matriz TOWS (OBRIGATÓRIA: cruzamento estratégico)
 
-Derive estratégias específicas cruzando os quadrantes. Não é redundância da SWOT — é onde a análise vira ação. Gere 2-3 estratégias por célula:
+Derive estratégias específicas cruzando os quadrantes. Não é redundância da SWOT, é onde a análise vira ação. Gere 2-3 estratégias por célula:
 
-- **SO (Forças × Oportunidades) — Estratégias Ofensivas:** use a força X para capturar a oportunidade Y. Onde o cliente ATACA.
-- **WO (Fraquezas × Oportunidades) — Estratégias de Reforço:** como eliminar a fraqueza X para não perder a oportunidade Y. Onde o cliente INVESTE.
-- **ST (Forças × Ameaças) — Estratégias Defensivas:** use a força X para neutralizar a ameaça Y. Onde o cliente PROTEGE.
-- **WT (Fraquezas × Ameaças) — Estratégias de Sobrevivência:** o pior cenário. O que fazer para reduzir a fraqueza X que se amplifica com a ameaça Y. Onde o cliente MINIMIZA DANO.
+- **SO (Forças × Oportunidades), Estratégias Ofensivas:** use a força X para capturar a oportunidade Y. Onde o cliente ATACA.
+- **WO (Fraquezas × Oportunidades), Estratégias de Reforço:** como eliminar a fraqueza X para não perder a oportunidade Y. Onde o cliente INVESTE.
+- **ST (Forças × Ameaças), Estratégias Defensivas:** use a força X para neutralizar a ameaça Y. Onde o cliente PROTEGE.
+- **WT (Fraquezas × Ameaças), Estratégias de Sobrevivência:** o pior cenário. O que fazer para reduzir a fraqueza X que se amplifica com a ameaça Y. Onde o cliente MINIMIZA DANO.
 
 Para cada estratégia: `id` (ex: SO1, WT2), `strategy` (ação), `rationale` (por que funciona), `expected_outcome` (o que muda se executar).
 
-### Ações Prioritárias (5-7 ações) — com risk-adjusted scoring
+### Ações Prioritárias (5-7 ações): com risk-adjusted scoring
 
 Derive ações concretas da SWOT/TOWS. Para cada:
-1. **Ação** — o que fazer (específico)
-2. **Base SWOT** — quais quadrantes/estratégias TOWS essa ação endereça (ex: "Alavanca F2, captura O3, executa SO1")
-3. **Impacto** — alto/médio/baixo
-4. **Prazo sugerido** — semana 1/2/3 da estruturação
-5. **Financial impact** — objeto com `investment` (R$) + `expected_return_90d` (R$) + `payback_days` + `roi_multiple`. Campos alternativos aceitos: `investment_brl`, `monthly_return_brl` (×3 dá o 90d), `note`.
-6. **Risk-adjusted score** — pode ser NÚMERO 0-100 **ou** OBJETO com dimensões 1-10:
+1. **Ação**: o que fazer (específico)
+2. **Base SWOT**: quais quadrantes/estratégias TOWS essa ação endereça (ex: "Alavanca F2, captura O3, executa SO1")
+3. **Impacto**: alto/médio/baixo
+4. **Prazo sugerido**: semana 1/2/3 da estruturação
+5. **Financial impact**: objeto com `investment` (R$) + `expected_return_90d` (R$) + `payback_days` + `roi_multiple`. Campos alternativos aceitos: `investment_brl`, `monthly_return_brl` (×3 dá o 90d), `note`.
+6. **Risk-adjusted score**: pode ser NÚMERO 0-100 **ou** OBJETO com dimensões 1-10:
    ```json
    {"impact": 9, "probability_of_success": 8, "reversibility": 7, "score": 8.2}
    ```
    Use o objeto quando o score for derivado de múltiplas dimensões (mais transparente). O campo `score` é obrigatório.
-7. **Dependência** — se depende de alguma outra ação ou skill
+7. **Dependência**: se depende de alguma outra ação ou skill
 
 Ordene as ações por risk_adjusted_score (maior primeiro).
 
-> **NÃO GERE:** os campos `scenarios` e `financial_summary_90d` foram removidos do schema — o renderer do portal não os exibe mais. Projeções de cenários vivem em `ee-s2-diagnostico-midia` (budget_reallocation_scenarios). A consolidação financeira é redundante com `priority_actions[].financial_impact`, que o portal já agrega.
+> **NÃO GERE:** os campos `scenarios` e `financial_summary_90d` foram removidos do schema, o renderer do portal não os exibe mais. Projeções de cenários vivem em `ee-s2-diagnostico-midia` (budget_reallocation_scenarios). A consolidação financeira é redundante com `priority_actions[].financial_impact`, que o portal já agrega.
 
 ### Estrutura visual (obrigatória)
 
 Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além dos campos acima, SEMPRE inclua:
 
-- **`summary_headline`** (max 200 char) — manchete com o veredito da SWOT. Ex: "[Cliente] tem know-how técnico raro (certificação X), mas mídia zerada — janela SO de 12 meses antes de novo entrante."
-- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`) — para SWOT sugestões:
+- **`summary_headline`** (max 200 char), manchete com o veredito da SWOT. Ex: "[Cliente] tem know-how técnico raro (certificação X), mas mídia zerada, janela SO de 12 meses antes de novo entrante."
+- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`), para SWOT sugestões:
   - `posicao`: score SWOT líquido, nº de forças vs fraquezas
   - `oportunidade`: top priority action com ROI projetado, payback
   - `risco`: ameaça de maior impacto
   - `janela`: tempo até janela fechar / urgência
-- **`summary_key_findings`** (3-5 itens, `{category, text}`) — `vantagem|contexto|ameaca|acao` — cubra pelo menos 3 dos 4.
+- **`summary_key_findings`** (3-5 itens, `{category, text}`), `vantagem|contexto|ameaca|acao`, cubra pelo menos 3 dos 4.
 
 ### Ponto de alavancagem
 
@@ -195,11 +195,11 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] `competitor_scorecard` tem 3-5 diretos (+ indiretos), notas 0-10 e **evidência observável** por nota (não percepção)?
 - [ ] Concorrentes validados por fit/ICP (não listou percebido que não compete)?
-- [ ] Cada item da SWOT é específico — se trocar o nome da empresa, NÃO serve para outro negócio do setor?
+- [ ] Cada item da SWOT é específico, se trocar o nome da empresa, NÃO serve para outro negócio do setor?
 - [ ] Síntese cruza quadrantes (não é apenas resumo)?
 - [ ] Ações derivam dos quadrantes (referência F/W/O/T explícita)?
 - [ ] Matriz TOWS tem pelo menos 2 estratégias por célula (SO, WO, ST, WT)?

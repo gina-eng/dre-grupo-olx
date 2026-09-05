@@ -1,11 +1,11 @@
-# Benchmarks de Midia Paga por Setor — PMEs Brasileiras
+# Benchmarks de Midia Paga por Setor · PMEs Brasileiras
 
 ## Como usar estes benchmarks
 
 Estes benchmarks sao REFERENCIAS baseadas em medias de mercado para PMEs brasileiras. Use-os como ponto de partida para o diagnostico, nao como verdade absoluta.
 
 **Fatores que alteram benchmarks:**
-- Regiao (capital vs interior — CPL pode variar 2-3x)
+- Regiao (capital vs interior, CPL pode variar 2-3x)
 - Ticket medio do produto/servico (ticket alto = CPL aceitavel mais alto)
 - Maturidade digital do cliente (contas novas tem CPL mais alto)
 - Sazonalidade (Black Friday, volta as aulas, etc.)
@@ -57,7 +57,7 @@ Estes benchmarks sao REFERENCIAS baseadas em medias de mercado para PMEs brasile
 | CPC (Meta) | R$ 2.00-4.00 | R$ 1.00-6.00 |
 | CPC (Google) | R$ 5.00-12.00 | R$ 3.00-20.00 |
 
-**Observacoes:** CPL alto e aceitavel porque ticket e alto. ROAS e mais relevante que CPL. Imobiliarios tem ciclo de venda longo — considere atribuicao multi-touch.
+**Observacoes:** CPL alto e aceitavel porque ticket e alto. ROAS e mais relevante que CPL. Imobiliarios tem ciclo de venda longo, considere atribuicao multi-touch.
 
 ### 4. Restaurantes / Delivery / Alimentacao
 
@@ -132,7 +132,7 @@ Estes benchmarks sao REFERENCIAS baseadas em medias de mercado para PMEs brasile
 | Conv. LP | 10-20% | 6-30% |
 | CPC (Meta) | R$ 0.80-2.00 | R$ 0.40-3.00 |
 
-**Observacoes:** Webinar/aula gratis tem alta conversao para captura. Lead de "aula gratis" e frio — qualificacao via email/WhatsApp e essencial. Video longo (2-5min) funciona como criativo de topo.
+**Observacoes:** Webinar/aula gratis tem alta conversao para captura. Lead de "aula gratis" e frio, qualificacao via email/WhatsApp e essencial. Video longo (2-5min) funciona como criativo de topo.
 
 ### 10. SaaS / Software B2B
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# meta_ads_fetch.sh — Orquestra scraping da Meta Ads Library com cache de 7 dias.
+# meta_ads_fetch.sh · Orquestra scraping da Meta Ads Library com cache de 7 dias.
 #
 # Uso:
 #   meta_ads_fetch.sh <client_dir> [--force]

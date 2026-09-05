@@ -33,7 +33,7 @@ Pedidos como "forecast", "projeção 12 meses", "forecasting", "modelo AS-IS vs 
 5. Tabela mês a mês (Mês 1 a Mês 12), nas seções: Receita Mensal, Receita Acumulada, Atingimento de Meta, Alavancas de Crescimento (ticket, mídia, CAC, base, churn), Funil de Vendas (7 etapas com taxa e incremento entre elas).
 
 ## Identidade visual (sem azul)
-Fonte Arial. Vermelho profundo 980000 (faixas de cabeçalho), AS-IS E74C3C, Com Injeção C81E1E, verde 00A878 (deltas e meta batida), texto 2D3748, secundário 4A5568, rótulo 6C757D. Faixa de seção FDECEC, célula da injeção FFF0EC, célula do delta E8F8F3. Sem gridlines. Congelar em B15.
+Fonte IBM Plex Sans (padrao tipografico da V4). Vermelho profundo 980000 (faixas de cabeçalho), AS-IS E74C3C, Com Injeção C81E1E, verde 00A878 (deltas e meta batida), texto 2D3748, secundário 4A5568, rótulo 6C757D. Faixa de seção FDECEC, célula da injeção FFF0EC, célula do delta E8F8F3. Sem gridlines. Congelar em B15.
 
 ## Convenções de formatação (idênticas à referência)
 - Dinheiro na tabela: R$41.000 (sem espaço, ponto de milhar). Nos cartões: R$ 41.000 (com espaço).

@@ -16,7 +16,7 @@
   "properties": {
     "client_name": {
       "type": "string",
-      "description": "Nome do cliente — sempre presente em todo output."
+      "description": "Nome do cliente, sempre presente em todo output."
     },
     "summary": {
       "type": "string",

@@ -720,7 +720,7 @@
     },
     "forecast_sensitivity_analysis": {
       "type": "object",
-      "description": "Análise de sensibilidade da meta: base_case + variações what-if. NOTA: o renderer do portal NÃO exibe mais o gráfico de sensibilidade — apenas os cards de detalhe (base_case + lista de variations). Mantenha os dados ricos mesmo assim, eles alimentam os cards.",
+      "description": "Análise de sensibilidade da meta: base_case + variações what-if. NOTA: o renderer do portal NÃO exibe mais o gráfico de sensibilidade, apenas os cards de detalhe (base_case + lista de variations). Mantenha os dados ricos mesmo assim, eles alimentam os cards.",
       "properties": {
         "description": {
           "type": "string"
@@ -790,7 +790,7 @@
                   "string",
                   "number"
                 ],
-                "description": "Alternativa numérica — variação em leads/mês no 90d."
+                "description": "Alternativa numérica, variação em leads/mês no 90d."
               },
               "impact_on_cpl": {
                 "type": "string",
@@ -828,7 +828,7 @@
     },
     "key_insight": {
       "type": "object",
-      "description": "Ponto de alavancagem desta skill — o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
+      "description": "Ponto de alavancagem desta skill, o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
       "properties": {
         "headline": {
           "type": "string",
@@ -859,7 +859,7 @@
   "definitions": {
     "budgetScenario": {
       "type": "object",
-      "description": "Cenário de realocação de budget. Aceita dois conjuntos de nomes — o renderer do portal usa '??' para cair no alternativo quando o preferido está ausente.",
+      "description": "Cenário de realocação de budget. Aceita dois conjuntos de nomes, o renderer do portal usa '??' para cair no alternativo quando o preferido está ausente.",
       "properties": {
         "name": {
           "type": "string",

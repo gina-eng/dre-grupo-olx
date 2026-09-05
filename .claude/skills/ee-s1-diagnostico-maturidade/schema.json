@@ -18,7 +18,7 @@
   "properties": {
     "client_name": {
       "type": "string",
-      "description": "Nome do cliente — sempre presente em todo output."
+      "description": "Nome do cliente, sempre presente em todo output."
     },
     "summary": {
       "type": "string",
@@ -327,7 +327,7 @@
     },
     "key_insight": {
       "type": "object",
-      "description": "Ponto de alavancagem desta skill — o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
+      "description": "Ponto de alavancagem desta skill, o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
       "properties": {
         "headline": {
           "type": "string",

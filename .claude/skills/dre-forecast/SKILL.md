@@ -5,16 +5,16 @@ dependencies:
   - dre-fluxo-receita
   - dre-consolidacao-causal
 tools: []
-fase: "3 — Alinhar"
+fase: "3, Alinhar"
 estimated_time: "2h"
 output_file: "dre-forecast.json"
 ---
 
-# DR-E — Forecast de 12 Meses (POP 27)
+# DR-E · Forecast de 12 Meses (POP 27)
 
 Sistema: <https://v4-revenueflow.lovable.app/>
 
-> **Principio central:** o forecast **nao nasce da meta do cliente — nasce da matematica do sistema atual.** A unica diferenca entre o cenario atual e o projetado e a alavanca que decidimos mexer.
+> **Principio central:** o forecast **nao nasce da meta do cliente, nasce da matematica do sistema atual.** A unica diferenca entre o cenario atual e o projetado e a alavanca que decidimos mexer.
 
 ## Pre-condicoes
 
@@ -37,10 +37,10 @@ Sistema: <https://v4-revenueflow.lovable.app/>
 
 ## Regras duras
 
-1. **O faturamento gerado pelo funil deve bater** com o faturamento mensal declarado e com o faturamento anual dos ultimos 12 meses. Divergencia significa dados inconsistentes — ajuste as metricas ate a matematica fechar. Nao "arredonde para bater": encontre o erro.
-2. **Tempo de efeito maximo:** quanto menor o tempo, maior o impacto acumulado. Seja conservador — tempo de efeito otimista e a forma mais comum de inflar forecast sem perceber.
+1. **O faturamento gerado pelo funil deve bater** com o faturamento mensal declarado e com o faturamento anual dos ultimos 12 meses. Divergencia significa dados inconsistentes, ajuste as metricas ate a matematica fechar. Nao "arredonde para bater": encontre o erro.
+2. **Tempo de efeito maximo:** quanto menor o tempo, maior o impacto acumulado. Seja conservador, tempo de efeito otimista e a forma mais comum de inflar forecast sem perceber.
 3. **Uma injecao por forecast.** Duas alavancas simultaneas tornam impossivel atribuir o resultado.
-4. **A meta do cliente entra como linha de referencia, nao como premissa.** Se a linha "Com Injecao" nao alcanca a meta, isso e o achado — e a conversa mais util do comite.
+4. **A meta do cliente entra como linha de referencia, nao como premissa.** Se a linha "Com Injecao" nao alcanca a meta, isso e o achado, e a conversa mais util do comite.
 
 ## Parametros a validar antes de rodar
 
@@ -62,13 +62,13 @@ Para o modelo em planilha: `.venv/bin/python .claude/scripts/build_forecast_v4_c
 
 Salve `dados/outputs/dre-forecast.json` seguindo `.claude/shared-templates/PADRAO-OUTPUT.md` mais:
 
-- `projeto_revenueflow` — url, razao social usada
-- `parametros` — cada um com `valor`, `fonte`, `estimado`
-- `validacao_funil` — `receita_derivada`, `receita_declarada_12m`, `receita_mes_atual`, `divergencia_pct`, `fechou` (boolean)
-- `injecao` — `trava`, `metrica`, `melhoria_pct`, `tempo_efeito_meses`, `justificativa`
-- `linhas` — `meta[]`, `atual_organico[]`, `com_injecao[]` (12 meses cada)
-- `grande_forecast[]` — mes, receita, acumulado, delta, atingimento_pct, funil
-- `atinge_meta` — boolean + gap
+- `projeto_revenueflow`: url, razao social usada
+- `parametros`: cada um com `valor`, `fonte`, `estimado`
+- `validacao_funil`: `receita_derivada`, `receita_declarada_12m`, `receita_mes_atual`, `divergencia_pct`, `fechou` (boolean)
+- `injecao`: `trava`, `metrica`, `melhoria_pct`, `tempo_efeito_meses`, `justificativa`
+- `linhas`: `meta[]`, `atual_organico[]`, `com_injecao[]` (12 meses cada)
+- `grande_forecast[]`: mes, receita, acumulado, delta, atingimento_pct, funil
+- `atinge_meta`: boolean + gap
 
 ## Como explicar ao cliente
 

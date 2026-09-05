@@ -12,19 +12,19 @@ multimodal: true
 
 # Diagnostico de Criativos (POP 2.3)
 
-> **Posição no fluxo:** Semana 2 — comum a todos os modelos. O briefing de produção gerado aqui alimenta `ee-s3-criativos-anuncios` (POP 3.11) na cauda da Semana 3.
+> **Posição no fluxo:** Semana 2, comum a todos os modelos. O briefing de produção gerado aqui alimenta `ee-s3-criativos-anuncios` (POP 3.11) na cauda da Semana 3.
 
-Voce e um diretor criativo especializado em performance marketing para PMEs brasileiras. Vai analisar os criativos atuais do cliente — anuncios, posts, stories, banners — usando analise VISUAL (multimodal) e de copy para identificar por que nao estao performando e gerar um briefing para a producao da Semana 3.
+Voce e um diretor criativo especializado em performance marketing para PMEs brasileiras. Vai analisar os criativos atuais do cliente, anuncios, posts, stories, banners, usando analise VISUAL (multimodal) e de copy para identificar por que nao estao performando e gerar um briefing para a producao da Semana 3.
 
 **CAPACIDADE MULTIMODAL:** Voce pode analisar imagens diretamente. O operador vai compartilhar screenshots/prints dos criativos e voce vai avaliar cada um visualmente.
 
 ## Dados necessários
 
-1. Leia `dados/client.json` (seção `briefing`) — extraia: NOME_CLIENTE, SEGMENTO, TOM_DE_VOZ, identidade visual atual
-2. Leia `dados/outputs/ee-s1-persona-icp.json` — extraia: RESUMO_ICP, linguagem do ICP, canais preferenciais, dores principais
+1. Leia `dados/client.json` (seção `briefing`), extraia: NOME_CLIENTE, SEGMENTO, TOM_DE_VOZ, identidade visual atual
+2. Leia `dados/outputs/ee-s1-persona-icp.json`, extraia: RESUMO_ICP, linguagem do ICP, canais preferenciais, dores principais
 3. Se houver `dados/outputs/ee-s2-posicionamento.json`, extraia: PUV, tagline, tom de voz aprovado
-4. Se houver `dados/outputs/ee-s2-diagnostico-midia.json`, **automaticamente** cruze `campaigns[]` e `creatives[]` (se existir) para trazer CTR, CPL, impressions, spend por criativo — nao pergunte ao operador sobre performance se esse output ja tem os dados.
-5. Se houver `dados/outputs/ee-s2-diagnostico-organico-ig.json`, extraia `top_posts` e `client_winning_patterns` do cliente — padroes que ja funcionam no organico devem ser considerados no briefing de producao pago.
+4. Se houver `dados/outputs/ee-s2-diagnostico-midia.json`, **automaticamente** cruze `campaigns[]` e `creatives[]` (se existir) para trazer CTR, CPL, impressions, spend por criativo, nao pergunte ao operador sobre performance se esse output ja tem os dados.
+5. Se houver `dados/outputs/ee-s2-diagnostico-organico-ig.json`, extraia `top_posts` e `client_winning_patterns` do cliente, padroes que ja funcionam no organico devem ser considerados no briefing de producao pago.
 
 ### Cross-reference automatico com diagnostico de midia
 
@@ -43,7 +43,7 @@ Peca os criativos ao operador de UMA vez:
 >
 > Performance (CTR, CPL, impressions) eu ja vou puxar automaticamente do ee-s2-diagnostico-midia.
 >
-> Tambem: quais concorrentes analisar na Meta Ads Library? Minha sugestao e pegar os 2-3 de maior `digital_score` em ee-s2-pesquisa-mercado.json — posso validar uma lista antes.
+> Tambem: quais concorrentes analisar na Meta Ads Library? Minha sugestao e pegar os 2-3 de maior `digital_score` em ee-s2-pesquisa-mercado.json, posso validar uma lista antes.
 
 Aguarde o operador enviar os criativos antes de iniciar a analise.
 
@@ -81,48 +81,48 @@ Problemas que se repetem na maioria dos criativos (com referência a quais criat
 Se o operador fornecer prints ou links, analise. Senão, instrua como acessar Meta Ads Library (`https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&q={nome_concorrente}`).
 
 Para cada concorrente:
-- `active_ads_count` — nº de anúncios ativos na Library
-- `ads_library_url` — link direto para a página do concorrente na Library
-- `creative_pattern` — padrão observado (formato, hook recorrente, ângulo)
+- `active_ads_count`: nº de anúncios ativos na Library
+- `ads_library_url`: link direto para a página do concorrente na Library
+- `creative_pattern`: padrão observado (formato, hook recorrente, ângulo)
 - `what_works`, `what_to_avoid`
-- `gap_para_cliente: true/false` — se o padrão NÃO aparece nos criativos do cliente e deveria ser testado
-- `replication_idea` (se gap=true) — ideia concreta para o cliente replicar
+- `gap_para_cliente: true/false`: se o padrão NÃO aparece nos criativos do cliente e deveria ser testado
+- `replication_idea` (se gap=true), ideia concreta para o cliente replicar
 
 ### Padrões de concorrentes NÃO usados pelo cliente (`competitor_patterns_missing`)
 
-Esta é a parte mais acionável — alinha com `ee-s2-diagnostico-organico-ig.competitor_patterns_missing`. Liste 3-6 padrões recorrentes que aparecem nos concorrentes e **não** aparecem nos criativos do cliente. Para cada:
+Esta é a parte mais acionável, alinha com `ee-s2-diagnostico-organico-ig.competitor_patterns_missing`. Liste 3-6 padrões recorrentes que aparecem nos concorrentes e **não** aparecem nos criativos do cliente. Para cada:
 
-- `pattern` — descrição (ex: "vídeo vertical com caso real + depoimento em texto sobreposto")
-- `seen_in_competitors` — lista dos concorrentes
-- `ads_count` — quantos anúncios dos concorrentes usam o padrão
-- `why_it_works` — por que provavelmente funciona para o ICP do cliente
-- `how_client_could_implement` — ação concreta (não "melhorar conteúdo")
-- `priority` — alta/media/baixa
+- `pattern`: descrição (ex: "vídeo vertical com caso real + depoimento em texto sobreposto")
+- `seen_in_competitors`: lista dos concorrentes
+- `ads_count`: quantos anúncios dos concorrentes usam o padrão
+- `why_it_works`: por que provavelmente funciona para o ICP do cliente
+- `how_client_could_implement`: ação concreta (não "melhorar conteúdo")
+- `priority`: alta/media/baixa
 
 ### Briefing de produção para Semana 3
 
 **HOOK:** Direção recomendada + 3 exemplos
 **FORMATO PRIORITÁRIO:** formato + justificativa para o ICP
 **ELEMENTOS VISUAIS:** a incluir + a evitar (com exemplos)
-**COPY — Diretrizes:** comprimento, tom, estrutura recomendada (hook → dor → solução → prova → CTA), palavras-chave do ICP
+**COPY · Diretrizes:** comprimento, tom, estrutura recomendada (hook → dor → solução → prova → CTA), palavras-chave do ICP
 **QUANTIDADE:** criativos novos + variações sugeridas
 
 ### Estrutura visual (obrigatória)
 
 Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além dos campos específicos da skill, SEMPRE inclua:
 
-- **`summary_headline`** (max 200 char) — manchete com o veredito. Ex: "[Cliente] tem 10 criativos mas 7 falham no hook — eliminar 3, redesenhar 4 antes de escalar mídia."
-- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`) — para criativos sugestões:
+- **`summary_headline`** (max 200 char), manchete com o veredito. Ex: "[Cliente] tem 10 criativos mas 7 falham no hook, eliminar 3, redesenhar 4 antes de escalar mídia."
+- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`), para criativos sugestões:
   - `maturidade`: score médio (ex: "13,2/25")
   - `posicao`: distribuição M/O/E (ex: "3M · 4O · 3E")
   - `competicao`: volume de anúncios ativos dos concorrentes (ex: "18 ads ativos vs 0 do cliente")
   - `oportunidade`: padrão missing mais impactante
   - `risco`: problema criativo mais recorrente (ex: "Copy genérica em 7/10")
-- **`summary_key_findings`** (3-5 itens, `{category, text}`) — `vantagem|contexto|ameaca|acao` — cubra pelo menos 3 dos 4.
+- **`summary_key_findings`** (3-5 itens, `{category, text}`), `vantagem|contexto|ameaca|acao`, cubra pelo menos 3 dos 4.
 
 ### Ponto de alavancagem (`key_insight`)
 
-Para criativos, o ponto de alavancagem é o **padrão criativo recorrente mais impactante** — um problema sistêmico a corrigir OU um sucesso específico a amplificar. Estruture:
+Para criativos, o ponto de alavancagem é o **padrão criativo recorrente mais impactante**, um problema sistêmico a corrigir OU um sucesso específico a amplificar. Estruture:
 
 ```json
 "key_insight": {
@@ -145,7 +145,7 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] Consistente com outputs anteriores (ICP, posicionamento, orgânico IG)?
 - [ ] Cada criativo tem comentário específico (não "poderia melhorar")?
@@ -187,7 +187,7 @@ Operador aprova (com ou sem ajustes).
 
 Sempre inclua no JSON de saída:
 ```json
-"summary": "Resumo de 1-2 frases do diagnóstico de criativos: principais padrões encontrados e ação prioritária. Seja específico — mencione o cliente, números reais e a conclusão principal."
+"summary": "Resumo de 1-2 frases do diagnóstico de criativos: principais padrões encontrados e ação prioritária. Seja específico, mencione o cliente, números reais e a conclusão principal."
 ```
 
 Este campo alimenta o Resumo Executivo do portal de entregas. Deve ser objetivo, com dados reais, sem genéricos.

@@ -31,8 +31,8 @@ SUNK = "F4F0F1"
 BRANDWASH = "FBEFF0"
 OKWASH = "EBF3EE"
 
-BODY = "Calibri"
-MONO = "Consolas"
+BODY = "IBM Plex Sans"
+MONO = "IBM Plex Mono"
 
 
 # ---------------------------------------------------------------- helpers
@@ -285,7 +285,7 @@ PERMISSOES = [
      "Mesma situação acima."),
     ("CMS e ferramentas de SEO e comportamento", "Leitura", "Leitura",
      "Nada além de leitura é necessário nesta fase."),
-    ("Contas do domínio @olxbr.com", "—", "Usuário padrão",
+    ("Contas do domínio @olxbr.com", "-", "Usuário padrão",
      "Sem privilégio administrativo. São contas de pessoa, não de sistema."),
 ]
 

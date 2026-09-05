@@ -2,7 +2,7 @@
 
 ## Benchmarks de Conversao por Segmento
 
-Os benchmarks abaixo sao baseados em dados agregados de PMEs brasileiras atendidas em programas de aceleracao comercial, pesquisas do SEBRAE, RD Station e Resultados Digitais. Use como referencia — ajuste conforme a realidade do segmento e regiao do cliente.
+Os benchmarks abaixo sao baseados em dados agregados de PMEs brasileiras atendidas em programas de aceleracao comercial, pesquisas do SEBRAE, RD Station e Resultados Digitais. Use como referencia, ajuste conforme a realidade do segmento e regiao do cliente.
 
 ### Servicos Profissionais (Consultorias, Contabilidade, Advocacia, TI)
 | Etapa | Benchmark (mediana) | Faixa aceitavel | Sinal de alerta |

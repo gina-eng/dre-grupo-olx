@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-meta_ads_fetch.py — Scraper headless da Meta Ads Library.
+meta_ads_fetch.py: Scraper headless da Meta Ads Library.
 
 Uso:
     python3 meta_ads_fetch.py <client_dir> \\
@@ -19,7 +19,7 @@ Caso contrario, busca por nome.
 Output:
     <client_dir>/assets/creatives/meta/<slug>/<ad_id>/
         image.jpg
-        video.mp4 (se houver — opcional)
+        video.mp4 (se houver, opcional)
         metadata.json
     <client_dir>/assets/creatives/meta/<slug>/_manifest.json
     <client_dir>/cache/meta_ads_fetch-<ts>.json   (raw)
@@ -132,7 +132,7 @@ def extract_ads_from_html(html: str, max_ads: int | None = None) -> list[dict]:
     ads: list[dict] = []
     seen_ids: set[str] = set()
 
-    # Match cada collated_result individualmente — mais tolerante a mudancas de estrutura
+    # Match cada collated_result individualmente: mais tolerante a mudancas de estrutura
     # Procura "ad_archive_id":"NNNN" e, a partir dali, lê o objeto JSON correspondente
     # usando contagem de chaves.
     pattern = _re.compile(r'"ad_archive_id":"(\d+)"')
@@ -192,7 +192,7 @@ def extract_ads_from_html(html: str, max_ads: int | None = None) -> list[dict]:
         except Exception:
             continue
         if obj.get("ad_archive_id") != ad_id:
-            # Nao era o collated_result em si (provavelmente um wrapper) — pula
+            # Nao era o collated_result em si (provavelmente um wrapper): pula
             continue
         seen_ids.add(ad_id)
 
@@ -275,7 +275,7 @@ def extract_ads_from_html(html: str, max_ads: int | None = None) -> list[dict]:
 
 EXTRACT_JS = r"""
 () => {
-  // Coleta cards — Meta DOM muda seguido, tentamos varios anchors.
+  // Coleta cards, Meta DOM muda seguido, tentamos varios anchors.
   const ads = [];
   const seen = new Set();
 
@@ -312,7 +312,7 @@ EXTRACT_JS = r"""
     const dateMatch = text.match(/(Started running on|Running since|Veiculando desde|Veiculado desde|Iniciou em)\s*([^\n\r•]+)/i);
     if (dateMatch) startDate = dateMatch[2].trim();
 
-    // Plataformas — Meta mostra aria-labels de icones
+    // Plataformas, Meta mostra aria-labels de icones
     const platforms = [];
     card.querySelectorAll('[aria-label]').forEach(el => {
       const a = (el.getAttribute('aria-label') || '').toLowerCase();
@@ -533,7 +533,7 @@ async def main_async(args) -> int:
                     if download_media(image_url, dest):
                         image_saved = str(dest.relative_to(client_dir))
 
-                # Video: nao baixamos (grande demais pra commitar) — guardamos URL direto
+                # Video: nao baixamos (grande demais pra commitar): guardamos URL direto
                 video_url = None
                 if ad.get("video_urls"):
                     video_url = ad["video_urls"][0]

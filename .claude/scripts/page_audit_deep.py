@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-page_audit_deep.py — Auditoria profunda via Playwright headless.
+page_audit_deep.py: Auditoria profunda via Playwright headless.
 
 Captura:
   - tracking_stack: quais ferramentas (GTM, GA4, Meta Pixel, Clarity, etc.) estao presentes
@@ -318,7 +318,7 @@ def compute_quality_flags(detected_tools, ga4_events, meta_events, datalayer, id
             "severity": "high",
             "flag": "meta_pixel_duplicated",
             "title": f"Meta Pixel duplicado ({len(pixels)} IDs)",
-            "detail": f"IDs: {pixels}. Eventos sao disparados duas vezes — duplica dados em Business Manager e gasta budget em audiencias infladas.",
+            "detail": f"IDs: {pixels}. Eventos sao disparados duas vezes, duplica dados em Business Manager e gasta budget em audiencias infladas.",
         })
 
     # 3. GA4 sem PageView
@@ -367,7 +367,7 @@ def compute_quality_flags(detected_tools, ga4_events, meta_events, datalayer, id
                 "severity": "medium",
                 "flag": "datalayer_empty",
                 "title": "dataLayer praticamente vazio",
-                "detail": "Sem variaveis customizadas no dataLayer alem do gtm.js. Nao ha contexto sendo passado ao GTM — eventos ricos (user_id, ecommerce, form_step) sao impossiveis.",
+                "detail": "Sem variaveis customizadas no dataLayer alem do gtm.js. Nao ha contexto sendo passado ao GTM, eventos ricos (user_id, ecommerce, form_step) sao impossiveis.",
             })
 
     # 8. GTM instalado sem GA4 nem Pixel
@@ -376,7 +376,7 @@ def compute_quality_flags(detected_tools, ga4_events, meta_events, datalayer, id
             "severity": "critical",
             "flag": "gtm_without_analytics",
             "title": "GTM instalado sem GA4 nem Meta Pixel",
-            "detail": "Container GTM carrega mas nao dispara nenhuma tag de analytics ou ads conhecida. Investimento em midia opera cego — sem atribuicao de conversao.",
+            "detail": "Container GTM carrega mas nao dispara nenhuma tag de analytics ou ads conhecida. Investimento em midia opera cego, sem atribuicao de conversao.",
         })
 
     # 9. GA4 instalado mas sem Google Ads vinculado
@@ -386,7 +386,7 @@ def compute_quality_flags(detected_tools, ga4_events, meta_events, datalayer, id
             "severity": "low",
             "flag": "ga4_no_google_ads",
             "title": "GA4 presente mas sem tag Google Ads",
-            "detail": "Nao e red flag se cliente nao faz Google Ads. Se faz, conversoes nao estao importando para Ads — revisar vinculo GA4↔Ads.",
+            "detail": "Nao e red flag se cliente nao faz Google Ads. Se faz, conversoes nao estao importando para Ads, revisar vinculo GA4↔Ads.",
         })
 
     # 10. Multiplos containers GTM
@@ -658,7 +658,7 @@ async def audit_compliance_pass(browser, url: str):
             await page.wait_for_load_state("networkidle", timeout=IDLE_TIMEOUT_MS)
         except PWTimeout:
             pass
-        # NAO interagir com CMP — ficar parado
+        # NAO interagir com CMP: ficar parado
         await page.wait_for_timeout(2500)
     except Exception as e:
         nav_error = str(e)
@@ -700,7 +700,7 @@ def build_compliance_report(compliance_pass, detected_tools):
 
     issues = []
     if not has_cmp:
-        issues.append("Sem CMP detectado — sem mecanismo de consentimento.")
+        issues.append("Sem CMP detectado, sem mecanismo de consentimento.")
     if pre_count > 0:
         issues.append(f"{pre_count} requests de tracking disparam ANTES de qualquer consentimento.")
         for pat, urls in pre_trackers.items():

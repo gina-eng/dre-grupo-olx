@@ -1,5 +1,5 @@
 #!/bin/bash
-# ig_organic_audit.sh — Orquestra a auditoria de conteudo organico no Instagram
+# ig_organic_audit.sh · Orquestra a auditoria de conteudo organico no Instagram
 # Uso:  ig_organic_audit.sh <client_dir>
 # Ex:   ig_organic_audit.sh clientes/<slug-do-cliente>
 #

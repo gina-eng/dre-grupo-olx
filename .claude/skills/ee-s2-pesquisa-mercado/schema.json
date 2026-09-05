@@ -179,7 +179,7 @@
           "properties": {
             "value_brl": {
               "type": "number",
-              "description": "Valor do SOM em reais (anual). Teto de mercado capturavel — NAO derivar da meta do cliente, NAO limitar pela capacidade interna."
+              "description": "Valor do SOM em reais (anual). Teto de mercado capturavel, NAO derivar da meta do cliente, NAO limitar pela capacidade interna."
             },
             "description": {
               "type": "string",
@@ -194,7 +194,7 @@
             },
             "operational_ceiling_note": {
               "type": "string",
-              "description": "Nota opcional descrevendo o teto de capacidade operacional atual (ex: 'estrutura atual de 3 vets topa em R$ 5,4M — R$ 1,6M entre capacidade e SOM exigem expansao futura'). Separa restricao INTERNA (capacidade) do SOM (mercado)."
+              "description": "Nota opcional descrevendo o teto de capacidade operacional atual (ex: 'estrutura atual de 3 vets topa em R$ 5,4M, R$ 1,6M entre capacidade e SOM exigem expansao futura'). Separa restricao INTERNA (capacidade) do SOM (mercado)."
             },
             "related_but_separate": {
               "type": "object",
@@ -214,7 +214,7 @@
                 },
                 "note": {
                   "type": "string",
-                  "description": "Narrativa explicando relacao entre metas e SOM — enfatizando que metas sao aspiracao operacional, nao metrica de mercado."
+                  "description": "Narrativa explicando relacao entre metas e SOM, enfatizando que metas sao aspiracao operacional, nao metrica de mercado."
                 }
               }
             }
@@ -541,7 +541,7 @@
         },
         "target_share_of_sam_pct": {
           "type": "number",
-          "description": "% do SAM que o SOM representa. Sem 'target_scenario' — SOM e metrica unica, nao cenarios."
+          "description": "% do SAM que o SOM representa. Sem 'target_scenario', SOM e metrica unica, nao cenarios."
         },
         "gap_to_som_brl": {
           "type": "number",
@@ -557,7 +557,7 @@
         },
         "client_annual_revenue_goal_brl": {
           "type": "number",
-          "description": "Meta comercial anual registrada pela cliente — SEPARADA do SOM. Use a meta oficial (V4MOS se houver). NAO usar como SOM."
+          "description": "Meta comercial anual registrada pela cliente, SEPARADA do SOM. Use a meta oficial (V4MOS se houver). NAO usar como SOM."
         },
         "client_annual_revenue_goal_source": {
           "type": "string",
@@ -573,11 +573,11 @@
         },
         "enderecavel_composition": {
           "type": "string",
-          "description": "Como chegou ao valor do enderecavel — composicao dos subsegmentos somados (ex: 'Premium humanizado R$17M + 20% do medio R$2,9M = R$20M')."
+          "description": "Como chegou ao valor do enderecavel, composicao dos subsegmentos somados (ex: 'Premium humanizado R$17M + 20% do medio R$2,9M = R$20M')."
         },
         "enderecavel_note": {
           "type": "string",
-          "description": "Explicacao pedagogica da camada enderecavel — renderizada no portal abaixo do grafico Market Share. Tipicamente explica: (1) que o SAM tem perfis diversos; (2) quais perfis o cliente NAO persegue por decisao estrategica; (3) separa barreira de escolha (SAM->Enderecavel) de barreira competitiva (Enderecavel->SOM)."
+          "description": "Explicacao pedagogica da camada enderecavel, renderizada no portal abaixo do grafico Market Share. Tipicamente explica: (1) que o SAM tem perfis diversos; (2) quais perfis o cliente NAO persegue por decisao estrategica; (3) separa barreira de escolha (SAM->Enderecavel) de barreira competitiva (Enderecavel->SOM)."
         }
       }
     }

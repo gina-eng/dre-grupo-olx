@@ -1,4 +1,4 @@
-# 04 — Execução
+# 04 · Execução
 
 Contrato, escopo, cronograma e acompanhamento dos planos de ação.
 
@@ -9,10 +9,10 @@ Contrato, escopo, cronograma e acompanhamento dos planos de ação.
 
 ## A produzir nesta pasta
 
-- [ ] `plano-acao-c1-otimizacao.md` — plano de 30 dias saído do Comitê 1
-- [ ] `plano-acao-c2-expansao.md` — plano de 30 dias saído do Comitê 2
-- [ ] `plano-acao-c3-novo-ciclo.md` — plano de 30 dias do próximo ciclo
-- [ ] `log-tira-duvidas.md` — registro da assessoria assíncrona (SLA 12h úteis)
+- [ ] `plano-acao-c1-otimizacao.md`: plano de 30 dias saído do Comitê 1
+- [ ] `plano-acao-c2-expansao.md`: plano de 30 dias saído do Comitê 2
+- [ ] `plano-acao-c3-novo-ciclo.md`: plano de 30 dias do próximo ciclo
+- [ ] `log-tira-duvidas.md`: registro da assessoria assíncrona (SLA 12h úteis)
 
 > Toda ação de plano carrega: **o que será feito · DRI · prazo · métrica de sucesso · como impacta
 > diretamente a restrição.** Ação sem esses cinco campos não entra no plano.

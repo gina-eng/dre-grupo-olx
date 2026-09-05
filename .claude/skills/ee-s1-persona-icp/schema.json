@@ -16,7 +16,7 @@
   "properties": {
     "client_name": {
       "type": "string",
-      "description": "Nome do cliente — sempre presente em todo output."
+      "description": "Nome do cliente, sempre presente em todo output."
     },
     "summary": {
       "type": "string",
@@ -454,7 +454,7 @@
               },
               "volume_index": {
                 "type": ["number", "null"],
-                "description": "OBRIGATÓRIO: volume relativo de oportunidades que chega a este estágio, índice 0-100 (Gatilho=100). Projeção [E] específica do cliente — alimenta o funil 'Jornada de Compra' no portal. Sem este campo, o portal cai num decaimento genérico (~32% por estágio) idêntico em todo cliente. A maior queda deve coincidir com o critical_leakage_point."
+                "description": "OBRIGATÓRIO: volume relativo de oportunidades que chega a este estágio, índice 0-100 (Gatilho=100). Projeção [E] específica do cliente, alimenta o funil 'Jornada de Compra' no portal. Sem este campo, o portal cai num decaimento genérico (~32% por estágio) idêntico em todo cliente. A maior queda deve coincidir com o critical_leakage_point."
               },
               "volume_basis": {
                 "type": "string",
@@ -541,7 +541,7 @@
               },
               "elasticity": {
                 "type": "string",
-                "description": "Elasticidade de preço. Pode ser palavra única (alta/média/baixa) ou frase com nuance separada por '—' ou ':' (ex: 'baixa — aceita pagar mais se entender o porquê'). O portal usa a primeira palavra como tag e o restante como nota explicativa."
+                "description": "Elasticidade de preço. Pode ser palavra única (alta/média/baixa) ou frase com nuance separada por '-' ou ':' (ex: 'baixa, aceita pagar mais se entender o porquê'). O portal usa a primeira palavra como tag e o restante como nota explicativa."
               },
               "pricing_lever": {
                 "type": "string",
@@ -644,7 +644,7 @@
     },
     "key_insight": {
       "type": "object",
-      "description": "Ponto de alavancagem desta skill — o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
+      "description": "Ponto de alavancagem desta skill, o bloco que merece destaque visual para conversa com o stakeholder. Ver PADRAO-OUTPUT.md.",
       "properties": {
         "headline": {
           "type": "string",

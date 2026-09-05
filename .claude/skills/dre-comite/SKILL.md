@@ -4,20 +4,20 @@ description: "Prepara, conduz e documenta os Comites 1, 2 e 3 do ciclo DR-E, com
 dependencies:
   - dre-matriz-gp
 tools: []
-fase: "3 — Alinhar / 4 — Expandir / 5 — Recomecar"
+fase: "3, Alinhar / 4 · Expandir / 5 · Recomecar"
 estimated_time: "2h de comite + 5h de preparacao"
 output_file: "dre-comite-{n}.json"
 ---
 
-# DR-E — Comites
+# DR-E · Comites
 
 Pergunte ao operador **qual comite** (1, 2 ou 3) e se e **preparacao**, **conducao** ou **ata**.
 
 > **Bloqueio duro:** verifique `dados/client.json` → `progress.skills["dre-matriz-gp"]`. Se nao esta `approved` para este comite, **pare** e rode `/dre-matriz-gp`. Ver `00-playbook/03-ciclo-90-dias-e-comites.md`.
 
-O comite e um **ponto de decisao**, nao uma apresentacao de resultados. Se ao fim ninguem decidiu nada, o comite falhou — independentemente da qualidade dos slides.
+O comite e um **ponto de decisao**, nao uma apresentacao de resultados. Se ao fim ninguem decidiu nada, o comite falhou, independentemente da qualidade dos slides.
 
-## Comite 1 — Validacao da trava (2h)
+## Comite 1 · Validacao da trava (2h)
 
 | Bloco | Tempo | Conteudo |
 |---|---|---|
@@ -29,7 +29,7 @@ O comite e um **ponto de decisao**, nao uma apresentacao de resultados. Se ao fi
 
 **Indicador de qualidade nas semanas seguintes:** reducao de perdas na etapa da restricao, melhoria de conversao associada e **execucao do plano acima de 80%**.
 
-## Comite 2 — Decisao de expansao (2h · DR-E presencial)
+## Comite 2 · Decisao de expansao (2h · DR-E presencial)
 
 | Bloco | Tempo | Conteudo |
 |---|---|---|
@@ -39,9 +39,9 @@ O comite e um **ponto de decisao**, nao uma apresentacao de resultados. Se ao fi
 | Estrategia de expansao | 20 min | Para cada alavanca: que problema resolve · como impacta a restricao · risco · retorno esperado. |
 | Plano de acao (30 dias) | 20 min | Escopo, DRI, prazo, investimento, metrica. **Criterios de validacao intermediaria** ao longo das semanas. |
 
-> **Quando a decisao e no-go, isso nao e falha do ciclo — e o metodo funcionando.** Registre o no-go na ata com o mesmo peso de um go.
+> **Quando a decisao e no-go, isso nao e falha do ciclo, e o metodo funcionando.** Registre o no-go na ata com o mesmo peso de um go.
 
-## Comite 3 — Virada de ciclo (2h)
+## Comite 3 · Virada de ciclo (2h)
 
 | Bloco | Tempo | Conteudo |
 |---|---|---|
@@ -56,9 +56,9 @@ O comite e um **ponto de decisao**, nao uma apresentacao de resultados. Se ao fi
 ## Preparacao (antes de qualquer comite)
 
 1. Confirme Matriz aprovada.
-2. Monte o material a partir dos outputs existentes — nao gere numero novo dentro do material.
+2. Monte o material a partir dos outputs existentes, nao gere numero novo dentro do material.
 3. Prepare as **objecoes do decisor** com resposta e evidencia (reaproveite `objecoes_simuladas[]` da Matriz).
-4. Confirme presenca do decisor. Comite sem quem decide vira reuniao de status — remarque.
+4. Confirme presenca do decisor. Comite sem quem decide vira reuniao de status, remarque.
 5. Circule a pauta com antecedencia e diga explicitamente **o que sera decidido**.
 
 ## Ata (obrigatoria)
@@ -66,27 +66,27 @@ O comite e um **ponto de decisao**, nao uma apresentacao de resultados. Se ao fi
 Escreva em `06-reunioes/{AAAA-MM-DD}-comite-{n}.md`. Estrutura minima:
 
 - Data, duracao, participantes (nome e papel), formato (presencial/remoto)
-- Decisoes tomadas — cada uma com o racional em uma linha
+- Decisoes tomadas, cada uma com o racional em uma linha
 - Decisoes **nao** tomadas e o que falta para tomar
 - Plano de 30 dias: acao · DRI (pessoa) · prazo · metrica · impacto na restricao
 - Divergencias registradas (quem discordou e de que)
 - Riscos aceitos
 - Data do proximo comite
 
-> **Toda decisao vai para ata assinada.** Decisao que so existe na memoria da reuniao nao existe — e a fonte numero um de retrabalho no ciclo seguinte.
+> **Toda decisao vai para ata assinada.** Decisao que so existe na memoria da reuniao nao existe, e a fonte numero um de retrabalho no ciclo seguinte.
 
 ## Output
 
 Salve `dados/outputs/dre-comite-{n}.json` com:
 
-- `comite` — numero, data, formato, duracao_min
-- `matriz_aprovada` — boolean, data
-- `participantes[]` — nome, papel, empresa, presente
-- `blocos[]` — bloco, tempo_previsto, tempo_real, conteudo_coberto
-- `decisoes[]` — decisao, racional, quem_decidiu, tipo (`go | no_go | ajuste`)
-- `plano_30_dias[]` — acao, dri, prazo, metrica, impacto_restricao
+- `comite`: numero, data, formato, duracao_min
+- `matriz_aprovada`: boolean, data
+- `participantes[]`: nome, papel, empresa, presente
+- `blocos[]`: bloco, tempo_previsto, tempo_real, conteudo_coberto
+- `decisoes[]`: decisao, racional, quem_decidiu, tipo (`go | no_go | ajuste`)
+- `plano_30_dias[]`: acao, dri, prazo, metrica, impacto_restricao
 - `divergencias[]`, `riscos_aceitos[]`
-- Comite 2: `saturacao_validada` — boolean + justificativa, `decisao_expansao`
+- Comite 2: `saturacao_validada`, boolean + justificativa, `decisao_expansao`
 - Comite 3: `classificacao_trava_anterior`, `nova_restricao`, `justificativa`
 - `proximo_comite`
 

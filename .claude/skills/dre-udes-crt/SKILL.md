@@ -4,24 +4,24 @@ description: "Coleta 8-15 UDEs (efeitos indesejaveis) e monta a Arvore da Realid
 dependencies:
   - dre-consolidacao-causal
 tools: []
-fase: "2 — Otimizar"
+fase: "2, Otimizar"
 estimated_time: "4h (workshop) + 2h de estruturacao"
 output_file: "dre-crt.json"
 ---
 
-# DR-E — UDEs e CRT
+# DR-E · UDEs e CRT
 
-Aqui a hipotese de restricao encontra sua validacao logica. A CRT e o unico ponto do metodo onde a trava governante e **confirmada** — o score e a consolidacao apenas apontaram.
+Aqui a hipotese de restricao encontra sua validacao logica. A CRT e o unico ponto do metodo onde a trava governante e **confirmada**, o score e a consolidacao apenas apontaram.
 
 > Voce e facilitador do processo de pensar, nao especialista no problema do cliente. Sua funcao e **proteger a logica**, nao impor conclusao. Ver `00-playbook/04-toolkit-ltp.md`, secao 8.
 
-## Passo 0 — Goal Tree
+## Passo 0 · Goal Tree
 
-Antes dos UDEs, feche o alvo: **onde o sistema quer chegar**. Sem meta declarada, "efeito indesejavel" nao tem referencia — indesejavel em relacao a que?
+Antes dos UDEs, feche o alvo: **onde o sistema quer chegar**. Sem meta declarada, "efeito indesejavel" nao tem referencia, indesejavel em relacao a que?
 
 Registre: objetivo do sistema em 12 meses, condicoes necessarias para atingi-lo, e quem valida esse objetivo (normalmente o decisor).
 
-## Passo 1 — Coletar UDEs
+## Passo 1 · Coletar UDEs
 
 Pergunta estruturante para o cliente:
 
@@ -44,7 +44,7 @@ Valide cada UDE com duas perguntas: *"Isso acontece com frequencia?"* e *"Se iss
 
 Cruze os UDEs coletados com os `sintomas_confirmados[]` dos diagnosticos de trava. UDE que o diagnostico nao viu e sinal de dado faltante; sintoma que ninguem cita como UDE merece checagem.
 
-## Passo 2 — Montar a CRT
+## Passo 2 · Montar a CRT
 
 Estrutura: **causas-raiz → efeitos intermediarios → UDEs**.
 
@@ -65,12 +65,12 @@ No LTP, linguagem e logica. Cada seta e uma afirmacao "SE ... ENTAO ...". Antes 
 
 Frase mal formulada gera relacao causal falsa. Clareza semantica aqui e exigencia metodologica, nao estetica.
 
-## Passo 3 — Confrontar com a consolidacao
+## Passo 3 · Confrontar com a consolidacao
 
 Compare a causa-raiz da CRT com `restricao_identificada` e `politica_implicita` do `dados/client.json`:
 
 - **Convergem** → restricao **validada**. Segue.
-- **Divergem** → a CRT ganha. Atualize a restricao e registre a correcao em `history[]` com a evidencia logica. Avise o operador antes do comite — mudanca de restricao muda o plano inteiro.
+- **Divergem** → a CRT ganha. Atualize a restricao e registre a correcao em `history[]` com a evidencia logica. Avise o operador antes do comite, mudanca de restricao muda o plano inteiro.
 
 ## Como conduzir com o cliente
 
@@ -82,13 +82,13 @@ Se o workshop derivar para defesa de area ou busca de responsavel, pare e reanco
 
 Salve `dados/outputs/dre-crt.json` seguindo `.claude/shared-templates/PADRAO-OUTPUT.md` mais:
 
-- `goal_tree` — `objetivo`, `condicoes_necessarias[]`, `validado_por`
-- `udes[]` — `id`, `texto`, `verificavel`, `frequencia`, `fonte`, `trava_associada`
-- `nos[]` — `id`, `tipo` (`causa_raiz | efeito_intermediario | ude`), `texto`
-- `setas[]` — `de`, `para`, `suficiencia`, `causa_alternativa_descartada`
-- `causas_raiz[]` — `texto`, `politica_implicita`, `udes_explicados[]`, `cobertura_pct`
-- `restricao_validada` — `trava`, `convergiu_com_consolidacao` (boolean), `justificativa`
-- `workshop` — data, participantes, facilitador
+- `goal_tree`: `objetivo`, `condicoes_necessarias[]`, `validado_por`
+- `udes[]`: `id`, `texto`, `verificavel`, `frequencia`, `fonte`, `trava_associada`
+- `nos[]`: `id`, `tipo` (`causa_raiz | efeito_intermediario | ude`), `texto`
+- `setas[]`: `de`, `para`, `suficiencia`, `causa_alternativa_descartada`
+- `causas_raiz[]`: `texto`, `politica_implicita`, `udes_explicados[]`, `cobertura_pct`
+- `restricao_validada`: `trava`, `convergiu_com_consolidacao` (boolean), `justificativa`
+- `workshop`: data, participantes, facilitador
 
 ## Checklist antes de fechar
 

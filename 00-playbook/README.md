@@ -1,9 +1,9 @@
-# 00 — Playbook DR-E
+# 00 · Playbook DR-E
 
 Metodologia do **Destrava Receita Estratégico (DR-E)**, terceiro nível do programa
 DR-OTE (Operacional → Tático → Estratégico) da V4 Company.
 
-Esta pasta é **conhecimento de método** — vale para qualquer cliente DR-E.
+Esta pasta é **conhecimento de método**, vale para qualquer cliente DR-E.
 Tudo que for específico do Grupo OLX vive em [01-cliente/](../01-cliente/) e [04-execucao/](../04-execucao/).
 
 | Documento | O que responde |
@@ -16,7 +16,7 @@ Tudo que for específico do Grupo OLX vive em [01-cliente/](../01-cliente/) e [0
 | [06-pops-ciclo-2.md](06-pops-ciclo-2.md) | POPs do Ciclo 2 (e ciclos seguintes) |
 | [07-playbook-operacional-dr-e.md](07-playbook-operacional-dr-e.md) | Semana a semana do DR-E: tarefa, DRI, horas |
 | [08-economics-e-entregaveis-dr-e.md](08-economics-e-entregaveis-dr-e.md) | Entregáveis contratuais padrão e economics do produto |
-| [09-ucm-spiced-dr-e.md](09-ucm-spiced-dr-e.md) | Use Case Map e SPICED — leitura comercial e diagnóstica do DR-E |
+| [09-ucm-spiced-dr-e.md](09-ucm-spiced-dr-e.md) | Use Case Map e SPICED, leitura comercial e diagnóstica do DR-E |
 
 > ⚠️ A numeração das travas diverge entre os documentos-fonte da V4.
 > Ver [02-travas-de-receita.md § Numeração](02-travas-de-receita.md#numeração-das-travas-atenção)

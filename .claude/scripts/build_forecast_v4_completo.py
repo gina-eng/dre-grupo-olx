@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-build_forecast_v4_completo.py — Forecast V4 COMPLETO (multi-aba, modelo vivo).
+build_forecast_v4_completo.py: Forecast V4 COMPLETO (multi-aba, modelo vivo).
 
 Mantém EXATAMENTE os números aprovados do Forecast V4 de 12 meses
 (build_forecast_v4.py, CONFIG Liló Decor) e os expande em uma planilha
 xlsx completa e editável:
 
-  1. Resumo Executivo   — dashboard visual (print/share), idêntico ao entregável atual
-  2. Premissas          — todos os drivers de entrada, editáveis (fonte de verdade)
-  3. Forecast Mensal    — receita, acumulado, atingimento, ticket, MER, CAC (FÓRMULAS)
-  4. Funil de Vendas    — etapas e taxas mês a mês (FÓRMULAS)
-  5. Cenários & Sens.   — AS-IS vs Com Injeção + upside (AOV R$450 / CRO destravado)
-  6. Split de Mídia     — 70/30 Meta/Google e campanhas (consistente com R$3.000/mês)
-  7. Premissas & Ressalvas — base de calibração, alavanca governante, MER vs ROAS, pré-requisitos
+  1. Resumo Executivo, dashboard visual (print/share), idêntico ao entregável atual
+  2. Premissas, todos os drivers de entrada, editáveis (fonte de verdade)
+  3. Forecast Mensal, receita, acumulado, atingimento, ticket, MER, CAC (FÓRMULAS)
+  4. Funil de Vendas, etapas e taxas mês a mês (FÓRMULAS)
+  5. Cenários & Sens. AS-IS vs Com Injeção + upside (AOV R$450 / CRO destravado)
+  6. Split de Mídia, 70/30 Meta/Google e campanhas (consistente com R$3.000/mês)
+  7. Premissas & Ressalvas, base de calibração, alavanca governante, MER vs ROAS, pré-requisitos
 
 As abas 3 a 6 leem a aba Premissas por fórmula: mexeu numa premissa, recalcula tudo.
 Os defaults de Premissas SÃO os números do CONFIG, então a base bate ao centavo.
@@ -97,7 +97,7 @@ C_CALLOUT = "E8F8F3"
 C_WHITE = "FFFFFF"
 C_TRACK = "EBEBEB"
 C_HEADREF = "F5F5F5"
-FONT = "Arial"
+FONT = "IBM Plex Sans"
 
 # formatos de número (pt-BR renderiza # ##0 com ponto de milhar)
 F_MONEY = 'R$ #,##0'

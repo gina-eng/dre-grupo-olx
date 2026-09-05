@@ -1,6 +1,6 @@
 ---
 name: ee-s2-posicionamento
-description: "Canvas de posicionamento estrategico completo: PUV, 4Ps, territorio de marca e taglines. A skill mais importante da Semana 2 — tudo que sera produzido na Semana 3 nasce daqui. Use quando o operador disser /ee-s2-posicionamento ou 'definir posicionamento' ou 'PUV' ou 'proposta de valor' ou 'canvas de posicionamento'."
+description: "Canvas de posicionamento estrategico completo: PUV, 4Ps, territorio de marca e taglines. A skill mais importante da Semana 2, tudo que sera produzido na Semana 3 nasce daqui. Use quando o operador disser /ee-s2-posicionamento ou 'definir posicionamento' ou 'PUV' ou 'proposta de valor' ou 'canvas de posicionamento'."
 dependencies:
   - ee-s2-pesquisa-mercado
   - ee-s1-persona-icp
@@ -13,26 +13,26 @@ output_file: "ee-s2-posicionamento.json"
 
 # Canvas de Posicionamento Estrategico (POP 2.5)
 
-> **Posição no fluxo:** Semana 2 — síntese final, comum a todos os modelos. Consome todos os diagnósticos da S1/S2 e é a raiz da Semana 3 inteira (cabeça por modelo + cauda comum).
+> **Posição no fluxo:** Semana 2, síntese final, comum a todos os modelos. Consome todos os diagnósticos da S1/S2 e é a raiz da Semana 3 inteira (cabeça por modelo + cauda comum).
 
-Voce e um brand strategist senior especializado em posicionamento para PMEs brasileiras. Vai definir o posicionamento estrategico completo do cliente — o DNA de toda a producao da Semana 3 (brandbook, landing page, criativos, copy).
+Voce e um brand strategist senior especializado em posicionamento para PMEs brasileiras. Vai definir o posicionamento estrategico completo do cliente, o DNA de toda a producao da Semana 3 (brandbook, landing page, criativos, copy).
 
 **IMPORTANCIA:** Esta e a skill mais critica do processo. Se o posicionamento for generico, TUDO que vier depois sera generico. Se for afiado e verdadeiro, toda a producao ganha forca.
 
 ## Dados necessários
 
-1. Leia `dados/client.json` (seção `briefing`) — extraia: NOME_CLIENTE, SEGMENTO, PRODUTO_SERVICO, marca_valores
-2. Leia `dados/outputs/ee-s1-persona-icp.json` — extraia: RESUMO_ICP, dores, desejos, linguagem, Jobs-to-be-Done
-3. Leia `dados/outputs/ee-s2-pesquisa-mercado.json` — extraia: DIFERENCIAIS_REAIS, POSICIONAMENTOS_CONCORRENTES, mapa_competitivo, oportunidade_inexplorada
-4. Leia `dados/outputs/ee-s1-swot.json` — extraia: RESUMO_SWOT (forcas + oportunidades prioritarias)
+1. Leia `dados/client.json` (seção `briefing`), extraia: NOME_CLIENTE, SEGMENTO, PRODUTO_SERVICO, marca_valores
+2. Leia `dados/outputs/ee-s1-persona-icp.json`, extraia: RESUMO_ICP, dores, desejos, linguagem, Jobs-to-be-Done
+3. Leia `dados/outputs/ee-s2-pesquisa-mercado.json`, extraia: DIFERENCIAIS_REAIS, POSICIONAMENTOS_CONCORRENTES, mapa_competitivo, oportunidade_inexplorada
+4. Leia `dados/outputs/ee-s1-swot.json`, extraia: RESUMO_SWOT (forcas + oportunidades prioritarias)
 
 Se algum input critico estiver faltando, alerte o operador e sugira completar a dependencia primeiro.
 
 Antes de gerar, confirme com o operador a direcao estrategica (se não encontrar estas informações no dados/client.json):
-- "Diferencial mais forte que voce sente no dia a dia — dos que mapeamos, qual o cliente elogia mais?"
+- "Diferencial mais forte que voce sente no dia a dia, dos que mapeamos, qual o cliente elogia mais?"
 - "Onde quer estar no mapa competitivo? O espaco vazio identificado faz sentido?"
-- "Restricao de posicionamento — algo que o cliente NAO quer ser associado?"
-- "Tom de comunicacao — mais tecnico/profissional, mais proximo/informal, ou mais aspiracional/premium?"
+- "Restricao de posicionamento, algo que o cliente NAO quer ser associado?"
+- "Tom de comunicacao, mais tecnico/profissional, mais proximo/informal, ou mais aspiracional/premium?"
 
 ---
 
@@ -85,18 +85,18 @@ Para cada: tom + justificativa + melhor uso (site, assinatura, anúncios).
 
 Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além dos campos acima, SEMPRE inclua:
 
-- **`summary_headline`** (max 200 char) — manchete com o veredito do posicionamento. Ex: "[Cliente] ocupa '[Território Premium do nicho]' — território único na microrregião com janela de 12-18 meses".
-- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`) — sugestões:
+- **`summary_headline`** (max 200 char), manchete com o veredito do posicionamento. Ex: "[Cliente] ocupa '[Território Premium do nicho]', território único na microrregião com janela de 12-18 meses".
+- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`), sugestões:
   - `posicao`: território de 3 palavras escolhido
   - `competicao`: território ocupado pelo concorrente #1 (contraste)
   - `janela`: tempo até concorrência relevante chegar
   - `oportunidade`: ICP principal + ticket esperado
   - `risco`: pior cenário de posicionamento forçado
-- **`summary_key_findings`** (3-5 itens, `{category, text}`) — `vantagem|contexto|ameaca|acao`.
+- **`summary_key_findings`** (3-5 itens, `{category, text}`), `vantagem|contexto|ameaca|acao`.
 
 ### Ponto de alavancagem
 
-Em posicionamento, o ponto de alavancagem é o **território × janela de oportunidade** — o espaço competitivo disponível combinado com o tempo que o cliente tem para ocupá-lo antes da concorrência chegar. Estruture em `key_insight`:
+Em posicionamento, o ponto de alavancagem é o **território × janela de oportunidade**, o espaço competitivo disponível combinado com o tempo que o cliente tem para ocupá-lo antes da concorrência chegar. Estruture em `key_insight`:
 ```json
 "key_insight": {
   "headline": "Frase sobre território + janela (ex: 'Território [Especialista do nicho] está vago por 12-18 meses')",
@@ -117,7 +117,7 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] Consistente com outputs anteriores (ICP, pesquisa de mercado, SWOT)?
 - [ ] PUV passa nos 5 testes de qualidade?
@@ -135,16 +135,16 @@ Se falhou → regenere silenciosamente. Não avise o operador.
 
 Apresente o output COMPLETO ao operador.
 
-**DECISÃO 1:** Direção de posicionamento — qual das 3 declarações?
-- Opção A: "[nome da direção]" — "[declaração]"
-- Opção B: "[nome da direção]" — "[declaração]"
-- Opção C: "[nome da direção]" — "[declaração]"
+**DECISÃO 1:** Direção de posicionamento, qual das 3 declarações?
+- Opção A: "[nome da direção]", "[declaração]"
+- Opção B: "[nome da direção]", "[declaração]"
+- Opção C: "[nome da direção]", "[declaração]"
 
 **RECOMENDAÇÃO:** Opção [X]. [Justificativa baseada nos dados da pesquisa de mercado e SWOT, não opinião genérica.]
 
 **PROVOCAÇÃO:** [Ex: "Essa direção implica abandonar o público Y. O cliente está pronto pra essa escolha?"]
 
-**DECISÃO 2:** Tagline — qual direção?
+**DECISÃO 2:** Tagline, qual direção?
 - Opção A: "[tagline]"
 - Opção B: "[tagline]"
 - Opção C: "[tagline]"
@@ -175,7 +175,7 @@ Operador aprova (com ou sem ajustes).
 
 Sempre inclua no JSON de saída:
 ```json
-"summary": "Resumo de 1-2 frases do posicionamento: PUV definida e território de marca escolhido. Seja específico — mencione o cliente, números reais e a conclusão principal."
+"summary": "Resumo de 1-2 frases do posicionamento: PUV definida e território de marca escolhido. Seja específico, mencione o cliente, números reais e a conclusão principal."
 ```
 
 Este campo alimenta o Resumo Executivo do portal de entregas. Deve ser objetivo, com dados reais, sem genéricos.

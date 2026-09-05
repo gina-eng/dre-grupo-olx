@@ -18,7 +18,7 @@
   "properties": {
     "client_name": {
       "type": "string",
-      "description": "Nome do cliente — sempre presente em todo output."
+      "description": "Nome do cliente, sempre presente em todo output."
     },
     "summary": {
       "type": "string",
@@ -166,7 +166,7 @@
           },
           "volume": {
             "type": "number",
-            "description": "Volume absoluto na etapa (mensal — todas as etapas devem usar o mesmo recorte)."
+            "description": "Volume absoluto na etapa (mensal, todas as etapas devem usar o mesmo recorte)."
           },
           "volume_label": {
             "type": "string",
@@ -334,7 +334,7 @@
               "items": {
                 "type": "string"
               },
-              "description": "Sinais obrigatorios — TODOS devem estar presentes."
+              "description": "Sinais obrigatorios, TODOS devem estar presentes."
             },
             "action": {
               "type": "string",
@@ -365,7 +365,7 @@
               "items": {
                 "type": "string"
               },
-              "description": "Sinais possiveis — pelo menos min_signals devem estar presentes."
+              "description": "Sinais possiveis, pelo menos min_signals devem estar presentes."
             },
             "min_signals": {
               "type": "integer",
@@ -434,7 +434,7 @@
               "items": {
                 "type": "string"
               },
-              "description": "Sinais de desqualificacao — qualquer um e suficiente."
+              "description": "Sinais de desqualificacao, qualquer um e suficiente."
             },
             "action": {
               "type": "string",

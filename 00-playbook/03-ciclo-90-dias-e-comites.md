@@ -29,17 +29,17 @@ Scripts nunca testados, segmentos de base nunca reativados, fluxos de nutrição
 processos que poderiam rodar diferente com os recursos atuais.
 
 ### Alinhar
-A fase mais difícil — não metodologicamente, mas **gerencialmente**. Exige pausar iniciativas que
+A fase mais difícil, não metodologicamente, mas **gerencialmente**. Exige pausar iniciativas que
 parecem boas porque não contribuem para a restrição ativa.
 
 > A lógica convencional diz: enquanto uma iniciativa gera resultado positivo, não há razão para
 > pausá-la. A TOC responde: se ela não aumenta o throughput, consome atenção e recurso que
-> deveriam estar na restrição. O custo real não é o dinheiro investido — é a atenção deslocada.
+> deveriam estar na restrição. O custo real não é o dinheiro investido, é a atenção deslocada.
 
 ### Expandir
 A pergunta já foi respondida. Agora é execução com disciplina e sem desvio de escopo.
 Pode envolver: novos canais, reformulação de oferta de entrada, automação de qualificação,
-reestruturação de time de vendas, nova arquitetura de preços, programa de retenção —
+reestruturação de time de vendas, nova arquitetura de preços, programa de retenção,
 sempre com hipótese causal explícita e métrica de sucesso definida.
 
 **Papel da V4:** orienta via assessoria, disponibiliza artefatos como referência, valida decisões
@@ -61,11 +61,11 @@ formal registrado em ata.
 
 | Comitê | Semana | Pergunta única | Saída formal |
 |---|---|---|---|
-| **1 — Validação e Otimização** | ~4–5 | Qual é a restrição que governa o sistema agora? | Trava validada em ata + plano de ação de 30 dias (otimização, sem novos recursos) |
-| **2 — Definição de Expansão** | ~7–8 | Existe causalidade suficiente para justificar expansão? | Decisão go/no-go + plano de 30 dias de expansão com investimento, DRI e métrica |
-| **3 — Definição Final da Trava** | 12 | A trava foi superada? Qual governa o próximo ciclo? | Classificação da trava anterior + nova restrição validada + plano de 30 dias do novo ciclo |
+| **1 · Validação e Otimização** | ~4–5 | Qual é a restrição que governa o sistema agora? | Trava validada em ata + plano de ação de 30 dias (otimização, sem novos recursos) |
+| **2 · Definição de Expansão** | ~7–8 | Existe causalidade suficiente para justificar expansão? | Decisão go/no-go + plano de 30 dias de expansão com investimento, DRI e métrica |
+| **3 · Definição Final da Trava** | 12 | A trava foi superada? Qual governa o próximo ciclo? | Classificação da trava anterior + nova restrição validada + plano de 30 dias do novo ciclo |
 
-### Comitê 1 — roteiro (2h)
+### Comitê 1: roteiro (2h)
 
 | Bloco | Tempo | Conteúdo |
 |---|---|---|
@@ -78,7 +78,7 @@ formal registrado em ata.
 **Indicador de qualidade:** nas semanas seguintes, redução de perdas na etapa da restrição,
 melhoria de conversão associada e **execução do plano acima de 80%**.
 
-### Comitê 2 — roteiro (2h · DR-E: presencial, 10h de dedicação C-Level+GP)
+### Comitê 2: roteiro (2h · DR-E: presencial, 10h de dedicação C-Level+GP)
 
 | Bloco | Tempo | Conteúdo |
 |---|---|---|
@@ -88,9 +88,9 @@ melhoria de conversão associada e **execução do plano acima de 80%**.
 | Definição da estratégia de expansão | 20 min | Para cada alavanca: qual problema resolve · como impacta a restrição · risco associado · retorno esperado. |
 | Construção do plano de ação (30 dias) | 20 min | Escopo, DRI, prazo, investimento e métrica. **Critérios de validação intermediária** ao longo das semanas. |
 
-> **Quando a decisão é no-go, isso não é falha do ciclo — é o método funcionando.**
+> **Quando a decisão é no-go, isso não é falha do ciclo, é o método funcionando.**
 
-### Comitê 3 — roteiro (2h)
+### Comitê 3: roteiro (2h)
 
 | Bloco | Tempo | Conteúdo |
 |---|---|---|
@@ -104,24 +104,24 @@ melhoria de conversão associada e **execução do plano acima de 80%**.
 
 ## 3. Gate de qualidade da Matriz (obrigatório)
 
-Antes de **cada** comitê, o Growth Planner da Matriz valida o material. Não é validação estética —
+Antes de **cada** comitê, o Growth Planner da Matriz valida o material. Não é validação estética,
 é validação de **coerência sistêmica, robustez causal e direcionamento estratégico**.
 
 **O GP avalia:**
-1. Definição da restrição — *"Se resolvermos isso, o sistema melhora de forma relevante?"* Se a resposta não for claramente positiva, **não aprovar**.
-2. Lógica causal — encadeamento claro, sem saltos de raciocínio, conclusões derivadas dos dados.
-3. Evidências — consistência dos dados, relevância das métricas, uso adequado de evidência qualitativa.
-4. Plano de ação — *"Esse plano aumenta o throughput da restrição?"*
-5. Clareza e comunicação — material tecnicamente correto mas difícil de entender **não deve ser aprovado**.
-6. Teste de robustez — o GP tensiona com perguntas críticas: *"Por que essa é a trava e não outra?"*, *"Qual evidência sustenta isso?"*, *"O que acontece se essa ação não funcionar?"*
+1. Definição da restrição, *"Se resolvermos isso, o sistema melhora de forma relevante?"* Se a resposta não for claramente positiva, **não aprovar**.
+2. Lógica causal, encadeamento claro, sem saltos de raciocínio, conclusões derivadas dos dados.
+3. Evidências, consistência dos dados, relevância das métricas, uso adequado de evidência qualitativa.
+4. Plano de ação, *"Esse plano aumenta o throughput da restrição?"*
+5. Clareza e comunicação, material tecnicamente correto mas difícil de entender **não deve ser aprovado**.
+6. Teste de robustez, o GP tensiona com perguntas críticas: *"Por que essa é a trava e não outra?"*, *"Qual evidência sustenta isso?"*, *"O que acontece se essa ação não funcionar?"*
 
 **Reprovar se houver:** ambiguidade na trava · falta de evidência · plano genérico ou desconectado ·
 risco de má interpretação pelo cliente.
 
-No gate do **Comitê 3**, o rigor é maior: valida-se **evidência longitudinal** — a evolução real do
+No gate do **Comitê 3**, o rigor é maior: valida-se **evidência longitudinal**, a evolução real do
 sistema ao longo do ciclo, não percepção pontual. Reprovar se houver troca de restrição sem base sólida.
 
-## 4. Cronograma detalhado — Ciclo 1
+## 4. Cronograma detalhado · Ciclo 1
 
 | Semana | Fase | Entrega | Critério de aceite |
 |---|---|---|---|
@@ -132,7 +132,7 @@ sistema ao longo do ciclo, não percepção pontual. Reprovar se houver troca de
 | **8–11** | Expandir e executar | Execução do cronograma; produtos TER adicionais; monitoramento semanal | Execução sem desvios de escopo; evidências de alinhamento (mudança de verba/pausas) |
 | **12** | Recomeçar | Diagnóstico final; revisão de aprendizados; matriz de expansão; **Comitê 3** | Decisão formal em ata (go/no-go); nova restrição definida; novo grupo configurado |
 
-## 5. Cronograma detalhado — Ciclo 2 (e seguintes)
+## 5. Cronograma detalhado · Ciclo 2 (e seguintes)
 
 | Semana | Fase | Entrega | Critério de aceite |
 |---|---|---|---|
@@ -147,7 +147,7 @@ sistema ao longo do ciclo, não percepção pontual. Reprovar se houver troca de
 
 ## 6. Assessoria assíncrona (Tira Dúvidas)
 
-Não é canal aberto de consultoria irrestrita — é mecanismo estruturado de suporte, orientado à
+Não é canal aberto de consultoria irrestrita, é mecanismo estruturado de suporte, orientado à
 manutenção do foco na restrição.
 
 **Abrange:** execução do plano · interpretação de direcionamentos · aplicação de frameworks · ajustes operacionais.

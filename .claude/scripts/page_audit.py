@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-page_audit.py — Auditoria tecnica de URL
+page_audit.py: Auditoria tecnica de URL
 Camadas: PageSpeed Insights (mobile+desktop) + On-page parser (mobile+desktop UA) + Security headers.
 
 Uso:
@@ -327,9 +327,9 @@ def compute_divergences(mob: dict, desk: dict) -> list[str]:
     for key, label in fields:
         a, b = mob.get(key), desk.get(key)
         if a != b:
-            diffs.append(f"{label} divergente — mobile: {a!r} · desktop: {b!r}")
+            diffs.append(f"{label} divergente, mobile: {a!r} · desktop: {b!r}")
     if mob.get("final_url") != desk.get("final_url"):
-        diffs.append(f"URL final divergente — mobile: {mob.get('final_url')} · desktop: {desk.get('final_url')}")
+        diffs.append(f"URL final divergente, mobile: {mob.get('final_url')} · desktop: {desk.get('final_url')}")
     return diffs
 
 

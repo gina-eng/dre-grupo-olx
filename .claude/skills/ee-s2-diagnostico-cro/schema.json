@@ -918,7 +918,7 @@
         },
         "setup_diagnosis": {
           "type": "string",
-          "description": "Diagnostico narrativo do setup: coberturas, gaps, contradicoes. Ex: 'GTM presente mas sem GA4 — cliente opera cego.'"
+          "description": "Diagnostico narrativo do setup: coberturas, gaps, contradicoes. Ex: 'GTM presente mas sem GA4, cliente opera cego.'"
         }
       }
     },

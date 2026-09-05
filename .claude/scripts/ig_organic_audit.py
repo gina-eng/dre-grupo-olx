@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ig_organic_audit.py — Coleta publica via Instagram Graph API + business_discovery.
+ig_organic_audit.py: Coleta publica via Instagram Graph API + business_discovery.
 
 Uso:
   python3 ig_organic_audit.py <client_dir>
@@ -107,7 +107,7 @@ def call_business_discovery(ig_user_id: str, target_username: str, token: str, s
     posts = (bd.get("media") or {}).get("data") or []
     after = ((bd.get("media") or {}).get("paging") or {}).get("cursors", {}).get("after")
     pages = 1
-    # Filtro 90d — se a ultima ja eh mais antiga, nao precisa paginar
+    # Filtro 90d: se a ultima ja eh mais antiga, nao precisa paginar
     def oldest_ts(items):
         if not items: return None
         return min(p.get("timestamp","") for p in items)
@@ -290,7 +290,7 @@ def pick_competitors(pesquisa_path: Path, briefing_competitor_handles: dict, top
     handle pode vir de digital_details.instagram ou de briefing_competitor_handles (override).
     """
     if not pesquisa_path.exists():
-        die(f"Nao encontrei {pesquisa_path} — rode ee-s2-pesquisa-mercado antes")
+        die(f"Nao encontrei {pesquisa_path}, rode ee-s2-pesquisa-mercado antes")
     data = json.loads(pesquisa_path.read_text(encoding="utf-8"))
     comps = data.get("competitors") or []
     comps_sorted = sorted(comps, key=lambda c: c.get("digital_score") or 0, reverse=True)
@@ -299,7 +299,7 @@ def pick_competitors(pesquisa_path: Path, briefing_competitor_handles: dict, top
         name = c.get("name", "")
         name_lc = name.lower()
         handle_raw = ""
-        # 1) Override manual — substring match case-insensitive (a chave pode ser parte do nome)
+        # 1) Override manual: substring match case-insensitive (a chave pode ser parte do nome)
         for k, v in briefing_competitor_handles.items():
             if not k:
                 continue
@@ -377,7 +377,7 @@ def main():
     pesquisa_path = client_dir / "outputs" / "ee-s2-pesquisa-mercado.json"
     competitors = pick_competitors(pesquisa_path, manual, top_n=2)
     if len(competitors) < 1:
-        die("Nao consegui identificar 2 concorrentes com handle de Instagram — use CMP_HANDLES para override")
+        die("Nao consegui identificar 2 concorrentes com handle de Instagram, use CMP_HANDLES para override")
 
     log(f"Cliente: @{client_handle}")
     for c in competitors:
@@ -432,7 +432,7 @@ def main():
     )
     log(f"Raw salvo em {raw_path}")
 
-    # Summary — insumo direto para a skill gerar o output
+    # Summary: insumo direto para a skill gerar o output
     def acc_lite(a):
         return {
             "role": a["_role"],

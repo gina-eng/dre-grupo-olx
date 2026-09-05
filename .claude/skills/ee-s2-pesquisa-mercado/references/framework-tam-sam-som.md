@@ -22,9 +22,9 @@ Mercado enderecavel. A fatia do TAM que voce PODE atingir considerando restricoe
 ### SOM (Serviceable Obtainable Market)
 Mercado obtenivel. A fatia do SAM que a empresa realisticamente consegue capturar dada sua oferta, posicionamento e a concorrencia real.
 
-**Duas leituras possiveis — escolha uma e seja explicito:**
+**Duas leituras possiveis · escolha uma e seja explicito:**
 
-**(a) SOM de mercado (recomendado para diagnostico estrategico):** teto tangivel de captura, sem horizonte temporal e sem restricao de capacidade interna. Representa o potencial que o mercado permite a uma empresa plenamente consolidada no seu nicho. Util para discussao estrategica com a cliente — mostra quanto ela PODE atingir se toda a execucao for correta.
+**(a) SOM de mercado (recomendado para diagnostico estrategico):** teto tangivel de captura, sem horizonte temporal e sem restricao de capacidade interna. Representa o potencial que o mercado permite a uma empresa plenamente consolidada no seu nicho. Util para discussao estrategica com a cliente, mostra quanto ela PODE atingir se toda a execucao for correta.
 
 **(b) SOM operacional (mais conservador):** fatia capturavel em horizonte definido (12-24 meses) considerando capacidade atual, budget de marketing e ciclo de venda. Util para forecast de curto prazo e metas operacionais.
 
@@ -37,17 +37,17 @@ Mercado obtenivel. A fatia do SAM que a empresa realisticamente consegue captura
 
 ## Camada intermediaria: MERCADO ENDERECAVEL
 
-O TAM/SAM/SOM classico tem 3 camadas, mas muitas vezes uma 4a camada pedagogica — o **Mercado Enderecavel** — ajuda a separar duas barreiras diferentes que senao se misturam.
+O TAM/SAM/SOM classico tem 3 camadas, mas muitas vezes uma 4a camada pedagogica, o **Mercado Enderecavel**, ajuda a separar duas barreiras diferentes que senao se misturam.
 
 ### O que e
 
-Subset do SAM onde a oferta da empresa e RELEVANTE, dada a decisao estrategica de perfil. Nao e todo o SAM — exclui segmentos que a empresa decide NAO perseguir (commodity, ocasional, fora do ICP).
+Subset do SAM onde a oferta da empresa e RELEVANTE, dada a decisao estrategica de perfil. Nao e todo o SAM, exclui segmentos que a empresa decide NAO perseguir (commodity, ocasional, fora do ICP).
 
 ### Quando usar
 
 - Quando o SAM tem perfis de consumidor muito heterogeneos (premium vs medio vs ocasional/commodity)
 - Quando a empresa explicitamente NAO compete em parte do SAM (decisao de posicionamento)
-- Quando o ratio SOM/SAM fica baixo (5-15%) e isso poderia parecer "empresa captura pouco" — mas na verdade ela nao mira o SAM inteiro por desenho
+- Quando o ratio SOM/SAM fica baixo (5-15%) e isso poderia parecer "empresa captura pouco", mas na verdade ela nao mira o SAM inteiro por desenho
 
 ### Como calcular
 
@@ -78,11 +78,11 @@ SAM: R$ 34M (todo o mercado regional do segmento)
   └─ Ocasional/commodity:      R$  6,7M (20% do gasto) ← a empresa NAO compete
 
 Mercado Enderecavel: R$ 20M (premium completo + 20% do medio que upgrade)
-SOM: R$ 7M (35% do enderecavel — empresa lider do quadrante)
+SOM: R$ 7M (35% do enderecavel, empresa lider do quadrante)
 ```
 
 Razao SOM/SAM = 20,6% (parece baixa)
-Razao SOM/Enderecavel = 35% (captura real do que ela persegue — lider de nicho)
+Razao SOM/Enderecavel = 35% (captura real do que ela persegue, lider de nicho)
 
 ### Quando NAO usar
 
@@ -92,7 +92,7 @@ Razao SOM/Enderecavel = 35% (captura real do que ela persegue — lider de nicho
 
 ---
 
-## SOM vs Capacidade Operacional vs Meta Comercial — tres metricas distintas
+## SOM vs Capacidade Operacional vs Meta Comercial: tres metricas distintas
 
 Confundir essas tres e erro comum. Separe-as explicitamente:
 
@@ -107,14 +107,14 @@ Teto de producao dada a estrutura atual (equipe, instalacoes, agenda). Se SOM > 
 - Capacidade atual (3 vets, 1 unidade): R$ 5,4M em regime de agenda cheia
 - Gap: R$ 1,6M exigem expansao (2a unidade ou ampliacao)
 
-Registrar como `operational_ceiling_note` separado do SOM. Nunca reduzir o SOM pela capacidade — SOM e sobre mercado, nao sobre a empresa.
+Registrar como `operational_ceiling_note` separado do SOM. Nunca reduzir o SOM pela capacidade, SOM e sobre mercado, nao sobre a empresa.
 
 ### Meta comercial do cliente (aspiracao operacional)
 Numero que a cliente registrou no V4MOS, no briefing ou no kickoff como meta de faturamento. **Isso NAO e SOM.**
 
-Se a meta aparecer como "R$ 1,32M ano que vem", ela e uma aspiracao operacional da cliente — pode estar abaixo do SOM (cliente conservadora), acima do SOM (cliente otimista), ou alinhada. **Nao confundir.**
+Se a meta aparecer como "R$ 1,32M ano que vem", ela e uma aspiracao operacional da cliente, pode estar abaixo do SOM (cliente conservadora), acima do SOM (cliente otimista), ou alinhada. **Nao confundir.**
 
-**Regra critica:** registrar a meta do cliente como campo separado (`client_annual_revenue_goal_brl`) com fonte documentada (`client_annual_revenue_goal_source`), e comparar com o SOM na narrativa — nao incorporar no calculo do SOM.
+**Regra critica:** registrar a meta do cliente como campo separado (`client_annual_revenue_goal_brl`) com fonte documentada (`client_annual_revenue_goal_source`), e comparar com o SOM na narrativa, nao incorporar no calculo do SOM.
 
 **Fontes tipicas de meta da cliente (podem divergir entre si):**
 - Formulario V4MOS (campo "Meta 12M" preenchido pela cliente) → ambicao dela
@@ -127,9 +127,9 @@ Se houver duas metas em fontes diferentes, documente as DUAS separadamente. Nao 
 
 ## Triangulacao metodologica para SOM robusto
 
-Nao chegue a um numero de SOM por um metodo so. **Triangule com 3 metodos independentes** — se os tres convergirem em uma faixa, o numero e defensavel. Se divergirem muito, algo esta errado.
+Nao chegue a um numero de SOM por um metodo so. **Triangule com 3 metodos independentes**, se os tres convergirem em uma faixa, o numero e defensavel. Se divergirem muito, algo esta errado.
 
-### Metodo 1 — Capacidade operacional plenamente madura (bottom-up da estrutura)
+### Metodo 1 · Capacidade operacional plenamente madura (bottom-up da estrutura)
 
 Responde: "qual o teto produtivo da empresa em agenda cheia + ticket otimizado?"
 
@@ -145,7 +145,7 @@ Receita total = Capacidade × ticket medio × fator de servicos complementares
 - × R$ 450 ticket medio = R$ 3,24M em atendimentos
 - ÷ 0,6 (atendimentos = 60% da receita) = R$ 5,4M teto operacional
 
-### Metodo 2 — Market share top-down (benchmark de nicho)
+### Metodo 2 · Market share top-down (benchmark de nicho)
 
 Responde: "qual fatia do SAM regional uma empresa de nicho similar tipicamente captura quando plenamente consolidada?"
 
@@ -157,7 +157,7 @@ Use benchmarks:
 
 Aplique o % apropriado ao SAM.
 
-### Metodo 3 — Segmento premium por nicho (bottom-up do mercado)
+### Metodo 3 · Segmento premium por nicho (bottom-up do mercado)
 
 Responde: "de dentro do SAM, qual fatia corresponde ao nicho-alvo da empresa, e quanto desse nicho ela pode capturar?"
 
@@ -203,14 +203,14 @@ SAM calculado como "media simples × populacao" esconde heterogeneidade que muda
 **Quando usar:** Quando ha dados setoriais publicos disponiveis.
 
 **Fontes confiáveis:**
-- IBGE — Pesquisa Anual de Servicos, CEMPRE, PNAD
-- SEBRAE — Estudos setoriais, DataSEBRAE
-- ABComm — E-commerce brasileiro
-- ABRASEL — Alimentacao fora do lar
-- ABES — Software brasileiro
-- Statista — Dados globais com recorte Brasil
-- Euromonitor — Mercados de consumo
-- BNDES — Relatorios setoriais
+- IBGE: Pesquisa Anual de Servicos, CEMPRE, PNAD
+- SEBRAE: Estudos setoriais, DataSEBRAE
+- ABComm, E-commerce brasileiro
+- ABRASEL: Alimentacao fora do lar
+- ABES: Software brasileiro
+- Statista, Dados globais com recorte Brasil
+- Euromonitor, Mercados de consumo
+- BNDES: Relatorios setoriais
 
 ### Bottom-Up (do micro para o macro)
 1. Estime o numero de potenciais clientes na regiao
@@ -252,9 +252,9 @@ SOM = 500 x R$ 2.000 x 12 x 5% = R$ 600.000/ano
 
 ### Erro 5: SOM derivado da meta da cliente
 **Errado:** "SOM = triplicar o faturamento atual de R$650K para R$2M em 3 anos"
-**Correto:** "SOM de mercado: R$ 7M (20% do SAM, metrica independente da ambicao da empresa). Meta da cliente registrada separadamente: R$ 1,32M/ano (18,9% do SOM — fonte: Formulario V4MOS)"
+**Correto:** "SOM de mercado: R$ 7M (20% do SAM, metrica independente da ambicao da empresa). Meta da cliente registrada separadamente: R$ 1,32M/ano (18,9% do SOM, fonte: Formulario V4MOS)"
 
-O SOM precisa ser uma metrica de MERCADO, nao de ambicao interna. Se voce esta usando o numero que a cliente disse como meta, voce perdeu a oportunidade de mostrar a ela o potencial real do mercado — que tipicamente e MAIOR que ela imagina.
+O SOM precisa ser uma metrica de MERCADO, nao de ambicao interna. Se voce esta usando o numero que a cliente disse como meta, voce perdeu a oportunidade de mostrar a ela o potencial real do mercado, que tipicamente e MAIOR que ela imagina.
 
 ### Erro 6: SOM = capacidade operacional
 **Errado:** "Ela so tem 1 veterinaria trabalhando, entao o SOM dela e R$ 1,5M (teto produtivo)"
@@ -296,7 +296,7 @@ Se registrar SOM, seja claro sobre a leitura escolhida (mercado vs operacional).
 ```
 TAM: R$ [valor]
 [Descricao em 1 frase]
-Fonte: [nome] ([ano]) — [link se disponivel]
+Fonte: [nome] ([ano]), [link se disponivel]
 
 SAM: R$ [valor]
 [Descricao em 1 frase]

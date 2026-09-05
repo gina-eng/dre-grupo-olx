@@ -4,7 +4,7 @@
 
 Jobs-to-be-Done e um framework de inovacao criado por Clayton Christensen (Harvard) que muda o foco de "quem e o cliente" para "qual tarefa o cliente esta tentando cumprir". A premissa: pessoas nao compram produtos -- elas contratam produtos para fazer um job.
 
-> "As pessoas nao querem uma furadeira de 1/4 de polegada. Elas querem um buraco de 1/4 de polegada." — Theodore Levitt
+> "As pessoas nao querem uma furadeira de 1/4 de polegada. Elas querem um buraco de 1/4 de polegada.", Theodore Levitt
 
 Mas JTBD vai alem: elas nao querem o buraco. Querem pendurar a foto da familia na parede. E por que querem pendurar? Porque querem se sentir em casa. E querem que visitas vejam que sao uma familia unida.
 
@@ -21,9 +21,9 @@ O que a pessoa precisa FAZER. E a tarefa pratica, objetiva.
 - Escola particular: "Quando meu filho esta na transicao para o ensino medio, quero uma escola que o prepare para o vestibular sem matar a criatividade, para que ele tenha opcoes de carreira."
 
 **Exemplos RUINS (genericos demais):**
-- "Quero crescer o negocio" — isso nao e um job, e uma aspiracao
-- "Quero um produto de qualidade" — obvio demais, todo mundo quer
-- "Quero economizar tempo" — em que? quando? fazendo o que?
+- "Quero crescer o negocio", isso nao e um job, e uma aspiracao
+- "Quero um produto de qualidade", obvio demais, todo mundo quer
+- "Quero economizar tempo", em que? quando? fazendo o que?
 
 ### 2. Job Emocional
 Como a pessoa quer se SENTIR durante e apos a experiencia.
@@ -34,9 +34,9 @@ Como a pessoa quer se SENTIR durante e apos a experiencia.
 - Escola particular: "Quero ter tranquilidade de que fiz a melhor escolha para o futuro do meu filho."
 
 **Exemplos RUINS:**
-- "Quero me sentir bem" — vago
-- "Quero ser feliz" — isso e tudo, nao e nada
-- "Quero ficar satisfeito com a compra" — obvio
+- "Quero me sentir bem", vago
+- "Quero ser feliz", isso e tudo, nao e nada
+- "Quero ficar satisfeito com a compra", obvio
 
 ### 3. Job Social
 Como a pessoa quer ser VISTA pelos outros ao usar/consumir a solucao.
@@ -47,8 +47,8 @@ Como a pessoa quer ser VISTA pelos outros ao usar/consumir a solucao.
 - Escola particular: "Quero que outros pais reconhecam que fiz uma boa escolha educacional."
 
 **Exemplos RUINS:**
-- "Quero parecer bem-sucedido" — generico
-- "Quero impressionar os amigos" — infantil e pouco util
+- "Quero parecer bem-sucedido", generico
+- "Quero impressionar os amigos", infantil e pouco util
 
 ## Como identificar Jobs reais
 
@@ -73,12 +73,12 @@ Como a pessoa quer ser VISTA pelos outros ao usar/consumir a solucao.
 
 Ao construir o ICP para um cliente V4, siga esta ordem:
 
-1. **Comece pelo Job Funcional** — identifique a tarefa que o cliente precisa cumprir
-2. **Mapeie as Dores** — o que impede de cumprir o job hoje?
-3. **Mapeie os Ganhos** — qual o resultado ideal quando o job e cumprido?
-4. **Identifique o Job Emocional** — como o cliente quer se sentir?
-5. **Identifique o Job Social** — como o cliente quer ser percebido?
-6. **Valide com dados** — os "melhores clientes" descritos no briefing se encaixam?
+1. **Comece pelo Job Funcional**: identifique a tarefa que o cliente precisa cumprir
+2. **Mapeie as Dores**: o que impede de cumprir o job hoje?
+3. **Mapeie os Ganhos**: qual o resultado ideal quando o job e cumprido?
+4. **Identifique o Job Emocional**: como o cliente quer se sentir?
+5. **Identifique o Job Social**: como o cliente quer ser percebido?
+6. **Valide com dados**: os "melhores clientes" descritos no briefing se encaixam?
 
 ### Armadilhas comuns
 

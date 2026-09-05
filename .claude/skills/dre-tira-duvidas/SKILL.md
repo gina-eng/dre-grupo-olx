@@ -9,7 +9,7 @@ estimated_time: "1h por bloco"
 output_file: null
 ---
 
-# DR-E — Tira Duvidas e Acompanhamento (POPs 31-32)
+# DR-E · Tira Duvidas e Acompanhamento (POPs 31-32)
 
 Assessoria assincrona continua. **SLA do DR-E: 12 horas uteis.** Ver `00-playbook/03-ciclo-90-dias-e-comites.md` e a clausula de SLA em `04-execucao/contrato-e-escopo.md`.
 
@@ -30,7 +30,7 @@ Quando a duvida vier disfarcada de ajuste tatico mas mudar a alavanca do ciclo, 
 
 ## Acompanhamento de metricas (POP 32)
 
-Foco **na etapa da restricao**. Nao reporte o painel inteiro toda semana — reporte a restricao e os indicadores de guarda.
+Foco **na etapa da restricao**. Nao reporte o painel inteiro toda semana, reporte a restricao e os indicadores de guarda.
 
 1. **Diferencie variacao normal de mudanca estrutural.** Compare com a variabilidade historica da propria metrica, nao com a semana anterior.
 2. **Classifique todo desvio relevante:** `falha de execucao` · `hipotese incorreta` · `fatores externos`.

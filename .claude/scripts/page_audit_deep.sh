@@ -1,5 +1,5 @@
 #!/bin/bash
-# page_audit_deep.sh — Orquestra a auditoria PROFUNDA de uma URL (Playwright).
+# page_audit_deep.sh · Orquestra a auditoria PROFUNDA de uma URL (Playwright).
 # Complementa page_audit.sh (PSI + on-page estatico) com:
 #   - Tracking stack (GTM, GA4, Meta Pixel, Clarity, etc.)
 #   - Eventos disparados (GA4 + Meta Pixel capturados via network)
@@ -33,7 +33,7 @@ mkdir -p "$CLIENT_DIR/cache"
 TS=$(date -u +%Y%m%d-%H%M%S)
 RAW_OUT="$CLIENT_DIR/cache/page_audit_deep-$TS.json"
 
-echo ">> Deep audit (Playwright: 3 passes — desktop full, mobile full, compliance pre-consent)..."
+echo ">> Deep audit (Playwright: 3 passes, desktop full, mobile full, compliance pre-consent)..."
 python3 "$PY_SCRIPT" "$URL" "$RAW_OUT"
 
 # Merge resumo no client.json
@@ -50,7 +50,7 @@ with open(raw_path, encoding='utf-8') as f:
 with open(client_path, encoding='utf-8') as f:
     client = json.load(f)
 
-# Summary condensado — raw fica no cache (inclui screenshots full-page pesados)
+# Summary condensado: raw fica no cache (inclui screenshots full-page pesados)
 tracking = raw.get("tracking_stack") or {}
 events = raw.get("events_fired") or {}
 cro_el = raw.get("cro_elements") or {}
@@ -93,7 +93,7 @@ summary = {
     "quality_flags": flags,
     "compliance_lgpd": compliance,
     "navigation": nav,
-    # Screenshots full-page NAO vao pro client.json (pesados) — so no raw
+    # Screenshots full-page NAO vao pro client.json (pesados): so no raw
 }
 
 client["page_audit_deep"] = summary

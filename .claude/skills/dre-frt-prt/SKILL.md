@@ -4,18 +4,18 @@ description: "Valida a injecao pela Arvore da Realidade Futura, mapeia obstaculo
 dependencies:
   - dre-udes-crt
 tools: []
-fase: "2 — Otimizar"
+fase: "2, Otimizar"
 estimated_time: "4h"
 output_file: "dre-frt-prt.json"
 ---
 
-# DR-E — FRT, PRT e Arvore de Transicao
+# DR-E · FRT, PRT e Arvore de Transicao
 
 Tres etapas encadeadas: a injecao e testada (FRT), protegida contra o que pode impedi-la (PRT) e traduzida em sequencia executavel (Transicao).
 
 > **Nenhuma solucao e considerada valida sem passar pela FRT.** Pular esta etapa e o modo mais comum de entregar um plano bonito que nao muda o sistema.
 
-## Parte 1 — FRT (Arvore da Realidade Futura)
+## Parte 1 · FRT (Arvore da Realidade Futura)
 
 Estrutura: **injecao → efeitos intermediarios → efeitos desejados**.
 
@@ -31,11 +31,11 @@ Estrutura: **injecao → efeitos intermediarios → efeitos desejados**.
 
 > "Aqui estamos vendo o sistema funcionando sob novas condicoes. Nao e previsao, e consequencia logica."
 
-## Parte 2 — PRT (Arvore de Pre-Requisitos)
+## Parte 2 · PRT (Arvore de Pre-Requisitos)
 
 **Use somente quando ha obstaculos relevantes:** injecao estrutural ou complexa · resistencia do cliente · faltam recursos, pessoas ou sistema · a mudanca envolve varias areas · o cliente diz "nao da para fazer agora".
 
-**Nao use** quando a injecao e simples, nao ha resistencia e a implementacao e direta — nesse caso va direto para a Transicao.
+**Nao use** quando a injecao e simples, nao ha resistencia e a implementacao e direta, nesse caso va direto para a Transicao.
 
 Estrutura: **injecao → obstaculos → condicoes necessarias para supera-los**.
 
@@ -45,11 +45,11 @@ Estrutura: **injecao → obstaculos → condicoes necessarias para supera-los**.
 | Falta CRM | Sistema implementado |
 | Faltam dados | Metricas definidas |
 
-Levante os obstaculos com o time que vai executar, nao so com o decisor — quem executa conhece o atrito real. Valide: *"Se essas condicoes existirem, a implementacao fica viavel?"*
+Levante os obstaculos com o time que vai executar, nao so com o decisor, quem executa conhece o atrito real. Valide: *"Se essas condicoes existirem, a implementacao fica viavel?"*
 
 > "A solucao esta clara. Agora estamos garantindo que nada impeca ela de acontecer."
 
-## Parte 3 — Arvore de Transicao
+## Parte 3 · Arvore de Transicao
 
 Onde o diagnostico vira plano executavel. Estrutura: **acao → efeito intermediario → novo estado do sistema**.
 
@@ -57,7 +57,7 @@ Onde o diagnostico vira plano executavel. Estrutura: **acao → efeito intermedi
 2. *"Qual e o primeiro movimento que precisa acontecer para isso se tornar possivel?"*
 3. *"Se essa acao acontecer, o que passa a ser possivel que antes nao era?"*
 4. Repita: Acao → Efeito → Nova condicao → Proxima acao.
-5. **Teste a ordem.** Para cada passo: *"Se isso nao acontecer, o proximo passo ainda e possivel?"* Se a resposta for nao, a ordem esta correta. Se for sim, os dois passos sao paralelos — ou um deles e desnecessario.
+5. **Teste a ordem.** Para cada passo: *"Se isso nao acontecer, o proximo passo ainda e possivel?"* Se a resposta for nao, a ordem esta correta. Se for sim, os dois passos sao paralelos, ou um deles e desnecessario.
 6. Valide completude: *"Essa sequencia garante que a injecao se torne realidade?"*
 
 Modelo de saida:
@@ -71,10 +71,10 @@ Modelo de saida:
 
 Salve `dados/outputs/dre-frt-prt.json` com:
 
-- `frt` — `injecao`, `nos[]`, `setas[]`, `udes_cobertos[]`, `udes_nao_cobertos[]`, `cobertura_udes_pct`, `efeitos_colaterais[]` (com `protecao`)
-- `prt` — `aplicavel` (boolean + motivo), `obstaculos[]` com `condicao_necessaria`, `levantado_com`
-- `transicao` — `passos[]` com `ordem`, `acao`, `efeito_intermediario`, `novo_estado`, `pre_requisitos[]`, `teste_ordem_ok`
-- `validacao_cliente` — data, participantes, frase de confirmacao
+- `frt`: `injecao`, `nos[]`, `setas[]`, `udes_cobertos[]`, `udes_nao_cobertos[]`, `cobertura_udes_pct`, `efeitos_colaterais[]` (com `protecao`)
+- `prt`: `aplicavel` (boolean + motivo), `obstaculos[]` com `condicao_necessaria`, `levantado_com`
+- `transicao`: `passos[]` com `ordem`, `acao`, `efeito_intermediario`, `novo_estado`, `pre_requisitos[]`, `teste_ordem_ok`
+- `validacao_cliente`: data, participantes, frase de confirmacao
 
 ## Checklist antes de fechar
 
@@ -89,4 +89,4 @@ Salve `dados/outputs/dre-frt-prt.json` com:
 1. Salve `dados/outputs/dre-frt-prt.json`
 2. Atualize `dados/client.json`, version++, `history[]`
 3. Escreva a versao humana em `03-estrategia/frt-prt-transicao.md`
-4. Sugira `/dre-plano-90-dias` — a Arvore de Transicao e o insumo direto do plano
+4. Sugira `/dre-plano-90-dias`, a Arvore de Transicao e o insumo direto do plano

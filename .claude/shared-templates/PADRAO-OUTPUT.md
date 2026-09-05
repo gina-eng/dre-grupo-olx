@@ -1,4 +1,4 @@
-# Padrão de Output das Skills — V4 Estruturação IA
+# Padrão de Output das Skills · V4 Estruturação IA
 
 Este documento define a **estrutura canônica** que todos os outputs de skill devem seguir para renderizar no portal com hierarquia visual consistente. O objetivo é que o operador e o stakeholder final abram qualquer entregável e encontrem o mesmo ritmo: manchete → KPIs → achados categorizados → ponto de alavancagem destacado → detalhes expansíveis.
 
@@ -8,7 +8,7 @@ Este documento define a **estrutura canônica** que todos os outputs de skill de
 
 1. **Manchete antes de texto.** Toda skill abre com uma frase única e específica que resume a conclusão. Não é parágrafo, é headline.
 2. **Números em destaque, não escondidos no corpo do texto.** KPIs que importam viram cards. Texto corrido é para contexto, não para fato quantitativo.
-3. **Achados categorizados por intenção.** Cada insight é classificado como `vantagem | contexto | ameaca | acao` — o leitor identifica o tom antes de ler.
+3. **Achados categorizados por intenção.** Cada insight é classificado como `vantagem | contexto | ameaca | acao`, o leitor identifica o tom antes de ler.
 4. **Ponto de alavancagem visualmente isolado.** Toda skill tem UM ponto onde a conversa com o stakeholder precisa acontecer. Esse ponto ganha hero visual (border, gradient, quote destacada).
 5. **Detalhe denso → colapsável.** Listas longas (concorrentes, itens de checklist, fontes) ficam em `<details>` para não afogar a leitura.
 
@@ -47,30 +47,30 @@ Todo output de skill DEVE ter estes campos no topo (antes dos campos específico
 ### Regras dos campos de summary
 
 **`summary_headline`**: É a ÚNICA frase que o stakeholder precisa ler se só tiver 5 segundos. Deve conter o veredito da skill. Exemplos bons:
-- ✓ "[Cliente] é o ÚNICO player premium da microrregião com [diferencial declarado] — janela competitiva de 12-18 meses."
+- ✓ "[Cliente] é o ÚNICO player premium da microrregião com [diferencial declarado], janela competitiva de 12-18 meses."
 - ✗ "Análise de mercado concluída com sucesso."
 
 **`summary_highlights`** (4-6 itens): KPIs visuais. Categorias sugeridas:
-- `posicao` — onde o cliente está hoje vs potencial
-- `competicao` — quem disputa o mesmo espaço
-- `janela` — tempo/urgência
-- `maturidade` — estágio atual em algum eixo
-- `oportunidade` — tamanho do ganho possível
-- `risco` — tamanho da ameaça
+- `posicao`: onde o cliente está hoje vs potencial
+- `competicao`: quem disputa o mesmo espaço
+- `janela`: tempo/urgência
+- `maturidade`: estágio atual em algum eixo
+- `oportunidade`: tamanho do ganho possível
+- `risco`: tamanho da ameaça
 
 Agrupar de 2 em 2 por categoria no renderer (dá layout balanceado 3x2 ou 2x2).
 
 **`summary_key_findings`** (3-5 itens): Achados que embasam a manchete. Categorias:
-- `vantagem` (✓ verde) — o que o cliente tem a favor
-- `contexto` (i azul) — o que é fato do mercado, neutro
-- `ameaca` (! vermelho) — o que pode dar errado
-- `acao` (▸ laranja) — o que precisa ser feito
+- `vantagem` (✓ verde), o que o cliente tem a favor
+- `contexto` (i azul), o que é fato do mercado, neutro
+- `ameaca` (! vermelho), o que pode dar errado
+- `acao` (▸ laranja), o que precisa ser feito
 
 ---
 
 ## Ponto de Alavancagem (hero block)
 
-Toda skill deve identificar **UM bloco que merece destaque visual especial** — o ponto onde a conversa estratégica precisa acontecer. O nome do campo varia por skill, mas a estrutura é consistente:
+Toda skill deve identificar **UM bloco que merece destaque visual especial**, o ponto onde a conversa estratégica precisa acontecer. O nome do campo varia por skill, mas a estrutura é consistente:
 
 ```json
 {
@@ -127,9 +127,9 @@ Em cada `SKILL.md`, incluir esta seção na geração:
 >
 > Além dos campos específicos desta skill, gere SEMPRE:
 >
-> - `summary_headline` — manchete em 1 linha com o veredito
-> - `summary_highlights` — 4-6 KPIs categorizados (`posicao|competicao|janela|maturidade|oportunidade|risco`) com `{label, value, subtext, tone}`
-> - `summary_key_findings` — 3-5 achados categorizados (`vantagem|contexto|ameaca|acao`)
+> - `summary_headline`: manchete em 1 linha com o veredito
+> - `summary_highlights`: 4-6 KPIs categorizados (`posicao|competicao|janela|maturidade|oportunidade|risco`) com `{label, value, subtext, tone}`
+> - `summary_key_findings`: 3-5 achados categorizados (`vantagem|contexto|ameaca|acao`)
 > - `honesty_alert` se houver fragilidade
 >
 > Identifique o **ponto de alavancagem** desta skill (o bloco que merece hero visual) e estruture-o com headline + contexto + razões numeradas + discussion anchor.
@@ -148,7 +148,7 @@ E na auto-validação:
 
 ## Completude (regra crítica)
 
-**Todo campo definido no schema da skill é obrigatório no output.** Não omitir campos — o renderer assume que os campos do schema existem e quebra/fica vazio silenciosamente quando faltam.
+**Todo campo definido no schema da skill é obrigatório no output.** Não omitir campos, o renderer assume que os campos do schema existem e quebra/fica vazio silenciosamente quando faltam.
 
 Se um dado **não pode ser obtido** (GA4 não instalado, conector não conectado, cliente não sabe, etc.), preencher com `null` E adicionar `unavailable_reason` no objeto pai:
 
@@ -157,7 +157,7 @@ Se um dado **não pode ser obtido** (GA4 não instalado, conector não conectado
   "current_conversion_rate": null,
   "current_bounce_rate": null,
   "avg_time_on_page": null,
-  "unavailable_reason": "GA4 não instalado no site — métricas de analytics não coletadas nesta auditoria"
+  "unavailable_reason": "GA4 não instalado no site, métricas de analytics não coletadas nesta auditoria"
 }
 ```
 
@@ -183,19 +183,29 @@ O validador `scripts/validate_output.py` roda junto do `render_portal.sh` e avis
 ### Checklist adicional de auto-validação
 
 > - [ ] Todos os campos do schema estão presentes (preenchidos ou com `null` + `unavailable_reason`)?
-> - [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+> - [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 > - [ ] Arrays vazios legítimos têm `{campo}_note` explicando por quê?
 > - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 
 ---
 
+## Redação
+
+Travessão (`—`) é proibido em qualquer campo de texto, no JSON e no `.md`. Use vírgula para aposto,
+dois-pontos quando o que vem depois define o que veio antes, ponto médio `·` entre rótulos e hífen
+`-` para valor ausente. A meia-risca `–` de intervalo (`8–10%`) continua valendo.
+
+Tipografia dos artefatos visuais: IBM Plex Sans no texto, IBM Plex Mono no rótulo e no número.
+
+---
+
 ## Tons de voz
 
-- `green` — oportunidade/vantagem/confirmado
-- `yellow` — atenção/potencial/médio
-- `red` — risco/ameaça/fraco
-- `blue` — contexto/informativo/neutro
-- `gray` — desativado/aspiracional/ausente
+- `green`: oportunidade/vantagem/confirmado
+- `yellow`: atenção/potencial/médio
+- `red`: risco/ameaça/fraco
+- `blue`: contexto/informativo/neutro
+- `gray`: desativado/aspiracional/ausente
 
 Usar tons consistentemente: nunca pintar ameaça de verde ou vantagem de vermelho para "chamar atenção". O tom é semântico.
 
@@ -204,9 +214,9 @@ Usar tons consistentemente: nunca pintar ameaça de verde ou vantagem de vermelh
 ## Apresentação progressiva (apresentacao.html)
 
 O `render_portal.sh` gera 3 entregáveis em cada execução:
-1. `portal.html` — painel operacional do cliente
-2. `consolidated.html`/`consolidated.md` — visão narrativa end-to-end
-3. **`apresentacao.html`** — slide deck V4 navegável (← → · F para fullscreen)
+1. `portal.html`: painel operacional do cliente
+2. `consolidated.html`/`consolidated.md`, visão narrativa end-to-end
+3. **`apresentacao.html`**: slide deck V4 navegável (← → · F para fullscreen)
 
 A apresentação cresce automaticamente conforme as skills S1/S2 são concluídas:
 - A partir da **primeira skill de S1 completa** (geralmente `ee-s1-diagnostico-maturidade`), o deck já existe com capa + pauta + slide de maturidade + fechamento.
@@ -216,9 +226,9 @@ A apresentação cresce automaticamente conforme as skills S1/S2 são concluída
 ### Campos consumidos pelo deck
 
 Os builders puxam principalmente:
-- `summary_headline` — usado em vários cards de "Leitura V4"
-- `summary_highlights` — KPIs em cards (Maturidade, Onde estamos)
-- `key_insight.headline` — destaque no rodapé de slides analíticos
+- `summary_headline`: usado em vários cards de "Leitura V4"
+- `summary_highlights`: KPIs em cards (Maturidade, Onde estamos)
+- `key_insight.headline`: destaque no rodapé de slides analíticos
 - Campos específicos da skill (e.g. `pillar_scores`, `tows_matrix`, `tam_sam_som`, `competitors`, `budget_reallocation_scenarios`, `client_account`, `competitor_accounts`, `competitor_patterns_missing`)
 
 **Implicação prática**: respeitar este `PADRAO-OUTPUT.md` ao escrever o JSON da skill garante que o slide correspondente saia bem-formado sem trabalho extra. Headlines genéricos ("análise concluída") aparecem feios no deck.

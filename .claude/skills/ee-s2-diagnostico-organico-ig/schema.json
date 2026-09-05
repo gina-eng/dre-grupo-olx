@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "DiagnosticoOrganicoIG",
-  "description": "Diagnostico comparativo de conteudo organico no Instagram — cliente vs 2 concorrentes, 90 dias, via Graph API + business_discovery.",
+  "description": "Diagnostico comparativo de conteudo organico no Instagram, cliente vs 2 concorrentes, 90 dias, via Graph API + business_discovery.",
   "type": "object",
   "required": [
     "summary",
@@ -263,7 +263,7 @@
     },
     "bottom_posts": {
       "type": "array",
-      "description": "Bottom 3 posts do CLIENTE apenas — posts com menor engagement_proxy.",
+      "description": "Bottom 3 posts do CLIENTE apenas, posts com menor engagement_proxy.",
       "minItems": 1,
       "maxItems": 3,
       "items": {
@@ -462,7 +462,7 @@
         },
         "embed_url": {
           "type": "string",
-          "description": "permalink + 'embed/' — o portal monta o iframe oficial do Instagram."
+          "description": "permalink + 'embed/', o portal monta o iframe oficial do Instagram."
         },
         "media_type": {
           "type": "string"

@@ -37,11 +37,11 @@ Framework para analisar cada concorrente de forma sistematica e acionavel.
 **Classificacao de maturidade por canal:**
 | Nivel | Descricao |
 |---|---|
-| 0 — Ausente | Nao usa o canal |
-| 1 — Presente | Tem presenca mas sem estrategia |
-| 2 — Ativo | Publica/anuncia regularmente |
-| 3 — Otimizado | Boa execucao, testes, segmentacao |
-| 4 — Lider | Referencia no canal para o segmento |
+| 0 · Ausente | Nao usa o canal |
+| 1 · Presente | Tem presenca mas sem estrategia |
+| 2 · Ativo | Publica/anuncia regularmente |
+| 3 · Otimizado | Boa execucao, testes, segmentacao |
+| 4 · Lider | Referencia no canal para o segmento |
 
 ### 3. Pontos fortes observados
 **Categorias comuns:**
@@ -76,11 +76,11 @@ Framework para analisar cada concorrente de forma sistematica e acionavel.
 3. Procure menções de preço em avaliacoes de clientes
 4. Analise o ee-s2-posicionamento: premium/mid/value
 5. Verifique ofertas em anuncios (ex: "a partir de R$ X")
-6. Pergunte ao operador — ele provavelmente sabe o range do mercado
+6. Pergunte ao operador, ele provavelmente sabe o range do mercado
 
 **Formato:** "R$ 2.000-3.000/mes (estimativa baseada em anuncios + ee-s2-posicionamento mid-market)"
 
-### 6. Presenca digital — Score 1-10
+### 6. Presenca digital · Score 1-10
 **Criterios de pontuacao:**
 
 | Score | Descricao |
@@ -89,7 +89,7 @@ Framework para analisar cada concorrente de forma sistematica e acionavel.
 | 3-4 | Presente mas fraco. Site funcional, redes com pouca frequencia, sem anuncios. |
 | 5-6 | Mediano. Site razoavel, posta nas redes, investe pouco em midia paga. |
 | 7-8 | Bom. Site profissional, redes ativas com engajamento, anuncios rodando, Google My Business otimizado. |
-| 9-10 | Excelente. Lider digital no segmento/regiao. Conteudo, midia paga, SEO, reviews — tudo bem executado. |
+| 9-10 | Excelente. Lider digital no segmento/regiao. Conteudo, midia paga, SEO, reviews, tudo bem executado. |
 
 **Detalhe por canal:**
 - Site: velocidade, design, mobile, SEO basico, CTA claro
@@ -128,9 +128,9 @@ Fonte da estimativa: [como estimou]
 
 Presenca digital: [score]/10
   - Site: [observacao]
-  - Instagram: [seguidores] — [observacao]
-  - Google My Business: [avaliacoes] estrelas — [observacao]
-  - Anuncios ativos: [sim/nao] — [observacao]
+  - Instagram: [seguidores], [observacao]
+  - Google My Business: [avaliacoes] estrelas, [observacao]
+  - Anuncios ativos: [sim/nao], [observacao]
 ```
 
 ## Mapa competitivo 2x2

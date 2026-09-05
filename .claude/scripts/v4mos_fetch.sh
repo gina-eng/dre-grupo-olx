@@ -1,5 +1,5 @@
 #!/bin/bash
-# v4mos_fetch.sh — Fetch media data from V4MOS Data API
+# v4mos_fetch.sh · Fetch media data from V4MOS Data API
 # Usage: ./v4mos_fetch.sh <client_dir> [date_start] [date_end]
 #
 # Reads:  <client_dir>/client.json (meta.workspace_id, meta.name)
@@ -8,7 +8,7 @@
 #
 # API: https://api.data.v4.marketing/v1
 # Auth: x-client-id + x-client-secret headers
-# organizationId is a QUERY PARAMETER on every request (antigo workspaceId, descontinuado 2026 — mesmo valor UUID)
+# organizationId is a QUERY PARAMETER on every request (antigo workspaceId, descontinuado 2026: mesmo valor UUID)
 #
 # Endpoints usados:
 #   google/ads/campaigns   → totais + monthly_evolution + day_of_week
@@ -35,7 +35,7 @@ CLIENT_NAME=$(jq -r '.meta.name // "Cliente"' "$CLIENT_JSON")
 WORKSPACE_ID=$(jq -r '.meta.workspace_id // empty' "$CLIENT_JSON")
 
 if [ -z "$WORKSPACE_ID" ] || [ "$WORKSPACE_ID" = "null" ]; then
-  echo "SKIP: workspace_id não definido — cliente sem integração V4MOS"
+  echo "SKIP: workspace_id não definido, cliente sem integração V4MOS"
   exit 0
 fi
 

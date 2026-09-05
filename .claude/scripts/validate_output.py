@@ -1,5 +1,5 @@
 """
-validate_output.py — Valida completude de outputs de skill contra seu JSON Schema.
+validate_output.py: Valida completude de outputs de skill contra seu JSON Schema.
 
 Objetivo: garantir que toda skill gere outputs com TODOS os campos preenchidos.
 Quando o dado nao pode ser obtido, o output deve usar null + unavailable_reason
@@ -64,7 +64,7 @@ def walk(node: Any, schema: dict, path: str, findings: list[dict]) -> None:
     if schema_type == "object" or "properties" in schema:
         if not isinstance(node, dict):
             if node is None:
-                # Objeto nulo — precisa de reason em algum ancestral, mas aqui só loga
+                # Objeto nulo: precisa de reason em algum ancestral, mas aqui só loga
                 findings.append({
                     "severity": "warn",
                     "path": path,

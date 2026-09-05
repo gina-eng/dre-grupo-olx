@@ -4,11 +4,11 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 
 ## Criterios de uma boa PUV
 
-1. **Verdadeira** — Baseada em algo que a empresa realmente faz/tem, nao em aspiracao
-2. **Especifica** — Nao serve para nenhum concorrente copiar sem mentir
-3. **Relevante** — Resolve uma dor real do ICP (nao e um diferencial que ninguem pediu)
-4. **Memoravel** — O ICP consegue repetir para outra pessoa
-5. **Diferente** — Nenhum concorrente esta dizendo isso
+1. **Verdadeira**: Baseada em algo que a empresa realmente faz/tem, nao em aspiracao
+2. **Especifica**: Nao serve para nenhum concorrente copiar sem mentir
+3. **Relevante**: Resolve uma dor real do ICP (nao e um diferencial que ninguem pediu)
+4. **Memoravel**: O ICP consegue repetir para outra pessoa
+5. **Diferente**: Nenhum concorrente esta dizendo isso
 
 ## 10 exemplos por segmento: PUV boa vs PUV ruim
 
@@ -17,7 +17,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Tratamento odontologico de qualidade com tecnologia de ponta"
 - Por que falha: Generica. Toda clinica diz isso. Nao e especifica nem memoravel.
 
-**BOA:** "Implante dental em 1 dia com sedacao — voce entra com medo e sai com o sorriso pronto"
+**BOA:** "Implante dental em 1 dia com sedacao, voce entra com medo e sai com o sorriso pronto"
 - Por que funciona: Especifica (1 dia + sedacao), resolve a dor real (medo + demora), memoravel.
 
 ### 2. Escritorio de contabilidade
@@ -25,7 +25,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Solucoes contabeis completas para sua empresa crescer"
 - Por que falha: "Solucoes completas" nao diz nada. Qualquer contador pode dizer isso.
 
-**BOA:** "Contabilidade para e-commerces que faturam de R$ 50K a R$ 2M/mes — voce vende, a gente cuida do regime tributario que mais economiza"
+**BOA:** "Contabilidade para e-commerces que faturam de R$ 50K a R$ 2M/mes, voce vende, a gente cuida do regime tributario que mais economiza"
 - Por que funciona: Nicho claro (e-commerce), faixa de faturamento (qualificacao), beneficio concreto (economia tributaria).
 
 ### 3. Academia/studio fitness
@@ -33,7 +33,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Transforme seu corpo e sua vida com nossos profissionais qualificados"
 - Por que falha: Aspiracional demais, generica, nao diferencia de nenhuma academia.
 
-**BOA:** "Treino personalizado de 45 minutos com turmas de no maximo 6 pessoas — resultado de personal, preco de academia"
+**BOA:** "Treino personalizado de 45 minutos com turmas de no maximo 6 pessoas, resultado de personal, preco de academia"
 - Por que funciona: Formato especifico (45min, max 6), resolve o trade-off percebido (personal caro vs academia lotada).
 
 ### 4. Restaurante delivery
@@ -41,7 +41,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Comida feita com amor e ingredientes frescos"
 - Por que falha: Todos dizem isso. "Feita com amor" e irrelevante para a decisao de compra.
 
-**BOA:** "Marmita fitness que chega em 30 minutos com as macros calculadas no rotulo — para quem treina e nao tem tempo de cozinhar"
+**BOA:** "Marmita fitness que chega em 30 minutos com as macros calculadas no rotulo, para quem treina e nao tem tempo de cozinhar"
 - Por que funciona: Produto especifico (marmita fitness), prazo (30min), diferencial unico (macros no rotulo), ICP claro (quem treina).
 
 ### 5. Agencia de marketing digital
@@ -49,7 +49,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Estrategias de marketing digital personalizadas para o seu negocio"
 - Por que falha: Toda agencia diz exatamente isso. Zero especificidade.
 
-**BOA:** "Marketing digital para clinicas de estetica — geramos 30+ leads qualificados por mes ou voce nao paga a gestao"
+**BOA:** "Marketing digital para clinicas de estetica, geramos 30+ leads qualificados por mes ou voce nao paga a gestao"
 - Por que funciona: Nicho (clinicas estetica), metrica concreta (30+ leads), garantia (nao paga se nao entregar).
 
 ### 6. Imobiliaria
@@ -57,7 +57,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Encontre o imovel dos seus sonhos com atendimento personalizado"
 - Por que falha: Frase de corretor desde 1990. Nao diferencia nada.
 
-**BOA:** "Apartamentos de 1-2 quartos para investidores no centro de Curitiba — analise de rentabilidade inclusa antes de fechar"
+**BOA:** "Apartamentos de 1-2 quartos para investidores no centro de Curitiba, analise de rentabilidade inclusa antes de fechar"
 - Por que funciona: Produto nicho (1-2q, centro CWB), ICP claro (investidores), diferencial de servico (analise de rentabilidade).
 
 ### 7. Software/SaaS B2B
@@ -65,7 +65,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "A plataforma completa para gestao do seu negocio"
 - Por que falha: "Plataforma completa" e o que todo SaaS diz. Nao define para quem ou para que.
 
-**BOA:** "ERP para oficinas mecanicas que controla estoque de pecas, ordem de servico e cobranca em um lugar so — sem planilha, sem papel"
+**BOA:** "ERP para oficinas mecanicas que controla estoque de pecas, ordem de servico e cobranca em um lugar so, sem planilha, sem papel"
 - Por que funciona: Vertical clara (oficinas), funcionalidades relevantes, dor concreta que resolve (planilha + papel).
 
 ### 8. Clinica de estetica
@@ -73,7 +73,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Realce sua beleza natural com tratamentos de ultima geracao"
 - Por que falha: Frases bonitas mas vazias. Nao diferencia de nenhuma clinica.
 
-**BOA:** "Harmonizacao facial com resultado natural em sessao unica — antes e depois publicado so com sua autorizacao"
+**BOA:** "Harmonizacao facial com resultado natural em sessao unica, antes e depois publicado so com sua autorizacao"
 - Por que funciona: Procedimento especifico, promessa real (resultado natural, sessao unica), diferencial de confianca (fotos com autorizacao).
 
 ### 9. Escola de idiomas
@@ -81,7 +81,7 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Aprenda ingles com a melhor metodologia do mercado"
 - Por que falha: "Melhor metodologia" e uma afirmacao generica e nao verificavel.
 
-**BOA:** "Ingles para profissionais de TI — conversacao focada em daily standups, code review e entrevistas tecnicas em 6 meses"
+**BOA:** "Ingles para profissionais de TI, conversacao focada em daily standups, code review e entrevistas tecnicas em 6 meses"
 - Por que funciona: ICP claro (TI), situacoes reais (standup, review, entrevistas), prazo concreto (6 meses).
 
 ### 10. Pet shop/veterinaria
@@ -89,14 +89,14 @@ A PUV (Proposta Unica de Valor) e a resposta a pergunta: "Por que eu deveria esc
 **RUIM:** "Cuidamos do seu pet com carinho e profissionalismo"
 - Por que falha: Qualquer pet shop pode dizer isso. "Carinho" nao e diferencial comercial.
 
-**BOA:** "Banho e tosa com hora marcada e entrega em domicilio — seu cachorro volta limpo sem voce sair de casa"
+**BOA:** "Banho e tosa com hora marcada e entrega em domicilio, seu cachorro volta limpo sem voce sair de casa"
 - Por que funciona: Formato especifico (hora marcada + delivery), resolve dor real (deslocamento + espera), promessa clara.
 
 ## Padroes das PUVs ruins
 
 1. **Adjetivos vazios:** "qualidade", "excelencia", "compromisso", "inovacao"
 2. **Frases de efeito:** "transforme sua vida", "realce sua beleza", "solucoes completas"
-3. **Sem ICP:** Nao diz para quem e — fala para todo mundo (e portanto para ninguem)
+3. **Sem ICP:** Nao diz para quem e, fala para todo mundo (e portanto para ninguem)
 4. **Sem especificidade:** Nenhum numero, prazo, formato ou garantia
 5. **Aspiracional vs factual:** Descreve o que gostariam de ser, nao o que sao
 

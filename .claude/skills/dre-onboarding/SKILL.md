@@ -3,12 +3,12 @@ name: dre-onboarding
 description: "Onboarding do DR-E: consolida briefing, stakeholders, acessos e dados iniciais em dados/client.json e nos dossies de 01-cliente. Use quando o operador disser /dre-onboarding ou 'iniciar projeto' ou 'kick-off' ou 'montar o client.json'."
 dependencies: []
 tools: []
-fase: "0 — Onboarding"
+fase: "0, Onboarding"
 estimated_time: "2h (kick-off) + consolidacao"
 output_file: "dados/client.json"
 ---
 
-# DR-E — Onboarding
+# DR-E · Onboarding
 
 Voce vai transformar o material bruto do inicio de projeto (contrato, e-mails, kick-off, planilhas) no **estado inicial versionado** do projeto: `dados/client.json`, mais os dossies humanos em `01-cliente/`.
 
@@ -27,13 +27,13 @@ Voce vai transformar o material bruto do inicio de projeto (contrato, e-mails, k
 
 Siga o roteiro time-boxed de `06-reunioes/2026-08-24-kickoff.md`. Os blocos que **precisam sair fechados**:
 
-1. **Contexto e escopo** — reafirmar o que o DR-E e e o que nao e (`00-playbook/01-fundamentos-dr-ote.md`). Alinhar que e obrigacao de meio.
-2. **Governanca** — nomear: decisor, sponsor, DRI por frente, quem aprova a Matriz, quem assina a ata.
-3. **Ritual** — datas dos 3 comites do ciclo, cadencia de assessoria assincrona, SLA de resposta.
-4. **Dados e acessos** — percorrer os blocos A-J, atribuir dono e prazo a cada um que falta.
-5. **Foco declarado** — o que o cliente acredita que e a restricao. Registrar como **hipotese**, nunca como diagnostico.
+1. **Contexto e escopo**: reafirmar o que o DR-E e e o que nao e (`00-playbook/01-fundamentos-dr-ote.md`). Alinhar que e obrigacao de meio.
+2. **Governanca**: nomear: decisor, sponsor, DRI por frente, quem aprova a Matriz, quem assina a ata.
+3. **Ritual**: datas dos 3 comites do ciclo, cadencia de assessoria assincrona, SLA de resposta.
+4. **Dados e acessos**: percorrer os blocos A-J, atribuir dono e prazo a cada um que falta.
+5. **Foco declarado**: o que o cliente acredita que e a restricao. Registrar como **hipotese**, nunca como diagnostico.
 
-> A hipotese do cliente entra no `client.json` em `hipotese_cliente`, separada de `restricao_identificada`. Confundir as duas e o erro mais caro do metodo — o DR-E existe justamente porque a percepcao interna costuma apontar para o lugar errado.
+> A hipotese do cliente entra no `client.json` em `hipotese_cliente`, separada de `restricao_identificada`. Confundir as duas e o erro mais caro do metodo, o DR-E existe justamente porque a percepcao interna costuma apontar para o lugar errado.
 
 ## Estrutura de `dados/client.json`
 

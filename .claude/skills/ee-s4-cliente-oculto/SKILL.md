@@ -9,23 +9,23 @@ modelo_venda: inside-sales
 estimated_time: "1.5h"
 ---
 
-# Cliente Oculto (POP 3.2 — Inside Sales)
+# Cliente Oculto (POP 3.2 · Inside Sales)
 
 Voce e um especialista em avaliacao de experiencia de compra e mystery shopping. Vai criar um cenario de simulacao realista para testar o atendimento comercial do cliente e, apos a execucao pelo operador, analisar a conversa gerando um relatorio detalhado com nota e recomendacoes.
 
-> **Posição no fluxo:** Semana 3, cabeça do modelo **Inside Sales** (POP 3.2). Roda **antes** do Diagnóstico Comercial (3.3) — é um input independente que mede a realidade do atendimento; o comercial usa esses achados. Mínimo 3-5 simulações em horários variados.
+> **Posição no fluxo:** Semana 3, cabeça do modelo **Inside Sales** (POP 3.2). Roda **antes** do Diagnóstico Comercial (3.3), é um input independente que mede a realidade do atendimento; o comercial usa esses achados. Mínimo 3-5 simulações em horários variados.
 
 ## Dados necessários
 
-1. `dados/client.json` (seção `briefing`) — NOME_CLIENTE, PRODUTO_SERVICO, CANAL_CONTATO
-2. `dados/outputs/ee-s1-persona-icp.json` — RESUMO_ICP, perfil demografico, comportamento
-3. `dados/outputs/ee-s4-diagnostico-comercial.json` — **se já existir** (opcional; normalmente o cliente oculto roda antes do comercial)
-4. `dados/client.json` (seção `connectors`) — dados adicionais de canais
+1. `dados/client.json` (seção `briefing`), NOME_CLIENTE, PRODUTO_SERVICO, CANAL_CONTATO
+2. `dados/outputs/ee-s1-persona-icp.json`: RESUMO_ICP, perfil demografico, comportamento
+3. `dados/outputs/ee-s4-diagnostico-comercial.json`: **se já existir** (opcional; normalmente o cliente oculto roda antes do comercial)
+4. `dados/client.json` (seção `connectors`), dados adicionais de canais
 
 Confirme com o operador:
 
 > Vamos criar e executar um cliente oculto para {NOME_CLIENTE}.
-> Canal principal: {CANAL — WhatsApp / formulario / email / Instagram DM}
+> Canal principal: {CANAL, WhatsApp / formulario / email / Instagram DM}
 > Correto? IMPORTANTE: voce (operador) vai executar a simulacao manualmente. Eu crio o roteiro e depois analiso.
 
 ---
@@ -125,6 +125,6 @@ Operador aprova (com ou sem ajustes).
 3. Registre a leitura no dossiê correspondente em `02-diagnostico/` e, se surgiu bloqueio de dado ou acesso, adicione linha em `PENDENCIAS.md`
 4. Sugira próxima skill conforme `00-playbook/07-playbook-operacional-dr-e.md` (semana corrente do ciclo)
    - "Cliente oculto concluido. Nota: {X}/10. Pontos criticos: {lista}."
-   - Sugira: `/ee-s4-diagnostico-comercial` (3.3) — usa estes achados para cravar o gargalo e calibrar a qualificação.
+   - Sugira: `/ee-s4-diagnostico-comercial` (3.3), usa estes achados para cravar o gargalo e calibrar a qualificação.
 
 **NOTA:** O relatório pode ser compartilhado com o cliente como evidência do valor do SDR IA. O contraste "antes vs depois" é poderoso.

@@ -1,4 +1,4 @@
-# Transcrição — Kick-off / Onboarding V4 · Grupo OLX
+# Transcrição · Kick-off / Onboarding V4 · Grupo OLX
 
 > ⚠️ **Confidencial.** Registro literal de uma reunião com o Grupo OLX. Cobre o aviso de
 > confidencialidade das comunicações da OLX e a cláusula 5.3 do contrato. Não sai deste repositório
@@ -15,7 +15,7 @@ veio: o que a V4 conclui a partir dele vive na ata e em [`02-diagnostico/`](../0
 | Encontro | Onboarding V4 · Grupo OLX (kick-off do DR-E) |
 | Data | 24/08/2026, 16h GMT-03 |
 | Duração registrada | 02:11:54 |
-| Formato | Híbrido — sala presencial na Av. Paulista, 1106, 15º andar, São Paulo/SP, com participantes remotos |
+| Formato | Híbrido, sala presencial na Av. Paulista, 1106, 15º andar, São Paulo/SP, com participantes remotos |
 | Origem | Anotações e transcrição automáticas do **Gemini** no Google Meet, geradas do lado da OLX (evento na agenda de `mirella.mendonca@olxbr.com`) |
 | Arquivo original | `Onboarding V4 - 2026_08_24 16_00 GMT-03_00 - Notes by Gemini.md` |
 | Recebido em | 26/08/2026 |
@@ -26,7 +26,7 @@ veio: o que a V4 conclui a partir dele vive na ata e em [`02-diagnostico/`](../0
 Três limitações que mudam a forma de citar qualquer trecho daqui:
 
 - **A sala presencial tem um rótulo só.** Tudo que saiu do dispositivo da sala de São Paulo está
-  atribuído a **"Olhamos para o futuro 01 - SP"** — o nome do equipamento, não de uma pessoa. Sob
+  atribuído a **"Olhamos para o futuro 01 - SP"**, o nome do equipamento, não de uma pessoa. Sob
   esse rótulo estão misturadas as falas de Florence Scappini, do time da V4 (Dener Lippert, Gustavo
   Figueiredo, Leonardo Rosa) e de quem estava presencialmente com elas, entre eles Carolina
   Dallolio e Mirella Mendonça. Quem participou remoto aparece nominalmente: Matheus Rodrigues,
@@ -35,7 +35,7 @@ Três limitações que mudam a forma de citar qualquer trecho daqui:
 - **Atribuir fala a pessoa exige ler o contexto.** Dentro de um mesmo bloco da sala há troca de
   interlocutor sem marcação. Antes de citar alguém em ata ou em comitê, confirme pelo conteúdo.
 - **Números daqui não valem como fonte.** A transcrição é automática e corrompe termos, cifras e
-  nomes próprios com frequência — *truput* (throughput), *ruas/Roy* (ROAS/ROI),
+  nomes próprios com frequência, *truput* (throughput), *ruas/Roy* (ROAS/ROI),
   *chne/Charlie/Tian* (churn), *paper lead* (pay per lead), *LX* (OLX), *Cirela* (Cyrela),
   *Web Motors* (Webmotors), *Lupo/Lu Machim*. Vale a regra 1 do repositório: número sem fonte
   formal fica `null` e vira linha em [PENDENCIAS.md](../PENDENCIAS.md), nunca vira dado.

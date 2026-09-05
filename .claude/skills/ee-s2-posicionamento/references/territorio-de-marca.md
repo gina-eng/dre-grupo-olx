@@ -54,7 +54,7 @@ Um territorio esta disponivel se:
 2. E relevante para o ICP (resolve uma dor ou desejo real)
 3. E verdadeiro para o cliente (ele pode sustentar esse ee-s2-posicionamento)
 
-**ATENCAO:** Um territorio "generico" como "qualidade" ou "comprometimento" nao e territorio — e ruido. Todo mundo diz isso. Territorio precisa ser ESPECIFICO e DIFERENCIANTE.
+**ATENCAO:** Um territorio "generico" como "qualidade" ou "comprometimento" nao e territorio, e ruido. Todo mundo diz isso. Territorio precisa ser ESPECIFICO e DIFERENCIANTE.
 
 ### Passo 3: Defina em 3 palavras
 

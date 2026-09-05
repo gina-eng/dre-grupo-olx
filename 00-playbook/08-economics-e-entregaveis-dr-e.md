@@ -1,4 +1,4 @@
-# Entregáveis e Economics — DR-E
+# Entregáveis e Economics · DR-E
 
 > Este documento descreve o **produto padrão** DR-E da V4. O escopo efetivamente contratado pelo
 > Grupo OLX está em [04-execucao/contrato-e-escopo.md](../04-execucao/contrato-e-escopo.md)
@@ -16,9 +16,9 @@
 | Posicionamento Estratégico | ✔ | Matriz / V4 Marketing |
 | Construção de LTP & Solução | ✔ | Matriz / V4 Marketing |
 | Planejamento Estratégico e Plano de Ação | ✔ | Matriz / V4 Marketing |
-| Acesso ao Banco de Artefatos Validados | ✔ | — |
-| Assessoria Assíncrona (SLA 12h úteis) | ✔ | — |
-| Grupos de Trabalho + encontros síncronos | ✔ | — |
+| Acesso ao Banco de Artefatos Validados | ✔ | - |
+| Assessoria Assíncrona (SLA 12h úteis) | ✔ | - |
+| Grupos de Trabalho + encontros síncronos | ✔ | - |
 
 **Detalhamento por bloco:**
 - *Pesquisa de Mercado e Benchmark:* Sizing (TAM/SAM/SOM) · Estudo de Concorrentes · Análise de Tendências · Oportunidades de Mercado · Definição de Maturidade Digital
@@ -34,7 +34,7 @@
 
 ## 3. Precificação padrão
 
-| Nível | Opção A — 100% fixo | Opção B — 50/50 |
+| Nível | Opção A · 100% fixo | Opção B · 50/50 |
 |---|---|---|
 | DR-O | R$ 50.000/ano | R$ 30.000 fixo + R$ 30.000 bônus |
 | DR-T | R$ 150.000/ano | R$ 100.000 fixo + R$ 100.000 bônus |
@@ -46,7 +46,7 @@
 - **Cashback DR-E:** 50% do bônus convertível em crédito para upgrade ou outros serviços (limitado a 25% do valor da nova contratação; validade 90 dias na SOW padrão).
 
 **Por que o bônus não é atrelado ao faturamento bruto:**
-- A V4 não controla a execução do cliente — atrelar ao faturamento seria injusto.
+- A V4 não controla a execução do cliente, atrelar ao faturamento seria injusto.
 - Se a V4 destravar Qualificação mas o vendedor do cliente não atender os leads, a restrição foi removida e a receita não subiu **por falha do cliente**.
 - O bônus premia a **entrega técnica**: identificar, validar e elevar o gargalo.
 
@@ -56,7 +56,7 @@ todos os encontros; (ii) envio tempestivo de todos os dados; (iii) solicitação
 entrega do método**, não em ausência de resultado econômico. Limitada ao valor pago, descontados
 tributos.
 
-## 4. Economics — DR-E (referência da Matriz)
+## 4. Economics · DR-E (referência da Matriz)
 
 ### Alocação de horas por ciclo
 
@@ -66,7 +66,7 @@ tributos.
 | Overhead (unidade) | 6,5h | 2,5h | 14h | R$ 137,50 |
 | GP (Matriz) | 9h | 9h | 36h | R$ 93,75 |
 | C-Level (Matriz) | 9h | 9h | 18h | R$ 1.875,00 |
-| **Total** | **92,5h** | **52,5h** | **232h** | — |
+| **Total** | **92,5h** | **52,5h** | **232h** | - |
 
 ### CSP por ciclo
 
@@ -82,18 +82,18 @@ tributos.
 
 | Linha | Valor |
 |---|---|
-| Faturamento — ancoragem | R$ 376.925,00 |
+| Faturamento · ancoragem | R$ 376.925,00 |
 | (−) Desconto de pagamento (−30%) | R$ 113.077,50 |
-| **(=) Faturamento — mínimo** | **R$ 263.847,50** |
+| **(=) Faturamento · mínimo** | **R$ 263.847,50** |
 | (−) Royalties (−17%) | R$ 44.854,08 |
 | (−) Service Fee (−40%) | R$ 105.539,00 |
 | (−) Taxa de pagamento (−3%) | R$ 7.915,43 |
-| **Unidade — Receita bruta** | R$ 105.539,00 |
-| Unidade — Margem operacional | R$ 83.601,64 (**87,3%**) |
-| Unidade — Margem de contribuição | R$ 70.409,27 (**73,5%**) |
-| Unidade — Lucro líquido (após CAC) | R$ 56.772,90 |
+| **Unidade · Receita bruta** | R$ 105.539,00 |
+| Unidade · Margem operacional | R$ 83.601,64 (**87,3%**) |
+| Unidade · Margem de contribuição | R$ 70.409,27 (**73,5%**) |
+| Unidade, Lucro líquido (após CAC) | R$ 56.772,90 |
 | **LTV / CAC** | **5,16** |
-| **Matriz — Margem operacional** | R$ 65.606,72 (**48,1%**) |
+| **Matriz · Margem operacional** | R$ 65.606,72 (**48,1%**) |
 
 > Premissas: CPMQL R$ 1.500 · taxa de conversão 11% · CAC R$ 13.636,36 · impostos sobre receita 9,25%.
 

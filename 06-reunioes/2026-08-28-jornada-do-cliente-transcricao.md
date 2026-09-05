@@ -1,4 +1,4 @@
-# Transcrição — Jornada do Cliente · V4 & Grupo OLX
+# Transcrição · Jornada do Cliente · V4 & Grupo OLX
 
 > ⚠️ **Confidencial.** Registro literal de uma reunião com o Grupo OLX. Cobre o aviso de
 > confidencialidade das comunicações da OLX e a cláusula 5.3 do contrato. Não sai deste repositório
@@ -19,7 +19,7 @@ edição. A leitura da V4 vive em [`02-diagnostico/`](../02-diagnostico/).
 | Origem | Anotações e transcrição automáticas do **Gemini** no Google Meet, geradas do lado da V4 (evento na agenda de `gabrielle.rosa@v4company.com`) |
 | Arquivo original | `V4 & OLX _ Jornada do Cliente [Online] - 2026_08_28 14_57 GMT-03_00 - Anotações do Gemini.md` |
 | Recebido em | 28/08/2026 |
-| Aviso do próprio Gemini | *"Algumas gravações estão indisponíveis"* — pode haver trecho não transcrito |
+| Aviso do próprio Gemini | *"Algumas gravações estão indisponíveis"*, pode haver trecho não transcrito |
 
 **Presentes que falam no registro.** OLX: Carolina Dallolio (operações comerciais, conduziu),
 Michelle Morais (CRM, apresentou a jornada granular de canais), Lu Machim (dashboards),
@@ -31,7 +31,7 @@ Rafael Corazza (coordenador).
 
 Ao contrário da [transcrição do kick-off](2026-08-24-kickoff-transcricao.md), esta sessão foi
 remota: **cada fala tem nome**, e atribuir citação é seguro. Seguem valendo os cuidados de
-transcrição automática — *turn/chne/Charlie* é churn, *MKL/SKL/SC/MTL* é MQL/SQL, *POS* é
+transcrição automática, *turn/chne/Charlie* é churn, *MKL/SKL/SC/MTL* é MQL/SQL, *POS* é
 point of sale, *Paper Lead* é pay per lead, *bote* é bot, *seil* é sell/SQL, *rids* é leads.
 Número dito aqui continua sendo **declarado**, não apurado (regra 1 do repositório).
 

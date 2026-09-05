@@ -1,7 +1,7 @@
 {
   "_comment": "Fonte da verdade dos acessos do DR-E Grupo OLX, agrupados por conta. Editado pelo portal em /kickoff, que grava aqui via /api/acessos.",
-  "atualizado_em": "2026-08-24",
-  "atualizado_por": "claude (data room aberto e primeiro lote baixado: 9 arquivos dos blocos E e I)",
+  "atualizado_em": "2026-09-01",
+  "atualizado_por": "claude (GTM confirmado pelo operador: conta BR - www.olx.com.br, 22+ conteineres)",
   "acessos": [
     {
       "o": "Google",
@@ -11,13 +11,13 @@
       "s": "parcial",
       "itens": [
         "Google Ads, VR09 ZAP+ MCC VivaReal (526-656-0190): CONCEDIDO, aceite feito em gina@v4company.com",
-        "Google Ads, demais contas B2B em leitura",
-        "GA4, propriedades dos domínios B2B, nível analista",
-        "Google Tag Manager, contêineres publicados",
-        "Google Search Console de cada propriedade B2B"
+        "Google Ads, demais contas B2B em leitura: NAO CONCEDIDO",
+        "GA4: ACESSO CONFIRMADO (31/08), leitura funciona. 3 contas, 26 propriedades: Grupo OLX (285763706, 6 props), OLX (70177409, 17 props), Viva Real (126375, 3 props). Nivel de permissao a confirmar",
+        "Google Tag Manager: ACESSO CONFIRMADO (01/09) pelo operador. Conta 'BR - www.olx.com.br', selo 360, 22+ conteineres. Relevantes ao escopo B2B: GTM-KGFGVFC (Planos Profissionais & PAYG), GTM-MXQKDG3 (Seller Journey), GTM-546N2JV (Container Master), GTM-M4TL57GX (Checkout), GTM-MJX9PG4 (Conecta Autos)",
+        "Google Search Console de cada propriedade B2B: NAO CONCEDIDO"
       ],
-      "v": "verificado em 24/08: o V4MOS passou a devolver 655 registros de campanha do Google Ads, então a ingestão está funcionando",
-      "n": "O MCC entrou. Falta GA4, GTM e Search Console, que são o bloco H e a auditoria (vii), a prioritária. Atenção: as 8 campanhas visíveis têm sufixo pf e falam de aluguel e compra de imóvel, ou seja, parecem ser pessoa física, não o B2B do escopo. Confirmar no kick-off se a conta B2B é outra. Desde 24/08 existe conta de domínio OLX (rafael.corazza-ext@olxbr.com): GA4, GTM e Search Console passam a ser pedidos para ela. O aceite do MCC, que já saiu, continua em gina@v4company.com."
+      "v": "verificado em 31/08: o GA4 responde pela API de dados nas 26 propriedades e devolve dado real (VivaReal 37,9 mi de sessoes em jun-ago). O V4MOS segue devolvendo 655 registros de campanha do Google Ads e vazio nos seis endpoints do Facebook.",
+      "n": "GA4 entrou e destrava a auditoria (vii), a prioritaria. Nivel de permissao NAO CONFIRMADO. O resumo de contas do GA4 devolve can_edit=false nas 26 propriedades, e o campo e coerente (da true nas contas onde a V4 e admin), mas e um sinal unico e nao prova o papel. Nenhuma chamada disponivel distingue Leitor de Editor: o Admin API responde igual nos dois casos. Confirmar na interface, em Administracao > Gerenciamento de acesso a propriedade. Confirmar tambem com qual conta Google o conector esta autenticado, porque o papel pode diferir entre gina@ e leonardo.rosa@. Segunda ressalva, independente do nivel: o vinculo com o Google Ads mostra que a conta a que a V4 tem acesso (526-656-0190) nao esta entre as 7 vinculadas a propriedade GA4 ZapImoveis, ver PENDENCIAS 12. Faltam GTM e Search Console para fechar o bloco H. Em 01/09 o GTM foi confirmado, fechando o bloco H. Falta o export em JSON dos conteineres, porque nao ha conector de GTM neste ambiente."
     },
     {
       "o": "Meta",
@@ -31,8 +31,8 @@
         "Business Manager, acesso de parceiro",
         "Business Suite, nível analista"
       ],
-      "v": "verificado em 24/08: nenhuma das duas contas aparece na conta Meta conectada, e os seis endpoints do Facebook no V4MOS devolvem vazio",
-      "n": "As duas contas de anúncio seguem pendentes de aprovação do lado da OLX. É o que falta para fechar a auditoria (vi), já que o lado Google destravou. Alimenta também (iv) e (v). Se a aprovação continuar travada, testar pela conta de domínio OLX (rafael.corazza-ext@olxbr.com), que dispensa aprovação de parceiro externo."
+      "v": "verificado em 01/09 na interface: a V4 enxerga o portfolio empresarial 'New OLX Brasil', com uma unica pagina, 'Grupo OLX' (ID 1239097169583910), e a aba Ativos conectados devolve 'Nenhum ativo conectado'. Coerente com os seis endpoints do Facebook no V4MOS devolvendo vazio.",
+      "n": "As duas contas de anuncio seguem sem compartilhamento. Confirmado agora pela interface, nao so pela API. E o que falta para fechar a auditoria (vi); alimenta tambem (iv) e (v). Pedir: aprovacao de 612188193108418 e 1742214902479721, acesso de parceiro no portfolio New OLX Brasil com os ativos atribuidos, e confirmacao de quantas paginas e contas existem de fato, porque a visao atual pode estar limitada pela permissao do usuario."
     },
     {
       "o": "Conta corporativa @olxbr.com",

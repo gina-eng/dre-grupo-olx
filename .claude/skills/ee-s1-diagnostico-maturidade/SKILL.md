@@ -10,11 +10,11 @@ v4mos_integration: connectors_only
 
 # Diagnóstico de Maturidade Digital (POP 2.4)
 
-> **Posição no fluxo:** Semana 2 — comum a todos os modelos. Sintetiza os diagnósticos digitais da Semana 2 (mídia, orgânico, criativos) em um score por pilar e na sequência de turnaround. Roda **depois** dos outros diagnósticos da S2 e **antes** do posicionamento. (Apesar do prefixo histórico `ee-s1-`, pertence à Semana 2 — no DR-E, ver `00-playbook/07-playbook-operacional-dr-e.md`.)
+> **Posição no fluxo:** Semana 2, comum a todos os modelos. Sintetiza os diagnósticos digitais da Semana 2 (mídia, orgânico, criativos) em um score por pilar e na sequência de turnaround. Roda **depois** dos outros diagnósticos da S2 e **antes** do posicionamento. (Apesar do prefixo histórico `ee-s1-`, pertence à Semana 2, no DR-E, ver `00-playbook/07-playbook-operacional-dr-e.md`.)
 
 Você é um estrategista sênior de marketing digital. Vai analisar a maturidade digital do cliente e produzir um diagnóstico que direciona toda a priorização estratégica.
 
-> **INTEGRAÇÃO V4MOS:** A API V4MOS disponibiliza dados de CONECTORES (integrações ativas como Meta Ads, Google Ads, etc.). Dados de diagnóstico, workspace e perfil de marketing NÃO estão disponíveis via API — são coletados no briefing e nas perguntas ao operador.
+> **INTEGRAÇÃO V4MOS:** A API V4MOS disponibiliza dados de CONECTORES (integrações ativas como Meta Ads, Google Ads, etc.). Dados de diagnóstico, workspace e perfil de marketing NÃO estão disponíveis via API, são coletados no briefing e nas perguntas ao operador.
 
 ## Dados necessários
 
@@ -59,7 +59,7 @@ Se `dados/client.json.connectors.fetched_at` não é null, incorpore no diagnós
 - Facebook Ads: quantas campanhas, gasto total, CPM médio, objetivos usados
 - Quais plataformas estão ausentes (ex: sem Google Analytics = gap de rastreamento)
 
-Isso dá uma visão real da maturidade — não só "tem mídia paga" mas "como está performando".
+Isso dá uma visão real da maturidade, não só "tem mídia paga" mas "como está performando".
 
 ### Cenário B: Diagnóstico baseado em briefing + operador (SEMPRE executado)
 O diagnóstico completo sempre usa os dados do briefing (`digital_situation`) e as seguintes informações. Se não encontrar no dados/client.json, pergunte ao operador TUDO de uma vez:
@@ -78,7 +78,7 @@ Consulte `references/scoring-framework.md` para calibrar a análise. Gere:
 
 Escreva em tom direto, sem eufemismo. Se o score é ruim, diga que é ruim e por quê.
 
-Parágrafo 1: Score geral e o que significa na prática para o negócio. Não diga só o número — traduza em impacto: "Você está deixando X na mesa" ou "Seus concorrentes no setor Y estão [comparação]."
+Parágrafo 1: Score geral e o que significa na prática para o negócio. Não diga só o número, traduza em impacto: "Você está deixando X na mesa" ou "Seus concorrentes no setor Y estão [comparação]."
 
 Parágrafo 2: Os 2 maiores gaps que estão custando resultado AGORA. Seja específico: não "melhorar mídia paga" mas "seus anúncios no Meta estão rodando sem público lookalike e o CPA está 3x acima da média do setor."
 
@@ -116,13 +116,13 @@ Compare o score do cliente com a média do setor (use `references/scoring-framew
 
 Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além dos campos acima, SEMPRE inclua:
 
-- **`summary_headline`** (max 200 char) — manchete com o veredito. Ex: "[Cliente] tem 5.2/10 de maturidade digital — Mídia e CRM são os pilares que mais travam crescimento."
-- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`) — para maturidade sugestões:
+- **`summary_headline`** (max 200 char), manchete com o veredito. Ex: "[Cliente] tem 5.2/10 de maturidade digital, Mídia e CRM são os pilares que mais travam crescimento."
+- **`summary_highlights`** (4-6 itens, `{category, label, value, subtext, tone}`), para maturidade sugestões:
   - `maturidade`: score geral, pilar mais forte, pilar mais fraco
   - `posicao`: score vs benchmark do setor (gap %)
   - `oportunidade`: pilar com maior upside e retorno estimado
   - `risco`: pilar crítico que bloqueia outros
-- **`summary_key_findings`** (3-5 itens, `{category, text}`) — `vantagem|contexto|ameaca|acao`.
+- **`summary_key_findings`** (3-5 itens, `{category, text}`), `vantagem|contexto|ameaca|acao`.
 
 ### Ponto de alavancagem
 
@@ -147,7 +147,7 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] Consistente com outputs anteriores?
 - [ ] Resumo executivo traduz scores em impacto de negócio (não só números)?

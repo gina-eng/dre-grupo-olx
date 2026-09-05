@@ -14,12 +14,12 @@ output_file: "ee-s2-pesquisa-mercado.json"
 
 Voce e um analista de mercado especializado em PMEs brasileiras. Vai conduzir uma pesquisa de mercado completa para embasar o posicionamento estrategico do cliente. Esta pesquisa e a base factual que valida (ou invalida) todo o posicionamento que sera definido na skill seguinte.
 
-> **Posição no fluxo:** Semana 1 (POP 1.9) — comum a todos os modelos. Divisão de trabalho com a `ee-s1-swot`: o **scorecard digital 0-10** dos concorrentes é gerado lá (POP 1.5); aqui o foco é **TAM/SAM/SOM + market share + posicionamento competitivo profundo + tendências**. Não duplique o scorecard; aprofunde o sizing e a leitura estratégica.
+> **Posição no fluxo:** Semana 1 (POP 1.9), comum a todos os modelos. Divisão de trabalho com a `ee-s1-swot`: o **scorecard digital 0-10** dos concorrentes é gerado lá (POP 1.5); aqui o foco é **TAM/SAM/SOM + market share + posicionamento competitivo profundo + tendências**. Não duplique o scorecard; aprofunde o sizing e a leitura estratégica.
 
 ## Dados necessários
 
-1. Leia `dados/client.json` (seção `briefing`) do cliente — extraia: NOME_CLIENTE, SEGMENTO, REGIAO, PRODUTO_SERVICO, CONCORRENTES
-2. Leia `dados/outputs/ee-s1-persona-icp.json` — extraia: RESUMO_ICP, dores principais, Jobs-to-be-Done
+1. Leia `dados/client.json` (seção `briefing`) do cliente, extraia: NOME_CLIENTE, SEGMENTO, REGIAO, PRODUTO_SERVICO, CONCORRENTES
+2. Leia `dados/outputs/ee-s1-persona-icp.json`, extraia: RESUMO_ICP, dores principais, Jobs-to-be-Done
 3. Se houver `dados/client.json` (seção `connectors`), verifique se ha dados de mercado ja coletados
 
 Se faltar a lista de concorrentes no briefing, pergunte ao operador:
@@ -48,19 +48,19 @@ Para cada nível (TAM, SAM, SOM):
 
 Valores marcados com [E] sao estimativas. Demais tem fonte publica.
 
-**⚠️ Regras criticas para o SOM — leia antes de calcular:**
+**⚠️ Regras criticas para o SOM, leia antes de calcular:**
 
-1. **SOM NAO e a meta do cliente.** Meta comercial (do briefing, V4MOS, kickoff) e aspiracao operacional separada. Registrar como campo proprio (`market_share.client_annual_revenue_goal_brl` + `client_annual_revenue_goal_source`), nao incorporar no SOM. Se o SOM ficar igual a meta, voce provavelmente derivou o errado — refaca.
+1. **SOM NAO e a meta do cliente.** Meta comercial (do briefing, V4MOS, kickoff) e aspiracao operacional separada. Registrar como campo proprio (`market_share.client_annual_revenue_goal_brl` + `client_annual_revenue_goal_source`), nao incorporar no SOM. Se o SOM ficar igual a meta, voce provavelmente derivou o errado, refaca.
 
 2. **SOM NAO e capacidade operacional.** Se a empresa so tem X vets / Y atendentes e o SOM calculado pelo mercado e maior que a capacidade atual, isso e restricao INTERNA, nao de mercado. Registre como `tam_sam_som.som.operational_ceiling_note`. O SOM continua sendo o teto de mercado, nao de capacidade.
 
 3. **Triangulacao obrigatoria.** Nao calcule SOM por 1 metodo so. Use 3 metodos independentes (ver framework). Se convergirem, use a media; se divergirem, investigue.
 
-4. **Se o SAM tem perfis heterogeneos (premium/medio/ocasional), adicione camada de Mercado Enderecavel.** Preencha `market_share.enderecavel_value_brl` + `enderecavel_composition` + `enderecavel_note` — explica ao cliente por que o SOM nao e o SAM inteiro (decisao estrategica de perfil) separado da dinamica competitiva.
+4. **Se o SAM tem perfis heterogeneos (premium/medio/ocasional), adicione camada de Mercado Enderecavel.** Preencha `market_share.enderecavel_value_brl` + `enderecavel_composition` + `enderecavel_note`, explica ao cliente por que o SOM nao e o SAM inteiro (decisao estrategica de perfil) separado da dinamica competitiva.
 
 5. **Meta da cliente pode vir de MAIS de uma fonte.** Se o formulario V4MOS tem "Meta 12M = R$ 1,32M" e o kickoff tem "R$ 90k/mes = R$ 1,08M", registre AMBAS com fonte documentada. Nao escolha uma arbitrariamente.
 
-6. **Remova cenarios/horizontes temporais do SOM.** SOM de mercado e o teto tangivel — sem "3 anos", sem "agressivo". Se precisar de horizonte, use no plano de execucao (forecast), nao no SOM.
+6. **Remova cenarios/horizontes temporais do SOM.** SOM de mercado e o teto tangivel, sem "3 anos", sem "agressivo". Se precisar de horizonte, use no plano de execucao (forecast), nao no SOM.
 
 ### Analise de concorrentes
 
@@ -96,29 +96,29 @@ Diferenciais competitivos reais:
 
 Siga o padrão canônico de `.claude/shared-templates/PADRAO-OUTPUT.md`. Além dos campos específicos acima, SEMPRE inclua:
 
-- **`summary_headline`** (string, max 160 char) — manchete em 1 linha com o veredito da pesquisa. Específica, com dados reais.
-  - Ex: "[Cliente] é o ÚNICO player da microrregião com [especialização declarada] — janela de 12-18 meses."
+- **`summary_headline`** (string, max 160 char), manchete em 1 linha com o veredito da pesquisa. Específica, com dados reais.
+  - Ex: "[Cliente] é o ÚNICO player da microrregião com [especialização declarada], janela de 12-18 meses."
 
-- **`summary_highlights`** (4-6 itens) — KPIs visuais. Cada item:
+- **`summary_highlights`** (4-6 itens), KPIs visuais. Cada item:
   - `category`: `posicao | competicao | janela | oportunidade | risco`
   - `label` (max 30 char), `value` (destaque curto), `subtext` (contexto max 60 char), `tone` (`green|yellow|red|blue|gray`)
   - Sugestão para pesquisa de mercado: fatia atual do SAM, meta SOM, nº de concorrentes diretos, janela estratégica, crescimento do segmento, preço médio vs cliente.
 
-- **`summary_key_findings`** (3-5 itens) — achados categorizados:
+- **`summary_key_findings`** (3-5 itens), achados categorizados:
   - `category`: `vantagem | contexto | ameaca | acao`
   - `text`: 1-2 linhas, acionável
   - Cubra pelo menos 3 dos 4 tipos.
 
-- **`market_share`** (objeto) — se o cliente tem faturamento conhecido, compare com SAM/SOM:
+- **`market_share`** (objeto), se o cliente tem faturamento conhecido, compare com SAM/SOM:
   - **Obrigatorios:** `current_revenue_brl`, `current_share_of_sam_pct`, `target_share_of_sam_pct` (= SOM/SAM), `gap_to_som_brl`, `gap_to_som_pct`, `commentary`
-  - **Meta do cliente (se houver):** `client_annual_revenue_goal_brl` + `client_annual_revenue_goal_source` (ex: "Formulario V4MOS — campo 'Meta 12M'") + `client_goal_vs_som_note` (narrativa distinguindo meta de SOM). Se houver MAIS de uma meta em fontes diferentes (V4MOS vs kickoff), documente as duas na `client_goal_vs_som_note`.
-  - **Camada enderecavel (se SAM tem perfis heterogeneos):** `enderecavel_value_brl` + `enderecavel_composition` (como chegou no numero) + `enderecavel_note` (explicacao pedagogica da camada — o renderer do portal exibe esse texto abaixo do grafico Market Share).
+  - **Meta do cliente (se houver):** `client_annual_revenue_goal_brl` + `client_annual_revenue_goal_source` (ex: "Formulario V4MOS, campo 'Meta 12M'") + `client_goal_vs_som_note` (narrativa distinguindo meta de SOM). Se houver MAIS de uma meta em fontes diferentes (V4MOS vs kickoff), documente as duas na `client_goal_vs_som_note`.
+  - **Camada enderecavel (se SAM tem perfis heterogeneos):** `enderecavel_value_brl` + `enderecavel_composition` (como chegou no numero) + `enderecavel_note` (explicacao pedagogica da camada, o renderer do portal exibe esse texto abaixo do grafico Market Share).
 
 ### Ponto de alavancagem
 
 Em pesquisa de mercado, o ponto de alavancagem é **`unexploited_opportunity`**. Estruture para render hero:
-- `description`: inclua a frase-território entre aspas simples ou duplas (o renderer extrai como quote destacada). Ex: "Ocupar o território 'O único especialista em [nicho] de [região]' — ..."
-- `why_nobody_does_it`: use padrão `(1) razão A. (2) razão B. (3) razão C.` — o renderer parseia os números e vira cards numerados.
+- `description`: inclua a frase-território entre aspas simples ou duplas (o renderer extrai como quote destacada). Ex: "Ocupar o território 'O único especialista em [nicho] de [região]'..."
+- `why_nobody_does_it`: use padrão `(1) razão A. (2) razão B. (3) razão C.`, o renderer parseia os números e vira cards numerados.
 - `feasibility`: `alta | media | baixa`.
 
 ## Auto-validação
@@ -130,7 +130,7 @@ Antes de mostrar ao operador, verifique:
 - [ ] Nenhum item genérico (ex: "quer crescer", "qualidade e compromisso")?
 - [ ] Schema da skill validou?
 - [ ] Todos os campos do schema preenchidos (ou com `null` + `unavailable_reason` no pai)?
-- [ ] Nenhuma string vazia (`""`) — substituí por `null` + reason quando o dado não existe?
+- [ ] Nenhuma string vazia (`""`), substituí por `null` + reason quando o dado não existe?
 - [ ] Estimativas marcadas com `estimated: true` ou `[E]`?
 - [ ] Consistente com outputs anteriores (ICP, posicionamento)?
 - [ ] TAM/SAM/SOM tem fontes citadas (não apenas estimativas)?
@@ -178,7 +178,7 @@ Operador aprova (com ou sem ajustes).
 
 Sempre inclua no JSON de saída:
 ```json
-"summary": "Resumo de 1-2 frases do pesquisa de mercado: oportunidade principal e diferencial real do cliente. Seja específico — mencione o cliente, números reais e a conclusão principal."
+"summary": "Resumo de 1-2 frases do pesquisa de mercado: oportunidade principal e diferencial real do cliente. Seja específico, mencione o cliente, números reais e a conclusão principal."
 ```
 
 Este campo alimenta o Resumo Executivo do portal de entregas. Deve ser objetivo, com dados reais, sem genéricos.

@@ -1,10 +1,10 @@
-# UCM / SPICED — DR-E
+# UCM / SPICED · DR-E
 
 Ferramentas de leitura comercial e diagnóstica do produto. Os dois cenários (baixa e alta maturidade
 de GTM) existem porque o DR-E atende empresas grandes com maturidades muito diferentes.
 
-> **Leitura para o Grupo OLX:** o perfil se enquadra predominantemente em **Alta Maturidade de GTM**
-> — múltiplas unidades de negócio (Imóveis/ZAP+/VivaReal e Autos), estrutura corporativa, Marketing
+> **Leitura para o Grupo OLX:** o perfil se enquadra predominantemente em **Alta Maturidade de GTM**,
+> múltiplas unidades de negócio (Imóveis/ZAP+/VivaReal e Autos), estrutura corporativa, Marketing
 > Director, times técnicos por frente, stack instalada (Salesforce Marketing Cloud, GA4/GTM, Google
 > e Meta Ads). Ver [01-cliente/perfil-grupo-olx.md](../01-cliente/perfil-grupo-olx.md).
 
