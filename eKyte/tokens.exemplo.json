@@ -1,0 +1,14 @@
+{
+  "_leia": "Copie este arquivo para tokens.json e preencha o SEU token. tokens.json é gitignored e NUNCA deve ser versionado — o token do eKyte identifica a pessoa, não a empresa. Depois rode ./scripts/operador.sh e reinicie a sessão.",
+  "_onde_pegar": "eKyte → menu do usuário → Integrações → MCP. O token é pessoal e intransferível.",
+  "_so_pessoas": "Nunca ponha aqui o token da conta genérica (gina@v4company.com / Regina Operações). Ela é compartilhada: operar com ela apaga a autoria de tudo que for criado, e o eKyte não corrige autoria depois.",
+  "_cadeiras": "O de/para de cadeira, e-mail e executorId fica em referencia/executores.md, que é versionado e não tem token nenhum.",
+  "tokens": {
+    "rafael": "COLE-O-TOKEN-AQUI",
+    "leonardo": "COLE-O-TOKEN-AQUI",
+    "anselmo": "COLE-O-TOKEN-AQUI",
+    "guilherme": "COLE-O-TOKEN-AQUI",
+    "robson": "COLE-O-TOKEN-AQUI",
+    "japa": "COLE-O-TOKEN-AQUI"
+  }
+}

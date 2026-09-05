@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__ekyte__create_time_tracking|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "G=\"${CLAUDE_PROJECT_DIR:-.}/scripts/guard-apontamento.py\"; [ -f \"$G\" ] || G=\"${CLAUDE_PROJECT_DIR:-.}/eKyte/scripts/guard-apontamento.py\"; python3 \"$G\"",
+            "timeout": 10,
+            "statusMessage": "Conferindo quem executou a tarefa..."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -41,3 +41,9 @@ assets/originais/_masters/
 
 # Vercel
 .vercel/
+
+# eKyte: token do MCP, um por pessoa da squad. Nunca versionado: token commitado
+# não sai do histórico, nem com o repo privado. Ver eKyte/CLAUDE.md#segurança.
+eKyte/tokens.json
+eKyte/.mcp.json
+eKyte/.operador
