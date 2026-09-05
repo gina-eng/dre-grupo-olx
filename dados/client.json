@@ -6,10 +6,10 @@
     "inicio": "2026-08-24",
     "duracao_meses": 12,
     "ciclo_atual": 1,
-    "fase_atual": "Onboarding",
-    "semana_corrente": 1,
-    "version": 4,
-    "atualizado_em": "2026-08-24",
+    "fase_atual": "Identificar",
+    "semana_corrente": 2,
+    "version": 13,
+    "atualizado_em": "2026-09-04",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
   "briefing": {
@@ -36,7 +36,7 @@
     "ticket_medio": null,
     "ciclo_venda_dias": null,
     "receita_declarada_12m": null,
-    "foco_declarado": "B2B — declarado por Mirella Mendonça em e-mail de 10/08/2026",
+    "foco_declarado": "B2B, declarado por Mirella Mendonça em e-mail de 10/08/2026",
     "hipotese_cliente": null,
     "fonte": "01-cliente/perfil-grupo-olx.md · 01-cliente/historico-onboarding.md"
   },
@@ -75,7 +75,7 @@
       },
       {
         "id": "iii",
-        "nome": "GEO — IA e Buscas Generativas",
+        "nome": "GEO, IA e Buscas Generativas",
         "bloco_dados": "D",
         "status": "pendente"
       },
@@ -183,7 +183,7 @@
     "ver": "01-cliente/acessos-e-ferramentas.md"
   },
   "conectores": {
-    "fetched_at": null,
+    "fetched_at": "2026-08-31",
     "v4mos": {
       "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61",
       "api": "https://api.data.v4.marketing/v1",
@@ -199,6 +199,127 @@
         "facebook/ads/creatives": 0
       },
       "nota": "Apos o aceite do convite do MCC VivaReal, o lado Google passou a ingerir: 655 registros de campanha, 8 campanhas, 16/05/2025 a 22/06/2026, R$ 1,91 mi e 7,1 mi de cliques. Meta segue vazio, coerente com as duas contas de anuncio pendentes. As campanhas visiveis tem sufixo 'pf' e tema de aluguel e compra, o que sugere B2C: ver PENDENCIAS 12."
+    },
+    "ga4": {
+      "status": "concedido, nivel Leitor",
+      "verificado_em": "2026-08-31",
+      "nivel": "Leitor, confirmado na interface pelo operador em 01/09/2026, coerente com can_edit=false nas 26 propriedades. O documento de acessos de 25/08 pede Editor ou Administrador e o pedido segue em aberto. Leitor cobre relatorio, eventos, eventos-chave, canais, vinculos de Google Ads, tier e dominios. Nao cobre as telas de Administracao: fluxos de dados, regras de evento, definicoes personalizadas, retencao, filtros e consentimento (H4).",
+      "contas": [
+        {
+          "id": "285763706",
+          "nome": "Grupo OLX",
+          "propriedades": 6
+        },
+        {
+          "id": "70177409",
+          "nome": "OLX",
+          "propriedades": 17
+        },
+        {
+          "id": "126375",
+          "nome": "Viva Real",
+          "propriedades": 3
+        }
+      ],
+      "propriedades_chave": {
+        "407374944": "GA4 ZapImoveis",
+        "407391347": "GA4 VivaReal",
+        "494455315": "GA4 ZapImoveis + VivaReal",
+        "503925542": "GA4 Grupo OLX",
+        "469847974": "ANAPRO",
+        "382768600": "OLX PRO",
+        "382776122": "OLX Pro Landing",
+        "516288559": "Autos 360 (Ex-Altimus)",
+        "150867749": "VivaReal Apps + Web"
+      },
+      "achados_preliminares": [
+        "Zero eventos marcados como chave em GA4 Grupo OLX (503925542), Autos 360 (516288559), ANAPRO (469847974) e OLX PRO (382768600), apesar do volume.",
+        "GA4 VivaReal (407391347) marca session_start como evento-chave: 13,27 mi em agosto, ao lado de generate_lead (830.116) e generate_lead_pro (661.144).",
+        "GA4 ZapImoveis tem 7 contas de Google Ads vinculadas e nenhuma e a 526-656-0190, a unica a que a V4 tem acesso. GA4 Grupo OLX nao tem nenhum vinculo.",
+        "Canal AI Assistant ja aparece: 247.694 sessoes no VivaReal em jun-ago. Linha de base para a auditoria (iii) GEO.",
+        "OLX Pro Landing (382776122) nao registrou nenhum evento no periodo."
+      ],
+      "nota": "Nenhum numero acima foi usado ainda em diagnostico. Sao leituras de verificacao de acesso, com fonte na API de dados do GA4, coletadas em 31/08/2026.",
+      "service_level": {
+        "GOOGLE_ANALYTICS_360": [
+          "407391347 GA4 VivaReal",
+          "407374944 GA4 ZapImoveis",
+          "152644854 OLX App + Web",
+          "516288559 Autos 360"
+        ],
+        "GOOGLE_ANALYTICS_STANDARD": [
+          "503925542 GA4 Grupo OLX"
+        ],
+        "leitura": "As propriedades de consumidor rodam no tier pago 360. A propriedade que carrega os dominios B2B (ads., imoveis., autos., institucional) roda no tier gratuito."
+      },
+      "propriedade_da_medicao_b2b": {
+        "measurement_id": "G-50C013M2CC",
+        "propriedade": "152644854 OLX App + Web",
+        "tier": "GOOGLE_ANALYTICS_360",
+        "nota": "Os 5 conteineres auditados escrevem aqui, nao na propriedade GA4 Grupo OLX (503925542).",
+        "volumes_agosto_2026": {
+          "ad_insertion": 4602128,
+          "ad_edition": 4140566,
+          "qualified_lead_autos_pro": 4680465,
+          "begin_checkout": 2686897,
+          "purchase": 565258,
+          "ad_remove": 157632,
+          "lead_b2b": 0
+        }
+      }
+    },
+    "gtm": {
+      "status": "acesso confirmado pelo operador em 2026-09-01",
+      "conta": "BR - www.olx.com.br (selo 360)",
+      "conteineres_mapeados": 22,
+      "nota": "22 e piso: a lista estava cortada na captura.",
+      "prioritarios_b2b": {
+        "GTM-KGFGVFC": "OLX - Planos Profissionais & PAYG",
+        "GTM-MXQKDG3": "OLX - Seller Journey",
+        "GTM-546N2JV": "OLX - Container Master (serve os 5 dominios B2B)",
+        "GTM-M4TL57GX": "OLX - Checkout",
+        "GTM-MJX9PG4": "OLX - Conecta Autos"
+      },
+      "bloqueio_residual": "Nao ha conector de GTM neste ambiente. Auditar exige export do conteiner em JSON.",
+      "achado_lateral": "Existe conteiner 'OLX - RD Station | LP' (GTM-MVQWQJFB), o que sugere RD Station convivendo com Salesforce Marketing Cloud. Confirmar.",
+      "export_recebido": {
+        "em": "2026-09-01",
+        "conteineres": [
+          "GTM-546N2JV",
+          "GTM-KGFGVFC",
+          "GTM-MXQKDG3",
+          "GTM-M4TL57GX",
+          "GTM-MJX9PG4"
+        ],
+        "auditoria": "02-diagnostico/auditoria-vii-rastreamento.md",
+        "criticos": 5,
+        "relevantes": 12,
+        "faltam": [
+          "GTM-PZ733B5 (Zapimoveis ANUNCIE)",
+          "GTM-5WWRGTQ (VAS)",
+          "GTM-KP8QMDH (Unbounce)",
+          "GTM-T2H3VFL (Google Shopping)",
+          "GTM-PWP7Z4C (Wallet)"
+        ]
+      }
+    },
+    "meta": {
+      "status": "sem ativos concedidos",
+      "verificado_em": "2026-09-01",
+      "portfolio_visivel": "New OLX Brasil",
+      "paginas_visiveis": [
+        {
+          "nome": "Grupo OLX",
+          "id": "1239097169583910",
+          "proprietario": "New OLX Brasil",
+          "ativos_conectados": 0
+        }
+      ],
+      "contas_pendentes": [
+        "612188193108418 (VR ZAP+)",
+        "1742214902479721 (OLX Autos B2B)"
+      ],
+      "nota": "A visao pode estar limitada pela permissao do usuario logado. Confirmar com visao administrativa antes de tratar 'nenhum ativo conectado' como achado de configuracao."
     }
   },
   "travas": {
@@ -255,7 +376,15 @@
   "consolidacao_causal": null,
   "progress": {
     "skills": {
-      "dre-onboarding": "in_progress"
+      "dre-onboarding": "in_progress",
+      "auditoria-vii-rastreamento": "in_progress",
+      "cronograma-replanejado-em-dias": "completed",
+      "proposta-meta-do-projeto": "completed",
+      "cronograma-reajustado-15-dias": "completed",
+      "cronograma-reajustado-acessos-0809": "completed",
+      "dre-fluxo-receita": "in_progress",
+      "dre-diagnostico-trava": "in_progress",
+      "dre-maturidade-digital": "in_progress"
     }
   },
   "history": [
@@ -278,6 +407,51 @@
       "data": "2026-08-24",
       "version": 4,
       "evento": "Conta de domínio OLX (rafael.corazza-ext@olxbr.com) concedida e data room aberto com ela. Primeiro lote baixado: 9 arquivos dos blocos E e I, organizados em assets/originais/. Checklist: E1 e I3 passaram a parcial."
+    },
+    {
+      "data": "2026-08-31",
+      "version": 5,
+      "evento": "Varredura de acessos. GA4 encontrado liberado nas 3 contas do grupo (26 propriedades), com o nivel de permissao ainda por confirmar, item que o checklist ainda registrava como nao iniciado. Registrados os achados preliminares de rastreamento e o vinculo Google Ads x GA4. V4MOS inalterado: Google ingerindo, Meta vazio. Google Ads MCP e conector claude.ai Google Ads indisponiveis."
+    },
+    {
+      "data": "2026-09-01",
+      "version": 6,
+      "evento": "Bloco H fechado nos dois acessos. GTM confirmado pelo operador: conta BR - www.olx.com.br, 22+ conteineres, incluindo Planos Profissionais & PAYG e Seller Journey, que sao o recorte B2B. GA4 confirmado no nivel Leitor. Meta verificado na interface: portfolio New OLX Brasil visivel, uma pagina, nenhum ativo conectado, o que confirma pelo lado da concessao o vazio ja visto no V4MOS. Registrado o service_level do GA4: tier 360 nas propriedades de consumidor e Standard na propriedade que carrega os dominios B2B."
+    },
+    {
+      "data": "2026-09-01",
+      "version": 7,
+      "evento": "Export de 5 conteineres GTM recebido e auditado. 5 achados criticos: purchase disparado por begin_checkout, consent mode com padrao granted e botao de recusa oculto, lead_b2b com zero eventos, tag que grava user_olx pausada quebrando seller_category, parametros de item sem indice de array. Identificada a propriedade real da medicao B2B: OLX App + Web (152644854), nao a GA4 Grupo OLX. Auditoria (vii) passou a em andamento."
+    },
+    {
+      "data": "2026-09-01",
+      "version": 8,
+      "evento": "Cronograma dos nove diagnosticos replanejado de semanas para dias, por criterio de habilitacao: vale o que fecha com o acesso que ja existe. Gatilhos: GA4 e GTM na mao, e a apresentacao de diagnosticos de 10/09 que nao constava de nenhum documento. Quatro diagnosticos andam na janela ate 10/09 -- (vii) fecha, (viii) parcial forte, (vi) so a camada estrutural do mapa de contas, e (ii) antecipado da S7 porque a camada publica nao custa hora do cliente. Cinco seguem congelados por acesso nao concedido: (iv), (i), (v), (ix) e (iii) como folga. Achado de prazo: acesso pedido em 10/09 chega depois do Comite 1 de 17/09, entao o pedido formal tem data limite em 04/09."
+    },
+    {
+      "data": "2026-09-02",
+      "version": 9,
+      "evento": "Proposta de meta do projeto montada, cumprindo o proximo passo #5 do kick-off. Entrega a regua (truput de run-rate de saida na vertical governante) e o cascateamento nos 4 ciclos, sobre as seis taxas declaradas em 28/08. Achado que decide a regua: com churn de 9% a base tem constante de tempo de 11 meses, entao na regua de receita acumulada no ano o Ciclo 1 vale 74,7% do ganho e o Ciclo 4 vale zero. Teto matematico do sistema atual sem midia incremental: +26% de regime no cenario conservador. Nenhum valor absoluto acordado: faltam os quatro insumos do material de metas, todos com DRI e prazo ate 10/09."
+    },
+    {
+      "data": "2026-09-03",
+      "version": 10,
+      "evento": "Cronograma reajustado sobre duas premissas novas: a OLX marcou a entrega do lote completo de acessos para as 17h de 03/09, e a V4 dimensionou os nove diagnosticos em 15 dias corridos (04 a 18/09, que sao 10 dias uteis por causa do feriado de 7 de setembro numa segunda). Com todos os nove habilitados ao mesmo tempo, o criterio de habilitacao adotado em 01/09 perdeu a funcao e o gargalo passou a ser hora do time da OLX. Decisoes: apresentacao dos diagnosticos adiada de 10/09 para 24/09 15h-17h; Comite 1 de 17/09 para 01/10 15h-17h; Comite 2 de 08/10 para 29/10 e Comite 3 de 12/11 para 26/11, porque a distancia entre comites e tempo de execucao de plano de 30 dias e nao folga de agenda. O ciclo passa de 80 para 94 dias, aproximando-se dos 90 nominais, mas fica em 14 semanas, acima da faixa de 10-12 do playbook. A regra de no maximo tres diagnosticos abertos por vez e quebrada conscientemente: pico de seis abertos e quatro cobrando hora da OLX na semana de 14/09, mitigado concentrando entrevistas em dois blocos, 15 e 16/09. Riscos registrados: lote pode chegar concedido e nao utilizavel (precedentes do GA4 em nivel Leitor e do portfolio Meta sem ativo conectado), (ix) pre-vendas comprimido de tres semanas para oito dias com consentimento de gravacao no caminho, dois gates de GP em oito dias sem GP nominado, e um mes sem contato sincrono com os decisores, mitigado por reporte escrito em 11/09 e 18/09. Bloco A segue sem nenhum item: e entrega de dado, nao acesso, e nenhuma concessao de 17h o destrava."
+    },
+    {
+      "data": "2026-09-04",
+      "version": 11,
+      "evento": "A entrega de acessos prometida para as 17h de 03/09 nao ocorreu. Em reuniao de alinhamento sobre a estrutura de GA4 e GTM, a equipe responsavel da OLX se comprometeu com a atualizacao dos acessos na terca 08/09. Cronograma remontado sobre essa premissa: diagnosticos de 09 a 23/09 (15 dias corridos, 11 uteis), gate do GP em 28/09, apresentacao em 29/09, Matriz do GP em 05/10 e Comite 1 em 06/10. Comite 2 vai para 03/11 e Comite 3 para 01/12, mantendo 4 semanas de execucao de plano entre comites. Achado que suaviza o atraso: o feriado de 7 de setembro saiu de dentro da janela de diagnostico, que ganhou um dia util (de 10 para 11) -- escorregou a data de inicio, nao a capacidade de trabalho. Estado em 04/09: quatro diagnosticos avancam em camada parcial com o acesso ja concedido -- (vii) por 5 dos 11 exports ainda na fila, (ii) pela camada publica dos 5 dominios B2B, (viii) pelo inventario de LPs no GA4 e (vi) pelo mapa de contas -- e nenhum deles fecha antes de 08/09. Quatro estao 100% parados: (ix), (i), (v) e (iv). (iii) GEO nao depende de acesso mas nao decide a restricao. Consequencia contratual registrada: o Ciclo 1 vai a 15 semanas e 99 dias, os quatro ciclos passam a ocupar 51 das 52 semanas do contrato, a folga cai de quatro semanas para pouco mais de uma, e o Ciclo 2 escorrega de nov/26 para dez/26. Um segundo atraso nao tem mais de onde ser absorvido. Bloco A segue sem nenhum item e nao e destravado por concessao de ferramenta: e entrega de dado."
+    },
+    {
+      "data": "2026-09-04",
+      "version": 12,
+      "evento": "Nao ha Growth Planner neste projeto. A nomenclatura GP foi removida dos documentos deste contrato e do portal: 04-execucao/cronograma-e-marcos.md, 04-execucao/sprint-diagnosticos-09-a-23-09.md, PENDENCIAS.md, 01-cliente/stakeholders.md e portal/_src/cronograma.html. Nomear um papel que nao existe e pior do que nao nomear. 00-playbook/ e .claude/skills/ NAO foram alterados: la o papel e do metodo da V4, nao deste contrato, e a skill dre-matriz-gp mantem o nome. O que nao sai com o nome e a exigencia: a regra 4 do repositorio e o playbook secao 3 continuam exigindo que o material de comitE seja validado por quem nao participou da analise, e sem Matriz aprovada nao ha comite. Substituicoes: 'gate de qualidade do GP' virou 'revisao de qualidade do material' (28/09) e 'Matriz do GP aprovada' virou 'Matriz aprovada' (05/10) -- a Matriz e artefato do metodo e foi preservada. Pendencia 8 reescrita de 'Papeis V4 nao nominados' para 'A revisao de qualidade do material nao tem dono', subindo de amarela para laranja, com a decisao reformulada: nao e mais quem e o GP, e sim quem revisa, e se nao houver ninguem isso precisa ser decisao consciente em ata e nao etapa que sumiu do cronograma. Se a revisao for eliminada, o cronograma encurta cerca de dois dias e o Comite 1 pode ir para 02/10."
+    },
+    {
+      "data": "2026-09-04",
+      "version": 13,
+      "evento": "Analise Diagnostica do Ciclo 1 executada (POPs 5, 6 e 7) com a evidencia anterior ao desbloqueio de 08/09. Pipeline: 5 inventariadores levantaram 329 fatos e 131 lacunas; 3 analises; 12 lentes adversariais devolveram 154 violacoes, 40 bloqueantes; passada de correcao aplicou 93 correcoes e rejeitou 12 com prova, derrubando para 7 bloqueantes; passada final reemitiu o fluxo no schema canonico da skill e normalizou a escala dos scores. RESULTADO. Fluxo: 10 etapas com fonte nomeada, ZERO com volume absoluto e zero com tempo medio, entao perda_absoluta e null nas dez e o ranking por perda absoluta e indeterminavel -- ordenar por percentual violaria o checklist da skill. Das seis taxas declaradas, so o 80% de pagamento da 1a fatura e taxa de passagem etapa a etapa; as outras cinco sao grandezas incomensuraveis sob o mesmo rotulo. Regra 7 nao verificavel pelos dois caminhos: falta bloco A pelo lado do cliente, e pelo lado instrumentado lead_b2b = 0 em agosto. Existem dois candidatos a numerador apurados e sem significado confirmado: generate_lead_pro 661.144 e generate_lead 830.116 (GA4 VivaReal 407391347, agosto/2026). Travas: so Cegueira (6) e Retencao (9) com as cinco dimensoes pontuadas; as outras seis com score null. Isso BLOQUEIA a consolidacao causal pela pre-condicao da propria skill. Retencao entra como hipotese de trabalho, nao como restricao. Maturidade digital: nivel 2 nas tres dimensoes. DOIS ACHADOS QUE CORRIGEM DOCUMENTO EXISTENTE, abertos como pendencias 19 e 20: o denominador dos 12% de nao-publicacao e ambiguo e meta-do-projeto.md usou p(publicacao)=88% resolvendo a ambiguidade silenciosamente para o lado que amplia o vazamento em uma ordem de grandeza; e o slide FLUXOS, do qual depende todo o mix de canais, nunca foi versionado, alem de a leitura de 'dois caminhos independentes' ser falsa por virem do mesmo artefato. Entregaveis: dados/outputs/dre-fluxo-receita.json, dre-diagnostico-travas.json e dre-maturidade-digital.json; 02-diagnostico/fluxo-de-receita.md, diagnostico-travas.md e maturidade-digital.md; e o docx em 01-cliente/entregaveis/."
     }
   ]
 }
