@@ -1,18 +1,20 @@
-# Checklist de Dados e Acessos — Diagnóstico
+# Checklist de Dados e Acessos · Diagnóstico
 
 Lista enviada por Gustavo Figueiredo ao Grupo OLX em **11/08/2026**, organizada por frente de
 trabalho do DR-E.
 
-**Prioridade declarada:** blocos **A, G, H e J** — "destravam as análises de maior impacto;
+**Prioridade declarada:** blocos **A, G, H e J**, "destravam as análises de maior impacto;
 o restante pode ser complementado nas duas primeiras semanas."
 
 **Legenda de status:** ✅ recebido · 🟡 parcial · 🟠 solicitado, pendente · ⚪ não iniciado · 🔴 inexistente (registrar como evidência diagnóstica)
 
 **Material recebido até agora:** primeiro lote do data room baixado em **24/08/2026**, 9 arquivos nos blocos E e I. Índice, procedência e leitura inicial em [`assets/originais/README.md`](../assets/originais/README.md).
 
+**Acessos verificados em 31/08 e 01/09/2026:** GA4 liberado (H1 ✅) e **GTM confirmado** (H2 ✅), o bloco H, prioritário, está com os dois acessos. V4MOS inalterado: Google Ads ingerindo, Meta vazio. Search Console, Salesforce, CRM e ferramentas de SEO/comportamento seguem sem concessão.
+
 ---
 
-## 🔴 A. Visão de negócio e Fluxo de Receita — PRIORITÁRIO
+## 🔴 A. Visão de negócio e Fluxo de Receita · PRIORITÁRIO
 *Base para o diagnóstico das travas e para o Mapeamento do Fluxo de Receita.*
 
 | # | Item | Status | Obs. |
@@ -28,7 +30,7 @@ o restante pode ser complementado nas duas primeiras semanas."
 > faturamento declarado e o forecast não pode ser construído.
 
 ## B. CRM Marketing
-*Alimenta o diagnóstico (i) — Salesforce Marketing Cloud.*
+*Alimenta o diagnóstico (i), Salesforce Marketing Cloud.*
 
 | # | Item | Status |
 |---|---|---|
@@ -37,14 +39,38 @@ o restante pode ser complementado nas duas primeiras semanas."
 | B3 | Relatórios de performance de e-mail dos últimos 12 meses (entregabilidade, open, CTR, conversão) | ⚪ |
 | B4 | Tamanho e saúde da base opt-in | ⚪ |
 
+> ⚠️ **O bloco B foi desenhado para uma ferramenta e o GTM mostrou quatro.** Além do Salesforce
+> Marketing Cloud, o export de 01/09 revelou **Insider** (`10007563`, web push e personalização,
+> ativo), **Braze** (`sdk.iad-07.braze.com`, instrumentação completa mas **14 tags pausadas**) e
+> **RD Station** (contêiner `GTM-MVQWQJFB` em `materiais.olx.com.br`). Mais os cookies `sf_utm_*`
+> que alimentam atribuição no Salesforce. **Perguntar qual é a ferramenta oficial e o que as outras
+> três fazem**, quatro plataformas de relacionamento convivendo já é achado de maturidade.
+
 ## C. Ambientes CRO/SEO (domínios B2B)
 *Alimenta o diagnóstico (ii).*
 
-| # | Item | Status |
-|---|---|---|
-| C1 | Relação de domínios e subdomínios B2B em escopo | ⚪ |
-| C2 | Acesso ao Google Search Console de cada propriedade | ⚪ |
-| C3 | Acesso à ferramenta de SEO utilizada internamente (SEMrush, Ahrefs ou similar), se houver | ⚪ |
+| # | Item | Status | Obs. |
+|---|---|---|---|
+| C1 | Relação de domínios e subdomínios B2B em escopo | 🟡 | **Reconstruída do GA4 em 01/09**, não recebida da OLX, falta a OLX confirmar quais estão em escopo. Ver tabela abaixo |
+| C2 | Acesso ao Google Search Console de cada propriedade | 🟠 | Sem concessão |
+| C3 | Acesso à ferramenta de SEO utilizada internamente (SEMrush, Ahrefs ou similar), se houver | ⚪ | Pode não existir, se não existir, é achado de maturidade |
+
+**C1 · Domínios com tráfego na propriedade GA4 Grupo OLX** (`503925542`), jun–ago/2026, por sessões:
+
+| Domínio | Sessões | Leitura |
+|---|---:|---|
+| `lp.olx.com.br` | 2.146.626 | Farm de landing pages, 87% do tráfego da propriedade |
+| `ads.grupoolx.com.br` | 168.238 | **Candidato a domínio de captação de anunciante** |
+| `vender.olx.com.br` | 165.796 | Jornada de quem vende |
+| `app.olx.com.br` | 75.959 | |
+| `grupoolx.com.br` + `www.` | 34.069 | Institucional |
+| `imoveis.grupoolx.com.br` | 23.373 | Vertical Imóveis B2B |
+| `validador.olx.com.br` | 19.004 | |
+| `autos.grupoolx.com.br` | 13.963 | Vertical Autos B2B |
+| `olxpay` · `bemvindo` · `eventos` · `bensdeconsumo` · `dicas` · `cms` · `historicoveicular` · `chama-na-olx` | < 3.000 cada | Cauda longa |
+
+> A família `*.grupoolx.com.br` é a que mais se parece com o recorte B2B contratado, e `ads.` é a mais
+> promissora. **Confirmar com a OLX** antes de fixar o escopo: a leitura é de tráfego, não de negócio.
 
 ## D. GEO (IA e Buscas Generativas)
 *Alimenta o diagnóstico (iii). Demais insumos cobertos por C e G.*
@@ -59,7 +85,7 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 | # | Item | Status | Obs. |
 |---|---|---|---|
-| E1 | Biblioteca de criativos veiculados nos últimos 6–12 meses | 🟡 | 8 peças de **uma** campanha (Mês do Corretor 2026, SP, consideração, RE) recebidas em 24/08 — ver [originais](../assets/originais/README.md#bloco-e--criativos-anúncios-e-mensagens). Falta o resto da janela de 6–12 meses |
+| E1 | Biblioteca de criativos veiculados nos últimos 6–12 meses | 🟡 | 8 peças de **uma** campanha (Mês do Corretor 2026, SP, consideração, RE) recebidas em 24/08, ver [originais](../assets/originais/README.md#bloco-e--criativos-anúncios-e-mensagens). Falta o resto da janela de 6–12 meses |
 | E2 | Brandbook, diretrizes de marca e documento de proposta de valor (messaging house, se existir) | ⚪ | |
 | E3 | Briefings das principais campanhas recentes | ⚪ | Sem os briefings não dá para saber qual era a hipótese por trás das variantes V1, V2 e V3 recebidas em E1 |
 
@@ -69,40 +95,97 @@ o restante pode ser complementado nas duas primeiras semanas."
 | # | Item | Status |
 |---|---|---|
 | F1 | Acesso de analista ao Meta Business Suite e à(s) Company Page(s) do LinkedIn | ⚪ |
-| F2 | Acessos equivalentes a demais canais ativos (YouTube, TikTok, etc.) | ⚪ |
+| F2 | Acessos equivalentes a demais canais ativos (YouTube, TikTok, etc.) | 🟡 |
 | F3 | Calendário editorial e relatórios de performance orgânica dos últimos 6 meses | ⚪ |
 
-## 🔴 G. Mídia Paga (Google e Meta) — PRIORITÁRIO
+> **F2 · canais confirmados pelo GTM (01/09):** TikTok pixel `CO25OBRC77U47AMPJES0` **ativo** em
+> Conecta Autos. Meta com **três pixels distintos**: `592658194155317`, `818079879779548`,
+> `935989184453347`. YouTube com rastreamento de vídeo instrumentado. Não é mais "a confirmar quais
+> canais existem", é pedir acesso a esses.
+
+## 🔴 G. Mídia Paga (Google e Meta) · PRIORITÁRIO
 *Alimenta o diagnóstico (vi).*
 
 | # | Item | Status | Obs. |
 |---|---|---|---|
-| G1 | Acesso de leitura às contas de Google Ads e Meta Ads (IDs das contas) | 🟡 | 3 contas mapeadas — ver [acessos](../01-cliente/acessos-e-ferramentas.md) |
+| G1 | Acesso de leitura às contas de Google Ads e Meta Ads (IDs das contas) | 🟡 | 3 contas mapeadas, ver [acessos](../01-cliente/acessos-e-ferramentas.md). Em 31/08 o GA4 revelou **7 contas de Google Ads** vinculadas à propriedade ZapImóveis, e a conta a que a V4 tem acesso não está entre elas, ver PENDÊNCIAS 12 |
 | G2 | Investimento mensal por canal/campanha dos últimos 12 meses | ⚪ | |
 | G3 | Plano de mídia vigente e definição das conversões otimizadas em cada plataforma | ⚪ | |
 | G4 | Metas de CPA/ROAS praticadas e contato da agência, caso a operação seja terceirizada | ⚪ | |
 
-## 🔴 H. Rastreamento Completo (GA4 e GTM) — PRIORITÁRIO
+## 🔴 H. Rastreamento Completo (GA4 e GTM) · PRIORITÁRIO
 *Alimenta o diagnóstico (vii).*
 
-| # | Item | Status |
-|---|---|---|
-| H1 | Acesso de analista à(s) propriedade(s) GA4 | ⚪ |
-| H2 | Acesso de leitura ao(s) contêiner(es) GTM publicados | ⚪ |
-| H3 | Plano de mensuração e taxonomia de eventos e conversões, se documentado | ⚪ |
-| H4 | Configuração de consentimento (LGPD / consent mode) e eventual tagueamento server-side | ⚪ |
+| # | Item | Status | Obs. |
+|---|---|---|---|
+| H1 | Acesso de analista à(s) propriedade(s) GA4 | ✅ | **Liberado · confirmado em 31/08.** 3 contas e 26 propriedades: Grupo OLX (285763706), OLX (70177409), Viva Real (126375). **Nível: Leitor**, confirmado na interface pelo operador em 01/09, bate com o `can_edit=false` que a API devolve nas 26 propriedades. O documento de 25/08 pede Editor ou Administrador: **pedido em aberto** |
+| H2 | Acesso de leitura ao(s) contêiner(es) GTM publicados | ✅ | **Confirmado em 01/09.** Conta `BR - www.olx.com.br`, selo 360, com **22+ contêineres**. Inventário abaixo |
+| H3 | Plano de mensuração e taxonomia de eventos e conversões, se documentado | 🟡 | Não recebido, mas **reconstruído** a partir do export de 5 contêineres em 01/09, ver [auditoria (vii)](auditoria-vii-rastreamento.md). A taxonomia praticada tem duas grafias para o mesmo conceito e um gatilho que escuta evento inexistente |
+| H4 | Configuração de consentimento (LGPD / consent mode) e eventual tagueamento server-side | 🟡 | **Auditado em 01/09 pelo export.** Consent mode via AdOpt, client-side, sem contêiner server-side. Três problemas: padrão `granted` em tudo, botão de recusar oculto por CSS, injetor com 4s de atraso, ver [auditoria (vii)](auditoria-vii-rastreamento.md) achado 2 |
+
+### H2 · Inventário de contêineres: conta `BR - www.olx.com.br`
+
+> 🔴 **Corrigido em 02/09: são quatro contas de GTM, não uma.** `BR - www.olx.com.br` (`94905`),
+> `Checkout Unificado - PRO` (`6326134112`), `VivaReal` (`4412254379`) e `ZapImóveis`
+> (`2971905372`), todas com selo 360. O inventário abaixo cobre **só a primeira**. Dos 11 exports
+> recebidos, 10 são dela e 1 da ZapImóveis; as outras duas contas estão inteiramente por auditar.
+> Ver [PENDÊNCIAS 17](../PENDENCIAS.md) e o Bloco 0 de [`coleta-pendente.md`](coleta-pendente.md).
+
+Confirmado por acesso à interface em 01/09/2026. A lista é alfabética e estava cortada na captura,
+então **22 é piso desta conta**, não total do grupo.
+
+| Contêiner | ID | Tipo | Relevância para o escopo B2B |
+|---|---|---|---|
+| **OLX - Planos Profissionais & PAYG** | `GTM-KGFGVFC` | Web | 🔴 **Máxima.** É a monetização do anunciante profissional, a receita contratada |
+| **OLX - Seller Journey** | `GTM-MXQKDG3` | Web | 🔴 **Máxima.** Jornada de quem anuncia |
+| **OLX - Container Master** | `GTM-546N2JV` | Web | 🔴 É o que carrega em `ads.`, `imoveis.`, `autos.`, institucional e `vender.olx.com.br` |
+| **OLX - Checkout** | `GTM-M4TL57GX` | Web | 🔴 Onde o pagamento acontece, fecha o fluxo de receita |
+| OLX - Conecta Autos | `GTM-MJX9PG4` | Web | 🟠 Vertical Autos B2B |
+| OLX - Buyer Journey | `GTM-TNX8FDS` | Web | 🟡 Contraponto B2C, útil para comparar padrão de medição |
+| OLX - RD Station \| LP | `GTM-MVQWQJFB` | Web | 🟡 **Indica RD Station na stack**, ver nota |
+| OLX - LPs · Site Institucional · Login · Favoritos · Chat · Chatbot · Central de Ajuda · [OLD] Ajuda · Dicas · Hub Segurança · Encontro Certo · Projetos Especiais de Autos · Teste Adopt | - | Web | ⚪ Fora do recorte imediato |
+| [New] Android Tracking · [New] iOS Tracking | `GTM-52W35LS` · `GTM-T8ZBL8Z` | App | ⚪ Camada de app |
+
+> **Achado lateral: RD Station.** Existe um contêiner dedicado a RD Station. O contrato e o checklist
+> tratam Salesforce Marketing Cloud como o CRM de marketing (bloco B). Se RD Station também opera,
+> há **duas ferramentas de automação convivendo**, o que muda o desenho de B1–B4 e é sintoma clássico
+> de medição fragmentada. Confirmar no próximo contato.
+
+> ✅ **Export recebido em 01/09** dos 5 contêineres do recorte B2B. Auditoria em
+> [`auditoria-vii-rastreamento.md`](auditoria-vii-rastreamento.md): 5 achados críticos, 12 relevantes.
+> Faltam os exports de `GTM-PZ733B5` (Zapimóveis ANUNCIE), `GTM-5WWRGTQ`, `GTM-KP8QMDH`, `GTM-T2H3VFL`
+> e `GTM-PWP7Z4C`, descobertos nas zonas do Master e ausentes da lista visível.
+
+> **Ter acesso não é o mesmo que conseguir auditar:** não há conector de GTM neste ambiente. O caminho
+> é **exportar o contêiner em JSON** (Administração → Exportar contêiner) e versioná-lo no repositório,
+> o que permite auditar tags, gatilhos, variáveis e consent mode offline. **Não são os 22**, bastam os
+> quatro marcados 🔴 mais o Conecta Autos para cobrir o escopo contratado.
+
+> **O que o nível Leitor entrega e o que não entrega.** Entrega tudo que já foi levantado: eventos,
+> eventos-chave, canais, atribuição, vínculos de Google Ads, tier de serviço, domínios. Isso sustenta
+> a auditoria (vii) na camada de **sintoma**.
+>
+> Não entrega as telas de Administração: **configuração dos fluxos de dados**, regras de criação e
+> modificação de evento, definições personalizadas, detalhe da configuração de conversão, retenção de
+> dados, domínios cruzados, filtros de tráfego interno e referências indesejadas, e a **configuração
+> de consentimento (H4)**. É a camada de **causa**, exatamente o que o documento de 25/08 argumentou
+> ao pedir Editor.
+>
+> **Mitigação parcial:** boa parte da causa vive no GTM, não no GA4. Com o export dos contêineres em
+> JSON dá para reconstruir tags, gatilhos, variáveis e consent mode sem elevar o nível do GA4. O que
+> continua fora de alcance é a configuração server-side do próprio GA4.
 
 ## I. Páginas de Captura e Fluxos de Conversão
 *Alimenta o diagnóstico (viii).*
 
 | # | Item | Status | Obs. |
 |---|---|---|---|
-| I1 | URLs das principais LPs e fluxos de conversão ativos | ⚪ | O teste de I3 cita a "LP Anuncie ZAP"; falta a relação completa e as URLs |
+| I1 | URLs das principais LPs e fluxos de conversão ativos | 🟡 | Reconstruível do GA4. O GTM revelou que as LPs rodam em **Unbounce** (contêiner `GTM-KP8QMDH`), sobre ~20 hostnames listados na zona correspondente |
 | I2 | Taxas de conversão por página / etapa | ⚪ | |
-| I3 | Histórico de testes A/B realizados, se houver | 🟡 | 1 teste recebido em 24/08 (LP Anuncie ZAP, 17–23/03) — ver [originais](../assets/originais/README.md#bloco-i--páginas-de-captura-e-fluxos-de-conversão). Vieram só os slides de resultado: **sem volume absoluto de visitantes e de MQL**, não dá para recalcular a significância |
-| I4 | Acesso a ferramenta de comportamento (Hotjar, Clarity ou similar), se disponível | ⚪ | |
+| I3 | Histórico de testes A/B realizados, se houver | 🟡 | 1 teste recebido em 24/08 (LP Anuncie ZAP, 17–23/03), ver [originais](../assets/originais/README.md#bloco-i--páginas-de-captura-e-fluxos-de-conversão). Vieram só os slides de resultado: **sem volume absoluto de visitantes e de MQL**, não dá para recalcular a significância |
+| I4 | Acesso a ferramenta de comportamento (Hotjar, Clarity ou similar), se disponível | 🟡 | **Existe: Mouseflow**, projeto `b837e449-83ee-457f-9ef5-8f976953f2bc`, gravando sessão em todas as páginas web (Master, tag 27). Deixa de ser "pode não existir" e vira pedido de acesso concreto |
 
-## 🔴 J. Pré-Vendas, Qualificação e Sales Engagement — PRIORITÁRIO
+## 🔴 J. Pré-Vendas, Qualificação e Sales Engagement · PRIORITÁRIO
 *Alimenta o diagnóstico (ix). Bloco mais informativo para as travas de fundo de funil.*
 
 | # | Item | Status |
@@ -118,6 +201,6 @@ o restante pode ser complementado nas duas primeiras semanas."
 ## Como usar este checklist
 
 1. **Atualize o status a cada recebimento.** Este arquivo é a fonte de verdade da fase Identificar.
-2. **Item inexistente não é falha do cliente — é dado.** Marque 🔴 e registre no diagnóstico da trava correspondente como evidência de maturidade.
+2. **Item inexistente não é falha do cliente, é dado.** Marque 🔴 e registre no diagnóstico da trava correspondente como evidência de maturidade.
 3. **Bloco A é pré-requisito do Forecast.** Sem A1–A3, a matemática do sistema não valida.
 4. **Cobrar apenas o que ainda falta**, por bloco, no canal oficial do projeto.
