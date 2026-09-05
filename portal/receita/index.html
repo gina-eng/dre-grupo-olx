@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Fluxo de Receita · Portal DR-E Grupo OLX</title>
-<meta name="description" content="Mapa editável do caminho do dinheiro no B2B do Grupo OLX. Nada aqui está confirmado: cada nó aponta a pergunta do bloco 3B que o fecha.">
+<meta name="description" content="Mapa editável do caminho do dinheiro no B2B do Grupo OLX. Status e notas apurados na transcrição do kick-off de 24/08; cada nó aponta a pergunta do bloco 3B que o fecha.">
 <link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap">
-<link rel="stylesheet" href="/assets/base.css?v=14e03a76">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/base.css?v=32834f49">
 <link rel="stylesheet" href="/assets/shell.css?v=c92a13dd">
 <script src="/assets/shell.js?v=cd5ac90c"></script>
 </head>
@@ -23,7 +23,7 @@
       <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
       <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
     </a>
-    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita" aria-current="page">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita" aria-current="page">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/metricas">Métricas</a></nav>
     <span class="spacer"></span>
     <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
   </div>
@@ -36,14 +36,14 @@
   </div>
   <div class="drawer-b">
     <p class="side-label">Portal</p>
-    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita" aria-current="page">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/metricas">Métricas</a>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita" aria-current="page">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/metricas">Métricas</a>
     <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
     <div id="dtoc"></div>
   </div>
 </nav>
 
 <div class="crumb"><div class="crumb-in">
-  <h1>Árvore de Produção de Receita</h1><p class="desc">Mapa editável do caminho do dinheiro no B2B do Grupo OLX. Nada aqui está confirmado: cada nó aponta a pergunta do bloco 3B que o fecha.</p><span class="meta">v0 · a confirmar no kick-off</span>
+  <h1>Árvore de Produção de Receita</h1><p class="desc">Mapa editável do caminho do dinheiro no B2B do Grupo OLX. Status e notas apurados na transcrição do kick-off de 24/08; cada nó aponta a pergunta do bloco 3B que o fecha.</p><span class="meta">v2 · 26 ago 2026</span>
 </div></div>
 <div class="doc" id="doc"><div class="doc-main"><style>
 .bar{top:3.5rem}
@@ -66,6 +66,9 @@
   background-image:radial-gradient(circle,var(--border) 1px,transparent 1px);
   background-size:24px 24px;cursor:grab;touch-action:none;overscroll-behavior:contain}
 .canvas.is-pan{cursor:grabbing}
+/* Durante o arrasto nada aqui e selecionavel. O preventDefault do pointerdown ja impede a
+   selecao de comecar; isto e a segunda trava, para o caso de o arrasto iniciar de outro jeito. */
+.canvas.is-pan,.canvas.is-pan *{-webkit-user-select:none;user-select:none}
 .stage{position:absolute;top:0;left:0;width:max-content;transform-origin:0 0;
   padding:2rem clamp(1rem,3vw,2.5rem);will-change:transform}
 
@@ -195,49 +198,72 @@ li.is-col > ul{display:none}
 // mudanca estrutural: a arvore e pequena e isso elimina qualquer divergencia
 // entre DOM e estado. Texto e editado in loco e salvo com debounce.
 // ============================================================================
-const CHAVE = "dre-arvore-receita-v1";
+// v2: a arvore deixou de ser so a hipotese de leitura do contrato. Os status e as notas vieram
+// da transcricao integral do kick-off de 24/08, apurada em
+// 06-reunioes/2026-08-24-kickoff-o-que-a-transcricao-fecha.md. A chave subiu de v1 para v2 porque
+// carregar() prefere o localStorage ao SEED: sem trocar a chave, quem ja abriu a pagina continuaria
+// vendo a arvore antiga do proprio navegador.
+const CHAVE = "dre-arvore-receita-v2";
 
 // s: aberto | hipotese | confirmado · q: pergunta do bloco 3B que fecha o no
 const SEED = {
-  t: "Receita B2B do Grupo OLX", s: "aberto", n: "O objeto do DR-E é o sistema de receita B2B, não o marketplace de consumidor. O caminho completo ainda não foi desenhado.", q: "3B-1",
+  t: "Receita B2B do Grupo OLX", s: "hipotese", q: "3B-1",
+  n: "Modelo de classificados: o anunciante compra inserção e posição (pay per listing), com produtos de visibilidade por cima. Declaração do próprio cliente: 'a gente vende exatamente os mesmos produtos de 15 anos atrás'. Escopo do DR-E fechado em 24/08: Autos e Imóveis, com Goods fora.",
   c: [
-    { t: "Origem do valor: audiência B2C", s: "hipotese", n: "Num marketplace de dois lados o anunciante compra acesso a demanda. Se o tráfego de consumidor oscila, o B2B sente na renovação. Falta saber se existe métrica ligando os dois lados.", q: "3B-6", c: [] },
+    { t: "Origem do valor: audiência B2C", s: "confirmado", q: "3B-6", n: "Não é gerida. Perguntados sobre rentabilizar o lead B2C: 'a gente não faz nada intencional em cima disso, a gente gera leads'. O que existe é uma atribuição feita no ano passado com o FP&A, e por rateio dos planos vendidos. Escala declarada, a confirmar formalmente: cerca de 50 mi de usuários por mês, cerca de 4,5 mi de leads por mês, 2,6 leads por usuário em real estate. Confirmação inversa: quando o anunciante sai, o inventário dele sai junto, a oferta cai e a conversão do lado do consumidor cai.", c: [
+      { t: "Taxa de resposta ao lead", s: "confirmado", q: "3B-6", n: "Entre 50% e 58% das imobiliárias respondem o lead entregue, medido por cliente oculto e batendo com o benchmark internacional. Perto de metade do que a plataforma entrega não recebe resposta nenhuma, e isso não é falha de geração, é perda no outro lado do marketplace.", c: [] }
+    ]},
 
-    { t: "Frente Imóveis", s: "hipotese", n: "ZAP+, VivaReal e OLX Imóveis. Fonte: 01-cliente/perfil-grupo-olx.md. Falta saber se têm P&L separado ou consolidado.", q: "3B-2", c: [
-      { t: "Imobiliária", s: "aberto", n: "Contrato por empresa, com vários corretores e vários anúncios sob o mesmo pagante?", q: "3B-0", c: [
-        { t: "Plano por volume de anúncios", s: "aberto", n: "Unidade de valor: vaga, listing ativo, ou faixa de volume?", q: "3B-1", c: [] },
-        { t: "Destaque e impulsionamento", s: "aberto", n: "Compra avulsa ou pacote dentro do plano?", q: "3B-1", c: [] }
+    { t: "Frente Imóveis", s: "confirmado", q: "3B-2", n: "Triple Bundle: o contrato é com o Grupo OLX e a entrega é distribuída em ZAP+, VivaReal e OLX Imóveis. O anunciante recebe leads dos três e não sabe de qual portal veio cada um. Consequência para a leitura: ele é um registro na base, não três, e ticket, base ativa e churn precisam ser lidos no Grupo.", c: [
+      { t: "Imobiliária", s: "confirmado", q: "3B-0", n: "Contraparte principal. Mercado sem exclusividade, o que gera duplicidade de anúncio: 193 mil anúncios deduplicados contra cerca de 1,5 mi duplicados (cifra a confirmar, a transcrição corrompe o número). A deduplicação é disputada: as imobiliárias descobrem o algoritmo e fogem dele. Falta a unidade de cobrança formal: por CNPJ, por rede ou por loja.", c: [
+        { t: "Plano por volume de anúncios", s: "confirmado", q: "3B-1", n: "Pacotes de 10, 12, 14 e 15 anúncios. A unidade de valor é o slot de anúncio ativo, não o lead. Sem garantia de performance: pode receber zero ou mil. Pré-pago na grande maioria.", c: [] },
+        { t: "Destaque e impulsionamento", s: "confirmado", q: "3B-1", n: "Produtos de visibilidade. Lá fora são de 30% a 50% da receita em real estate, muito acima do share atual da OLX. Limite declarado por Leonardo Costa: já estão saturados aqui dentro.", c: [] },
+        { t: "Tier de plano", s: "hipotese", q: "3B-1", n: "Existem ao menos três tiers e o básico não recebe lead similar. O tier é variável de preço e de entrega ao mesmo tempo. Confirmar quantos são e o que muda em cada um.", c: [] }
       ]},
-      { t: "Corretor autônomo", s: "aberto", n: "Pagante pessoa física, ticket menor, provavelmente self-service. Confirmar se existe e qual o peso.", q: "3B-0", c: [] },
-      { t: "Incorporadora", s: "aberto", n: "Compra lançamento e mídia, não plano de listagem. Ciclo e ticket diferentes.", q: "3B-0", c: [
-        { t: "Contrato de mídia", s: "aberto", n: "Campanha por empreendimento? Preço por período ou por entrega?", q: "3B-1", c: [] }
+      { t: "Corretor autônomo", s: "hipotese", q: "3B-0", n: "Perfil confirmado como B2B: 'se você é um corretor ou uma imobiliária, você é imóveis'. Peso na receita desconhecido.", c: [] },
+      { t: "Incorporadora", s: "hipotese", q: "3B-0", n: "Mercado primário, ciclo e ticket diferentes. Pay per lead já foi testado com incorporadoras, e a calculadora Minha Casa Minha Vida gera lead genérico distribuído para esse mercado.", c: [
+        { t: "Contrato de mídia", s: "aberto", q: "3B-1", n: "Sem sinal na transcrição. Campanha por empreendimento? Preço por período ou por entrega?", c: [] }
       ]}
     ]},
 
-    { t: "Frente Autos", s: "hipotese", n: "OLX Autos, operação B2B. Fonte: perfil. Falta saber se o dealer paga plano, paga por anúncio, ou se existe comissão sobre a venda.", q: "3B-3", c: [
-      { t: "Concessionária", s: "aberto", n: "Volume alto, contrato por rede ou por loja?", q: "3B-0", c: [] },
-      { t: "Revenda / dealer", s: "aberto", n: "O termo dealer precisa ser definido pelo cliente: é revenda multimarca, é loja de bairro, é rede?", q: "3B-0", c: [] },
-      { t: "Vendedor pessoa física", s: "aberto", n: "Está dentro ou fora do escopo B2B? Se gera receita, entra na árvore.", q: "3B-0", c: [] },
-      { t: "Sobrou operação transacional?", s: "aberto", n: "Compra e venda direta de veículo mudaria a natureza da receita de assinatura para transação.", q: "3B-3", c: [] }
+    { t: "Frente Autos", s: "confirmado", q: "3B-3", n: "Marca única OLX, o que simplifica a leitura em relação a Imóveis. Mesmo modelo de classificados. Diferença que importa: 'o mercado automotivo já está acostumado com esse modelo pay per use', então a fricção para mudar a cobrança é menor deste lado.", c: [
+      { t: "Locadora e grandes contas", s: "confirmado", q: "3B-3", n: "Já operam em pay per lead hoje. É o único ponto da árvore onde o modelo alternativo de cobrança roda em produção, e por isso é a melhor base de comparação que existe para o teste aprovado no kick-off.", c: [] },
+      { t: "Concessionária", s: "hipotese", q: "3B-0", n: "Existe. Contrato por rede ou por loja segue aberto.", c: [] },
+      { t: "Revenda / dealer", s: "hipotese", q: "3B-0", n: "Existe, mas o termo continua sem definição do cliente: revenda multimarca, loja de bairro ou rede.", c: [] },
+      { t: "Vendedor pessoa física", s: "hipotese", q: "3B-0", n: "Leonardo Costa cuida 'de privados e profissionais', o que sugere segmentação formal entre os dois. Confirmar se o privado gera receita ou é gratuito, e se está dentro do recorte B2B.", c: [] },
+      { t: "Sobrou operação transacional?", s: "hipotese", q: "3B-3", n: "Hipótese negativa: nenhuma menção a comissão sobre venda de veículo nem a compra e venda direta, em duas horas de conversa sobre receita de autos. Ausência confirmada também é resposta.", c: [] }
     ]},
 
-    { t: "Canal indireto", s: "aberto", n: "Revenda, franquia, parceiro ou agência vendendo em nome do grupo. Se existir, essa receita não passa pelo funil próprio nem pelo CRM.", q: "3B-7", c: [] },
-
-    { t: "Formação do preço", s: "aberto", n: "Como o valor cobrado se forma e o que o faz subir dentro do mesmo cliente.", q: "3B-9", c: [
-      { t: "Tabela por porte e praça", s: "aberto", n: "Existe tabela? Varia por região?", q: "3B-9", c: [] },
-      { t: "Desconto praticado", s: "aberto", n: "A distância entre tabela e praticado costuma ser onde a Trava de Decisão aparece com evidência.", q: "3B-9", c: [] },
-      { t: "Alavanca de expansão", s: "aberto", n: "O que faz a fatura crescer sem cliente novo: mais anúncio, mais destaque, mais praça, upgrade.", q: "3B-4", c: [] },
-      { t: "Onde está a margem", s: "aberto", n: "Se a linha que mais fatura não é a que mais lucra, a priorização do Ciclo 1 muda de lugar.", q: "3B-5", c: [] }
+    { t: "Canal indireto", s: "hipotese", q: "3B-7", n: "Hipótese negativa: nenhuma revenda, franquia ou agência vendendo em nome do grupo foi citada. O que existe é parceiro dentro da jornada, abaixo.", c: [
+      { t: "Parceiro financeiro", s: "hipotese", q: "3B-7", n: "Banco e financeira pagam para entrar na jornada e recebem o lead do lojista via OLX. Não é anunciante e não aparece como linha, mas gera receita. Dimensionar.", c: [] }
     ]},
 
-    { t: "Caminho do dinheiro até a conta", s: "aberto", n: "Cada troca de mão é um ponto de perda possível.", q: "3B-11", c: [
-      { t: "Contrato assinado", s: "aberto", n: "Quem prospecta, quem precifica, quem aprova desconto.", q: "3B-11", c: [] },
-      { t: "Faturamento", s: "aberto", n: "Recorrente, por pedido, antecipado?", q: "3B-11", c: [] },
-      { t: "Cobrança e inadimplência", s: "aberto", n: "Inadimplência é um dos modos de uma conta morrer sem cancelar.", q: "3B-10", c: [] },
-      { t: "Renovação", s: "aberto", n: "Ativa ou automática, e quem cuida.", q: "3B-10", c: [] }
+    { t: "Formação do preço", s: "hipotese", q: "3B-9", n: "Nó ativo do sistema: é aqui que aconteceu o movimento de 2026 que está por trás do churn declarado.", c: [
+      { t: "Tabela por porte e praça", s: "hipotese", q: "3B-9", n: "A escada de pacotes (10, 12, 14, 15) funciona como tabela, e existe leitura regional nas metas. A tabela vigente não foi entregue.", c: [] },
+      { t: "Desconto praticado", s: "confirmado", q: "3B-9", n: "Aumento expressivo de preço em 2026, apoiado em consultoria de pricing e benchmark, com objetivo declarado de recuperar rentabilidade. Somado à queda de performance percebida pelo anunciante em mercado mais competitivo, virou churn e downgrade: 'talvez aí tenha sido o nosso movimento não muito inteligente'. Havia condição especial na recontratação e ela foi endurecida. Falta o desconto médio praticado por segmento.", c: [] },
+      { t: "Sem garantia de performance", s: "confirmado", q: "3B-1", n: "O anunciante novo não tem resultado garantido: 'ele pode comprar um plano de cinco anúncios e em um mês não receber nenhum. A gente deveria blindar essa aquisição e a gente não garante'. É a fricção entre atenção e ação, e foi nomeada pelo próprio cliente como causa de churn.", c: [] },
+      { t: "Alavanca de expansão", s: "confirmado", q: "3B-4", n: "Três alavancas: upgrade na escada de pacotes, produtos de visibilidade, e rentabilização de carteira pelo executivo comercial, apoiada por uma visão chamada Spark. Teto declarado: a visibilidade já está saturada.", c: [] },
+      { t: "Onde está a margem", s: "hipotese", q: "3B-5", n: "Margem bruta praticamente 100%, porque não há produto fabricado. Ofensores: mídia e imposto. Não existe abertura de margem por linha, então a pergunta útil vira composição de receita: quanto é listing e quanto é visibilidade.", c: [] }
     ]},
 
-    { t: "Linhas fora da árvore", s: "aberto", n: "Dados, API, parcerias, licenciamento, programática. O que sobrar aqui é o que a leitura do sistema estaria ignorando.", q: "3B-12", c: [] }
+    { t: "Caminho do dinheiro até a conta", s: "hipotese", q: "3B-11", n: "Multi-handoff confirmado por declaração: 'tem produto, tem marketing, tem operações, tem time comercial, e você tem interfaces diversas'. E a própria OLX precisou de um workshop interno para conseguir desenhar a jornada.", c: [
+      { t: "Entrada por canal", s: "confirmado", q: "3B-11", n: "Três portas conforme o porte e a lucratividade: canal online (self-service, entrada de clientes menores), inside sales (telefone e WhatsApp) e field sales (clientes maiores). Hunter e farmer separados: 'quem faz essa primeira entrada não é necessariamente quem rentabiliza', podendo coincidir nas contas grandes.", c: [] },
+      { t: "Contrato assinado", s: "aberto", q: "3B-11", n: "Quem precifica e quem aprova exceção de desconto continua sem resposta. É o handoff menos visível da cadeia e o que fecha 3B-9.", c: [] },
+      { t: "Faturamento", s: "confirmado", q: "3B-11", n: "Pré-pago na grande maioria de Imóveis, pós-pago nas contas de campo.", c: [] },
+      { t: "Cobrança e inadimplência", s: "confirmado", q: "3B-10", n: "Gestão de pagamento cobra a carteira de maior receita no pré-pago; time de cobrança persegue receita devida no pós-pago. Nenhum dos dois olha a performance do cliente: 'é um time de cobrança mais focado em contas a receber'.", c: [] },
+      { t: "Renovação", s: "confirmado", q: "3B-10", n: "No pré-pago renova quem paga de novo, e quem para de pagar morre em silêncio: 'o churn não é um churn, ele só para de pagar, não renova'. Atuação por IA e régua de touch. Não existe CS de retenção olhando se o cliente está tendo resultado; o papel consultivo mora no executivo comercial e só nas contas maiores.", c: [] },
+      { t: "Remuneração do comercial", s: "confirmado", q: "3B-11", n: "Variável em 75% carteira e 25% scorecard estratégico. Sem indicador de retenção, de qualidade da base ou de atendimento: foi discutido e não implementado. Num negócio cuja restrição percebida é retenção, é a candidata mais forte a política implícita da causa-raiz.", c: [] }
+    ]},
+
+    { t: "Linhas fora da árvore", s: "confirmado", q: "3B-12", n: "Seis candidatos apareceram, todos ancorados no lado B2C que hoje não é monetizado de forma intencional. É onde mora a receita que a leitura atual do sistema ignora.", c: [
+      { t: "Lead similar", s: "confirmado", q: "3B-12", n: "Contato distribuído a no máximo três imobiliárias, por opt-out, disponível só nos tiers superiores de plano. Corresponde a 5% do volume total de leads. O que trava a monetização própria é a percepção de qualidade pior, e portanto o pricing point.", c: [] },
+      { t: "Calculadora Minha Casa Minha Vida", s: "confirmado", q: "3B-12", n: "Gera lead genérico para o mercado primário e distribui. Já em produção.", c: [] },
+      { t: "Lead de financiamento em Autos", s: "confirmado", q: "3B-12", n: "Já enriquecido com valor de entrada pretendido e status de aprovação de crédito.", c: [] },
+      { t: "Enriquecimento de lead", s: "hipotese", q: "3B-12", n: "Ferramenta com lançamento previsto em evento de outubro de 2026. Em Imóveis, a calculadora de financiamento está no roadmap.", c: [] },
+      { t: "WhatsApp B2C com IA de recomendação", s: "hipotese", q: "3B-12", n: "Em construção com a Meta, com incentivo comercial da própria Meta. Ainda não é linha de receita.", c: [] }
+    ]},
+
+    { t: "Frente Goods", s: "confirmado", q: "3B-12", n: "Fora do escopo do DR-E por decisão do kick-off de 24/08: 'a goods, a gente deixa de lado'. Fica na árvore só para registrar que a exclusão foi deliberada, não esquecimento.", c: [] }
   ]
 };
 
@@ -382,7 +408,7 @@ function md(no, nivel) {
 
 function exportarMd() {
   const c = contar(arvore);
-  return "# Árvore de produção de receita — Grupo OLX\n\n" +
+  return "# Árvore de produção de receita, Grupo OLX\n\n" +
     "> **v0, não confirmada.** " + c.confirmado + " nós confirmados, " + c.hipotese +
     " hipóteses e " + c.aberto + " abertos, de " + c.total + ".\n" +
     "> Cada nó não confirmado aponta a pergunta do bloco 3B do kick-off que o fecha.\n" +
@@ -495,6 +521,16 @@ let arrastando = false, ax = 0, ay = 0;
 canvas.addEventListener("pointerdown", e => {
   if (e.button !== 0 && e.button !== 1) return;
   if (e.target.closest(".nd") || e.target.closest(".hud")) return;
+  // Sem isto o navegador inicia uma selecao de texto no ponto do clique e vai estendendo ela por
+  // cima dos nos conforme o ponteiro passa, que era o efeito chato de arrastar a tela e sair
+  // pintando os cartoes de azul. preventDefault mata a selecao na origem.
+  e.preventDefault();
+  // preventDefault tambem segura o foco onde estava, entao o blur de quem estava editando um no
+  // passa a ser explicito: clicar no vazio continua saindo do campo, como antes.
+  const foco = document.activeElement;
+  if (foco && foco !== document.body && stage.contains(foco)) foco.blur();
+  const sel = window.getSelection && window.getSelection();
+  if (sel && !sel.isCollapsed) sel.removeAllRanges();
   arrastando = true; ax = e.clientX - tx; ay = e.clientY - ty;
   canvas.classList.add("is-pan");
   canvas.setPointerCapture(e.pointerId);

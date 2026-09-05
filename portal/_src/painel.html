@@ -106,7 +106,7 @@ body > footer strong{color:#fff}
     <div class="status">
       <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel"></span></div>
       <div class="st"><span class="k">Ciclo</span><b class="v">1 de 4</b><span class="n" id="sem">Fase Identificar</span></div>
-      <div class="st"><span class="k">Próximo comitê</span><b class="v">17 set 2026</b><span class="n" id="com-rel">Comitê 1: data proposta, a fechar hoje</span></div>
+      <div class="st"><span class="k">Próximo marco</span><b class="v">8 set 2026</b><span class="n" id="com-rel">Atualização dos acessos pela OLX</span></div>
       <div class="st"><span class="k">Encerramento</span><b class="v">24 ago 2027</b><span class="n">12 comitês contratados</span></div>
     </div>
   </section>
@@ -155,28 +155,32 @@ body > footer strong{color:#fff}
     if (d === -1) return "ontem";
     return "há " + Math.abs(d) + " dias";
   }
-  var ko = new Date(2026, 7, 24), c1 = new Date(2026, 8, 17);
+  // Marcos reajustados em 04/09: a entrega de acessos de 03/09 nao ocorreu e passou para 08/09,
+  // levando a apresentacao para 29 de setembro e o Comite 1 para 6 de outubro. O proximo marco
+  // e o desbloqueio de acesso, porque e dele que todas as outras datas dependem.
+  var ko = new Date(2026, 7, 24), ac = new Date(2026, 8, 8);
   var dk = dias(ko);
   document.getElementById("ko-rel").textContent = frase(dk);
 
-  // Fases conforme 00-playbook/03-ciclo-90-dias-e-comites.md §1. Identificar (1-4) e
-  // Otimizar (2-4) se sobrepõem de propósito, e Expandir (8-12) cobre Recomeçar (12).
+  // Fases do playbook §1, esticadas para as 15 semanas do Ciclo 1 reajustado em 04/09.
+  // Identificar (1-6) e Otimizar (5-7) se sobrepõem, e Expandir (11-15) cobre Recomeçar (15).
   function fasesDaSemana(s) {
     var f = [];
-    if (s >= 1 && s <= 4) f.push("Identificar");
-    if (s >= 2 && s <= 4) f.push("Otimizar");
-    if (s >= 5 && s <= 7) f.push("Alinhar");
-    if (s >= 8 && s <= 12) f.push("Expandir");
-    if (s === 12) f.push("Recomeçar");
+    if (s >= 1 && s <= 6) f.push("Identificar");
+    if (s >= 5 && s <= 7) f.push("Otimizar");
+    if (s >= 8 && s <= 11) f.push("Alinhar");
+    if (s >= 11 && s <= 15) f.push("Expandir");
+    if (s === 15) f.push("Recomeçar");
     return f;
   }
   var semana = dk > 0 ? 0 : Math.floor((hoje - ko) / 604800000) + 1;
   var el = document.getElementById("sem");
-  if (semana >= 1 && semana <= 12) {
+  if (semana >= 1 && semana <= 15) {
     var f = fasesDaSemana(semana);
     el.textContent = "Semana " + semana + " · " + (f.length > 1 ? "fases " : "fase ") + f.join(" + ");
   }
-  document.getElementById("com-rel").textContent = "Comitê 1 · " + frase(dias(c1)) + " (proposta)";
+  document.getElementById("com-rel").textContent =
+    "Acessos · " + frase(dias(ac)) + " · apresentação 29/09 · Comitê 1 em 6/10";
 
   var n = window.dreProgresso ? window.dreProgresso() : 0;
   var p = document.getElementById("kf-prog");

@@ -32,6 +32,7 @@ NAV = [
     ("kickoff",    "Kick-off",   "/kickoff"),
     ("receita",    "Receita",    "/receita"),
     ("cronograma", "Cronograma", "/cronograma"),
+    ("destrava",   "Destrava Receita", "/destrava"),
     ("metricas",   "Métricas",   "/metricas"),
 ]
 

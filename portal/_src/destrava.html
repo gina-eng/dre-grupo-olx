@@ -1,0 +1,63 @@
+<!--@ destrava | Destrava Receita · Portal DR-E Grupo OLX | Destrava Receita | Onde ficam as análises e os resultados do ciclo, na ordem em que o método os produz. | Ciclo 1 · Análise Diagnóstica -->
+<style>
+/* Estrutura minima e proposital: o formato visual desta aba ainda esta em definicao.
+   O que existe aqui e o esqueleto das cinco fases do ciclo, para que o conteudo entre
+   no lugar certo quando o formato for decidido. */
+section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
+.blk-h{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--border);padding-bottom:.5rem;margin-bottom:1rem}
+.blk-h h2{margin:0;font-size:1.35rem;letter-spacing:-.01em}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted-fg)}
+.lead{color:var(--muted-fg);max-width:56rem;line-height:1.6}
+.vazio{border:1px dashed var(--border-strong);border-radius:var(--radius);
+  padding:2.5rem 1.5rem;text-align:center;color:var(--muted-fg);background:var(--muted)}
+.vazio b{display:block;color:var(--fg);font-size:.95rem;margin-bottom:.3rem}
+.vazio span{font-size:.85rem}
+.fases{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  margin-top:1.2rem}
+.fase{border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem;
+  background:var(--card)}
+.fase .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted-fg)}
+.fase h3{margin:.3rem 0 .35rem;font-size:1rem}
+.fase p{margin:0;font-size:.85rem;color:var(--muted-fg);line-height:1.5}
+.fase .st{display:inline-block;margin-top:.6rem;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.06em;text-transform:uppercase;padding:.12rem .45rem;border-radius:9999px;
+  border:1px solid var(--border);color:var(--muted-fg)}
+.fase.ativa{border-color:color-mix(in srgb,var(--brand) 45%,transparent)}
+.fase.ativa .st{background:var(--brand);border-color:var(--brand);color:#fff}
+</style>
+
+<section class="blk">
+  <div class="blk-h"><h2>O que vai viver aqui</h2><span class="eyebrow">em construção</span></div>
+  <p class="lead">Esta aba reúne as <b>análises e os resultados</b> do Destrava Receita, na ordem em
+    que o método os produz: primeiro o diagnóstico do sistema, depois a restrição nomeada, depois o
+    plano que a ataca e o resultado que ele gerou. É a aba que o Grupo OLX abre para ver
+    <em>o que foi descoberto</em>, as outras mostram como o trabalho está organizado.</p>
+
+  <div class="vazio" style="margin-top:1.4rem">
+    <b>Formato visual em definição</b>
+    <span>O conteúdo da Análise Diagnóstica entra assim que o formato for decidido.
+      A estrutura abaixo é o esqueleto das cinco fases do ciclo.</span>
+  </div>
+
+  <div class="fases">
+    <div class="fase ativa"><span class="n">Fase 1</span><h3>Identificar</h3>
+      <p>Fluxo de receita ponta a ponta, as 8 travas pontuadas com evidência, e a maturidade digital
+        lida por prática, não por discurso.</p>
+      <span class="st">em andamento</span></div>
+    <div class="fase"><span class="n">Fase 2</span><h3>Otimizar</h3>
+      <p>A restrição nomeada em comitê e o que se extrai dela sem investimento novo.</p>
+      <span class="st">aguarda Comitê 1</span></div>
+    <div class="fase"><span class="n">Fase 3</span><h3>Alinhar</h3>
+      <p>O que o sistema para de fazer para subordinar-se à restrição.</p>
+      <span class="st">não iniciado</span></div>
+    <div class="fase"><span class="n">Fase 4</span><h3>Expandir</h3>
+      <p>Onde escalar, com causalidade comprovada e não com hipótese.</p>
+      <span class="st">não iniciado</span></div>
+    <div class="fase"><span class="n">Fase 5</span><h3>Recomeçar</h3>
+      <p>Previsto contra realizado, e qual restrição governa o ciclo seguinte.</p>
+      <span class="st">não iniciado</span></div>
+  </div>
+</section>

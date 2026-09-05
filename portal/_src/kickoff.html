@@ -1,4 +1,4 @@
-<!--@ kickoff | Kick-off · Portal DR-E Grupo OLX | Formulário de Kick-off | 88 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Uso interno: instrumento de condução da sessão. | 24 ago 2026 · 2h -->
+<!--@ kickoff | Kick-off · Portal DR-E Grupo OLX | Formulário de Kick-off | 96 perguntas em 11 blocos, mais o checklist dos dez blocos de dados. Pré-preenchido com o que a transcrição de 24/08 responde. | 24 ago 2026 · realizado -->
 <style>
 .bar{top:3.5rem}
 /* ---------- formulário ---------- */
@@ -87,9 +87,20 @@ textarea.pa-nota::placeholder{color:var(--border-strong)}
 textarea,input[type=text]{width:100%;font:inherit;font-size:.9rem;color:var(--fg);background:var(--bg);
   border:1px solid var(--input);border-radius:var(--radius-sm);padding:.55rem .65rem;resize:vertical}
 textarea{min-height:4.5rem;line-height:1.5}
+.q textarea{overflow:hidden;resize:vertical}
 textarea:focus,input:focus{border-color:var(--brand);outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 14%,transparent)}
 .q.done{background:var(--card-2)}
 .q.done .q-label::after{content:"✓";color:var(--ok);margin-left:.4rem;font-weight:600}
+/* Tres estados, nao dois. Campo com "Não tratado" tem texto mas nao e resposta:
+   contar como respondido inflaria o progresso e daria falsa sensacao de sessao fechada. */
+.q.parcial{background:var(--card-2)}
+.q.parcial .q-label::after{content:"~";color:var(--warn);margin-left:.4rem;font-weight:700}
+.q.pend .q-label::after{content:"em aberto";font-family:var(--mono);font-size:.6rem;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--muted-fg);margin-left:.5rem;
+  border:1px solid var(--border);border-radius:99px;padding:.1rem .4rem;font-weight:400}
+.pbar{position:relative}
+.pbar i{position:absolute;left:0;top:0}
+.pbar i#pfill2{background:color-mix(in srgb,var(--brand) 32%,transparent)}
 .dados td input{margin:0}
 .dados .idcell{font-family:var(--mono);font-weight:600;color:var(--brand-ink)}
 .toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(calc(100% + 2rem));visibility:hidden;
@@ -147,7 +158,7 @@ body[data-view="i"] .q:not(.q--i){display:none}
 
 <div class="bar">
   <div class="bar-in">
-    <div class="progress"><span id="pct">0%</span><span class="pbar"><i id="pfill"></i></span><span id="pcount">0 de 88</span></div>
+    <div class="progress"><span id="pct">0%</span><span class="pbar"><i id="pfill2"></i><i id="pfill"></i></span><span id="pcount">0 de 96</span></div>
     <span style="flex:1"></span>
     <div class="seg" id="seg-visao" data-v="full" role="radiogroup" aria-label="Visão do formulário">
       <input type="radio" name="visao" id="v-estr">
@@ -158,6 +169,7 @@ body[data-view="i"] .q:not(.q--i){display:none}
       <label class="seg-o" for="v-full">Completo</label>
       <span class="seg-thumb" aria-hidden="true"></span>
     </div>
+    <button class="btn" id="btn-seed" type="button">Restaurar apuradas</button>
     <button class="btn" id="btn-clear" type="button">Limpar</button>
     <button class="btn btn-primary" id="btn-export" type="button">Exportar ata</button>
   </div>
@@ -167,12 +179,17 @@ body[data-view="i"] .q:not(.q--i){display:none}
   <div class="card intro-card">
     <div>
       <p class="eyebrow" style="margin-bottom:.5rem">Como usar</p>
-      <p>Preencha durante a sessão. As respostas ficam salvas neste navegador automaticamente,
-        ninguém mais as vê. Ao final, <b>Exportar ata</b> gera o Markdown pronto para colar em
-        <span style="font-family:var(--mono);font-size:.85em">06-reunioes/</span> no repositório e para
-        alimentar a skill <span style="font-family:var(--mono);font-size:.85em">/dre-onboarding</span>.</p>
-      <p style="margin-top:.7rem">Pergunta sem resposta não é falha da sessão, é pendência com dono e
-        prazo. O que não fechar aqui vira linha em <span style="font-family:var(--mono);font-size:.85em">PENDENCIAS.md</span>.</p>
+      <p>A sessão de 24/08 já aconteceu. Os campos vêm <b>pré-preenchidos com o que a transcrição
+        integral responde</b>, apurado pergunta a pergunta em
+        <span style="font-family:var(--mono);font-size:.85em">06-reunioes/2026-08-24-kickoff-o-que-a-transcricao-fecha.md</span>.
+        Edite à vontade: o que você mudar fica salvo neste navegador e ninguém mais vê.
+        <b>Restaurar apuradas</b> volta ao texto da transcrição, <b>Exportar ata</b> gera o Markdown
+        pronto para colar em <span style="font-family:var(--mono);font-size:.85em">06-reunioes/</span>.</p>
+      <p style="margin-top:.7rem">Resposta que começa com <b>[PARCIAL]</b> tem sinal mas não fecha, e diz
+        o que falta. Campo com <b>Não tratado</b> é pendência com dono e prazo, não falha da sessão:
+        o que não fechar aqui vira linha em <span style="font-family:var(--mono);font-size:.85em">PENDENCIAS.md</span>.
+        Fala da sala presencial de São Paulo aparece como <b>[sala SP]</b>, porque a transcrição dá um
+        rótulo único a todo mundo que estava na sala.</p>
     </div>
     <div class="legend">
       <p class="eyebrow">Legenda</p>
@@ -249,13 +266,47 @@ body[data-view="i"] .q:not(.q--i){display:none}
 <script src="/assets/acessos.js"></script>
 <script src="/assets/form-data.js"></script>
 <script>
-const KEY = "dre-olx-kickoff-v1";
-let state = {};
-try { state = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) { state = {}; }
+// v2: o formulario deixou de nascer vazio. RESPOSTAS (assets/form-data.js) traz o que a
+// transcricao do kick-off de 24/08 responde, apurado em
+// 06-reunioes/2026-08-24-kickoff-o-que-a-transcricao-fecha.md. A chave subiu de v1 para v2
+// justamente para que quem ja abriu a pagina antes receba o conteudo novo em vez de continuar
+// vendo o rascunho vazio do proprio navegador.
+const KEY = "dre-olx-kickoff-v2";
+const SEMENTE = () => JSON.parse(JSON.stringify(RESPOSTAS));
+let state;
+try {
+  const cru = localStorage.getItem(KEY);
+  state = cru ? JSON.parse(cru) : SEMENTE();
+} catch(e) { state = SEMENTE(); }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 let total = 0;
+
+// Um campo pode ter texto e ainda assim nao ser resposta. As respostas apuradas na
+// transcricao usam tres formas: texto direto (fechou), prefixo [PARCIAL] (tem sinal, nao
+// fecha) e "Não tratado / Não informado / Não perguntada" (pendencia registrada). O contador
+// e o ✓ seguem essa distincao, senao a barra marcaria 100% com um terco do material em aberto.
+const VAZIO = /^(N[ãa]o tratad|N[ãa]o informad|N[ãa]o perguntad|Pergunta feita, resposta n)/;
+function estadoResposta(v) {
+  const t = (v || "").trim();
+  if (!t) return "vazio";
+  if (VAZIO.test(t)) return "pend";
+  if (t.startsWith("[PARCIAL")) return "parcial";
+  return "ok";
+}
+function ajustarAltura(el) {
+  if (!el || el.tagName !== "TEXTAREA") return;
+  el.style.height = "auto";
+  el.style.height = el.scrollHeight + "px";
+}
+function marcarCard(card, v) {
+  if (!card) return;
+  const e = estadoResposta(v);
+  card.classList.toggle("done", e === "ok");
+  card.classList.toggle("parcial", e === "parcial");
+  card.classList.toggle("pend", e === "pend");
+}
 
 const chips = document.getElementById("chips");
 const host  = document.getElementById("blocos");
@@ -279,7 +330,7 @@ BLOCOS.forEach(b => {
   b.qs.forEach((q, i) => {
     const id = b.n + "-" + i; total++;
     const val = state[id] || "";
-    html += '<div class="card q q--' + (q.v || "p") + (q.c ? " crit" : "") + (val.trim() ? " done" : "") + '" data-q="' + id + '">' +
+    html += '<div class="card q q--' + (q.v || "p") + (q.c ? " crit" : "") + ({ok:" done", parcial:" parcial", pend:" pend", vazio:""}[estadoResposta(val)]) + '" data-q="' + id + '">' +
       '<div class="q-top"><span class="q-label" id="lbl-' + id + '">' + esc(q.q) + (q.c ? ' <span class="tag tag-crit">crítico</span>' : "") +
       '</span><span class="q-feeds">alimenta → ' + esc(q.f) + '</span></div>' +
       (q.h ? '<p class="q-hint">' + esc(q.h) + '</p>' : "") +
@@ -493,19 +544,25 @@ BLOCOS_DADOS.forEach(d => {
 });
 
 function refresh(){
-  let done = 0;
-  BLOCOS.forEach(b => b.qs.forEach((q, i) => { if ((state[b.n + "-" + i] || "").trim()) done++; }));
-  const p = total ? Math.round(done / total * 100) : 0;
+  let ok = 0, parcial = 0, pend = 0;
+  BLOCOS.forEach(b => b.qs.forEach((q, i) => {
+    const e = estadoResposta(state[b.n + "-" + i]);
+    if (e === "ok") ok++; else if (e === "parcial") parcial++; else if (e === "pend") pend++;
+  }));
+  const p  = total ? Math.round(ok / total * 100) : 0;
+  const p2 = total ? Math.round((ok + parcial) / total * 100) : 0;
   document.getElementById("pct").textContent = p + "%";
   document.getElementById("pfill").style.width = p + "%";
-  document.getElementById("pcount").textContent = done + " de " + total;
+  document.getElementById("pfill2").style.width = p2 + "%";
+  document.getElementById("pcount").textContent =
+    ok + " respondidas · " + parcial + " parciais · " + (total - ok - parcial) + " em aberto";
 }
 
 document.addEventListener("input", e => {
   const id = e.target.dataset.id; if (!id) return;
   state[id] = e.target.value; save();
-  const card = e.target.closest(".q");
-  if (card) card.classList.toggle("done", !!e.target.value.trim());
+  marcarCard(e.target.closest(".q"), e.target.value);
+  ajustarAltura(e.target);
   refresh();
 });
 
@@ -524,7 +581,11 @@ function markdown(){
     L.push("## " + b.n + ". " + b.t, "");
     b.qs.forEach((q, i) => {
       const v = (state[b.n + "-" + i] || "").trim();
-      L.push("**" + q.q + "**  ", "_alimenta: " + q.f + "_", "", v || "> ⚠️ Não respondido: abrir pendência com dono e prazo.", "");
+      const e = estadoResposta(v);
+      const corpo = e === "vazio" ? "> ⚠️ Não respondido: abrir pendência com dono e prazo."
+                  : e === "pend"  ? "> ⚠️ " + v + " Abrir pendência com dono e prazo."
+                  : v;
+      L.push("**" + q.q + "**  ", "_alimenta: " + q.f + "_", "", corpo, "");
     });
   });
   L.push("## Pendências de acesso", "",
@@ -588,13 +649,27 @@ document.getElementById("dlg-copy").onclick = async () => {
   try { await navigator.clipboard.writeText(t.value); say("Ata copiada."); }
   catch(e) { t.removeAttribute("readonly"); t.select(); say("Selecionado: use Cmd+C."); }
 };
+function aplicarEstado() {
+  document.querySelectorAll("[data-id]").forEach(el => {
+    const v = state[el.dataset.id] || "";
+    el.value = v;
+    marcarCard(el.closest(".q"), v);
+    ajustarAltura(el);
+  });
+  refresh();
+}
+document.getElementById("btn-seed").onclick = () => {
+  if (!confirm("Voltar todos os campos ao texto apurado na transcrição? O que você editou aqui se perde.")) return;
+  state = SEMENTE(); save(); aplicarEstado(); say("Respostas apuradas restauradas.");
+};
 document.getElementById("btn-clear").onclick = () => {
   if (!confirm("Apagar todas as respostas deste navegador? Não dá para desfazer.")) return;
   state = {}; save();
-  document.querySelectorAll("[data-id]").forEach(el => { el.value = ""; });
-  document.querySelectorAll(".q").forEach(el => el.classList.remove("done"));
+  document.querySelectorAll("[data-id]").forEach(el => { el.value = ""; ajustarAltura(el); });
+  document.querySelectorAll(".q").forEach(el => el.classList.remove("done", "parcial", "pend"));
   refresh(); say("Respostas apagadas.");
 };
 
 refresh();
+requestAnimationFrame(() => document.querySelectorAll(".q textarea").forEach(ajustarAltura));
 </script>
