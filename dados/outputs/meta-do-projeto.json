@@ -1,0 +1,110 @@
+{
+  "client_name": "Grupo OLX",
+  "skill": "proposta-meta-do-projeto",
+  "gerado_em": "2026-09-02",
+  "status": "proposta, nenhum valor absoluto acordado",
+  "summary": "Proposta da V4 para a meta do projeto DR-E, em resposta ao próximo passo #5 do kick-off. Entrega a régua (truput de run-rate de saída), a matemática paramétrica sobre as seis taxas declaradas pela OLX em 28/08 e o cascateamento nos 4 ciclos de 90 dias. Nenhum valor absoluto: o material de metas de Matheus Rodrigues e Iuna Scheffler ainda não chegou.",
+  "summary_headline": "Medida por receita acumulada no ano, a metade final do contrato vale 8% do resultado e o 4º ciclo vale zero, a régua tem que ser run-rate de truput de saída.",
+  "summary_highlights": [
+    {"category": "oportunidade", "label": "Teto do sistema atual", "value": "+26%", "subtext": "regime, sem 1 real a mais de mídia [E]", "tone": "green"},
+    {"category": "posicao", "label": "1 p.p. de churn", "value": "+12,5%", "subtext": "vale mais que 10 p.p. de conversão [E]", "tone": "green"},
+    {"category": "risco", "label": "Inércia da base", "value": "11 meses", "subtext": "constante de tempo com churn de 9% [E]", "tone": "yellow"},
+    {"category": "risco", "label": "Peso do Ciclo 1", "value": "74,7%", "subtext": "do ganho do ano, na régua de acumulado [E]", "tone": "red"},
+    {"category": "janela", "label": "Faixa proposta", "value": "+8% a +12%", "subtext": "run-rate de truput de saída no mês 12 [E]", "tone": "blue"},
+    {"category": "maturidade", "label": "Insumos faltantes", "value": "4", "subtext": "todos com DRI e prazo até 10/09", "tone": "yellow"}
+  ],
+  "summary_key_findings": [
+    {"category": "acao", "text": "A régua da meta é run-rate de truput de saída na vertical governante, não receita acumulada no ano fiscal. Quem define a régua conduz a conversa."},
+    {"category": "contexto", "text": "Com margem de contribuição perto de 100%, receita ganha por conversão e retenção é quase toda truput; receita ganha por exposição carrega CAC junto."},
+    {"category": "ameaca", "text": "A OLX declarou net de receita negativo em Imóveis. Base que encolhe persegue inflexão, não crescimento, a meta zero precisa aparecer no material antes do Ciclo 1."},
+    {"category": "vantagem", "text": "Todas as elasticidades saem de taxas que a própria OLX apresentou em 28/08. A direção técnica não dependeu de nenhum acesso concedido."}
+  ],
+
+  "modelo": {
+    "identidade": "receita_de_regime ∝ contratos × p_pagamento × p_publicacao × ticket / churn_mensal",
+    "baseline": {
+      "p_pagamento": {"valor": 0.80, "fonte": "Carolina Dallolio, 28/08 00:15:30", "declarado": true, "nota": "denominador é 'contratou e gerou cobrança', mais estreito que o slide sugere"},
+      "p_publicacao": {"valor": 0.88, "fonte": "jornada do cliente profissional, 28/08", "declarado": true, "nota": "12% saem no 1º mês sem publicar; até 20% no online, 8–10% no assistido"},
+      "churn_mensal": {"valor": 0.09, "faixa": [0.08, 0.10], "fonte": "Carolina Dallolio, 28/08 00:22:16", "declarado": true, "nota": "mede interrupção de pagamento; de logo ou de receita ainda é ambiguidade aberta"},
+      "ticket_medio": {"valor": null, "fonte": null, "pendencia": "material de metas, Matheus Rodrigues + Iuna Scheffler, 09/09"},
+      "base_ativa": {"valor": null, "fonte": null, "pendencia": "extração do dashboard de funil B2B"},
+      "multiplicador_de_regime": 7.822,
+      "constante_de_tempo_meses": 11.1,
+      "meia_vida_meses": 7.7
+    },
+    "premissas": [
+      "As taxas declaradas valem para o sistema todo, não só para a fatia onde foram medidas",
+      "Churn é sobre clientes; se for sobre receita, o efeito muda de tamanho",
+      "Base em equilíbrio, falso em Imóveis, onde o net declarado é negativo",
+      "Entradas e ticket constantes: isola o efeito das travas, sem sazonalidade nem preço",
+      "Sem interação entre alavancas, o que torna o modelo conservador"
+    ]
+  },
+
+  "elasticidades_de_regime": [
+    {"alavanca": "p_pagamento", "de": 0.80, "para": 0.85, "efeito_pct": 6.2, "estimado": true},
+    {"alavanca": "p_pagamento", "de": 0.80, "para": 0.90, "efeito_pct": 12.5, "estimado": true},
+    {"alavanca": "p_publicacao", "de": 0.88, "para": 0.92, "efeito_pct": 4.5, "estimado": true},
+    {"alavanca": "p_publicacao", "de": 0.88, "para": 0.94, "efeito_pct": 6.8, "estimado": true},
+    {"alavanca": "churn_mensal", "de": 0.09, "para": 0.085, "efeito_pct": 5.9, "estimado": true},
+    {"alavanca": "churn_mensal", "de": 0.09, "para": 0.08, "efeito_pct": 12.5, "estimado": true},
+    {"alavanca": "churn_mensal", "de": 0.09, "para": 0.07, "efeito_pct": 28.6, "estimado": true}
+  ],
+
+  "teto_matematico": {
+    "conservador": {"p_pagamento": 0.86, "p_publicacao": 0.92, "churn": 0.080, "regime_pct": 26.4, "estimado": true},
+    "agressivo": {"p_pagamento": 0.90, "p_publicacao": 0.94, "churn": 0.075, "regime_pct": 44.2, "estimado": true},
+    "nota": "sem nenhum investimento incremental de mídia"
+  },
+
+  "cenarios": [
+    {"nome": "Conservador", "exit_run_rate_m12_pct": 5.0, "truput_acumulado_12m_pct": 1.6, "exit_m18_pct": 9.1, "regime_pct": 11.5, "estimado": true},
+    {"nome": "Base", "exit_run_rate_m12_pct": 8.6, "truput_acumulado_12m_pct": 3.1, "exit_m18_pct": 15.1, "regime_pct": 19.0, "estimado": true},
+    {"nome": "Ambicioso", "exit_run_rate_m12_pct": 11.8, "truput_acumulado_12m_pct": 4.2, "exit_m18_pct": 22.8, "regime_pct": 29.6, "estimado": true}
+  ],
+
+  "regua_proposta": {
+    "meta_do_projeto": {"metrica": "truput de run-rate de saída (mês 12 / mês 0) na vertical governante", "faixa_pct": [8, 12], "valor_acordado": null, "fecha_em": "Comitê 1, com trava validada em ata"},
+    "meta_de_ciclo": {"metrica": "elevação do indicador da restrição vigente, em p.p., mais contribuição-alvo em pontos de run-rate", "valor_acordado": null},
+    "meta_de_comite": {"metrica": "execução do plano de 30 dias", "alvo_pct": 80, "fonte": "playbook 03, indicador de qualidade do Comitê 1"},
+    "metrica_secundaria": {"metrica": "truput incremental acumulado no ano", "nota": "de 3 a 6 vezes menor que o ganho de regime, por inércia da base, declarado desde já"}
+  },
+
+  "cascateamento": [
+    {"ciclo": 1, "janela": "ago–nov/2026", "fase": "Identificar + Otimizar", "natureza": "sem novos recursos", "alvo_run_rate_pp": [3, 6], "participacao_no_ganho_do_ano_pct": 74.7},
+    {"ciclo": 2, "janela": "nov/2026–fev/2027", "fase": "Alinhar + Expandir", "natureza": "primeira expansão com investimento aprovado por causalidade", "alvo_run_rate_pp": [2, 3], "participacao_no_ganho_do_ano_pct": 17.2},
+    {"ciclo": 3, "janela": "fev–mai/2027", "fase": "Nova restrição", "natureza": "elevação da segunda trava, gatilho técnico do bônus", "alvo_run_rate_pp": [2, 3], "participacao_no_ganho_do_ano_pct": 8.1},
+    {"ciclo": 4, "janela": "mai–ago/2027", "fase": "Consolidação", "natureza": "estruturar o que sobrevive ao contrato", "alvo_run_rate_pp": [2, 2], "participacao_no_ganho_do_ano_pct": 0.0}
+  ],
+
+  "meta_zero_imoveis": {
+    "contexto": "net de receita declarado negativo por Iuna Scheffler e Florence Scappini",
+    "net_atual_pct_mes": null,
+    "tabela": [
+      {"net_pct_mes": -3.0, "melhoria_combinada_necessaria_pct": 3.1},
+      {"net_pct_mes": -5.0, "melhoria_combinada_necessaria_pct": 5.3},
+      {"net_pct_mes": -8.0, "melhoria_combinada_necessaria_pct": 8.7},
+      {"net_pct_mes": -10.0, "melhoria_combinada_necessaria_pct": 11.1}
+    ],
+    "estimado": true
+  },
+
+  "success_fee": {
+    "pendencia": 2,
+    "valor_em_risco": 376000.0,
+    "gates_propostos": [
+      {"tipo": "tecnico", "criterio": "expansão comprovada de 2 das 8 travas nos 4 ciclos", "fonte": "SOW padrão DR-E"},
+      {"tipo": "resultado", "criterio": "run-rate de truput de saída dentro da faixa acordada"},
+      {"tipo": "execucao", "criterio": "≥ 80% do plano executado por ciclo, medido em ata"}
+    ]
+  },
+
+  "insumos_faltantes": [
+    {"n": 1, "insumo": "metas 2026 por etapa do fluxo, receita por vertical, overview do ano", "dri": "Matheus Rodrigues + Iuna Scheffler", "prazo": "2026-09-09", "origem": "próximo passo #2 do kick-off"},
+    {"n": 2, "insumo": "P&L por vertical", "dri": "Matheus Rodrigues", "prazo": "2026-09-09", "origem": "próximo passo #3 do kick-off"},
+    {"n": 3, "insumo": "net de receita de Imóveis, mês a mês", "dri": "Iuna Scheffler", "prazo": "2026-09-10"},
+    {"n": 4, "insumo": "base ativa, ticket médio e churn (de logo e de receita) extraídos do dashboard", "dri": "Leonardo Rosa", "prazo": "2026-09-09"}
+  ],
+
+  "documento_humano": "03-estrategia/meta-do-projeto.md"
+}
