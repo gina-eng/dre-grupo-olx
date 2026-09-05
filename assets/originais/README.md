@@ -34,6 +34,7 @@ de cada arquivo está registrado nas tabelas abaixo, então nada se perde.
 assets/originais/
 ├── A-visao-de-negocio-e-fluxo-de-receita/  bloco A · alimenta o fluxo de receita
 ├── E-criativos-ads-e-mensagens/     bloco E · alimenta o diagnóstico (iv)
+├── H-rastreamento-gtm/              bloco H · alimenta a auditoria (vii)
 ├── I-paginas-de-captura/            bloco I · alimenta o diagnóstico (viii)
 └── _masters/                        vídeos originais · FORA do git
 ```
@@ -174,6 +175,55 @@ página e etapa) e I4 (ferramenta de comportamento).
 
 ---
 
+## Bloco H · Rastreamento (GTM)
+
+**Cobre:** item **H1** do checklist — contêineres do Google Tag Manager. É o insumo da
+[auditoria (vii)](../../02-diagnostico/auditoria-vii-rastreamento.md).
+
+**Este bloco não veio do data room.** São exports da interface do GTM, feitos pelo operador em
+01/09/2026 com o acesso concedido no mesmo dia a `gina@v4company.com` (contêiner → Administração →
+Exportar contêiner). O caminho de origem, portanto, é a própria interface, não uma pasta do Drive.
+
+| Arquivo | ID | Contêiner | Tags | Pausadas | Gatilhos | Variáveis |
+|---|---|---|---:|---:|---:|---:|
+| `gtm-tnx8fds_workspace392.json` | `GTM-TNX8FDS` | OLX - Buyer Journey | 124 | 37 | 71 | 186 |
+| `gtm-pz733b5_workspace92.json` | `GTM-PZ733B5` | ZapImóveis - Container ANUNCIE | 48 | 9 | 51 | 122 |
+| `gtm-5wwrgtq_workspace61.json` | `GTM-5WWRGTQ` | OLX - VAS | 48 | 18 | 43 | 52 |
+| `gtm-kp8qmdh_workspace69.json` | `GTM-KP8QMDH` | OLX - Unbounce \| LP | 40 | 0 | 39 | 50 |
+| `gtm-kgfgvfc_workspace131.json` | `GTM-KGFGVFC` | OLX - Planos Profissionais & PAYG | 29 | 8 | 29 | 98 |
+| `gtm-mxqkdg3_workspace56.json` | `GTM-MXQKDG3` | OLX - Seller Journey | 28 | 14 | 19 | 53 |
+| `gtm-mjx9pg4_workspace27.json` | `GTM-MJX9PG4` | OLX - Conecta Autos | 25 | 1 | 17 | 33 |
+| `gtm-546n2jv_workspace206.json` | `GTM-546N2JV` | OLX - Container Master | 13 | 5 | 21 | 20 |
+| `gtm-tw9twpt5_workspace3.json` | `GTM-TW9TWPT5` | OLX - Login | 5 | 1 | 2 | 8 |
+| `gtm-m4tl57gx_workspace3.json` | `GTM-M4TL57GX` | OLX - Checkout | 4 | 0 | 2 | 27 |
+| `gtm-pwp7z4c_workspace11.json` | `GTM-PWP7Z4C` | OLX - Wallet | 3 | 0 | 1 | 19 |
+| **Total** | | **11 contêineres** | **367** | **93** | **295** | **668** |
+
+**Duas contas de GTM, não uma.** Dez dos onze estão na conta `94905` (`BR - www.olx.com.br`, selo
+360). O `GTM-PZ733B5`, do lado Imóveis, está na conta **`2971905372`** — outra conta. Isso responde
+o item 1.8 da [coleta pendente](../../02-diagnostico/coleta-pendente.md): o inventário de "22+
+contêineres" que vimos na interface descreve só a conta OLX, e o lado ZAP/VivaReal tem contagem
+própria, ainda desconhecida.
+
+> ⚠️ **São exports de _workspace_, não de versão publicada** — os nomes trazem `workspace392`,
+> `workspace131` e assim por diante. Um workspace pode conter rascunho que não está no ar. Serve para
+> diagnosticar, e foi assim que a auditoria (vii) foi levantada; antes de levar um achado a comitê
+> como "isto roda em produção", confirmar contra a versão publicada na aba *Versões*.
+
+**Cobertura:** 11 contêineres. Os 5 primeiros (Master, Planos Profissionais, Seller Journey,
+Checkout, Conecta Autos) foram auditados em 01/09. Os 6 restantes chegaram no fim do mesmo dia e
+**ainda não foram analisados**. Falta pedir o `GTM-T2H3VFL` (Google Shopping) e o restante do
+inventário das duas contas.
+
+`telas/` guarda os prints das telas de configuração que a exportação não cobre (aba *Versões*,
+lista de contas, inventário completo).
+
+> Os exports trazem IDs de pixel, IDs de conversão e chaves públicas de SDK — nada disso é segredo,
+> tudo aparece no código-fonte das páginas —, mas o material é confidencial pelo aviso da OLX e não
+> sai deste repositório privado.
+
+---
+
 ## Integridade
 
 SHA-256 de cada arquivo no momento em que entrou no repositório, e o caminho exato de onde veio no
@@ -191,4 +241,14 @@ Drive. Serve para provar que o arquivo não mudou e para reencontrar a origem.
 | `E-criativos-ads-e-mensagens/mes-do-corretor-2026-sp-consideracao/v3/1200x628-com-cta.mp4` | `2284356e512da371…` | `E. Criativos Ads & Mensagens/Peças/RE/Mês do Corretor 2026/Mês do Corretor _ Peças consideração SP/Motion/V3/1200x628 com CTA.mp4` |
 | `A-visao-de-negocio-e-fluxo-de-receita/jornada-do-cliente-profissional.png` | `fb8d738564bb2b10…` | não veio do data room — captura de tela da apresentação de 28/08 |
 | `I-paginas-de-captura/teste-ab-imoveis/2026-03-teste-ab-lp-anuncie-zap.pptx` | `4f7c85fe6821206d…` | `I. Páginas de Captura e Fluxos de Conversão/Testes a-b imóveis/Copy of A_B Test Results - Landing Page_.pptx` |
-
+| `H-rastreamento-gtm/gtm-546n2jv_workspace206.json` | `68f2a5f8034b5205…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-5wwrgtq_workspace61.json` | `c2bcb2cf61805a1d…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-kgfgvfc_workspace131.json` | `38b61356d05fa73a…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-kp8qmdh_workspace69.json` | `07eb8af73a1fb478…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-m4tl57gx_workspace3.json` | `a0ff93b7f234449a…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-mjx9pg4_workspace27.json` | `239ed1742bab93c3…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-mxqkdg3_workspace56.json` | `2bb56df5e77c1051…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-pwp7z4c_workspace11.json` | `5faf33d9342cfb2f…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-pz733b5_workspace92.json` | `b7773df8ae3b250c…` | não veio do data room — export da interface do GTM em 01/09, conta `2971905372` |
+| `H-rastreamento-gtm/gtm-tnx8fds_workspace392.json` | `b478d7b464815eb5…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |
+| `H-rastreamento-gtm/gtm-tw9twpt5_workspace3.json` | `dbc3f86e2ed3acd6…` | não veio do data room — export da interface do GTM em 01/09, conta `94905` |

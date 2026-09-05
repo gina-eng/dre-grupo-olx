@@ -1,0 +1,754 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-01 19:27:07",
+    "containerVersion": {
+        "path": "accounts/94905/containers/233228964/versions/0",
+        "accountId": "94905",
+        "containerId": "233228964",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/233228964",
+            "accountId": "94905",
+            "containerId": "233228964",
+            "name": "OLX - Login",
+            "publicId": "GTM-TW9TWPT5",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1761260123220",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/233228964/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-TW9TWPT5"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "tagId": "8",
+                "name": "[TAG] DataLayer - Cleaner",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  dataLayer.push({\n    ecommerce: undefined,\n    vEcommerce: undefined,\n\tinteraction_details: undefined,\n    reply: undefined\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1761683999933",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "tagId": "9",
+                "name": "[TAG] GA4 - Login",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "method"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - method}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - user_id}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] dataLayer - user_id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_logged_in"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "login"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1761684416810",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer - Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "tagId": "10",
+                "name": "[TAG] GA4 - Sign_up",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - user_id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "method"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - method}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] dataLayer - user_id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_logged_in"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "sign_up"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1761684426016",
+                "firingTriggerId": [
+                    "6"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer - Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "tagId": "16",
+                "name": "[TAG] GA4 - Settings",
+                "type": "googtag",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "999"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] User_id Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] User_id Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] pageType Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1761956473949",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "tagId": "17",
+                "name": "[TAG] GA4 - Pageview - All Pages",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] User_id Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] pageType Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_id Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1761956634854",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "paused": true,
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "triggerId": "5",
+                "name": "[AC] login",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "login"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1761683069456"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "triggerId": "6",
+                "name": "[AC] sign_up",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sign_up"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1761683092704"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "3",
+                "name": "[VAR] dataLayer - user_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_id"
+                    }
+                ],
+                "fingerprint": "1761682990987",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "4",
+                "name": "[VAR] dataLayer - method",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "method"
+                    }
+                ],
+                "fingerprint": "1761683024410",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "7",
+                "name": "[VAR] GA4 - G-50C013M2CC",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1761683693957",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "11",
+                "name": "[VAR] User_id Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var dtUserId = {{[VAR] dataLayer - user_id}};\n  var dtUserUserID = {{[VAR] dataLayer - User.UserID}}\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(dtUserId)) {\n    return dtUserId;\n  } \n  else if (isValidUserId(dtUserUserID)) {\n    return dtUserUserID;\n  } \n  else {\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1761955911285",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "12",
+                "name": "[VAR] dataLayer - User.UserID",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user.userID"
+                    }
+                ],
+                "fingerprint": "1761955818514",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "13",
+                "name": "[VAR] dataLayer - page.pageType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page.pageType"
+                    }
+                ],
+                "fingerprint": "1761956095342",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "14",
+                "name": "[VAR] dataLayer - pageType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "pageType"
+                    }
+                ],
+                "fingerprint": "1761956138355",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "variableId": "15",
+                "name": "[VAR] pageType Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var pageType = {{[VAR] dataLayer - pageType}};\n  var pagePageType = {{[VAR] dataLayer - page.pageType}};\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(pageType)) {\n    return pageType;\n  } \n  else if (isValidUserId(pagePageType)) {\n    return pagePageType;\n  } \n  else {\n    return undefined;\n  }\n}\n"
+                    }
+                ],
+                "fingerprint": "1761956299919",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "233228964",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1788290827860",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/233228964/versions/0?apiLink=version"
+    }
+}

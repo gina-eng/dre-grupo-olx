@@ -1,0 +1,915 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-01 19:28:30",
+    "containerVersion": {
+        "path": "accounts/94905/containers/104697850/versions/0",
+        "accountId": "94905",
+        "containerId": "104697850",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/104697850",
+            "accountId": "94905",
+            "containerId": "104697850",
+            "name": "OLX - Wallet",
+            "publicId": "GTM-PWP7Z4C",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1686954441026",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/104697850/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-PWP7Z4C"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "tagId": "18",
+                "name": "[TAG] GA4 - Settings & Pageview - All Pages",
+                "type": "googtag",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "999"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{[VAR] GA4 - RegEx Domain Validation}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "wallet"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1730315025778",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "tagId": "28",
+                "name": "[TAG] GAU Settings - Pageview (Principal)",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] ID GAU Settings - UA-70177409-2}}"
+                    }
+                ],
+                "fingerprint": "1681795433786",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "tagId": "30",
+                "name": "[DataLayer]",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n    window.dataLayer = window.dataLayer || [];\n    window.dataLayer.push({\n        page: {\n          pageType: 'wallet'\n        }\n    });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1730903750712",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "triggerId": "29",
+                "name": "[AC] Loading",
+                "type": "WINDOW_LOADED",
+                "fingerprint": "1681825427326"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "3",
+                "name": "[VAR] RegEx Para Hostname",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "^wallet[.]olx[.]com[.]br$"
+                    }
+                ],
+                "fingerprint": "1678909982757",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "5",
+                "name": "Cookie - GA",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "_ga"
+                    }
+                ],
+                "fingerprint": "1678908349000",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "6",
+                "name": "Custom Dimension - Client ID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "/* getClientId */\nfunction(){\n  try{\n    var pattern = \"GA1.3.\";\n    var id = {{Cookie - GA}}.substr(pattern.length);\n    return id;\n  } catch(e){\n    return (void 0)\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1678908349005",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "7",
+                "name": "DataLayer - sellerName",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('page.adDetail.sellerName');\n  if(el && el !== ''){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1678908349005",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "8",
+                "name": "[VAR] Cookie - userID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1678908349001",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "9",
+                "name": "[VAR] DataLayer - userID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('session.user.userID');\n  if(el && el !== '' && el !== 'Unidentified'){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1678908349005",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "10",
+                "name": "[VAR] UserID Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var cUserId = {{[VAR] Cookie - userID}};\n  var dtUserId = {{[VAR] DataLayer - userID}};\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(cUserId)) {\n    return cUserId;\n  } \n  else if (isValidUserId(dtUserId)) {\n    return dtUserId;\n  } \n  else {\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1752694874274",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "11",
+                "name": "[VAR] DataLayer - Seller Id",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('ad_details.seller_id') ||\n           google_tag_manager[{{Container ID}}].dataLayer.get('opt-in_details.seller_id') ||\n           google_tag_manager[{{Container ID}}].dataLayer.get('page.details.seller_id');\n  if(el && el !== ''){\n    return el;\n  } else{\n    return undefined\n  }\n}\n"
+                    }
+                ],
+                "fingerprint": "1678908349006",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "12",
+                "name": "[VAR] GAU - UA-70177409-2",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "UA-70177409-2"
+                    }
+                ],
+                "fingerprint": "1678908349001",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "13",
+                "name": "[VAR] RegEx Para Hostname Temporário",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "^wallet[.]olx[.]com[.]br$"
+                    }
+                ],
+                "fingerprint": "1678909993121",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "14",
+                "name": "[VAR] GA4 - G-50C013M2CC",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1678908349002",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "15",
+                "name": "[VAR] GA4 - RegEx Domain Validation",
+                "type": "remm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Page Hostname}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fullMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "replaceAfterMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "G-XXXXXXXXXX"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ignoreCase",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{[VAR] RegEx Para Hostname}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{[VAR] RegEx Para Hostname Temporário}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1678908349002",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "16",
+                "name": "[VAR] DataLayer - Seller Category",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n \n var seller_category = document.querySelector(\"[data-seller-category]\") ? \"profissional\" : \"privado\";\n  return seller_category;\n}"
+                    }
+                ],
+                "fingerprint": "1678908349006",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "17",
+                "name": "[VAR] DataLayer - Content Group | Page Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = document.URL.split(\"//\")[1].split(\"/\")[1];\nvar pa = document.URL.split(\"//\")[1].split(\"/\")[0];\nvar url = document.URL;\n  var path;  \n  if(el == '' || el.charAt(0) == \"?\"){\n    return \"wallet\";\n  } else {\n    path = url.split(pa)[1].replaceAll(\"/\",\"_\").split(\"?\")[0];\n    if(path.charAt(0) == \"_\"){\n      path = path.substr(1);\n    return path;\n    } else { \n      return path;\n    }\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1681798842656",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "19",
+                "name": "DataLayer - loginType",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('session.user.loginType') ||\n           google_tag_manager[{{Container ID}}].dataLayer.get('session.user.login_type');\n  if(el && el !== '' && el !== 'Unidentified'){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1678908349006",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "20",
+                "name": "[VAR] GAU - RegEx Domain Validation",
+                "type": "remm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Page Hostname}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fullMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "replaceAfterMatch",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "UA-XXXXXXXX-X"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "ignoreCase",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{[VAR] RegEx Para Hostname}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] GAU - UA-70177409-2}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "{{[VAR] RegEx Para Hostname Temporário}}"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] GAU - UA-70177409-2}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1678908349003",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "21",
+                "name": "Cookie - Lurker ID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "l_id"
+                    }
+                ],
+                "fingerprint": "1678908349004",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "22",
+                "name": "[VAR] Google Analytics Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "contentGroup",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "group",
+                                        "value": "wallet"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "11"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Cookie - Lurker ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "12"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{DataLayer - loginType}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "wallet"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "{{[VAR] GAU - RegEx Domain Validation}}"
+                    }
+                ],
+                "fingerprint": "1678909570320"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "variableId": "27",
+                "name": "[VAR] ID GAU Settings - UA-70177409-2",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "wallet"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-70177409-2"
+                    }
+                ],
+                "fingerprint": "1681799071519"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "104697850",
+                "type": "CONTAINER_ID",
+                "name": "Container ID"
+            }
+        ],
+        "fingerprint": "1788290910629",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/104697850/versions/0?apiLink=version"
+    }
+}
