@@ -1,5 +1,23 @@
 # Auditoria (vii) · Rastreamento Completo (GA4 e GTM)
 
+> **Como ler este documento.** Ele cresceu em **quatro rodadas**, na ordem em que o material chegou,
+> e cada rodada mantém a fonte que tinha na data. Para o estado atual, vá direto a:
+>
+> | | |
+> |---|---|
+> | Cobertura de hoje | [quarta rodada](#quarta-rodada--11092026--o-parque-inteiro-entra): **60 contêineres**, 4 contas, 1.779 tags |
+> | Achados | **41**, numerados em sequência contínua entre as rodadas |
+> | O que não está confirmado | [Ressalvas de leitura](#ressalvas-de-leitura), atualizadas em 11/09 e válidas para as quatro rodadas |
+> | Leitura da trava | [o que a quarta rodada muda](#o-que-a-quarta-rodada-muda-na-leitura-da-trava) |
+>
+> 🔴 **A ressalva que governa todas:** os 62 exports são de espaço de trabalho, nenhum é de versão
+> publicada. Os achados de configuração descrevem o rascunho até que a versão publicada seja
+> comparada.
+
+---
+
+## Primeira rodada · 01/09/2026 · os cinco primeiros contêineres
+
 **Fonte:** export em JSON de 5 contêineres do GTM, conta `BR - www.olx.com.br` (accountId `94905`),
 exportados em 01/09/2026, mais consultas à API de dados do GA4 na mesma data.
 
@@ -299,30 +317,83 @@ implícita se escreve assim:
 
 ## Ressalvas de leitura
 
-1. 🔴 **Os 22 achados descrevem o rascunho, não o que está no ar.** Conferido em 11/09 lendo o
-   campo `containerVersionId` dentro de cada arquivo: os **11 exports têm `0`**, a assinatura de
-   export de **espaço de trabalho**. A versão publicada carrega o número da versão. Nenhum achado
-   desta auditoria está, hoje, confirmado em produção, e nenhum deve ser afirmado como tal em
-   comitê até que a versão publicada seja exportada e comparada. O caso mais sensível é o
-   **achado 1**: se o `purchase` preso ao gatilho de `begin_checkout` existir só no workspace, é
-   rascunho que ninguém publicou; se estiver na versão publicada, é receita B2B medida errada em
-   produção. Coleta pedida em [`guia-export-gtm.md`](guia-export-gtm.md).
-2. Tudo acima é leitura de **configuração exportada** e de **contagem de eventos**, não de
-   comportamento observado em navegador. Os achados 5 e 11 pedem confirmação no Preview do GTM.
-3. O achado 4 cai por terra se o site gravar `user_olx` por código próprio.
-4. 🔴 **A cobertura é menor do que parecia.** Em 02/09 descobriu-se que o GTM do grupo tem **quatro
-   contas**, não uma: `BR - www.olx.com.br` (`94905`), `Checkout Unificado - PRO` (`6326134112`),
-   `VivaReal` (`4412254379`) e `ZapImóveis` (`2971905372`), todas com selo 360. Dos 11 exports
-   recebidos, **10 são da primeira conta e 1 da ZapImóveis**. As contas `Checkout Unificado - PRO` e
-   `VivaReal` estão **inteiramente por auditar**, e o "22+ contêineres" registrado no checklist é o
-   piso de **uma** das quatro. Foram auditados **6 de um total ainda desconhecido**, os 5 da
-   primeira rodada mais o ZapImóveis ANUNCIE.
-   Cinco exports já estão no repositório e ainda não foram lidos: Buyer Journey (124 tags), VAS (48),
-   Unbounce LP (40), Login (5) e Wallet (3). O que está fora pode conter tanto correções quanto
-   problemas equivalentes.
-5. Caso particular da ressalva 1: confirmar no site publicado se o banner do AdOpt de fato não
-   aparece no domínio ZapImóveis ANUNCIE (achado 18).
-6. Nada aqui descreve performance de negócio, descreve como a medição está montada.
+> **Atualizadas em 11/09/2026, depois da quarta rodada.** Valem para **toda a auditoria**, as quatro
+> rodadas e os 41 achados, e não só para a primeira. Estão aqui, no fim da primeira rodada, porque é
+> onde nasceram.
+
+### A ressalva que governa todas as outras: rascunho não é produção
+
+🔴 **Os 41 achados que vêm do GTM descrevem o espaço de trabalho, não o que está no ar.**
+
+Conferido em 11/09 lendo `containerVersionId` dentro de cada arquivo: os **62 exports trazem `0`**,
+a assinatura de export de workspace. A versão publicada carrega o número da versão. **Nenhum export
+do parque é de versão publicada.**
+
+Nenhum achado de configuração está, hoje, confirmado em produção, e nenhum deve ser afirmado como
+tal em comitê antes da comparação. O caso mais sensível continua sendo o
+[achado 1](#-1-o-evento-purchase-do-ga4-é-disparado-pelo-gatilho-de-begin_checkout): se o `purchase`
+preso ao gatilho de `begin_checkout` existir só no workspace, é rascunho que ninguém publicou; se
+estiver na versão publicada, é receita B2B medida errada em produção. Coleta pedida em
+[`guia-export-gtm.md`](guia-export-gtm.md), lote 1.
+
+**Um dado de 11/09 tempera essa ressalva, sem anulá-la.** Doze contêineres foram reexportados dez
+dias depois da primeira leva. **Dez estavam idênticos** fora do `fingerprint`, e os dois que mudaram
+não tocaram `purchase` nem `begin_checkout`. Ou seja: estes rascunhos não são material em edição
+ativa, são a configuração assentada. Isso torna provável que espelhem o publicado, e **provável não
+é confirmado**.
+
+### As duas origens de evidência não têm o mesmo peso
+
+Isto importa para pontuar a Trava de Cegueira, porque a regra 6 do método exige evidência formal
+para nota acima de 3.
+
+| Origem | O que sustenta | Vale como |
+|---|---|---|
+| **API do GA4**, lida em 31/08, 01/09 e 11/09 | propriedades de alto volume com zero evento-chave, `session_start` como conversão na VivaReal, tier de serviço por propriedade, mapa de measurement ID para propriedade | 🟢 **produção observada** |
+| **Export de GTM**, 62 arquivos | tag, gatilho, variável, consentimento, tudo que as quatro rodadas leem | 🟡 **configuração de rascunho** |
+
+**Uma nota de Cegueira apoiada no lado GA4 não herda a ressalva do rascunho.** Uma nota apoiada no
+lado GTM herda. Na prática os dois lados dizem a mesma coisa, mas o material de comitê deve deixar
+claro qual evidência sustenta qual afirmação.
+
+### Confirmações que só o navegador dá
+
+Leitura de configuração exportada e de contagem de evento não é observação de comportamento. Quatro
+achados pedem o Preview do GTM ou a página publicada:
+
+| Achado | O que confirmar |
+|---|---|
+| [5](#-5-parâmetros-de-item-lidos-sem-índice-de-array) | se os parâmetros de item chegam vazios de fato |
+| [11](#-11-spa-com-page_view-limitado-a-uma-vez-por-carregamento) | se a SPA perde `page_view` na navegação interna |
+| [18](#-18-no-lado-imóveis-o-consentimento-não-roda-as-duas-tags-do-adopt-estão-pausadas) | se o banner do AdOpt realmente não aparece no domínio ZapImóveis ANUNCIE |
+| [31](#-31-o-page_view-do-checkout-olx-escuta-dois-eventos-diferentes) | se a página empurra os dois eventos e o `page_view` conta em dobro |
+
+E o [achado 4](#-4-a-tag-que-grava-o-objeto-de-usuário-está-pausada-e-20-variáveis-dependem-dela)
+cai por terra se o site gravar `user_olx` por código próprio, fora do GTM.
+
+### O que o GA4 não deixou ver
+
+As telas de administração do GA4 (fluxos de dados, retenção, exportação para BigQuery, definição de
+eventos-chave) seguem fora de alcance: as propriedades continuam em `can_edit: false`, conferido por
+API em 11/09. A decisão desta janela foi **seguir sem elas**, e a auditoria cobre a maior parte da
+causa pelo GTM, que não depende desse nível. Ver [PENDENCIAS 13](../PENDENCIAS.md).
+
+Some-se a isso que **quatro streams de GA4 que recebem dado do GTM não estão entre as 71 propriedades
+visíveis** à V4 ([achado 37](#-37-as-landing-pages-b2b-medem-na-propriedade-cega-e-quatro-streams-estão-fora-do-alcance-da-v4),
+[PENDENCIAS 27](../PENDENCIAS.md)). Parte da medição do grupo tem destino que a auditoria não alcança.
+
+### O que esta auditoria não é
+
+Nada aqui descreve performance de negócio. Descreve **como a medição está montada**. Taxa de
+conversão, receita e volume aparecem só como consequência do que a medição produz ou deixa de
+produzir.
+
+### Ressalvas encerradas
+
+| Ressalva | Estava assim | Encerrada porque |
+|---|---|---|
+| **Cobertura parcial** | "auditados 6 contêineres de um total ainda desconhecido"; as contas `Checkout Unificado - PRO` e `VivaReal` inteiramente por auditar | 11/09: as quatro contas foram varridas e os **60 contêineres** auditados. O inventário está fechado no nível de conta e de contêiner |
+| **Exports não lidos** | "cinco exports no repositório ainda não foram lidos: Buyer Journey, VAS, Unbounce LP, Login, Wallet" | os cinco entraram na quarta rodada, junto com os outros 40 |
 
 ---
 
