@@ -299,23 +299,73 @@ mais muda o resultado da auditoria (vi).
 
 ## 🔴 13. O GA4 do grupo não mede conversão: e onde mede, mede errado
 
-Achado da varredura de 31/08, primeira leitura possível depois de o GA4 ser liberado. Sustenta a
-auditoria **(vii) Rastreamento Completo**, a prioritária, e é evidência direta de **Trava de Cegueira**.
+Achado da varredura de 31/08, primeira leitura possível depois de o GA4 ser liberado, **revisado e
+corrigido em 11/09/2026**. Sustenta a auditoria **(vii) Rastreamento Completo**, a prioritária, e é
+evidência direta de **Trava de Cegueira**.
 
-### Propriedades de alto volume sem nenhum evento-chave
+> ✅ **O acesso de leitura ao GA4 deixou de ser limitação.** Conferido em 11/09: a API de
+> administração responde **tudo** para `gina@v4company.com`, incluindo eventos-chave, fluxos de
+> dados, retenção, links do Google Ads e dimensões personalizadas. A ressalva antiga, de que as
+> telas de Administração seguiam fora de alcance por causa do `can_edit: false`, confundia
+> **permissão de escrita** com **permissão de leitura**. Falta poder editar, e isso não impede
+> diagnosticar. O que a V4 não alcança são quatro streams específicas, registradas na pendência 27.
 
-| Propriedade | ID | Volume | Eventos-chave |
-|---|---|---|---|
-| GA4 Grupo OLX | `503925542` | 2,47 mi de sessões (jun–ago) | **Nenhum.** Só eventos automáticos de enhanced measurement |
-| Autos 360 (Ex-Altimus) | `516288559` | 1,14 mi de sessões (jun–ago); 449 nomes de evento distintos | **Nenhum** |
-| ANAPRO | `469847974` | 11,19 mi de `page_view` (jun–ago) | **Nenhum** |
-| OLX PRO | `382768600` | 119 sessões em 3 meses, só tráfego direto | **Nenhum** |
-| OLX Pro Landing | `382776122` | Zero evento no período | - |
+### Propriedades de alto volume cujo evento-chave nunca dispara
 
-O caso do **Autos 360** é o mais eloquente: alguém instrumentou 449 eventos distintos e não marcou
-um único como conversão. O dado existe, ninguém definiu o que é resultado. E **OLX PRO**, o produto
-do anunciante profissional, exatamente o recorte B2B contratado, registra 119 sessões em três meses,
-o que significa que a propriedade está órfã, não que o produto não tem tráfego.
+> ⚠️ **Corrigido em 11/09/2026.** A redação anterior dizia que estas propriedades não tinham
+> **nenhum** evento-chave. **É falso**, e foi erro de leitura: a varredura de 31/08 leu o *volume*
+> de eventos-chave no período, não a *configuração*. Lendo a configuração pela API de administração
+> em 11/09, as quatro têm evento-chave definido. O que elas não têm é ocorrência. O achado não
+> enfraquece com a correção, fica mais preciso e mais grave.
+
+| Propriedade | ID | Sessões (60 dias) | Eventos-chave definidos | Desde | Ocorrências |
+|---|---|---:|---|---|---|
+| GA4 Grupo OLX | `503925542` | 2.194.847 | `qualify_lead`, `close_convert_lead`, `purchase` | 05/09/2025 | 🔴 **zero** |
+| Autos 360 (Ex-Altimus) | `516288559` | 770.548 | os mesmos três | 12/12/2025 | 🔴 **zero** |
+| ANAPRO | `469847974` | 680.229 | `purchase` | 09/12/2024 | 🔴 **zero** |
+| OLX PRO | `382768600` | 35 | `purchase` | 07/06/2023 | zero |
+| OLX Pro Landing | `382776122` | - | propriedade ativa, sem volume no período | - | - |
+
+**A correção muda a natureza do achado.** "Ninguém definiu o que é conversão" é desleixo de
+configuração. O que o dado mostra é outra coisa:
+
+> **Alguém definiu o funil B2B no GA4, com `qualify_lead` e `close_convert_lead`, e o site nunca
+> emitiu esses eventos.** Em `GA4 Grupo OLX` a definição está de pé há **mais de um ano** e acumulou
+> **zero ocorrência** em 2,19 milhões de sessões e 7,39 milhões de eventos.
+
+Isso não é ausência de intenção, é intenção que não virou instrumentação. Alguém sabia qual era o
+funil de receita B2B a ponto de nomear as duas etapas. Ninguém fechou o circuito entre essa definição
+e o que o site empurra para o dataLayer. É o mesmo desenho que o GTM mostra do outro lado: capacidade
+técnica presente, ninguém encarregado de conferir se o número sai.
+
+O **Autos 360** continua eloquente pelo mesmo motivo, agora melhor descrito: 449 nomes de evento
+distintos, três eventos-chave definidos há nove meses, e nenhuma ocorrência deles. E **OLX PRO**, o
+produto do anunciante profissional, exatamente o recorte B2B contratado, registra **35 sessões em 60
+dias**, o que significa que a propriedade está órfã, não que o produto não tem tráfego.
+
+### A retenção de dado repete a divisão entre consumidor e B2B
+
+Lido por API em 11/09, junto com a correção acima. Nunca tinha sido verificado.
+
+| Propriedade | Retenção de dado de evento |
+|---|---|
+| OLX App + Web · GA4 ZapImóveis · GA4 VivaReal | **50 meses** |
+| **GA4 Grupo OLX** (`503925542`) | 🔴 **2 meses** |
+| **GA4 ZapImóveis + VivaReal** (`494455315`) | 🔴 **2 meses** |
+| ANAPRO · Autos 360 · OLX PRO | 🔴 **2 meses** |
+
+Dois meses é o padrão de fábrica do GA4: é o que fica quando ninguém mexe. As propriedades de
+consumidor foram para 50 meses, o máximo. **A propriedade que carrega toda a superfície B2B ficou no
+padrão.**
+
+**Consequência direta para o DR-E:** não há série histórica no recorte contratado. Nenhuma comparação
+ano a ano, nenhuma linha de base anterior a meados de julho de 2026, nenhum funil histórico para
+calibrar o forecast de 12 meses. E, diferente de quase tudo nesta lista, **a correção é um clique** e
+não recupera o passado: o dado de antes de 2 meses já foi descartado e não volta.
+
+**Ação acrescentada:** subir a retenção de `GA4 Grupo OLX` e de `GA4 ZapImóveis + VivaReal` para 14
+meses (limite do tier gratuito) ou 50 (tier 360), hoje, para parar a sangria. Quanto antes, menos
+história se perde.
 
 ### Onde há evento-chave, o problema é o inverso
 

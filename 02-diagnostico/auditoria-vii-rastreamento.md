@@ -5,9 +5,11 @@
 >
 > | | |
 > |---|---|
-> | Cobertura de hoje | [quarta rodada](#quarta-rodada--11092026--o-parque-inteiro-entra): **60 contêineres**, 4 contas, 1.779 tags |
-> | Achados | **41**, numerados em sequência contínua entre as rodadas |
-> | O que não está confirmado | [Ressalvas de leitura](#ressalvas-de-leitura), atualizadas em 11/09 e válidas para as quatro rodadas |
+> | Cobertura GTM | [quarta rodada](#quarta-rodada--11092026--o-parque-inteiro-entra): **60 contêineres**, 4 contas, 1.779 tags |
+> | Cobertura GA4 | [revisão do lado GA4](#revisão-do-lado-ga4--11092026--uma-correção-e-dois-achados): configuração lida por API, 11/09 |
+> | Achados | **43**, numerados em sequência contínua entre as rodadas |
+> | O que não está confirmado | [Ressalvas de leitura](#ressalvas-de-leitura), atualizadas em 11/09 |
+> | Como o diagnóstico fecha | [critérios de fechamento](#como-este-diagnóstico-fecha) |
 > | Leitura da trava | [o que a quarta rodada muda](#o-que-a-quarta-rodada-muda-na-leitura-da-trava) |
 >
 > 🔴 **A ressalva que governa todas:** os 62 exports são de espaço de trabalho, nenhum é de versão
@@ -1086,3 +1088,135 @@ com 60 contêineres e 1.779 tags sustentando.
 **Para o Comitê 1:** isto não é uma lista de correções de rastreamento. É a medida de quanto da
 Trava de Cegueira é política e quanto é técnica. A resposta que o parque dá é: **quase tudo é
 política.**
+
+---
+
+# Revisão do lado GA4 · 11/09/2026 · uma correção e dois achados
+
+As quatro rodadas anteriores leram o GTM. Esta volta ao GA4 pela **API de administração**, que até
+11/09 o projeto dava como fora de alcance. Não está: a API responde tudo em leitura.
+
+> ✅ **A limitação declarada do GA4 caiu, e era um mal-entendido nosso.** O `can_edit: false` das
+> propriedades foi lido como se bloqueasse a Administração inteira. Ele bloqueia **escrita**. Toda a
+> configuração é legível: eventos-chave, fluxos de dados, retenção, links de Google Ads, dimensões
+> personalizadas. Ver [PENDENCIAS 13](../PENDENCIAS.md).
+
+## ⚠️ Correção do achado 13 registrada em PENDENCIAS
+
+A varredura de 31/08 afirmou que `GA4 Grupo OLX`, `Autos 360`, `ANAPRO` e `OLX PRO` **não tinham
+nenhum evento-chave**. **É falso.** A varredura leu o *volume* de eventos-chave no período e concluiu
+sobre a *configuração*. As quatro têm evento-chave definido. O que falta é ocorrência. A correção
+está em [PENDENCIAS 13](../PENDENCIAS.md), com o dado de 11/09, e o achado fica **mais grave**, não
+menos, pelo motivo do achado 42 abaixo.
+
+Nenhuma outra afirmação do achado 13 caiu: `ad_edition` e `ad_remove` seguem fora dos 56 eventos-chave
+de `OLX App + Web`, reconferido em 11/09.
+
+---
+
+## 🔴 42. O funil B2B está definido no GA4 há mais de um ano e nunca foi emitido
+
+| Propriedade | Sessões (60 dias) | Eventos totais | `qualify_lead` + `close_convert_lead` definidos em | Ocorrências |
+|---|---:|---:|---|---:|
+| **GA4 Grupo OLX** (`503925542`) | 2.194.847 | 7.392.792 | **05/09/2025** | **0** |
+| **Autos 360** (`516288559`) | 770.548 | 28.788.790 | **12/12/2025** | **0** |
+
+`qualify_lead` e `close_convert_lead` são eventos **personalizados**, não automáticos. Alguém os
+nomeou. São exatamente as duas etapas que faltam para fechar o funil B2B: qualificação e fechamento.
+
+**Alguém do grupo sabia qual era o funil de receita B2B a ponto de nomear as duas etapas no GA4, e
+ninguém fechou o circuito entre essa definição e o que o site empurra para o dataLayer.** A definição
+está de pé há mais de um ano na propriedade B2B e acumulou zero ocorrência em 2,19 milhões de sessões.
+
+Isso é mais forte do que a leitura anterior, de que ninguém tinha definido conversão. Não falta
+intenção nem entendimento do negócio. **Falta a ligação entre quem define e quem implementa**, que é
+a mesma política implícita que o GTM mostra do outro lado, agora com evidência independente.
+
+E dá o caminho da correção: o nome do evento já existe e já é evento-chave. Emitir
+`qualify_lead` e `close_convert_lead` no dataLayer é trabalho de implementação, não de definição.
+
+---
+
+## 🔴 43. A propriedade B2B guarda 2 meses de dado; as de consumidor guardam 50
+
+| Propriedade | Retenção de dado de evento |
+|---|---|
+| OLX App + Web · GA4 ZapImóveis · GA4 VivaReal | **50 meses** |
+| **GA4 Grupo OLX** (`503925542`) | 🔴 **2 meses** |
+| **GA4 ZapImóveis + VivaReal** (`494455315`) | 🔴 **2 meses** |
+| ANAPRO · Autos 360 · OLX PRO | 🔴 **2 meses** |
+
+Dois meses é o padrão de fábrica do GA4: é o que fica quando ninguém mexe. As propriedades de
+consumidor foram levadas ao máximo. A propriedade que carrega `ads.grupoolx.com.br`, `imoveis.`,
+`autos.`, o institucional e `vender.olx.com.br`, ou seja **toda a superfície B2B do escopo
+contratado**, ficou no padrão.
+
+É a terceira vez que o mesmo recorte aparece: o tier de serviço gratuito enquanto o consumidor roda
+em 360 ([achado 13](#-13-eventos-de-alto-volume-que-não-são-evento-chave) e PENDENCIAS 13), os
+eventos-chave definidos e nunca emitidos (achado 42), e agora a retenção mínima. **Três decisões
+independentes, tomadas por pessoas diferentes, todas na mesma direção.**
+
+**Consequência para o DR-E, e é imediata:** não existe série histórica no recorte contratado. Sem
+comparação ano a ano, sem linha de base anterior a meados de julho de 2026, sem funil histórico para
+calibrar o forecast de 12 meses. Onde o forecast precisar de histórico B2B, a fonte terá de ser a
+série de receita declarada, não o GA4.
+
+> 🔴 **Isto é o único achado da auditoria que piora enquanto ninguém age.** Os outros descrevem um
+> estado. Este descarta dado todo dia: o que passa de 2 meses é apagado e não volta. Subir a retenção
+> é um clique e deveria acontecer antes de qualquer outra correção desta lista, mesmo que só seja
+> discutido no Comitê 1.
+
+---
+
+# Como este diagnóstico fecha
+
+**(vii) fecha em terça, 15/09/2026**, conforme a
+[sprint de diagnósticos](../04-execucao/sprint-diagnosticos-10-a-18-09.md). Fechar significa quatro
+coisas, e só isso. Nada aqui é opinião de quem escreve: são os critérios do método.
+
+| | Critério | Estado em 11/09 | Dono |
+|---|---|---|---|
+| 1 | **Cobertura**: todo contêiner e toda propriedade do escopo lidos | ✅ **feito**. 60 de 60 contêineres, 4 de 4 contas, configuração do GA4 lida por API | V4 |
+| 2 | **Achados escritos com fonte rastreável**, cada um até a tag ou a propriedade | ✅ **feito**. 43 achados | V4 |
+| 3 | **Trava de Cegueira pontuada**, nas 2 camadas e nas 5 dimensões, com a entrada visual obrigatória | 🔴 **falta** | V4, com `dre-diagnostico-trava` |
+| 4 | **Limitações declaradas** e o que ficou por confirmar, registrado | 🔴 **falta** esta seção ser preenchida abaixo | V4 |
+
+**Não é critério de fechamento** ter toda confirmação de produção na mão. O método fecha diagnóstico
+com **limitação declarada**, e não com certeza total, porque a alternativa é não fechar nunca. O que
+não pode acontecer é a limitação existir e não estar escrita.
+
+## O que falta do lado do cliente, e o que acontece se não vier
+
+Duas coisas, e **nenhuma delas impede o fechamento em 15/09**. As duas mudam o peso de achados
+específicos, não a nota da trava nem a conclusão.
+
+| O que | Custo | Decide | Se não vier até 15/09 |
+|---|---|---|---|
+| **Versão publicada do `GTM-KGFGVFC`** mais print da aba Versões (lote 1 do [guia](guia-export-gtm.md)) | ~10 min no Gerenciador de Tags | Se o [achado 1](#-1-o-evento-purchase-do-ga4-é-disparado-pelo-gatilho-de-begin_checkout) abre o comitê ou vira nota de rodapé | O achado 1 é apresentado como **configuração de rascunho**, com a ressalva explícita. Não é apresentado como produção |
+| **Preview do GTM** nos achados [5](#-5-parâmetros-de-item-lidos-sem-índice-de-array), [11](#-11-spa-com-page_view-limitado-a-uma-vez-por-carregamento), [18](#-18-no-lado-imóveis-o-consentimento-não-roda-as-duas-tags-do-adopt-estão-pausadas) e [31](#-31-o-page_view-do-checkout-olx-escuta-dois-eventos-diferentes) | ~30 min navegando os sites com o Preview ligado | Se quatro achados de comportamento são afirmados ou permanecem condicionais | Os quatro seguem marcados "a confirmar no Preview". Continuam válidos como leitura de configuração |
+
+**Não falta nada do GA4.** O acesso de leitura está completo e foi exercido: eventos-chave, fluxos de
+dados, retenção, links de Google Ads e dimensões personalizadas, tudo lido por API em 11/09. Não há
+relatório a exportar.
+
+## A nota da Cegueira e a ressalva do rascunho
+
+As [Ressalvas de leitura](#ressalvas-de-leitura) separam as duas origens de evidência. Para a
+pontuação isso tem efeito prático, e é o que permite fechar sem a versão publicada:
+
+**As três evidências mais pesadas de Cegueira são todas do lado GA4, que é produção observada:** a
+propriedade B2B no tier gratuito, os eventos-chave do funil B2B definidos e nunca emitidos
+([achado 42](#-42-o-funil-b2b-está-definido-no-ga4-há-mais-de-um-ano-e-nunca-foi-emitido)) e a
+retenção de 2 meses no recorte contratado
+([achado 43](#-43-a-propriedade-b2b-guarda-2-meses-de-dado-as-de-consumidor-guardam-50)).
+
+Nenhuma delas depende de export de GTM. **A nota de Cegueira, portanto, não tem teto imposto pela
+ressalva do rascunho**, mesmo que o lote 1 nunca chegue. O que a ressalva limita é a afirmação sobre
+tags específicas, não o diagnóstico da trava.
+
+## Depois de 15/09
+
+(vii) alimenta a **consolidação causal**, que abre em 14/09 e roda em paralelo. A Cegueira é
+pré-condição, não restrição de receita: ela não concorre para ser a trava governante, ela determina
+se as outras sete podem ser medidas. É por isso que (vii) é o diagnóstico prioritário e fecha
+primeiro.

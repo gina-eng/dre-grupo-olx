@@ -8,7 +8,7 @@
     "ciclo_atual": 1,
     "fase_atual": "Identificar",
     "semana_corrente": 3,
-    "version": 23,
+    "version": 24,
     "atualizado_em": "2026-09-11",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
@@ -444,6 +444,18 @@
           "achado": "As landing pages B2B (OLX - Unbounce | LP, 40 tags) e o Site Institucional escrevem na GA4 Grupo OLX 503925542, a propriedade de tier gratuito com zero evento-chave.",
           "data": "2026-09-11",
           "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#42",
+          "achado": "qualify_lead e close_convert_lead, as duas etapas do funil B2B, estao definidos como evento-chave na GA4 Grupo OLX desde 05/09/2025 e acumulam ZERO ocorrencia em 2.194.847 sessoes e 7.392.792 eventos nos ultimos 60 dias. Mesmo padrao no Autos 360 desde 12/12/2025.",
+          "data": "2026-09-11",
+          "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#43",
+          "achado": "A retencao de dado de evento da GA4 Grupo OLX, que carrega toda a superficie B2B, esta em 2 meses, o padrao de fabrica. As propriedades de consumidor estao em 50 meses. Nao ha serie historica no recorte contratado, e o dado descartado nao volta.",
+          "data": "2026-09-11",
+          "estimado": false
         }
       ],
       "diagnosticado_em": null
@@ -623,6 +635,11 @@
       "data": "2026-09-11",
       "version": 23,
       "evento": "QUARTA RODADA DA AUDITORIA (vii): o parque de GTM foi fechado e auditado por inteiro. O inventario saiu de 15 para 60 conteineres nas quatro contas (1.779 tags, 1.634 gatilhos, 4.711 variaveis), depois de duas levas de export em 11/09. Dez achados novos, 32 a 41. Os tres criticos: os tres Masters das tres verticais concedem consentimento por padrao; tres dos quatro ambientes de QA escrevem na propriedade GA4 de producao; e o begin_checkout do anunciante privado do ZapImoveis nunca dispara, o que deixa esse recorte com purchase sem denominador. Dois candidatos foram derrubados na conferencia e ficaram registrados. Abriu PENDENCIAS 27 (quatro streams de GA4 fora do acesso da V4) e 28 (o gatilho impossivel). Continua faltando a versao publicada: os 62 arquivos sao todos rascunho de workspace, entao nenhum achado sustenta afirmacao sobre producao sem essa confirmacao."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 24,
+      "evento": "CORRECAO E FECHAMENTO DE (vii). A afirmacao de que quatro propriedades do GA4 nao tinham NENHUM evento-chave era falsa: a varredura de 31/08 leu volume e concluiu sobre configuracao. As quatro tem evento-chave definido, e o que falta e ocorrencia. Corrigido em PENDENCIAS 13. O achado fica mais grave: qualify_lead e close_convert_lead, as duas etapas do funil B2B, estao definidos na GA4 Grupo OLX ha mais de um ano com zero ocorrencia em 2,19 mi de sessoes (achado 42). Caiu tambem a limitacao declarada do GA4: a API de administracao responde tudo em leitura, e o can_edit false confundia permissao de escrita com de leitura. Achado 43 novo, nunca verificado antes: a retencao da propriedade B2B esta em 2 meses contra 50 meses das de consumidor, entao nao ha serie historica no recorte contratado e o dado descartado nao volta. A auditoria ganhou a secao Como este diagnostico fecha, com os 4 criterios: cobertura (feita), achados com fonte (feitos), Trava de Cegueira pontuada (falta) e limitacoes declaradas (falta). O lote 1 do GTM e o Preview nao sao criterio de fechamento: mudam o peso de achados especificos, nao a nota da trava."
     }
   ],
   "connectors": {
