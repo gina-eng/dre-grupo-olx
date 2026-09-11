@@ -1,0 +1,478 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:32:03",
+    "containerVersion": {
+        "path": "accounts/94905/containers/102045912/versions/0",
+        "accountId": "94905",
+        "containerId": "102045912",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/102045912",
+            "accountId": "94905",
+            "containerId": "102045912",
+            "name": "OLX - Testes de SDK",
+            "publicId": "GTM-TQHV6TD",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1675887558239",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/102045912/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-TQHV6TD"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "tagId": "5",
+                "name": "[TAG] GA4 - Settings & Page View",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{[VAR] GA4 - G-XXXXXXXXXX}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1675887850496",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "tagId": "7",
+                "name": "[TAG] GAU - Page View",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU - Settings}}"
+                    }
+                ],
+                "fingerprint": "1675887963354",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "tagId": "9",
+                "name": "[TAG] GA4 - Generic Event",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "eventAction"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - eventAction}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "eventLabel"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - eventLabel}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{[VAR] DataLayer - eventName}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-XXXXXXXXXX}}"
+                    }
+                ],
+                "fingerprint": "1675889141015",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "tagId": "14",
+                "name": "[TAG] GAU - Generic Event",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{[VAR] DataLayer - eventName}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU - Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{[VAR] DataLayer - eventAction}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{[VAR] DataLayer - eventLabel}}"
+                    }
+                ],
+                "fingerprint": "1675889081764",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "triggerId": "8",
+                "name": "[AC] Generic Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "genericEvent"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1675889034330"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "variableId": "3",
+                "name": "[VAR] GAU - UA-XXXXXXXX",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "UA-XXXXXXXX"
+                    }
+                ],
+                "fingerprint": "1675887872777",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "variableId": "4",
+                "name": "[VAR] GA4 - G-XXXXXXXXXX",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-XXXXXXXXXX"
+                    }
+                ],
+                "fingerprint": "1675887863904",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "variableId": "6",
+                "name": "[VAR] GAU - Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "{{[VAR] GAU - UA-XXXXXXXX}}"
+                    }
+                ],
+                "fingerprint": "1675887911839"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "variableId": "12",
+                "name": "[VAR] DataLayer - eventAction",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventAction"
+                    }
+                ],
+                "fingerprint": "1675888374509",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "variableId": "13",
+                "name": "[VAR] DataLayer - eventLabel",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventLabel"
+                    }
+                ],
+                "fingerprint": "1675888413526",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "variableId": "15",
+                "name": "[VAR] DataLayer - eventName",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "eventName"
+                    }
+                ],
+                "fingerprint": "1675889060298",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "102045912",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789137123015",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/102045912/versions/0?apiLink=version"
+    }
+}

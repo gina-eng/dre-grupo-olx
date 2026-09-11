@@ -6,6 +6,12 @@
 > [auditoria (vii)](auditoria-vii-rastreamento.md). **O que segue aberto é o bloco 2**, as telas de
 > administração do GA4, que a API não entrega e só saem por print.
 
+> 🔴 **Atualizado em 11/09.** Os 11 exports que temos são de **espaço de trabalho**, não da versão
+> publicada: `containerVersionId: 0` nos onze. Eles descrevem o rascunho, não o que está no ar.
+> O passo a passo de coleta desta janela, com os cinco lotes em ordem de valor e o comando de
+> conferência, está em [`guia-export-gtm.md`](guia-export-gtm.md). Os blocos 0 e 1 abaixo continuam
+> valendo como lista de controle.
+
 Lista de trabalho aberta em **01/09/2026**. Só itens que a V4 consegue buscar **com os acessos que já
 tem**, sem depender de concessão nova da OLX. O que depende da OLX está em
 [`checklist-dados-e-acessos.md`](checklist-dados-e-acessos.md) e em [`PENDENCIAS.md`](../PENDENCIAS.md).
@@ -37,7 +43,12 @@ ou seja, são todas do tier pago.
 
 ### O que pedir, em ordem de valor
 
-- [ ] **0.1 · Conta `Checkout Unificado - PRO` (`6326134112`): todos os contêineres** 🔴
+- [x] **0.1 · Conta `Checkout Unificado - PRO` (`6326134112`): os quatro contêineres** ✅ **ENTREGUE em 11/09**
+  Enumerada e exportada em 11/09: `GTM-NGG9336B` (Master), `GTM-K4WBMGQV` (OLX),
+  `GTM-NKSGWD6H` (Zap Imóveis) e `GTM-NRVS3M3D` (Viva Real). Um Master e uma instância por
+  vertical. Os 4 JSON estão em `assets/originais/H-rastreamento-gtm/`. Auditados na
+  [terceira rodada](auditoria-vii-rastreamento.md), achados 23 a 31. **Ficam em rascunho:**
+  a versão publicada dos quatro segue pendente.
   **É o pedido de maior valor do projeto.** O nome junta as duas palavras que definem o escopo
   contratado: *checkout* é onde a receita acontece, e *PRO* é o anunciante profissional. Se a
   hipótese estiver certa, é aqui que mora a medição da receita B2B do grupo, e o
@@ -71,8 +82,10 @@ ou seja, são todas do tier pago.
   Confirma ou descarta o `page_view` duplicado em `conta.olx.com.br/acesso` e `/cadastro`.
 - [x] **1.4 · `GTM-KP8QMDH` · LPs Unbounce**
   É onde as landing pages vivem de fato. Insumo direto da auditoria (viii).
-- [x] **1.5 · `GTM-5WWRGTQ` (VAS) · `GTM-T2H3VFL` (Google Shopping) · `GTM-PWP7Z4C` (Wallet)**
+- [ ] **1.5 · `GTM-5WWRGTQ` (VAS) · `GTM-T2H3VFL` (Google Shopping) · `GTM-PWP7Z4C` (Wallet)**
   Prioridade menor. Fecham o inventário.
+  ⚠️ **Reaberto em 11/09:** VAS e Wallet estão na pasta, **`GTM-T2H3VFL` não**. Ou nunca veio, ou
+  veio e não foi versionado.
 
 - [ ] **1.6 · Print da lista completa de contêineres**, rolando até o fim.
   Sabemos que 22 é piso, não total.

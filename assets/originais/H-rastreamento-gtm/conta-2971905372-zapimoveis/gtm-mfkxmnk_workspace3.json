@@ -1,0 +1,1042 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:56:51",
+    "containerVersion": {
+        "path": "accounts/2971905372/containers/57412422/versions/0",
+        "accountId": "2971905372",
+        "containerId": "57412422",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/2971905372/containers/57412422",
+            "accountId": "2971905372",
+            "containerId": "57412422",
+            "name": "LP - Zapfin",
+            "publicId": "GTM-MFKXMNK",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1642102730226",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/2971905372/containers/57412422/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-MFKXMNK"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "10",
+                "name": "GA - Send Event",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{Category}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA - Configuration}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{Action}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{Label}}"
+                    }
+                ],
+                "fingerprint": "1642616000707",
+                "firingTriggerId": [
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "11",
+                "name": "GA - Pageview",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA - Configuration}}"
+                    }
+                ],
+                "fingerprint": "1642616026734",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "16",
+                "name": "Evento GA 01 - Menu",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  if({{Click Text}} == 'FINANCIAMENTO'){\n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:header',\n    action: 'clique',\n    label: 'financiamento'    \n  })\n    \n  } else {\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:header',\n    action: 'clique',\n    label: 'home'    \n  })\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642616659133",
+                "firingTriggerId": [
+                    "12",
+                    "13",
+                    "14",
+                    "15"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "18",
+                "name": "Evento GA 02 - Footer",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:footer',\n    action: 'clique',\n    label: 'logo:grupo-zap'    \n  })\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642616952485",
+                "firingTriggerId": [
+                    "17"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "20",
+                "name": "Evento GA 03 - Card Financiamento",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:home',\n    action: 'clique',\n    label: 'financiamento-santander:saiba-mais'    \n  })\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642617080746",
+                "firingTriggerId": [
+                    "19"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "22",
+                "name": "Evento GA 04.1 - Parceiro - Banner Novo Por Aqui?",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:parceiro-santander',\n    action: 'clique',\n    label: 'novo-por-aqui:seja-parceiro'    \n  })\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642617242441",
+                "firingTriggerId": [
+                    "21"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "24",
+                "name": "Evento GA 04.2 - Parceiro - Banner Já Sou Parceiro",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:parceiro-santander',\n    action: 'clique',\n    label: 'ja-sou-parceiro:enviar-uma-proposta'    \n  })\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642617569136",
+                "firingTriggerId": [
+                    "23"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "25",
+                "name": "Evento GA 05 - Parceiro - Vídeo",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:parceiro-santander',\n    action: 'video',\n    label: 'reproduzir'    \n  })\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642621549630",
+                "firingTriggerId": [
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "tagId": "27",
+                "name": "Evento GA 06 - Parceiro - Como Ser um Parceiro?",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'lp-zapfin:parceiro-santander',\n    action: 'clique',\n    label: 'como-ser-um-parceiro:email'    \n  })\n \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1642621562053",
+                "firingTriggerId": [
+                    "26"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "9",
+                "name": "Send Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sendEvent"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1642615999064"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "12",
+                "name": "01 - Menu Logo",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-image-649 > div > a"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642616281214"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "13",
+                "name": "01 - Parceiro - Menu Financiamento",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-button-1001"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642616500420"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "14",
+                "name": "01 - Parceiro - Menu Home",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-button-1000"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642616536089"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "15",
+                "name": "01 - Home - Menu Financiamento",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-button-859"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642616611636"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "17",
+                "name": "02 - Footer",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-image-740 > div > a"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642616929703"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "19",
+                "name": "03 - Card Financiamento",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-button-1005"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642617055046"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "21",
+                "name": "04.1 - Banner",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-button-1106"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642617208435"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "23",
+                "name": "04.2 - Banner",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-button-1200"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642617304868"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "26",
+                "name": "06 - Como Ser um Parceiro",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#lp-pom-text-694 > p > span > a"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1642621560299"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "triggerId": "28",
+                "name": "05 - Vídeo",
+                "type": "YOU_TUBE_VIDEO",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/parceiro/santander/"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1642621840812",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "captureComplete",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "captureStart",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "fixMissingApi",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "triggerStartOption",
+                        "value": "DOM_READY"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "capturePause",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "captureProgress",
+                        "value": "false"
+                    }
+                ]
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "variableId": "4",
+                "name": "Format Text",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\nreturn function(s){\nif(typeof s === 'undefined') return '';\nvar toLower = true\nvar map={\n\"â\":\"a\",\n\"Â\":\"A\",\n\"à\":\"a\",\n\"À\":\"A\",\n\"á\":\"a\",\n\"Á\":\"a\",\n\"ã\":\"a\",\n\"Ã\":\"a\",\n\"ê\":\"e\",\n\"Ê\":\"e\",\n\"è\":\"e\",\n\"È\":\"e\",\n\"é\":\"e\",\n\"É\":\"e\",\n\"î\":\"i\",\n\"Î\":\"i\",\n\"ì\":\"i\",\n\"Ì\":\"i\",\n\"í\":\"i\",\n\"Í\":\"i\",\n\"õ\":\"o\",\n\"Õ\":\"o\",\n\"ô\":\"o\",\n\"Ô\":\"o\",\n\"ò\":\"o\",\n\"Ò\":\"o\",\n\"ó\":\"o\",\n\"Ó\":\"o\",\n\"ü\":\"u\",\n\"Ü\":\"u\",\n\"û\":\"u\",\n\"Û\":\"U\",\n\"ú\":\"u\",\n\"Ú\":\"U\",\n\"ù\":\"u\",\n\"Ù\":\"U\",\n\"ç\":\"c\",\n\"Ç\":\"C\",\n\"&\":\"e\",\n\" \":\"-\",\n\":\":\"-\",\n\",\":\"-\",\n\".\":\"-\",\n\"|\":\"-\",\n\"–\":\"-\",\n\"/\":\"-\",\n\"*\":\"-\",\n\")\":\"-\",\n\"(\":\"-\",\n\"?\":\"-\",\n\"!\":\"-\",\n\"=\":\"-\",\n\"[\":\"-\",\n\"]\":\"-\",\n\"!\":\"-\",\n\"#\":\"-\",\n\"$\":\"-\",\n\"%\":\"-\",\n\"¨\":\"-\",\n\"}\":\"-\",\n\"{\":\"-\",\n\"_\":\"-\",\n\"`\":\"-\",\n\"^\":\"-\",\n\"º\":\"-\",\n\";\":\"-\",\n\"~\":\"-\",\n\"'\":\"-\",\n'\"':\"-\",\n\"+\":\"-\"\n};\ns = s.replace(/[\\W\\[\\] ]/g,function(a){return map[a]||a});\nreturn toLower?s.toLowerCase().replace(/[\\|]/g,'-').replace(/-+/g,'-').replace(/-$/,'').replace(/^-/,''):s.replace(/[\\|]/g,'-').replace(/-+/g,'-').replace(/-$/,'').replace(/^-/,'');\n}\n}"
+                    }
+                ],
+                "fingerprint": "1642615707330",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "variableId": "5",
+                "name": "GA - Configuration",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Session ID}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-230770-55"
+                    }
+                ],
+                "fingerprint": "1643997459639"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "variableId": "6",
+                "name": "Action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "action"
+                    }
+                ],
+                "fingerprint": "1642615819549",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "variableId": "7",
+                "name": "Category",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "category"
+                    }
+                ],
+                "fingerprint": "1642615842692",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "variableId": "8",
+                "name": "Label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "label"
+                    }
+                ],
+                "fingerprint": "1642615856748",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "variableId": "29",
+                "name": "Session ID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function () { // Public Domain/MIT\nvar d = new Date().getTime();\nif (typeof performance !== 'undefined' && typeof performance.now === 'function'){\nd += performance.now(); //use high-precision timer if available\n}\nreturn 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {\nvar r = (d + Math.random() * 16) % 16 | 0;\nd = Math.floor(d / 16);\nreturn (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);\n});\n}"
+                    }
+                ],
+                "fingerprint": "1643997692142",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "CLICK_ID",
+                "name": "Click ID"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "57412422",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            }
+        ],
+        "fingerprint": "1789145811572",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/2971905372/containers/57412422/versions/0?apiLink=version"
+    }
+}

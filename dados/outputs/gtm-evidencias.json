@@ -1,0 +1,6605 @@
+{
+  "conteineres": [
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-5pnsc98_workspace24.json",
+      "conta": "2971905372",
+      "public_id": "GTM-5PNSC98",
+      "nome": "Guia de Bairros",
+      "versao": "0",
+      "contagem": {
+        "tags": 25,
+        "pausadas": 0,
+        "gatilhos": 24,
+        "variaveis": 58
+      },
+      "tipos": {
+        "Universal Analytics": 1,
+        "HTML customizado": 22,
+        "Google tag": 1,
+        "GA4 evento": 1
+      },
+      "ga4": [
+        "G-W39KX3CBHX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "130",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-5x2lzwr_workspace306.json",
+      "conta": "2971905372",
+      "public_id": "GTM-5X2LZWR",
+      "nome": "2. ZapImóveis - Container PORTAL ZAP",
+      "versao": "0",
+      "contagem": {
+        "tags": 127,
+        "pausadas": 17,
+        "gatilhos": 107,
+        "variaveis": 297
+      },
+      "tipos": {
+        "HTML customizado": 73,
+        "Google Ads remarketing": 1,
+        "Google Ads linker": 2,
+        "mf": 1,
+        "cvt_96140809_23": 1,
+        "Google tag": 5,
+        "GA4 evento": 16,
+        "Google Ads conversao": 2,
+        "flc": 9,
+        "img": 7,
+        "cvt_M3KBL": 10
+      },
+      "ga4": [
+        "G-W39KX3CBHX",
+        "G-ZBYP2KJ7L9"
+      ],
+      "google_ads": [
+        "AW-791124290",
+        "AW-791223751"
+      ],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "528",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "439",
+          "nome": "[GA4 - Verticalizado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "87",
+            "445"
+          ],
+          "escutam": [
+            "leadClicked",
+            "scheduleClicked"
+          ]
+        },
+        {
+          "id": "638",
+          "nome": "[GA4 - Unificado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "87",
+            "445"
+          ],
+          "escutam": [
+            "leadClicked",
+            "scheduleClicked"
+          ]
+        },
+        {
+          "id": "659",
+          "nome": "[TAG] GA4 - Login",
+          "evento": "login",
+          "pausada": false,
+          "gatilhos": [
+            "656"
+          ],
+          "escutam": [
+            "loginFlow"
+          ]
+        },
+        {
+          "id": "660",
+          "nome": "[TAG] GA4 - Sign_up",
+          "evento": "sign_up",
+          "pausada": false,
+          "gatilhos": [
+            "657"
+          ],
+          "escutam": [
+            "loginFlow"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "157",
+          "nome": "[TAG] Custom Script - concatUTMInLinks",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "164",
+          "nome": "[PXL] Facebook - Code Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "179",
+          "nome": "[TAG] Custom Script - gaFixUTMReferrer",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "181",
+          "nome": "[PXL] Criteo - TrackTransaction",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "185",
+          "nome": "[PXL] Programática - dfpLoad",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "234",
+          "nome": "[PXL] Insider - ObjectUser",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone_number"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "391",
+          "nome": "[PXL] RTB House - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "455",
+          "nome": "[PXL] TikTok - ZAP - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "473",
+          "nome": "[PXL] Pinterest - Code Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "485",
+          "nome": "[TAG] Adjust - Smart Banner - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "514",
+          "nome": "[TAG] DataLayer - Promotion Click",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "519",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "595",
+          "nome": "[TAG] Pageview - Page 404",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "600",
+          "nome": "[PXL] Kwai - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "650",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "695",
+          "nome": "[TAG] Engagement Session",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "756",
+          "nome": "Braze - Update User Attributes - Generate Lead",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "794",
+          "nome": "[TAG] Adjust - Modal",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "69",
+          "nome": "[PXL] Programática - dfpListingDetailPageAds"
+        },
+        {
+          "id": "125",
+          "nome": "[PXL] Programática - dfpResultPageAds"
+        },
+        {
+          "id": "201",
+          "nome": "[PXL] Programática - dfpHomeAds"
+        },
+        {
+          "id": "514",
+          "nome": "[TAG] DataLayer - Promotion Click"
+        },
+        {
+          "id": "516",
+          "nome": "[TAG] DataLayer - Cleaner"
+        },
+        {
+          "id": "707",
+          "nome": "[TAG] Braze - Update User ID"
+        },
+        {
+          "id": "738",
+          "nome": "[TAG] Braze - Generate Lead"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "598",
+          "nome": "[GA4] generate_lead SDK",
+          "tipo": "GA4 evento"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-m23nb5r_workspace59.json",
+      "conta": "2971905372",
+      "public_id": "GTM-M23NB5R",
+      "nome": "meuzap.zapimoveis.com.br",
+      "versao": "0",
+      "contagem": {
+        "tags": 7,
+        "pausadas": 0,
+        "gatilhos": 6,
+        "variaveis": 54
+      },
+      "tipos": {
+        "HTML customizado": 4,
+        "mf": 1,
+        "Google tag": 1,
+        "GA4 evento": 1
+      },
+      "ga4": [
+        "G-W39KX3CBHX"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-44"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "158",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-m6ndnp4k_workspace4.json",
+      "conta": "2971905372",
+      "public_id": "GTM-M6NDNP4K",
+      "nome": "10. ZapImóveis - Container ANUNCIE - Ambinete de QA",
+      "versao": "0",
+      "contagem": {
+        "tags": 47,
+        "pausadas": 17,
+        "gatilhos": 60,
+        "variaveis": 171
+      },
+      "tipos": {
+        "cvt_192391420_13": 5,
+        "HTML customizado": 18,
+        "Universal Analytics": 2,
+        "GA4 evento": 14,
+        "Google Ads conversao": 4,
+        "Google Ads linker": 1,
+        "Google tag": 1,
+        "mf": 1,
+        "Google Ads remarketing": 1
+      },
+      "ga4": [
+        "G-6TV9FSHYVM"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-13"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "138",
+          "nome": "[GA4 Verticalizado] begin_checkout - New Page Profissionais",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "132",
+            "137"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "150",
+          "nome": "[GA4 - Verticalizado] add_to_cart - New Page Profissionais",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "149",
+            "148"
+          ],
+          "escutam": [
+            "add_to_cart"
+          ]
+        },
+        {
+          "id": "169",
+          "nome": "[GA4 Verticalizado] add_to_cart - Profissional",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "168"
+          ],
+          "escutam": [
+            "gtm.formSubmit"
+          ]
+        },
+        {
+          "id": "186",
+          "nome": "[GA4 Verticalizado] begin_checkout - Privado",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "185"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "198",
+          "nome": "[GA4 Verticalizado] purchase Privado",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "196"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        },
+        {
+          "id": "204",
+          "nome": "[GA4 Verticalizado] purchase - New Page Profissionais",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "145",
+            "200"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        },
+        {
+          "id": "213",
+          "nome": "[GA4 Verticalizado] begin_checkout - Profissional",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "170"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "230",
+          "nome": "[GA4 Verticalizado] add_to_cart - Privado",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "199"
+          ],
+          "escutam": [
+            "ga4_add_to_cart"
+          ]
+        },
+        {
+          "id": "245",
+          "nome": "[GA4 Verticalizado] add_to_cart - Privado - Carregamento",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "185"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "256",
+          "nome": "[GA4 Verticalizado] purchase Profissional",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "146"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "259",
+          "nome": "[GA4 Verticalizado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "24"
+          ],
+          "escutam": [
+            "lead_dbm"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "188",
+          "nome": "[PXL] Insider - ObjectUser - B2B - Home",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone",
+            "phone_number"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "233",
+          "nome": "[PXL] Insider - ObjectUser - B2C - select_plan",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone",
+            "phone_number"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "242",
+          "nome": "[GA4] dataLayer. add_to_cart",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "277",
+          "nome": "[PXL] Insider - ObjectUser - B2B - Payment",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone",
+            "phone_number"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "281",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": [
+        {
+          "id": "111",
+          "nome": "[GAU - Legado] gaLeadDBMClicked",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "163",
+          "nome": "[PXL] Insider - CheckoutTag",
+          "tipo": "HTML customizado"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-mfkxmnk_workspace3.json",
+      "conta": "2971905372",
+      "public_id": "GTM-MFKXMNK",
+      "nome": "LP - Zapfin",
+      "versao": "0",
+      "contagem": {
+        "tags": 9,
+        "pausadas": 0,
+        "gatilhos": 11,
+        "variaveis": 6
+      },
+      "tipos": {
+        "Universal Analytics": 2,
+        "HTML customizado": 7
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-55"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "27",
+          "nome": "Evento GA 06 - Parceiro - Como Ser um Parceiro?",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-mktz2zp_workspace215.json",
+      "conta": "2971905372",
+      "public_id": "GTM-MKTZ2ZP",
+      "nome": "3. ZapImóveis - Container CLICKSTREAM",
+      "versao": "0",
+      "contagem": {
+        "tags": 129,
+        "pausadas": 0,
+        "gatilhos": 199,
+        "variaveis": 821
+      },
+      "tipos": {
+        "HTML customizado": 128,
+        "cloud_retail": 1
+      },
+      "ga4": [
+        "G-28CQ5W5559"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-13"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "1417",
+          "nome": "[Clickstream] leadClicked",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-mqsq9jw_workspace8.json",
+      "conta": "2971905372",
+      "public_id": "GTM-MQSQ9JW",
+      "nome": "6. ZapImóveis - Container DATAZAP/GEOIMOVEL",
+      "versao": "0",
+      "contagem": {
+        "tags": 4,
+        "pausadas": 0,
+        "gatilhos": 2,
+        "variaveis": 171
+      },
+      "tipos": {
+        "Google tag": 1,
+        "GA4 evento": 1,
+        "HTML customizado": 2
+      },
+      "ga4": [
+        "G-SP7M9MSCB3"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-13"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "283",
+          "nome": "Survery Monkey",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "284",
+          "nome": "Product Fruits",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-mvm68b5_workspace53.json",
+      "conta": "2971905372",
+      "public_id": "GTM-MVM68B5",
+      "nome": "4. ZapImóveis - Container LANDING PAGES",
+      "versao": "0",
+      "contagem": {
+        "tags": 62,
+        "pausadas": 4,
+        "gatilhos": 50,
+        "variaveis": 59
+      },
+      "tipos": {
+        "HTML customizado": 34,
+        "Universal Analytics": 16,
+        "Google tag": 3,
+        "Google Ads conversao": 2,
+        "bzi": 1,
+        "Google Ads linker": 1,
+        "GA4 evento": 3,
+        "cvt_M3KBL": 2
+      },
+      "ga4": [
+        "G-SP7M9MSCB3",
+        "G-W39KX3CBHX",
+        "G-XWEMHMPHXB"
+      ],
+      "google_ads": [
+        "AW-977619609"
+      ],
+      "ua": [
+        "UA-230770-13",
+        "UA-230770-56",
+        "UA-230770-57"
+      ],
+      "meta_pixel": [
+        "328237602412769"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "76",
+          "nome": "[zapmais.com] facebookPageView",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "118",
+          "nome": "GA Event 01 - Seleção de Imóveis Pesquisa",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "119",
+          "nome": "GA Event 05 - Imóvel Fale Com o Anunciante",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "120",
+          "nome": "GA Event 08 - Imóvel Fale Com o Anunciante Pop-Up",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "126",
+          "nome": "GA Event 01 - Festival da Mudança Pesquisa",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "135",
+          "nome": "GA Event 05 - Festival da Mudança Fale Com o Anunciante",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "141",
+          "nome": "GA Event 08 - Festival da Mudança Fale Com o Anunciante Pop-Up",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "205",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "211",
+          "nome": "[TAG] Mensagem Dinamica WhatsApp",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "email"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "66",
+          "nome": "[all] googleAnalytics4 - pageView"
+        },
+        {
+          "id": "135",
+          "nome": "GA Event 05 - Festival da Mudança Fale Com o Anunciante"
+        },
+        {
+          "id": "146",
+          "nome": "Legado - GA - LP's PageView"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "168",
+          "nome": "[GAU] LP_Feirao - Lead_LDP - Transaction",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "170",
+          "nome": "[GAU] LP_Feirao - Lead_LDP - Event",
+          "tipo": "Universal Analytics"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-n6jj79th_workspace11.json",
+      "conta": "2971905372",
+      "public_id": "GTM-N6JJ79TH",
+      "nome": "9. ZapImóveis - Container PORTAL ZAP - Ambiente de QA",
+      "versao": "0",
+      "contagem": {
+        "tags": 84,
+        "pausadas": 5,
+        "gatilhos": 68,
+        "variaveis": 219
+      },
+      "tipos": {
+        "cvt_192389499_7": 4,
+        "cvt_192389499_36": 4,
+        "HTML customizado": 52,
+        "pntr": 8,
+        "Universal Analytics": 5,
+        "Google Ads conversao": 2,
+        "GA4 evento": 4,
+        "Google tag": 1,
+        "Google Ads linker": 1,
+        "Google Ads remarketing": 1,
+        "mf": 1,
+        "cvt_192389499_26": 1
+      },
+      "ga4": [
+        "G-W39KX3CBHX"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-13"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "26",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "312",
+          "nome": "[GA4 - Verticalizado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "54",
+            "299"
+          ],
+          "escutam": [
+            "leadClicked",
+            "scheduleClicked"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "146",
+          "nome": "[PXL] Programática - dfpLoad",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "157",
+          "nome": "[PXL] RTB House - Main Tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "191",
+          "nome": "[PXL] Insider - ObjectUser",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone_number"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "218",
+          "nome": "[PXL] Insider - ObjectTransaction",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "220",
+          "nome": "[PXL] TikTok - ZAP - Marca",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "238",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "245",
+          "nome": "[PXL] Criteo - TrackTransaction",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "317",
+          "nome": "[PXL] TikTok - ZAP - Performance",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "324",
+          "nome": "[TAG] Custom Script - gaFixUTMReferrer",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "339",
+          "nome": "[SDK] Adjust - SmartBanner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "368",
+          "nome": "[TAG] Custom Script - concatUTMInLinks",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "phone"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "382",
+          "nome": "[TAG] Set Cookie - UserID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "62",
+          "nome": "[PXL] Programática - dfpHomeAds"
+        },
+        {
+          "id": "64",
+          "nome": "[PXL] Programática - dfpInitialization"
+        },
+        {
+          "id": "157",
+          "nome": "[PXL] RTB House - Main Tag"
+        },
+        {
+          "id": "195",
+          "nome": "[PXL] Insider - CheckoutTag"
+        },
+        {
+          "id": "204",
+          "nome": "[PXL] Insider - ContentTag"
+        },
+        {
+          "id": "250",
+          "nome": "[PXL] Programática - dfpResultPageAds"
+        },
+        {
+          "id": "270",
+          "nome": "[TAG] DataLayer - Cleaner"
+        },
+        {
+          "id": "315",
+          "nome": "[PXL] Programática - dfpListingDetailPageAds"
+        },
+        {
+          "id": "328",
+          "nome": "[PXL] Insider - CategoryTag"
+        },
+        {
+          "id": "359",
+          "nome": "[PXL] Insider - BasketTag"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "142",
+          "nome": "[GAU] leadClicked Event",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "164",
+          "nome": "[GAU] leadClicked de Incorporadoras",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "210",
+          "nome": "[GAU] leadClicked Transaction",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "356",
+          "nome": "[GAU] Click Financiamento Pós-Lead",
+          "tipo": "Universal Analytics"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-n87gjjd_workspace3.json",
+      "conta": "2971905372",
+      "public_id": "GTM-N87GJJD",
+      "nome": "Rede Zap",
+      "versao": "0",
+      "contagem": {
+        "tags": 13,
+        "pausadas": 0,
+        "gatilhos": 17,
+        "variaveis": 14
+      },
+      "tipos": {
+        "HTML customizado": 11,
+        "Universal Analytics": 2
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-61"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "63",
+          "nome": "[GA-UA] Evento GA Rede Zap 07 - Detalhes do Empreendimento",
+          "tipo": "HTML customizado",
+          "campos": [
+            "telefone"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-nbkdvz6w_workspace10.json",
+      "conta": "2971905372",
+      "public_id": "GTM-NBKDVZ6W",
+      "nome": "8. Conecta Imobi",
+      "versao": "0",
+      "contagem": {
+        "tags": 5,
+        "pausadas": 0,
+        "gatilhos": 2,
+        "variaveis": 3
+      },
+      "tipos": {
+        "Google tag": 1,
+        "GA4 evento": 2,
+        "HTML customizado": 2
+      },
+      "ga4": [
+        "G-BXPE27834L"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [
+        "811293177544403"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "9",
+          "nome": "[PXL] Facebook - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "11",
+          "nome": "[PXL] Tiktok - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-nwpxb4x_workspace2.json",
+      "conta": "2971905372",
+      "public_id": "GTM-NWPXB4X",
+      "nome": "ZapImóveis - Container BLOG (WIP)",
+      "versao": "0",
+      "contagem": {
+        "tags": 0,
+        "pausadas": 0,
+        "gatilhos": 0,
+        "variaveis": 0
+      },
+      "tipos": {},
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-pbz477k_workspace18.json",
+      "conta": "2971905372",
+      "public_id": "GTM-PBZ477K",
+      "nome": "7. ZapImóveis - Container BLOG",
+      "versao": "0",
+      "contagem": {
+        "tags": 21,
+        "pausadas": 1,
+        "gatilhos": 20,
+        "variaveis": 194
+      },
+      "tipos": {
+        "Google tag": 1,
+        "Universal Analytics": 1,
+        "GA4 evento": 13,
+        "HTML customizado": 5,
+        "cvt_126741312_354": 1
+      },
+      "ga4": [
+        "G-NBBQMWSXTE"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-13"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "354",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "348",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "365",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "346",
+          "nome": "[TAG] DataLayer - Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-pqdrhqm_workspace3.json",
+      "conta": "2971905372",
+      "public_id": "GTM-PQDRHQM",
+      "nome": "www.datazap.com.br",
+      "versao": "0",
+      "contagem": {
+        "tags": 12,
+        "pausadas": 0,
+        "gatilhos": 8,
+        "variaveis": 8
+      },
+      "tipos": {
+        "Universal Analytics": 2,
+        "HTML customizado": 7,
+        "Google Ads conversao": 1,
+        "Google Ads linker": 1,
+        "Google tag": 1
+      },
+      "ga4": [
+        "G-CLVJ1JLDJF"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-230770-59"
+      ],
+      "meta_pixel": [
+        "402567384720043"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "28",
+          "nome": "Facebook - All pages - id 402567384720043",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-pz733b5_workspace92.json",
+      "conta": "2971905372",
+      "public_id": "GTM-PZ733B5",
+      "nome": "5. ZapImóveis - Container ANUNCIE",
+      "versao": "0",
+      "contagem": {
+        "tags": 48,
+        "pausadas": 9,
+        "gatilhos": 51,
+        "variaveis": 122
+      },
+      "tipos": {
+        "mf": 1,
+        "Google Ads remarketing": 1,
+        "Google Ads linker": 1,
+        "cvt_96164696_175": 6,
+        "Google Ads conversao": 4,
+        "GA4 evento": 16,
+        "HTML customizado": 8,
+        "Google tag": 6,
+        "cvt_96164696_339": 1,
+        "cvt_M3KBL": 4
+      },
+      "ga4": [
+        "G-6TV9FSHYVM",
+        "G-W39KX3CBHX",
+        "G-ZBYP2KJ7L9"
+      ],
+      "google_ads": [
+        "AW-10779204119",
+        "AW-791128603"
+      ],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "339",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "209",
+          "nome": "[GA4 Verticalizado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "208"
+          ],
+          "escutam": [
+            "lead_dbm"
+          ]
+        },
+        {
+          "id": "220",
+          "nome": "[GA4 Verticalizado] purchase Profissional",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "226"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "227",
+          "nome": "[GA4 Verticalizado] purchase Privado",
+          "evento": "purchase",
+          "pausada": true,
+          "gatilhos": [
+            "222"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        },
+        {
+          "id": "243",
+          "nome": "[GA4 Verticalizado] add_to_cart - Privado",
+          "evento": "add_to_cart",
+          "pausada": true,
+          "gatilhos": [
+            "264"
+          ],
+          "escutam": [
+            "ga4_add_to_cart"
+          ]
+        },
+        {
+          "id": "248",
+          "nome": "[GA4 Verticalizado] begin_checkout - Privado",
+          "evento": "begin_checkout",
+          "pausada": true,
+          "gatilhos": [
+            "247"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "256",
+          "nome": "[GA4 Verticalizado] begin_checkout - Profissional",
+          "evento": "begin_checkout",
+          "pausada": true,
+          "gatilhos": [
+            "255"
+          ],
+          "escutam": [
+            "customPageView"
+          ]
+        },
+        {
+          "id": "258",
+          "nome": "[TAG] GA4 - add_to_cart",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "247",
+            "264",
+            "246",
+            "304",
+            "325"
+          ],
+          "escutam": [
+            "add_to_cart",
+            "customPageView",
+            "ga4_add_to_cart",
+            "gtm.formSubmit"
+          ]
+        },
+        {
+          "id": "267",
+          "nome": "[GA4 Verticalizado] add_to_cart - Profissional",
+          "evento": "add_to_cart",
+          "pausada": true,
+          "gatilhos": [
+            "246"
+          ],
+          "escutam": [
+            "gtm.formSubmit"
+          ]
+        },
+        {
+          "id": "303",
+          "nome": "[GA4 - Verticalizado] add_to_cart - New Page Profissionais",
+          "evento": "add_to_cart",
+          "pausada": true,
+          "gatilhos": [
+            "304",
+            "325"
+          ],
+          "escutam": [
+            "add_to_cart"
+          ]
+        },
+        {
+          "id": "308",
+          "nome": "[TAG] GA4 Verticalizado - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "309",
+            "310",
+            "247",
+            "255"
+          ],
+          "escutam": [
+            "begin_checkout",
+            "customPageView"
+          ]
+        },
+        {
+          "id": "317",
+          "nome": "[TAG] GA4 Verticalizado - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "315",
+            "316",
+            "350",
+            "222"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        },
+        {
+          "id": "356",
+          "nome": "[GA4 Unificado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "208"
+          ],
+          "escutam": [
+            "lead_dbm"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "262",
+          "nome": "[GA4] dataLayer. add_to_cart",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "344",
+          "nome": "[PXL] Kwai - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "361",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "404",
+          "nome": "[TAG] Engagement Session",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "455",
+          "nome": "[TAG] Mensagem Dinamica WhatsApp",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "email"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": [
+        {
+          "id": "227",
+          "nome": "[GA4 Verticalizado] purchase Privado",
+          "tipo": "GA4 evento"
+        },
+        {
+          "id": "248",
+          "nome": "[GA4 Verticalizado] begin_checkout - Privado",
+          "tipo": "GA4 evento"
+        },
+        {
+          "id": "256",
+          "nome": "[GA4 Verticalizado] begin_checkout - Profissional",
+          "tipo": "GA4 evento"
+        },
+        {
+          "id": "338",
+          "nome": "[TAG] Adopt - Tag Initialization",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "340",
+          "nome": "[TAG] AdOpt - Consent Initialization",
+          "tipo": "cvt_96164696_339"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-t8pdz2ms_workspace3.json",
+      "conta": "2971905372",
+      "public_id": "GTM-T8PDZ2MS",
+      "nome": "2. ZapImóveis - Container PORTAL ZAP [Lead Only]",
+      "versao": "0",
+      "contagem": {
+        "tags": 1,
+        "pausadas": 0,
+        "gatilhos": 2,
+        "variaveis": 2
+      },
+      "tipos": {
+        "GA4 evento": 1
+      },
+      "ga4": [
+        "G-W39KX3CBHX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-tmxmhkbj_workspace3.json",
+      "conta": "2971905372",
+      "public_id": "GTM-TMXMHKBJ",
+      "nome": "12. ZapImóveis - Container Checkout",
+      "versao": "0",
+      "contagem": {
+        "tags": 3,
+        "pausadas": 0,
+        "gatilhos": 3,
+        "variaveis": 26
+      },
+      "tipos": {
+        "GA4 evento": 3
+      },
+      "ga4": [
+        "G-6TV9FSHYVM"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "29",
+          "nome": "[TAG] GA4 - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "28"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "34",
+          "nome": "[TAG] GA4 - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "33"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-w662tww_workspace91.json",
+      "conta": "2971905372",
+      "public_id": "GTM-W662TWW",
+      "nome": "1. ZapImóveis - Container MASTER",
+      "versao": "0",
+      "contagem": {
+        "tags": 10,
+        "pausadas": 1,
+        "gatilhos": 17,
+        "variaveis": 9
+      },
+      "tipos": {
+        "HTML customizado": 8,
+        "cvt_94111912_32": 1,
+        "cvt_KDTBT": 1
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [
+        "GTM-5PNSC98",
+        "GTM-5X2LZWR",
+        "GTM-M23NB5R",
+        "GTM-MCM68B5",
+        "GTM-MFKXMNK",
+        "GTM-MKTZ2ZP",
+        "GTM-MQSQ9JW",
+        "GTM-MVM68B5",
+        "GTM-N6JJ79TH",
+        "GTM-N8H85D8",
+        "GTM-NBKDVZ6W",
+        "GTM-PBZ477K",
+        "GTM-PG4C6M3",
+        "GTM-PG4C6ME",
+        "GTM-PQDRHQM",
+        "GTM-PZ733B5",
+        "GTM-T43B5LRJ",
+        "GTM-TMXMHKBJ",
+        "GTM-TRGML4R"
+      ],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "32",
+          "pausada": false,
+          "granted": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage",
+            "security_storage"
+          ],
+          "denied": []
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "23",
+          "nome": "[TAG] GTM Temp - Anuncie VR",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "24",
+          "nome": "[TAG] Settings - UTM Cookies",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "28",
+          "nome": "[TAG] GTM Temp - Clickstream Anuncie VR",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "30",
+          "nome": "[TAG] GTM Temp - Anuncie VR - Proprietários clickstream",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "49",
+          "nome": "[Aviso de Indisponibilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-2971905372-zapimoveis/gtm-whjzkxfc_workspace24.json",
+      "conta": "2971905372",
+      "public_id": "GTM-WHJZKXFC",
+      "nome": "11. Zapimovéis - Container Anapro",
+      "versao": "0",
+      "contagem": {
+        "tags": 4,
+        "pausadas": 1,
+        "gatilhos": 2,
+        "variaveis": 0
+      },
+      "tipos": {
+        "HTML customizado": 2,
+        "cvt_193782238_4": 1,
+        "Google tag": 1
+      },
+      "ga4": [
+        "G-9M01VVDZJF"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "4",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-5dv89xs_workspace2.json",
+      "conta": "4412254379",
+      "public_id": "GTM-5DV89XS",
+      "nome": "VivaReal - Container BLOG (WIP)",
+      "versao": "0",
+      "contagem": {
+        "tags": 0,
+        "pausadas": 0,
+        "gatilhos": 0,
+        "variaveis": 0
+      },
+      "tipos": {},
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-5rpfk7z_workspace13.json",
+      "conta": "4412254379",
+      "public_id": "GTM-5RPFK7Z",
+      "nome": "4. VivaReal - Container BLOG",
+      "versao": "0",
+      "contagem": {
+        "tags": 16,
+        "pausadas": 1,
+        "gatilhos": 19,
+        "variaveis": 160
+      },
+      "tipos": {
+        "GA4 evento": 11,
+        "Universal Analytics": 1,
+        "Google tag": 1,
+        "HTML customizado": 3
+      },
+      "ga4": [
+        "G-6FL09MRR02",
+        "G-SP7M9MSCB3"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-126375-31"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "509",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "506",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "504",
+          "nome": "[TAG] DataLayer - Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-np4hwrn_workspace192.json",
+      "conta": "4412254379",
+      "public_id": "GTM-NP4HWRN",
+      "nome": "2. VivaReal - Container Portal VR",
+      "versao": "0",
+      "contagem": {
+        "tags": 98,
+        "pausadas": 20,
+        "gatilhos": 56,
+        "variaveis": 211
+      },
+      "tipos": {
+        "HTML customizado": 54,
+        "Google Ads linker": 1,
+        "Google Ads conversao": 3,
+        "Google Ads remarketing": 1,
+        "cvt_95916766_250": 3,
+        "mf": 1,
+        "Google tag": 5,
+        "GA4 evento": 9,
+        "cvt_95916766_375": 2,
+        "flc": 8,
+        "cvt_M3KBL": 10,
+        "cloud_retail": 1
+      },
+      "ga4": [
+        "G-VVV61GFPY5",
+        "G-W39KX3CBHX",
+        "G-ZBYP2KJ7L9"
+      ],
+      "google_ads": [
+        "AW-998762157"
+      ],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "716",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "313",
+          "nome": "[GA4 - Verticalizado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "29"
+          ],
+          "escutam": [
+            "leadClicked"
+          ]
+        },
+        {
+          "id": "813",
+          "nome": "[GA4 - Unificado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "29"
+          ],
+          "escutam": [
+            "leadClicked"
+          ]
+        },
+        {
+          "id": "831",
+          "nome": "[TAG] GA4 - Login",
+          "evento": "login",
+          "pausada": false,
+          "gatilhos": [
+            "829"
+          ],
+          "escutam": [
+            "loginFlow"
+          ]
+        },
+        {
+          "id": "832",
+          "nome": "[TAG] GA4 - Sign_up",
+          "evento": "sign_up",
+          "pausada": false,
+          "gatilhos": [
+            "830"
+          ],
+          "escutam": [
+            "loginFlow"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "36",
+          "nome": "[PXL] RTB House - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "46",
+          "nome": "[TAG] Custom Script - gaFixUTMReferrer",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "57",
+          "nome": "[PXL] Criteo - TrackTransaction",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "65",
+          "nome": "[TAG] Custom Script - concatUTMInLinks",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "335",
+          "nome": "[PXL] Insider - ObjectUser",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone_number"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "370",
+          "nome": "[SDK] Adjust - SmartBanner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "373",
+          "nome": "[PXL] Tiktok - VIVA - Performance",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "388",
+          "nome": "[TAG] DataLayer - Select Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "389",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "824",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "858",
+          "nome": "[PXL] Facebook - Code Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "924",
+          "nome": "[TAG] Braze - Update User Attributes - Generate Lead",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "954",
+          "nome": "[SDK] Adjust - Modal",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "45",
+          "nome": "[PXL] Programática - dfpResultPageAds"
+        },
+        {
+          "id": "50",
+          "nome": "[PXL] Programática - dfpInitialization"
+        },
+        {
+          "id": "59",
+          "nome": "[PXL] Programática - dfpListingDetailPageAds"
+        },
+        {
+          "id": "387",
+          "nome": "[TAG] DataLayer - Cleaner"
+        },
+        {
+          "id": "388",
+          "nome": "[TAG] DataLayer - Select Promotion"
+        },
+        {
+          "id": "898",
+          "nome": "[TAG] Braze - Update User ID"
+        },
+        {
+          "id": "930",
+          "nome": "[TAG] Braze - Generate Lead"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "341",
+          "nome": "[PXL] Insider - CheckoutTag",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "371",
+          "nome": "[PXL] Google Ads - New Conversion",
+          "tipo": "Google Ads conversao"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-p4vtwpm2_workspace4.json",
+      "conta": "4412254379",
+      "public_id": "GTM-P4VTWPM2",
+      "nome": "7. VivaReal - Container ANUNCIE - Ambiente de QA",
+      "versao": "0",
+      "contagem": {
+        "tags": 4,
+        "pausadas": 0,
+        "gatilhos": 5,
+        "variaveis": 26
+      },
+      "tipos": {
+        "GA4 evento": 3,
+        "HTML customizado": 1
+      },
+      "ga4": [
+        "G-VVV61GFPY5"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "26",
+          "nome": "[GA4] add_to_cart - Profissionais",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "8",
+            "7"
+          ],
+          "escutam": [
+            "add_to_cart"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "32",
+          "nome": "[GA4] customPageView - Profisisonais",
+          "tipo": "GA4 evento",
+          "campos": [
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "37",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-pnnj4d3v_workspace4.json",
+      "conta": "4412254379",
+      "public_id": "GTM-PNNJ4D3V",
+      "nome": "6. VivaReal - Container Portal VR - Ambiente QA",
+      "versao": "0",
+      "contagem": {
+        "tags": 71,
+        "pausadas": 9,
+        "gatilhos": 75,
+        "variaveis": 188
+      },
+      "tipos": {
+        "HTML customizado": 47,
+        "cvt_192379549_110": 3,
+        "Universal Analytics": 7,
+        "GA4 evento": 4,
+        "Google Ads conversao": 3,
+        "Google tag": 1,
+        "Google Ads linker": 1,
+        "cvt_192379549_252": 2,
+        "mf": 1,
+        "cvt_192379549_30": 1,
+        "Google Ads remarketing": 1
+      },
+      "ga4": [
+        "G-VVV61GFPY5"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-126375-31"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "30",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "298",
+          "nome": "[GA4 - Verticalizado] generate_lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "20"
+          ],
+          "escutam": [
+            "leadClicked"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "38",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "57",
+          "nome": "[TAG] Custom Script - gaFixUTMReferrer",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "72",
+          "nome": "[PXL] Criteo - TrackTransaction",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "176",
+          "nome": "[PXL] RTB House - MainTaggingCode",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "270",
+          "nome": "[TAG] Custom Script - concatUTMInLinks",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "290",
+          "nome": "[PXL] Tiktok - VIVA - Performance",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "294",
+          "nome": "[SDK] Adjust - SmartBanner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "301",
+          "nome": "[PXL] Insider - ObjectUser",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone_number"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "317",
+          "nome": "[PXL] Insider - ObjectTransaction",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "340",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "63",
+          "nome": "[PXL] Insider - CategoryTag"
+        },
+        {
+          "id": "66",
+          "nome": "[PXL] Programática - dfpInitialization"
+        },
+        {
+          "id": "104",
+          "nome": "[PXL] Programática - dfpListingDetailPageAds"
+        },
+        {
+          "id": "233",
+          "nome": "[PXL] Insider - CheckoutTag"
+        },
+        {
+          "id": "242",
+          "nome": "[PXL] Programática - dfpResultPageAds"
+        },
+        {
+          "id": "250",
+          "nome": "[TAG] DataLayer - Cleaner"
+        },
+        {
+          "id": "268",
+          "nome": "[PXL] Insider - ContentTag"
+        },
+        {
+          "id": "306",
+          "nome": "[PXL] Insider - BasketTag"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "196",
+          "nome": "[GAU] leadClicked",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "201",
+          "nome": "[GAU] leadClicked de Incorporadoras",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "211",
+          "nome": "[GAU] Click Financiamento Pós Lead",
+          "tipo": "Universal Analytics"
+        },
+        {
+          "id": "275",
+          "nome": "[AdOpt] Consent Initialization",
+          "tipo": "cvt_192379549_30"
+        },
+        {
+          "id": "285",
+          "nome": "[INIT] AdOpt",
+          "tipo": "HTML customizado"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-t43b5lrj_workspace19.json",
+      "conta": "4412254379",
+      "public_id": "GTM-T43B5LRJ",
+      "nome": "5. VivaReal - Container ANUNCIE",
+      "versao": "0",
+      "contagem": {
+        "tags": 14,
+        "pausadas": 1,
+        "gatilhos": 14,
+        "variaveis": 60
+      },
+      "tipos": {
+        "GA4 evento": 6,
+        "Google tag": 2,
+        "HTML customizado": 2,
+        "cvt_M3KBL": 4
+      },
+      "ga4": [
+        "G-59PP1FKKEN",
+        "G-ZBYP2KJ7L9"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "53",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "31",
+          "nome": "[GA4] add_to_cart - Profissionais",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "23",
+            "24"
+          ],
+          "escutam": [
+            "add_to_cart"
+          ]
+        },
+        {
+          "id": "105",
+          "nome": "[GA4 Verticalizado] purchase - New Page Profissionais",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "107",
+            "108"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "18",
+          "nome": "[GA4] Pageview - Proprietarios",
+          "tipo": "GA4 evento",
+          "campos": [
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "112",
+          "nome": "[GA4 - Unificado] Pageview - Proprietarios",
+          "tipo": "GA4 evento",
+          "campos": [
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "116",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "152",
+          "nome": "[TAG] Mensagem Dinamica WhatsApp",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "email"
+          ],
+          "pausada": true
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-tcg3ml4_workspace2.json",
+      "conta": "4412254379",
+      "public_id": "GTM-TCG3ML4",
+      "nome": "Sympla - Conectalmobi - Iframe Checkout",
+      "versao": "0",
+      "contagem": {
+        "tags": 0,
+        "pausadas": 0,
+        "gatilhos": 0,
+        "variaveis": 0
+      },
+      "tipos": {},
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-trgml4r_workspace79.json",
+      "conta": "4412254379",
+      "public_id": "GTM-TRGML4R",
+      "nome": "3. VivaReal - Container CLICKSTREAM",
+      "versao": "0",
+      "contagem": {
+        "tags": 99,
+        "pausadas": 0,
+        "gatilhos": 105,
+        "variaveis": 444
+      },
+      "tipos": {
+        "HTML customizado": 99
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "155",
+          "nome": "[Clickstream] leadClicked",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-twsj9vm_workspace55.json",
+      "conta": "4412254379",
+      "public_id": "GTM-TWSJ9VM",
+      "nome": "1. VivaReal - Container MASTER",
+      "versao": "0",
+      "contagem": {
+        "tags": 7,
+        "pausadas": 1,
+        "gatilhos": 12,
+        "variaveis": 9
+      },
+      "tipos": {
+        "HTML customizado": 5,
+        "cvt_94795928_26": 1,
+        "cvt_KDTBT": 1
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [
+        "GTM-5DV89XS",
+        "GTM-5RPFK7Z",
+        "GTM-NP4HWRN",
+        "GTM-PZ733B5",
+        "GTM-T43B5LRJ",
+        "GTM-TRGML4R",
+        "GTM-TXJVLXSJ"
+      ],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "26",
+          "pausada": false,
+          "granted": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage",
+            "security_storage"
+          ],
+          "denied": []
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "12",
+          "nome": "[TAG] Settings - UTM Cookies",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "40",
+          "nome": "[Aviso de Instabilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-txjvlxsj_workspace3.json",
+      "conta": "4412254379",
+      "public_id": "GTM-TXJVLXSJ",
+      "nome": "8. VivaReal - Container Checkout",
+      "versao": "0",
+      "contagem": {
+        "tags": 3,
+        "pausadas": 0,
+        "gatilhos": 3,
+        "variaveis": 27
+      },
+      "tipos": {
+        "GA4 evento": 3
+      },
+      "ga4": [
+        "G-59PP1FKKEN"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "29",
+          "nome": "[TAG] GA4 - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "28"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "34",
+          "nome": "[TAG] GA4 - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "33"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-4412254379-vivareal/gtm-wbbdn4w_workspace39.json",
+      "conta": "4412254379",
+      "public_id": "GTM-WBBDN4W",
+      "nome": "Conectaimobi",
+      "versao": "0",
+      "contagem": {
+        "tags": 31,
+        "pausadas": 0,
+        "gatilhos": 25,
+        "variaveis": 12
+      },
+      "tipos": {
+        "Universal Analytics": 12,
+        "HTML customizado": 5,
+        "Google Ads linker": 1,
+        "flc": 9,
+        "Google Ads remarketing": 1,
+        "bzi": 1,
+        "img": 1,
+        "Google Ads conversao": 1
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [
+        "UA-126375-78",
+        "UA-126375-89"
+      ],
+      "meta_pixel": [
+        "535947837551372"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "6",
+          "nome": "Facebook IC - Pageview",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "31",
+          "nome": "Taboola - Pageview",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-6326134112-checkout-unificado-pro/gtm-k4wbmgqv_workspace13.json",
+      "conta": "6326134112",
+      "public_id": "GTM-K4WBMGQV",
+      "nome": "Checkout Unificado - OLX",
+      "versao": "0",
+      "contagem": {
+        "tags": 9,
+        "pausadas": 0,
+        "gatilhos": 7,
+        "variaveis": 32
+      },
+      "tipos": {
+        "GA4 evento": 3,
+        "Google tag": 1,
+        "HTML customizado": 3,
+        "cvt_M3KBL": 2
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "25",
+          "nome": "[TAG] GA4 - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "3"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "27",
+          "nome": "[TAG] GA4 - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "26"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "24",
+          "nome": "[TAG] GA4 - page_view",
+          "tipo": "GA4 evento",
+          "campos": [
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "33",
+          "nome": "[TAG] Meta - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-6326134112-checkout-unificado-pro/gtm-ngg9336b_workspace6.json",
+      "conta": "6326134112",
+      "public_id": "GTM-NGG9336B",
+      "nome": "Checkout Unificado - Master",
+      "versao": "0",
+      "contagem": {
+        "tags": 4,
+        "pausadas": 1,
+        "gatilhos": 7,
+        "variaveis": 5
+      },
+      "tipos": {
+        "cvt_236400424_6": 1,
+        "HTML customizado": 2,
+        "cvt_KDTBT": 1
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [
+        "GTM-K4WBMGQV",
+        "GTM-NKSGWD6H",
+        "GTM-NRVS3M3D"
+      ],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "6",
+          "pausada": false,
+          "granted": [],
+          "denied": []
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "10",
+          "nome": "[TAG] Adopt - OLX - Tag Initialization",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": [
+        {
+          "id": "23",
+          "nome": "[TAG] Braze - Initalization - Checkout Unificado",
+          "tipo": "cvt_KDTBT"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-6326134112-checkout-unificado-pro/gtm-nksgwd6h_workspace5.json",
+      "conta": "6326134112",
+      "public_id": "GTM-NKSGWD6H",
+      "nome": "Checkout Unificado - Zap Imóveis",
+      "versao": "0",
+      "contagem": {
+        "tags": 9,
+        "pausadas": 0,
+        "gatilhos": 4,
+        "variaveis": 20
+      },
+      "tipos": {
+        "Google tag": 1,
+        "GA4 evento": 3,
+        "HTML customizado": 3,
+        "cvt_M3KBL": 2
+      },
+      "ga4": [
+        "G-6TV9FSHYVM"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "24",
+          "nome": "[TAG] GA4 - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "23"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "26",
+          "nome": "[TAG] GA4 - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "25"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "35",
+          "nome": "[TAG] Meta - Base Code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-6326134112-checkout-unificado-pro/gtm-nrvs3m3d_workspace4.json",
+      "conta": "6326134112",
+      "public_id": "GTM-NRVS3M3D",
+      "nome": "Checkout Unificado - Viva Real",
+      "versao": "0",
+      "contagem": {
+        "tags": 6,
+        "pausadas": 0,
+        "gatilhos": 3,
+        "variaveis": 19
+      },
+      "tipos": {
+        "GA4 evento": 3,
+        "Google tag": 1,
+        "cvt_M3KBL": 2
+      },
+      "ga4": [
+        "G-59PP1FKKEN"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "23",
+          "nome": "[TAG] GA4 - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "22"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "25",
+          "nome": "[TAG] GA4 - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "24"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-52w35ls_workspace9.json",
+      "conta": "94905",
+      "public_id": "GTM-52W35LS",
+      "nome": "[New] Android Tracking",
+      "versao": "0",
+      "contagem": {
+        "tags": 1,
+        "pausadas": 0,
+        "gatilhos": 1,
+        "variaveis": 25
+      },
+      "tipos": {
+        "af": 1
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-546n2jv_workspace206.json",
+      "conta": "94905",
+      "public_id": "GTM-546N2JV",
+      "nome": "OLX - Container Master",
+      "versao": "0",
+      "contagem": {
+        "tags": 13,
+        "pausadas": 5,
+        "gatilhos": 21,
+        "variaveis": 20
+      },
+      "tipos": {
+        "mf": 1,
+        "HTML customizado": 9,
+        "cvt_89061261_157": 1,
+        "Google tag": 1,
+        "cvt_KDTBT": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [
+        "GTM-5VJJT94P",
+        "GTM-5WWRGTQ",
+        "GTM-KCCPDZV",
+        "GTM-KGFGVFC",
+        "GTM-KGMSNP6",
+        "GTM-KN3K8B8",
+        "GTM-KP8QMDH",
+        "GTM-M4TL57GX",
+        "GTM-MJX9PG4",
+        "GTM-MVQWQJFB",
+        "GTM-MXQKDG3",
+        "GTM-NPQMK7P",
+        "GTM-P5958DMR",
+        "GTM-PP7ZQJD",
+        "GTM-PQTNMNM3",
+        "GTM-PWP7Z4C",
+        "GTM-PZ733B5",
+        "GTM-PZ83VMV",
+        "GTM-T2H3VFL",
+        "GTM-TNX8FDS",
+        "GTM-TVLDBBK2",
+        "GTM-TW8N3LN",
+        "GTM-TW9TWPT5"
+      ],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "157",
+          "pausada": false,
+          "granted": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage",
+            "security_storage"
+          ],
+          "denied": []
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "57",
+          "nome": "[API] Dados do usuário + Insider Object User - Local Storage",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone",
+            "phone_number",
+            "telefone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "162",
+          "nome": "[TAG] Settings - UTM Cookies",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "171",
+          "nome": "[TAG] Adopt - OLX - Tag Initialization",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "208",
+          "nome": "[Aviso de Instabilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "153",
+          "nome": "[TAG] MouseFlow - Set Properties"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-546n2jv_workspace206_2026-09-11.json",
+      "conta": "94905",
+      "public_id": "GTM-546N2JV",
+      "nome": "OLX - Container Master",
+      "versao": "0",
+      "contagem": {
+        "tags": 13,
+        "pausadas": 5,
+        "gatilhos": 21,
+        "variaveis": 20
+      },
+      "tipos": {
+        "mf": 1,
+        "HTML customizado": 9,
+        "cvt_89061261_157": 1,
+        "Google tag": 1,
+        "cvt_KDTBT": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [
+        "GTM-5VJJT94P",
+        "GTM-5WWRGTQ",
+        "GTM-KCCPDZV",
+        "GTM-KGFGVFC",
+        "GTM-KGMSNP6",
+        "GTM-KN3K8B8",
+        "GTM-KP8QMDH",
+        "GTM-M4TL57GX",
+        "GTM-MJX9PG4",
+        "GTM-MVQWQJFB",
+        "GTM-MXQKDG3",
+        "GTM-NPQMK7P",
+        "GTM-P5958DMR",
+        "GTM-PP7ZQJD",
+        "GTM-PQTNMNM3",
+        "GTM-PWP7Z4C",
+        "GTM-PZ733B5",
+        "GTM-PZ83VMV",
+        "GTM-T2H3VFL",
+        "GTM-TNX8FDS",
+        "GTM-TVLDBBK2",
+        "GTM-TW8N3LN",
+        "GTM-TW9TWPT5"
+      ],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "157",
+          "pausada": false,
+          "granted": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage",
+            "security_storage"
+          ],
+          "denied": []
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "57",
+          "nome": "[API] Dados do usuário + Insider Object User - Local Storage",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "phone",
+            "phone_number",
+            "telefone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "162",
+          "nome": "[TAG] Settings - UTM Cookies",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "171",
+          "nome": "[TAG] Adopt - OLX - Tag Initialization",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "208",
+          "nome": "[Aviso de Instabilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "153",
+          "nome": "[TAG] MouseFlow - Set Properties"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-5vjjt94p_workspace3.json",
+      "conta": "94905",
+      "public_id": "GTM-5VJJT94P",
+      "nome": "OLX - Central de Ajuda",
+      "versao": "0",
+      "contagem": {
+        "tags": 2,
+        "pausadas": 0,
+        "gatilhos": 0,
+        "variaveis": 1
+      },
+      "tipos": {
+        "Google tag": 1,
+        "HTML customizado": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "6",
+          "nome": "[Aviso de Indisponibilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-5wwrgtq_workspace61.json",
+      "conta": "94905",
+      "public_id": "GTM-5WWRGTQ",
+      "nome": "OLX - VAS",
+      "versao": "0",
+      "contagem": {
+        "tags": 48,
+        "pausadas": 18,
+        "gatilhos": 43,
+        "variaveis": 52
+      },
+      "tipos": {
+        "Universal Analytics": 17,
+        "Google Ads conversao": 2,
+        "Google Ads linker": 1,
+        "Google Ads remarketing": 2,
+        "HTML customizado": 14,
+        "img": 1,
+        "Google tag": 1,
+        "GA4 evento": 7,
+        "flc": 3
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [
+        "AW-745219033"
+      ],
+      "ua": [
+        "UA-70177409-14",
+        "UA-70177409-2",
+        "UA-70177409-33"
+      ],
+      "meta_pixel": [
+        "1336555803391248",
+        "771039190487931"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "233",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "41",
+          "nome": "Pixel Facebook - LP",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "54",
+          "nome": "FB Pixel - MKP - Initiate Checkout",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "55",
+          "nome": "FB Pixel - MKP - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "64",
+          "nome": "Hotjar - Seguros",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "70",
+          "nome": "Feiraoautos - Cookie",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "206",
+          "nome": "Evento GA - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "208",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "191",
+          "nome": "[TAG] DataLayer - Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-kccpdzv_workspace22.json",
+      "conta": "94905",
+      "public_id": "GTM-KCCPDZV",
+      "nome": "OLX - Dicas",
+      "versao": "0",
+      "contagem": {
+        "tags": 22,
+        "pausadas": 0,
+        "gatilhos": 27,
+        "variaveis": 34
+      },
+      "tipos": {
+        "Universal Analytics": 5,
+        "HTML customizado": 7,
+        "Google tag": 1,
+        "GA4 evento": 9
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "144",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "40",
+          "nome": "Evento GA - Promotion View",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "128",
+          "nome": "[TAG] GA4 - Pageview - All Pages",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Phone",
+            "user_email"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-kgfgvfc_workspace131.json",
+      "conta": "94905",
+      "public_id": "GTM-KGFGVFC",
+      "nome": "OLX - Planos Profissionais & PAYG",
+      "versao": "0",
+      "contagem": {
+        "tags": 29,
+        "pausadas": 8,
+        "gatilhos": 29,
+        "variaveis": 98
+      },
+      "tipos": {
+        "Universal Analytics": 2,
+        "Google tag": 2,
+        "HTML customizado": 8,
+        "GA4 evento": 9,
+        "Google Ads linker": 1,
+        "cvt_M3KBL": 7
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [
+        {
+          "id": "426",
+          "nome": "[TAG] GA4 - Purchase",
+          "declara": "purchase",
+          "gatilho_escuta": [
+            "begin_checkout"
+          ],
+          "gatilhos": [
+            "215"
+          ],
+          "pausada": false
+        }
+      ],
+      "eventos_receita": [
+        {
+          "id": "154",
+          "nome": "[TAG] GA4 - Begin Checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "215"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "342",
+          "nome": "[TAG] GA4 - Generate Lead",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "427"
+          ],
+          "escutam": [
+            "generate_lead"
+          ]
+        },
+        {
+          "id": "424",
+          "nome": "[TAG] GA4 - Add to Cart",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "423"
+          ],
+          "escutam": [
+            "add_to_cart"
+          ]
+        },
+        {
+          "id": "426",
+          "nome": "[TAG] GA4 - Purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "215"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "429",
+          "nome": "[TAG] DataLayer - Lead B2B",
+          "evento": "lead_b2b",
+          "pausada": false,
+          "gatilhos": [
+            "347"
+          ],
+          "escutam": [
+            "lead_b2b"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "339",
+          "nome": "[TAG] GA4 - Pageview",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Phone",
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "349",
+          "nome": "[TAG] Lead B2B Validation",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "telefone"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "364",
+          "nome": "[TAG] DataLayer - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "448",
+          "nome": "[TAG] Mensagens Dinâmicas WhatsApp",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "email",
+            "phone"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "362",
+          "nome": "[TAG] DataLayer - Cleaner"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "433",
+          "nome": "[TAG] Braze - Purchase (PAYG)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "437",
+          "nome": "[TAG] Braze - Begin Checkout (Planos Profissionais)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "444",
+          "nome": "[TAG] Braze - Begin Checkout (PAYG)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "445",
+          "nome": "[TAG] Braze - Purchase (Planos Profissionais)",
+          "tipo": "cvt_M3KBL"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-kgmsnp6_workspace46.json",
+      "conta": "94905",
+      "public_id": "GTM-KGMSNP6",
+      "nome": "OLX - Site Institucional",
+      "versao": "0",
+      "contagem": {
+        "tags": 6,
+        "pausadas": 0,
+        "gatilhos": 5,
+        "variaveis": 19
+      },
+      "tipos": {
+        "Universal Analytics": 2,
+        "Google tag": 2,
+        "GA4 evento": 2
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-FFM6R038BL"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2",
+        "UA-70177409-33"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "76",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-kn3k8b8_workspace14.json",
+      "conta": "94905",
+      "public_id": "GTM-KN3K8B8",
+      "nome": "OLX - Hub Segurança",
+      "versao": "0",
+      "contagem": {
+        "tags": 15,
+        "pausadas": 0,
+        "gatilhos": 9,
+        "variaveis": 25
+      },
+      "tipos": {
+        "Google tag": 1,
+        "GA4 evento": 3,
+        "HTML customizado": 3,
+        "Universal Analytics": 8
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-147552108-2",
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "62",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "27",
+          "nome": "Evento GA - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "35",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-kp8qmdh_workspace69.json",
+      "conta": "94905",
+      "public_id": "GTM-KP8QMDH",
+      "nome": "OLX - Unbounce | LP",
+      "versao": "0",
+      "contagem": {
+        "tags": 40,
+        "pausadas": 0,
+        "gatilhos": 39,
+        "variaveis": 50
+      },
+      "tipos": {
+        "Universal Analytics": 20,
+        "HTML customizado": 11,
+        "Google tag": 2,
+        "GA4 evento": 7
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-FFM6R038BL"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-147552108-2",
+        "UA-70177409-2",
+        "UA-70177409-33"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "293",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "222",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "225",
+          "nome": "Evento GA - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "251",
+          "nome": "[PUSH] Calculadora Economizador Exigente",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "324",
+          "nome": "[TAG] Utm registration",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "327",
+          "nome": "[TAG] Mensagem Dinâmica WhatsApp",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document",
+            "email",
+            "phone"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "312",
+          "nome": "[TAG] DataLayer Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-m4tl57gx_workspace3.json",
+      "conta": "94905",
+      "public_id": "GTM-M4TL57GX",
+      "nome": "OLX - Checkout",
+      "versao": "0",
+      "contagem": {
+        "tags": 4,
+        "pausadas": 0,
+        "gatilhos": 2,
+        "variaveis": 27
+      },
+      "tipos": {
+        "GA4 evento": 3,
+        "Google tag": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "24",
+          "nome": "[TAG] GA4 - begin_checkout",
+          "evento": "begin_checkout",
+          "pausada": false,
+          "gatilhos": [
+            "23"
+          ],
+          "escutam": [
+            "begin_checkout"
+          ]
+        },
+        {
+          "id": "31",
+          "nome": "[TAG] GA4 - purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "30"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-mjx9pg4_workspace27.json",
+      "conta": "94905",
+      "public_id": "GTM-MJX9PG4",
+      "nome": "OLX - Conecta Autos",
+      "versao": "0",
+      "contagem": {
+        "tags": 25,
+        "pausadas": 1,
+        "gatilhos": 17,
+        "variaveis": 33
+      },
+      "tipos": {
+        "HTML customizado": 10,
+        "Universal Analytics": 7,
+        "Google tag": 2,
+        "GA4 evento": 6
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [
+        "AW-10947843670"
+      ],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [
+        "818079879779548",
+        "935989184453347"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "94",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "3",
+          "nome": "[TAG] BP Settings - Element Interaction Listener - All Pages",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "44",
+          "nome": "Sympla - Decorate Campaign Links",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "54",
+          "nome": "Evento GA - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "60",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "81",
+          "nome": "[PXL] Facebook - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "92",
+          "nome": "[PXL] TikTok - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "23",
+          "nome": "[TAG] Bulletproof Settings - Element Interaction Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-mvqwqjfb_workspace17.json",
+      "conta": "94905",
+      "public_id": "GTM-MVQWQJFB",
+      "nome": "OLX - RD Station | LP",
+      "versao": "0",
+      "contagem": {
+        "tags": 15,
+        "pausadas": 1,
+        "gatilhos": 16,
+        "variaveis": 29
+      },
+      "tipos": {
+        "HTML customizado": 7,
+        "GA4 evento": 4,
+        "Google tag": 1,
+        "Google Ads linker": 1,
+        "Google Ads conversao": 2
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [
+        "1492901718177368"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "118",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "104",
+          "nome": "[TAG] DataLayer - Lead B2B",
+          "evento": "lead_b2b",
+          "pausada": false,
+          "gatilhos": [
+            "103"
+          ],
+          "escutam": [
+            "gtm.formSubmit"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "88",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "98",
+          "nome": "[PXL] Facebook - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "20",
+          "nome": "[TAG] DataLayer - Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-mxqkdg3_workspace56.json",
+      "conta": "94905",
+      "public_id": "GTM-MXQKDG3",
+      "nome": "OLX - Seller Journey",
+      "versao": "0",
+      "contagem": {
+        "tags": 28,
+        "pausadas": 14,
+        "gatilhos": 19,
+        "variaveis": 53
+      },
+      "tipos": {
+        "Google tag": 1,
+        "GA4 evento": 4,
+        "HTML customizado": 4,
+        "Google Ads linker": 1,
+        "Google Ads conversao": 4,
+        "flc": 2,
+        "cvt_M3KBL": 12
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "506",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "483",
+          "nome": "[TAG] GA4 - Pageview - All Pages",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Phone",
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "485",
+          "nome": "[PXL] Facebook - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": [
+        {
+          "id": "532",
+          "nome": "[TAG] Braze - Begin Checkout (Planos Profissionais)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "535",
+          "nome": "[TAG] Braze - Begin Checkout (PAYG)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "542",
+          "nome": "[TAG] Braze - Purchase (Planos Profissionais)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "544",
+          "nome": "[TAG] Braze - Purchase (PAYG)",
+          "tipo": "cvt_M3KBL"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-npqmk7p_workspace23.json",
+      "conta": "94905",
+      "public_id": "GTM-NPQMK7P",
+      "nome": "OLX - Projetos Especiais de Autos | LP",
+      "versao": "0",
+      "contagem": {
+        "tags": 29,
+        "pausadas": 0,
+        "gatilhos": 14,
+        "variaveis": 74
+      },
+      "tipos": {
+        "Universal Analytics": 8,
+        "Google tag": 1,
+        "GA4 evento": 6,
+        "HTML customizado": 9,
+        "img": 5
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "146",
+          "nome": "[PXL] Navegg - Page View",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "179",
+          "nome": "[PXL] Facebook - Pixel Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "187",
+          "nome": "Evento GA - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "203",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-p5958dmr_workspace4.json",
+      "conta": "94905",
+      "public_id": "GTM-P5958DMR",
+      "nome": "OLX - Favoritos",
+      "versao": "0",
+      "contagem": {
+        "tags": 1,
+        "pausadas": 0,
+        "gatilhos": 0,
+        "variaveis": 16
+      },
+      "tipos": {
+        "GA4 evento": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "18",
+          "nome": "[TAG] GA4 - Pageview - All Pages",
+          "tipo": "GA4 evento",
+          "campos": [
+            "User_email",
+            "user_email"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-pp7zqjd_workspace15.json",
+      "conta": "94905",
+      "public_id": "GTM-PP7ZQJD",
+      "nome": "OLX - Encontro Certo | LP",
+      "versao": "0",
+      "contagem": {
+        "tags": 10,
+        "pausadas": 0,
+        "gatilhos": 11,
+        "variaveis": 11
+      },
+      "tipos": {
+        "Universal Analytics": 2,
+        "Google tag": 1,
+        "HTML customizado": 5,
+        "GA4 evento": 1,
+        "img": 1
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [
+        "288347928329175"
+      ],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "47",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "31",
+          "nome": "[TAG] GA4 - LP Form Submit Success",
+          "evento": "generate_lead",
+          "pausada": false,
+          "gatilhos": [
+            "29"
+          ],
+          "escutam": [
+            "lp_form_submit"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "32",
+          "nome": "[PXL] Facebook - Encontro Certo - Pageview",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "39",
+          "nome": "[CONFIG] Listener - CTA Buttons",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-pqtnmnm3_workspace4.json",
+      "conta": "94905",
+      "public_id": "GTM-PQTNMNM3",
+      "nome": "OLX - Teste Adopt",
+      "versao": "0",
+      "contagem": {
+        "tags": 2,
+        "pausadas": 0,
+        "gatilhos": 4,
+        "variaveis": 1
+      },
+      "tipos": {
+        "cvt_209753542_3": 1,
+        "HTML customizado": 1
+      },
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "3",
+          "pausada": false,
+          "granted": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage",
+            "security_storage"
+          ],
+          "denied": []
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-pwp7z4c_workspace11.json",
+      "conta": "94905",
+      "public_id": "GTM-PWP7Z4C",
+      "nome": "OLX - Wallet",
+      "versao": "0",
+      "contagem": {
+        "tags": 3,
+        "pausadas": 0,
+        "gatilhos": 1,
+        "variaveis": 19
+      },
+      "tipos": {
+        "Google tag": 1,
+        "Universal Analytics": 1,
+        "HTML customizado": 1
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-pz83vmv_workspace31.json",
+      "conta": "94905",
+      "public_id": "GTM-PZ83VMV",
+      "nome": "OLX - LPs",
+      "versao": "0",
+      "contagem": {
+        "tags": 20,
+        "pausadas": 0,
+        "gatilhos": 15,
+        "variaveis": 29
+      },
+      "tipos": {
+        "Universal Analytics": 3,
+        "Google tag": 1,
+        "HTML customizado": 7,
+        "GA4 evento": 9
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "24",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "42",
+          "nome": "Evento GA - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "61",
+          "nome": "[TAG] GA4 - Pageview - All Pages",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Phone",
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "100",
+          "nome": "[TAG] Promoção Carrão - Event Listener - FAQ",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "16",
+          "nome": "[TAG] DataLayer Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-t8zbl8z_workspace2.json",
+      "conta": "94905",
+      "public_id": "GTM-T8ZBL8Z",
+      "nome": "[New] iOS Tracking",
+      "versao": "0",
+      "contagem": {
+        "tags": 0,
+        "pausadas": 0,
+        "gatilhos": 1,
+        "variaveis": 0
+      },
+      "tipos": {},
+      "ga4": [],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-tnx8fds_workspace392.json",
+      "conta": "94905",
+      "public_id": "GTM-TNX8FDS",
+      "nome": "OLX - Buyer Journey",
+      "versao": "0",
+      "contagem": {
+        "tags": 124,
+        "pausadas": 37,
+        "gatilhos": 71,
+        "variaveis": 186
+      },
+      "tipos": {
+        "HTML customizado": 66,
+        "Google tag": 2,
+        "Google Ads linker": 1,
+        "GA4 evento": 16,
+        "img": 2,
+        "Google Ads conversao": 6,
+        "flc": 5,
+        "cvt_M3KBL": 11,
+        "cvt_5RM3Q": 13,
+        "cvt_MRQN8": 2
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "1347",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "704",
+          "nome": "[TAG] GA4 - Add to Cart",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "201"
+          ],
+          "escutam": [
+            "bp_interaction"
+          ]
+        },
+        {
+          "id": "1190",
+          "nome": "[TAG] GA4 - Purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "1189"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "19",
+          "nome": "[TAG] GAU - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "21",
+          "nome": "[TAG] GAU - PromotionClick",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "28",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "179",
+          "nome": "[PXL] TikTok - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "188",
+          "nome": "[PXL] TikTok - Reply - OLX Pay",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "205",
+          "nome": "[PXL] TikTok - Add to Cart",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "207",
+          "nome": "[PXL] Méliuz - Cookie",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "357",
+          "nome": "[TAG] BP Settings - Element Interaction Listener - All Pages",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "463",
+          "nome": "[PXL] Méliuz - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "476",
+          "nome": "[PXL] TikTok - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "498",
+          "nome": "[PXL] RTB House - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "580",
+          "nome": "[PXL] Criteo - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "584",
+          "nome": "[PXL] Criteo - Add to Cart",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "592",
+          "nome": "[PXL] Criteo - Ad View - OLX Pay",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "594",
+          "nome": "[PXL] Criteo - Listing - OLX Pay",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "653",
+          "nome": "[PXL] Facebook - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "718",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "979",
+          "nome": "[PXL] Criteo - Listing - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "980",
+          "nome": "[PXL] Criteo - Home",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "981",
+          "nome": "[PXL] Criteo - Ad View - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "985",
+          "nome": "[PXL] Criteo - Reply - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1115",
+          "nome": "[PXL] TikTok - Add to Cart - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1127",
+          "nome": "[PXL] TikTok - Reply - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1262",
+          "nome": "[PXL] Spotify - Page View",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1263",
+          "nome": "[PXL] Spotify - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1264",
+          "nome": "[PXL] Spotify - Reply",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1267",
+          "nome": "[PXL] TikTok - Add to Wishlist",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1268",
+          "nome": "[PXL] TikTok - Initiate Checkout",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1271",
+          "nome": "[PXL] TikTok - Search",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1286",
+          "nome": "[TAG] GA4 - Pageview - All Pages",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Phone",
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1378",
+          "nome": "[TAG] Chatbot - New Conversation - Click Tracking",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1456",
+          "nome": "[Aviso de Instabilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1483",
+          "nome": "[TAG] Braze - Update User Attributes - Generate Lead",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1622",
+          "nome": "[PXL] TikTok - Base Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "21",
+          "nome": "[TAG] GAU - PromotionClick"
+        },
+        {
+          "id": "463",
+          "nome": "[PXL] Méliuz - Purchase"
+        },
+        {
+          "id": "701",
+          "nome": "[TAG] DataLayer - Cleaner"
+        },
+        {
+          "id": "1484",
+          "nome": "[TAG] Braze - Generate Lead"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "475",
+          "nome": "[PXL] Facebook - Purchase",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "476",
+          "nome": "[PXL] TikTok - Purchase",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1152",
+          "nome": "[PXL] Insider - Purchase",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1268",
+          "nome": "[PXL] TikTok - Initiate Checkout",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1483",
+          "nome": "[TAG] Braze - Update User Attributes - Generate Lead",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1498",
+          "nome": "[TAG] Braze - Begin Checkout (Pay & Ship)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "1499",
+          "nome": "[TAG] Braze - Purchase (Pay & Ship)",
+          "tipo": "cvt_M3KBL"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-tnx8fds_workspace395.json",
+      "conta": "94905",
+      "public_id": "GTM-TNX8FDS",
+      "nome": "OLX - Buyer Journey",
+      "versao": "0",
+      "contagem": {
+        "tags": 124,
+        "pausadas": 37,
+        "gatilhos": 71,
+        "variaveis": 187
+      },
+      "tipos": {
+        "HTML customizado": 66,
+        "Google tag": 2,
+        "Google Ads linker": 1,
+        "GA4 evento": 16,
+        "img": 2,
+        "Google Ads conversao": 6,
+        "flc": 5,
+        "cvt_M3KBL": 11,
+        "cvt_5RM3Q": 13,
+        "cvt_MRQN8": 2
+      },
+      "ga4": [
+        "G-50C013M2CC",
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "1347",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "704",
+          "nome": "[TAG] GA4 - Add to Cart",
+          "evento": "add_to_cart",
+          "pausada": false,
+          "gatilhos": [
+            "201"
+          ],
+          "escutam": [
+            "bp_interaction"
+          ]
+        },
+        {
+          "id": "1190",
+          "nome": "[TAG] GA4 - Purchase",
+          "evento": "purchase",
+          "pausada": false,
+          "gatilhos": [
+            "1189"
+          ],
+          "escutam": [
+            "purchase"
+          ]
+        }
+      ],
+      "pii": [
+        {
+          "id": "19",
+          "nome": "[TAG] GAU - View Promotion",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "21",
+          "nome": "[TAG] GAU - PromotionClick",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "28",
+          "nome": "[TAG] Set Cookie - userID",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "179",
+          "nome": "[PXL] TikTok - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "188",
+          "nome": "[PXL] TikTok - Reply - OLX Pay",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "205",
+          "nome": "[PXL] TikTok - Add to Cart",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "207",
+          "nome": "[PXL] Méliuz - Cookie",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "357",
+          "nome": "[TAG] BP Settings - Element Interaction Listener - All Pages",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "463",
+          "nome": "[PXL] Méliuz - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "476",
+          "nome": "[PXL] TikTok - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "498",
+          "nome": "[PXL] RTB House - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "580",
+          "nome": "[PXL] Criteo - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "584",
+          "nome": "[PXL] Criteo - Add to Cart",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "592",
+          "nome": "[PXL] Criteo - Ad View - OLX Pay",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "594",
+          "nome": "[PXL] Criteo - Listing - OLX Pay",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "653",
+          "nome": "[PXL] Facebook - Base",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "718",
+          "nome": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "979",
+          "nome": "[PXL] Criteo - Listing - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "980",
+          "nome": "[PXL] Criteo - Home",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "981",
+          "nome": "[PXL] Criteo - Ad View - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "985",
+          "nome": "[PXL] Criteo - Reply - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1115",
+          "nome": "[PXL] TikTok - Add to Cart - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1127",
+          "nome": "[PXL] TikTok - Reply - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1262",
+          "nome": "[PXL] Spotify - Page View",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1263",
+          "nome": "[PXL] Spotify - Purchase",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1264",
+          "nome": "[PXL] Spotify - Reply",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1267",
+          "nome": "[PXL] TikTok - Add to Wishlist",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1268",
+          "nome": "[PXL] TikTok - Initiate Checkout",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1271",
+          "nome": "[PXL] TikTok - Search",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1286",
+          "nome": "[TAG] GA4 - Pageview - All Pages",
+          "tipo": "GA4 evento",
+          "campos": [
+            "Phone",
+            "user_email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1378",
+          "nome": "[TAG] Chatbot - New Conversation - Click Tracking",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "1456",
+          "nome": "[Aviso de Instabilidade]",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1483",
+          "nome": "[TAG] Braze - Update User Attributes - Generate Lead",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "1622",
+          "nome": "[PXL] TikTok - Base Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "21",
+          "nome": "[TAG] GAU - PromotionClick"
+        },
+        {
+          "id": "463",
+          "nome": "[PXL] Méliuz - Purchase"
+        },
+        {
+          "id": "701",
+          "nome": "[TAG] DataLayer - Cleaner"
+        },
+        {
+          "id": "1484",
+          "nome": "[TAG] Braze - Generate Lead"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "475",
+          "nome": "[PXL] Facebook - Purchase",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "476",
+          "nome": "[PXL] TikTok - Purchase",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1152",
+          "nome": "[PXL] Insider - Purchase",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1268",
+          "nome": "[PXL] TikTok - Initiate Checkout",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1483",
+          "nome": "[TAG] Braze - Update User Attributes - Generate Lead",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "1498",
+          "nome": "[TAG] Braze - Begin Checkout (Pay & Ship)",
+          "tipo": "cvt_M3KBL"
+        },
+        {
+          "id": "1499",
+          "nome": "[TAG] Braze - Purchase (Pay & Ship)",
+          "tipo": "cvt_M3KBL"
+        }
+      ]
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-tqhv6td_workspace3.json",
+      "conta": "94905",
+      "public_id": "GTM-TQHV6TD",
+      "nome": "OLX - Testes de SDK",
+      "versao": "0",
+      "contagem": {
+        "tags": 4,
+        "pausadas": 0,
+        "gatilhos": 1,
+        "variaveis": 6
+      },
+      "tipos": {
+        "Google tag": 1,
+        "Universal Analytics": 2,
+        "GA4 evento": 1
+      },
+      "ga4": [
+        "G-XXXXXXXXXX"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-tvldbbk2_workspace3.json",
+      "conta": "94905",
+      "public_id": "GTM-TVLDBBK2",
+      "nome": "OLX - Chatbot",
+      "versao": "0",
+      "contagem": {
+        "tags": 3,
+        "pausadas": 0,
+        "gatilhos": 1,
+        "variaveis": 6
+      },
+      "tipos": {
+        "Google tag": 1,
+        "GA4 evento": 1,
+        "HTML customizado": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [
+        {
+          "id": "15",
+          "nome": "[TAG] DataLayer Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-tw8n3ln_workspace8.json",
+      "conta": "94905",
+      "public_id": "GTM-TW8N3LN",
+      "nome": "OLX - Chat",
+      "versao": "0",
+      "contagem": {
+        "tags": 2,
+        "pausadas": 1,
+        "gatilhos": 2,
+        "variaveis": 17
+      },
+      "tipos": {
+        "Google tag": 1,
+        "Universal Analytics": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "132",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [],
+      "sem_gatilho": [],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-tw9twpt5_workspace3.json",
+      "conta": "94905",
+      "public_id": "GTM-TW9TWPT5",
+      "nome": "OLX - Login",
+      "versao": "0",
+      "contagem": {
+        "tags": 5,
+        "pausadas": 1,
+        "gatilhos": 2,
+        "variaveis": 8
+      },
+      "tipos": {
+        "HTML customizado": 1,
+        "GA4 evento": 3,
+        "Google tag": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [],
+      "divergencias": [],
+      "eventos_receita": [
+        {
+          "id": "9",
+          "nome": "[TAG] GA4 - Login",
+          "evento": "login",
+          "pausada": false,
+          "gatilhos": [
+            "5"
+          ],
+          "escutam": [
+            "login"
+          ]
+        },
+        {
+          "id": "10",
+          "nome": "[TAG] GA4 - Sign_up",
+          "evento": "sign_up",
+          "pausada": false,
+          "gatilhos": [
+            "6"
+          ],
+          "escutam": [
+            "sign_up"
+          ]
+        }
+      ],
+      "pii": [],
+      "sem_gatilho": [
+        {
+          "id": "8",
+          "nome": "[TAG] DataLayer - Cleaner"
+        }
+      ],
+      "pausadas_criticas": []
+    },
+    {
+      "arquivo": "conta-94905-br-olx-com-br/gtm-wgktt96_workspace249.json",
+      "conta": "94905",
+      "public_id": "GTM-WGKTT96",
+      "nome": "[OLD] OLX - Ajuda",
+      "versao": "0",
+      "contagem": {
+        "tags": 209,
+        "pausadas": 59,
+        "gatilhos": 207,
+        "variaveis": 218
+      },
+      "tipos": {
+        "HTML customizado": 138,
+        "Google Ads conversao": 30,
+        "Google Ads linker": 2,
+        "Google Ads remarketing": 11,
+        "Universal Analytics": 24,
+        "Google tag": 1,
+        "baut": 2,
+        "img": 1
+      },
+      "ga4": [
+        "G-50C013M2CC"
+      ],
+      "google_ads": [],
+      "ua": [
+        "UA-70177409-2",
+        "UA-70177409-3",
+        "UA-87467831-2"
+      ],
+      "meta_pixel": [],
+      "gtm_aninhado": [],
+      "consentimento": [
+        {
+          "onde": "AdOpt",
+          "tipo": "template",
+          "id": "719",
+          "pausada": false,
+          "granted": [
+            "security_storage"
+          ],
+          "denied": [
+            "ad_personalization",
+            "ad_storage",
+            "ad_user_data",
+            "analytics_storage",
+            "functionality_storage",
+            "personalization_storage"
+          ]
+        }
+      ],
+      "divergencias": [],
+      "eventos_receita": [],
+      "pii": [
+        {
+          "id": "3",
+          "nome": "GA Click Financiamento",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "4",
+          "nome": "Hide BUMP Msite My Ads",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "14",
+          "nome": "MKT - Google - Listing - SearchResults",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "25",
+          "nome": "MKT - RTB House - Conversion - Autos",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "26",
+          "nome": "MKT - RTB House - Conversion - Imóveis",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "31",
+          "nome": "MKT - RTBHouse - set_cookie",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "35",
+          "nome": "Universal Analytics - analyticsHelper",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "38",
+          "nome": "Seletor - Ad View - Desktop - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "39",
+          "nome": "Seletor - Ad View - Mobile - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "Telefone",
+            "phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "50",
+          "nome": "Seletor - Checkout - Actions",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "55",
+          "nome": "Seletor - Home - Desktop - Gallery - Selecionar Produto na Gallery",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "64",
+          "nome": "Seletor - Listing - List_ - Identificar e Contabilizar Anúncio",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "65",
+          "nome": "Seletor - Listing - Mobile - Category_Search - Seleção de Categoria",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "67",
+          "nome": "Seletor - Listing Stores - Desktop - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "68",
+          "nome": "Seletor - Login - Desktop - Forgot_Password - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "69",
+          "nome": "Seletor - Login - Desktop - Login e Register - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "70",
+          "nome": "Seletor - Login - Mobile - Forgot_Password - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "71",
+          "nome": "Seletor - Login - Mobile - Login - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "72",
+          "nome": "Seletor - Login - Mobile - Register - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "75",
+          "nome": "Seletor - Mobile - My Ads Email",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email",
+            "email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "76",
+          "nome": "Seletor - Mobile - My Ads Email Successful",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Email"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "79",
+          "nome": "Seletor - My_Account - Register - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "80",
+          "nome": "Seletor - My_Store - Desktop - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "Telefone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "82",
+          "nome": "Seletor - Publicidade",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email",
+            "telefone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "83",
+          "nome": "Seletor - Store - Desktop - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "84",
+          "nome": "Seletor - Validation - Desktop - Ações",
+          "tipo": "HTML customizado",
+          "campos": [
+            "phone"
+          ],
+          "pausada": true
+        },
+        {
+          "id": "89",
+          "nome": "Usuário não é bot",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "90",
+          "nome": "Validação de Camada de Dados",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "92",
+          "nome": "bj-open-rec-new-tab",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "234",
+          "nome": "rtbhouse_newbuyer_basketadd_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "237",
+          "nome": "rtbhouse_newbuyer_listing_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "245",
+          "nome": "rtbhouse_olxpay_offer_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "251",
+          "nome": "rtbhouse_olxpay_basketadd_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "258",
+          "nome": "rtbhouse_newbuyer_custom_userType_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "264",
+          "nome": "rtbhouse_newlister_custom_userType_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "268",
+          "nome": "rtbhouse_newlister_placebo_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "270",
+          "nome": "rtbhouse_newbuyer_category_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "273",
+          "nome": "rtbhouse_newbuyer_offer_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "276",
+          "nome": "rtbhouse_newlister_basketadd_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "277",
+          "nome": "rtbhouse_olxpay_listing_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "282",
+          "nome": "rtbhouse_olxpay_placebo_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "283",
+          "nome": "rtbhouse_newbuyer_placebo_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "284",
+          "nome": "rtbhouse_newbuyer_order_tag_GTM-WGKTT96",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "285",
+          "nome": "rtbhouse_olxpay_category_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "326",
+          "nome": "MKT - Cloud - PageView",
+          "tipo": "HTML customizado",
+          "campos": [
+            "email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "331",
+          "nome": "Méliuz - Cookie",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "332",
+          "nome": "Pinterest - Base code",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "356",
+          "nome": "rtbhouse_autos_basketadd_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "360",
+          "nome": "rtbhouse_autos_listing_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "367",
+          "nome": "rtbhouse_autos_order_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "369",
+          "nome": "rtbhouse_autos_offer_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "371",
+          "nome": "rtbhouse_autos_placebo_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "374",
+          "nome": "rtbhouse_autos_category_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "396",
+          "nome": "Google Ads - Reply Email - Lead - 963385983",
+          "tipo": "Google Ads conversao",
+          "campos": [
+            "Email"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "400",
+          "nome": "Optimise - Cookie",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "401",
+          "nome": "Optimise - Master Tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "402",
+          "nome": "Optimise - Conversão Enviar Mensagem",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "415",
+          "nome": "rtbhouse_autos_action_tag",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "441",
+          "nome": "rtbhouse_autos_customEvent",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "443",
+          "nome": "Tiktok Pixel Base - All Pages",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "444",
+          "nome": "Facebook Pixel Base - All pages",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "481",
+          "nome": "Cookie Purchase - Category",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        },
+        {
+          "id": "603",
+          "nome": "Yahoo Pixel Base - All Pages",
+          "tipo": "HTML customizado",
+          "campos": [
+            "document"
+          ],
+          "pausada": false
+        }
+      ],
+      "sem_gatilho": [
+        {
+          "id": "89",
+          "nome": "Usuário não é bot"
+        }
+      ],
+      "pausadas_criticas": [
+        {
+          "id": "7",
+          "nome": "MKT - Get Blue - Conversion Imóveis",
+          "tipo": "HTML customizado"
+        },
+        {
+          "id": "50",
+          "nome": "Seletor - Checkout - Actions",
+          "tipo": "HTML customizado"
+        }
+      ]
+    }
+  ]
+}

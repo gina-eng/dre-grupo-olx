@@ -1,0 +1,1690 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:57:45",
+    "containerVersion": {
+        "path": "accounts/2971905372/containers/94425227/versions/0",
+        "accountId": "2971905372",
+        "containerId": "94425227",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/2971905372/containers/94425227",
+            "accountId": "2971905372",
+            "containerId": "94425227",
+            "name": "Rede Zap",
+            "publicId": "GTM-N87GJJD",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1664482706106",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/2971905372/containers/94425227/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-N87GJJD"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "15",
+                "name": "[GA-UA] Evento GA Rede Zap 05 - Footer Redes Sociais",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  var redeSocial = {{Click URL}}.split('.')[1]\n  \n  if(redeSocial == 'com/zapimoveis'){\n    var redeSocial = 'twitter'\n  }\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'footer',\n    label: redeSocial\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744061",
+                "firingTriggerId": [
+                    "14"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "26",
+                "name": "[GA-UA] Evento GA Rede Zap 01 - Header",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  var btn = {{iC | Format Text}}({{Click Text}})\n  \n  if(btn == null || btn == undefined || btn == ''){\n    var btn = 'logo'\n  }\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'header',\n    label: btn\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744063",
+                "firingTriggerId": [
+                    "10"
+                ],
+                "blockingTriggerId": [
+                    "25"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "29",
+                "name": "[GA-UA] Evento GA Rede Zap 10.1 - Incorporadoras",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'conteudo',\n    label: 'ver-perfil'\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744063",
+                "firingTriggerId": [
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "44",
+                "name": "[GA-UA] Evento GA Rede Zap 08 - Conteúdo",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'conteudo',\n    label: {{iC | Format Text}}({{Click Text}})\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744066",
+                "firingTriggerId": [
+                    "42",
+                    "43"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "48",
+                "name": "[GA-UA] Evento GA Rede Zap 03 - Conteúdo",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  for(elm = {{Click Element}};!elm.classList.contains('ProductCard_card__LqFpo'); elm = elm.parentElement);\n  \n  var conteudo = elm.lastElementChild.querySelector('div:nth-child(2)').firstElementChild.innerText\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'conteudo',\n    label: {{iC | Format Text}}(conteudo)\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744066",
+                "firingTriggerId": [
+                    "47"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "52",
+                "name": "[GA-UA] Evento GA Rede Zap 09 - Enviar Mensagem",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'mensagem',\n    label: {{iC | Format Text}}({{Click Text}})\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744067",
+                "firingTriggerId": [
+                    "51"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "59",
+                "name": "[GA-UA] Evento GA Rede Zap 06 - Login Btns",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'login',\n    label: {{iC | Format Text}}({{Click Text}})\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744067",
+                "firingTriggerId": [
+                    "58",
+                    "27"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "61",
+                "name": "[GA-UA] Evento GA Rede Zap 10 - Incorporadoras",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'conteudo',\n    label: {{iC | Format Text}}({{Click Text}})\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744067",
+                "firingTriggerId": [
+                    "60"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "63",
+                "name": "[GA-UA] Evento GA Rede Zap 07 - Detalhes do Empreendimento",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  var texto = {{Click Text}}\n  if(texto.includes('(')){\n    var texto = 'telefone'\n  }\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'contato',\n    label: {{iC | Format Text}}(texto)\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744068",
+                "firingTriggerId": [
+                    "9",
+                    "55"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "68",
+                "name": "[GA-UA] Evento GA Rede Zap 04 - Footer",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'footer',\n    label: {{iC | Format Text}}({{Click Text}})\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744068",
+                "firingTriggerId": [
+                    "67"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "69",
+                "name": "[GA-UA] Evento GA Rede Zap 02 - Pesquisa",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  \n  dataLayer.push({\n    event: 'sendEvent',\n    category: 'rede-zap',\n    action: 'pesquisa',\n    label: 'pesquisa'\n  })\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1664482744069",
+                "firingTriggerId": [
+                    "54"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "72",
+                "name": "GA - Pageview",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA - Settings}}"
+                    }
+                ],
+                "fingerprint": "1664482838958",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "tagId": "73",
+                "name": "GA - Send Event",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{GA - Category}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA - Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{GA - Action}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{GA - Label}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "46"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Onde}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "47"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Preço}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "48"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Quartos}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "49"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Banheiros}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "50"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Vagas}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "51"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Incorporadora}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "52"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Data de Lançamento}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "53"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Estágio da obra}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "54"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Rede Zap - Filtro Área}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664483224675",
+                "firingTriggerId": [
+                    "31"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "9",
+                "name": "07 Rede Zap - Detalhes do Empreendimento",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div.company_mainContainer__w9_a5 > div > div.CompanyDetails_topContainer__yX1cj > div.CompanyDetails_descriptionContainer__Cl7fA > div > div.CompanyDetails_linksHolder__tZBxh > a, #__next > main > main > div.CompanyDetails_detailsMain__OLUyZ > div.CompanyDetails_topContainer__yX1cj > div.CompanyDetails_descriptionContainer__Cl7fA > div > div.CompanyDetails_linksHolder__tZBxh > a"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1664482744000"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "10",
+                "name": "01 Rede Zap - Header",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > header > a, #__next > header > nav > a"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1664482744001"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "14",
+                "name": "05 Rede Zap - Footer Redes Sociais",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > footer > div > ul:nth-child(4) > div > a"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1664482744002"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "25",
+                "name": "01 Rede Zap - Header Minha Conta",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > header > nav > button"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744005"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "27",
+                "name": "06 Rede Zap - Login Esqueceu a Senha",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div > div > div.tabs_tabContainer__0dCNM > div > form > a"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1664482744006"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "28",
+                "name": "10.1 Rede Zap - Incorporadoras",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div.companies_cardsHolder___esoP > div > div.CompanyCard_card__ZWJvn > div.CompanyCard_cardDescription__pMs5s > div.CompanyCard_titleHolder__iamVf > p, #__next > main > main > div.companies_cardsHolder___esoP > div > div.CompanyCard_card__ZWJvn > div.CompanyCard_cardDescription__pMs5s > div.CompanyCard_titleHolder__iamVf > h1, #__next > main > main > div.companies_cardsHolder___esoP > div > div.CompanyCard_card__ZWJvn > div.CompanyCard_cardDescription__pMs5s > div.CompanyCard_titleHolder__iamVf, #__next > main > main > div.companies_cardsHolder___esoP > div > div.CompanyCard_card__ZWJvn > div.CompanyCard_imageHolder__xY7WS > span > img, #__next > main > main > div.companies_cardsHolder___esoP > div > div.CompanyCard_card__ZWJvn > div.CompanyCard_imageHolder__xY7WS, #__next > main > main > div.companies_cardsHolder___esoP > div > div.CompanyCard_card__ZWJvn"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744006"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "31",
+                "name": "GA - Send Event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sendEvent"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744007"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "42",
+                "name": "08 Rede Zap - Conteúdo",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div:nth-child(8) > div > div > button"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744009"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "43",
+                "name": "08 Rede Zap - Whatsapp",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div:nth-child(8) > div > div > a"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1664482744010"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "47",
+                "name": "03 Rede Zap - Conteúdo",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div.ProductList_mainHolder__i2OLB > div > div > div > div > div > p, #__next > main > main > div.ProductList_mainHolder__i2OLB > div > div > div > div > div > h1, #__next > main > main > div.ProductList_mainHolder__i2OLB > div > div > div > div > div > span > img, #__next > main > main > div.ProductList_mainHolder__i2OLB > div > div > div > div > div, #__next > main > main > div.ProductList_mainHolder__i2OLB > div > div > div > div, #__next > main > main > div.ProductList_mainHolder__i2OLB > div > div > div > div > span > img"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744011"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "51",
+                "name": "09 Rede Zap - Enviar Mensagem",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "body > div.fade.modal.show > div > div > div.modal-body > div > button"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744012"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "54",
+                "name": "02 Rede Zap - Pesquisa",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.l-icon.SearchPanel_searchIcon__Tx_ZA > svg > g > path:nth-child(2), #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.l-icon.SearchPanel_searchIcon__Tx_ZA > svg > g > path:nth-child(1), #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.l-icon.SearchPanel_searchIcon__Tx_ZA > svg > g, #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.SearchPanel_searchButtonText__oiB8f, #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.l-icon.SearchPanel_searchIcon__Tx_ZA > svg, #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.l-icon.SearchPanel_searchIcon__Tx_ZA, #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button, #__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_searchButtonHolder__ppefW > button > span.l-icon.SearchPanel_searchIcon__Tx_ZA"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744013"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "55",
+                "name": "07 Rede Zap - Detalhes do Empreendimento Enviar Mensagem",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div.company_mainContainer__w9_a5 > div > div.CompanyDetails_topContainer__yX1cj > div.CompanyDetails_descriptionContainer__Cl7fA > div > div.CompanyDetails_buttonsContainer__EMcFG > button, #__next > main > main > div.CompanyDetails_detailsMain__OLUyZ > div.CompanyDetails_topContainer__yX1cj > div.CompanyDetails_descriptionContainer__Cl7fA > div > div.CompanyDetails_buttonsContainer__EMcFG > button"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744013"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "56",
+                "name": "Evento GA 01 - Imóvel Selecionado - Visualização Calculadora",
+                "type": "ELEMENT_VISIBILITY",
+                "fingerprint": "1664482744014",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOnScreenDuration",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDomChangeListener",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "elementSelector",
+                        "value": "#mortgage-loan__sale-price_input_id"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "firingFrequency",
+                        "value": "ONCE"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectorType",
+                        "value": "CSS"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "onScreenRatio",
+                        "value": "50"
+                    }
+                ]
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "58",
+                "name": "06 Rede Zap - Login Btns",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div > div > div.tabs_tabContainer__0dCNM > ul > li, #__next > main > main > div > div > div.tabs_tabContainer__0dCNM > div > form > button"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744014"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "60",
+                "name": "10 Rede Zap - Incorporadoras",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > main > main > div.companies_cardsHolder___esoP > div > div > div > div > button"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1664482744015"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "triggerId": "67",
+                "name": "04 Rede Zap - Footer",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "CSS_SELECTOR",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Element}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "#__next > footer > div > ul > li > a"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "rede.zapimoveis.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1664482744016"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "7",
+                "name": "iC | Format Text",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  return function(s){\n    if(typeof s === 'undefined') return '';\n    var map={\n      \"â\":\"a\",\n      \"Â\":\"A\",\n      \"à\":\"a\",\n      \"À\":\"A\",\n      \"á\":\"a\",\n      \"Á\":\"A\",\n      \"ã\":\"a\",\n      \"Ã\":\"A\",\n      \"ê\":\"e\",\n      \"Ê\":\"E\",\n      \"è\":\"e\",\n      \"È\":\"E\",\n      \"é\":\"e\",\n      \"É\":\"E\",\n      \"î\":\"i\",\n      \"Î\":\"I\",\n      \"ì\":\"i\",\n      \"Ì\":\"I\",\n      \"í\":\"i\",\n      \"Í\":\"I\",\n      \"õ\":\"o\",\n      \"Õ\":\"O\",\n      \"ô\":\"o\",\n      \"Ô\":\"O\",\n      \"ò\":\"o\",\n      \"Ò\":\"O\",\n      \"ó\":\"o\",\n      \"Ó\":\"O\",\n      \"ü\":\"u\",\n      \"Ü\":\"U\",\n      \"û\":\"u\",\n      \"Û\":\"U\",\n      \"ú\":\"u\",\n      \"Ú\":\"U\",\n      \"ù\":\"u\",\n      \"Ù\":\"U\",\n      \"ç\":\"c\",\n      \"Ç\":\"C\",\n      \"&\":\"e\",\n      \" \":\"-\"\n    };\n    s = s.replace(/!/,'');\n    s = s.replace(/[\\W\\[\\] ]/g,function(a){return map[a]||a});\n    s = s.replace(/-+/g,'-').replace(/-$/,'').replace(/^-/,'')\n    return s.toLowerCase();\n  }\n}\n"
+                    }
+                ],
+                "fingerprint": "1664482744018",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "8",
+                "name": "Rede Zap - Filtro Área",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div.SearchPanel_secondLineInputs__NKjqM > div:nth-child(4) > div > p\").innerText.replace('Área (m²) : ', '').replace('Área (m²)', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744018",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "13",
+                "name": "Rede Zap - Filtro Banheiros",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div:nth-child(1) > div:nth-child(4) > div > p\").innerText.replace('Banheiros até ', '').replace('Banheiros', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744018",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "30",
+                "name": "Rede Zap - Filtro Incorporadora",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div.SearchPanel_secondLineInputs__NKjqM > div:nth-child(1) > div > p\").innerText.replace('Incorporadora ', '').replace('Incorporadora', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744063",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "32",
+                "name": "Rede Zap - Filtro Preço",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div:nth-child(1) > div:nth-child(2) > div > p\").innerText.replace('Preço : R$ ', '').replace('Preço', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744064",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "33",
+                "name": "Rede Zap - Filtro Vagas",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div:nth-child(1) > div:nth-child(5) > div > p\").innerText.replace('Vagas até ', '').replace('Vagas', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744064",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "34",
+                "name": "Rede Zap - Filtro Quartos",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div:nth-child(1) > div:nth-child(3) > div > p\").innerText.replace('Quartos até ', '').replace('Quartos', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744064",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "35",
+                "name": "Rede Zap - Filtro Onde",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div:nth-child(1) > div.SearchPanel_inputHolder__b66I2 > div > input[type=text]\").getAttribute('value')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744064",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "36",
+                "name": "Rede Zap - Filtro Data de Lançamento",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div.SearchPanel_secondLineInputs__NKjqM > div:nth-child(2) > div > p\").innerText.replace('Data de Lançamento : ', '').replace('Data de Lançamento', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744065",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "37",
+                "name": "GA - Label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "label"
+                    }
+                ],
+                "fingerprint": "1664482744007",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "38",
+                "name": "Rede Zap - Filtro Estágio da obra",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var valor = document.querySelector(\"#__next > main > main > div.SearchPanel_holder__cI_uA > div.SearchPanel_mainFieldsHolder__0nEey > div.SearchPanel_fieldsHolder__ZhT7x > div.SearchPanel_secondLineInputs__NKjqM > div:nth-child(3) > div > p\").innerText.replace('Estágio da obra ', '').replace('Estágio da obra', '')\n  \n  if(valor){\n    return {{iC | Format Text}}(valor)\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1664482744065",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "39",
+                "name": "GA - Action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "action"
+                    }
+                ],
+                "fingerprint": "1664482744007",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "40",
+                "name": "GA - Category",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "category"
+                    }
+                ],
+                "fingerprint": "1664482744008",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "variableId": "71",
+                "name": "GA - Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-230770-61"
+                    }
+                ],
+                "fingerprint": "1664482828448"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "CLICK_ID",
+                "name": "Click ID"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "94425227",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            }
+        ],
+        "fingerprint": "1789145865046",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/2971905372/containers/94425227/versions/0?apiLink=version"
+    }
+}

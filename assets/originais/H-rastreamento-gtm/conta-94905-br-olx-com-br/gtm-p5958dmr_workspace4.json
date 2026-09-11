@@ -1,0 +1,607 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:29:45",
+    "containerVersion": {
+        "path": "accounts/94905/containers/216978053/versions/0",
+        "accountId": "94905",
+        "containerId": "216978053",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/216978053",
+            "accountId": "94905",
+            "containerId": "216978053",
+            "name": "OLX - Favoritos",
+            "publicId": "GTM-P5958DMR",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1744132269983",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/216978053/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-P5958DMR"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "tagId": "18",
+                "name": "[TAG] GA4 - Pageview - All Pages",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - userID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - Content Group}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Account Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_phone"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_phone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_zip_code"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_zip_code}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_gender"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_gender}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_email"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_email}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_level"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_level_account}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_login_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] DataLayer - LoginType}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "gclid"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Gclid}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_cat_gen"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] DataLayer - User Cat Gen}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1743795682905",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "3",
+                "name": "[VAR] UserID Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var cUserId = {{[VAR] Cookie - userID}};\n  var dtUserId = {{[VAR] DataLayer - userID}};\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(cUserId)) {\n    return cUserId;\n  } \n  else if (isValidUserId(dtUserId)) {\n    return dtUserId;\n  } \n  else {\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1752694196290",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "4",
+                "name": "[VAR] DataLayer - pageType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page.pageType"
+                    }
+                ],
+                "fingerprint": "1743794364796",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "5",
+                "name": "[VAR] User - Account Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_account_type = user_olx.gtm_user_72;\n  \n  return user_account_type;\n}"
+                    }
+                ],
+                "fingerprint": "1743794425459",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "6",
+                "name": "[VAR] User_phone",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_phone = user_olx.gtm_user_73;\n  \n  return user_phone\n}"
+                    }
+                ],
+                "fingerprint": "1743794494456",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "7",
+                "name": "[VAR] User_zip_code",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_zip_code = user_olx.gtm_user_74;\n  \n  return user_zip_code \n}"
+                    }
+                ],
+                "fingerprint": "1743794527049",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "8",
+                "name": "[VAR] User_gender",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_gender = user_olx.gtm_user_75;\n  \n  return user_gender;\n}"
+                    }
+                ],
+                "fingerprint": "1743794574305",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "9",
+                "name": "[VAR] User_email",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_email = user_olx.gtm_user_76;\n  \n  return user_email;\n}"
+                    }
+                ],
+                "fingerprint": "1743794604557",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "10",
+                "name": "[VAR] User_level_account",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_level_account = user_olx.gtm_user_77;\n  \n  return user_level_account \n}"
+                    }
+                ],
+                "fingerprint": "1743794659625",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "11",
+                "name": "[VAR] DataLayer - LoginType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "session.user.loginType"
+                    }
+                ],
+                "fingerprint": "1743794893373",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "12",
+                "name": "[VAR] Gclid",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "QUERY"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "queryKey",
+                        "value": "gclid"
+                    }
+                ],
+                "fingerprint": "1743794807498",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "13",
+                "name": "[VAR] DataLayer - User Cat Gen",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "session.user.user_cat_gen"
+                    }
+                ],
+                "fingerprint": "1743794865998",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "15",
+                "name": "[VAR] GA4 - G-50C013M2CC",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1743795200642",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "16",
+                "name": "[VAR] DataLayer - userID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('session.user.userID');\n  if(el && el !== '' && el !== 'Unidentified'){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1743795425608",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "17",
+                "name": "[VAR] DataLayer - Content Group",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('page.pageType');\n  if(el && el !== ''){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1743795469070",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "19",
+                "name": "Container ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "GTM-P5958DMR"
+                    }
+                ],
+                "fingerprint": "1743795866962",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "variableId": "20",
+                "name": "[VAR] Cookie - userID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1743795905682",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "216978053",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789136985364",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/216978053/versions/0?apiLink=version"
+    }
+}

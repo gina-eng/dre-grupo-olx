@@ -1,0 +1,96 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:22:30",
+    "containerVersion": {
+        "path": "accounts/94905/containers/127330787/versions/0",
+        "accountId": "94905",
+        "containerId": "127330787",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/127330787",
+            "accountId": "94905",
+            "containerId": "127330787",
+            "name": "[New] iOS Tracking",
+            "publicId": "GTM-T8ZBL8Z",
+            "usageContext": [
+                "IOS_SDK_5"
+            ],
+            "fingerprint": "1687543031346",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/127330787/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-T8ZBL8Z"
+            ]
+        },
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "127330787",
+                "triggerId": "3",
+                "name": "[AC] Inserção de Anúncio",
+                "type": "ALWAYS",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event Name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ad_insertion"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1687543131304"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "127330787",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330787",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330787",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330787",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1789136550675",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/127330787/versions/0?apiLink=version"
+    }
+}

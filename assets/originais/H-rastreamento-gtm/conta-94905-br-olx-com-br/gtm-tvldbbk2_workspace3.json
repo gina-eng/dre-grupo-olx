@@ -1,0 +1,399 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:28:13",
+    "containerVersion": {
+        "path": "accounts/94905/containers/199530355/versions/0",
+        "accountId": "94905",
+        "containerId": "199530355",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/199530355",
+            "accountId": "94905",
+            "containerId": "199530355",
+            "name": "OLX - Chatbot",
+            "publicId": "GTM-TVLDBBK2",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1731020315694",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/199530355/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-TVLDBBK2"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "tagId": "5",
+                "name": "[TAG] GA4 - Settings & Pageview - All Pages",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "configSettingsVariable",
+                        "value": "{{[VAR] GA4 Settings Variables}}"
+                    }
+                ],
+                "fingerprint": "1731020741000",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "tagId": "8",
+                "name": "[TAG] Chatbot - Eventos no Chat",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventSettingsVariable",
+                        "value": "{{[VAR] GA4 Event Variables}}"
+                    }
+                ],
+                "fingerprint": "1731022637176",
+                "firingTriggerId": [
+                    "7"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "tagId": "15",
+                "name": "[TAG] DataLayer Cleaner",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  dataLayer.push({\n    event:\"dl_cleaner\",\n    message_type: undefined,\n    message: undefined,\n    product: undefined\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1731022604041",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "triggerId": "7",
+                "name": "[AC] Chatbot - Eventos no Chat",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^chatbot"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1731020859732"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "variableId": "3",
+                "name": "[VAR] GA4 - G-50C013M2CC",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1731020392594",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "variableId": "4",
+                "name": "[VAR] GA4 Settings Variables",
+                "type": "gtcs",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "chatbot"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1731022044415"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "variableId": "11",
+                "name": "[VAR] Chatbot Message Type",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "message_type"
+                    }
+                ],
+                "fingerprint": "1731022447460",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "variableId": "12",
+                "name": "[VAR] Chatbot Message",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "message"
+                    }
+                ],
+                "fingerprint": "1731022455079",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "variableId": "13",
+                "name": "[VAR] GA4 Event Variables",
+                "type": "gtes",
+                "parameter": [
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "chatbot_message_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] Chatbot Message Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "chatbot_message"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] Chatbot Message}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "chatbot_product_selection"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] Chatbot Product Selection}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1731022328530"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "variableId": "14",
+                "name": "[VAR] Chatbot Product Selection",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "product"
+                    }
+                ],
+                "fingerprint": "1731022440854",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "199530355",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789136893972",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/199530355/versions/0?apiLink=version"
+    }
+}

@@ -8,7 +8,7 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 **Legenda de status:** ✅ recebido · 🟡 parcial · 🟠 solicitado, pendente · ⚪ não iniciado · 🔴 inexistente (registrar como evidência diagnóstica)
 
-**Material recebido até agora:** primeiro lote do data room baixado em **24/08/2026**, 9 arquivos nos blocos E e I. Índice, procedência e leitura inicial em [`assets/originais/README.md`](../assets/originais/README.md).
+**Material recebido até agora:** primeiro lote do data room baixado em **24/08/2026**, 9 arquivos nos blocos E e I; a série de receita do bloco A por e-mail em **28/08**; os exports de GTM do bloco H em **01/09**. Índice, procedência e leitura inicial em [`assets/originais/README.md`](../assets/originais/README.md).
 
 **Acessos verificados em 31/08 e 01/09/2026:** GA4 liberado (H1 ✅) e **GTM confirmado** (H2 ✅), o bloco H, prioritário, está com os dois acessos. V4MOS inalterado: Google Ads ingerindo, Meta vazio. Search Console, Salesforce, CRM e ferramentas de SEO/comportamento seguem sem concessão.
 
@@ -19,7 +19,7 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 | # | Item | Status | Obs. |
 |---|---|---|---|
-| A1 | Receita mensal dos últimos **24 meses**, aberta por linha de negócio / segmento / produto | ⚪ | |
+| A1 | Receita mensal dos últimos **24 meses**, aberta por linha de negócio / segmento / produto | 🟡 | **Recebido em 28/08.** 20 meses (jan/25 a jul/26) contra 24, 39 linhas sobre 4 unidades. Falta 2024. [Leitura](serie-de-receita-2025-2026.md) |
 | A2 | Funil comercial completo (volumes e taxas de conversão por etapa), últimos **12–24 meses** | ⚪ | |
 | A3 | Ticket médio, ciclo de vendas e CAC por canal (se disponível) | ⚪ | |
 | A4 | Estrutura organizacional de Marketing, Pré-Vendas e Vendas (organograma e responsabilidades) | ⚪ | |
@@ -28,6 +28,12 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 > A1–A3 são os insumos **matemáticos** do Forecast. Sem eles, o funil não valida contra o
 > faturamento declarado e o forecast não pode ser construído.
+
+> **A1 saiu de ⚪ em 08/09**, com a série de receita 2025–2026 recebida em 28/08. É o primeiro
+> denominador auditável do projeto: a soma das unidades bate com o TOTAL nos 19 meses fechados.
+> Com ele, um ponto percentual de run-rate deixou de ser abstração e virou R$ 428 mil por mês na
+> linha `Classifieds - B&A`. **A2 e A3 continuam sendo o bloqueio**: sem volume por etapa, o fluxo
+> não reconcilia contra o faturamento e a regra 8 do repositório não pode ser verificada.
 
 ## B. CRM Marketing
 *Alimenta o diagnóstico (i), Salesforce Marketing Cloud.*

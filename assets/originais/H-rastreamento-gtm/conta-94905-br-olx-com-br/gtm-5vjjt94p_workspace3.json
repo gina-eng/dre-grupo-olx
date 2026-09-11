@@ -1,0 +1,150 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:23:28",
+    "containerVersion": {
+        "path": "accounts/94905/containers/201501869/versions/0",
+        "accountId": "94905",
+        "containerId": "201501869",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/201501869",
+            "accountId": "94905",
+            "containerId": "201501869",
+            "name": "OLX - Central de Ajuda",
+            "publicId": "GTM-5VJJT94P",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1733410749021",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/201501869/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-5VJJT94P"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "tagId": "4",
+                "name": "[TAG] OLX - GA4 Settings",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{[VAR] Stream ID - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1733410863712",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "tagId": "6",
+                "name": "[Aviso de Indisponibilidade]",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n(function () {\n  // Texto do banner\n  var TEXT = \"Devido a uma falha em um provedor global, nossos serviços podem apresentar instabilidades. Estamos atuando para resolver.\";\n\n  function inject() {\n    if (!document.body || document.getElementById(\"instabilidade-banner\")) return;\n\n    // CSS do banner\n    var style = document.createElement(\"style\");\n    style.id = \"instabilidade-banner-style\";\n    style.type = \"text/css\";\n    style.appendChild(document.createTextNode(\n      \"#instabilidade-banner {\" +\n        \"position: sticky; top: 0; left: 0; width: 100%;\" +\n        \"background: #ffcc00; color: #000;\" +\n        \"display: flex; align-items: center; justify-content: center; gap: 8px;\" +\n        \"padding: 12px 16px;\" +\n        \"font: 500 15px/1.3 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;\" +\n        \"z-index: 2147483647;\" +\n      \"}\" +\n      \"#instabilidade-banner .icon { font-size: 18px; margin-right: 8px; }\" +\n      \"#instabilidade-banner .close {\" +\n        \"background: transparent; border: 0; color: #fff;\" +\n        \"font-size: 20px; margin-left: 12px; cursor: pointer; opacity: .85;\" +\n      \"}\" +\n      \"#instabilidade-banner .close:hover { opacity: 1; }\"\n    ));\n    document.head.appendChild(style);\n\n    // HTML do banner\n    var bar = document.createElement(\"div\");\n    bar.id = \"instabilidade-banner\";\n    bar.setAttribute(\"role\", \"status\");\n    bar.setAttribute(\"aria-live\", \"polite\");\n\n    var icon = document.createElement(\"span\");\n    icon.className = \"icon\";\n    icon.innerHTML = \"⚠️\";\n\n    var msg = document.createElement(\"span\");\n    msg.className = \"msg\";\n    msg.appendChild(document.createTextNode(TEXT));\n\n\n    bar.appendChild(msg);\n\n    // Insere o banner como primeiro filho do body\n    document.body.insertBefore(bar, document.body.firstChild);\n\n    // Fecha o banner ao clicar no X\n    close.addEventListener(\"click\", function () {\n      bar.parentNode.removeChild(bar);\n      var st = document.getElementById(\"instabilidade-banner-style\");\n      if (st) st.parentNode.removeChild(st);\n    });\n  }\n\n  // Aguarda o body existir\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", inject);\n  } else {\n    inject();\n  }\n})();\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1760986460851",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "variableId": "3",
+                "name": "[VAR] Stream ID - G-50C013M2CC",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1733410811149",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "201501869",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789136608882",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/201501869/versions/0?apiLink=version"
+    }
+}

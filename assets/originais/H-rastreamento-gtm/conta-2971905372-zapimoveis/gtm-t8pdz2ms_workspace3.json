@@ -1,0 +1,262 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:54:54",
+    "containerVersion": {
+        "path": "accounts/2971905372/containers/203239431/versions/0",
+        "accountId": "2971905372",
+        "containerId": "203239431",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/2971905372/containers/203239431",
+            "accountId": "2971905372",
+            "containerId": "203239431",
+            "name": "2. ZapImóveis - Container PORTAL ZAP [Lead Only]",
+            "publicId": "GTM-T8PDZ2MS",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1735927406306",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/2971905372/containers/203239431/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-T8PDZ2MS"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "tagId": "10",
+                "name": "[GA4 - Verticalizado] generate_lead",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "lead_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - lead.leadid}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "generate_lead_gtm"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-W39KX3CBHX"
+                    }
+                ],
+                "fingerprint": "1735928095603",
+                "firingTriggerId": [
+                    "7",
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "triggerId": "7",
+                "name": "[CE] leadClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "leadClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1735927954421"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "triggerId": "9",
+                "name": "[CE] scheduleClicked - SEND",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "scheduleClicked"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Legado - schedule.action}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "SEND_VISIT_SCHEDULE"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1735928087404"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "variableId": "6",
+                "name": "[VAR] dataLayer - lead.leadid",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "lead.leadid"
+                    }
+                ],
+                "fingerprint": "1735927840512",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "variableId": "8",
+                "name": "Legado - schedule.action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "schedule.action"
+                    }
+                ],
+                "fingerprint": "1735928027615",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "203239431",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789145694040",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/2971905372/containers/203239431/versions/0?apiLink=version"
+    }
+}

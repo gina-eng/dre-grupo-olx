@@ -1,0 +1,2257 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:29:59",
+    "containerVersion": {
+        "path": "accounts/94905/containers/116800845/versions/0",
+        "accountId": "94905",
+        "containerId": "116800845",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/116800845",
+            "accountId": "94905",
+            "containerId": "116800845",
+            "name": "OLX - Hub Segurança",
+            "publicId": "GTM-KN3K8B8",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1727449617216",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/116800845/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-KN3K8B8"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "21",
+                "name": "[TAG] GA4 - Settings & Pageview - All Pages",
+                "type": "googtag",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "999"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "G-50C013M2CC"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Account Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_phone"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Phone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_zip_code"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Zip Code}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_gender"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Gender}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_email"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - E-mail}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_level"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Level Account}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_login_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Login Type}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - Content Group}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "login_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - Login Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1730310631258",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "23",
+                "name": "Evento GA4 - Ecommerce - View Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{DataLayer - ecommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "view_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1730310614356",
+                "firingTriggerId": [
+                    "22"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "27",
+                "name": "Evento GA - View Promotion",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nvar links = document.querySelectorAll(\"a\"),\n\tic_ga4 = [],\n\tic_gau = [];\n\t\nfor(i=0; i<links.length; i++){\n    if(links[i].getAttribute(\"href\").indexOf(\"ic=\") != -1){\n\t\tvar ic_code = links[i].href.split(\"ic=\")[1].split(\"&\")[0],\n\t\t\tic_campaign =  links[i].href.split(\"campaign=\")[1].split(\"&\")[0],\n\t\t\tic_local = links[i].href.split(\"local=\")[1].split(\"&\")[0],\n\t\t\tic_message = links[i].href.split(\"message=\")[1];\n\t\t\n\t\tic_ga4.push({\n\t\t\t'promotion_id': ic_code,\n\t\t\t'promotion_name': ic_campaign,\n\t\t\t'creative_slot': ic_local,\n\t\t\t'creative_name': ic_message\t\t\t\n\t\t});\n\t\t\n\t\tic_gau.push({\n\t\t\t'id': ic_code,\n\t\t\t'name': ic_campaign,\n\t\t\t'position': ic_local,\n\t\t\t'creative': ic_message\t\t\t\n\t\t});\n\t}\n}\n\nwindow.dataLayer.push({\n  'event': 'view_promotion',\n  'ecommerce': {\n    'items': ic_ga4,\n\t'promoView': {\n      'promotions': ic_gau\n    }\n  }  \n});\n\n\n// ic = Código da promoção interna\n// local = Posição da promoção interna\n// campaign = Nome da promoção interna\n// message = Anúncio da promoção interna\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1727449640418",
+                "firingTriggerId": [
+                    "26"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NEEDED",
+                    "consentType": {
+                        "type": "LIST",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "analytics_storage"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "29",
+                "name": "Evento GA4 - Ecommerce - Select Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{DataLayer - ecommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "select_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1730310614356",
+                "firingTriggerId": [
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "33",
+                "name": "[TAG] GAU - Ecommerce - Promotion Click",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "ecommerce"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU HUB Segurança}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "promo-click"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "banner"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1730916866933",
+                "firingTriggerId": [
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "34",
+                "name": "[TAG] GAU HUB Segurança - Pageview",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ecommerceMacroData",
+                        "value": "{{[VAR] GAU - Virtual Promotion Click - Calhau e Banner App}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU HUB Segurança}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] DataLayer - Content Group}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1730916866934",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "35",
+                "name": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var search = new URL(document.location.href) || undefined,\n      searchLocal = search.searchParams.get(\"local\") || undefined;\n  if(search && searchLocal && (searchLocal == 'calhau' || searchLocal.indexOf(\"_app\") !== -1)){\n    window.dataLayer.push({\n      'event': 'virtual_select_promotion',\n      'vEcommerce':{\n        'items':[\n          {\n            'promotion_id': search.searchParams.get(\"ic\"),\n            'promotion_name': search.searchParams.get(\"campaign\"),\n            'creative_name': search.searchParams.get(\"message\"),\n            'creative_slot': search.searchParams.get(\"local\")\n          }\n        ]\n      }\n    });\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1730310654563",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NEEDED",
+                    "consentType": {
+                        "type": "LIST",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "analytics_storage"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "44",
+                "name": "Evento GA4 - Ecommerce - Virtual Select Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{DataLayer - vEcommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "select_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1730310614356",
+                "firingTriggerId": [
+                    "42"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "46",
+                "name": "Evento GA - PromotionClick",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\n  dataLayer.push({\n    'event': 'promotionClick',\n    'ecommerce': {\n      'promoClick': {\n        'promotions': [\n          {\n            'id': {{iC - Click URL - Parâmetro ic}},\n            'name': {{iC - Click URL - Parâmetro campaign}},\n            'position': {{iC - Click URL - Parâmetro local}},\n            'creative': {{iC - Click URL - Parâmetro message}}\n          }]\n      },\n      'items':[\n        {\n          'promotion_id': {{iC - Click URL - Parâmetro ic}},\n          'promotion_name': {{iC - Click URL - Parâmetro campaign}},\n          'creative_name': {{iC - Click URL - Parâmetro message}},\n          'creative_slot': {{iC - Click URL - Parâmetro local}}\n        }\n      ]\n    }\n  });\n\n</script> "
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1727449640417",
+                "firingTriggerId": [
+                    "39"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NEEDED",
+                    "consentType": {
+                        "type": "LIST",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "analytics_storage"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "49",
+                "name": "[TAG] GAU - Ecommerce - View Promotion",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "ecommerce"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU HUB Segurança}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "promo-view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "banner"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1730916866932",
+                "firingTriggerId": [
+                    "22"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "51",
+                "name": "[TAG] GAU - LP HUB Segurança - Clicks Link",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "lp:{{[VAR] DataLayer - Content Group}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU HUB Segurança}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "clique"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{[VAR] Rótulo do Link}}"
+                    }
+                ],
+                "fingerprint": "1730916866933",
+                "firingTriggerId": [
+                    "48"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "54",
+                "name": "[TAG] GAU Principal - Pageview",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ecommerceMacroData",
+                        "value": "{{[VAR] GAU - Virtual Promotion Click - Calhau e Banner App}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU Principal}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1730916866934",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "55",
+                "name": "[TAG] GAU Principal - Ecommerce - Promotion Click",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "ecommerce"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU Principal}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "promo-click"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "banner"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1730916866934",
+                "firingTriggerId": [
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "56",
+                "name": "[TAG] GAU Principal - Ecommerce - View Promotion",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "ecommerce"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU Principal}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "promo-view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "banner"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1730916866934",
+                "firingTriggerId": [
+                    "22"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "tagId": "61",
+                "name": "[TAG] GAU - LP HUB Segurança - Search",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "lp:{{[VAR] DataLayer - Content Group}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU HUB Segurança}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "busca"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "Pesquisando Informações"
+                    }
+                ],
+                "fingerprint": "1730916866933",
+                "firingTriggerId": [
+                    "60"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "22",
+                "name": "Ecommerce GA - View Promotion",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "view_promotion"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1683744464561"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "26",
+                "name": "[AC] View Promotion Link",
+                "type": "ELEMENT_VISIBILITY",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] Promotion Link Validation}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1683744464562",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOnScreenDuration",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDomChangeListener",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "elementSelector",
+                        "value": "a[href*=\"ic=\"]"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "firingFrequency",
+                        "value": "ONCE_PER_ELEMENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectorType",
+                        "value": "CSS"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "onScreenRatio",
+                        "value": "100"
+                    }
+                ]
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "28",
+                "name": "Ecommerce GA - promotionClick",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "promotionClick"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1683744464562"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "39",
+                "name": "[AC] Promotion Link Click",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] Promotion Link Validation}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1683744464567"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "42",
+                "name": "[AC] Virtual Select Promotion",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "virtual_select_promotion"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1683744464568"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "48",
+                "name": "[AC] HUB Segurança - Click Link",
+                "type": "LINK_CLICK",
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1684936761916"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "60",
+                "name": "[AC] Search",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] Search Result}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "undefined"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1689690616677"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "63",
+                "name": "Consent Initialization Trigger",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "adopt-visitor-consent-ready"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1727444067566"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "triggerId": "66",
+                "name": "Consent Ready",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "adopt-consent-mode-ready"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1727449512876"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "5",
+                "name": "DataLayer - ecommerce.items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.items"
+                    }
+                ],
+                "fingerprint": "1683744464558",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "6",
+                "name": "[VAR] DataLayer - Login Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('session.user.loginType');\n  if(el && el !== '' && el !== 'Unidentified'){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1683744464611",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "7",
+                "name": "[VAR] User - Account Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_account_type = user_olx.gtm_user_72;\n  \n  return user_account_type;\n}"
+                    }
+                ],
+                "fingerprint": "1683744464612",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "8",
+                "name": "[VAR] DataLayer - userID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('session.user.userID');\n  if(el && el !== '' && el !== 'Unidentified'){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1683744464612",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "9",
+                "name": "[VAR] Cookie - userID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1683744464558",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "10",
+                "name": "[VAR] UserID Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var cUserId = {{[VAR] Cookie - userID}},\n      dtUserId = {{[VAR] DataLayer - userID}};\n  if(cUserId){\n    return cUserId;\n  } else if(dtUserId){\n    return dtUserId;\n  } else{\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1683744464613",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "11",
+                "name": "[VAR] User - Phone",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_phone = user_olx.gtm_user_73;\n  \n  return user_phone\n}"
+                    }
+                ],
+                "fingerprint": "1683744464613",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "13",
+                "name": "[VAR] User - Login Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_login_type = user_olx.gtm_user_78;\n  \n  return user_login_type \n}"
+                    }
+                ],
+                "fingerprint": "1683744464614",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "14",
+                "name": "[VAR] User - Level Account",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_level_account = user_olx.gtm_user_77;\n  \n  return user_level_account \n}"
+                    }
+                ],
+                "fingerprint": "1683744464614",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "15",
+                "name": "[VAR] User - Gender",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_gender = user_olx.gtm_user_75;\n  \n  return user_gender;\n}"
+                    }
+                ],
+                "fingerprint": "1683744464614",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "16",
+                "name": "[VAR] User - Zip Code",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_zip_code = user_olx.gtm_user_74;\n  \n  return user_zip_code \n}"
+                    }
+                ],
+                "fingerprint": "1683744464615",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "17",
+                "name": "[VAR] DataLayer - Page Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('page.pageType') ||\n           google_tag_manager[{{Container ID}}].dataLayer.get('pageType');\n  if(el && el !== ''){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1683744464615",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "18",
+                "name": "[VAR] DataLayer - Content Group",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n var content_group;\n var url = document.URL.split(\"olx.com.br/\")[1].split(\".\")[0].split(\"?\")[0]\n   \n if(url.indexOf(\"seguranca/\") != -1) { \n   \n   //validando para LPs com dominio de sec\n   url = url.replace(\"hubseguranca/\",\"hub-seguranca_\")\n \n   if(url == \"hub-seguranca_\"){\n   url = \"hub-seguranca_home\"\n   }\n }\n \n  url = url.split(\"/\")[0]\n  \n  content_group = url;\n  \n  if(!content_group) {\n      content_group = \"hub-seguranca_home\";\n      if({{Page URL}}.indexOf(\"post_type=post\") != -1) { return \"hub-seguranca_resultado-de-busca\"}\n      return content_group;\n}\n\n  if(content_group.indexOf(\"hubseguranca-\") != -1){\n  \n  content_group = \"hub-seguranca_\"+content_group.split(\"hubseguranca-\")[1];\n    return content_group;\n  }\n\n  if(content_group.indexOf(\"hub-seguranca\") == -1){\n  \n  content_group = \"hub-seguranca_\"+content_group;\n    return content_group;\n  }\n \n  //return content_group;\n}\n"
+                    }
+                ],
+                "fingerprint": "1689695226819",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "19",
+                "name": "[VAR] User - E-mail",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_email = user_olx.gtm_user_76;\n  \n  return user_email;\n}"
+                    }
+                ],
+                "fingerprint": "1683744464616",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "24",
+                "name": "[VAR] Rótulo do Link",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n var text = {{Click Text}};\n\n  // validando em caso de ser uma img\n if(!text){\n \n  text = {{Click Element}}.href.split(\"https/www.olx.com.br/seguranca/\")[1] ? {{Click Element}}.href.split(\"https/www.olx.com.br/seguranca/\")[1] : {{Click Element}}.href.split(\"https/www.olx.com.br/\")[1];\n\n   if(!text){\n  text = {{Click Element}}.href.split(\"com.br/seguranca/\")[1];\n }\n \n if(!text){\n  text = {{Click Element}}.href.split(\"com.br/\")[1];\n }\n \n  //removendo o '/'\n text = text.split(\"/\")[0];\n \n\n  //trocando o '/' por ''\n  if(text.indexOf(\"/\") != -1){\n    text = text.replace(\"/\",\"\");\n  }\n\n  // removendo os ' - '\n  //text = text.replaceAll(\"-\",\" \");\n\n  // deixando a primeira letra captalizada\n  //text = text.charAt(0).toUpperCase() + text.slice(1);\n\n }\n \n return text;\n}"
+                    }
+                ],
+                "fingerprint": "1683744464616",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "25",
+                "name": "[VAR] Promotion Link Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n \n  var url = new URL({{Click URL}});\n  if(url.searchParams.get(\"ic\") || url.searchParams.get(\"local\")){\n    return true\n  } else {\n    return false\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1683744464617",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "30",
+                "name": "iC - Click URL - Parâmetro message",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"message\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1683744464618",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "31",
+                "name": "iC - Click URL - Parâmetro ic",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"ic\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1683744464618",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "32",
+                "name": "[VAR] GAU HUB Segurança",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] DataLayer - Content Group}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "72"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Account Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "73"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Phone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "74"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Zip Code}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "75"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Gender}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "76"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - E-mail}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "77"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Level Account}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "78"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Login Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] Search Result}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-147552108-2"
+                    }
+                ],
+                "fingerprint": "1689693378694"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "40",
+                "name": "iC - Click URL - Parâmetro campaign",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"campaign\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1683744464619",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "43",
+                "name": "DataLayer - vEcommerce.items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "vEcommerce.items"
+                    }
+                ],
+                "fingerprint": "1683744464568",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "45",
+                "name": "iC - Click URL - Parâmetro local",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"local\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1683744464620",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "53",
+                "name": "[VAR] GAU Principal",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] DataLayer - Content Group}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "72"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Account Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "73"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Phone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "74"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Zip Code}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "75"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Gender}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "76"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - E-mail}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "77"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Level Account}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "78"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{[VAR] User - Login Type}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-70177409-2"
+                    }
+                ],
+                "fingerprint": "1684345251667"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "58",
+                "name": "[VAR] GAU - Virtual Promotion Click - Calhau e Banner App",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\tvar search = new URL(document.location.href) || undefined;\n\tif(search && (search.searchParams.get(\"local\") == 'calhau' || search.searchParams.get(\"local\").indexOf(\"_app\") !== -1)){\n\t\tvar ecommerceData = {\n\t\t\t'ecommerce': {\n\t\t\t\t'promoClick': {\n\t\t\t\t\t'promotions': [\n                      {\n\t\t\t\t\t\t'id': search.searchParams.get(\"ic\"),\n\t\t\t\t\t\t'name': search.searchParams.get(\"campaign\"),\n\t\t\t\t\t\t'creative': search.searchParams.get(\"message\"),\n\t\t\t\t\t\t'position': search.searchParams.get(\"local\")\n                      }\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn ecommerceData;\n\t} else{\n\t\treturn undefined;\n\t}\n}"
+                    }
+                ],
+                "fingerprint": "1684360365174",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "variableId": "59",
+                "name": "[VAR] Search Result",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('siteSearchTerm');\n  if(el && el !== ''){\n    return el;\n  } else{\n    return undefined\n  }\n}\n"
+                    }
+                ],
+                "fingerprint": "1689690571763",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "type": "CONTAINER_ID",
+                "name": "Container ID"
+            }
+        ],
+        "fingerprint": "1789136999557",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/116800845/versions/0?apiLink=version",
+        "customTemplate": [
+            {
+                "accountId": "94905",
+                "containerId": "116800845",
+                "templateId": "62",
+                "name": "AdOpt",
+                "fingerprint": "1727443849978",
+                "templateData": "___TERMS_OF_SERVICE___\n\nBy creating or modifying this file you agree to Google Tag Manager's Community\nTemplate Gallery Developer Terms of Service available at\nhttps://developers.google.com/tag-manager/gallery-tos (or such other URL as\nGoogle may provide), as modified from time to time.\n\n\n___INFO___\n\n{\n  \"type\": \"TAG\",\n  \"id\": \"cvt_temp_public_id\",\n  \"version\": 1,\n  \"securityGroups\": [],\n  \"displayName\": \"AdOpt\",\n  \"brand\": {\n    \"id\": \"github.com_goadopt\",\n    \"displayName\": \"goadopt\",\n    \"thumbnail\": \"data:image/png;base64,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\\u003d\"\n  },\n  \"description\": \"Template to work with the AdOpt standard consent management solution.\",\n  \"containerContexts\": [\n    \"WEB\"\n  ]\n}\n\n\n___TEMPLATE_PARAMETERS___\n\n[\n  {\n    \"type\": \"CHECKBOX\",\n    \"name\": \"universalBlock\",\n    \"checkboxText\": \"Block even when granted by default\",\n    \"simpleValueType\": true,\n    \"help\": \"In some selected locations, the visitor\\u0027s local legislation allows you to set some properties as granted by default. If you prefer to use the universal default, which is \\\"denied\\\" and only use the visitor\\u0027s explicit consent,  select this option.\",\n    \"defaultValue\": false\n  }\n]\n\n\n___SANDBOXED_JS_FOR_WEB_TEMPLATE___\n\n// const log = require('logToConsole');\nconst setDefaultConsentState =require('setDefaultConsentState');\nconst updateConsentState = require('updateConsentState');\nconst setInWindow = require('setInWindow');\nconst localStorage = require('localStorage');\nconst createQueue = require('createQueue');\nconst universalBlock = data.universalBlock ? true : false;\n\n\nif (universalBlock === false) {\n  setDefaultConsentState({\n    'analytics_storage': 'granted',\n    'region': ['BR']\n  });\n}\n\nsetDefaultConsentState({\n  ad_storage: 'denied',\n  ad_user_data: 'denied',\n  ad_personalization: 'denied',\n  analytics_storage: 'denied',\n  functionality_storage: 'denied',\n  personalization_storage: 'denied',\n  security_storage: 'granted', \n  'wait_for_update': 500\n});\n\nsetInWindow('adopt-is-consent-mode', true, true);\n\n\nlet consentObj = null;\nconst localStorageKey = \"adoptConsentMode\";\nconst consentString = localStorage.getItem(localStorageKey);\n\nif (consentString !== '' && (typeof consentString !== 'undefined') && consentString !== null) {\n  if ((consentString.indexOf(\"{\") === 0) && (consentString.indexOf(\"}\") > 0)) {\n    // Turn consentString into object\n    consentObj = {\n      preferences: 'denied',\n      statistics: 'denied',\n      marketing: 'denied',\n      readConsentString: function (str) {\n        let tempA = str.replace('{', '').replace('}', '').split(\",\"),\n            tempB = {};\n        for (let i = 0; i < tempA.length; i += 1) {\n          let tempC = tempA[i].split(':');\n          tempB[tempC[0].trim().replace('\"', \"\").replace('\"', \"\")] = tempC[1].trim();\n        }\n        \n        consentObj.preferences = tempB.preferences === 'true' ? 'granted' : 'denied';\n        consentObj.func = tempB.func === 'true' ? 'granted' : 'denied';\n        consentObj.statistics = tempB.statistics === 'true' ? 'granted' : 'denied';\n        consentObj.marketing = tempB.marketing === 'true' ? 'granted' : 'denied';\n        consentObj.region = tempB.region; // This is the region wherefrom the consent was originally submitted\n        \n      }\n    };\n\n    consentObj.readConsentString(consentString);\n    \n    updateConsentState({\n      'ad_storage': consentObj.marketing,\n      'ad_user_data': consentObj.marketing,\n      'ad_personalization': consentObj.marketing,\n      'analytics_storage': consentObj.statistics,\n      'functionality_storage': consentObj.func,\n      'personalization_storage': consentObj.preferences,\n      'security_storage': 'granted'\n    });\n  }\n}\n\n\nconst dataLayerPush = createQueue('dataLayer');\ndataLayerPush({\"event\": \"adopt-consent-mode-ready\"}); // this one is used for simple triggers\nsetInWindow('adoptConsentModeReady', \"adoptConsentModeReady\", true); // this one is used for advanced triggers\n\ndata.gtmOnSuccess();\n\n\n___WEB_PERMISSIONS___\n\n[\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_consent\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"consentTypes\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"ad_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"analytics_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"functionality_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"personalization_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"security_storage\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"wait_for_update\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"ad_user_data\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"consentType\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"ad_personalization\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_globals\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keys\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"adopt-is-consent-mode\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"dataLayer\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  }\n                ]\n              },\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"execute\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"adoptConsentModeReady\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  },\n  {\n    \"instance\": {\n      \"key\": {\n        \"publicId\": \"access_local_storage\",\n        \"versionId\": \"1\"\n      },\n      \"param\": [\n        {\n          \"key\": \"keys\",\n          \"value\": {\n            \"type\": 2,\n            \"listItem\": [\n              {\n                \"type\": 3,\n                \"mapKey\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"key\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"read\"\n                  },\n                  {\n                    \"type\": 1,\n                    \"string\": \"write\"\n                  }\n                ],\n                \"mapValue\": [\n                  {\n                    \"type\": 1,\n                    \"string\": \"adoptConsentMode\"\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": true\n                  },\n                  {\n                    \"type\": 8,\n                    \"boolean\": false\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      ]\n    },\n    \"clientAnnotations\": {\n      \"isEditedByUser\": true\n    },\n    \"isRequired\": true\n  }\n]\n\n\n___TESTS___\n\nscenarios: []\n\n\n___NOTES___\n\nCreated on 4/23/2024, 11:31:09 AM\n\n\n",
+                "galleryReference": {
+                    "host": "github.com",
+                    "owner": "goadopt",
+                    "repository": "adopt-gtm-template",
+                    "version": "60999fa4671bb35300280e9b1d0222cfe99ca5b2",
+                    "signature": "cd81a3b046f1422cd2a627f62e8aa4d0c5f9400e2289c1042d8b25bc8bb98883"
+                }
+            }
+        ]
+    }
+}

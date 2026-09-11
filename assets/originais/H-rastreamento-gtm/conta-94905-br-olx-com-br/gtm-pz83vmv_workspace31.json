@@ -1,0 +1,2563 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:30:27",
+    "containerVersion": {
+        "path": "accounts/94905/containers/97540812/versions/0",
+        "accountId": "94905",
+        "containerId": "97540812",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/97540812",
+            "accountId": "94905",
+            "containerId": "97540812",
+            "name": "OLX - LPs",
+            "publicId": "GTM-PZ83VMV",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1727451936136",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/97540812/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-PZ83VMV"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "5",
+                "name": "[TAG] GA - Pageview - All Pages",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ecommerceMacroData",
+                        "value": "{{[VAR] GAU - Virtual Promotion Click - Calhau e Banner App}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU - Settings}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1672266380803",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "9",
+                "name": "[TAG] GA4 - Settings",
+                "type": "googtag",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "999"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Account Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_phone"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Phone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_zip_code"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Zip Code}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_gender"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Gender}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_email"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - E-mail}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_level"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Level Account}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_login_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Login Type}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - Page Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1709843967566",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "16",
+                "name": "[TAG] DataLayer Cleaner",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  dataLayer.push({\n    ecommerce: undefined,\n    vEcommerce: undefined,\n\tinteraction_details: undefined\n  });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1672277720307",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "24",
+                "name": "[TAG] GA4 - Virtual Select Promotion - Calhau & App Banner",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var search = new URL(document.location.href) || undefined,\n      searchLocal = search.searchParams.get(\"local\") || undefined;\n  if(search && searchLocal && (searchLocal == 'calhau' || searchLocal.indexOf(\"_app\") !== -1)){\n    window.dataLayer.push({\n      'event': 'virtual_select_promotion',\n      'vEcommerce':{\n        'items':[\n          {\n            'promotion_id': search.searchParams.get(\"ic\"),\n            'promotion_name': search.searchParams.get(\"campaign\"),\n            'creative_name': search.searchParams.get(\"message\"),\n            'creative_slot': search.searchParams.get(\"local\")\n          }\n        ]\n      }\n    });\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1682618468870",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "27",
+                "name": "Evento GA - PromotionClick",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  dataLayer.push({\n    'event': 'promotionClick',\n    'ecommerce': {\n      'promoClick': {\n        'promotions': [\n          {\n            'id': {{iC - Click URL - Parâmetro ic}},\n            'name': {{iC - Click URL - Parâmetro campaign}},\n            'position': {{iC - Click URL - Parâmetro local}},\n            'creative': {{iC - Click URL - Parâmetro message}}\n          }]\n      },\n      'items':[\n        {\n          'promotion_id': {{iC - Click URL - Parâmetro ic}},\n          'promotion_name': {{iC - Click URL - Parâmetro campaign}},\n          'creative_name': {{iC - Click URL - Parâmetro message}},\n          'creative_slot': {{iC - Click URL - Parâmetro local}}\n        }\n      ]\n    }\n  });\n</script> "
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1682617110597",
+                "firingTriggerId": [
+                    "26"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "29",
+                "name": "Evento GA4 - Ecommerce - Select Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - ecommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "select_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1782822191499",
+                "firingTriggerId": [
+                    "28",
+                    "33"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_NEEDED"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "31",
+                "name": "Evento GA4 - Ecommerce - View Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - ecommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "view_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1682617110602",
+                "firingTriggerId": [
+                    "30"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "34",
+                "name": "Evento GA4 - Ecommerce - Virtual Select Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - vEcommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "select_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1682617110600",
+                "firingTriggerId": [
+                    "33"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "39",
+                "name": "Evento GA - Ecommerce - Promotion Click",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "ecommerce"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU - Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "promo-click"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "banner"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1682617110600",
+                "firingTriggerId": [
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "40",
+                "name": "Evento GA - Ecommerce - View Promotion",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useEcommerceDataLayer",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "ecommerce"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useGA4SchemaForEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{[VAR] GAU - Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "promo-view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "banner"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1682617110601",
+                "firingTriggerId": [
+                    "30"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "42",
+                "name": "Evento GA - View Promotion",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nvar links = document.querySelectorAll(\"a\"),\n\tic_ga4 = [],\n\tic_gau = [];\n\t\nfor(i=0; i<links.length; i++){\n    if(links[i].getAttribute(\"href\").indexOf(\"ic=\") != -1){\n\t\tvar ic_code = (new URL(links[i].getAttribute(\"href\"))).searchParams.get(\"ic\"),\n\t\t\tic_campaign = (new URL(links[i].getAttribute(\"href\"))).searchParams.get(\"campaign\"),\n\t\t\tic_local = (new URL(links[i].getAttribute(\"href\"))).searchParams.get(\"local\"),\n\t\t\tic_message = (new URL(links[i].getAttribute(\"href\"))).searchParams.get(\"message\");\n\t\t\n\t\tic_ga4.push({\n\t\t\t'promotion_id': ic_code,\n\t\t\t'promotion_name': ic_campaign,\n\t\t\t'creative_slot': ic_local,\n\t\t\t'creative_name': ic_message\t\t\t\n\t\t});\n\t\t\n\t\tic_gau.push({\n\t\t\t'id': ic_code,\n\t\t\t'name': ic_campaign,\n\t\t\t'position': ic_local,\n\t\t\t'creative': ic_message\t\t\t\n\t\t});\n\t}\n}\n\nwindow.dataLayer.push({\n  'event': 'view_promotion',\n  'ecommerce': {\n    'items': ic_ga4,\n\t'promoView': {\n      'promotions': ic_gau\n    }\n  }  \n});\n\n\n// ic = Código da promoção interna\n// local = Posição da promoção interna\n// campaign = Nome da promoção interna\n// message = Anúncio da promoção interna\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1682617274797",
+                "firingTriggerId": [
+                    "41"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "45",
+                "name": "[PXL] Insider - CRM Web Push",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script async src=\"//olxbrclassificados.api.useinsider.com/ins.js?id=10007563\"></script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1682618108290",
+                "firingTriggerId": [
+                    "44"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "61",
+                "name": "[TAG] GA4 - Pageview - All Pages",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - page_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] Content Group}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "olx_user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Account Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_phone"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Phone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_zip_code"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Zip Code}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_gender"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Gender}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_email"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - E-mail}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_account_level"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Level Account}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_login_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User - Login Type}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1743716213565",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "82",
+                "name": "[TAG] GA4 - Form_submit",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - content_group}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - page_name}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "form_submit"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1743768877451",
+                "firingTriggerId": [
+                    "81",
+                    "94"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "85",
+                "name": "[TAG] Virtual Select Promotion - Intercom",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var curUrl = new URL(window.location.href);\n  var searchParams = curUrl.searchParams;\n  var searchLocal = searchParams.get(\"local\") || undefined;\n\n  if(searchLocal && (searchLocal.indexOf(\"intercom\") !== -1 || searchLocal.indexOf(\"Intercom\") !== -1))\n  {\n    window.dataLayer.push({\n      'event': 'virtual_select_promotion',\n      'vEcommerce':{\n        'items':[\n          {\n            'promotion_id': search.searchParams.get(\"ic\"),\n            'promotion_name': search.searchParams.get(\"campaign\"),\n            'creative_name': search.searchParams.get(\"message\"),\n            'creative_slot': search.searchParams.get(\"local\")\n          }\n        ]\n      }\n    });\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1731510233327",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "87",
+                "name": "[TAG] GA4 - Ecommerce - Virtual Select Promotion",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "items"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] DataLayer - vEcommerce.items}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "select_promotion"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1731510426405",
+                "firingTriggerId": [
+                    "86"
+                ],
+                "teardownTag": [
+                    {
+                        "tagName": "[TAG] DataLayer Cleaner"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "89",
+                "name": "[TAG] Form_submit - Natal Solidário",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "form_submit"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1733927269876",
+                "firingTriggerId": [
+                    "88"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "97",
+                "name": "[TAG] Promoção Carrão - FAQ",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enhancedUserId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "faq_question"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] Promoção Carrão - Accordion FAQ Question}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "promo_carrao_faq"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1744054627950",
+                "firingTriggerId": [
+                    "96"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "100",
+                "name": "[TAG] Promoção Carrão - Event Listener - FAQ",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  document.querySelectorAll(\".accordion-collapsed\").forEach(function(element) {\n    element.addEventListener(\"click\", function(event) {\n      var clickedAccordion = event.target.closest(\".accordion-collapsed\");\n      if (clickedAccordion !== element) return;\n      // Impede a execução se o clique for em filhos internos\n      var questionText = element.innerText.trim(); // Pega o texto do botão antes da alteração\n      \n      // Timeout pequeno para esperar o DOM atualizar após o clique\n      setTimeout(function() {\n        // Verifica se o elemento AINDA tem a classe 'accordion-collapsed'\n        // Se não tiver mais, significa que foi aberto\n        if (!element.classList.contains(\"accordion-collapsed\")) {\n          window.dataLayer = window.dataLayer || [];\n          window.dataLayer.push({\n            event: \"faq_interaction\",\n            faq_question: questionText\n          });\n        }\n      }, 500);\n    });\n  });\n\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1744211171079",
+                "firingTriggerId": [
+                    "99"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "tagId": "108",
+                "name": "GA4 - LPs Unbounce - evento de click",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "button_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{DL - button_name}}{{[VAR] - Promotion Creative}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "lp_cta_click"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{[VAR] GA4 - G-50C013M2CC}}"
+                    }
+                ],
+                "fingerprint": "1783089026663",
+                "firingTriggerId": [
+                    "106",
+                    "28"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "20",
+                "name": "DOM Ready",
+                "type": "DOM_READY",
+                "fingerprint": "1672266187391"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "26",
+                "name": "[AC] Promotion Link Click",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] Promotion Link Validation}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1672277990515"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "28",
+                "name": "Ecommerce GA - promotionClick",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "promotionClick"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1672278075779"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "30",
+                "name": "Ecommerce GA - View Promotion",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "view_promotion"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1672278247150"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "33",
+                "name": "Ecommerce GA - Virtual Select Promotion",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "virtual_select_promotion"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1672278374399"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "41",
+                "name": "[AC] View Promotion Link",
+                "type": "ELEMENT_VISIBILITY",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] Promotion Link Validation}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1672279225162",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOnScreenDuration",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDomChangeListener",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "elementSelector",
+                        "value": "a[href*=\"ic=\"]"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "firingFrequency",
+                        "value": "ONCE"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectorType",
+                        "value": "CSS"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "onScreenRatio",
+                        "value": "1"
+                    }
+                ]
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "44",
+                "name": "[AC] Clube OLX",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "clubeolx.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1682618096798"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "81",
+                "name": "[AC] Form_submit - Festival da mudança",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "gtm.click"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Click Classes}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "sc-ptSuy cPSOyZ"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "festivaldamudanca"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1731357300509"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "86",
+                "name": "[AC] DataLayer - Virtual Select Promotion",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "virtual_select_promotion"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1731510268630"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "88",
+                "name": "[AC] Form_submit - Natal Solidário",
+                "type": "ELEMENT_VISIBILITY",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Path}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "natal-solidario-olx"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1733927144712",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useOnScreenDuration",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDomChangeListener",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "elementSelector",
+                        "value": "#ds-modal-body-18"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "firingFrequency",
+                        "value": "ONCE_PER_ELEMENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "selectorType",
+                        "value": "CSS"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "onScreenRatio",
+                        "value": "100"
+                    }
+                ]
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "94",
+                "name": "[AC] form_submit - promocaoCarrao",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "form_submit"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "promocaocarraoolx"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1743768860649"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "96",
+                "name": "[AC] Promoção Carrão - Cliques no FAQ",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "faq_interaction"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1744054619007"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "99",
+                "name": "[AC] Promoção Carrão - DOM Ready",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page Hostname}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "promocaocarraoolx.com.br"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1744054129716"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "106",
+                "name": "Custom Event - lp_cta_click",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "lp_cta_click"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1782327630732"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "triggerId": "110",
+                "name": "Todos os elementos - test",
+                "type": "CLICK",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] Cookie - userID}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "email"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1783089403927"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "3",
+                "name": "[VAR] DataLayer - Page Type",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page.pageType"
+                    }
+                ],
+                "fingerprint": "1669145408723",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "4",
+                "name": "[VAR] GAU - Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "allowLinker"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "userId"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] UserID Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "56"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Content Group}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "contentGroup",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "group",
+                                        "value": "{{[VAR] Content Group}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-70177409-2"
+                    }
+                ],
+                "fingerprint": "1682616949546"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "7",
+                "name": "[VAR] GAU - Virtual Promotion Click - Calhau e Banner App",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\tvar search = new URL(document.location.href) || undefined;\n\tif(search && (search.searchParams.get(\"local\") == 'calhau' || search.searchParams.get(\"local\").indexOf(\"_app\") !== -1)){\n\t\tvar ecommerceData = {\n\t\t\t'ecommerce': {\n\t\t\t\t'promoClick': {\n\t\t\t\t\t'promotions': [\n                      {\n\t\t\t\t\t\t'id': search.searchParams.get(\"ic\"),\n\t\t\t\t\t\t'name': search.searchParams.get(\"campaign\"),\n\t\t\t\t\t\t'creative': search.searchParams.get(\"message\"),\n\t\t\t\t\t\t'position': search.searchParams.get(\"local\")\n                      }\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn ecommerceData;\n\t} else{\n\t\treturn undefined;\n\t}\n}"
+                    }
+                ],
+                "fingerprint": "1672278492849",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "10",
+                "name": "[VAR] Cookie - userID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1672260378676",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "11",
+                "name": "[VAR] DataLayer - userID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  var el = google_tag_manager[{{Container ID}}].dataLayer.get('session.user.userID');\n  if(el && el !== '' && el !== 'Unidentified'){\n    return el;\n  } else{\n    return undefined\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1672260402663",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "12",
+                "name": "[VAR] UserID Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var cUserId = {{[VAR] Cookie - userID}};\n  var dtUserId = {{[VAR] DataLayer - userID}};\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(cUserId)) {\n    return cUserId;\n  } \n  else if (isValidUserId(dtUserId)) {\n    return dtUserId;\n  } \n  else {\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1752694287037",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "13",
+                "name": "[VAR] GA4 - G-50C013M2CC",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-50C013M2CC"
+                    }
+                ],
+                "fingerprint": "1672260496540",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "17",
+                "name": "[VAR] DataLayer - ecommerce.items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.items"
+                    }
+                ],
+                "fingerprint": "1672263315808",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "25",
+                "name": "[VAR] Promotion Link Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n \n  var url = new URL({{Click URL}});\n  if(url.searchParams.get(\"ic\") || url.searchParams.get(\"local\")){\n    return true\n  } else {\n    return false\n  }\n\n}"
+                    }
+                ],
+                "fingerprint": "1672277978248",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "32",
+                "name": "[VAR] DataLayer - vEcommerce.items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "vEcommerce.items"
+                    }
+                ],
+                "fingerprint": "1672278321017",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "35",
+                "name": "iC - Click URL - Parâmetro campaign",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"campaign\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1672278626419",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "36",
+                "name": "iC - Click URL - Parâmetro ic",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"ic\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1672278645808",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "37",
+                "name": "iC - Click URL - Parâmetro local",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"local\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1672278668536",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "38",
+                "name": "iC - Click URL - Parâmetro message",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n\n  var params = {{Click URL}}.split(\"?\")[1]\n  \n  var searchParams = new URLSearchParams(params);\n\n  var value = searchParams.get(\"message\")\n  \n  return value\n\n} "
+                    }
+                ],
+                "fingerprint": "1672278690321",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "43",
+                "name": "[VAR] Content Group",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n var url = document.URL.split(\"clubeolx.com.br/\")[1].split(\".\")[0].split(\"?\")[0];\n var url_pri = document.URL.split(\"https://\")[1].split(\".com.br/\")[0];\n var url_sec = document.URL.split(\".com.br/\")[1].split(\".\")[0].split(\"?\")[0];\n\n var page_type = {{[VAR] DataLayer - Page Type}};\n var content_group = page_type ? page_type : url_pri+\"_\"+url_sec;\n\n\n switch(url_pri){\n \n   case \"clubeolx\":\n     content_group = \"clube_olx_login\"\n }\n\n  return content_group;\n}\n"
+                    }
+                ],
+                "fingerprint": "1682620465272",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "46",
+                "name": "[VAR] User - Login Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_login_type = user_olx.gtm_user_78;\n  \n  return user_login_type \n}"
+                    }
+                ],
+                "fingerprint": "1682619424430",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "47",
+                "name": "[VAR] User - Gender",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_gender = user_olx.gtm_user_75;\n  \n  return user_gender;\n}"
+                    }
+                ],
+                "fingerprint": "1682619424430",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "48",
+                "name": "[VAR] User - Public Account ID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_public_id = user_olx.gtm_user_71;\n  \n  return user_public_id\n}"
+                    }
+                ],
+                "fingerprint": "1682619424431",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "49",
+                "name": "[VAR] User - Account Type",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_account_type = user_olx.gtm_user_72;\n  \n  return user_account_type;\n}"
+                    }
+                ],
+                "fingerprint": "1682619424431",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "50",
+                "name": "[VAR] User - Level Account",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_level_account = user_olx.gtm_user_77;\n  \n  return user_level_account \n}"
+                    }
+                ],
+                "fingerprint": "1682619424432",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "51",
+                "name": "[VAR] User - Phone",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_phone = user_olx.gtm_user_73;\n  \n  return user_phone\n}"
+                    }
+                ],
+                "fingerprint": "1682619424432",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "52",
+                "name": "[VAR] User - Type Profile",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_type_profile = user_olx.gtm_user_72;\n  \n  return user_type_profile\n}"
+                    }
+                ],
+                "fingerprint": "1682619424433",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "53",
+                "name": "[VAR] User - Zip Code",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_zip_code = user_olx.gtm_user_74;\n  \n  return user_zip_code \n}"
+                    }
+                ],
+                "fingerprint": "1682619424433",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "54",
+                "name": "[VAR] User - E-mail",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n\n  var user_olx = localStorage.getItem('user_olx'),\n      user_olx = JSON.parse(user_olx),\n      user_email = user_olx.gtm_user_76;\n  \n  return user_email;\n}"
+                    }
+                ],
+                "fingerprint": "1682619424434",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "90",
+                "name": "[VAR] dataLayer - content_group",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "content_group"
+                    }
+                ],
+                "fingerprint": "1743715133680",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "91",
+                "name": "[VAR] dataLayer - page_name",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var dataLayerContent = window.dataLayer || [];\n  var pageName = undefined;\n\n  for (var i = dataLayerContent.length - 1; i >= 0; i--) {\n    if (dataLayerContent[i] &&\n        dataLayerContent[i].page_name !== undefined &&\n        dataLayerContent[i].page_name !== null &&\n        dataLayerContent[i].page_name !== '') {\n      pageName = dataLayerContent[i].page_name;\n      break;\n    }\n  }\n\n  if (pageName === undefined) {\n    for (var j = dataLayerContent.length - 1; j >= 0; j--) {\n      if (dataLayerContent[j] &&\n          dataLayerContent[j].pageInfo &&\n          dataLayerContent[j].pageInfo.pageName !== undefined &&\n          dataLayerContent[j].pageInfo.pageName !== null &&\n          dataLayerContent[j].pageInfo.pageName !== '') {\n        pageName = dataLayerContent[j].pageInfo.pageName;\n        break;\n      }\n    }\n  }\n\n  return pageName;\n}"
+                    }
+                ],
+                "fingerprint": "1752091603280",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "98",
+                "name": "[VAR] Promoção Carrão - Accordion FAQ Question",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "faq_question"
+                    }
+                ],
+                "fingerprint": "1744054296760",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "107",
+                "name": "DL - button_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "button_name"
+                    }
+                ],
+                "fingerprint": "1782327853194",
+                "formatValue": {}
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "variableId": "109",
+                "name": "[VAR] - Promotion Creative",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.promoClick.promotions.0.creative"
+                    }
+                ],
+                "fingerprint": "1782821088276",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "CLICK_TARGET",
+                "name": "Click Target"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "CONTAINER_VERSION",
+                "name": "Container Version"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "97540812",
+                "type": "CONTAINER_ID",
+                "name": "Container ID"
+            }
+        ],
+        "fingerprint": "1789137027399",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/97540812/versions/0?apiLink=version"
+    }
+}

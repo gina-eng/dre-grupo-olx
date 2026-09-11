@@ -1,0 +1,75 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:16:41",
+    "containerVersion": {
+        "path": "accounts/4412254379/containers/95918580/versions/0",
+        "accountId": "4412254379",
+        "containerId": "95918580",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/4412254379/containers/95918580",
+            "accountId": "4412254379",
+            "containerId": "95918580",
+            "name": "VivaReal - Container BLOG (WIP)",
+            "publicId": "GTM-5DV89XS",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1667340138325",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/4412254379/containers/95918580/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-5DV89XS"
+            ]
+        },
+        "builtInVariable": [
+            {
+                "accountId": "4412254379",
+                "containerId": "95918580",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "95918580",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "95918580",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "95918580",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "95918580",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789143401194",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/4412254379/containers/95918580/versions/0?apiLink=version"
+    }
+}

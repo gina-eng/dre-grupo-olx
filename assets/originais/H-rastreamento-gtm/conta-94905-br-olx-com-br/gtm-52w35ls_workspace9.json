@@ -1,0 +1,1306 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 14:22:19",
+    "containerVersion": {
+        "path": "accounts/94905/containers/127330786/versions/0",
+        "accountId": "94905",
+        "containerId": "127330786",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/94905/containers/127330786",
+            "accountId": "94905",
+            "containerId": "127330786",
+            "name": "[New] Android Tracking",
+            "publicId": "GTM-52W35LS",
+            "usageContext": [
+                "ANDROID_SDK_5"
+            ],
+            "fingerprint": "1687543005935",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/94905/containers/127330786/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-52W35LS"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "tagId": "8",
+                "name": "[TAG] All Events - Android",
+                "type": "af",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "devKey",
+                        "value": "{{[VAR] AppsFlyer - Dev Key}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventValue",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_registration_method"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Method}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_search_string"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Search Term}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_price"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Price}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_content_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Item ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_content_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] AppsFlyer - Content Type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_quantity"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Quantity}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_revenue"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Value}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_order_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Transaction ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "af_receipt_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - Transaction ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "main_category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Main Category}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "main_category_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Main Category ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "sub_category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Subcategory}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "sub_category_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Sub Category ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "seller_category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Seller Category}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "state"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - State}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "city"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - City}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "district"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - District}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "area_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Area Name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "seller_public_account_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Seller Public Account ID}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "seller_account_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Seller Account ID}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "appId",
+                        "value": "{{App ID}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "appsflyerDeviceId",
+                        "value": "{{[VAR] AppsFlyer - Device ID}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{[VAR] AppsFlyer - Default Events}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCurrency",
+                        "value": "{{[VAR] Ecommerce - Currency}}"
+                    }
+                ],
+                "fingerprint": "1689770977901",
+                "firingTriggerId": [
+                    "30"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "triggerId": "30",
+                "name": "[AC] Firebase Event - Purchase + Replies Novos",
+                "type": "ALWAYS",
+                "filter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Event Name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(purchase|reply_whatsapp|reply_call|reply_sms)$"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "ignore_case",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1689788910553"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "3",
+                "name": "[VAR] AppsFlyer - Dev Key",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "dev_key"
+                    }
+                ],
+                "fingerprint": "1689605629188"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "4",
+                "name": "[VAR] AppsFlyer - Device ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "af_id"
+                    }
+                ],
+                "fingerprint": "1689605768628"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "5",
+                "name": "[VAR] Perma Param - App ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "com.schibsted.bomnegocio.androidApp"
+                    }
+                ],
+                "fingerprint": "1689606691335"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "6",
+                "name": "[VAR] Ecommerce - Currency",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "allEventParam",
+                        "value": "currency"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "BRL"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "All Events"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689610496604"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "9",
+                "name": "[VAR] Ecommerce - Value",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "allEventParam",
+                        "value": "value"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "All Events"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689608635845"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "10",
+                "name": "[VAR] Ecommerce - Price",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "allEventParam",
+                        "value": "price"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "All Events"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689608596450"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "11",
+                "name": "[VAR] Ecommerce - Transaction ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "ecommercePurchaseParam",
+                        "value": "transaction_id"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "ecommerce_purchase"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689608460827"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "12",
+                "name": "[VAR] Ecommerce - Item ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "allEventParam",
+                        "value": "item_id"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "All Events"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689608557300"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "13",
+                "name": "[VAR] Event Param - Subcategory",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "sub_category"
+                    }
+                ],
+                "fingerprint": "1689609655097"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "14",
+                "name": "[VAR] AppsFlyer - Default Events",
+                "type": "smm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Event Name}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "{{Event Name}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "sign_up"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_complete_registration"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "view_search_results"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_search"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "view_item"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_content_view"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "view_item_list"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_list_view"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "add_to_wishlist"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_add_to_wishlist"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "add_to_cart"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_add_to_cart"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "begin_checkout"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_initiated_checkout"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "purchase"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "af_purchase"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1689611038405"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "15",
+                "name": "[VAR] Event Param - Method",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "method"
+                    }
+                ],
+                "fingerprint": "1689610013232"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "16",
+                "name": "[VAR] Ecommerce - Search Term",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "allEventParam",
+                        "value": "search_term"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "All Events"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689610136163"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "17",
+                "name": "[VAR] Ecommerce - List Name",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "item_list_name"
+                    }
+                ],
+                "fingerprint": "1689610690409"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "18",
+                "name": "[VAR] AppsFlyer - Content Type",
+                "type": "smm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{Event Name}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "view_item"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Event Param - Subcategory}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "view_item_list"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] Ecommerce - List Name}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1689610930067"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "19",
+                "name": "[VAR] Ecommerce - Quantity",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "allEventParam",
+                        "value": "quantity"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "checkEcommerceValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "suggestedEvent",
+                        "value": "All Events"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "SUGGESTED"
+                    }
+                ],
+                "fingerprint": "1689611265488"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "20",
+                "name": "[VAR] Event Param - Main Category",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "main_category"
+                    }
+                ],
+                "fingerprint": "1689611844232"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "21",
+                "name": "[VAR] Event Param - Main Category ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "main_category_id"
+                    }
+                ],
+                "fingerprint": "1689611877227"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "22",
+                "name": "[VAR] Event Param - Sub Category ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "sub_category_id"
+                    }
+                ],
+                "fingerprint": "1689611939079"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "23",
+                "name": "[VAR] Event Param - Seller Category",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "seller_category"
+                    }
+                ],
+                "fingerprint": "1689611978890"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "24",
+                "name": "[VAR] Event Param - State",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "state"
+                    }
+                ],
+                "fingerprint": "1689612020014"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "25",
+                "name": "[VAR] Event Param - City",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "city"
+                    }
+                ],
+                "fingerprint": "1689612046339"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "26",
+                "name": "[VAR] Event Param - District",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "district"
+                    }
+                ],
+                "fingerprint": "1689612072206"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "27",
+                "name": "[VAR] Event Param - Area Name",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "area_name"
+                    }
+                ],
+                "fingerprint": "1689612103406"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "28",
+                "name": "[VAR] Event Param - Seller Public Account ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "seller_public_account_id"
+                    }
+                ],
+                "fingerprint": "1689612825383"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "variableId": "29",
+                "name": "[VAR] Event Param - Seller Account ID",
+                "type": "md",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventType",
+                        "value": "CUSTOM"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "key",
+                        "value": "seller_account_id"
+                    }
+                ],
+                "fingerprint": "1689617659138"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "type": "APP_ID",
+                "name": "App ID"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "type": "APP_NAME",
+                "name": "App Name"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "type": "APP_VERSION_CODE",
+                "name": "App Version Code"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "type": "APP_VERSION_NAME",
+                "name": "App Version Name"
+            },
+            {
+                "accountId": "94905",
+                "containerId": "127330786",
+                "type": "EVENT_NAME",
+                "name": "Event Name"
+            }
+        ],
+        "fingerprint": "1789136539564",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/94905/containers/127330786/versions/0?apiLink=version"
+    }
+}

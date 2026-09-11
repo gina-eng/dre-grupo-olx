@@ -152,29 +152,41 @@ sai junto com o nome é a exigência do método.
 A [regra 4 do repositório](CLAUDE.md) e o
 [playbook](00-playbook/03-ciclo-90-dias-e-comites.md#3-gate-de-qualidade-da-matriz-obrigatório) são
 explícitos: **não há comitê sem Matriz aprovada**, e a validação é feita por **quem não participou
-da análise**. A independência é o ponto, quem escreveu o material não consegue testar a própria
+da análise**. A Matriz e a revisão de qualidade são a mesma sessão, não duas; no portal ela aparece
+como **revisão de qualidade**, porque "Matriz" é vocabulário interno do método. A independência é o ponto, quem escreveu o material não consegue testar a própria
 cadeia causal.
 
-São **duas revisões** no cronograma atual:
+**Atualização de 10/09: as duas revisões viraram uma, e ela ficou mais crítica, não menos.** Com a
+apresentação dos diagnósticos absorvida pelo Comitê 1, existe **um único material** e **um único
+gate** antes de um evento que agora apresenta e decide na mesma sessão. Não há mais um primeiro
+encontro em que o material é testado contra a sala antes de virar decisão.
+
+**Atualização de 11/09: a revisão foi de 01/10 para 18/09.** Com a consolidação causal e a CRT
+correndo em paralelo aos diagnósticos, o material termina de ser escrito na mesma sexta em que
+precisa ser revisado e aprovado.
 
 | Data | O quê | Bloqueia? |
 |---|---|---|
-| 28/09 | Material da apresentação dos diagnósticos | Não formalmente, mas é o primeiro material técnico que o Board da OLX vê |
-| **05/10** | **Matriz do Comitê 1** | **Sim. Bloqueio duro**: sem ela o comitê não acontece |
+| **18/09** | Material do evento único: diagnósticos, CRT, nuvem de conflito e injeção, **e a Matriz no mesmo dia** | **Sim. Bloqueio duro**: sem ela o comitê não acontece |
+
+> 🔴 **Isso torna a nomeação do revisor urgente, não importante.** Revisar num dia material que levou
+> uma semana para ser escrito só funciona se o revisor tiver acompanhado a construção. Nomear até
+> **15/09**, não até 18.
 
 **A decisão em aberto não é mais "quem é o GP". É esta:**
 
 1. **Quem revisa?** Qualquer pessoa da V4 que não tenha participado da análise serve ao propósito do
    método. Não precisa ser da Matriz nem carregar o título.
 2. **Se não houver ninguém**, isso precisa ser uma decisão consciente e registrada em ata, não uma
-   etapa que sumiu do cronograma sem ninguém notar. Nesse caso o cronograma encurta cerca de dois
-   dias, e o Comitê 1 pode ir para 02/10.
+   etapa que sumiu do cronograma sem ninguém notar. E agora sem rede: era o segundo gate que
+   protegia o primeiro, e o primeiro deixou de existir.
 
 > ⚠️ O **C-Level da V4** para o Comitê 2 presencial também segue sem nominação. A dedicação de
 > C-Level em comitê é de ~10h no método e não se resolve com uma semana de antecedência
 > (ver [pendência 7](#-7-estrutura-de-comitês--12-encontros)).
 
-**Responsável:** Gustavo Figueiredo · **Prazo:** 08/09
+**Responsável:** Gustavo Figueiredo · **Prazo:** 15/09, para dar tempo de o revisor acompanhar a
+consolidação causal em vez de receber o material pronto em 01/10
 
 ---
 
@@ -491,28 +503,20 @@ pode ser que o contêiner auditado seja o legado.
 
 ---
 
-## 🔴 18. A entrega de acessos de 03/09 não ocorreu; nova data é 08/09
+## 🟠 18. Acessos recebidos em 10/09: falta a conferência item a item
 
-A OLX havia marcado a entrega do conjunto completo de acessos para as **17h de 03/09**. **Não
-aconteceu.** Em reunião de alinhamento sobre a estrutura de GA4 e GTM, a equipe responsável se
-comprometeu a passar a **atualização dos acessos na terça, 08/09**.
+**Resolvido em 10/09/2026.** O lote completo chegou dois dias depois do compromisso de 08/09.
+A contagem disparou no mesmo dia. Com os ajustes de 11/09, os nove diagnósticos rodam de
+**10 a 18/09**, a Matriz é aprovada em **18/09**, e o evento único acontece em **23/09**
+(ver [pendência 25](#-25-data-do-evento-único-2309--resolvida)).
 
-Esta é a premissa única sobre a qual todo o cronograma foi remontado: diagnósticos de 09 a 23/09,
-apresentação em 29/09, Comitê 1 em 06/10.
+Os quatro diagnósticos que estavam totalmente parados abriram, e os quatro que rodavam em camada
+parcial ganharam a camada onde mora a causa, não o sintoma.
 
-### O que está parado, e o que anda
+**O que continua aberto é a verificação**, e ela vale como pendência própria porque o precedente
+deste projeto é ruim: acesso concedido não é acesso utilizável.
 
-| Anda hoje, em camada parcial | Parado, 100% |
-|---|---|
-| (vii) Rastreamento, 5 dos 11 exports na fila | (ix) Pré-vendas · CRM, cadências, gravações |
-| (ii) CRO e SEO, camada pública dos 5 domínios | (i) CRM Marketing · Salesforce |
-| (viii) Páginas de captura, inventário de LPs pelo GA4 | (v) Redes sociais · Business Suite, LinkedIn |
-| (vi) Mídia paga, o mapa de contas | (iv) Criativos, contas de Meta e a biblioteca |
-
-**Nenhum dos quatro que andam fecha antes de 08/09.** Todos param na mesma parede: falta o acesso
-que dá a camada onde mora a causa, não o sintoma.
-
-### O risco não é a data escorregar de novo. É chegar concedido e não utilizável
+### O risco não é mais a data escorregar. É ter chegado concedido e não utilizável
 
 Já aconteceu duas vezes neste projeto:
 
@@ -521,17 +525,21 @@ Já aconteceu duas vezes neste projeto:
 | GA4, 31/08 | Acesso às 26 propriedades | Nível **Leitor**, que não abre fluxos de dados, regras de evento nem consentimento (pendência 13) |
 | Meta, 01/09 | Portfólio `New OLX Brasil` visível | **"Nenhum ativo conectado"**: nenhuma conta de anúncio compartilhada (pendência 11) |
 
-**Ação:** conferência item a item em **08/09**, contra o
+**Ação:** conferência item a item em **10/09**, contra o
 [checklist de dados e acessos](02-diagnostico/checklist-dados-e-acessos.md), **abrindo cada
-ferramenta**. O que vier em nível insuficiente é escalado **no mesmo dia**, a janela de 15 dias
-não tem semana seguinte sobrando, e a folga do contrato acabou.
+ferramenta**, não lendo o e-mail de concessão. O que estiver em nível insuficiente é escalado **no
+mesmo dia**, a janela de 15 dias não tem semana seguinte sobrando, e a folga do contrato acabou.
+
+> ⚠️ **O checklist de dados e acessos ainda reflete o estado anterior a 10/09.** Ele só deve ser
+> atualizado item a item **depois** da conferência na ferramenta, para não trocar um registro
+> desatualizado por um registro otimista.
 
 **Pedir junto, e não é acesso:** o **bloco A** (Visão de Negócio e Fluxo de Receita, A1–A3) é
 entrega de dado e segue sem nenhum item recebido. Nenhuma concessão de ferramenta o destrava, e sem
 ele não há mapeamento do fluxo de receita nem matemática de forecast, com ou sem os nove
 diagnósticos fechados.
 
-**Responsável:** operador + Michelle Morais · **Prazo:** conferência em 08/09
+**Responsável:** operador + Michelle Morais · **Prazo:** conferência em 10/09, escalada no mesmo dia
 
 ---
 
@@ -592,6 +600,223 @@ só existe o PNG da jornada.
 > mensuração: **Direto está inflado, Pago subestimado, e não existe CAC por canal hoje.**
 
 **Responsável:** operador + Carolina Dallolio · **Prazo:** entra na coleta de 08/09
+
+---
+
+## 🔴 21. A série de receita não confirma o net negativo declarado em Imóveis
+
+Achado da entrada da [série de receita 2025–2026](02-diagnostico/serie-de-receita-2025-2026.md),
+processada em 08/09. É a inconsistência mais consequente aberta até aqui, porque ela decide se o
+Ciclo 1 persegue **crescimento** ou **inflexão**.
+
+| Fonte | O que diz |
+|---|---|
+| Iuna Scheffler, kick-off de 24/08 | *"as nossas entradas não estão compensando o churn mais downgrade"* em Imóveis |
+| [meta-do-projeto.md](03-estrategia/meta-do-projeto.md) §6.1 | Construiu sobre isso a **meta zero**: se o net estiver em −5%/mês, metade da meta do projeto se consome só em parar a sangria |
+| Série de receita, jan–jul/25 vs jan–jul/26 | `Classifieds - B&A`, o núcleo de Imóveis, **cresceu 6,4%** |
+
+As três leituras compatíveis e como distinguir uma da outra estão na
+[§4 da leitura da série](02-diagnostico/serie-de-receita-2025-2026.md). A mais perigosa é a de que
+o net negativo seja de **logo** e não de receita: base perdendo clientes com o preço segurando o
+faturamento é um sistema que parece saudável no P&L enquanto se esvazia.
+
+**Ação:** pedir a **contagem de clientes ativos B2B de Imóveis, mês a mês**, na mesma janela da
+série de receita. Uma coluna ao lado da outra responde a pergunta em cinco minutos e não depende de
+acesso novo. Levar a pergunta para a apresentação de 24/09 na forma da §4, não como contestação.
+**Responsável:** operador · **DRI no cliente:** Iuna Scheffler · **Prazo:** 24/09, antes do Comitê 1
+
+---
+
+## 🔴 22. O churn de 8–10% ao mês está no modelo da meta como se fosse de receita
+
+A [ambiguidade 4](02-diagnostico/jornada-do-cliente-profissional.md) pergunta se o churn declarado é
+sobre cliente ou sobre receita. A série de receita agora **impõe um limite aritmético** à resposta.
+
+Para que 9%/mês fosse churn de receita sobre `Classifieds - B&A`, o Grupo OLX teria de vender
+**R$ 4,07 milhões de contrato novo por mês, R$ 49 milhões por ano, 114% da carteira**, todo ano, numa
+vertical onde metade da entrada nasce de prospecção ativa `[D]`. A conta está na
+[§5 da leitura da série](02-diagnostico/serie-de-receita-2025-2026.md).
+
+**Por que isso é pendência e não curiosidade:** a §4.1 da
+[meta do projeto](03-estrategia/meta-do-projeto.md) trata os 9% como churn de receita para concluir
+que *"um ponto de churn vale mais que dez pontos de conversão de pagamento"*. Se o número for de
+logo, essa frase, que é a **primeira direção técnica que a V4 dá ao cliente**, está calibrada sobre
+a premissa errada, e o ranking das alavancas muda. A direção provavelmente se mantém; o tamanho, não.
+
+**Ação:** extrair do dashboard, para Imóveis, **churn de logo e churn de receita separados**, mesma
+janela. Recalibrar §4.1 antes que a faixa de +8% a +12% seja apresentada como proposta.
+**Responsável:** operador, via links dos dashboards · **Prazo:** antes de 24/09
+
+---
+
+## 🔴 23. A meta de Ciclo 1, como está proposta, não é verificável na receita bruta
+
+A [meta do projeto](03-estrategia/meta-do-projeto.md) §6 propõe para o Ciclo 1 um alvo de **+3 a +6
+p.p. de run-rate**. Medida sobre a própria série do cliente, a variação de 90 dias em
+`Classifieds - B&A` tem desvio de **±2,83%**, o que põe o **efeito mínimo detectável em +5,67%**.
+
+**A metade de baixo da faixa proposta é indistinguível de ruído estatístico.** Não é questão de
+ambição: é que a régua não tem resolução para o alvo. Some-se a inércia de 11 meses, que entrega só
+~24% do ganho de regime em 3 meses, e o Ciclo 1 corre o risco de ser lido como fracasso enquanto faz
+a coisa certa, que é exatamente o que a §6.1 já alertava por outro motivo.
+
+**Ação:** fixar em ata, no Comitê 1, que a **meta de ciclo se mede no indicador da restrição**, com
+o efeito em receita declarado como consequência derivada, nunca como o número que prova o ciclo. Se
+a receita for lida, é em média móvel de 3 meses e com a banda de confiança declarada junto. As três
+correções e a sazonalidade da janela ago–nov estão na
+[§6 da leitura da série](02-diagnostico/serie-de-receita-2025-2026.md).
+**Responsável:** operador · **Prazo:** redação pronta para 24/09, decisão em ata no Comitê 1
+
+---
+
+## 🟠 24. Três anomalias contábeis na série de receita, sem explicação
+
+Nenhuma delas invalida a série, que fecha contra o próprio TOTAL nos 19 meses. Todas mudam a leitura
+de alguma linha, e uma delas está dentro do TOTAL de um mês.
+
+| # | Anomalia | Por que importa |
+|---|---|---|
+| a | `Transactional & Fintech - For Sale` com meses **negativos** (jul, ago e set/25; mar e abr/26) | Estorno, reclassificação e provisão revertida têm significados diferentes, e nenhum é receita |
+| b | Linhas que **zeram no meio da série**: `CRM` some em set/25 e reaparece com R$ 561 mil em fev/26; `Data` cai a zero em abr/26; `Rentals` termina em dez/25 com R$ 566 | Descontinuação de produto e migração de rubrica produzem o mesmo desenho e têm consequências opostas para a leitura de Imóveis |
+| c | `Conecta` registra R$ 318, R$ 40 e R$ 20 e depois um único lançamento de **R$ 6.865.055 em set/25** | O valor está dentro do TOTAL do mês. Se for não recorrente, set/25 é uma base de comparação inflada |
+
+**Ação:** perguntar junto com a contagem de clientes ativos da pendência 21, no mesmo e-mail.
+São perguntas baratas de responder e caras de descobrir depois.
+**Responsável:** operador · **Prazo:** 24/09
+
+---
+
+## ✅ 25. Data do evento único: 23/09 · RESOLVIDA
+
+**Resolvida em 11/09/2026.** A OLX confirmou o evento único, apresentação dos diagnósticos e
+Comitê 1 na mesma sessão, para **quarta, 23 de setembro**.
+
+A pendência existia porque a data estava em aberto com teto em 29/10, e o teto encostava no
+Comitê 2 de 03/11: sobrava **um único dia útil** entre os dois, e um plano de 30 dias lido depois de
+um dia de execução faria o Comitê 2 confundir falta de execução com saturação da trava.
+
+**Com 23/09 o problema desaparece, não é mitigado:**
+
+| | |
+|---|---|
+| Material pronto e aprovado na revisão | 18/09 |
+| Apresentação + Comitê 1 | **23/09** |
+| Dias úteis entre um e outro | 2, de agenda e ensaio |
+| Comitê 2 | 03/11 |
+| **Dias úteis de execução do plano de 30 dias** | **26** |
+
+A antecipação só foi possível porque a consolidação causal, a CRT e a Nuvem passaram a correr em
+paralelo aos diagnósticos, o que pôs o material pronto em 18/09 em vez de 02/10.
+
+**Fica em aberto um item menor, movido para a [pendência 7](#-7-estrutura-de-comitês--12-encontros):**
+a duração do evento. Com a apresentação dentro dele, o Comitê 1 não cabe nas 2h do formato padrão, e
+isso precisa ser confirmado com a OLX junto com a convocação.
+
+---
+
+## 🟠 26. A coleta do GTM não pode ser automatizada com a credencial atual
+
+Testado em 11/09, com a janela de **(vii) Rastreamento** ainda aberta. A API do Tag Manager
+**responde** para `gina@v4company.com`, e o erro que devolve é `403 ACCESS_TOKEN_SCOPE_INSUFFICIENT`,
+não `PERMISSION_DENIED`. A distinção importa: **o acesso do lado da OLX existe**, o que falta é o
+escopo OAuth `tagmanager.readonly` na credencial local (ADC), que hoje carrega apenas
+`analytics.readonly` e `cloud-platform`.
+
+Duas tentativas de ampliar o escopo via `gcloud auth application-default login` foram **barradas na
+tela de consentimento do Google**. O próprio `gcloud` avisa a causa antes de abrir o navegador: os
+escopos sensíveis estão sendo bloqueados para o **client ID padrão** da ferramenta.
+
+**O que isso custa:** os lotes 1 a 5 do [guia de export](02-diagnostico/guia-export-gtm.md) seguem
+manuais, contêiner a contêiner pela interface. Os caros são o 3 e o 5, que pedem o inventário de três
+contas cheias, e é exatamente o que uma chamada de API resolveria.
+
+**O que resolve:** um OAuth client ID próprio da V4 no projeto `charged-thought-504117-b5`, com o
+escopo `tagmanager.readonly`, no lugar do client ID padrão do `gcloud`. É configuração de console da
+V4, não pedido à OLX.
+
+O script que roda assim que o escopo existir está em
+[`.claude/scripts/fetch_gtm_api.py`](.claude/scripts/fetch_gtm_api.py), **escrito e nunca executado**.
+Ele inventaria as contas, baixa a versão publicada de cada contêiner e grava no envelope do export da
+interface, para que `check_gtm_exports.py` leia a pasta sem alteração.
+
+**Responsável:** Operador V4 · **Prazo:** não bloqueia (vii), que fecha em 15/09 pela via manual
+
+---
+
+## 🟠 27. Quatro streams de GA4 recebem dado do GTM e estão fora do acesso da V4
+
+Levantado na quarta rodada da auditoria (vii), em 11/09, cruzando os 16 measurement IDs do parque de
+GTM com a API de administração do GA4.
+
+| Measurement ID | Onde aparece |
+|---|---|
+| `G-SP7M9MSCB3` | `4. VivaReal - Container BLOG`, `4. ZapImóveis - LANDING PAGES`, `6. ZapImóveis - DATAZAP/GEOIMOVEL` |
+| `G-28CQ5W5559` | `3. ZapImóveis - Container CLICKSTREAM` |
+| `G-XWEMHMPHXB` | `4. ZapImóveis - Container LANDING PAGES` |
+| `G-CLVJ1JLDJF` | `www.datazap.com.br` |
+
+Nenhum dos quatro está entre as **71 propriedades** visíveis a `gina@v4company.com`. Seis contêineres
+mandam dado para destinos que a auditoria não alcança, e dois deles são de landing page, superfície
+de captação.
+
+**Três explicações possíveis, e elas levam a ações diferentes:** a propriedade existe e o acesso não
+foi concedido; a stream foi excluída e a tag ficou apontando para o nada; ou o ID está errado. Só a
+primeira é benigna.
+
+**Ação:** pedir à OLX o acesso às quatro, ou a confirmação de que foram descontinuadas.
+**Responsável:** Operador V4 junto a Mirella Mendonça · **Prazo:** antes do Comitê 1
+
+---
+
+## 🔴 28. O `begin_checkout` do anunciante privado do ZapImóveis nunca dispara
+
+Achado 34 da auditoria (vii). O gatilho `255` de `GTM-PZ733B5` exige que `page_name` contenha, ao
+mesmo tempo, `/anuncie-profissional/novo/autonomo/plano-contratacao/checkout` **e**
+`/anuncie-profissional/novo/imobiliaria/plano-contratacao/checkout`. São caminhos irmãos, e o GTM soma
+condições com E. O gatilho é impossível.
+
+O `purchase` do mesmo fluxo funciona. **Então existe venda sem início de checkout**, e a taxa de
+conversão de checkout do anunciante privado do ZapImóveis não é derivável.
+
+**Por que é bloqueio de método:** a regra 8 deste repositório exige que a receita derivada do funil
+bata com a declarada. Para esse recorte não há funil derivável. Qualquer forecast que use a taxa de
+checkout do privado no ZapImóveis está usando número que o sistema não produz.
+
+**Ação:** corrigir o gatilho (dois gatilhos separados, ou uma `MATCH_REGEX` com alternância) e, até
+lá, **não usar taxa de checkout do anunciante privado do ZapImóveis em forecast**. O período anterior
+à correção fica sem esse dado, não com dado ruim.
+**Responsável:** time de dados da OLX, apontado pela V4 · **Prazo:** correção antes do Comitê 2; a
+ressalva no forecast vale desde já
+
+---
+
+## 🟡 29. Duas chaves de API do Cloud Retail viajam no navegador, e ninguém confirmou a restrição
+
+Encontrado em 11/09 na varredura de segredos anterior ao commit dos exports de GTM, não na auditoria.
+
+O template nativo **Cloud Retail** do GTM está em duas tags ativas, cada uma com sua chave de API em
+texto claro no parâmetro `cloudRetailApiKey`, as duas apontando para o projeto Google Cloud
+`257705851106`:
+
+| Contêiner | Tag | Conta |
+|---|---|---|
+| `GTM-NP4HWRN` · 2. VivaReal - Container Portal VR | `937` · Cloud Retail Tag | `4412254379` |
+| `GTM-MKTZ2ZP` · 3. ZapImóveis - Container CLICKSTREAM | `2296` · Retail Tag | `2971905372` |
+
+**Isso não é vazamento da V4.** A tag roda no navegador, então a chave já é servida a todo visitante
+de `vivareal.com.br` e `zapimoveis.com.br`, e está no código-fonte das páginas. É a categoria que o
+[guia de export](02-diagnostico/guia-export-gtm.md) previu: chave pública de SDK. Os valores ficam
+onde já estavam, dentro do export bruto, e **não foram copiados para nenhum documento**.
+
+**O que precisa de confirmação é a restrição.** Chave de Cloud Retail não é identificador passivo
+como um ID de pixel: ela **grava evento de usuário** no projeto. Sem restrição de referenciador HTTP
+no console do Google Cloud, qualquer um que leia o código-fonte pode escrever eventos no catálogo e
+contaminar o modelo de recomendação dos dois portais.
+
+**Ação:** pedir à OLX a confirmação de que as duas chaves têm restrição de referenciador e de API.
+É uma tela do console e não depende da V4.
+**Responsável:** Operador V4 junto ao time de dados da OLX · **Prazo:** sem urgência de comitê,
+mas antes do fim do Ciclo 1
 
 ---
 

@@ -1,0 +1,1492 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:15:38",
+    "containerVersion": {
+        "path": "accounts/4412254379/containers/192385534/versions/0",
+        "accountId": "4412254379",
+        "containerId": "192385534",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/4412254379/containers/192385534",
+            "accountId": "4412254379",
+            "containerId": "192385534",
+            "name": "7. VivaReal - Container ANUNCIE - Ambiente de QA",
+            "publicId": "GTM-P4VTWPM2",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1722625507519",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/4412254379/containers/192385534/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-P4VTWPM2"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "tagId": "26",
+                "name": "[GA4] add_to_cart - Profissionais",
+                "type": "gaawe",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "100"
+                },
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "currency"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[CONST] currency}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "value"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - value}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - item_id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - item_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "plano-profissional"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_category2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "imoveis"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_category3"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - item_category3}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_variant"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - itemVariant}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "price"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - price}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_id - Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "add_to_cart"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-VVV61GFPY5"
+                    }
+                ],
+                "fingerprint": "1755548710285",
+                "firingTriggerId": [
+                    "8",
+                    "7"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "tagId": "29",
+                "name": "[GA4] selectContent - Profissionais",
+                "type": "gaawe",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "100"
+                },
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "item_variant"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - itemVariant}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - contentType}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_id - Validation}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "select_content"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-VVV61GFPY5"
+                    }
+                ],
+                "fingerprint": "1755548744575",
+                "firingTriggerId": [
+                    "11"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "tagId": "32",
+                "name": "[GA4] customPageView - Profisisonais",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - contentGroup}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - page_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "vertical"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - vertical}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "brand"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - brand}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "flow_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - flowType}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "journey_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - journeyType}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "customer_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - customerType}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "main_category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - Main Category}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "main_category_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{[VAR] dataLayer - Main Category Id}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "userProperties",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] User_id - Validation}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_email"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] dataLayer - userEmail}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_phone"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] dataLayer - userPhone}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_zip_code"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] dataLayer - userZipCode}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "user_logged_in"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{[VAR] dataLayer - userLoggedIn}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-VVV61GFPY5"
+                    }
+                ],
+                "fingerprint": "1755548730038",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "tagId": "37",
+                "name": "[TAG] Set Cookie - userID",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\nvar cookieName = \"userID\";\nvar cookieValue = {{[VAR] UserID Cookie Validation}};\nvar expirationTime = 5184000; // Two months in seconds\nexpirationTime = expirationTime * 1000; // Converts expirationtime to milliseconds\nvar date = new Date();\nvar dateTimeNow = date.getTime();\n\ndate.setTime(dateTimeNow + expirationTime); // Sets expiration time (Time now + one month)\nvar date = date.toUTCString(); // Converts milliseconds to UTC time string\n  if(cookieValue){\n    document.cookie = cookieName+\"=\"+cookieValue+\"; SameSite=None; Secure; expires=\"+date+\"; path=/; domain=.\" + location.hostname.replace(/^www\\./i, \"\"); // Sets cookie for all subdomains\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1755548607218",
+                "firingTriggerId": [
+                    "36"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NEEDED",
+                    "consentType": {
+                        "type": "LIST",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "functionality_storage"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "triggerId": "5",
+                "name": "[CE] customPageView - Profissionais",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "customPageView"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] dataLayer - page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/anuncie-profissional/novo"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1722626374971"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "triggerId": "7",
+                "name": "[CE] add_to_cart - imobiliaria - Profissionais",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "add_to_cart"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] dataLayer - page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/anuncie-profissional/novo/imobiliaria/plano-contratacao/escolha_plano"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1722626374972"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "triggerId": "8",
+                "name": "[CE] add_to_cart - autonomo - Profissionais",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "add_to_cart"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] dataLayer - page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/anuncie-profissional/novo/autonomo/plano-contratacao/escolha_plano"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1722626374973"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "triggerId": "11",
+                "name": "[CE] selectContent - Profissionais",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "select_content"
+                            }
+                        ]
+                    }
+                ],
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{[VAR] dataLayer - contentType}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "profissionais_plano_anuncios"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1722626374974"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "triggerId": "36",
+                "name": "[WL] Janela Carregada",
+                "type": "WINDOW_LOADED",
+                "fingerprint": "1755548601829"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "3",
+                "name": "[VAR] dataLayer - userPhone",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_phone"
+                    }
+                ],
+                "fingerprint": "1722626374970",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "4",
+                "name": "[VAR] dataLayer - page_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_name"
+                    }
+                ],
+                "fingerprint": "1722626374971",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "6",
+                "name": "[VAR] dataLayer - journeyType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "journey_type"
+                    }
+                ],
+                "fingerprint": "1722626374972",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "9",
+                "name": "[VAR] dataLayer - userZipCode",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_zip_code"
+                    }
+                ],
+                "fingerprint": "1722626374973",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "10",
+                "name": "[VAR] dataLayer - contentType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "content_type"
+                    }
+                ],
+                "fingerprint": "1722626374974",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "12",
+                "name": "[VAR] dataLayer - Main Category",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "main_category"
+                    }
+                ],
+                "fingerprint": "1722626374974",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "13",
+                "name": "[VAR] dataLayer - userID",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_id"
+                    }
+                ],
+                "fingerprint": "1722626374975",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "14",
+                "name": "[VAR] dataLayer - userEmail",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_email"
+                    }
+                ],
+                "fingerprint": "1722626374975",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "15",
+                "name": "[VAR] dataLayer - customerType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "customer_type"
+                    }
+                ],
+                "fingerprint": "1722626374976",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "16",
+                "name": "[VAR] dataLayer - item_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "item_id"
+                    }
+                ],
+                "fingerprint": "1722626374976",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "17",
+                "name": "[VAR] dataLayer - brand",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "brand"
+                    }
+                ],
+                "fingerprint": "1722626374976",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "18",
+                "name": "[VAR] dataLayer - Main Category Id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "main_category_id"
+                    }
+                ],
+                "fingerprint": "1722626374977",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "19",
+                "name": "[VAR] dataLayer - referer_source",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "referer_source"
+                    }
+                ],
+                "fingerprint": "1722626374978",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "20",
+                "name": "[VAR] dataLayer - item_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "item_name"
+                    }
+                ],
+                "fingerprint": "1722626374978",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "21",
+                "name": "[CONST] currency",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "BRL"
+                    }
+                ],
+                "fingerprint": "1722626374978",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "22",
+                "name": "[VAR] dataLayer - item_category3",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "item_category3"
+                    }
+                ],
+                "fingerprint": "1722626374979",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "23",
+                "name": "[VAR] dataLayer - value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "value"
+                    }
+                ],
+                "fingerprint": "1722626374979",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "24",
+                "name": "[VAR] dataLayer - itemVariant",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "item_variant"
+                    }
+                ],
+                "fingerprint": "1722626374980",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "25",
+                "name": "[VAR] dataLayer - price",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "price"
+                    }
+                ],
+                "fingerprint": "1722626374980",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "27",
+                "name": "[VAR] dataLayer - contentGroup",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "content_group"
+                    }
+                ],
+                "fingerprint": "1722626374981",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "28",
+                "name": "[VAR] dataLayer - vertical",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "vertical"
+                    }
+                ],
+                "fingerprint": "1722626374982",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "30",
+                "name": "[VAR] dataLayer - userLoggedIn",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_logged_in"
+                    }
+                ],
+                "fingerprint": "1722626375084",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "31",
+                "name": "[VAR] dataLayer - flowType",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "flow_type"
+                    }
+                ],
+                "fingerprint": "1722626375084",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "33",
+                "name": "[VAR] Cookie - userID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1755548291526",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "34",
+                "name": "[VAR] UserID Cookie Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var userId = {{[VAR] dataLayer - userID}};\n\n  if (userId) {\n    return userId;\n  }\n  return undefined;\n}"
+                    }
+                ],
+                "fingerprint": "1755548382516",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "variableId": "35",
+                "name": "[VAR] User_id - Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var cUserId = {{[VAR] Cookie - userID}};\n  var dtUserId = {{[VAR] dataLayer - userID}};\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(cUserId)) {\n    return cUserId;\n  } \n  else if (isValidUserId(dtUserId)) {\n    return dtUserId;\n  } \n  else {\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1755548480426",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "4412254379",
+                "containerId": "192385534",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789143338794",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/4412254379/containers/192385534/versions/0?apiLink=version"
+    }
+}

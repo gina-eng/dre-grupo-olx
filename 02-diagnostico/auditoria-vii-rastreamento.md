@@ -299,10 +299,18 @@ implícita se escreve assim:
 
 ## Ressalvas de leitura
 
-1. Tudo acima é leitura de **configuração exportada** e de **contagem de eventos**, não de
+1. 🔴 **Os 22 achados descrevem o rascunho, não o que está no ar.** Conferido em 11/09 lendo o
+   campo `containerVersionId` dentro de cada arquivo: os **11 exports têm `0`**, a assinatura de
+   export de **espaço de trabalho**. A versão publicada carrega o número da versão. Nenhum achado
+   desta auditoria está, hoje, confirmado em produção, e nenhum deve ser afirmado como tal em
+   comitê até que a versão publicada seja exportada e comparada. O caso mais sensível é o
+   **achado 1**: se o `purchase` preso ao gatilho de `begin_checkout` existir só no workspace, é
+   rascunho que ninguém publicou; se estiver na versão publicada, é receita B2B medida errada em
+   produção. Coleta pedida em [`guia-export-gtm.md`](guia-export-gtm.md).
+2. Tudo acima é leitura de **configuração exportada** e de **contagem de eventos**, não de
    comportamento observado em navegador. Os achados 5 e 11 pedem confirmação no Preview do GTM.
-2. O achado 4 cai por terra se o site gravar `user_olx` por código próprio.
-3. 🔴 **A cobertura é menor do que parecia.** Em 02/09 descobriu-se que o GTM do grupo tem **quatro
+3. O achado 4 cai por terra se o site gravar `user_olx` por código próprio.
+4. 🔴 **A cobertura é menor do que parecia.** Em 02/09 descobriu-se que o GTM do grupo tem **quatro
    contas**, não uma: `BR - www.olx.com.br` (`94905`), `Checkout Unificado - PRO` (`6326134112`),
    `VivaReal` (`4412254379`) e `ZapImóveis` (`2971905372`), todas com selo 360. Dos 11 exports
    recebidos, **10 são da primeira conta e 1 da ZapImóveis**. As contas `Checkout Unificado - PRO` e
@@ -312,10 +320,9 @@ implícita se escreve assim:
    Cinco exports já estão no repositório e ainda não foram lidos: Buyer Journey (124 tags), VAS (48),
    Unbounce LP (40), Login (5) e Wallet (3). O que está fora pode conter tanto correções quanto
    problemas equivalentes.
-5. O achado 18 descreve a configuração exportada do workspace. Confirmar no site publicado se o
-   banner do AdOpt de fato não aparece no domínio ZapImóveis ANUNCIE, workspace não é
-   necessariamente o que está no ar.
-4. Nada aqui descreve performance de negócio, descreve como a medição está montada.
+5. Caso particular da ressalva 1: confirmar no site publicado se o banner do AdOpt de fato não
+   aparece no domínio ZapImóveis ANUNCIE (achado 18).
+6. Nada aqui descreve performance de negócio, descreve como a medição está montada.
 
 ---
 
@@ -442,3 +449,569 @@ E os pixels do Meta sobem de três para **cinco** distintos no grupo: `592658194
 > Cinco pixels e duas contas de conversão que não conhecemos, numa operação cuja auditoria de mídia
 > paga (vi) está travada por falta de acesso. Este é o argumento concreto para o pedido: não estamos
 > pedindo acesso genérico, estamos pedindo estes IDs, que aparecem no código do próprio site.
+
+---
+
+# Terceira rodada · 11/09/2026 · a conta Checkout Unificado entra
+
+**Fonte:** export em JSON dos **4 contêineres** da conta `Checkout Unificado - PRO`
+(`6326134112`), exportados em 11/09/2026. São todos de **espaço de trabalho**
+(`containerVersionId: 0`), então vale a [ressalva 1](#ressalvas-de-leitura).
+
+| Contêiner | ID | Superfície | Tags |
+|---|---|---|---:|
+| Checkout Unificado - **Master** | `GTM-NGG9336B` | carrega os três por zona | 4 |
+| Checkout Unificado - **OLX** | `GTM-K4WBMGQV` | `pagamento.olx.com.br` | 9 |
+| Checkout Unificado - **Zap Imóveis** | `GTM-NKSGWD6H` | `pagamento.zapimoveis.com.br` | 9 |
+| Checkout Unificado - **Viva Real** | `GTM-NRVS3M3D` | `pagamento.vivareal.com.br` | 6 |
+
+**A hipótese do nome estava certa: é aqui que a receita é medida.** O Master distribui por
+zona, uma por domínio de pagamento, e cada filho mede `page_view`, `begin_checkout` e `purchase`
+da sua vertical. É a arquitetura mais limpa que apareceu no projeto até agora. E é justamente por
+isso que os achados abaixo pesam: eles não descrevem legado esquecido, descrevem a construção mais
+nova e mais cuidada da casa.
+
+---
+
+## 🔴 23. O "Checkout Unificado" escreve em três propriedades diferentes do GA4
+
+| Contêiner | Measurement ID |
+|---|---|
+| Checkout Unificado - OLX | `G-50C013M2CC` |
+| Checkout Unificado - Zap Imóveis | `G-6TV9FSHYVM` |
+| Checkout Unificado - Viva Real | `G-59PP1FKKEN` |
+
+O checkout é unificado no código e **fragmentado na medição**. `G-50C013M2CC` é a propriedade
+**OLX App + Web** (`152644854`), a mesma dos cinco contêineres da conta `94905`. As outras duas não
+foram identificadas: a API de dados não resolve measurement ID para propriedade, e a tela de fluxos
+de dados exige Administrador, que o lote de 10/09 não concedeu.
+
+**Consequência para o método.** Não existe uma propriedade onde a receita B2B do grupo apareça
+somada. Qualquer total de `purchase` do anunciante profissional é, hoje, a soma manual de três
+relatórios, feita por alguém que saiba que as três existem. É a **Trava de Cegueira na sua forma
+mais cara**: o número existe, está certo em cada pedaço, e não há lugar onde ele seja um número só.
+
+**A confirmar:** quais propriedades são `G-6TV9FSHYVM` e `G-59PP1FKKEN`, e se alguma consolidação
+(BigQuery, roll-up, Looker) já resolve isso fora do GA4.
+
+## 🔴 24. Dois esquemas de dataLayer incompatíveis, dentro da mesma conta
+
+| | Checkout OLX | Checkout Zap e Viva Real |
+|---|---|---|
+| Valor da transação | `value` | `ecommerce.value` |
+| Item | `items.0.item_id` | `ecommerce.items.0.item_id` |
+| Transação | `transaction_id` | `ecommerce.transaction_id` |
+| Variáveis de dataLayer | 28 | 17 |
+
+O checkout OLX lê o dataLayer **na raiz**; Zap e Viva Real leem **sob `ecommerce`**, que é a
+convenção do próprio GA4. São dois contratos de dados diferentes para o mesmo produto, na mesma
+conta, mantidos pela mesma equipe.
+
+**Consequência:** qualquer trabalho de consolidação das três verticais precisa de uma camada de
+tradução que hoje não existe em lugar nenhum. E o lado que segue a convenção do Google é o de
+Imóveis, não o da OLX.
+
+## 🔴 25. O checkout OLX não envia `seller_category`, que é a chave que separa profissional de particular
+
+Nos três contêineres existe a variável `[VAR] dataLayer - seller_category`. A diferença está em
+quem a envia:
+
+| | Como as tags GA4 mandam parâmetro | `[VAR] GA4 - Event Settings` é usada por | `seller_category` chega ao GA4 |
+|---|---|---|---|
+| Zap Imóveis | variável compartilhada | **3 tags** | ✅ |
+| Viva Real | variável compartilhada | **3 tags** | ✅ |
+| **OLX** | **tabela inline em cada tag** | **0 tags** | 🔴 **não** |
+
+No contêiner do OLX a variável de Event Settings **está montada, inclui `seller_category`, e não é
+referenciada por tag nenhuma**. As três tags GA4 montam a própria tabela de parâmetros, e nessa
+tabela `seller_category` não entra.
+
+**Consequência, e ela é direta sobre o escopo contratado:** no checkout da OLX não há como separar,
+dentro do GA4, a compra do **anunciante profissional** da compra do particular. O contrato é sobre
+receita B2B. Do lado Imóveis o recorte existe; do lado OLX, não.
+
+## 🔴 26. E-mail e telefone do usuário vão para o GA4 como propriedades de usuário
+
+Só no contêiner do OLX, na tag `24 [TAG] GA4 - page_view`:
+
+```
+userProperties: user_email, user_id, user_logged_in, user_phone, user_zip_code
+```
+
+Os valores vêm direto do dataLayer, **sem hash e sem transformação**. `user_email` e `user_phone`
+são dado pessoal identificável, e mandá-los ao GA4 como propriedade de usuário viola a política do
+próprio Google, além de ser matéria de LGPD.
+
+Isso **não** é o mesmo que o achado 16: lá era rastro de dado pessoal em cookie de terceiro. Aqui é
+envio explícito, nomeado, para a propriedade GA4 da OLX, na página de pagamento.
+
+**É achado para levar à OLX com o jurídico deles na sala**, junto com o achado 28. Não é decisão da
+V4, e não deve ser corrigido por ninguém antes de a OLX saber que existe.
+
+## 🔴 27. Toda a medição Braze do checkout dispara sobre um SDK que nunca foi inicializado
+
+| Contêiner | Tag de Braze | Estado |
+|---|---|---|
+| Master | `23 [TAG] Braze - Initalization - Checkout Unificado` | 🔴 **pausada** |
+| OLX | `39 Purchase` · `40 Begin Checkout` | ativas |
+| Zap Imóveis | `38 Purchase` · `39 Begin Checkout` | ativas |
+| Viva Real | `32 Begin Checkout` · `33 Purchase` | ativas |
+
+A tag de inicialização é a **única** da conta que carrega o SDK do Braze, e está pausada. As **seis**
+tags de ação continuam ativas nos três filhos. O template do Braze, quando não encontra o SDK,
+registra no console e **segue chamando mesmo assim**: o evento não chega a lugar nenhum, e a
+interface do GTM não acusa erro.
+
+**Consequência:** as seis tags parecem cobertura de CRM sobre o checkout, e não são. É o mesmo
+padrão do [achado 14](#-14-toda-a-stack-braze-está-pausada) na conta `94905`, agora na conta nova.
+Duas contas, mesma decisão, e em nenhuma das duas alguém desligou o que dependia do que foi pausado.
+
+> O nome da tag está grafado `Initalization`. É detalhe, mas entra no mesmo inventário do achado 9,
+> das duas grafias de `plano-profissional`: a taxonomia não tem revisão.
+
+## 🔴 28. O consent mode encenado foi replicado na conta nova, não herdado dela
+
+A tag `10 [TAG] Adopt - OLX - Tag Initialization` do Master é **o mesmo código** do achado 2, na
+conta `94905`:
+
+```html
+<style> button#adopt-reject-all-button { display: none !important; } </style>
+<script> setTimeout(loadScript, 4000); </script>
+```
+
+E a tag `8 [TAG] AdOpt - Consent Initialization` declara, na tabela `GCMDefaults`, **`granted` nos
+sete tipos de consentimento**, tanto na linha da região `BR` quanto na linha padrão. O template da
+galeria traz como valor de fábrica `analytics_storage: granted` e **todo o resto `denied`**: o
+`granted` geral foi digitado, não é o default.
+
+**Por que isso é pior do que o achado 2, e não igual.** Em 02/09 dava para ler o achado 2 como
+herança de um contêiner antigo que ninguém revisou. Esta conta é a mais nova do grupo, foi montada
+com zonas, um contêiner por vertical e consent trigger próprio. **O padrão foi copiado para dentro
+do trabalho mais cuidadoso da casa.** Deixa de ser descuido pontual e vira o que o método chama de
+política implícita.
+
+Some-se a isso: **todas as tags GA4 e Braze dos três filhos estão com `consentStatus: NOT_SET`**.
+A única tag do conjunto que declara depender de consentimento é a `Meta - Base Code`, em OLX e Zap.
+
+## 🟠 29. O Meta mede só Autos no checkout OLX, e não mede nada no Viva Real
+
+| Contêiner | Pixel | O que o Meta recebe |
+|---|---|---|
+| OLX | `1492901718177368` | **só Autos**: os gatilhos 34 e 37 filtram `item_id` por `.*(MOTORCYCLES\|VEHICLES).*` |
+| Zap Imóveis | `328237602412769` | InitiateCheckout e Purchase, sem filtro de categoria |
+| Viva Real | - | 🔴 **nenhuma tag de Meta** |
+
+O pixel do checkout OLX é `1492901718177368`, que **não está entre os cinco** já mapeados. São
+**seis** pixels distintos conhecidos no grupo. E a variável que o guarda se chama
+`[VAR] Meta - Pixel ID - Autos`, o que sugere que a instrumentação do checkout OLX nasceu de um
+projeto de Autos e ficou como está.
+
+**Insumo direto do diagnóstico (vi) Mídia Paga:** a otimização de campanha do Meta no checkout vê
+Autos inteiro, Imóveis pela metade e Viva Real nada. Qualquer leitura de ROAS por vertical herda
+esse recorte.
+
+## ✅ 30. Contraponto: aqui o `purchase` está no gatilho certo
+
+Nos três filhos, a tag de `purchase` dispara em um gatilho `[AC] purchase` que escuta o evento
+`purchase`, e a de `begin_checkout` em um gatilho que escuta `begin_checkout`. Sem cruzamento.
+
+Isso **não absolve** o [achado 1](#-1-o-evento-purchase-do-ga4-é-disparado-pelo-gatilho-de-begin_checkout):
+`GTM-KGFGVFC` cobre outra superfície (`planoprofissional`, `adquirir`, `pointsofsales`,
+`goldpayments`, `planos`), e lá a tag `426` continua apontando para o gatilho de `begin_checkout`.
+O que este achado estabelece é **de que tamanho é o problema**: não é a casa inteira medindo errado,
+é uma superfície medindo errado enquanto a vizinha mede certo, sem ninguém entre as duas.
+
+## 🟠 31. O `page_view` do checkout OLX escuta dois eventos diferentes
+
+`24 [TAG] GA4 - page_view` dispara nos gatilhos **5** (`customPageview`) **e 41** (`page_view`).
+Zap e Viva Real disparam só em `customPageview`.
+
+Se a página empurrar os dois eventos, o `page_view` do checkout OLX conta em dobro, e o denominador
+de conversão do checkout cai pela metade. **A confirmar no Preview do GTM**, que é a mesma ressalva
+do achado 11.
+
+---
+
+## O que a terceira rodada muda na leitura da trava
+
+A conta `Checkout Unificado - PRO` era a aposta de maior valor da coleta, e ela entrega as duas
+coisas ao mesmo tempo: **a melhor arquitetura de medição do grupo** e **a repetição integral dos
+problemas de governança** já encontrados na conta legada.
+
+Isso reforça, e agora com prova em duas contas independentes, a política implícita já escrita:
+
+> *A medição é responsabilidade de quem implementa cada superfície, não de quem responde pela
+> receita.*
+
+O que a terceira rodada acrescenta é o **contrafactual**: quando a mesma casa monta do zero, com
+tempo e com cuidado, ela produz zonas limpas, um contêiner por vertical e gatilhos corretos, **e
+ainda assim** três propriedades de GA4, dois esquemas de dataLayer, consentimento concedido por
+padrão e seis tags disparando sobre um SDK desligado. Não falta capacidade técnica. Falta alguém
+encarregado de conferir se o número que sai corresponde ao negócio.
+
+---
+
+# Quarta rodada · 11/09/2026 · o parque inteiro entra
+
+**Fonte:** export em JSON dos **60 contêineres** das quatro contas de GTM, o inventário completo do
+grupo, conferido contra a API de administração do GA4 na mesma data. As três primeiras rodadas
+cobriram 15 contêineres. Esta cobre os **45 restantes**.
+
+| | Rodadas 1 a 3 | **Agora** |
+|---|---:|---:|
+| Contêineres | 15 | **60** |
+| Tags | 367 | **1.779** |
+| Tags pausadas | 93 | **275** |
+| Gatilhos | 295 | **1.634** |
+| Variáveis | 668 | **4.711** |
+
+> **Método.** As evidências foram extraídas por
+> [`analisa_gtm.py`](../.claude/scripts/analisa_gtm.py), que lê cada export e levanta measurement ID,
+> consentimento, evento declarado contra evento escutado pelo gatilho, e higiene. O script não julga:
+> cada achado abaixo foi conferido tag a tag no export antes de ser escrito. **Dois candidatos caíram
+> na conferência** e estão registrados no fim, porque saber o que foi verificado e não procede vale
+> tanto quanto o que procede.
+
+---
+
+## 🔴 32. Os três contêineres Master do grupo concedem consentimento por padrão
+
+O [achado 2](#-2-o-consentimento-concede-tudo-por-padrão-e-o-botão-de-recusar-está-oculto) descreveu
+isso no Master da OLX. Com o parque inteiro na mão, o padrão aparece inteiro, e ele é pior do que
+parecia.
+
+`setDefaultConsentState` aparece em **26 contêineres**. Em 22 deles o padrão é o correto: tudo
+`denied`, menos `security_storage`. Em **quatro** está tudo `granted`:
+
+| Contêiner | ID | Conta | O que é |
+|---|---|---|---|
+| OLX - Container Master | `GTM-546N2JV` | `94905` | **Master da OLX** |
+| 1. ZapImóveis - Container MASTER | `GTM-W662TWW` | `2971905372` | **Master do ZapImóveis** |
+| 1. VivaReal - Container MASTER | `GTM-TWSJ9VM` | `4412254379` | **Master da VivaReal** |
+| OLX - Teste Adopt | `GTM-PQTNMNM3` | `94905` | contêiner de teste, ativo |
+
+**Os três são os Masters das três verticais.** Não é um contêiner desviado: é exatamente o contêiner
+que carrega os outros, em cada vertical, que concede tudo por padrão. Os 22 que trazem a versão
+íntegra são os contêineres carregados, e nenhum deles instancia o template.
+
+A leitura muda de escala. O que na primeira rodada era "o Master da OLX está com o consentimento
+encenado" agora é: **as três verticais do grupo concedem consentimento por padrão, cada uma pelo seu
+Master, e a versão correta do template está presente em todo lugar onde não roda.**
+
+Isso reforça, e agora em três contas independentes, a política implícita já escrita: a medição é
+responsabilidade de quem implementa cada superfície. O template correto circulou. Quem tinha o poder
+de fazê-lo rodar, editou para `granted`.
+
+**Correção:** trocar o padrão para `denied` nos quatro, e fazer a atualização de consentimento vir
+do CMP. É uma edição em quatro contêineres, e resolve o parque.
+
+---
+
+## 🔴 33. Três dos quatro ambientes de QA escrevem na propriedade de produção do GA4
+
+As contas ZapImóveis e VivaReal mantêm contêineres de homologação ao lado dos de produção, na mesma
+conta. Eles não são casca: têm 47, 84, 71 e 4 tags. E três deles apontam para a **mesma propriedade
+do GA4 que a produção**:
+
+| Ambiente de QA | Tags | Escreve em | Produção equivalente | Compartilham |
+|---|---:|---|---|---|
+| `GTM-M6NDNP4K` · 10. ZapImóveis ANUNCIE QA | 47 | `G-6TV9FSHYVM` | `GTM-PZ733B5` | 🔴 **sim** |
+| `GTM-N6JJ79TH` · 9. ZapImóveis PORTAL ZAP QA | 84 | `G-W39KX3CBHX` | `GTM-5X2LZWR` | 🔴 **sim** |
+| `GTM-PNNJ4D3V` · 6. VivaReal Portal VR QA | 71 | `G-VVV61GFPY5` | `GTM-NP4HWRN` | 🔴 **sim** |
+| `GTM-P4VTWPM2` · 7. VivaReal ANUNCIE QA | 4 | `G-VVV61GFPY5` | `GTM-T43B5LRJ` | não |
+
+O contêiner de QA do ANUNCIE do ZapImóveis tem **três tags de `purchase` ativas** (198, 204 e 256),
+todas com o measurement ID `G-6TV9FSHYVM` escrito direto no parâmetro, sem passar por variável. Essa
+é uma stream da propriedade **GA4 ZapImóveis** (`407374944`), a mesma da produção.
+
+**Consequência:** toda compra de teste feita em homologação entra na propriedade de produção como
+receita. Não dá para saber, pelo dado, qual `purchase` do ZapImóveis é real e qual é ensaio. Isso
+ataca diretamente a regra 8 do método, que exige que a receita derivada do funil bata com a declarada
+dentro de 5%: **o numerador está contaminado por um volume que ninguém mede.**
+
+**Correção:** propriedade separada para homologação, ou no mínimo um parâmetro de ambiente em toda
+tag de QA, com filtro na propriedade. A primeira é a correta.
+
+---
+
+## 🔴 34. O `begin_checkout` do anunciante privado do ZapImóveis não dispara
+
+Em `GTM-PZ733B5` (5. ZapImóveis - Container ANUNCIE), o gatilho **255**, chamado
+`[CE] customPageView - begin_checkout - privado`, exige **cinco** condições simultâneas. Duas delas
+são:
+
+```
+{{[VAR] dataLayer - page_name}} CONTAINS /anuncie-profissional/novo/autonomo/plano-contratacao/checkout
+{{[VAR] dataLayer - page_name}} CONTAINS /anuncie-profissional/novo/imobiliaria/plano-contratacao/checkout
+```
+
+O GTM soma as condições de um gatilho com **E**, não com OU. `autonomo` e `imobiliaria` são caminhos
+irmãos: divergem num segmento e não coexistem numa mesma string. **O gatilho não pode ser satisfeito
+por nenhuma navegação possível.** Nunca disparou e nunca vai disparar.
+
+O nome do gatilho diz `privado`, e as condições falam de `profissional`. É assinatura de duplicação:
+alguém copiou o gatilho do profissional e não trocou as condições.
+
+O mesmo erro está no gatilho **170** do contêiner de QA `GTM-M6NDNP4K`, que alimenta a tag 213,
+ativa.
+
+**Por que é crítico, e não higiene.** O `purchase` do anunciante privado **funciona**: a tag 317
+dispara pelo gatilho 222, em `/anuncie-privado/plano-contratacao/finalizado`. Então, no ZapImóveis:
+
+| Etapa do funil, anunciante privado | Mede? |
+|---|---|
+| `begin_checkout` | 🔴 **não** |
+| `purchase` | ✅ sim |
+
+**Há venda sem início de checkout.** A taxa de conversão de checkout do anunciante privado não é
+baixa nem alta: ela é indefinida, porque o denominador é zero. Qualquer forecast que use essa taxa
+está usando um número que o sistema não produz.
+
+**Correção:** separar em dois gatilhos, um por caminho, ou trocar as duas condições `CONTAINS` por
+uma `MATCH_REGEX` com alternância.
+
+---
+
+## 🔴 35. 114 tags ativas de Universal Analytics, numa ferramenta desligada há mais de dois anos
+
+O [achado 6](#-6-universal-analytics-ainda-instalado-e-disparando) registrou UA sobrevivendo em um
+contêiner. No parque inteiro, a conta é outra:
+
+| | |
+|---|---:|
+| Tags do tipo Universal Analytics | **153** |
+| Delas, **ativas** | **114** |
+| Contêineres afetados | **19** de 60 |
+| Propriedades UA distintas | **16** |
+
+Os piores:
+
+| Contêiner | Tags UA ativas |
+|---|---:|
+| `GTM-WGKTT96` · [OLD] OLX - Ajuda | 22 |
+| `GTM-KP8QMDH` · OLX - Unbounce \| LP | 20 |
+| `GTM-MVM68B5` · 4. ZapImóveis - LANDING PAGES | 13 |
+| `GTM-WBBDN4W` · Conectaimobi | 12 |
+| `GTM-KN3K8B8` · OLX - Hub Segurança | 8 |
+| `GTM-NPQMK7P` · OLX - Projetos Especiais de Autos \| LP | 8 |
+
+As 16 propriedades se agrupam em cinco raízes, uma por ativo: `UA-70177409` (OLX, 4 propriedades),
+`UA-230770` (ZapImóveis, 7), `UA-126375` (VivaReal, 3), `UA-147552108` (2) e `UA-87467831` (1).
+
+O Universal Analytics parou de processar dado novo em julho de 2023 nas propriedades padrão e em
+julho de 2024 nas 360. **Essas 114 tags disparam, carregam script e não produzem dado em lugar
+nenhum.** O custo é triplo: desempenho de página em toda a superfície do grupo, ruído que esconde o
+que importa no contêiner, e, o mais caro, a aparência de que aquela superfície está medida.
+
+**Correção:** excluir, não pausar. Pausar preserva o ruído no contêiner e mantém a ilusão de
+cobertura.
+
+---
+
+## 🔴 36. Sete contêineres têm `G-XXXXXXXXXX` como measurement ID padrão
+
+Sete contêineres da conta `94905` resolvem a propriedade do GA4 por tabela de consulta sobre o
+hostname. Exemplo, `GTM-MXQKDG3`:
+
+| | |
+|---|---|
+| Entrada | `{{Page Hostname}}` |
+| Se casar com `[VAR] RegEx Para Hostname` | `G-50C013M2CC` |
+| Se casar com `[VAR] RegEx Para Hostname Temporário` | `G-50C013M2CC` |
+| **Se não casar com nada** | **`G-XXXXXXXXXX`** |
+
+`G-XXXXXXXXXX` é o placeholder da documentação do Google. Não é uma propriedade: é a string que se
+digita quando ainda não se sabe o ID.
+
+**O problema não é o placeholder, é a direção da falha.** Quando o hostname não casa, a tag **não
+deixa de disparar**: ela dispara com um ID inválido. O GA4 descarta o hit, o navegador não acusa
+nada, o contêiner não registra erro. **A perda é silenciosa e não tem contador.**
+
+E a regex é estreita de propósito. A de `GTM-MXQKDG3` é:
+
+```
+^(www[.])?(?!lp[.])(([a-z][a-z]|comprasegura|conta|planoprofissional)[.])?olx[.]com[.]br$
+```
+
+O `(?!lp[.])` exclui explicitamente os subdomínios de landing page. Qualquer hostname fora dessa
+lista, incluindo um domínio novo de campanha, cai no padrão e mede no vazio até alguém reparar.
+
+Contêineres com esse padrão: `GTM-MXQKDG3`, `GTM-TNX8FDS`, `GTM-KCCPDZV`, `GTM-MVQWQJFB`,
+`GTM-NPQMK7P`, `GTM-PP7ZQJD`, `GTM-PWP7Z4C`.
+
+**Correção:** o valor padrão da tabela deve ser vazio, e a tag deve ter uma exceção que a impeça de
+disparar sem ID. Falhar fechado, e não aberto para o vazio.
+
+---
+
+## 🔴 37. As landing pages B2B medem na propriedade cega, e quatro streams estão fora do alcance da V4
+
+Cruzando os 16 measurement IDs do parque com a API de administração do GA4, em 11/09:
+
+| Measurement ID | Propriedade | ID | Contêineres |
+|---|---|---|---:|
+| `G-50C013M2CC` | OLX App + Web | `152644854` | 23 |
+| `G-W39KX3CBHX` | GA4 ZapImóveis | `407374944` | 8 |
+| `G-ZBYP2KJ7L9` | **GA4 ZapImóveis + VivaReal** | `494455315` | 4 |
+| `G-6TV9FSHYVM` | GA4 ZapImóveis | `407374944` | 4 |
+| `G-VVV61GFPY5` | GA4 VivaReal | `407391347` | 3 |
+| `G-59PP1FKKEN` | GA4 VivaReal | `407391347` | 3 |
+| `G-FFM6R038BL` | **GA4 Grupo OLX** | `503925542` | 2 |
+| `G-9M01VVDZJF` | ANAPRO | `469847974` | 1 |
+| `G-BXPE27834L` · `G-NBBQMWSXTE` | GA4 ZapImóveis | `407374944` | 1 cada |
+| `G-6FL09MRR02` | GA4 VivaReal | `407391347` | 1 |
+| `G-SP7M9MSCB3` · `G-28CQ5W5559` · `G-XWEMHMPHXB` · `G-CLVJ1JLDJF` | 🔴 **não estão entre as 71 propriedades visíveis** | - | 6 |
+
+Três leituras saem daí.
+
+**Uma: a propriedade cega recebe justamente a superfície B2B.** `G-FFM6R038BL` é a **GA4 Grupo OLX**
+(`503925542`), a única do grupo no tier gratuito e com **zero evento-chave**
+([PENDENCIAS 13](../PENDENCIAS.md)). Quem escreve nela: `OLX - Site Institucional` (`GTM-KGMSNP6`) e
+`OLX - Unbounce | LP` (`GTM-KP8QMDH`), que é o contêiner das landing pages de campanha, com 40 tags.
+**A captação B2B mede na propriedade onde ninguém definiu o que é conversão.**
+
+**Duas: existe uma arquitetura de escrita dupla, e ela é deliberada.** As tags dos portais vêm em
+pares nomeados `[GA4 - Verticalizado]` e `[GA4 - Unificado]`, com os mesmos gatilhos, escrevendo em
+`G-W39KX3CBHX` (GA4 ZapImóveis) e `G-ZBYP2KJ7L9` (GA4 ZapImóveis + VivaReal). Isso **não** é dupla
+contagem dentro de uma propriedade, e corrige a leitura do
+[achado 20](#-20-generate_lead-é-contado-duas-vezes-em-duas-propriedades): é escrita paralela
+intencional. Mas significa que **qualquer soma entre propriedades do grupo conta o mesmo lead duas
+vezes**, e que a propriedade Unificada existe sem ter sido citada em nenhum documento de onboarding.
+
+**Três: seis contêineres escrevem em quatro streams que a V4 não enxerga.** `G-SP7M9MSCB3` (em
+3 contêineres, ZAP e VIVA), `G-28CQ5W5559`, `G-XWEMHMPHXB` e `G-CLVJ1JLDJF`. Parte da medição do
+grupo sai para propriedades fora do acesso concedido, e a auditoria não alcança o destino.
+
+**Ação:** pedir acesso às quatro, ou a confirmação de que foram descontinuadas. Entra em
+`PENDENCIAS`.
+
+---
+
+## 🟠 38. Quatro gatilhos são logicamente impossíveis, e dois estão em produção
+
+Além dos gatilhos 255 e 170 do [achado 34](#-34-o-begin_checkout-do-anunciante-privado-do-zapimóveis-não-dispara):
+
+| Contêiner | Gatilho | Exige, ao mesmo tempo | Tag dependente |
+|---|---|---|---|
+| `GTM-WGKTT96` · [OLD] OLX - Ajuda | `375` · All pages - Blue Tags | `pageType` EQUALS `listing` **e** EQUALS `ad_detail` | `376` Blue Tags, **ativa** |
+| `GTM-MKTZ2ZP` · 3. ZapImóveis CLICKSTREAM | `1225` · nonSinglePageApplicationRoutes | `Page Path` EQUALS `/` **e** EQUALS `/zapwaymais/` **e** CONTAINS mais três caminhos | nenhuma |
+
+Uma variável não tem dois valores ao mesmo tempo. A tag `376` está ativa, marcada como disparando em
+todas as páginas pelo nome, e não dispara em nenhuma.
+
+Foram testados os 1.634 gatilhos do parque. Outros 15 candidatos apareceram e **foram descartados na
+conferência**, porque as condições eram compatíveis: em `/autos-e-pecas/pecas-e-acessorios/`, por
+exemplo, a URL contém as duas strings, e o E está correto.
+
+---
+
+## 🟠 39. O maior contêiner do parque é o que está marcado como legado
+
+`GTM-WGKTT96`, chamado **`[OLD] OLX - Ajuda`**, tem **209 tags**, mais que qualquer outro contêiner
+das quatro contas. O segundo é o `OLX - Buyer Journey`, com 124.
+
+| | |
+|---|---:|
+| Tags | 209 |
+| Pausadas | 59 |
+| **Ativas** | **150** |
+| Tags UA ativas | 22 |
+| Propriedades UA | 3 |
+| Gatilhos impossíveis | 1 |
+
+Ele convive com `GTM-5VJJT94P` (`OLX - Central de Ajuda`, 2 tags) e `GTM-TW8N3LN` (`OLX - Chat`,
+2 tags). O prefixo `[OLD]` sugere que a superfície foi reconstruída e o contêiner antigo ficou.
+**Mas 150 tags ativas não são um contêiner desligado.**
+
+Não dá para decidir isso pelo export: depende de o contêiner ainda estar instalado em alguma página.
+É o tipo de pergunta que a versão publicada e um teste no Preview respondem em minutos.
+
+---
+
+## 🟠 40. O contêiner `OLX - Testes de SDK` está ativo, com o measurement ID por preencher
+
+`GTM-TQHV6TD` tem 4 tags, nenhuma pausada:
+
+| Tag | Tipo | Aponta para |
+|---|---|---|
+| `5` · [TAG] GA4 - Settings & Page View | Google tag | `{{[VAR] GA4 - G-XXXXXXXXXX}}` |
+| `9` · [TAG] GA4 - Generic Event | GA4 evento | `{{[VAR] GA4 - G-XXXXXXXXXX}}` |
+| `7` · [TAG] GAU - Page View | Universal Analytics | - |
+| `14` · [TAG] GAU - Generic Event | Universal Analytics | - |
+
+Aqui o placeholder não é valor padrão de tabela: é o valor de uma **constante**, e a variável foi
+batizada com o próprio placeholder. Duas tags de GA4 apontam para um ID que não existe, e as outras
+duas para uma ferramenta desligada. O contêiner mede exatamente nada, e está no ar.
+
+---
+
+## 🟡 41. Quatro contêineres vazios, dois deles marcados `(WIP)`
+
+| Contêiner | ID | Tags | Gatilhos | Variáveis |
+|---|---|---:|---:|---:|
+| `[New] iOS Tracking` | `GTM-T8ZBL8Z` | 0 | 1 | 0 |
+| `VivaReal - Container BLOG (WIP)` | `GTM-5DV89XS` | 0 | 0 | 0 |
+| `ZapImóveis - Container BLOG (WIP)` | `GTM-NWPXB4X` | 0 | 0 | 0 |
+| `Sympla - Conectalmobi - Iframe Checkout` | `GTM-TCG3ML4` | 0 | 0 | 0 |
+
+Contêiner vazio não mede errado, não mede. O que merece nota é o par `[New] Android Tracking`
+(`GTM-52W35LS`, **1 tag**) e `[New] iOS Tracking` (**0 tags**): os dois contêineres criados para o
+rastreamento de aplicativo estão praticamente vazios, e o prefixo `[New]` indica intenção recente.
+
+E `Sympla - Conectalmobi - Iframe Checkout` é o quarto contêiner com a palavra checkout no nome, sem
+nenhuma tag dentro.
+
+---
+
+## Dois candidatos que a conferência derrubou
+
+**O `purchase` em `customPageView` do ZapImóveis não é o achado 1 de novo.** As tags 220 e 256 de
+`GTM-PZ733B5` e `GTM-M6NDNP4K` disparam `purchase` num gatilho de `customPageView`, o que à primeira
+vista repete o erro mais grave da primeira rodada. **Não repete.** O gatilho 226 exige, junto com o
+`customPageView`, que `pageInfo.pageName` contenha `/zapimoveis/anuncie/finalizado`. É a página de
+confirmação. Disparar a compra no pageview da página de obrigado é padrão correto quando não há
+evento dedicado. Fica registrado como verificado e limpo.
+
+**Não há PII nova comprovada nos 45 contêineres.** A varredura por `email`, `phone` e `cpf` acusou
+dezenas de ocorrências, mas a conferência mostrou que quase todas são **nomes de variável de
+dataLayer**, não valor enviado a plataforma. O [achado 26](#-26-e-mail-e-telefone-do-usuário-vão-para-o-ga4-como-propriedades-de-usuário),
+que tem evidência de envio real, continua sendo o único achado de PII da auditoria.
+
+---
+
+## O que a quarta rodada muda na leitura da trava
+
+As três primeiras rodadas descreveram um sistema que mede errado em pontos específicos. A quarta
+mostra que **os pontos específicos são o sistema**.
+
+O dado decisivo é o do [achado 32](#-32-os-três-contêineres-master-do-grupo-concedem-consentimento-por-padrão).
+O template correto de consentimento está em 22 contêineres. O template editado para `granted` está em
+quatro, e **três deles são os Masters das três verticais**, isto é, exatamente os contêineres que
+rodam. Isso não é distribuição aleatória de erro: é o mesmo desvio, tomado três vezes, por três times
+diferentes, em três contas separadas, sempre no ponto de maior alcance.
+
+A política implícita já escrita nas rodadas anteriores se confirma com prova em quatro contas:
+
+> *A medição é responsabilidade de quem implementa cada superfície, não de quem responde pela
+> receita.*
+
+E a quarta rodada acrescenta o **custo acumulado** dessa política, que agora dá para somar:
+
+| O que | Quanto |
+|---|---|
+| Tags ativas de uma ferramenta desligada há 2 anos | **114** |
+| Contêineres cujo ID padrão de medição é um placeholder | **7** |
+| Ambientes de homologação escrevendo na propriedade de produção | **3** |
+| Etapas de funil B2B que não disparam | **1**, o `begin_checkout` do privado no ZapImóveis |
+| Streams de GA4 fora do alcance da auditoria | **4** |
+| Propriedades GA4 distintas recebendo dado do parque | **8** identificadas, mais 4 não identificadas |
+
+Nenhum desses itens é difícil de corrigir isoladamente. Quatro edições de consentimento, uma limpeza
+de UA, um valor padrão de tabela, um gatilho reescrito. **A dificuldade não é técnica.** Cada um
+desses defeitos passou por uma pessoa que sabia fazer certo, e nenhum teve alguém encarregado de
+conferir se o número que sai corresponde ao negócio. É a mesma conclusão da terceira rodada, agora
+com 60 contêineres e 1.779 tags sustentando.
+
+**Para o Comitê 1:** isto não é uma lista de correções de rastreamento. É a medida de quanto da
+Trava de Cegueira é política e quanto é técnica. A resposta que o parque dá é: **quase tudo é
+política.**

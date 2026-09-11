@@ -1,0 +1,3324 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:56:37",
+    "containerVersion": {
+        "path": "accounts/2971905372/containers/90821390/versions/0",
+        "accountId": "2971905372",
+        "containerId": "90821390",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/2971905372/containers/90821390",
+            "accountId": "2971905372",
+            "containerId": "90821390",
+            "name": "Guia de Bairros",
+            "publicId": "GTM-5PNSC98",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1659546621291",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/2971905372/containers/90821390/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-5PNSC98"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "6",
+                "name": "GA - UA",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{ga_settings}}"
+                    }
+                ],
+                "fingerprint": "1663630216763",
+                "firingTriggerId": [
+                    "2147479553",
+                    "7",
+                    "106"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "24",
+                "name": "pageRendered",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'PageRendered',\n      type: 'PAGEVIEW',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1660690232888",
+                "firingTriggerId": [
+                    "23"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "26",
+                "name": "breadcrumbLinkClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'BreadcrumbLinkClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{breadcrumb_link_clicked.link_label}},\n        link_url: {{breadcrumb_link_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662050987187",
+                "firingTriggerId": [
+                    "25"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "30",
+                "name": "ownerLinkClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'OwnerLinkClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        context: {{owner_link_clicked.context}},\n        subject: {{owner_link_clicked.subject}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662051002756",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "36",
+                "name": "footerLinkClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'FooterLinkClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        footer: {{footer_link_clicked.footer}},\n        link_label: {{footer_link_clicked.link_label}},\n        link_url: {{footer_link_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662050993323",
+                "firingTriggerId": [
+                    "35"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "42",
+                "name": "headerLinkClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'HeaderLinkClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n         link_label: {{header_link_clicked.link_label}},\n         link_url: {{header_link_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662066882965",
+                "firingTriggerId": [
+                    "41"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "47",
+                "name": "poiLinkClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'PoiLinkClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{poi_link_clicked.link_label}},\n        link_url: {{poi_link_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662116716961",
+                "firingTriggerId": [
+                    "46"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "52",
+                "name": "neighborhoodsGuideTotalOffersClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideTotalOffersClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_url: {{neighborhoods_guide_total_offers_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662135564044",
+                "firingTriggerId": [
+                    "51"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "56",
+                "name": "neighborhoodsGuideCtaClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideCtaClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        transaction: {{neighborhoods_guide_cta_clicked.transaction}},\n        link_label: {{neighborhoods_guide_cta_clicked.link_label}},\n        link_url: {{neighborhoods_guide_cta_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662386187884",
+                "firingTriggerId": [
+                    "55"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "61",
+                "name": "neighborhoodsGuideTopStreetsClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideTopStreetsClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{neighborhoods_guide_top_streets_clicked.link_label}},\n        link_url: {{neighborhoods_guide_top_streets_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662381074352",
+                "firingTriggerId": [
+                    "60"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "66",
+                "name": "neighborhoodsGuideNearDistrictsClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideNearDistrictsClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{neighborhoods_guide_near_districts_clicked.link_label}},\n        link_url: {{neighborhoods_guide_near_districts_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662381928260",
+                "firingTriggerId": [
+                    "65"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "72",
+                "name": "neighborhoodsGuideShareClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideShareClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{neighborhoods_guide_share_clicked.link_label}},\n        link_url: {{neighborhoods_guide_share_clicked.link_url}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1663018778937",
+                "firingTriggerId": [
+                    "71"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "78",
+                "name": "neighborhoodsGuideShowcaseClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideShowcaseClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{neighborhoods_guide_showcase_clicked.link_label}},\n        link_url: {{neighborhoods_guide_showcase_clicked.link_url}},\n        transaction: {{neighborhoods_guide_showcase_clicked.transaction}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662474353847",
+                "firingTriggerId": [
+                    "77"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "79",
+                "name": "neighborhoodsGuideShowcaseNavigationClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideShowcaseNavigationClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        transaction: {{neighborhoods_guide_showcase_navigation_clicked.transaction}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662474434591",
+                "firingTriggerId": [
+                    "76"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "84",
+                "name": "neighborhoodsGuideShowcaseViewed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideShowcaseViewed',\n      type: 'PAGEVIEW',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        transaction: {{neighborhoods_guide_showcase_viewed.transaction}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662474569747",
+                "firingTriggerId": [
+                    "83"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "92",
+                "name": "neighborhoodsGuidePoisViewed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuidePoisViewed',\n      type: 'PAGEVIEW',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662635774777",
+                "firingTriggerId": [
+                    "88"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "94",
+                "name": "neighborhoodsGuideShareViewed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideShareViewed',\n      type: 'PAGEVIEW',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662726447567",
+                "firingTriggerId": [
+                    "93"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "96",
+                "name": "neighborhoodsGuideTitleScrolled",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideTitleScrolled',\n      type: 'PAGEVIEW',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1662726560375",
+                "firingTriggerId": [
+                    "95"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "104",
+                "name": "coreWebVitals",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'CoreWebVitals',\n      type: 'COREWEBVITALS',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        name: {{core_web_vitals.name}},\n        id: {{core_web_vitals.id}},\n        value: {{core_web_vitals.value}},\n        valueRounded: {{core_web_vitals.value_rounded}},\n        groupId: {{core_web_vitals.group_id}}\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1663209124620",
+                "firingTriggerId": [
+                    "103"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "107",
+                "name": "neighborhoodsGuideInternalLinkClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideInternalLinkClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        link_label: {{neighborhoods_guide_link.link_label}},\n        position: {{neighborhoods_guide_link.position}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1672752659901",
+                "firingTriggerId": [
+                    "108"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "110",
+                "name": "NeighborhoodsGuideInternalLinkView",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'NeighborhoodsGuideInternalLinkView',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        subject: {{neighborhoods_guide_link.subject}},\n        position: {{neighborhoods_guide_link.position}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1672752821045",
+                "firingTriggerId": [
+                    "109"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "116",
+                "name": "favoriteClicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  clickstreamTracker(\n    {\n      name: 'FavoriteClicked',\n      type: 'CLICK',\n      application: 'ZAP',\n      platform: {{platform}},\n      event_version: 'v.2',\n      anonymous_id: {{anonymous_id}},\n      page_url: {{Page URL}},\n      referer_url: {{spa_referrer}},\n      device_sent_timestamp: {{device_sent_timestamp}},\n      page_category: {{page_category}},\n      user_id: {{[VAR] User_id - Validation}},\n      gzuid: {{gzuid}},\n      session_id: {{session_id}},\n      event_id: {{event_id}},\n      referer_medium: {{referer_medium}},\n      referer_source: {{referer_source}},\n      referer_campaign: {{referer_campaign}},\n      referer_term: {{referer_term}},\n      referer_content: {{referer_content}},\n      attributes: {\n        action: {{favorite_clicked.action}},\n        listing: {\n          id: {{favorite_clicked.listing.id}},\n          business_type: {{favorite_clicked.listing.business_type}},\n        },\n        subject: {{favorite_clicked.subject}},\n        status: {{favorite_clicked.status}},\n      },\n    }\n  );\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1692120481268",
+                "firingTriggerId": [
+                    "115"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "123",
+                "name": "[GA4 - Verticalizado] Settings & Pageview",
+                "type": "googtag",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "100"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "G-W39KX3CBHX"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "content_group"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "guia-de-bairros"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "page_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "/guia-de-bairros"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "vertical"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "real-estate"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "brand"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "zapimoveis"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "costumer_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "b2c"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "main_category"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "imoveis"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "main_category_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "1000"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1695240353989",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "125",
+                "name": "[GA4 - Verticalizado] page_view",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-W39KX3CBHX"
+                    }
+                ],
+                "fingerprint": "1695240383962",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "tagId": "130",
+                "name": "[TAG] Set Cookie - userID",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n\nvar cookieName = \"userID\";\nvar cookieValue = {{[VAR] UserID Cookie Validation}};\nvar expirationTime = 5184000; // Two months in seconds\nexpirationTime = expirationTime * 1000; // Converts expirationtime to milliseconds\nvar date = new Date();\nvar dateTimeNow = date.getTime();\n\ndate.setTime(dateTimeNow + expirationTime); // Sets expiration time (Time now + one month)\nvar date = date.toUTCString(); // Converts milliseconds to UTC time string\n  if(cookieValue){\n    document.cookie = cookieName+\"=\"+cookieValue+\"; SameSite=None; Secure; expires=\"+date+\"; path=/; domain=.\" + location.hostname.replace(/^www\\./i, \"\"); // Sets cookie for all subdomains\n  }\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1752773013185",
+                "firingTriggerId": [
+                    "129"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NEEDED",
+                    "consentType": {
+                        "type": "LIST",
+                        "list": [
+                            {
+                                "type": "TEMPLATE",
+                                "value": "functionality_storage"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "7",
+                "name": "History Change",
+                "type": "HISTORY_CHANGE",
+                "fingerprint": "1659650620582"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "23",
+                "name": "pageRendered",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "pageRendered"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1660690076604"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "25",
+                "name": "breadcrumbLinkClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "breadcrumbLinkClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1661981476276"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "29",
+                "name": "ownerLinkClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ownerLinkClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1661983537921"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "35",
+                "name": "footerLinkClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "footerLinkClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1661985285862"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "41",
+                "name": "headerLinkClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "headerLinkClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662065295357"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "46",
+                "name": "poiLinkClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "poiLinkClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662116588941"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "51",
+                "name": "neighborhoodsGuideTotalOffersClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideTotalOffersClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662128644863"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "55",
+                "name": "neighborhoodsGuideCtaClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideCtaClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662372383113"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "60",
+                "name": "neighborhoodsGuideTopStreetsClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideTopStreetsClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662380784385"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "65",
+                "name": "neighborhoodsGuideNearDistrictsClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideNearDistrictsClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662381857169"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "71",
+                "name": "neighborhoodsGuideShareClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideShareClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662386597354"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "76",
+                "name": "neighborhoodsGuideShowcaseNavigationClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideShowcaseNavigationClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662394257434"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "77",
+                "name": "neighborhoodsGuideShowcaseClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideShowcaseClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662394303250"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "83",
+                "name": "neighborhoodsGuideShowcaseViewed",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideShowcaseViewed"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662461695280"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "88",
+                "name": "neighborhoodsGuidePoisViewed",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuidePoisViewed"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662474318744"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "93",
+                "name": "neighborhoodsGuideShareViewed",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideShareViewed"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662726401387"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "95",
+                "name": "neighborhoodsGuideTitleScrolled",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideTitleScrolled"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1662726528872"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "103",
+                "name": "coreWebVitals",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "coreWebVitals"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1663208252699"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "106",
+                "name": "startGoogleAnalytics",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "startGoogleAnalytics"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1663630195851"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "108",
+                "name": "neighborhoodsGuideInternalLinkClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideInternalLinkClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1672752627759"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "109",
+                "name": "neighborhoodsGuideInternalLinkView",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "neighborhoodsGuideInternalLinkView"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1672752646912"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "115",
+                "name": "favoriteClicked",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "favoriteClicked"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1692119425247"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "triggerId": "129",
+                "name": "[WL] Janela Carregada",
+                "type": "WINDOW_LOADED",
+                "fingerprint": "1752773008871"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "5",
+                "name": "ga_settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "allowLinker"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "true"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "autoLinkDomains",
+                        "value": "zap.com.br, account-api.grupozap.com, www.zapimoveis.com.br, meuzap.zapimoveis.com.br, anuncie.zapimoveis.com.br, zapimoveis.com.br, my-account-api.zapimoveis.com.br"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "2"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Page Path}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "{{google_analytics_id}}"
+                    }
+                ],
+                "fingerprint": "1663629817347"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "8",
+                "name": "device_sent_timestamp",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "device_sent_timestamp"
+                    }
+                ],
+                "fingerprint": "1660312365306",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "9",
+                "name": "referer_content",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "referer_content"
+                    }
+                ],
+                "fingerprint": "1660312365305",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "10",
+                "name": "referer_term",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "referer_term"
+                    }
+                ],
+                "fingerprint": "1660312365307",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "11",
+                "name": "platform",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "platform"
+                    }
+                ],
+                "fingerprint": "1660312365307",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "12",
+                "name": "referer_campaign",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "referer_campaign"
+                    }
+                ],
+                "fingerprint": "1660312365366",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "13",
+                "name": "referer_medium",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "referer_medium"
+                    }
+                ],
+                "fingerprint": "1660312365363",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "14",
+                "name": "referer_source",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "referer_source"
+                    }
+                ],
+                "fingerprint": "1660312365365",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "15",
+                "name": "session_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "session_id"
+                    }
+                ],
+                "fingerprint": "1660312365367",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "16",
+                "name": "page_category",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_category"
+                    }
+                ],
+                "fingerprint": "1660312365383",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "18",
+                "name": "event_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_id"
+                    }
+                ],
+                "fingerprint": "1660689306325",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "19",
+                "name": "gzuid",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "gzuid"
+                    }
+                ],
+                "fingerprint": "1660689306324",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "20",
+                "name": "anonymous_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "anonymous_id"
+                    }
+                ],
+                "fingerprint": "1660689306325",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "21",
+                "name": "spa_referrer",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "spa_referrer"
+                    }
+                ],
+                "fingerprint": "1660689390016",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "22",
+                "name": "[VAR] User_id - Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var cUserId = {{[VAR] Cookie - userID}};\n  var dtUserId = {{user_id}};\n  var invalidValuesRegex = /^(|unidentified|undefined|null|not set|no id|guest)$/i;\n\n  function isValidUserId(value) {\n    return !(value === null || \n             value === undefined || \n             String(value).trim() === '' || \n             invalidValuesRegex.test(String(value).trim()));\n  }\n\n  if (isValidUserId(cUserId)) {\n    return cUserId;\n  } \n  else if (isValidUserId(dtUserId)) {\n    return dtUserId;\n  }\n  else {\n    return undefined;\n  }\n}"
+                    }
+                ],
+                "fingerprint": "1752772896084",
+                "parentFolderId": "17",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "27",
+                "name": "breadcrumb_link_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "breadcrumb_link_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1661984947317",
+                "parentFolderId": "33",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "28",
+                "name": "breadcrumb_link_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "breadcrumb_link_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1661984947318",
+                "parentFolderId": "33",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "31",
+                "name": "owner_link_clicked.context",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "owner_link_clicked.context"
+                    }
+                ],
+                "fingerprint": "1661984976244",
+                "parentFolderId": "34",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "32",
+                "name": "owner_link_clicked.subject",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "owner_link_clicked.subject"
+                    }
+                ],
+                "fingerprint": "1661984976245",
+                "parentFolderId": "34",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "37",
+                "name": "footer_link_clicked.footer",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "footer_link_clicked.footer"
+                    }
+                ],
+                "fingerprint": "1661985464181",
+                "parentFolderId": "40",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "38",
+                "name": "footer_link_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "footer_link_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1661985464182",
+                "parentFolderId": "40",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "39",
+                "name": "footer_link_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "footer_link_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1661985464183",
+                "parentFolderId": "40",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "43",
+                "name": "header_link_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "header_link_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662067146003",
+                "parentFolderId": "44",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "45",
+                "name": "header_link_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "header_link_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662067126830",
+                "parentFolderId": "44",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "48",
+                "name": "poi_link_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "poi_link_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662116923346",
+                "parentFolderId": "50",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "49",
+                "name": "poi_link_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "poi_link_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662116923346",
+                "parentFolderId": "50",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "53",
+                "name": "neighborhoods_guide_total_offers_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_total_offers_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662135679167",
+                "parentFolderId": "54",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "57",
+                "name": "neighborhoods_guide_cta_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_cta_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662372749945",
+                "parentFolderId": "59",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "58",
+                "name": "neighborhoods_guide_cta_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_cta_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662372749944",
+                "parentFolderId": "59",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "62",
+                "name": "neighborhoods_guide_top_streets_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_top_streets_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662381149594",
+                "parentFolderId": "64",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "63",
+                "name": "neighborhoods_guide_top_streets_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_top_streets_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662381149592",
+                "parentFolderId": "64",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "67",
+                "name": "neighborhoods_guide_near_districts_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_near_districts_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662382005631",
+                "parentFolderId": "69",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "68",
+                "name": "neighborhoods_guide_near_districts_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_near_districts_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662382005632",
+                "parentFolderId": "69",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "70",
+                "name": "neighborhoods_guide_cta_clicked.transaction",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_cta_clicked.transaction"
+                    }
+                ],
+                "fingerprint": "1662386204910",
+                "parentFolderId": "59",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "73",
+                "name": "neighborhoods_guide_share_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_share_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662392976319",
+                "parentFolderId": "75",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "74",
+                "name": "neighborhoods_guide_share_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_share_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662392976320",
+                "parentFolderId": "75",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "80",
+                "name": "neighborhoods_guide_showcase_clicked.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_showcase_clicked.link_label"
+                    }
+                ],
+                "fingerprint": "1662396962248",
+                "parentFolderId": "82",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "81",
+                "name": "neighborhoods_guide_showcase_clicked.link_url",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_showcase_clicked.link_url"
+                    }
+                ],
+                "fingerprint": "1662396962247",
+                "parentFolderId": "82",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "86",
+                "name": "neighborhoods_guide_showcase_viewed.transaction",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_showcase_viewed.transaction"
+                    }
+                ],
+                "fingerprint": "1662462407937",
+                "parentFolderId": "87",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "89",
+                "name": "neighborhoods_guide_showcase_clicked.transaction",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_showcase_clicked.transaction"
+                    }
+                ],
+                "fingerprint": "1662474412640",
+                "parentFolderId": "82",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "90",
+                "name": "neighborhoods_guide_showcase_navigation_clicked.transaction",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_showcase_navigation_clicked.transaction"
+                    }
+                ],
+                "fingerprint": "1662474475710",
+                "parentFolderId": "91",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "97",
+                "name": "core_web_vitals.id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "core_web_vitals.id"
+                    }
+                ],
+                "fingerprint": "1663208223924",
+                "parentFolderId": "102",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "98",
+                "name": "core_web_vitals.name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "core_web_vitals.name"
+                    }
+                ],
+                "fingerprint": "1663208223925",
+                "parentFolderId": "102",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "99",
+                "name": "core_web_vitals.value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "core_web_vitals.value"
+                    }
+                ],
+                "fingerprint": "1663208223924",
+                "parentFolderId": "102",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "100",
+                "name": "core_web_vitals.value_rounded",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "core_web_vitals.value_rounded"
+                    }
+                ],
+                "fingerprint": "1663209358554",
+                "parentFolderId": "102",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "101",
+                "name": "core_web_vitals.group_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "core_web_vitals.group_id"
+                    }
+                ],
+                "fingerprint": "1663209366794",
+                "parentFolderId": "102",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "105",
+                "name": "google_analytics_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "google_analytics_id"
+                    }
+                ],
+                "fingerprint": "1663630675848",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "111",
+                "name": "neighborhoods_guide_link.position",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_link.position"
+                    }
+                ],
+                "fingerprint": "1672752991437",
+                "parentFolderId": "114",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "112",
+                "name": "neighborhoods_guide_link.link_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_link.link_label"
+                    }
+                ],
+                "fingerprint": "1672752983014",
+                "parentFolderId": "114",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "113",
+                "name": "neighborhoods_guide_link.subject",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "neighborhoods_guide_link.subject"
+                    }
+                ],
+                "fingerprint": "1672752998982",
+                "parentFolderId": "114",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "117",
+                "name": "favorite_clicked.listing.id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "favorite_clicked.listing.id"
+                    }
+                ],
+                "fingerprint": "1692120696882",
+                "parentFolderId": "120",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "118",
+                "name": "favorite_clicked.subject",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "favorite_clicked.subject"
+                    }
+                ],
+                "fingerprint": "1692120703230",
+                "parentFolderId": "120",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "119",
+                "name": "favorite_clicked.listing.business_type",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "favorite_clicked.listing.business_type"
+                    }
+                ],
+                "fingerprint": "1692120689950",
+                "parentFolderId": "120",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "121",
+                "name": "favorite_clicked.action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "favorite_clicked.action"
+                    }
+                ],
+                "fingerprint": "1692120734456",
+                "parentFolderId": "120",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "122",
+                "name": "favorite_clicked.status",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "favorite_clicked.status"
+                    }
+                ],
+                "fingerprint": "1692120755595",
+                "parentFolderId": "120",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "126",
+                "name": "[VAR] UserID Cookie Validation",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var user_id = {{[VAR] User_id - Validation}};\n\n  if (user_id) {\n    return user_id;\n  }\n  return undefined;\n}"
+                    }
+                ],
+                "fingerprint": "1752772634953",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "127",
+                "name": "[VAR] Cookie - userID",
+                "type": "k",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decodeCookie",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "userID"
+                    }
+                ],
+                "fingerprint": "1752772678424",
+                "formatValue": {}
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "variableId": "128",
+                "name": "user_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_id"
+                    }
+                ],
+                "fingerprint": "1752772848888",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "17",
+                "name": "base_attributes",
+                "fingerprint": "1660312346245"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "33",
+                "name": "breadcrumb_link_clicked_attributes",
+                "fingerprint": "1661984945903"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "34",
+                "name": "owner_link_clicked_attributes",
+                "fingerprint": "1661984974256"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "40",
+                "name": "footer_link_clicked_attributes",
+                "fingerprint": "1661993420333"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "44",
+                "name": "header_link_clicked_attributes",
+                "fingerprint": "1662065925057"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "50",
+                "name": "poi_link_clicked_attributes",
+                "fingerprint": "1662116921304"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "54",
+                "name": "neighborhoods_guide_total_offers_clicked_attributes",
+                "fingerprint": "1662135678280"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "59",
+                "name": "neighborhoods_guide_cta_clicked_attributes",
+                "fingerprint": "1662372747607"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "64",
+                "name": "neighborhoods_guide_top_streets_clicked_attributes",
+                "fingerprint": "1662381147511"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "69",
+                "name": "neighborhoods_guide_near_districts_clicked_attributes",
+                "fingerprint": "1662382004097"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "75",
+                "name": "neighborhoods_guide_share_clicked_attributes",
+                "fingerprint": "1662392974952"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "82",
+                "name": "neighborhoods_guide_showcase_clicked_attributes",
+                "fingerprint": "1662396960861"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "87",
+                "name": "neighborhoods_guide_showcase_viewed_attributes",
+                "fingerprint": "1662462406465"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "91",
+                "name": "neighborhoods_guide_showcase_navigation_clicked_attributes",
+                "fingerprint": "1662474474283"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "102",
+                "name": "core_web_vitals_attributes",
+                "fingerprint": "1663208222949"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "114",
+                "name": "neighborhoods_guide_link_attributes",
+                "fingerprint": "1672752968247"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "folderId": "120",
+                "name": "favorite_clicked_attributes",
+                "fingerprint": "1692120687967"
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "90821390",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789145797884",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/2971905372/containers/90821390/versions/0?apiLink=version"
+    }
+}

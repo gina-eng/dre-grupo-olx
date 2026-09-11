@@ -7,9 +7,9 @@
     "duracao_meses": 12,
     "ciclo_atual": 1,
     "fase_atual": "Identificar",
-    "semana_corrente": 2,
-    "version": 13,
-    "atualizado_em": "2026-09-04",
+    "semana_corrente": 3,
+    "version": 23,
+    "atualizado_em": "2026-09-11",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
   "briefing": {
@@ -65,58 +65,94 @@
         "id": "i",
         "nome": "CRM Marketing (Salesforce Marketing Cloud)",
         "bloco_dados": "B",
-        "status": "pendente"
+        "status": "em_andamento",
+        "janela": "11-17/09",
+        "aberto_em": "2026-09-11",
+        "reunioes_realizadas": [
+          "2026-09-09",
+          "2026-09-10"
+        ],
+        "nota": "as reunioes sobre CRM aconteceram antes do lote de acessos; o diagnostico abre em 11/09 sobre o que elas levantaram, e o time de CRM nao entra nos blocos de entrevista de 16 e 17",
+        "fecha_em": "2026-09-17"
       },
       {
         "id": "ii",
         "nome": "Ambientes CRO/SEO (domínios B2B)",
         "bloco_dados": "C",
-        "status": "pendente"
+        "status": "em_andamento",
+        "janela": "10-16/09",
+        "aberto_em": "2026-09-10",
+        "fecha_em": "2026-09-16"
       },
       {
         "id": "iii",
         "nome": "GEO, IA e Buscas Generativas",
         "bloco_dados": "D",
-        "status": "pendente"
+        "status": "em_andamento",
+        "janela": "16-18/09",
+        "aberto_em": "2026-09-16",
+        "fecha_em": "2026-09-18",
+        "nota": "deixou de fechar por ultimo: os nove fecham juntos em 18/09"
       },
       {
         "id": "iv",
         "nome": "Criativos Ads & Mensagens",
         "bloco_dados": "E",
-        "status": "pendente"
+        "status": "em_andamento",
+        "janela": "15-18/09",
+        "aberto_em": "2026-09-15",
+        "fecha_em": "2026-09-18"
       },
       {
         "id": "v",
         "nome": "Redes Sociais e Conteúdo Orgânico",
         "bloco_dados": "F",
-        "status": "pendente"
+        "status": "em_andamento",
+        "janela": "15-18/09",
+        "aberto_em": "2026-09-15",
+        "fecha_em": "2026-09-18"
       },
       {
         "id": "vi",
         "nome": "Mídia Paga (Google e Meta)",
         "bloco_dados": "G",
-        "status": "pendente",
-        "prioritario": true
+        "status": "em_andamento",
+        "prioritario": true,
+        "janela": "11-18/09",
+        "aberto_em": "2026-09-11",
+        "fecha_em": "2026-09-18",
+        "nota": "fechar em 18/09 exige as 2 contas de Meta ingeridas no V4MOS, e ingestao tem latencia propria. Em 08/09 o Meta devolvia zero nos seis endpoints. Se nao fechar, (vi) entrega so com Google e a camada de Meta vira limitacao declarada, afetando Exposicao, Atencao e Qualificacao. Verificar em 14/09"
       },
       {
         "id": "vii",
         "nome": "Rastreamento Completo (GA4 e GTM)",
         "bloco_dados": "H",
-        "status": "pendente",
-        "prioritario": true
+        "status": "em_andamento",
+        "prioritario": true,
+        "janela": "10-15/09",
+        "aberto_em": "2026-09-10",
+        "fecha_em": "2026-09-15"
       },
       {
         "id": "viii",
         "nome": "Páginas de Captura (LPs) e Fluxos de Conversão",
         "bloco_dados": "I",
-        "status": "pendente"
+        "status": "em_andamento",
+        "janela": "10-18/09",
+        "aberto_em": "2026-09-10",
+        "fecha_em": "2026-09-18"
       },
       {
         "id": "ix",
         "nome": "Pré-Vendas, Qualificação e Sales Engagement",
         "bloco_dados": "J",
-        "status": "pendente",
-        "prioritario": true
+        "status": "em_andamento",
+        "prioritario": true,
+        "janela": "14-17/09",
+        "aberto_em": "2026-09-14",
+        "dias_uteis": 4,
+        "nota": "comprimido para 4 dias uteis, 14 a 17/09, contra as tres semanas do desenho original. Pontua sozinho tres travas (Qualificacao, Compromisso, Decisao): se a camada experiencial nao fechar, as tres ficam limitadas a nota 3 pela regra 6 do repositorio",
+        "fecha_em": "2026-09-17"
       }
     ],
     "sla_horas_uteis": 12,
@@ -180,16 +216,24 @@
         "status": "pendente"
       }
     ],
-    "ver": "01-cliente/acessos-e-ferramentas.md"
+    "ver": "01-cliente/acessos-e-ferramentas.md",
+    "lote_completo": {
+      "recebido_em": "2026-09-10",
+      "prometido_para": "2026-09-08",
+      "atraso_dias": 2,
+      "escopo": "Salesforce Marketing Cloud, 2 contas de Meta, Business Suite, LinkedIn, Search Console, Mouseflow, Unbounce, contas de GTM restantes, CRM comercial e as gravacoes de call com consentimento",
+      "conferencia": "pendente: abrir cada ferramenta e verificar nivel de permissao, nao o e-mail de concessao. Precedente ruim em GA4 (nivel Leitor) e Meta (portfolio sem ativo conectado). Ver PENDENCIAS 18",
+      "efeito": "os nove diagnosticos abrem em 10/09 e a contagem dos 15 dias corridos dispara"
+    }
   },
   "conectores": {
-    "fetched_at": "2026-08-31",
+    "fetched_at": "2026-09-08",
     "v4mos": {
       "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61",
       "api": "https://api.data.v4.marketing/v1",
       "credenciais": ".credentials/clients.json (fora do repositório, chmod 600)",
-      "status": "autenticado, Google ingerindo, Meta vazio",
-      "verificado_em": "2026-08-24",
+      "status": "autenticado, Google ingerindo mais que antes (23 campanhas), Meta ainda vazio",
+      "verificado_em": "2026-09-08",
       "endpoints": {
         "google/ads/campaigns": 655,
         "google/ads/keywords": ">0",
@@ -198,7 +242,45 @@
         "facebook/ads/ad": 0,
         "facebook/ads/creatives": 0
       },
-      "nota": "Apos o aceite do convite do MCC VivaReal, o lado Google passou a ingerir: 655 registros de campanha, 8 campanhas, 16/05/2025 a 22/06/2026, R$ 1,91 mi e 7,1 mi de cliques. Meta segue vazio, coerente com as duas contas de anuncio pendentes. As campanhas visiveis tem sufixo 'pf' e tema de aluguel e compra, o que sugere B2C: ver PENDENCIAS 12."
+      "nota": "Coleta de 08/09/2026 sobre janela ampliada (jan/2025 a 08/09/2026). A conta passou de 8 para 23 campanhas e de R$ 1,91 mi para R$ 2,59 mi. Dois achados novos: (1) o investimento esta em rampa forte, R$ 596 mil em julho e R$ 751 mil em agosto, contra a media de cerca de R$ 145 mil/mes que a leitura anterior sugeria, e setembro em 8 dias ja soma R$ 303 mil; (2) ha intencao B2B explicita nas keywords (anunciar zap, anunciar imoveis, portal imobiliario, vendas imobiliarias), R$ 221,9 mil, 15% do custo das 25 keywords retornadas, o que enfraquece a leitura de PENDENCIAS 12 de que a conta seria puramente B2C: ela e mista e nao separada. Meta segue em zero nos seis endpoints, coerente com as duas contas de anuncio ainda nao compartilhadas. Nenhum destes numeros entrou em diagnostico ainda.",
+      "coleta_2026_09_08": {
+        "janela": "2025-01-01 a 2026-09-08",
+        "google_ads": {
+          "campanhas": 23,
+          "custo_total": 2587064.0,
+          "cliques": 9461697,
+          "impressoes": 52555969,
+          "conversoes": 847806.8,
+          "cpa_medio": 3.05,
+          "ctr_medio": 18.0,
+          "meses_com_dado": 11,
+          "buraco_na_serie": "nov/2025 a abr/2026 sem nenhum registro; origem nao apurada (pausa real da conta ou falha de ingestao)",
+          "run_rate_recente": {
+            "2026-06": 312504.52,
+            "2026-07": 596423.05,
+            "2026-08": 751187.33,
+            "2026-09_parcial_8_dias": 303566.79
+          },
+          "intencao_b2b_nas_25_keywords": {
+            "custo": 221933.56,
+            "sobre_o_custo_das_25": 0.15,
+            "termos": [
+              "anunciar zap",
+              "vendas imobiliarias",
+              "anunciar imoveis",
+              "anunciar no viva real",
+              "anunciar imoveis zap",
+              "portal imobiliario",
+              "portais imobiliarios"
+            ]
+          }
+        },
+        "facebook_ads": {
+          "campanhas": 0,
+          "ads": 0,
+          "custo": 0
+        }
+      }
     },
     "ga4": {
       "status": "concedido, nivel Leitor",
@@ -326,7 +408,44 @@
     "cegueira": {
       "score": null,
       "dimensoes": {},
-      "evidencias": [],
+      "evidencias": [
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#32",
+          "achado": "Os tres conteineres Master das tres verticais concedem consentimento por padrao (granted). O template correto, denied, esta nos 22 conteineres carregados, que nao o instanciam.",
+          "data": "2026-09-11",
+          "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#33",
+          "achado": "Tres dos quatro ambientes de homologacao escrevem na mesma propriedade GA4 da producao. O QA do ANUNCIE do ZapImoveis tem tres tags de purchase ativas apontando para G-6TV9FSHYVM.",
+          "data": "2026-09-11",
+          "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#34",
+          "achado": "O begin_checkout do anunciante privado do ZapImoveis nunca dispara: gatilho 255 exige dois caminhos irmaos simultaneamente. Ha purchase sem begin_checkout, entao a taxa de conversao de checkout desse recorte nao e derivavel.",
+          "data": "2026-09-11",
+          "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#35",
+          "achado": "114 tags ativas de Universal Analytics em 19 conteineres e 16 propriedades, numa ferramenta que parou de processar dado em 2023 e 2024.",
+          "data": "2026-09-11",
+          "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#36",
+          "achado": "Sete conteineres resolvem o measurement ID por tabela de consulta cujo valor padrao e o placeholder G-XXXXXXXXXX. Hostname fora da regex dispara com ID invalido e o hit e descartado sem erro.",
+          "data": "2026-09-11",
+          "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#37",
+          "achado": "As landing pages B2B (OLX - Unbounce | LP, 40 tags) e o Site Institucional escrevem na GA4 Grupo OLX 503925542, a propriedade de tier gratuito com zero evento-chave.",
+          "data": "2026-09-11",
+          "estimado": false
+        }
+      ],
       "diagnosticado_em": null
     },
     "exposicao": {
@@ -384,7 +503,9 @@
       "cronograma-reajustado-acessos-0809": "completed",
       "dre-fluxo-receita": "in_progress",
       "dre-diagnostico-trava": "in_progress",
-      "dre-maturidade-digital": "in_progress"
+      "dre-maturidade-digital": "in_progress",
+      "serie-de-receita-a1": "completed",
+      "cronograma-reajustado-acessos-1009": "completed"
     }
   },
   "history": [
@@ -452,6 +573,962 @@
       "data": "2026-09-04",
       "version": 13,
       "evento": "Analise Diagnostica do Ciclo 1 executada (POPs 5, 6 e 7) com a evidencia anterior ao desbloqueio de 08/09. Pipeline: 5 inventariadores levantaram 329 fatos e 131 lacunas; 3 analises; 12 lentes adversariais devolveram 154 violacoes, 40 bloqueantes; passada de correcao aplicou 93 correcoes e rejeitou 12 com prova, derrubando para 7 bloqueantes; passada final reemitiu o fluxo no schema canonico da skill e normalizou a escala dos scores. RESULTADO. Fluxo: 10 etapas com fonte nomeada, ZERO com volume absoluto e zero com tempo medio, entao perda_absoluta e null nas dez e o ranking por perda absoluta e indeterminavel -- ordenar por percentual violaria o checklist da skill. Das seis taxas declaradas, so o 80% de pagamento da 1a fatura e taxa de passagem etapa a etapa; as outras cinco sao grandezas incomensuraveis sob o mesmo rotulo. Regra 7 nao verificavel pelos dois caminhos: falta bloco A pelo lado do cliente, e pelo lado instrumentado lead_b2b = 0 em agosto. Existem dois candidatos a numerador apurados e sem significado confirmado: generate_lead_pro 661.144 e generate_lead 830.116 (GA4 VivaReal 407391347, agosto/2026). Travas: so Cegueira (6) e Retencao (9) com as cinco dimensoes pontuadas; as outras seis com score null. Isso BLOQUEIA a consolidacao causal pela pre-condicao da propria skill. Retencao entra como hipotese de trabalho, nao como restricao. Maturidade digital: nivel 2 nas tres dimensoes. DOIS ACHADOS QUE CORRIGEM DOCUMENTO EXISTENTE, abertos como pendencias 19 e 20: o denominador dos 12% de nao-publicacao e ambiguo e meta-do-projeto.md usou p(publicacao)=88% resolvendo a ambiguidade silenciosamente para o lado que amplia o vazamento em uma ordem de grandeza; e o slide FLUXOS, do qual depende todo o mix de canais, nunca foi versionado, alem de a leitura de 'dois caminhos independentes' ser falsa por virem do mesmo artefato. Entregaveis: dados/outputs/dre-fluxo-receita.json, dre-diagnostico-travas.json e dre-maturidade-digital.json; 02-diagnostico/fluxo-de-receita.md, diagnostico-travas.md e maturidade-digital.md; e o docx em 01-cliente/entregaveis/."
+    },
+    {
+      "data": "2026-09-08",
+      "version": 14,
+      "evento": "Recoleta do V4MOS sobre janela ampliada (jan/2025 a 08/09/2026), a pedido do operador. Google Ads passou de 8 para 23 campanhas e de R$ 1,91 mi para R$ 2,59 mi de custo, com 9,46 mi de cliques, 52,5 mi de impressoes e 847,8 mil conversoes a CPA de R$ 3,05, numero que por si so corrobora a PENDENCIA 13 (o que a conta chama de conversao nao e aquisicao de anunciante). Tres achados: (1) rampa de investimento, R$ 312 mil em junho, R$ 596 mil em julho, R$ 751 mil em agosto e R$ 303 mil nos primeiros 8 dias de setembro, ordem de grandeza acima da media anterior; (2) buraco de seis meses na serie, nov/2025 a abr/2026, sem registro nenhum, origem nao apurada; (3) intencao B2B explicita nas keywords, R$ 221,9 mil em termos como anunciar zap e portal imobiliario, 15% do custo das 25 keywords, o que corrige para conta mista a leitura de PENDENCIAS 12 de que a conta visivel seria puramente B2C. Aparecem tambem 6 campanhas com sufixo go_pf, ao lado das vr_pf ja conhecidas, incluindo uma de WhatsApp (senbwppbr), o que toca direto no buraco de atribuicao declarado pelo cliente. Meta segue vazio nos seis endpoints. O script gravou a saida bruta em .connectors; a camada curada continua em .conectores."
+    },
+    {
+      "data": "2026-09-08",
+      "version": 15,
+      "evento": "Entrada do item A1 do checklist: serie de receita mensal 2025-2026 recebida do Grupo OLX em 28/08 por e-mail (thread Onboarding V4 e Grupo OLX), versionada em assets/originais com xlsx e csv, sha256 4b560e7e (csv) e b568d3ee (xlsx). 19 meses fechados, jan/2025 a jul/2026, 39 linhas sobre 4 unidades. A soma das unidades bate com o TOTAL nos 19 meses dentro de R$ 100 (maior divergencia R$ 51 em R$ 94,9 mi, arredondamento de exibicao), entao e o primeiro denominador auditavel do projeto. A1 passa de branco para amarelo: faltam 2024 e continuam abertos A2 e A3. NUMEROS. Grupo jan-jul: R$ 661,4 mi para R$ 726,5 mi, +9,8%. Real Estate +3,7% com 48,2% da receita e apenas 19,2% do crescimento; Autos +11,8%; Goods & Services +25,1% carregando 41,8% do crescimento por Intermediacao (+71,2%), que e take-rate de marketplace e nao assinatura. Os 3,7% de Imoveis sao artefato de portfolio: quatro linhas descontinuadas (CRM, Data, For Sale, Rentals) arrastam R$ 8,7 mi; ex-descontinuadas a vertical cresce +6,5% e o nucleo Classifieds - B&A +6,4%. Run-rate de Classifieds - B&A em R$ 42,8 mi/mes, entao 1 p.p. de run-rate = R$ 428 mil/mes ou R$ 5,1 mi/ano. QUATRO PENDENCIAS ABERTAS (21 a 24). 21: a serie NAO confirma o net negativo declarado em Imoveis, o nucleo cresce 6,4%, e as tres leituras compativeis exigem a contagem de clientes ativos mes a mes para separar preco de volume. 22: churn de 8-10%/mes nao pode ser de receita, seria R$ 49 mi/ano de contrato novo, 114% da carteira, e meta-do-projeto.md §4.1 o trata como se fosse, o que descalibra o ranking das alavancas. 23: a meta de Ciclo 1 de +3 a +6 p.p. esta dentro da banda de ruido, o desvio de uma leitura de 90 dias em Classifieds - B&A e +-2,83% e o efeito minimo detectavel +5,67%, entao a meta de ciclo tem de se medir no indicador da restricao e nao na receita bruta. 24: negativos em For Sale, linhas que zeram no meio da serie e um lancamento isolado de R$ 6.865.055 em Conecta em set/25. Sazonalidade da janela ago-nov medida em 2025: Real Estate -0,1% e Classifieds - B&A +0,6%, quase neutra, mas Classifieds - Dealers +3,1%, o que faria uma meta de +3 p.p. em Autos ser entregue pelo calendario. Entregaveis: dados/outputs/serie-receita-2025-2026.json, 02-diagnostico/serie-de-receita-2025-2026.md e .claude/scripts/build_serie_receita.py."
+    },
+    {
+      "data": "2026-09-10",
+      "version": 16,
+      "evento": "Cronograma reajustado pela terceira vez, agora por um fato bom: o LOTE COMPLETO DE ACESSOS FOI RECEBIDO EM 10/09/2026, dois dias depois do compromisso de 08/09. Inclui Salesforce Marketing Cloud, as 2 contas de Meta, Business Suite, LinkedIn, Search Console, Mouseflow, Unbounce, as contas de GTM que faltavam, o CRM comercial e as gravacoes de call com consentimento. Os nove diagnosticos saem de pendente para em_andamento e abrem no mesmo dia: nenhum segue parado por acesso, pela primeira vez desde o inicio do projeto. A contagem dos 15 dias corridos combinada no kick-off disparou em 10/09, entao os nove fecham em 24/09. CAPACIDADE INALTERADA: 11 dias uteis, os mesmos do plano de 08/09; o atraso de dois dias saiu inteiro da consolidacao causal, que caiu de 3 para 2 dias uteis (25 e 28/09). Nenhuma reserva de contrato consumida. SEGUNDA MUDANCA, decidida pelo cliente no mesmo dia: a apresentacao dos diagnosticos deixa de ser evento separado e passa a acontecer DENTRO DO COMITE 1, numa sessao so. A favor, o decisor se desloca uma vez e some a semana morta entre apresentar e decidir. Contra, todo o material precisa estar pronto antes, Matriz inclusive, e a CRT e a Nuvem de Conflito perdem a chance de serem construidas depois de apresentar. Por isso 02/10 virou o marco duro da janela, e nao a data do comite. O evento unico nao tem data: so teto, 29/10, definido pelo cliente. ABERTA A PENDENCIA 25, critica: entre o teto de 29/10 e o Comite 2, ja marcado para 03/11, ha UM UNICO DIA UTIL, a sexta 30/10, porque 31/10 e 01/11 sao fim de semana e 02/11 e Finados. O Comite 2 existe para ler a execucao do plano de 30 dias saido do Comite 1; com 1 dia util de execucao ele chega sem objeto, e o metodo e explicito sobre o diagnostico errado que isso gera, ausencia de melhoria lida como saturacao da trava quando e falta de execucao, o que autoriza expandir antes de esgotar a otimizacao. Recomendacao registrada: preferir o inicio da janela, e se a data cair depois de ~15/10 remarcar o Comite 2 na mesma conversa. PENDENCIA 18 fechada (acessos recebidos), com o residuo da conferencia item a item abrindo cada ferramenta, pelo precedente de GA4 em nivel Leitor e Meta sem ativo conectado. PENDENCIA 8 atualizada: as duas revisoes de qualidade viraram uma, em 01/10, e ficou mais critica, e o unico gate antes de um evento que apresenta e decide junto; prazo do revisor puxado para 15/09. O checklist de dados e acessos NAO foi atualizado item a item: so deve ser depois da conferencia na ferramenta, para nao trocar registro desatualizado por registro otimista. Entregaveis: portal (cronograma e painel reconstruidos e publicados), 04-execucao/sprint-diagnosticos-10-a-24-09.md (renomeado de 09-a-23-09 e reescrito), 04-execucao/cronograma-e-marcos.md e PENDENCIAS.md."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 17,
+      "evento": "Terceira rodada da auditoria (vii): a conta Checkout Unificado - PRO (6326134112) foi enumerada e exportada. Sao QUATRO conteineres, um Master com tres zonas e uma instancia por vertical: GTM-NGG9336B (Master), GTM-K4WBMGQV (OLX), GTM-NKSGWD6H (Zap Imoveis), GTM-NRVS3M3D (Viva Real). A hipotese do nome se confirmou: e aqui que a receita de checkout e medida, e e a melhor arquitetura de medicao do grupo. NOVE ACHADOS NOVOS, 23 a 31. Os criticos: (23) o checkout unificado escreve em TRES propriedades de GA4, G-50C013M2CC para OLX, G-6TV9FSHYVM para Zap e G-59PP1FKKEN para Viva Real, entao nao existe lugar onde a receita B2B do grupo apareca somada; (24) dois esquemas de dataLayer incompativeis na mesma conta, OLX le na raiz e Zap/VivaReal leem sob ecommerce; (25) o checkout OLX NAO envia seller_category, a variavel de Event Settings existe e e referenciada por zero tags, entao no lado OLX nao da para separar anunciante profissional de particular dentro do GA4, que e exatamente o recorte contratado; (26) user_email e user_phone vao ao GA4 como propriedades de usuario, sem hash, na tag de page_view do checkout OLX, materia de LGPD e de politica do Google; (27) a tag de inicializacao do Braze esta pausada no Master e as SEIS tags de acao seguem ativas nos tres filhos, disparando sobre um SDK que nao existe; (28) o consent mode encenado do achado 2 foi REPLICADO aqui, mesmo CSS escondendo o botao de recusar, mesmo atraso de 4s, e GCMDefaults com granted nos sete tipos contra o default de fabrica do template que traz tudo denied menos analytics. CONTRAPONTO (30): nos tres filhos o purchase esta no gatilho certo, o que delimita o achado 1 a superficie do GTM-KGFGVFC em vez de generaliza-lo. O que a rodada acrescenta ao metodo e o contrafactual: quando a casa monta do zero e com cuidado, produz zonas limpas e gatilhos corretos, e AINDA ASSIM tres propriedades, dois esquemas de dado, consentimento concedido por padrao e seis tags mortas. Nao falta capacidade tecnica, falta alguem encarregado de conferir se o numero que sai corresponde ao negocio. RESSALVA QUE VALE PARA TUDO: os 15 exports do repositorio, os 11 antigos e os 4 novos, sao de espaco de trabalho (containerVersionId 0), nao da versao publicada. Nenhum dos 31 achados esta confirmado em producao."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 18,
+      "evento": "Tres ajustes no cronograma, a pedido do operador. (1) (i) CRM MARKETING: as reunioes sobre o assunto aconteceram em 09 e 10/09, antes do lote de acessos, e o diagnostico passa a rodar de 11 a 23/09 em vez de 15 a 23. O time de CRM nao precisa entrar nos blocos de entrevista de 16 e 17, ja foi ouvido. O Gantt em dias recuou o inicio de 10 para 09/09 para que as duas reunioes aparecam, com estilo proprio de trabalho ja realizado. (2) (ix) PRE-VENDAS: comprimido de 11-24/09 para 14-17/09, quatro dias uteis, e deixa de ser o ultimo a fechar. O ultimo passou a ser (iii) GEO em 24/09, entao a data de fechamento dos nove nao mudou e os 15 dias corridos seguem valendo. RISCO REGISTRADO no sprint: (ix) e o unico diagnostico que sozinho pontua tres travas, Qualificacao, Compromisso e Decisao, e tinha tres semanas no desenho original justamente por isso; com 4 dias, se a camada experiencial nao fechar, as tres ficam limitadas a nota 3 pela regra 6, o que estreita o que a consolidacao causal consegue afirmar. Mitigacao registrada: priorizar a escuta das gravacoes sobre a transcricao integral e usar os blocos de 16 e 17 so para o que as gravacoes nao responderem. (3) LINGUAGEM: o enquadramento de custo de hora do cliente saiu de todo o material. A V4 nao cobra hora do cliente, faz o diagnostico EM CONJUNTO com ele. A legenda do Gantt passou a 'Feito em conjunto com o time do Grupo OLX', o campo 'custa' do codigo virou 'conjunto', e os grupos do sprint deixaram de ser 'custo alto/baixo de hora do cliente'. Saiu tambem o rotulo de (ix) como 'o mais caro dos nove'. REMOVIDO do portal, a pedido do operador: o bloco que anunciava a espera pela data do evento unico e o conflito com o Comite 2. O conteudo permanece em PENDENCIAS 25 e em cronograma-e-marcos.md, que sao internos; o portal mantem a faixa 'C1 a confirmar' nos dois Gantts, sem dramatizar. Removida tambem a secao Acessos do painel. Carga em paralelo recalculada: pico de 6 abertos em 14, 15 e 17/09, e 5 frentes conjuntas so em 17/09."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 19,
+      "evento": "FECHAMENTO DOS NOVE ANTECIPADO DE 24 PARA 18/09, a pedido do cliente: todos precisam fechar ainda na semana de 14 a 18. O kick-off combinou ATE 15 dias corridos a partir do recebimento, entao entregar em 9 esta dentro do combinado e devolve ao projeto os seis dias que o atraso de acesso havia consumido. NOVAS JANELAS: (vii) 10-15, (ii) 10-16, (i) 11-17, (ix) 14-17, (viii) 10-18, (vi) 11-18, (iv) 15-18, (v) 15-18, (iii) 16-18. Mudaram (vi) de 11-22 para 11-18, (i) de 11-23 para 11-17, (iv) e (v) de 17-23 para 15-18, e (iii) de 22-24 para 16-18. (iii) GEO deixou de fechar por ultimo porque nao ha mais um ultimo. O CUSTO NAO E DE PRAZO, E DE CONCENTRACAO: a janela caiu de 15 dias corridos e 11 uteis para 9 e 7; o pico de diagnosticos abertos ao mesmo tempo subiu de 6 para 8, em 15 e 16/09; e os dias com 5 frentes conjuntas com o time da OLX passaram de um (17/09) para tres seguidos (15, 16 e 17), contra o teto de 3 do metodo. Os 4 dias uteis que sairam do diagnostico foram para a CONSOLIDACAO CAUSAL, que passou de 2 para 5 dias uteis (21 a 25/09), por ser o trecho onde as 8 travas sao efetivamente pontuadas e onde a restricao e nomeada, e por ser o mais espremido do plano anterior. CRT e Nuvem passam para 28-30/09. A MATRIZ SEGUE EM 02/10 e a revisao em 01/10: antecipar nao compra nada, porque a janela do evento unico abre em 05/10 de qualquer forma, e so faria o material envelhecer mais tempo. RISCO NOVO REGISTRADO no sprint como risco 3: (vi) Midia paga e o unico dos nove cujo prazo nao depende so de esforco, depende da ingestao das 2 contas de Meta no V4MOS, que tem latencia propria e em 08/09 ainda devolvia zero nos seis endpoints. Se nao fechar na semana, (vi) entrega so com Google e a camada de Meta vira limitacao declarada, afetando Exposicao, Atencao e Qualificacao. Acao: verificar a ingestao na segunda 14/09, nao na quinta. Sprint renomeado de sprint-diagnosticos-10-a-24-09.md para sprint-diagnosticos-10-a-18-09.md."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 20,
+      "evento": "ANALISE PASSA A CORRER EM PARALELO AO DIAGNOSTICO, a pedido do cliente: consolidacao causal, CRT, Nuvem de Conflito e Matriz deixam de ser etapa posterior e sao montadas a medida que os achados aparecem, tudo na semana de 14 a 18/09. Consolidacao causal 14-18, CRT e Nuvem 16-18 (sobre as UDEs dos blocos de entrevista de 16 e 17), revisao de qualidade e MATRIZ APROVADA em 18/09. Tudo que depende da V4 fecha em 18/09, duas semanas antes do previsto: a Matriz saiu de 02/10 para 18/09. A regra 4 segue satisfeita, a Matriz so precisa estar aprovada antes do comite, e a janela do evento unico e 05 a 29/10. RISCO DO PARALELISMO registrado no sprint e no portal: pontuar trava com diagnostico ainda aberto produz nota provisoria, e nota provisoria que sobe sem evidencia nova e como se nomeia a restricao errada. A protecao e a regra 6: nota acima de 3 so com evidencia formal, entao uma trava so passa de 3 quando o diagnostico que a sustenta estiver fechado. CONSEQUENCIA CRITICA NA PENDENCIA 8: a revisao de qualidade independente saiu de 01/10 para 18/09 e acontece no mesmo dia em que o material termina de ser escrito. Revisar em um dia o que levou uma semana para ser escrito so funciona se o revisor acompanhar a construcao, entao a nomeacao passou de importante para urgente: prazo 15/09, nao 18. O revisor segue sem dono. GANTT: janela reduzida de 9-02/10 para 9-18/09, 10 colunas, e os marcos D (nove fechados) e M (Matriz) fundidos num so, em 18/09. (iii) GEO teve o rotulo 'base zero', criptico, trocado por 'presenca em IA', e passou do cinza de item interno para a cor dos demais diagnosticos, a pedido do operador. SEMANAS 5 e 6 liberadas passam a carregar posicionamento/ICP e FRT/PRT/forecast/matriz de expansao, que subiram das semanas 8 e 9; estas passam a carregar o TESTE DE IMPULSO CONTROLADO, que usa a folga ate o comite para confirmar empiricamente a restricao antes de decidir sobre ela."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 21,
+      "evento": "RENOMEACAO E DESDUPLICACAO DA MATRIZ, a pedido do operador, que perguntou o que era a Matriz ao ver o Gantt. Dois problemas apareceram. (1) O termo aparecia 14 vezes no cronograma do portal e NAO ERA DEFINIDO NENHUMA VEZ: jargao interno da V4 vazando para material de cliente, que le 'Matriz aprovada' como marco sem ter como saber o que e. (2) PIOR, ERA DUPLICACAO INTRODUZIDA POR MIM: 'revisao de qualidade' e 'Matriz' apareciam como duas etapas no mesmo dia 18/09, quando pela skill dre-matriz-gp sao a MESMA SESSAO, o gate em que alguem que nao participou da analise testa o material contra 10 criterios antes do comite. Herdei isso de quando havia dois eventos de cliente, apresentacao e comite, cada um com seu gate; com um evento so, sobrou um gate so. Isso tambem significava que o 'revisor independente sem dono' da PENDENCIA 8 e o participante que falta na Matriz eram a mesma lacuna contada duas vezes. DECISAO: no portal o termo 'Matriz' desaparece por completo (zero ocorrencias no HTML publicado, inclusive nos comentarios de codigo, que tambem citavam caminhos internos do repositorio e nao devem viajar para material de cliente) e a etapa passa a se chamar REVISAO DE QUALIDADE; o marco do Gantt passou de 'M, Matriz aprovada' para 'R, tudo fechado e material aprovado'. Nos documentos internos o termo Matriz FICA, porque e o vocabulario do metodo e o vinculo com a regra 4 do CLAUDE.md e com a skill; foi acrescentada uma nota de vocabulario no sprint e na PENDENCIA 8 dizendo que Matriz e revisao de qualidade sao a mesma sessao e que no portal ela aparece com o segundo nome. O playbook, a skill e a regra 4 NAO foram tocados: sao doutrina do metodo e so mudam se o metodo da V4 mudar. De quebra, a varredura achou datas que tinham ficado para tras em cronograma-e-marcos.md e PENDENCIAS.md, que ainda diziam Matriz em 02/10 depois do paralelismo ter movido tudo para 18/09, e o painel, que mostrava 'Matriz 2/10' para o cliente."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 22,
+      "evento": "O EVENTO UNICO GANHOU DATA: quarta, 23/09/2026, confirmada pelo cliente. Apresentacao dos diagnosticos e Comite 1 na mesma sessao. Com o material pronto em 18/09, sobram dois dias uteis, segunda 21 e terca 22, para ensaio e fechamento de agenda, sem producao pendente. PENDENCIA 25 FECHADA, e fechada por desaparecimento e nao por mitigacao: ela existia porque a data estava em aberto com teto em 29/10, e o teto deixava UM UNICO DIA UTIL ate o Comite 2 de 03/11, o que faria o Comite 2 confundir falta de execucao com saturacao da trava. Com 23/09 sobram 26 DIAS UTEIS entre os dois comites, e o plano de 30 dias passa a ter tempo de ser executado antes de ser avaliado. A antecipacao so foi possivel porque a consolidacao causal, a CRT e a Nuvem passaram a correr em paralelo aos diagnosticos, pondo o material pronto em 18/09 em vez de 02/10. EFEITO NA GRADE DO CICLO 1: o Comite 1 caiu na semana 5, nao na 7 a 10, o que restaura a estrutura sadia do metodo, comite seguido de 30 dias de execucao seguido do Comite 2. As semanas 6 a 10 foram reescritas: execucao assistida do plano (6 a 8), teste de impulso controlado e sua leitura (7 a 8), e posicionamento, ICP, FRT/PRT, forecast e matriz de expansao (9 a 10). PORTAL: o Gantt em dias foi estendido de 9-18 para 9-23 e ganhou o marco C1; a largura minima caiu de 60rem para 44rem porque a anterior empurrava o marco do comite para fora da area visivel, forcando rolagem justamente no marco mais importante. Nos Gantts de 12 meses e de 15 semanas o C1 voltou a ser ponto em vez de faixa hachurada, e todo o codigo de janela em aberto (g-janela, g-wk-janela, JANELA_C1) saiu. FICA EM ABERTO um item menor, movido para PENDENCIAS 7: a duracao do evento, porque com a apresentacao dentro dele o Comite 1 nao cabe nas 2h do formato padrao."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 23,
+      "evento": "QUARTA RODADA DA AUDITORIA (vii): o parque de GTM foi fechado e auditado por inteiro. O inventario saiu de 15 para 60 conteineres nas quatro contas (1.779 tags, 1.634 gatilhos, 4.711 variaveis), depois de duas levas de export em 11/09. Dez achados novos, 32 a 41. Os tres criticos: os tres Masters das tres verticais concedem consentimento por padrao; tres dos quatro ambientes de QA escrevem na propriedade GA4 de producao; e o begin_checkout do anunciante privado do ZapImoveis nunca dispara, o que deixa esse recorte com purchase sem denominador. Dois candidatos foram derrubados na conferencia e ficaram registrados. Abriu PENDENCIAS 27 (quatro streams de GA4 fora do acesso da V4) e 28 (o gatilho impossivel). Continua faltando a versao publicada: os 62 arquivos sao todos rascunho de workspace, entao nenhum achado sustenta afirmacao sobre producao sem essa confirmacao."
     }
-  ]
+  ],
+  "connectors": {
+    "fetched_at": "2026-09-08T14:20:10Z",
+    "period": {
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2026-09-08T23:59:59Z"
+    },
+    "google_ads": {
+      "total_campaigns": 23,
+      "total_cost": 2587064.0,
+      "total_clicks": 9461697,
+      "total_impressions": 52555969,
+      "total_conversions": 847806.8,
+      "avg_cpa": 3.05,
+      "avg_ctr": 18.0,
+      "campaigns": [
+        {
+          "name": "dsageralbr_gg_se_bg_ld_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "PAUSED",
+          "budget_daily": 5000.0,
+          "cost": 611911.97,
+          "clicks": 2728470,
+          "impressions": 18154693,
+          "conversions": 381401.4500000002,
+          "ctr": 15.03,
+          "cpa": 1.6
+        },
+        {
+          "name": "pmaxsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 8400.0,
+          "cost": 593178.27,
+          "clicks": 2048009,
+          "impressions": 10414549,
+          "conversions": 152760.86999999994,
+          "ctr": 19.66,
+          "cpa": 3.88
+        },
+        {
+          "name": "pmaxcomprasp_gg_pm_bg_lc_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 4000.0,
+          "cost": 338085.58,
+          "clicks": 1300845,
+          "impressions": 6062671,
+          "conversions": 66333.10999999997,
+          "ctr": 21.46,
+          "cpa": 5.1
+        },
+        {
+          "name": "pmaxaluguelsp_gg_pm_bg_la_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 4500.0,
+          "cost": 336819.84,
+          "clicks": 880967,
+          "impressions": 3828291,
+          "conversions": 76072.81000000004,
+          "ctr": 23.01,
+          "cpa": 4.43
+        },
+        {
+          "name": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 5000.0,
+          "cost": 277443.11,
+          "clicks": 771236,
+          "impressions": 3798048,
+          "conversions": 70423.75,
+          "ctr": 20.31,
+          "cpa": 3.94
+        },
+        {
+          "name": "pmax24br_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 6000.0,
+          "cost": 121027.74,
+          "clicks": 491521,
+          "impressions": 2838978,
+          "conversions": 28600.86,
+          "ctr": 17.31,
+          "cpa": 4.23
+        },
+        {
+          "name": "senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 9000.0,
+          "cost": 94232.27,
+          "clicks": 352680,
+          "impressions": 1847625,
+          "conversions": 23470.370000000003,
+          "ctr": 19.09,
+          "cpa": 4.01
+        },
+        {
+          "name": "pmaxaluguelsa360br_gg_pm_bg_la_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 4000.0,
+          "cost": 58950.65,
+          "clicks": 216060,
+          "impressions": 1911422,
+          "conversions": 14759.939999999999,
+          "ctr": 11.3,
+          "cpa": 3.99
+        },
+        {
+          "name": "senbcomprasp_gg_pc_bg_lc_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 2000.0,
+          "cost": 55264.13,
+          "clicks": 287226,
+          "impressions": 1531392,
+          "conversions": 10439.689999999999,
+          "ctr": 18.76,
+          "cpa": 5.29
+        },
+        {
+          "name": "pmaxcomprasa360br_gg_pm_bg_lc_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 5000.0,
+          "cost": 20071.67,
+          "clicks": 127360,
+          "impressions": 721793,
+          "conversions": 4048.6299999999997,
+          "ctr": 17.64,
+          "cpa": 4.96
+        },
+        {
+          "name": "sebroffsp_gg_se_po_pp_ao_wb_re_go_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 1500.0,
+          "cost": 13092.45,
+          "clicks": 4345,
+          "impressions": 56760,
+          "conversions": 163.35,
+          "ctr": 7.66,
+          "cpa": 80.15
+        },
+        {
+          "name": "senbcompramcmvsp_gg_pc_bg_lc_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 1500.0,
+          "cost": 11211.42,
+          "clicks": 31314,
+          "impressions": 219987,
+          "conversions": 1964.2600000000004,
+          "ctr": 14.23,
+          "cpa": 5.71
+        },
+        {
+          "name": "sebrexatabr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 2000.0,
+          "cost": 11201.96,
+          "clicks": 122211,
+          "impressions": 241070,
+          "conversions": 9049.220000000001,
+          "ctr": 50.7,
+          "cpa": 1.24
+        },
+        {
+          "name": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 726.83,
+          "cost": 9483.6,
+          "clicks": 6478,
+          "impressions": 44992,
+          "conversions": 224.84,
+          "ctr": 14.4,
+          "cpa": 42.18
+        },
+        {
+          "name": "pmaxgeralbr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "PAUSED",
+          "budget_daily": 3000.0,
+          "cost": 8487.97,
+          "clicks": 27094,
+          "impressions": 260447,
+          "conversions": 4500.5,
+          "ctr": 10.4,
+          "cpa": 1.89
+        },
+        {
+          "name": "senbwppbr_gg_pc_po_pp_ao_wb_re_go_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 311.5,
+          "cost": 6425.75,
+          "clicks": 1007,
+          "impressions": 8368,
+          "conversions": 110.5,
+          "ctr": 12.03,
+          "cpa": 58.15
+        },
+        {
+          "name": "senbcompramcmvbr_gg_pc_bg_lc_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 2000.0,
+          "cost": 4826.1,
+          "clicks": 19306,
+          "impressions": 114567,
+          "conversions": 782.9399999999999,
+          "ctr": 16.85,
+          "cpa": 6.16
+        },
+        {
+          "name": "pmaxon26br_gg_pc_po_pp_ao_wb_re_go_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 600.0,
+          "cost": 4132.33,
+          "clicks": 1941,
+          "impressions": 270796,
+          "conversions": 0.0,
+          "ctr": 0.72,
+          "cpa": null
+        },
+        {
+          "name": "pmaxoff26br_gg_pc_po_pp_ao_wb_re_go_pf",
+          "type": "PERFORMANCE_MAX",
+          "status": "ENABLED",
+          "budget_daily": 173.06,
+          "cost": 3445.18,
+          "clicks": 3341,
+          "impressions": 25649,
+          "conversions": 95.0,
+          "ctr": 13.03,
+          "cpa": 36.27
+        },
+        {
+          "name": "sebrbr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 2500.0,
+          "cost": 2660.61,
+          "clicks": 12625,
+          "impressions": 28732,
+          "conversions": 1160.9900000000002,
+          "ctr": 43.94,
+          "cpa": 2.29
+        },
+        {
+          "name": "dsaaluguelbr_gg_se_bg_la_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 1500.0,
+          "cost": 2001.71,
+          "clicks": 10222,
+          "impressions": 71741,
+          "conversions": 736.32,
+          "ctr": 14.25,
+          "cpa": 2.72
+        },
+        {
+          "name": "dsageral25br_gg_se_bg_ld_ao_wb_re_vr_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 1500.0,
+          "cost": 1968.91,
+          "clicks": 17239,
+          "impressions": 100915,
+          "conversions": 695.8799999999998,
+          "ctr": 17.08,
+          "cpa": 2.83
+        },
+        {
+          "name": "senb26sp_gg_pc_po_pp_ao_wb_re_go_pf",
+          "type": "SEARCH",
+          "status": "ENABLED",
+          "budget_daily": 750.0,
+          "cost": 1140.78,
+          "clicks": 200,
+          "impressions": 2483,
+          "conversions": 11.5,
+          "ctr": 8.05,
+          "cpa": 99.2
+        }
+      ],
+      "monthly_evolution": [
+        {
+          "month": "2025-05",
+          "cost": 89409.09,
+          "clicks": 455066,
+          "impressions": 3347140,
+          "conversions": 72254.2,
+          "ctr": 13.6,
+          "cpa": 1.24
+        },
+        {
+          "month": "2025-06",
+          "cost": 198629.16,
+          "clicks": 888622,
+          "impressions": 4865481,
+          "conversions": 147239.5,
+          "ctr": 18.26,
+          "cpa": 1.35
+        },
+        {
+          "month": "2025-07",
+          "cost": 116200.73,
+          "clicks": 472860,
+          "impressions": 3376885,
+          "conversions": 75899.4,
+          "ctr": 14.0,
+          "cpa": 1.53
+        },
+        {
+          "month": "2025-08",
+          "cost": 47931.08,
+          "clicks": 176536,
+          "impressions": 1211756,
+          "conversions": 26305.4,
+          "ctr": 14.57,
+          "cpa": 1.82
+        },
+        {
+          "month": "2025-09",
+          "cost": 105291.65,
+          "clicks": 465802,
+          "impressions": 3410039,
+          "conversions": 39856.9,
+          "ctr": 13.66,
+          "cpa": 2.64
+        },
+        {
+          "month": "2025-10",
+          "cost": 62938.23,
+          "clicks": 296678,
+          "impressions": 2203839,
+          "conversions": 24346.5,
+          "ctr": 13.46,
+          "cpa": 2.59
+        },
+        {
+          "month": "2026-05",
+          "cost": 2982.37,
+          "clicks": 17668,
+          "impressions": 171792,
+          "conversions": 1151.2,
+          "ctr": 10.28,
+          "cpa": 2.59
+        },
+        {
+          "month": "2026-06",
+          "cost": 312504.52,
+          "clicks": 965741,
+          "impressions": 4704847,
+          "conversions": 90096.2,
+          "ctr": 20.53,
+          "cpa": 3.47
+        },
+        {
+          "month": "2026-07",
+          "cost": 596423.05,
+          "clicks": 1959836,
+          "impressions": 9194209,
+          "conversions": 137648.4,
+          "ctr": 21.32,
+          "cpa": 4.33
+        },
+        {
+          "month": "2026-08",
+          "cost": 751187.33,
+          "clicks": 2771282,
+          "impressions": 14560248,
+          "conversions": 182540.3,
+          "ctr": 19.03,
+          "cpa": 4.12
+        },
+        {
+          "month": "2026-09",
+          "cost": 303566.79,
+          "clicks": 991606,
+          "impressions": 5509733,
+          "conversions": 50468.8,
+          "ctr": 18.0,
+          "cpa": 6.01
+        }
+      ],
+      "day_of_week": [
+        {
+          "day": "Seg",
+          "clicks": 1684193,
+          "impressions": 9490855,
+          "cost": 471540.74,
+          "conversions": 159306.0,
+          "pct": 17.8,
+          "ctr": 17.75
+        },
+        {
+          "day": "Ter",
+          "clicks": 1499232,
+          "impressions": 8655692,
+          "cost": 423971.62,
+          "conversions": 142770.1,
+          "pct": 15.8,
+          "ctr": 17.32
+        },
+        {
+          "day": "Qua",
+          "clicks": 1436256,
+          "impressions": 8286015,
+          "cost": 418949.45,
+          "conversions": 138582.5,
+          "pct": 15.2,
+          "ctr": 17.33
+        },
+        {
+          "day": "Qui",
+          "clicks": 1263571,
+          "impressions": 6991884,
+          "cost": 367497.03,
+          "conversions": 117626.0,
+          "pct": 13.4,
+          "ctr": 18.07
+        },
+        {
+          "day": "Sex",
+          "clicks": 1168904,
+          "impressions": 6438406,
+          "cost": 322130.75,
+          "conversions": 104872.3,
+          "pct": 12.4,
+          "ctr": 18.16
+        },
+        {
+          "day": "Sáb",
+          "clicks": 1116291,
+          "impressions": 5985326,
+          "cost": 278281.31,
+          "conversions": 87398.3,
+          "pct": 11.8,
+          "ctr": 18.65
+        },
+        {
+          "day": "Dom",
+          "clicks": 1293250,
+          "impressions": 6707791,
+          "cost": 304693.1,
+          "conversions": 97251.6,
+          "pct": 13.7,
+          "ctr": 19.28
+        }
+      ],
+      "gender_breakdown": [
+        {
+          "gender": "Feminino",
+          "clicks": 438026,
+          "impressions": 3165579,
+          "cost": 391603.2,
+          "conversions": 25898.8,
+          "pct_clicks": 47.5,
+          "ctr": 13.84,
+          "cpa": 15.12
+        },
+        {
+          "gender": "Masculino",
+          "clicks": 288695,
+          "impressions": 2599440,
+          "cost": 265330.22,
+          "conversions": 15309.5,
+          "pct_clicks": 31.3,
+          "ctr": 11.11,
+          "cpa": 17.33
+        },
+        {
+          "gender": "Indefinido",
+          "clicks": 195083,
+          "impressions": 1307456,
+          "cost": 114265.38,
+          "conversions": 9200.8,
+          "pct_clicks": 21.2,
+          "ctr": 14.92,
+          "cpa": 12.42
+        }
+      ],
+      "top_keywords": [
+        {
+          "keyword": "aluguel",
+          "match_type": "Ampla",
+          "ad_group": "Aluguel",
+          "campaign": "senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 2896794,
+          "impressions": 13758564,
+          "cost": 796245.55,
+          "conversions": 311452.2,
+          "ctr": 21.05,
+          "cpc": 0.27,
+          "cpa": 2.56
+        },
+        {
+          "keyword": "venda de apto",
+          "match_type": "Ampla",
+          "ad_group": "Compra",
+          "campaign": "senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 456811,
+          "impressions": 2061587,
+          "cost": 98458.69,
+          "conversions": 37849.8,
+          "ctr": 22.16,
+          "cpc": 0.22,
+          "cpa": 2.6
+        },
+        {
+          "keyword": "casas novas a venda",
+          "match_type": "Ampla",
+          "ad_group": "Compra",
+          "campaign": "senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 605159,
+          "impressions": 2715232,
+          "cost": 92534.81,
+          "conversions": 35748.4,
+          "ctr": 22.29,
+          "cpc": 0.15,
+          "cpa": 2.59
+        },
+        {
+          "keyword": "anunciar zap",
+          "match_type": "Ampla",
+          "ad_group": "Brand",
+          "campaign": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+          "clicks": 17821,
+          "impressions": 132922,
+          "cost": 80904.82,
+          "conversions": 1046.2,
+          "ctr": 13.41,
+          "cpc": 4.54,
+          "cpa": 77.33
+        },
+        {
+          "keyword": "vendas imobiliárias",
+          "match_type": "Ampla",
+          "ad_group": "Grupo de anúncios 1",
+          "campaign": "senbwppbr_gg_pc_po_pp_ao_wb_re_go_pf",
+          "clicks": 11325,
+          "impressions": 96834,
+          "cost": 66809.47,
+          "conversions": 2191.5,
+          "ctr": 11.7,
+          "cpc": 5.9,
+          "cpa": 30.49
+        },
+        {
+          "keyword": "imoveis para vender",
+          "match_type": "Ampla",
+          "ad_group": "Compra",
+          "campaign": "senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 382307,
+          "impressions": 1916647,
+          "cost": 64416.58,
+          "conversions": 25184.5,
+          "ctr": 19.95,
+          "cpc": 0.17,
+          "cpa": 2.56
+        },
+        {
+          "keyword": "alugar",
+          "match_type": "Ampla",
+          "ad_group": "Aluguel",
+          "campaign": "senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 121847,
+          "impressions": 637959,
+          "cost": 42585.16,
+          "conversions": 12296.9,
+          "ctr": 19.1,
+          "cpc": 0.35,
+          "cpa": 3.46
+        },
+        {
+          "keyword": "zap +",
+          "match_type": "Ampla",
+          "ad_group": "Brand",
+          "campaign": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+          "clicks": 9312,
+          "impressions": 67391,
+          "cost": 40142.11,
+          "conversions": 533.4,
+          "ctr": 13.82,
+          "cpc": 4.31,
+          "cpa": 75.26
+        },
+        {
+          "keyword": "casa alugar",
+          "match_type": "Ampla",
+          "ad_group": "Casa",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 96945,
+          "impressions": 445774,
+          "cost": 29534.02,
+          "conversions": 7975.9,
+          "ctr": 21.75,
+          "cpc": 0.3,
+          "cpa": 3.7
+        },
+        {
+          "keyword": "anunciar imóveis",
+          "match_type": "Ampla",
+          "ad_group": "Grupo de anúncios 1",
+          "campaign": "senbwppbr_gg_pc_po_pp_ao_wb_re_go_pf",
+          "clicks": 6281,
+          "impressions": 71743,
+          "cost": 26185.98,
+          "conversions": 663.4,
+          "ctr": 8.75,
+          "cpc": 4.17,
+          "cpa": 39.47
+        },
+        {
+          "keyword": "anunciar no viva real",
+          "match_type": "Ampla",
+          "ad_group": "Brand",
+          "campaign": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+          "clicks": 5300,
+          "impressions": 33585,
+          "cost": 24010.92,
+          "conversions": 327.7,
+          "ctr": 15.78,
+          "cpc": 4.53,
+          "cpa": 73.28
+        },
+        {
+          "keyword": "casas para alugar são paulo",
+          "match_type": "Ampla",
+          "ad_group": "Casa SP",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 40497,
+          "impressions": 199648,
+          "cost": 14736.56,
+          "conversions": 3522.1,
+          "ctr": 20.28,
+          "cpc": 0.36,
+          "cpa": 4.18
+        },
+        {
+          "keyword": "imoveis a venda",
+          "match_type": "Ampla",
+          "ad_group": "Ampla",
+          "campaign": "senbcomprasp_gg_pc_bg_lc_ao_wb_re_vr_pf",
+          "clicks": 90292,
+          "impressions": 436262,
+          "cost": 14336.37,
+          "conversions": 2761.0,
+          "ctr": 20.7,
+          "cpc": 0.16,
+          "cpa": 5.19
+        },
+        {
+          "keyword": "ponto comercial alugar",
+          "match_type": "Ampla",
+          "ad_group": "Ampla",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 30842,
+          "impressions": 125789,
+          "cost": 10978.44,
+          "conversions": 3015.4,
+          "ctr": 24.52,
+          "cpc": 0.36,
+          "cpa": 3.64
+        },
+        {
+          "keyword": "apartamentos para alugar",
+          "match_type": "Ampla",
+          "ad_group": "Apto",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 26280,
+          "impressions": 133107,
+          "cost": 9586.79,
+          "conversions": 2290.0,
+          "ctr": 19.74,
+          "cpc": 0.36,
+          "cpa": 4.19
+        },
+        {
+          "keyword": "portal imobiliário",
+          "match_type": "Ampla",
+          "ad_group": "Grupo de anúncios 1",
+          "campaign": "senbwppbr_gg_pc_po_pp_ao_wb_re_go_pf",
+          "clicks": 1801,
+          "impressions": 24906,
+          "cost": 9402.34,
+          "conversions": 213.1,
+          "ctr": 7.23,
+          "cpc": 5.22,
+          "cpa": 44.12
+        },
+        {
+          "keyword": "anunciar imóveis zap",
+          "match_type": "Ampla",
+          "ad_group": "Brand",
+          "campaign": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+          "clicks": 2347,
+          "impressions": 22879,
+          "cost": 9279.36,
+          "conversions": 112.4,
+          "ctr": 10.26,
+          "cpc": 3.95,
+          "cpa": 82.59
+        },
+        {
+          "keyword": "alugar apto",
+          "match_type": "Ampla",
+          "ad_group": "Apto",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 24962,
+          "impressions": 130178,
+          "cost": 9163.75,
+          "conversions": 2114.4,
+          "ctr": 19.18,
+          "cpc": 0.37,
+          "cpa": 4.33
+        },
+        {
+          "keyword": "apartamento pronto para morar minha casa minha vida",
+          "match_type": "Ampla",
+          "ad_group": "Minha Casa Minha Vida",
+          "campaign": "senbcompramcmvbr_gg_pc_bg_lc_ao_wb_re_vr_pf",
+          "clicks": 25381,
+          "impressions": 128499,
+          "cost": 8617.97,
+          "conversions": 1914.0,
+          "ctr": 19.75,
+          "cpc": 0.34,
+          "cpa": 4.5
+        },
+        {
+          "keyword": "viva real",
+          "match_type": "Exata",
+          "ad_group": "Exata",
+          "campaign": "sebrexatabr_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 72108,
+          "impressions": 144257,
+          "cost": 7255.55,
+          "conversions": 5645.6,
+          "ctr": 49.99,
+          "cpc": 0.1,
+          "cpa": 1.29
+        },
+        {
+          "keyword": "minha casa minha vida fortaleza",
+          "match_type": "Ampla",
+          "ad_group": "Minha Casa Minha Vida",
+          "campaign": "senbcompramcmvbr_gg_pc_bg_lc_ao_wb_re_vr_pf",
+          "clicks": 19496,
+          "impressions": 80619,
+          "cost": 6033.59,
+          "conversions": 1617.3,
+          "ctr": 24.18,
+          "cpc": 0.31,
+          "cpa": 3.73
+        },
+        {
+          "keyword": "salao para alugar",
+          "match_type": "Ampla",
+          "ad_group": "Ampla",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 19528,
+          "impressions": 88876,
+          "cost": 5756.94,
+          "conversions": 1488.2,
+          "ctr": 21.97,
+          "cpc": 0.29,
+          "cpa": 3.87
+        },
+        {
+          "keyword": "zap +",
+          "match_type": "Frase",
+          "ad_group": "Brand",
+          "campaign": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+          "clicks": 473,
+          "impressions": 5442,
+          "cost": 5668.61,
+          "conversions": 36.8,
+          "ctr": 8.69,
+          "cpc": 11.98,
+          "cpa": 153.87
+        },
+        {
+          "keyword": "alugar apartamento",
+          "match_type": "Ampla",
+          "ad_group": "Apto",
+          "campaign": "senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf",
+          "clicks": 14168,
+          "impressions": 69538,
+          "cost": 5469.94,
+          "conversions": 1107.7,
+          "ctr": 20.37,
+          "cpc": 0.39,
+          "cpa": 4.94
+        },
+        {
+          "keyword": "portais imobiliários",
+          "match_type": "Ampla",
+          "ad_group": "Grupo de anúncios 1",
+          "campaign": "senbwppbr_gg_pc_po_pp_ao_wb_re_go_pf",
+          "clicks": 950,
+          "impressions": 14981,
+          "cost": 5340.67,
+          "conversions": 82.0,
+          "ctr": 6.34,
+          "cpc": 5.62,
+          "cpa": 65.13
+        }
+      ]
+    },
+    "facebook_ads": {
+      "total_campaigns": 0,
+      "total_ads": 0,
+      "total_creatives": 0,
+      "total_spend": 0,
+      "total_impressions": 0,
+      "total_clicks": 0,
+      "total_reach": 0,
+      "avg_cpm": 0,
+      "avg_ctr": 0,
+      "campaigns": [],
+      "creatives": [],
+      "monthly_evolution": []
+    }
+  },
+  "cronograma_ciclo_1": {
+    "reajustado_em": "2026-09-11",
+    "gatilho": "recebimento do lote completo de acessos em 10/09/2026",
+    "diagnosticos": {
+      "de": "2026-09-10",
+      "ate": "2026-09-18",
+      "dias_corridos": 9,
+      "dias_uteis": 7,
+      "prazo_combinado_kickoff": "ate 15 dias corridos a partir do recebimento",
+      "pico_abertos": 8,
+      "pico_abertos_em": [
+        "2026-09-15",
+        "2026-09-16"
+      ],
+      "pico_frentes_conjuntas": 5,
+      "pico_frentes_conjuntas_em": [
+        "2026-09-15",
+        "2026-09-16",
+        "2026-09-17"
+      ],
+      "teto_do_metodo": 3,
+      "nota": "fechamento antecipado de 24 para 18/09 a pedido do cliente em 11/09. Entrega em 9 dias corridos contra o teto de 15 combinado no kick-off. Os 4 dias uteis que sairam do diagnostico foram para a consolidacao causal, que passou de 2 para 5"
+    },
+    "consolidacao_causal": {
+      "de": "2026-09-14",
+      "ate": "2026-09-18",
+      "em_paralelo": true,
+      "nota": "deixou de vir depois dos nove: as travas sao pontuadas a medida que cada diagnostico entrega. Risco: nota provisoria que sobe sem evidencia nova nomeia a restricao errada. Protecao e a regra 6, nota acima de 3 so com evidencia formal"
+    },
+    "crt_e_nuvem": {
+      "de": "2026-09-16",
+      "ate": "2026-09-18",
+      "em_paralelo": true,
+      "nota": "monta sobre as UDEs colhidas nos blocos de entrevista de 16 e 17"
+    },
+    "revisao_de_qualidade": {
+      "data": "2026-09-18",
+      "dono": null,
+      "nota": "e a mesma sessao que o metodo chama de Matriz do Growth Planner (regra 4, skill dre-matriz-gp), nao duas etapas. Era 01/10, antecipada para 18/09 pelo paralelismo, e acontece no mesmo dia em que o material termina de ser escrito. So funciona se o revisor tiver acompanhado a construcao. Nomear ate 15/09. Ver PENDENCIAS 8",
+      "e_a_matriz": true
+    },
+    "matriz_aprovada": {
+      "data": "2026-09-18",
+      "nota": "gate de bloqueio duro, regra 4. Ultimo marco que depende so da V4, duas semanas antes do previsto"
+    },
+    "evento_unico": {
+      "descricao": "apresentacao dos diagnosticos e Comite 1 na mesma sessao",
+      "data": "2026-09-23",
+      "dia_da_semana": "quarta",
+      "confirmado_em": "2026-09-11",
+      "estimado": false,
+      "duracao_confirmada": false,
+      "nota": "confirmado pelo cliente. O formato padrao de 2h nao comporta a apresentacao dentro do comite: duracao segue a confirmar, movida para PENDENCIAS 7"
+    },
+    "comite_2": {
+      "data": "2026-11-03",
+      "inalterado": true,
+      "execucao_do_plano_dias_uteis": 26
+    },
+    "comite_3": {
+      "data": "2026-12-01",
+      "inalterado": true
+    },
+    "conflito_aberto": null,
+    "tudo_que_depende_da_v4_fecha_em": "2026-09-18",
+    "vocabulario": {
+      "matriz": "termo do metodo da V4 para o gate de qualidade. Mantido nos documentos internos pelo vinculo com a regra 4 do CLAUDE.md e com a skill dre-matriz-gp",
+      "no_portal": "revisão de qualidade",
+      "motivo": "'Matriz aprovada' e jargao interno e nao diz nada a quem le de fora; aparecia 14 vezes no cronograma sem nenhuma definicao"
+    },
+    "dias_uteis_material_pronto_ate_comite": 2,
+    "dias_uteis_comite1_ate_comite2": 26
+  }
 }

@@ -1,0 +1,75 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-09-11 16:58:15",
+    "containerVersion": {
+        "path": "accounts/2971905372/containers/96165091/versions/0",
+        "accountId": "2971905372",
+        "containerId": "96165091",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/2971905372/containers/96165091",
+            "accountId": "2971905372",
+            "containerId": "96165091",
+            "name": "ZapImóveis - Container BLOG (WIP)",
+            "publicId": "GTM-NWPXB4X",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1667341500517",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/2971905372/containers/96165091/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-NWPXB4X"
+            ]
+        },
+        "builtInVariable": [
+            {
+                "accountId": "2971905372",
+                "containerId": "96165091",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "96165091",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "96165091",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "96165091",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "2971905372",
+                "containerId": "96165091",
+                "type": "EVENT",
+                "name": "Event"
+            }
+        ],
+        "fingerprint": "1789145895049",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/2971905372/containers/96165091/versions/0?apiLink=version"
+    }
+}
