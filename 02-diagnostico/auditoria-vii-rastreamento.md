@@ -1174,12 +1174,22 @@ série de receita declarada, não o GA4.
 [sprint de diagnósticos](../04-execucao/sprint-diagnosticos-10-a-18-09.md). Fechar significa quatro
 coisas, e só isso. Nada aqui é opinião de quem escreve: são os critérios do método.
 
-| | Critério | Estado em 11/09 | Dono |
+| | Critério | Estado | Dono |
 |---|---|---|---|
 | 1 | **Cobertura**: todo contêiner e toda propriedade do escopo lidos | ✅ **feito**. 60 de 60 contêineres, 4 de 4 contas, configuração do GA4 lida por API | V4 |
 | 2 | **Achados escritos com fonte rastreável**, cada um até a tag ou a propriedade | ✅ **feito**. 43 achados | V4 |
-| 3 | **Trava de Cegueira pontuada**, nas 2 camadas e nas 5 dimensões, com a entrada visual obrigatória | 🔴 **falta** | V4, com `dre-diagnostico-trava` |
-| 4 | **Limitações declaradas** e o que ficou por confirmar, registrado | 🔴 **falta** esta seção ser preenchida abaixo | V4 |
+| 3 | **Trava de Cegueira pontuada**, nas 2 camadas e nas 5 dimensões, com a entrada visual obrigatória | ✅ **feito em 11/09**. Score **5 de 25**, confiabilidade parcial. Ver [`trava-cegueira.md`](trava-cegueira.md) | V4 |
+| 4 | **Limitações declaradas** e o que ficou por confirmar, registrado | ✅ **feito**. [Ressalvas de leitura](#ressalvas-de-leitura) mais a seção abaixo | V4 |
+
+> ## ✅ (vii) Rastreamento Completo está FECHADO em 11/09/2026
+>
+> Quatro dias antes da data do cronograma. `progress.skills["auditoria-vii-rastreamento"] = completed`
+> em `dados/client.json` v25.
+>
+> **Resultado:** Trava de Cegueira **5 de 25**, estruturalmente travada, confiabilidade parcial.
+> Cegueira é pré-condição e não restrição, então não disputa o posto de trava governante. O que o
+> score obriga a declarar no Comitê 1 é outra coisa: **enquanto a medição de resultado não existir,
+> o score das outras sete travas nasce com confiabilidade reduzida.**
 
 **Não é critério de fechamento** ter toda confirmação de produção na mão. O método fecha diagnóstico
 com **limitação declarada**, e não com certeza total, porque a alternativa é não fechar nunca. O que
@@ -1213,6 +1223,24 @@ retenção de 2 meses no recorte contratado
 Nenhuma delas depende de export de GTM. **A nota de Cegueira, portanto, não tem teto imposto pela
 ressalva do rascunho**, mesmo que o lote 1 nunca chegue. O que a ressalva limita é a afirmação sobre
 tags específicas, não o diagnóstico da trava.
+
+## Limitações declaradas no fechamento
+
+O método fecha diagnóstico com limitação declarada, e não com certeza total. Estas são as desta
+auditoria, e nenhuma foi descoberta depois do fechamento: todas estavam escritas antes.
+
+| Limitação | Efeito | Onde está registrada |
+|---|---|---|
+| **Todo export de GTM é de workspace**, nenhum de versão publicada | Os achados de configuração descrevem rascunho. Não afetam a nota da Cegueira, que se apoia no lado GA4 | [Ressalvas de leitura](#ressalvas-de-leitura), lote 1 do [guia](guia-export-gtm.md) |
+| **Quatro achados pedem Preview do GTM** (5, 11, 18, 31) | Seguem válidos como leitura de configuração, não como comportamento observado | [Ressalvas de leitura](#ressalvas-de-leitura) |
+| **Quatro streams de GA4 fora do alcance da V4** | Parte da medição tem destino não auditado | [PENDENCIAS 27](../PENDENCIAS.md) |
+| **Camada experiencial feita sobre as ferramentas, não sobre o time** | A dimensão E foi pontuada por transcrição de reunião, não por dashboard verificado. As entrevistas de 16 e 17/09 podem mudá-la | [`trava-cegueira.md`](trava-cegueira.md) |
+| **Dashboards internos nunca verificados** | Existem, sob responsabilidade de Lu Machim; os links são ação pendente desde 28/08 | ata de 28/08 |
+| **Sem acesso a Salesforce Marketing Cloud nem ao CRM comercial** | Limita as dimensões A e D | [checklist](checklist-dados-e-acessos.md) bloco B |
+
+**O que NÃO é limitação, e por um tempo foi tratado como tal:** o acesso de leitura ao GA4. A API de
+administração responde tudo. O `can_edit: false` bloqueia escrita, não leitura, e essa confusão
+custou ao projeto a suposição de que as telas de Administração estavam fora de alcance.
 
 ## Depois de 15/09
 

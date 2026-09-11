@@ -47,7 +47,8 @@
    que estao as duas reunioes de CRM, anteriores ao lote de acessos; em 18 fecha tudo que depende da
    V4, com os nove diagnosticos, a consolidacao causal, a CRT, a Nuvem e a revisao de qualidade
    correndo em paralelo; e em 23 acontece o comite, que e a decisao que tudo isto existe para
-   sustentar. Os dois dias uteis entre 18 e 23 sao de agenda, nao de producao. */
+   sustentar. Os dois dias uteis entre 18 e 23 deixaram de ser so de ensaio: em 21 o material e
+   apresentado a Florence Scappini, e em 22 sobra o unico dia para ajustar o que ela levantar. */
 .g-dias{min-width:44rem}
 /* A virada de mes ganha divisor proprio: sem ele o "1" depois do "30" se le como erro. */
 .g-dias .g-head span.mes{border-left:2px solid var(--border-strong)}
@@ -395,7 +396,7 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
       <span><i style="background:color-mix(in srgb,var(--brand) 34%,var(--card));border:1px solid color-mix(in srgb,var(--brand) 42%,transparent)"></i>A V4 roda sozinha</span>
       <span><i style="background:var(--brand)"></i>Feito em conjunto com o time do Grupo OLX</span>
       <span><i style="background:var(--muted);border:1px solid var(--border)"></i>Consolidação, CRT e revisão do material</span>
-      <span><i style="border-radius:50%;background:var(--fg)"></i><b>A</b>, lote de acessos · <b>R</b>, material aprovado</span>
+      <span><i style="border-radius:50%;background:var(--fg)"></i><b>A</b>, lote de acessos · <b>R</b>, material aprovado · <b>P</b>, prévia em 21/09</span>
       <span><i style="border-radius:50%;background:var(--brand)"></i><b>C1</b>, apresentação e Comitê 1, em 23/09</span>
     </div>
     <p class="g-nota"><b>O Gantt acaba em 18 de setembro porque é ali que acaba o que depende da
@@ -436,6 +437,12 @@ com evidência, atacada, e o ciclo recomeça sobre a próxima. Este é o calend�
     pico de diagnósticos abertos ao mesmo tempo subiu de seis para <b>oito</b>, e os dias com cinco
     frentes conjuntas passaram de um para <b>três seguidos</b>: 15, 16 e 17. A análise deixou de ser
     uma etapa depois do diagnóstico e passou a ser simultânea a ele.</p>
+  <p class="fase-nota"><b>A prévia de 21/09 é uma proteção, e cobra uma regra.</b> Mostrar o
+    material à Florence antes do comitê é o melhor teste disponível de que a leitura do sistema de
+    receita está certa, porque é ela quem convive com ele todo dia. O que isso cobra: o material foi
+    aprovado no gate em <b>18/09</b>, e é aquela versão que a regra cobre. Ajuste de clareza na
+    terça 22 não muda nada; <b>mudança estrutural obrigaria a reaprovar antes do comitê</b>, e não há
+    dia para isso. Na prática, a prévia serve para confirmar e afiar, não para reescrever.</p>
   <p class="fase-nota"><b>O que trabalhar em paralelo cobra.</b> Pontuar trava com diagnóstico ainda
     aberto produz nota provisória, e nota provisória que sobe sem evidência nova é como se nomeia a
     restrição errada. A disciplina que protege isso é a <a href="#diagnosticos">regra do teto</a>:
@@ -584,7 +591,13 @@ var DIAGNOSTICOS = [
    travas:"valida ou refuta a trava governante",
    estado:"em paralelo", tag:"tag-off", janela:"16 a 18 set",
    falta:"A Árvore da Realidade Atual monta sobre as UDEs colhidas nos blocos de entrevista de 16 e 17, e a Nuvem de Conflito gera a injeção. Fecha com a <b>revisão de qualidade</b>, feita por quem não participou da análise: ela testa se cada número tem fonte, se o material aponta uma restrição e não três focos, e se a causa-raiz está formulada como política. <b>Material reprovado não vai a comitê</b>, e ela segue sem dono.",
-   barras:[{de:16, ate:18, t:"folga", rot:"CRT · nuvem · revisão"}]}
+   barras:[{de:16, ate:18, t:"folga", rot:"CRT · nuvem · revisão"}]},
+
+  {id:"-", nome:"Prévia com a Florence e ajustes", bloco:"-", conjunto:true,
+   travas:"a leitura que sustenta as 8",
+   estado:"antes do comitê", tag:"tag-off", janela:"21 e 22 set",
+   falta:"A Florence lidera a frente de receita e é a fonte de boa parte dos efeitos indesejados que o diagnóstico usa. Ver o material antes do comitê é o melhor teste disponível de que a leitura está certa: <b>se algo estiver errado, é ela quem percebe primeiro</b>. Terça 22 é o único dia para absorver o que a prévia levantar.",
+   barras:[{de:21, ate:22, t:"c1", rot:"prévia"}]}
 ];
 
 // Os tres pontos duros da janela, na ordem em que acontecem. Nenhum deles depende mais de
@@ -593,6 +606,7 @@ var DIAGNOSTICOS = [
 var MARCOS = [
   {d:10, l:"A",  cls:"alvo", t:"Lote completo de acessos recebido, quinta 10/09: os nove abrem no mesmo dia"},
   {d:18, l:"R",  cls:"alvo", t:"Sexta 18/09: os nove diagnósticos fechados, as 8 travas pontuadas e o material aprovado na revisão de qualidade"},
+  {d:21, l:"P",  cls:"alvo", t:"Segunda 21/09: prévia do material com a Florence Scappini, antes do comitê"},
   {d:23, l:"C1", cls:"",     t:"Quarta 23/09: apresentação dos diagnósticos e Comitê 1, na mesma sessão. Sai com a restrição nomeada em ata e o plano de 30 dias"}
 ];
 
@@ -711,7 +725,7 @@ var MARCOS = [
     mnm.textContent = "Marcos";
     ml.appendChild(mnm);
     var msm = document.createElement("small");
-    msm.textContent = "A, acessos · R, material aprovado · C1, Comitê 1";
+    msm.textContent = "A, acessos · R, material aprovado · P, prévia · C1, Comitê 1";
     ml.appendChild(msm);
     mrow.appendChild(ml);
     var mtr = document.createElement("div");
@@ -918,7 +932,7 @@ const SEMANAS = [
  ["2","31 ago – 4 set","Onboarding e visibilidade","Auditoria de rastreamento sobre o que já chegou. Quatro diagnósticos avançam em camada parcial; quatro seguem parados por acesso.","<b>A entrega de acessos prevista para 3 de setembro não ocorreu.</b>","-"],
  ["3","7–11 set","Análise diagnóstica e pesquisa","<b>O lote completo de acessos chegou na quinta, 10 de setembro, e a janela dos nove abriu no mesmo dia.</b> As reuniões sobre CRM vieram antes, na quarta 09 e na quinta 10, e o diagnóstico (i) abre na sexta 11 já sobre o que elas levantaram. Conferência feita abrindo cada ferramenta, não lendo o e-mail de concessão. Sizing de mercado e concorrentes.","Nomear o <b>dono da revisão de qualidade</b> de 18/09, alguém que não participou da análise. Segue sem dono.","Janela dos nove aberta, cada acesso conferido dentro da própria ferramenta","7 set: Independência"],
  ["4","14–18 set","Análise diagnóstica e pesquisa","<b>A semana em que tudo fecha.</b> Pré-vendas roda de 14 a 17; criativos e redes abrem em 15; GEO em 16. Entrevistas nos dois blocos, 16 e 17. <b>A consolidação causal corre junto</b>, pontuando as travas conforme cada diagnóstico entrega, e a CRT monta sobre as UDEs das entrevistas. <b>Sexta 18: os nove fechados, as 8 travas pontuadas e o material aprovado na revisão.</b>","Time comercial e de conteúdo disponível nos dois blocos de entrevista. <b>Três dias seguidos com cinco frentes conjuntas</b>: 15, 16 e 17. O time de CRM já foi ouvido em 09 e 10/09. <b>Validação dos achados no mesmo dia em que aparecem</b>, não na semana seguinte.","Material aprovado na revisão de qualidade; trava governante nomeada com evidência e as concorrentes refutadas"],
- ["5","21–25 set","Análise diagnóstica e pesquisa","<b>Apresentação dos diagnósticos e Comitê 1 na quarta, 23 de setembro</b>, numa sessão só. Diagnóstico nas três camadas, validação lógica da trava e decisão em ata. Segunda e terça são de ensaio e agenda, não de produção: o material está pronto desde 18.","<b>Decisor presente.</b> Assumir DRI de cada ação do plano de 30 dias que sai do comitê.","Injeção aprovada em ata; restrição nomeada; plano de 30 dias com responsáveis e métricas"],
+ ["5","21–25 set","Análise diagnóstica e pesquisa","<b>Prévia do material com a Florence na segunda, 21</b>, e terça 22 para absorver o que ela levantar. <b>Apresentação dos diagnósticos e Comitê 1 na quarta, 23</b>, numa sessão só: diagnóstico nas três camadas, validação lógica da trava e decisão em ata.","<b>Florence na prévia de 21</b> e <b>decisor presente no comitê de 23.</b> Assumir DRI de cada ação do plano de 30 dias que sai dele.","Injeção aprovada em ata; restrição nomeada; plano de 30 dias com responsáveis e métricas"],
  ["6","28 set – 2 out","Validação e otimização","Início da execução assistida do plano de otimização, sem novos recursos. Acompanhamento semanal das métricas da restrição.","Executar as ações do plano. Reportar bloqueio no canal, não na próxima reunião.","Execução do plano acima de 80%"],
  ["7","5–9 out","Validação e otimização","Execução assistida. <b>Teste de impulso controlado</b>: aumento de 20 a 30% em um input da restrição, para confirmar na prática que ela é mesmo o gargalo.","Autorizar o impulso no input escolhido, e não mexer nas outras variáveis enquanto ele roda.","Impulso rodando, com leitura de antes e depois definida"],
  ["8","12–16 out","Validação e otimização","Leitura do impulso. Se ele refutar a restrição nomeada, a consolidação causal é reaberta, e é para isso que a confirmação empírica existe.","Manter o impulso sem alterar outras variáveis, para a leitura significar alguma coisa.","Restrição confirmada por evidência empírica, não só analítica","12 out: N. Sra Aparecida"],

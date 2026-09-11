@@ -152,7 +152,8 @@ conduz e para quem participa, do que cinco frentes cutucando todo dia durante um
 | **qua 16/09** | **Bloco de entrevistas 1.** Fecha (ii). Abre (iii). **Abre a CRT** sobre as primeiras UDEs | Time de pré-vendas disponível |
 | **qui 17/09** | **Bloco de entrevistas 2. Fecham (ix) e (i).** CRT em construção; Nuvem de Conflito esboçada | Time de conteúdo e de mídia disponível |
 | **sex 18/09** | **Fecham (viii), (vi), (iv), (v) e (iii).** As 8 travas pontuadas, trava governante nomeada, injeção fechada e **material aprovado na revisão de qualidade**. Acaba o que depende da V4 | 🔴 **Revisor independente**, ainda sem dono. Validação dos achados no mesmo dia em que aparecem |
-| **seg 21 · ter 22/09** | Ensaio do material e fechamento de agenda. Não há produção pendente: o material está pronto desde 18 | Confirmar presença dos decisores |
+| **seg 21/09** | **Prévia do material com Florence Scappini**, a pedido dela. É o melhor teste disponível da leitura: ela lidera a frente de receita e é a fonte de boa parte das UDEs que o diagnóstico usa | Florence presente |
+| **ter 22/09** | Único dia para absorver o que a prévia levantar, e ensaio. Ver a ressalva do gate abaixo | Confirmar presença dos decisores no comitê |
 | **qua 23/09** | **Apresentação dos diagnósticos + Comitê 1**, na mesma sessão. Sai com a restrição nomeada em ata e o plano de 30 dias | **Decisor presente.** DRI assumido para cada ação do plano |
 
 ---
@@ -201,10 +202,20 @@ dia em que o material termina de ser escrito. Definir o revisor até **15/09**, 
 acompanhe a consolidação em vez de receber tudo pronto na sexta
 ([pendência 8](../PENDENCIAS.md)).
 
-**5. Dois dias úteis entre o material pronto e o comitê.** O evento único ficou marcado para
-**quarta, 23/09**, e o material fecha em 18/09. Sobram segunda 21 e terça 22 para ensaiar,
-antecipar objeções e fechar a agenda dos decisores. É pouco para remediar um material fraco, o que
-devolve o peso todo para a revisão de qualidade de 18/09, que segue sem revisor.
+**5. 🔴 A prévia de 21/09 acontece depois do gate, e o gate cobre a versão de 18.** A Florence
+Scappini pediu ver o material antes do comitê, e isso é bom: ela lidera a frente de receita e é a
+fonte de boa parte dos efeitos indesejados que o diagnóstico usa, então é quem percebe primeiro se
+a leitura estiver errada. O problema é de sequência. O material é aprovado na revisão de qualidade
+em **18/09**; a prévia é em **21**; o comitê em **23**. Sobra **terça 22** para absorver o que ela
+levantar.
+
+**A regra a operar:** ajuste de clareza, ênfase ou ordem na terça não mexe no que foi aprovado.
+**Mudança estrutural mexe**, e aí o que vai ao comitê não é a versão que passou pelo gate, o que a
+[regra 4](../CLAUDE.md) não cobre. Não há dia para reaprovar entre 22 e 23. Na prática, a prévia
+serve para confirmar e afiar; se ela derrubar uma leitura central, o caminho honesto é levar isso
+ao comitê como achado, não reescrever o material na véspera.
+
+Vale registrar que isso devolve peso à revisão de qualidade de 18/09, que segue sem revisor.
 
 O que essa data **resolve** é maior do que o que ela aperta: entre o Comitê 1 e o Comitê 2 de 03/11
 há **26 dias úteis**, então o plano de 30 dias tem tempo de ser executado antes de ser avaliado.

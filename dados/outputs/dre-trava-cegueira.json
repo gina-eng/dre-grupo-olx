@@ -1,0 +1,271 @@
+{
+  "client_name": "Grupo OLX",
+  "skill": "dre-diagnostico-trava",
+  "gerado_em": "2026-09-11",
+  "summary": "A Trava de Cegueira pontua 5 de 25. A propriedade do GA4 que carrega toda a superficie B2B registrou 1,4 milhao de page_view em agosto e nenhum evento de negocio: o melhor indicador de resultado B2B do mes sao 506 envios de formulario capturados automaticamente pelo navegador. CAC e LTV nao sao calculaveis por ausencia de denominador, nao por falta de ferramenta.",
+  "summary_headline": "A OLX mede navegacao em detalhe e resultado B2B em lugar nenhum",
+  "summary_highlights": [
+    {
+      "category": "maturidade",
+      "label": "Score da Cegueira",
+      "value": "5 / 25",
+      "subtext": "Estruturalmente travada",
+      "tone": "red"
+    },
+    {
+      "category": "risco",
+      "label": "Eventos de negocio B2B",
+      "value": "0",
+      "subtext": "em 1,4 mi de page_view em agosto",
+      "tone": "red"
+    },
+    {
+      "category": "risco",
+      "label": "Retencao da propriedade B2B",
+      "value": "2 meses",
+      "subtext": "consumidor guarda 50 meses",
+      "tone": "red"
+    },
+    {
+      "category": "oportunidade",
+      "label": "Funil B2B ja definido",
+      "value": "2 eventos",
+      "subtext": "qualify_lead e close_convert_lead, zero ocorrencia",
+      "tone": "yellow"
+    }
+  ],
+  "summary_key_findings": [
+    {
+      "category": "ameaca",
+      "text": "CAC e LTV nao sao calculaveis: falta o denominador, ou seja a contagem de clientes, nao a ferramenta. A midia e mensuravel, o resultado nao."
+    },
+    {
+      "category": "ameaca",
+      "text": "A retencao de dado da propriedade B2B esta em 2 meses contra 50 das de consumidor. Nao existe serie historica no recorte contratado, e o dado descartado nao volta."
+    },
+    {
+      "category": "vantagem",
+      "text": "qualify_lead e close_convert_lead ja estao definidos como evento-chave desde 05/09/2025. O nome do funil existe; falta emiti-lo. A correcao e implementacao, nao definicao."
+    },
+    {
+      "category": "contexto",
+      "text": "A cadencia de leitura existe e e disciplinada: receita e metrica diaria, com FP&A dedicado. Ela le o resultado, nao os indicadores que explicam o resultado."
+    },
+    {
+      "category": "acao",
+      "text": "Subir a retencao das propriedades B2B e um clique e deve acontecer antes de qualquer outra correcao, porque e o unico item que piora enquanto ninguem age."
+    }
+  ],
+  "trava": "cegueira",
+  "score_total": 5,
+  "score_maximo": 25,
+  "interpretacao": "Estruturalmente travada. Como Cegueira e pre-condicao e nao restricao de receita, a leitura correta nao e 'esta e a restricao', e sim: enquanto ela nao subir, o score das outras sete travas nao e confiavel.",
+  "confiabilidade": "parcial",
+  "confiabilidade_o_que_faltou": "Camada experiencial executada pela V4 sobre as ferramentas, nao sobre o time: nao houve entrevista nem observacao de ritual de leitura. Os dashboards internos citados no kickoff (Lu Machim) nunca tiveram os links compartilhados, acao pendente de 28/08, entao a dimensao E foi pontuada por transcricao e nao por evidencia formal. Sem acesso a Salesforce Marketing Cloud e ao CRM comercial.",
+  "dimensoes": [
+    {
+      "letra": "A",
+      "nome": "Existencia de dados basicos (lead, cliente, receita separados)",
+      "nota": 1,
+      "evidencia_analitica": "A propriedade GA4 Grupo OLX (503925542), que carrega ads.grupoolx.com.br, imoveis., autos., o institucional e vender.olx.com.br, registrou em agosto/2026 apenas 10 nomes de evento, TODOS automaticos de enhanced measurement: page_view 1.406.689, session_start 1.203.225, first_visit 862.074, user_engagement 224.592, scroll 137.399, click 127.734, form_start 7.598, form_submit 506, file_download 296, view_search_results 54. Nenhum evento de lead, cliente ou receita. A receita existe separada, mas em outro lugar: a serie A1, 20 meses por unidade, segmento e produto, recebida como anexo de e-mail em 28/08.",
+      "evidencia_experiencial": "Teste executado pela V4 em 11/09/2026: tentativa de responder 'quantos anunciantes profissionais novos em agosto' usando as ferramentas concedidas. Impossivel. O melhor proxy disponivel sao 506 form_submit, evento automatico do navegador que nao identifica o formulario, a intencao nem o desfecho.",
+      "fonte": "GA4 Data API, propriedade 503925542, agosto/2026; auditoria (vii) achados 42 e 43",
+      "confiabilidade": "alta",
+      "justificativa_nota": "Nota 1 e nao 0 porque a receita existe e esta separada por unidade, segmento e produto na serie A1. Lead e cliente nao existem como dado no sistema digital."
+    },
+    {
+      "letra": "B",
+      "nome": "CAC calculado e confiavel",
+      "nota": 0,
+      "evidencia_analitica": "Nao ha contagem de clientes em nenhuma camada do sistema digital: zero ocorrencia de purchase, qualify_lead ou close_convert_lead na propriedade B2B nos ultimos 60 dias. O investimento existe e e mensuravel (Google Ads ingerindo no V4MOS), mas o denominador nao existe. O item A3 do checklist, que traria CAC por canal, segue nao entregue.",
+      "evidencia_experiencial": "Mesmo teste de 11/09: com numerador de investimento e sem denominador de cliente, o CAC nao e calculavel por nenhum caminho.",
+      "fonte": "GA4 Data API 503925542; checklist-dados-e-acessos.md item A3; V4MOS",
+      "confiabilidade": "alta",
+      "justificativa_nota": "Nota 0 e nao null: null e para dimensao cujo dado a V4 nao conseguiu obter. Aqui o dado foi obtido e demonstra ausencia. Esta provado que o CAC nao e produzivel pelo sistema atual."
+    },
+    {
+      "letra": "C",
+      "nome": "LTV e payback calculados",
+      "nota": 0,
+      "evidencia_analitica": "Sem identidade de cliente nao ha coorte, e sem coorte nao ha LTV nem payback. O item A3 (ticket medio, ciclo de vendas) nao foi entregue, e o A2 (funil comercial com volumes e taxas por etapa) tambem nao. O churn de 8 a 10% ao mes que circula no modelo da meta esta registrado como nao verificado em PENDENCIAS 22.",
+      "evidencia_experiencial": "Mesmo teste de 11/09. Nenhum caminho disponivel produz valor de cliente ao longo do tempo.",
+      "fonte": "checklist-dados-e-acessos.md itens A2 e A3; PENDENCIAS 22",
+      "confiabilidade": "alta",
+      "justificativa_nota": "Mesma logica da dimensao B: ausencia demonstrada, nao dado faltante."
+    },
+    {
+      "letra": "D",
+      "nome": "Fonte unica de verdade (CRM/BI) vs planilhas paralelas",
+      "nota": 2,
+      "evidencia_analitica": "O parque de GTM escreve em 16 measurement IDs distintos, mapeados para 8 propriedades GA4 identificadas mais 4 streams que a V4 nao enxerga (PENDENCIAS 27). Ha escrita dupla deliberada: as tags [GA4 - Verticalizado] e [GA4 - Unificado] mandam o mesmo evento para a propriedade da vertical e para uma propriedade combinada, entao qualquer soma entre propriedades conta o mesmo lead duas vezes. Do lado de CRM, o GTM mostra Salesforce Marketing Cloud e RD Station convivendo, e o checklist registra a pergunta em aberto sobre qual e a oficial. A receita que o projeto usa chegou como anexo XLSX de e-mail, nao de um sistema.",
+      "evidencia_experiencial": "Kickoff de 24/08 e reuniao de 28/08: existem dashboards internos, sob responsabilidade de Lu Machim, e um time de FP&A dedicado. Os links ficaram como acao pendente em 28/08 e nunca foram compartilhados, entao a V4 nao verificou o que eles consolidam.",
+      "fonte": "auditoria (vii) achado 37; checklist-dados-e-acessos.md bloco B; atas de 24/08 e 28/08",
+      "confiabilidade": "parcial",
+      "justificativa_nota": "Nota 2 e nao menor porque existe camada de BI e um time que responde por ela. Nao chega a 3 porque nao ha processo unico: a medicao digital esta repartida em 8 propriedades com escrita dupla intencional, duas ferramentas de CRM convivem sem oficialidade declarada, e o numero de receita do projeto veio de planilha por e-mail."
+    },
+    {
+      "letra": "E",
+      "nome": "Cadencia de leitura dos indicadores",
+      "nota": 2,
+      "evidencia_analitica": "Os indicadores que esta trava mede (CAC, LTV, payback, distincao lead/cliente) nao existem, logo nao podem estar em cadencia nenhuma.",
+      "evidencia_experiencial": "Kickoff de 24/08, transcricao: Iuna Scheffler e Matheus Rodrigues descrevem a receita como principal metrica DIARIA de acompanhamento, com EBITDA monitorado em paralelo e metas abertas por vertical, linha e canal. Ha gerente de planejamento financeiro dedicado ao acompanhamento de performance.",
+      "fonte": "06-reunioes/2026-08-24-kickoff-transcricao.md; 06-reunioes/2026-08-28-jornada-do-cliente-transcricao.md",
+      "confiabilidade": "parcial",
+      "justificativa_nota": "Nota 2, e o motivo e o ponto mais importante deste diagnostico: a cadencia existe, e diaria e e disciplinada, mas le o RESULTADO e nao os indicadores que explicam o resultado. Uma cadencia que le receita e EBITDA sem ler CAC, LTV e origem de cliente informa, mas nao permite dirigir. Nao passa de 3 tambem pela regra 6: a evidencia e transcricao de reuniao, nao dashboard verificado, porque os links nunca vieram."
+    }
+  ],
+  "sintomas_confirmados": [
+    "Nao distingue lead de cliente: a propriedade B2B nao tem nenhum evento de lead nem de cliente",
+    "Nao enxerga CAC: ha investimento mensuravel e nenhuma contagem de cliente",
+    "Nao enxerga LTV nem payback: nao ha identidade de cliente nem coorte",
+    "Planilhas paralelas: a receita do projeto chegou como XLSX por e-mail",
+    "Medicao repartida: 16 measurement IDs, 8 propriedades, escrita dupla intencional",
+    "Retencao de 2 meses na propriedade B2B, contra 50 meses nas de consumidor"
+  ],
+  "sintomas_descartados": [
+    {
+      "sintoma": "Ninguem definiu o que e conversao",
+      "por_que": "Falso, e foi afirmado por engano na varredura de 31/08. qualify_lead e close_convert_lead estao definidos como evento-chave na propriedade B2B desde 05/09/2025. O problema nao e ausencia de definicao, e ausencia de emissao. Corrigido em PENDENCIAS 13 e no achado 42."
+    },
+    {
+      "sintoma": "Falta ferramenta ou acesso",
+      "por_que": "Falso. O GA4 responde tudo em leitura por API, o GTM foi exportado por inteiro nas 4 contas, e o V4MOS ingere Google Ads. A cegueira nao vem de falta de instrumento."
+    },
+    {
+      "sintoma": "Falta capacidade tecnica na casa",
+      "por_que": "Falso. A conta Checkout Unificado - PRO mostra arquitetura deliberada, um conteiner por vertical e gatilhos corretos. A casa sabe fazer. Ver o contraponto do achado 30."
+    }
+  ],
+  "entrada_visual": {
+    "tipo": "Inventario de Indicadores",
+    "descricao": "O que existe, onde vive, quem le, com que frequencia. Obrigatorio para a Trava de Cegueira.",
+    "colunas": [
+      "indicador",
+      "existe",
+      "onde vive",
+      "quem le",
+      "frequencia",
+      "observacao"
+    ],
+    "linhas": [
+      {
+        "indicador": "Receita",
+        "existe": "sim",
+        "onde vive": "FP&A, planilha e dashboards internos",
+        "quem le": "Matheus Rodrigues (FP&A), Iuna Scheffler",
+        "frequencia": "diaria",
+        "observacao": "Metrica principal de acompanhamento. Aberta por vertical, linha e canal"
+      },
+      {
+        "indicador": "EBITDA",
+        "existe": "sim",
+        "onde vive": "FP&A",
+        "quem le": "FP&A e diretoria",
+        "frequencia": "monitorado",
+        "observacao": "Nao pode ser sacrificado integralmente pela receita"
+      },
+      {
+        "indicador": "Sessoes e navegacao",
+        "existe": "sim",
+        "onde vive": "GA4, 8 propriedades",
+        "quem le": "nao identificado",
+        "frequencia": "nao identificada",
+        "observacao": "1,4 mi de page_view em agosto so na propriedade B2B"
+      },
+      {
+        "indicador": "Envio de formulario",
+        "existe": "parcial",
+        "onde vive": "GA4 Grupo OLX, evento automatico",
+        "quem le": "nao identificado",
+        "frequencia": "nao identificada",
+        "observacao": "506 em agosto. Nao identifica formulario, intencao nem desfecho"
+      },
+      {
+        "indicador": "Lead B2B",
+        "existe": "nao",
+        "onde vive": "-",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "Tag lead_b2b existe em 2 conteineres do GTM e nao chega a propriedade B2B"
+      },
+      {
+        "indicador": "Lead qualificado",
+        "existe": "nao",
+        "onde vive": "definido no GA4 como qualify_lead desde 05/09/2025",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "Zero ocorrencia em 2,19 mi de sessoes"
+      },
+      {
+        "indicador": "Cliente novo",
+        "existe": "nao",
+        "onde vive": "definido no GA4 como close_convert_lead desde 05/09/2025",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "Zero ocorrencia"
+      },
+      {
+        "indicador": "CAC",
+        "existe": "nao",
+        "onde vive": "-",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "Investimento existe no V4MOS; falta o denominador"
+      },
+      {
+        "indicador": "LTV",
+        "existe": "nao",
+        "onde vive": "-",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "Sem identidade de cliente nao ha coorte"
+      },
+      {
+        "indicador": "Payback",
+        "existe": "nao",
+        "onde vive": "-",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "Depende de CAC e LTV"
+      },
+      {
+        "indicador": "Churn",
+        "existe": "declarado",
+        "onde vive": "modelo da meta",
+        "quem le": "-",
+        "frequencia": "-",
+        "observacao": "8 a 10% ao mes, nao verificado (PENDENCIAS 22)"
+      }
+    ]
+  },
+  "hipotese_causal": {
+    "politica_implicita": "tratar a medicao como responsabilidade de quem implementa cada superficie, e nao de quem responde pela receita",
+    "efeito_gerado": "um sistema que mede navegacao em altissimo detalhe e resultado de negocio em lugar nenhum, com o funil B2B nomeado no GA4 e nunca emitido pelo site",
+    "limitacao": "a capacidade de dizer quanto custa e quanto vale um anunciante profissional, e portanto de decidir onde investir",
+    "frase_completa": "A empresa opera sob a politica implicita de TRATAR A MEDICAO COMO RESPONSABILIDADE DE QUEM IMPLEMENTA CADA SUPERFICIE, E NAO DE QUEM RESPONDE PELA RECEITA, o que gera UM SISTEMA QUE MEDE NAVEGACAO EM ALTISSIMO DETALHE E RESULTADO DE NEGOCIO EM LUGAR NENHUM, limitando A CAPACIDADE DE DIZER QUANTO CUSTA E QUANTO VALE UM ANUNCIANTE PROFISSIONAL, E PORTANTO DE DECIDIR ONDE INVESTIR."
+  },
+  "potencial_governante": {
+    "valor": false,
+    "justificativa": "Cegueira e pre-condicao, nao restricao de receita: ela nao disputa o posto de trava governante. O score de 5 em 25 significa que os scores das outras sete travas nascem com confiabilidade reduzida ate que a medicao de resultado exista. Isso precisa estar declarado no material do Comite 1."
+  },
+  "acoes_imediatas": [
+    {
+      "acao": "Subir a retencao de dado de evento das propriedades GA4 Grupo OLX (503925542) e GA4 ZapImoveis + VivaReal (494455315)",
+      "custo": "um clique no console",
+      "urgencia": "hoje",
+      "por_que": "E o unico item do diagnostico que piora enquanto ninguem age: o dado que passa de 2 meses e descartado e nao volta"
+    },
+    {
+      "acao": "Emitir qualify_lead e close_convert_lead no dataLayer das superficies B2B",
+      "custo": "implementacao",
+      "urgencia": "Ciclo 1",
+      "por_que": "Os eventos ja sao evento-chave no GA4 desde 05/09/2025. Falta so o site empurrar"
+    },
+    {
+      "acao": "Definir e declarar a fonte oficial de verdade entre Salesforce Marketing Cloud e RD Station",
+      "custo": "decisao",
+      "urgencia": "antes do Comite 1",
+      "por_que": "Duas ferramentas de CRM convivem no GTM sem oficialidade declarada"
+    }
+  ]
+}

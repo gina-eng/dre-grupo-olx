@@ -8,7 +8,7 @@
     "ciclo_atual": 1,
     "fase_atual": "Identificar",
     "semana_corrente": 3,
-    "version": 24,
+    "version": 25,
     "atualizado_em": "2026-09-11",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
@@ -188,7 +188,16 @@
     "growth_planner": null,
     "c_level_comites": null,
     "dris_por_frente": {},
-    "fonte": "01-cliente/stakeholders.md"
+    "fonte": "01-cliente/stakeholders.md",
+    "lider_frente_receita": {
+      "nome": "Florence Scappini",
+      "tratamento": "Flor",
+      "cargo": "lidera a frente de receita",
+      "empresa": "Grupo OLX",
+      "papel": "stakeholder principal do diagnostico, declarado pelo operador em 11/09",
+      "fonte": "ata do kick-off de 24/08; fonte das UDEs 7, 10, 11 e 14 em 02-diagnostico/diagnostico-travas.md",
+      "nota": "o nome completo foi inferido de 'Flor': e a unica Flor* do repositorio e o papel bate. Confirmar com o operador antes de usar em documento que va ao cliente"
+    }
   },
   "acessos": {
     "email_oficial_plataformas": "gina@v4company.com",
@@ -406,8 +415,34 @@
   },
   "travas": {
     "cegueira": {
-      "score": null,
-      "dimensoes": {},
+      "score": 5,
+      "dimensoes": {
+        "A": {
+          "nome": "Existencia de dados basicos (lead, cliente, receita separados)",
+          "nota": 1,
+          "confiabilidade": "alta"
+        },
+        "B": {
+          "nome": "CAC calculado e confiavel",
+          "nota": 0,
+          "confiabilidade": "alta"
+        },
+        "C": {
+          "nome": "LTV e payback calculados",
+          "nota": 0,
+          "confiabilidade": "alta"
+        },
+        "D": {
+          "nome": "Fonte unica de verdade (CRM/BI) vs planilhas paralelas",
+          "nota": 2,
+          "confiabilidade": "parcial"
+        },
+        "E": {
+          "nome": "Cadencia de leitura dos indicadores",
+          "nota": 2,
+          "confiabilidade": "parcial"
+        }
+      },
       "evidencias": [
         {
           "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#32",
@@ -458,7 +493,14 @@
           "estimado": false
         }
       ],
-      "diagnosticado_em": null
+      "diagnosticado_em": "2026-09-11",
+      "score_maximo": 25,
+      "interpretacao": "Estruturalmente travada. Como Cegueira e pre-condicao e nao restricao de receita, a leitura correta nao e 'esta e a restricao', e sim: enquanto ela nao subir, o score das outras sete travas nao e confiavel.",
+      "confiabilidade": "parcial",
+      "hipotese_causal": "A empresa opera sob a politica implicita de TRATAR A MEDICAO COMO RESPONSABILIDADE DE QUEM IMPLEMENTA CADA SUPERFICIE, E NAO DE QUEM RESPONDE PELA RECEITA, o que gera UM SISTEMA QUE MEDE NAVEGACAO EM ALTISSIMO DETALHE E RESULTADO DE NEGOCIO EM LUGAR NENHUM, limitando A CAPACIDADE DE DIZER QUANTO CUSTA E QUANTO VALE UM ANUNCIANTE PROFISSIONAL, E PORTANTO DE DECIDIR ONDE INVESTIR.",
+      "potencial_governante": false,
+      "output": "dados/outputs/dre-trava-cegueira.json",
+      "documento": "02-diagnostico/trava-cegueira.md"
     },
     "exposicao": {
       "score": null,
@@ -508,7 +550,7 @@
   "progress": {
     "skills": {
       "dre-onboarding": "in_progress",
-      "auditoria-vii-rastreamento": "in_progress",
+      "auditoria-vii-rastreamento": "completed",
       "cronograma-replanejado-em-dias": "completed",
       "proposta-meta-do-projeto": "completed",
       "cronograma-reajustado-15-dias": "completed",
@@ -517,7 +559,8 @@
       "dre-diagnostico-trava": "in_progress",
       "dre-maturidade-digital": "in_progress",
       "serie-de-receita-a1": "completed",
-      "cronograma-reajustado-acessos-1009": "completed"
+      "cronograma-reajustado-acessos-1009": "completed",
+      "dre-diagnostico-trava-cegueira": "completed"
     }
   },
   "history": [
@@ -640,6 +683,16 @@
       "data": "2026-09-11",
       "version": 24,
       "evento": "CORRECAO E FECHAMENTO DE (vii). A afirmacao de que quatro propriedades do GA4 nao tinham NENHUM evento-chave era falsa: a varredura de 31/08 leu volume e concluiu sobre configuracao. As quatro tem evento-chave definido, e o que falta e ocorrencia. Corrigido em PENDENCIAS 13. O achado fica mais grave: qualify_lead e close_convert_lead, as duas etapas do funil B2B, estao definidos na GA4 Grupo OLX ha mais de um ano com zero ocorrencia em 2,19 mi de sessoes (achado 42). Caiu tambem a limitacao declarada do GA4: a API de administracao responde tudo em leitura, e o can_edit false confundia permissao de escrita com de leitura. Achado 43 novo, nunca verificado antes: a retencao da propriedade B2B esta em 2 meses contra 50 meses das de consumidor, entao nao ha serie historica no recorte contratado e o dado descartado nao volta. A auditoria ganhou a secao Como este diagnostico fecha, com os 4 criterios: cobertura (feita), achados com fonte (feitos), Trava de Cegueira pontuada (falta) e limitacoes declaradas (falta). O lote 1 do GTM e o Preview nao sao criterio de fechamento: mudam o peso de achados especificos, nao a nota da trava."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 25,
+      "evento": "PREVIA COM A FLORENCE SCAPPINI EM 21/09, a pedido dela, antes do Comite 1 de 23/09. Entrou no cronograma como linha propria do Gantt (21 e 22 de setembro, previa na segunda e ajustes na terca) e como marco P na linha de marcos, ao lado de A, R e C1. FLORENCE FOI ADICIONADA A stakeholders, onde nao estava apesar de aparecer 8 vezes no diagnostico como fonte das UDEs 7, 10, 11 e 14 e de liderar a frente de receita no Grupo OLX. ATENCAO: o nome completo foi INFERIDO do tratamento 'Flor' usado pelo operador; e a unica Flor* do repositorio e o papel bate, mas confirmar antes de usar em documento que va ao cliente. Note-se tambem que o operador a chamou de 'stakeholder principal', enquanto stakeholders.decisor segue como Mirella Mendonca: sao papeis diferentes e nenhum foi alterado. RISCO REGISTRADO como risco 5 do sprint: a previa acontece DEPOIS do gate de qualidade de 18/09, e e a versao aprovada no gate que a regra 4 cobre. Sobra a terca 22 para absorver o que a previa levantar. Regra operante escrita no portal e no sprint: ajuste de clareza, enfase ou ordem nao mexe no que foi aprovado; mudanca estrutural mexe, e nao ha dia para reaprovar entre 22 e 23, entao a previa serve para confirmar e afiar. Se ela derrubar uma leitura central, o caminho honesto e levar isso ao comite como achado, nao reescrever o material na vespera. Isso devolve peso a revisao de qualidade de 18/09, que segue sem revisor (PENDENCIA 8)."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 25,
+      "evento": "(vii) RASTREAMENTO FECHADO e TRAVA DE CEGUEIRA PONTUADA, quatro dias antes do previsto no cronograma. Score 5 de 25, estruturalmente travada, confiabilidade parcial. Dimensoes: A=1 (a receita existe separada na serie A1, lead e cliente nao existem), B=0 e C=0 (CAC e LTV nao sao calculaveis: falta o denominador, nao a ferramenta, e isso e ausencia demonstrada, nao dado faltante), D=2 (existe BI e time, nao existe fonte unica: 16 measurement IDs, 8 propriedades, escrita dupla e dois CRMs convivendo), E=2. A dimensao E e o achado mais importante: a cadencia existe, e diaria e disciplinada, mas le receita e EBITDA sem ler CAC, LTV e origem de cliente, entao informa e nao permite dirigir. Camada experiencial executada pela V4 em 11/09 sobre as ferramentas: perguntamos ao sistema quantos anunciantes profissionais novos em agosto e ele nao responde. A propriedade B2B tem 10 nomes de evento em agosto, todos automaticos, e o melhor indicador de resultado sao 506 form_submit em 862 mil primeiras visitas. Tres sintomas descartados: nao e falta de definicao, nem de ferramenta, nem de capacidade tecnica. Cegueira e pre-condicao, entao potencial_governante = false, mas o score baixo obriga a declarar no Comite 1 que as outras sete travas nascem com confiabilidade reduzida."
     }
   ],
   "connectors": {
@@ -1546,6 +1599,14 @@
       "motivo": "'Matriz aprovada' e jargao interno e nao diz nada a quem le de fora; aparecia 14 vezes no cronograma sem nenhuma definicao"
     },
     "dias_uteis_material_pronto_ate_comite": 2,
-    "dias_uteis_comite1_ate_comite2": 26
+    "dias_uteis_comite1_ate_comite2": 26,
+    "previa_stakeholder": {
+      "data": "2026-09-21",
+      "dia_da_semana": "segunda",
+      "com": "Florence Scappini",
+      "pedido_por": "a propria Florence, via operador, em 11/09",
+      "janela_de_ajuste": "2026-09-22",
+      "risco": "acontece DEPOIS do gate de qualidade de 18/09, que aprova a versao apresentada ao comite. Ajuste de clareza em 22 nao mexe no aprovado; mudanca estrutural mexe, e nao ha dia para reaprovar antes de 23. Regra operante: a previa confirma e afia, nao reescreve; se derrubar uma leitura central, isso vai ao comite como achado"
+    }
   }
 }

@@ -20,6 +20,7 @@
 | 16–18/09/2026 | Árvore da Realidade Atual e Nuvem de Conflito, sobre as UDEs das entrevistas | - | 🔜 Projetado |
 | 18/09/2026 | Revisão de qualidade do material | - | 🔴 **Sem dono definido** |
 | **18/09/2026** | **Matriz aprovada**, gate de bloqueio duro. Fim do que depende da V4 | - | 🔜 Projetado |
+| **21/09/2026** | **Prévia do material com Florence Scappini**, antes do comitê | a definir | ✅ **Pedido pela OLX em 11/09** |
 | **23/09/2026** | **Evento único: apresentação dos diagnósticos + Comitê 1** | a definir | ✅ **Data confirmada pela OLX em 11/09** |
 
 ### O que mudou em 10/09, e por quê
@@ -117,7 +118,7 @@ V4 recebe tudo**, e a data original de 10/09 saiu dessa conta, não o contrário
 | 2 | 31/08–06/09 | Onboarding | Acessos não entregues · 4 diagnósticos avançam em camada parcial |
 | 3 | 07–13/09 | Identificar | **Lote completo de acessos em 10/09** · os nove abrem no mesmo dia |
 | 4 | 14–20/09 | Identificar | Pico de 8 abertos · consolidação, CRT e nuvem em paralelo · **os nove fechados, travas pontuadas e Matriz aprovada (18/09)** |
-| 5 | 21–27/09 | Identificar → Otimizar | **Apresentação dos diagnósticos + Comitê 1 (23/09)**, na mesma sessão |
+| 5 | 21–27/09 | Identificar → Otimizar | **Prévia com Florence Scappini (21/09)** · ajustes (22) · **Apresentação + Comitê 1 (23/09)**, na mesma sessão |
 | 6 | 28/09–04/10 | Otimizar | Início da execução assistida do plano de 30 dias |
 | 7–8 | 05–18/10 | Otimizar → Alinhar | Execução assistida · **teste de impulso controlado** e sua leitura |
 | 9–10 | 19/10–01/11 | Alinhar | Posicionamento e ICP · FRT e PRT · forecast · matriz de expansão |
