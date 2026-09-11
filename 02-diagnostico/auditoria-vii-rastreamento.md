@@ -12,9 +12,14 @@
 > | Como o diagnóstico fecha | [critérios de fechamento](#como-este-diagnóstico-fecha) |
 > | Leitura da trava | [o que a quarta rodada muda](#o-que-a-quarta-rodada-muda-na-leitura-da-trava) |
 >
-> 🔴 **A ressalva que governa todas:** os 62 exports são de espaço de trabalho, nenhum é de versão
-> publicada. Os achados de configuração descrevem o rascunho até que a versão publicada seja
-> comparada.
+> ✅ **A ressalva principal caiu para o contêiner mais importante.** A versão **publicada** do
+> `GTM-KGFGVFC` foi comparada em 11/09 e é **idêntica** ao rascunho: 29 tags, 29 gatilhos, 98
+> variáveis, zero diferenças. O [achado 1](#-1-o-evento-purchase-do-ga4-é-disparado-pelo-gatilho-de-begin_checkout)
+> está **em produção desde julho**. Ver [confirmação em produção](#confirmação-em-produção--11092026--a-ressalva-do-rascunho-cai).
+>
+> 🟠 Para os outros 59 contêineres os exports seguem sendo de espaço de trabalho, e os achados de
+> configuração descrevem o rascunho. A diferença é que agora existe um caso testado em que rascunho e
+> produção coincidiram exatamente.
 
 ---
 
@@ -325,7 +330,12 @@ implícita se escreve assim:
 
 ### A ressalva que governa todas as outras: rascunho não é produção
 
-🔴 **Os 41 achados que vêm do GTM descrevem o espaço de trabalho, não o que está no ar.**
+> ✅ **Atualizado em 11/09, fim do dia:** esta ressalva **caiu para o `GTM-KGFGVFC`**, o contêiner do
+> achado 1. A versão publicada 97 foi exportada e comparada: é idêntica ao rascunho. Ver
+> [confirmação em produção](#confirmação-em-produção--11092026--a-ressalva-do-rascunho-cai). O texto
+> abaixo continua valendo para os outros 59 contêineres.
+
+🟠 **Os achados que vêm do GTM descrevem o espaço de trabalho, não o que está no ar.**
 
 Conferido em 11/09 lendo `containerVersionId` dentro de cada arquivo: os **62 exports trazem `0`**,
 a assinatura de export de workspace. A versão publicada carrega o número da versão. **Nenhum export
@@ -1248,3 +1258,69 @@ custou ao projeto a suposição de que as telas de Administração estavam fora 
 pré-condição, não restrição de receita: ela não concorre para ser a trava governante, ela determina
 se as outras sete podem ser medidas. É por isso que (vii) é o diagnóstico prioritário e fecha
 primeiro.
+
+---
+
+# Confirmação em produção · 11/09/2026 · a ressalva do rascunho cai
+
+A versão **publicada 97** do `GTM-KGFGVFC` (OLX - Planos Profissionais & PAYG) foi exportada em
+11/09. Ela está no ar desde **julho de 2026**.
+
+## O achado 1 está em produção
+
+| | Versão publicada 97 | Rascunho `workspace131` |
+|---|---|---|
+| `[TAG] GA4 - Purchase` (426) | ativa | ativa |
+| Gatilho que a dispara | `[AC] Begin Checkout` (215) | `[AC] Begin Checkout` (215) |
+| O que esse gatilho escuta | `begin_checkout` | `begin_checkout` |
+| Gatilho correto `[AC] Purchase - Planos Profissionais` (306) | existe, **nenhuma tag o usa** | existe, nenhuma tag o usa |
+| Quem consome o `purchase` real (gatilho 180) | `[TAG] GAU - Purchase`, **Universal Analytics** | idem |
+
+**Não era rascunho esquecido.** Na superfície de receita B2B da OLX, **o GA4 conta tentativa de
+compra como venda**, e conta desde julho. O gatilho correto está construído, nomeado e ocioso ao lado
+do errado. O único consumidor do evento `purchase` verdadeiro é uma tag de uma ferramenta que o
+Google desligou há mais de dois anos.
+
+Isto deixa de ser condicional e passa a ser o **achado de abertura do Comitê 1**.
+
+## E há um resultado maior que o próprio achado 1
+
+Comparando a versão publicada com o rascunho, entidade por entidade, fora do `fingerprint`:
+
+| | Publicada 97 | Rascunho | Diferenças |
+|---|---:|---:|---:|
+| Tags | 29 | 29 | **0** |
+| Gatilhos | 29 | 29 | **0** |
+| Variáveis | 98 | 98 | **0** |
+
+**São o mesmo contêiner.** Nenhuma tag a mais, a menos ou alterada. O espaço de trabalho é um espelho
+exato do que está publicado.
+
+Isso confirma, para este contêiner, **todos** os achados que a auditoria escreveu sobre o rascunho. E
+sustenta, por analogia forte, o que a [ressalva de 11/09](#a-ressalva-que-governa-todas-as-outras-rascunho-não-é-produção)
+já indicava: dos 12 contêineres reexportados dez dias depois, dez estavam idênticos. **Os rascunhos
+desta casa não são material em edição, são a configuração assentada.**
+
+Analogia forte não é prova. Para os outros 59 contêineres a ressalva continua valendo, com uma
+diferença de peso: agora existe **um caso testado** em que rascunho e produção coincidiram
+exatamente.
+
+## O que mais ficou confirmado em produção, neste contêiner
+
+| Achado | Estado na versão publicada |
+|---|---|
+| [1](#-1-o-evento-purchase-do-ga4-é-disparado-pelo-gatilho-de-begin_checkout) · `purchase` no gatilho de `begin_checkout` | 🔴 **confirmado**, tag ativa |
+| [6](#-6-universal-analytics-ainda-instalado-e-disparando) · Universal Analytics disparando | 🔴 **confirmado**, 2 tags, as **duas ativas** |
+| [14](#-14-toda-a-stack-braze-está-pausada) · stack Braze pausada | 🔴 **confirmado**, **7 de 7** tags pausadas |
+| [26](#-26-e-mail-e-telefone-do-usuário-vão-para-o-ga4-como-propriedades-de-usuário) · PII como propriedade de usuário | 🔴 **confirmado**, ver abaixo |
+| [3](#-3-lead_b2b-não-existe-nos-dados) · `lead_b2b` | tag `429` **ativa**, escrevendo em `G-50C013M2CC` |
+
+**Sobre o achado 26, o mais sensível em termos de exposição:** duas tags **ativas** na versão
+publicada mandam `user_email`, `user_phone`, `user_zip_code` e `user_gender` ao GA4 como propriedade
+de usuário. São `[TAG] GA4 - Settings` (338) e `[TAG] GA4 - Pageview` (339). A terceira que faz o
+mesmo, a tag `75`, está pausada, o que mostra que alguém já reparou no problema em algum momento e
+pausou a tag errada: **as duas que continuam no ar fazem exatamente o que a pausada fazia.**
+
+Enviar e-mail e telefone em claro como propriedade de usuário do GA4 é violação dos termos de uso do
+Google Analytics e expõe a OLX na LGPD. É o único achado desta auditoria que é risco jurídico, e não
+apenas de medição.

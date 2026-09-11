@@ -8,7 +8,7 @@
     "ciclo_atual": 1,
     "fase_atual": "Identificar",
     "semana_corrente": 3,
-    "version": 25,
+    "version": 26,
     "atualizado_em": "2026-09-11",
     "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
   },
@@ -491,6 +491,12 @@
           "achado": "A retencao de dado de evento da GA4 Grupo OLX, que carrega toda a superficie B2B, esta em 2 meses, o padrao de fabrica. As propriedades de consumidor estao em 50 meses. Nao ha serie historica no recorte contratado, e o dado descartado nao volta.",
           "data": "2026-09-11",
           "estimado": false
+        },
+        {
+          "fonte": "02-diagnostico/auditoria-vii-rastreamento.md#confirmacao-em-producao",
+          "achado": "CONFIRMADO EM PRODUCAO: a versao publicada 97 do GTM-KGFGVFC, no ar desde julho de 2026, e IDENTICA ao rascunho (29 tags, 29 gatilhos, 98 variaveis, zero diferencas). A tag GA4 - Purchase dispara no gatilho de begin_checkout, entao a superficie de receita B2B conta tentativa de compra como venda. O gatilho correto existe e nenhuma tag o usa. Duas tags ativas enviam user_email e user_phone em claro ao GA4 como propriedade de usuario, o que e risco de LGPD, nao so de medicao.",
+          "data": "2026-09-11",
+          "estimado": false
         }
       ],
       "diagnosticado_em": "2026-09-11",
@@ -693,6 +699,11 @@
       "data": "2026-09-11",
       "version": 25,
       "evento": "(vii) RASTREAMENTO FECHADO e TRAVA DE CEGUEIRA PONTUADA, quatro dias antes do previsto no cronograma. Score 5 de 25, estruturalmente travada, confiabilidade parcial. Dimensoes: A=1 (a receita existe separada na serie A1, lead e cliente nao existem), B=0 e C=0 (CAC e LTV nao sao calculaveis: falta o denominador, nao a ferramenta, e isso e ausencia demonstrada, nao dado faltante), D=2 (existe BI e time, nao existe fonte unica: 16 measurement IDs, 8 propriedades, escrita dupla e dois CRMs convivendo), E=2. A dimensao E e o achado mais importante: a cadencia existe, e diaria e disciplinada, mas le receita e EBITDA sem ler CAC, LTV e origem de cliente, entao informa e nao permite dirigir. Camada experiencial executada pela V4 em 11/09 sobre as ferramentas: perguntamos ao sistema quantos anunciantes profissionais novos em agosto e ele nao responde. A propriedade B2B tem 10 nomes de evento em agosto, todos automaticos, e o melhor indicador de resultado sao 506 form_submit em 862 mil primeiras visitas. Tres sintomas descartados: nao e falta de definicao, nem de ferramenta, nem de capacidade tecnica. Cegueira e pre-condicao, entao potencial_governante = false, mas o score baixo obriga a declarar no Comite 1 que as outras sete travas nascem com confiabilidade reduzida."
+    },
+    {
+      "data": "2026-09-11",
+      "version": 26,
+      "evento": "CONFIRMACAO EM PRODUCAO. A versao publicada 97 do GTM-KGFGVFC chegou e foi comparada com o rascunho: identicas, zero diferencas fora do fingerprint. O achado 1 deixa de ser condicional e vira o achado de abertura do Comite 1: o GA4 conta tentativa de compra como venda na superficie de receita B2B, e conta desde julho. Confirmados tambem em producao os achados 6 (duas tags de Universal Analytics ativas), 14 (7 de 7 tags Braze pausadas) e 26 (PII). O achado 26 e o mais grave em exposicao: as tags 338 e 339, ATIVAS, mandam user_email, user_phone, user_zip_code e user_gender ao GA4 como propriedade de usuario. A tag 75, que fazia o mesmo, esta pausada, o que sugere que alguem reparou e pausou a tag errada. Isso e risco juridico de LGPD, nao apenas de medicao. A ressalva do rascunho cai para este conteiner e segue valendo para os outros 59, agora com um caso testado em que rascunho e producao coincidiram exatamente."
     }
   ],
   "connectors": {
