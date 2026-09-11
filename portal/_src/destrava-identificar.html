@@ -1,0 +1,236 @@
+<!--@ destrava/identificar | Fase 1, Identificar · Portal DR-E Grupo OLX | Fase 1 · Identificar | O diagnóstico do sistema de receita: o fluxo ponta a ponta, as 8 travas pontuadas com evidência, e a maturidade digital lida por prática. | Ciclo 1 · leitura de 04 set 2026 -->
+<style>
+section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
+section.blk:first-of-type{margin-top:2rem}
+.blk-h{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--border);padding-bottom:.5rem;margin-bottom:1rem}
+.blk-h h2{margin:0;font-size:1.35rem;letter-spacing:-.01em}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted-fg)}
+.lead{color:var(--muted-fg);max-width:52rem;line-height:1.65}
+.lead b{color:var(--fg)}
+
+/* Aviso de evidência que entrou depois do fechamento da leitura */
+.posterior{border:1px solid var(--border);border-left:3px solid var(--brand);
+  border-radius:var(--radius);background:var(--muted);padding:1rem 1.15rem;margin-top:1.2rem}
+.posterior p{margin:0;font-size:.88rem;line-height:1.65}
+.posterior p+p{margin-top:.55rem}
+.posterior b{color:var(--fg)}
+
+/* As três análises da fase, com o estado de cada uma */
+.entregas{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  margin-top:1.2rem}
+.ent{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  padding:.95rem 1.05rem}
+.ent h3{margin:0 0 .35rem;font-size:.95rem}
+.ent p{margin:0;font-size:.83rem;color:var(--muted-fg);line-height:1.5}
+.ent .st{display:inline-block;margin-top:.65rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.06em;text-transform:uppercase;padding:.12rem .45rem;border-radius:9999px;
+  border:1px solid var(--border);color:var(--muted-fg)}
+.ent .st.pronto{border-color:color-mix(in srgb,var(--brand) 45%,transparent);color:var(--brand)}
+
+/* Como ler */
+.regua{border:1px solid var(--border);border-left:3px solid var(--warn);
+  border-radius:var(--radius);background:var(--muted);padding:1.05rem 1.2rem;margin:1.2rem 0 1.6rem}
+.regua p{margin:0;font-size:.88rem;line-height:1.65}
+.regua p+p{margin-top:.7rem}
+.regua b{color:var(--fg)}
+
+.resumo{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
+  margin:1.2rem 0 1.6rem}
+.kpi{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  padding:.85rem 1rem}
+.kpi .v{font-family:var(--mono);font-size:1.5rem;font-weight:600;letter-spacing:-.02em;
+  line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:.78rem;color:var(--muted-fg);line-height:1.45;margin-top:.3rem}
+.kpi.alerta .v{color:var(--brand)}
+
+.placar{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  background:var(--card)}
+.linha{border-top:1px solid var(--border)}
+.linha:first-child{border-top:0}
+.linha>summary{display:grid;align-items:center;gap:.8rem;padding:.85rem 1rem;cursor:pointer;
+  grid-template-columns:minmax(8rem,1.4fr) auto auto auto;list-style:none}
+.linha>summary::-webkit-details-marker{display:none}
+.linha>summary:hover{background:var(--muted)}
+.linha[open]>summary{background:var(--muted);border-bottom:1px solid var(--border)}
+.tv{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.45rem}
+.tv .seta{color:var(--muted-fg);transition:transform .15s;flex:none}
+.linha[open] .tv .seta{transform:rotate(90deg)}
+.pre{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted-fg);border:1px solid var(--border);border-radius:9999px;padding:.05rem .35rem;
+  font-weight:400}
+.dims{display:flex;gap:.25rem}
+.d{width:1.6rem;height:1.6rem;border-radius:.3rem;display:grid;place-items:center;
+  font-family:var(--mono);font-size:.78rem;font-weight:600;font-variant-numeric:tabular-nums}
+.d.n0,.d.n1{background:color-mix(in srgb,var(--brand) 82%,transparent);color:#fff}
+.d.n2{background:color-mix(in srgb,var(--warn) 32%,transparent);color:var(--fg)}
+.d.n3{background:color-mix(in srgb,var(--ok) 28%,transparent);color:var(--fg)}
+.d.vazio{border:1px dashed var(--border-strong);color:var(--muted-fg);font-weight:400}
+.num{font-family:var(--mono);font-size:.9rem;font-variant-numeric:tabular-nums;text-align:right;
+  min-width:5rem}
+.num .sub{display:block;font-size:.62rem;color:var(--muted-fg);letter-spacing:.04em;
+  text-transform:uppercase}
+.num .nulo{color:var(--muted-fg);font-style:italic}
+.conf{font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.15rem .5rem;border-radius:9999px;border:1px solid var(--border);white-space:nowrap}
+.conf.baixa{border-color:color-mix(in srgb,var(--brand) 45%,transparent);color:var(--brand)}
+.conf.media{border-color:color-mix(in srgb,var(--warn) 55%,transparent);color:var(--warn)}
+
+.corpo{padding:1.1rem 1rem 1.4rem}
+.corpo h4{margin:1.5rem 0 .55rem;font-size:.95rem}
+.corpo h4:first-child{margin-top:0}
+.corpo p{margin:0 0 .6rem;font-size:.88rem;line-height:1.65;color:var(--muted-fg)}
+.corpo p:last-child{margin-bottom:0}
+.diagnose{font-size:.95rem;line-height:1.6;margin:0 0 1.1rem;color:var(--fg)}
+.diagnose .falta{color:var(--muted-fg)}
+.falta-lista{margin:0 0 .6rem;padding-left:1.1rem}
+.falta-lista li{font-size:.88rem;line-height:1.6;color:var(--muted-fg);margin-bottom:.45rem}
+.politica{border-left:3px solid var(--brand);padding:.15rem 0 .15rem .9rem;margin:0 0 1rem}
+.politica p{color:var(--fg);font-size:.9rem}
+.dim{border-top:1px solid var(--border);padding-top:.9rem;margin-top:.9rem}
+.dim-h{display:flex;align-items:center;gap:.6rem;margin-bottom:.45rem;flex-wrap:wrap}
+.dim-h .nome{font-weight:600;font-size:.88rem}
+.dim-nota{width:1.6rem;height:1.6rem;flex:none}
+.tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted-fg);border:1px solid var(--border);border-radius:9999px;padding:.05rem .4rem}
+
+.legenda{display:grid;gap:.5rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  margin:1rem 0 0}
+.legenda div{border:1px solid var(--border);border-radius:.5rem;padding:.6rem .8rem;
+  background:var(--card);font-size:.82rem;line-height:1.5;color:var(--muted-fg)}
+.legenda b{display:block;font-family:var(--mono);font-size:.65rem;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--fg);margin-bottom:.25rem}
+
+.gate{border:1px solid color-mix(in srgb,var(--brand) 40%,var(--border));
+  border-left:3px solid var(--brand);border-radius:var(--radius);background:var(--accent);
+  padding:1.2rem 1.3rem}
+.gate p{margin:0 0 .7rem;font-size:.95rem;line-height:1.65}
+.gate p:last-child{margin-bottom:0}
+.prosa p{margin:0 0 .7rem;font-size:.88rem;line-height:1.7;color:var(--muted-fg)}
+.prosa p:last-child{margin-bottom:0}
+details.mais{margin-top:1rem}
+details.mais>summary{cursor:pointer;font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--brand)}
+details.mais[open]>summary{margin-bottom:.85rem}
+.fonte{font-size:.8rem;color:var(--muted-fg);margin-top:.9rem}
+
+@media (max-width:760px){
+  .linha>summary{grid-template-columns:1fr auto;row-gap:.6rem}
+  .dims{grid-column:1/-1}
+  .num{text-align:left;min-width:0}
+}
+</style>
+
+<section class="blk">
+  <div class="blk-h"><h2>As três análises desta fase</h2></div>
+  <p class="lead">Identificar é a fase que retrata o sistema de receita como ele funciona hoje, antes
+    de qualquer proposta. São três análises, e as três já foram produzidas. <b>Só o placar das
+    travas tem tela até agora</b>, as outras duas existem como documento.</p>
+
+  <div class="posterior">
+    <p><b>Entrou evidência depois desta leitura.</b> O diagnóstico desta página foi fechado em
+      <b>4 de setembro</b>. Depois disso chegaram duas coisas que ainda não entraram em nenhuma nota:
+      a <b>série de receita de 2025 e 2026</b>, 19 meses fechados abertos em 4 unidades de negócio,
+      que é o primeiro denominador auditável do projeto, e uma <b>recoleta da conta de Google
+      Ads</b> sobre janela ampliada.</p>
+    <p>As duas pendências que nasceram da série tocam o <b>churn</b>, que é evidência da trava de
+      Retenção, hoje a única trava de receita com nota fechada. A leitura abaixo continua válida
+      como retrato de 4 de setembro, e é assim que ela deve ser lida até o próximo fechamento.</p>
+  </div>
+
+  <div class="entregas">
+    <div class="ent"><h3>Fluxo de receita ponta a ponta</h3>
+      <p>Dez etapas narradas com fonte nomeada, do primeiro contato à recompra. Nenhuma delas tem
+        volume ou tempo médio, então ainda não dá para ordenar as perdas por tamanho.</p>
+      <span class="st">tela em construção</span></div>
+    <div class="ent"><h3>As 8 travas pontuadas</h3>
+      <p>Cada trava avaliada em cinco pontos, com a evidência e a fonte de cada nota. É o material
+        que sustenta a escolha da trava principal no Comitê 1.</p>
+      <span class="st pronto">publicado abaixo</span></div>
+    <div class="ent"><h3>Maturidade digital</h3>
+      <p>Nível 2, em estruturação, nas três dimensões, apurado sobre o que a ferramenta mostra e não
+        sobre o que se declara. Leitura provisória: cobre 6 dos 11 contêineres, em 2 das 4 contas.</p>
+      <span class="st">tela em construção</span></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Placar das 8 travas</h2></div>
+  <p class="lead">Cada trava é avaliada em cinco pontos, e cada ponto recebe uma nota de 0 a 5:
+    quanto mais baixa, pior. Clique numa trava para ver as cinco notas e a evidência que sustenta
+    cada uma.</p>
+
+  <div class="regua">
+    <p><b>A nota máxima possível hoje é 3, não 5.</b> Passar de 3 exige documento formal do cliente,
+      e até agora o que temos é fala de reunião e slide de apresentação. Por isso nenhuma nota do
+      placar chega a 4.</p>
+    <p><b>Não compare estas somas com a escala de 0 a 25 do método.</b> Como o teto é 3, uma trava
+      completa vale no máximo 15 aqui. Ler 9 pontos contra uma escala de 25 faria a trava parecer
+      muito pior do que a evidência autoriza dizer.</p>
+    <p><b>Sem nota final não significa "está tudo bem".</b> Significa que ainda não olhamos o
+      suficiente. Seis travas ficaram sem soma porque falta evidência em pelo menos um dos cinco
+      pontos. Elas não estão melhores que as outras duas: estão menos observadas.</p>
+  </div>
+
+  <div class="resumo" id="resumo"></div>
+  <div class="placar" id="placar"></div>
+
+  <h3 style="margin:2rem 0 0;font-size:1rem">Como ler a evidência de cada nota</h3>
+  <p class="lead" style="margin-top:.4rem">Dentro de cada trava, a evidência vem marcada por origem.
+    A marca importa mais que a nota: ela diz o quanto se pode confiar no número.</p>
+  <div class="legenda">
+    <div><b>Declarado [D]</b>Alguém da OLX disse em reunião ou mostrou em slide. Ninguém conferiu
+      contra o sistema.</div>
+    <div><b>Apurado</b>A V4 mediu na ferramenta: contagem de eventos no GA4, leitura dos contêineres
+      de GTM, exports.</div>
+    <div><b>Formal</b>Documento produzido pelo próprio cliente. É o único grau que autoriza nota
+      acima de 3, e hoje quase não aparece.</div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Por que ainda não dá para nomear a trava principal</h2>
+    <span class="eyebrow">gate de consolidação causal</span></div>
+  <div class="gate">
+    <p><b>O método só permite eleger a trava principal quando as oito têm nota fechada. Hoje seis
+      não têm.</b></p>
+    <p>Das duas que fecharam, uma é Cegueira, que por definição do método não disputa o posto: ela
+      é pré-condição, mede se a empresa consegue enxergar o próprio funil. Sobra <b>uma única trava
+      de receita com nota fechada, de sete possíveis</b>. Eleger a principal agora seria escolher no
+      escuro e comprometer todo o plano que vem depois dela.</p>
+    <p>Isso não é cautela nem ressalva: é uma regra que trava, e o material do comitê precisa dizer
+      isso com essas palavras.</p>
+    <div id="gate-detalhe"></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>A suspeita de hoje, e por que ela não é conclusão</h2>
+    <span class="eyebrow">candidata a restrição</span></div>
+  <p class="lead">Se fosse preciso apostar agora, a aposta seria <b>Retenção</b>. Mas é aposta, e o
+    material precisa circular como aposta: os três argumentos que sustentavam essa leitura na versão
+    anterior do diagnóstico caíram na conferência com as fontes. O que sobrou ainda aponta para
+    Retenção, com força bem menor.</p>
+  <div class="prosa" id="candidata"></div>
+
+  <h3 style="margin:2rem 0 .5rem;font-size:1rem">Por que nenhuma leitura fecha ainda</h3>
+  <p class="lead">São seis razões, e a primeira já basta: <b>nenhuma trava foi pontuada sobre dado
+    apurado</b>. As taxas da jornada vêm de um slide que a própria OLX apresentou como material
+    educativo, dizendo com todas as letras que não era uma visão de funil. Nenhuma delas tem
+    denominador, volume absoluto ou período de apuração.</p>
+  <div class="prosa" id="naoconclusiva"></div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Um número que pode estar dez vezes errado</h2>
+    <span class="eyebrow">alerta de denominador</span></div>
+  <p class="lead"><b>12% dos clientes saem no primeiro mês sem publicar anúncio.</b> Só que ninguém
+    sabe se é 12% de quem sai ou 12% de todos os clientes. As duas leituras cabem na mesma frase do
+    slide, e a diferença entre elas é de uma ordem de grandeza no tamanho do vazamento. Esse número
+    já entrou no modelo da meta sem esse exame.</p>
+  <div class="prosa" id="denominador"></div>
+</section>
+
+<script src="/assets/travas-data.js"></script>
+<script src="/assets/travas-placar.js"></script>

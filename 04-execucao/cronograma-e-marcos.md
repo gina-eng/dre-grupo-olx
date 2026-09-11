@@ -2,8 +2,8 @@
 
 > Datas derivadas do método
 > ([00-playbook/03-ciclo-90-dias-e-comites.md](../00-playbook/03-ciclo-90-dias-e-comites.md))
-> aplicado à data de início de 24/08/2026, e reajustadas em **04/09/2026** pelo compromisso da OLX
-> de entregar a **atualização dos acessos na terça, 08/09**.
+> aplicado à data de início de 24/08/2026, e reajustadas em **10/09/2026**, dia em que o
+> **lote completo de acessos foi recebido** e a contagem dos 15 dias corridos finalmente disparou.
 
 ## Marcos confirmados
 
@@ -13,12 +13,54 @@
 | 24/08/2026 · 16h–18h | **Kick-off presencial / Comitê de Receitas** | Av. Paulista, 1106, 15º andar, Bela Vista, SP | ✅ Realizado |
 | ~~03/09/2026 · 17h~~ | ~~Entrega do lote completo de acessos~~ | - | ❌ **Não ocorreu** |
 | ~~10/09/2026 · 15h–17h~~ | ~~Apresentação dos diagnósticos~~ | ~~OLX, sala SP-15~~ | ❌ Adiada em 03/09 |
-| **08/09/2026** | **Atualização dos acessos pela OLX**: desbloqueio total | - | 🔜 **Comprometido pela equipe de GA4/GTM** |
-| 09–23/09/2026 | Os nove diagnósticos rodam, 15 dias corridos, 11 úteis | - | 🔜 Projetado |
-| 28/09/2026 | Revisão de qualidade do material da apresentação | - | 🔜 Projetado |
-| **29/09/2026** | **Apresentação dos diagnósticos** · presencial | OLX, sala SP-15 | 🔜 **A confirmar com a OLX** |
-| 05/10/2026 | Matriz aprovada, gate do Comitê 1 (bloqueio duro) | - | 🔜 Projetado |
-| **06/10/2026** | **Comitê 1 · Validação e Otimização** | a definir | 🔜 **A confirmar com a OLX** |
+| ~~08/09/2026~~ | ~~Atualização dos acessos pela OLX~~ | - | ❌ Escorregou dois dias |
+| **10/09/2026** | **Lote completo de acessos recebido**: os nove abrem no mesmo dia | - | ✅ **Realizado** |
+| 10–18/09/2026 | Os nove diagnósticos rodam, **9 dias corridos, 7 úteis** | - | 🔜 Em execução |
+| 14–18/09/2026 | Consolidação causal, **em paralelo aos diagnósticos** | - | 🔜 Projetado |
+| 16–18/09/2026 | Árvore da Realidade Atual e Nuvem de Conflito, sobre as UDEs das entrevistas | - | 🔜 Projetado |
+| 18/09/2026 | Revisão de qualidade do material | - | 🔴 **Sem dono definido** |
+| **18/09/2026** | **Matriz aprovada**, gate de bloqueio duro. Fim do que depende da V4 | - | 🔜 Projetado |
+| **23/09/2026** | **Evento único: apresentação dos diagnósticos + Comitê 1** | a definir | ✅ **Data confirmada pela OLX em 11/09** |
+
+### O que mudou em 10/09, e por quê
+
+Duas coisas, e só a primeira é de calendário.
+
+**1. O lote completo chegou na quinta, 10/09**, dois dias depois do compromisso de 08/09. A contagem
+disparou no mesmo dia. Em 11/09 o cliente pediu o fechamento dos nove ainda na semana de 14 a 18, o
+que põe a entrega em **18/09**, em 9 dias corridos contra o teto de 15 do kick-off.
+
+**2. A apresentação dos diagnósticos deixou de ser evento separado.** Ela passa a acontecer dentro
+do Comitê 1, numa sessão só, a pedido do cliente. O decisor se desloca uma vez em vez de duas e
+some a semana morta entre apresentar e decidir. Em troca, **todo o material precisa estar pronto
+antes do evento**, Matriz inclusive, o que transforma **18/09** no marco duro da janela.
+
+| | Antes (premissa de 08/09) | Agora (reajuste de 11/09) |
+|---|---|---|
+| Acessos | 08/09 | **10/09**, lote completo |
+| Diagnósticos | 09–23/09 · 15 corridos, 11 úteis | **10–18/09 · 9 corridos, 7 úteis** |
+| Pico de diagnósticos abertos | 6 | **8**, em 15 e 16/09 |
+| Consolidação causal | 24–25 e 28/09 · 3 úteis | **21–25/09 · 5 úteis** |
+| Apresentação | 29/09, evento próprio | **dentro do Comitê 1** |
+| Matriz aprovada | 05/10 | **18/09** |
+| Comitê 1 | 06/10 | **23/09**, confirmado em 11/09 |
+
+**Em 11/09 o cliente pediu que os nove fechassem ainda na semana de 14 a 18.** O kick-off combinou
+*até* 15 dias corridos a partir do recebimento, então entregar em 9 está dentro do combinado, e
+devolve ao projeto os seis dias que o atraso de acesso havia consumido.
+
+**O custo não é de prazo, é de concentração.** A janela caiu de 11 para 7 dias úteis, o pico de
+diagnósticos simultâneos subiu de seis para oito, e os dias com cinco frentes conjuntas passaram de
+um para três seguidos. Os quatro dias úteis que saíram do diagnóstico foram para a consolidação
+causal, que passou de dois para cinco: é ali que as 8 travas são pontuadas e a restrição é nomeada,
+e era o trecho mais espremido do plano anterior. Em 11/09 o cliente pediu que a consolidação e a
+CRT também corressem na semana de 14 a 18, em paralelo aos diagnósticos, e com isso a **Matriz foi
+de 02/10 para 18/09**: tudo o que depende da V4 fecha no mesmo dia.
+
+> ✅ **E o que isso fechou.** Com o material pronto em 18/09, a OLX confirmou o evento único para
+> **quarta, 23/09**, e o conflito que a data em aberto criava com o Comitê 2 desapareceu: entre os
+> dois há **26 dias úteis**, tempo suficiente para o plano de 30 dias ser executado antes de ser
+> avaliado. [Pendência 25](../PENDENCIAS.md) fechada.
 
 ### O que mudou em 04/09, e por quê
 
@@ -55,15 +97,17 @@ V4 recebe tudo**, e a data original de 10/09 saiu dessa conta, não o contrário
 
 | | Acordado no kick-off | Realizado |
 |---|---|---|
-| Acessos completos | quarta, **26/08** | terça, **08/09** · 13 dias depois |
-| Contagem dos 15 dias | a partir de 25/08 | a partir de 09/09 |
-| Diagnóstico concluído | ~09/09 | **23/09** |
-| Encontro presencial seguinte | **10/09** | **29/09** |
+| Acessos completos | quarta, **26/08** | quinta, **10/09** · 15 dias depois |
+| Contagem dos 15 dias | a partir de 25/08 | a partir de **10/09** |
+| Diagnóstico concluído | ~09/09 | **18/09** · em 9 dias, não em 15 |
+| Encontro presencial seguinte | **10/09** | **23/09** |
 
 > ⚠️ **A parte que não sai da regra, e que precisa ser dita à OLX.** No desenho do kick-off, o
-> encontro presencial caía **um dia depois** de o diagnóstico fechar. Aqui há **quatro dias úteis**
-> entre 23 e 29/09, e eles não são folga: são a consolidação causal das 8 travas e o gate de
-> qualidade do material, que aquele desenho não reservava.
+> encontro presencial caía **um dia depois** de o diagnóstico fechar. Aqui ele cai **no mesmo dia**:
+> a consolidação causal das 8 travas, a Árvore da Realidade Atual, a Nuvem de Conflito e o gate de
+> qualidade do material correm em paralelo aos diagnósticos e fecham junto com eles, em 18/09. Com a
+> apresentação dentro do comitê, esse trabalho deixou de poder acontecer depois de apresentar: ele
+> todo precisa estar fechado antes, e agora está.
 
 ## Ciclo 1: projeção reajustada
 
@@ -71,12 +115,12 @@ V4 recebe tudo**, e a data original de 10/09 saiu dessa conta, não o contrário
 |---|---|---|---|
 | 1 | 24–30/08 | Onboarding e visibilidade | Kick-off · V4.Marketing |
 | 2 | 31/08–06/09 | Onboarding | Acessos não entregues · 4 diagnósticos avançam em camada parcial |
-| 3 | 07–13/09 | Identificar | **Acessos em 08/09** · os nove abrem em 09/09 |
-| 4 | 14–20/09 | Identificar | Pico de carga: 6 abertos, 5 cobrando hora da OLX |
-| 5 | 21–27/09 | Identificar | **Os nove fechados (23/09)** · consolidação causal |
-| 6 | 28/09–04/10 | Identificar → Otimizar | Revisão do material (28) · **Apresentação dos diagnósticos (29/09)** · CRT e nuvem de conflito |
-| 7 | 05–11/10 | Otimizar | Matriz aprovada (05) · **Comitê 1 (06/10)** |
-| 8–10 | 12/10–01/11 | Alinhar | Execução do plano de otimização de 30 dias, sem novos recursos |
+| 3 | 07–13/09 | Identificar | **Lote completo de acessos em 10/09** · os nove abrem no mesmo dia |
+| 4 | 14–20/09 | Identificar | Pico de 8 abertos · consolidação, CRT e nuvem em paralelo · **os nove fechados, travas pontuadas e Matriz aprovada (18/09)** |
+| 5 | 21–27/09 | Identificar → Otimizar | **Apresentação dos diagnósticos + Comitê 1 (23/09)**, na mesma sessão |
+| 6 | 28/09–04/10 | Otimizar | Início da execução assistida do plano de 30 dias |
+| 7–8 | 05–18/10 | Otimizar → Alinhar | Execução assistida · **teste de impulso controlado** e sua leitura |
+| 9–10 | 19/10–01/11 | Alinhar | Posicionamento e ICP · FRT e PRT · forecast · matriz de expansão |
 | 11 | 02–08/11 | Alinhar → Expandir | **Comitê 2 · presencial (03/11)**, precedido da revisão do material + C-Level |
 | 12–14 | 09–29/11 | Expandir | Execução do plano de expansão de 30 dias |
 | 15 | 30/11–06/12 | Recomeçar | **Comitê 3 (01/12)**, precedido da revisão do material |
@@ -91,11 +135,16 @@ Comprimi-la significa avaliar um plano que não teve tempo de produzir efeito, e
 explícito sobre o diagnóstico errado que isso gera: ausência de melhoria vira leitura de saturação
 da trava quando na verdade é falta de execução.
 
-| Comitê | Plano original | Reajuste de 03/09 | Reajuste de 04/09 | Execução |
-|---|---|---|---|---|
-| 1 | 17/09 | 01/10 | **06/10** | - |
-| 2 | 08/10 | 29/10 | **03/11** | 4 semanas |
-| 3 | 12/11 | 26/11 | **01/12** | 4 semanas |
+| Comitê | Plano original | Reajuste de 03/09 | Reajuste de 04/09 | Reajuste de 10/09 | Execução |
+|---|---|---|---|---|---|
+| 1 | 17/09 | 01/10 | 06/10 | **23/09**, confirmado | - |
+| 2 | 08/10 | 29/10 | 03/11 | **03/11**, inalterado | **26 dias úteis** |
+| 3 | 12/11 | 26/11 | 01/12 | **01/12**, inalterado | 4 semanas |
+
+> ✅ **O conflito do Comitê 2 se resolveu sozinho quando a data saiu.** Com o Comitê 1 em 23/09 e o
+> Comitê 2 em 03/11, sobram 26 dias úteis entre os dois: o plano de 30 dias tem tempo de ser
+> executado antes de ser avaliado, que é a única condição para o Comitê 2 conseguir distinguir
+> saturação da trava de falta de execução.
 
 **O ciclo passa de 80 para 99 dias, em 15 semanas.** O ciclo é nominalmente de 90 dias, e a grade
 original fechava com 80. As 15 semanas ficam acima da faixa de 10–12 do playbook, e essa é a
@@ -111,14 +160,14 @@ plano, que é o que o método proíbe.
 ## Os nove diagnósticos dentro do ciclo
 
 > ⚠️ **A grade de duas ondas foi superada.** Ela distribuía os nove ao longo de S2–S9 porque os
-> acessos chegariam em série e no máximo três ficariam abertos por vez. Com o desbloqueio total em
-> 08/09 e o prazo de 15 dias, os nove rodam entre **09 e 23/09**, com pico de **seis abertos** e
-> **cinco cobrando hora do time da OLX** nos dias 16, 17 e 18/09.
+> acessos chegariam em série e no máximo três ficariam abertos por vez. Com o lote completo recebido
+> em **10/09** e o fechamento pedido para 18/09, os nove rodam em **9 dias corridos**, com pico de
+> **oito abertos** em 15 e 16/09 e **cinco frentes conjuntas** com o time da OLX em 15, 16 e 17.
 
 A regra de carga do método é quebrada de forma consciente, e a mitigação é concentrar as entrevistas
 em dois blocos fechados (16 e 17/09) em vez de espalhá-las. Grade dia a dia, o que avança hoje e os
 três riscos da janela em
-[sprint-diagnosticos-09-a-23-09.md](sprint-diagnosticos-09-a-23-09.md); mapa de diagnóstico → insumo
+[sprint-diagnosticos-10-a-18-09.md](sprint-diagnosticos-10-a-18-09.md); mapa de diagnóstico → insumo
 → trava em
 [02-diagnostico/auditorias-contratadas.md](../02-diagnostico/auditorias-contratadas.md).
 

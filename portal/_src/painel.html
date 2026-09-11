@@ -13,25 +13,6 @@ body{background:#5c0009}
 ::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.42);background-clip:content-box}
 :root{scrollbar-color:rgba(255,255,255,.3) rgba(70,0,7,.6);scrollbar-width:thin}
 
-.acs{margin-top:2.5rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,.24);
-  background:rgba(121,0,12,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);overflow:hidden}
-.acs-h{padding:1rem 1.3rem;border-bottom:1px solid rgba(255,255,255,.2);display:flex;
-  align-items:baseline;gap:.85rem;flex-wrap:wrap}
-.acs-h h2{font-size:1.05rem;color:#fff}
-.acs-h .n{font-family:var(--mono);font-size:.72rem;color:#fff;margin-left:auto}
-.acs-l{display:grid;gap:1px;background:rgba(255,255,255,.16)}
-@media(min-width:760px){.acs-l{grid-template-columns:1fr 1fr}}
-.acs-i{background:rgba(121,0,12,.5);padding:.7rem 1.3rem;display:flex;gap:.7rem;align-items:baseline;
-  font-size:.85rem;color:#fff}
-.acs-i b{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
-  padding:.12rem .45rem;border-radius:99px;white-space:nowrap;font-weight:600}
-.acs-i b.ok{background:#d6f5e3;color:#0b4a2c}
-.acs-i b.pd{background:rgba(255,255,255,.24);color:#fff}
-.acs-i b.pr{background:#ffe9c2;color:#5c3a00}
-.acs-i span{flex:1}
-.acs-i em{display:block;font-style:normal;font-size:.74rem;color:rgba(255,255,255,.82);margin-top:.12rem}
-.acs-f{padding:.8rem 1.3rem;border-top:1px solid rgba(255,255,255,.2);font-size:.82rem;color:#fff}
-.acs-f a{color:#fff;font-weight:500}
 .red-page{position:relative;color:#fff;min-height:100vh}
 .red-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;
   background:
@@ -106,7 +87,7 @@ body > footer strong{color:#fff}
     <div class="status">
       <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel"></span></div>
       <div class="st"><span class="k">Ciclo</span><b class="v">1 de 4</b><span class="n" id="sem">Fase Identificar</span></div>
-      <div class="st"><span class="k">Próximo marco</span><b class="v">8 set 2026</b><span class="n" id="com-rel">Atualização dos acessos pela OLX</span></div>
+      <div class="st"><span class="k">Próximo marco</span><b class="v">18 set 2026</b><span class="n" id="com-rel">Os nove diagnósticos fechados</span></div>
       <div class="st"><span class="k">Encerramento</span><b class="v">24 ago 2027</b><span class="n">12 comitês contratados</span></div>
     </div>
   </section>
@@ -135,12 +116,6 @@ body > footer strong{color:#fff}
     </a>
   </nav>
 
-  <section class="acs">
-    <div class="acs-h"><h2>Acessos</h2><span class="n" id="acs-n"></span></div>
-    <div class="acs-l" id="acs-l"></div>
-    <p class="acs-f">Lista completa e editável em <a href="/kickoff#b-acessos">Kick-off, Pendências de acesso</a>.</p>
-  </section>
-
 </main>
 </div>
 
@@ -155,10 +130,13 @@ body > footer strong{color:#fff}
     if (d === -1) return "ontem";
     return "há " + Math.abs(d) + " dias";
   }
-  // Marcos reajustados em 04/09: a entrega de acessos de 03/09 nao ocorreu e passou para 08/09,
-  // levando a apresentacao para 29 de setembro e o Comite 1 para 6 de outubro. O proximo marco
-  // e o desbloqueio de acesso, porque e dele que todas as outras datas dependem.
-  var ko = new Date(2026, 7, 24), ac = new Date(2026, 8, 8);
+  // Marcos reajustados em 10/09: o lote completo de acessos chegou nesse dia e disparou a contagem
+  // dos 15 dias corridos. O proximo marco duro deixou de ser concessao do cliente e passou a ser
+  // entrega da V4: em 18/09 fecham os nove diagnosticos, as 8 travas ficam pontuadas e o material
+  // passa pela revisao de qualidade, tudo no mesmo dia, porque a analise passou a correr em paralelo
+  // ao diagnostico. O evento unico que vem depois nao tem data, so o teto de 29/10, entao nao entra
+  // na contagem regressiva.
+  var ko = new Date(2026, 7, 24), fim9 = new Date(2026, 8, 18);
   var dk = dias(ko);
   document.getElementById("ko-rel").textContent = frase(dk);
 
@@ -180,7 +158,7 @@ body > footer strong{color:#fff}
     el.textContent = "Semana " + semana + " · " + (f.length > 1 ? "fases " : "fase ") + f.join(" + ");
   }
   document.getElementById("com-rel").textContent =
-    "Acessos · " + frase(dias(ac)) + " · apresentação 29/09 · Comitê 1 em 6/10";
+    "Fecham " + frase(dias(fim9)) + " · material aprovado no mesmo dia · Comitê 1 até 29/10, a confirmar";
 
   var n = window.dreProgresso ? window.dreProgresso() : 0;
   var p = document.getElementById("kf-prog");
@@ -268,47 +246,5 @@ body > footer strong{color:#fff}
   if (mq.addEventListener) mq.addEventListener("change", function () { mq.matches ? desliga() : liga(); });
 
   liga();
-})();
-</script>
-<script src="/assets/acessos.js"></script>
-<script>
-// Resumo dos acessos, lendo a mesma fonte da lista editável do Kick-off.
-(async function () {
-  if (typeof acessosLer !== "function") return;
-  var n = document.getElementById("acs-n"), host = document.getElementById("acs-l");
-  if (!n || !host) return;
-  var l = acessosLer(), fonte = "cópia local";
-  // A fonte da verdade é o repositório; a cópia local é só o que sobra se a rede falhar.
-  try {
-    var d = await acessosBuscarRemoto();
-    if (Array.isArray(d.acessos)) { l = d.acessos; fonte = d.atualizado_em || "repositório"; }
-  } catch (e) {}
-  var c = acessosContagem(l);
-  n.textContent = c.total + " contas · " + c.concedido + " concedidas, " +
-                  c.parcial + " parciais, " + c.pendente + " pendentes · " + fonte;
-  host.innerHTML = "";
-  l.slice().sort(function (a, b) {
-    if (a.s !== b.s) return a.s === "concedido" ? -1 : 1;
-    return 0;
-  }).slice(0, 8).forEach(function (it) {
-    var d = document.createElement("div"); d.className = "acs-i";
-    var b = document.createElement("b");
-    b.className = it.s === "concedido" ? "ok" : it.s === "parcial" ? "pr" : "pd";
-    b.textContent = ACESSOS_ROTULO[it.s] || it.s;
-    var s = document.createElement("span"); s.textContent = it.o;
-    if (it.itens && it.itens.length) {
-      var q = document.createElement("em");
-      q.textContent = it.itens.length + (it.itens.length === 1 ? " item" : " itens");
-      s.appendChild(q);
-    }
-    if (it.v) { var e = document.createElement("em"); e.textContent = it.v; s.appendChild(e); }
-    d.appendChild(b); d.appendChild(s); host.appendChild(d);
-  });
-  if (l.length > 8) {
-    var d = document.createElement("div"); d.className = "acs-i";
-    var b = document.createElement("b"); b.className = "pd"; b.textContent = "+ " + (l.length - 8);
-    var s = document.createElement("span"); s.textContent = "outros acessos na lista completa";
-    d.appendChild(b); d.appendChild(s); host.appendChild(d);
-  }
 })();
 </script>

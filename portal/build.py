@@ -4,6 +4,11 @@
 Cada fragmento começa com uma linha de metadados:
     <!--@ slug | Título da aba | Título da página | Descrição | Meta lateral -->
 seguida do markup. Rode `python3 build.py` na pasta portal/.
+
+O slug pode ser um caminho, como `destrava/identificar`. Nesse caso a página vive
+em destrava/identificar/index.html, a aba do pai (`destrava`) fica marcada como
+atual, e a barra de título ganha um link de volta para o pai. Só o primeiro
+segmento precisa existir no NAV: página filha não vira aba.
 """
 import hashlib, pathlib, re, sys
 
@@ -103,12 +108,19 @@ def topbar(active):
 </nav>
 """
 
-def crumb(h, d, m):
+def crumb(h, d, m, pai=None):
     if not h:
         return ""
     meta = f'<span class="meta">{m}</span>' if m else ""
+    volta = ""
+    if pai:
+        rotulo, href = pai
+        seta = ('<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" '
+                'aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>')
+        volta = f'<a class="volta" href="{href}">{seta}{rotulo}</a>'
     return f"""<div class="crumb"><div class="crumb-in">
-  <h1>{h}</h1><p class="desc">{d}</p>{meta}
+  {volta}<h1>{h}</h1><p class="desc">{d}</p>{meta}
 </div></div>"""
 
 def rail():
@@ -145,8 +157,12 @@ def build():
         while len(parts) < 5:
             parts.append("")
         slug, title, ch, cd, cm = parts[:5]
-        if slug not in {s for s, _, _ in NAV}:
+        raiz = slug.split("/")[0]
+        if raiz not in {s for s, _, _ in NAV}:
             sys.exit(f"{f.name}: slug '{slug}' não está no NAV")
+        # Página filha guarda o pai para o link de volta; página de topo não tem.
+        pai = next(((rot, href) for s_, rot, href in NAV if s_ == raiz), None) \
+            if "/" in slug else None
         body = raw[m.end():]
         # Todo asset referenciado dentro do fragmento ganha versao. Sem isto o
         # form-data.js e o acessos.js ficariam presos ao cache immutable de um ano.
@@ -167,7 +183,7 @@ def build():
             basecss=v("/assets/base.css"), shellcss=v("/assets/shell.css"),
             shelljs=v("/assets/shell.js"),
             title=title, desc=cd.replace('"', "&quot;"),
-            topbar=topbar(slug), crumb=crumb(ch, cd, cm),
+            topbar=topbar(raiz), crumb=crumb(ch, cd, cm, pai),
             body=corpo, footer=FOOTER), encoding="utf-8")
         print(f"  {out.relative_to(ROOT)}  ({len(out.read_text(encoding='utf-8')):,} bytes)")
 
