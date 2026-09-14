@@ -41,6 +41,30 @@ python3 build.py     # se mexeu em _src/ ou nos dados
 vercel deploy --prod
 ```
 
+`vercel deploy` sobe o **diretório de trabalho**, não o commit. As duas consequências valem a pena
+saber antes de publicar:
+
+- **Arquivo não commitado vai para o ar.** Se outra sessão estiver a meio de escrever no `portal/`,
+  o trabalho dela sobe junto.
+- **Publicar do commit tem o risco oposto.** Dá para publicar só o que está no git criando uma cópia
+  limpa, e foi o que se fez em 14/09 para não subir edição alheia pela metade:
+
+  ```bash
+  git worktree add --detach /tmp/pub HEAD
+  cp -R portal/.vercel /tmp/pub/portal/.vercel
+  cd /tmp/pub/portal && vercel deploy --prod
+  git worktree remove --force /tmp/pub
+  ```
+
+  O preço apareceu na mesma hora: página **gerada** que estava alterada no disco e ainda não
+  commitada volta ao estado do commit. Em 14/09 as duas páginas de Destrava Receita foram ao ar com
+  a navegação antiga, sem a aba Diagnósticos, enquanto o resto do portal já tinha sete abas.
+
+> ✅ **Confira depois de publicar, não antes.** Qualquer alteração no `NAV` do `build.py` toca
+> **todas** as páginas, e página gerada que não foi regerada ou não foi commitada fica para trás sem
+> avisar. O teste é abrir uma página de cada seção e contar as abas.
+
+
 ## Versões em artifact (sem senha)
 
 Publicadas antes do portal. Continuam válidas e são a saída para quando não dá para pedir que alguém
@@ -88,6 +112,18 @@ achados que ainda não viraram nota.
 > repositório. O aviso no topo da página agora explica o que mudou e, mais importante, o que **não**
 > mudou: a coleta de mídia não subiu nota nenhuma, porque medição sem recorte B2B e sem base de
 > comparação não vira score.
+
+**Diagnósticos** (cliente): o acompanhamento dos nove diagnósticos técnicos do contrato, em ordem de
+estado, com a janela de cada um, a semana de 10 a 23/09 dia a dia e o que ainda depende do Grupo OLX.
+Abaixo dele, a **biblioteca**: documentos de trabalho do repositório publicados na íntegra, um por
+página, com a data da última alteração tirada do git.
+
+> ⚠️ **A biblioteca é lista curada, não varredura de pasta.** Quem decide o que a OLX vê é a
+> `BIBLIOTECA` em `portal/build.py`: o que não está nela não é publicado. Ficam de fora, de propósito,
+> as transcrições integrais, `PENDENCIAS.md`, o contrato, o cronograma com os valores do bônus e o
+> material de método da V4. Antes de acrescentar uma linha, confira se o documento pode ser lido pelo
+> cliente. Link entre documentos publicados vira URL do portal; link para arquivo interno perde o
+> destino e continua como texto. Detalhe de uso em [README.md](README.md).
 
 > ⚠️ O dicionário é **v0**. Pressupõe receita B2B por plano ou assinatura de anunciante com motion
 > sales-led: leitura ainda não confirmada pela OLX (`briefing.modelo_receita` segue `null` em

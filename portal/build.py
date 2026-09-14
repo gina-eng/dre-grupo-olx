@@ -345,7 +345,9 @@ def biblioteca_html():
     """A lista de documentos que entra no fragmento da aba Diagnósticos."""
     blocos = []
     for chave, titulo, sub in GRUPOS:
-        docs = [d for d in BIBLIOTECA if d["grupo"] == chave]
+        # Mesmo corte de build_biblioteca(): documento sem fonte no disco nao ganha cartao,
+        # senao a lista ofereceria link para pagina que nao foi gerada.
+        docs = [d for d in BIBLIOTECA if d["grupo"] == chave and (REPO / d["origem"]).exists()]
         if not docs:
             continue
         cartoes = []
@@ -367,7 +369,11 @@ def build_biblioteca():
     for d in BIBLIOTECA:
         fonte = REPO / d["origem"]
         if not fonte.exists():
-            sys.exit(f"BIBLIOTECA: {d['origem']} não existe")
+            # Fonte que ainda nao existe nao derruba o build: o repositorio e escrito por
+            # mais de uma sessao ao mesmo tempo, e um documento pode estar listado aqui
+            # antes de ser commitado. O aviso sai em vez do erro, para o corte ficar visivel.
+            print(f"  ! sem fonte, nao publicado: {d['origem']}  ({d['titulo']})")
+            continue
         titulo_doc, corpo = markdown.render(fonte.read_text(encoding="utf-8"),
                                             resolvedor(d["origem"]))
         rodape = (f'<p class="md-fonte">Documento-fonte do projeto: <code>{d["origem"]}</code> · '
