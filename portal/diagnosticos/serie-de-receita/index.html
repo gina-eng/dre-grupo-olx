@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Série de receita 2025–2026 · Portal DR-E Grupo OLX</title>
+<meta name="description" content="A série mensal entregue em 28 de agosto, o que ela sustenta e o que ainda falta para fechar a matemática do forecast.">
+<link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/base.css?v=32834f49">
+<link rel="stylesheet" href="/assets/shell.css?v=3a715a13">
+<script src="/assets/shell.js?v=cd5ac90c"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <a class="brand" href="/" aria-label="Início">
+      <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
+    </a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+<div class="drawer-bd" id="drawer-bd" hidden></div>
+<nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
+  <div class="drawer-h">
+    <img src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+    <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="drawer-b">
+    <p class="side-label">Portal</p>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="nav-item" href="/metricas">Métricas</a>
+    <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
+    <div id="dtoc"></div>
+  </div>
+</nav>
+
+<div class="crumb"><div class="crumb-in">
+  <a class="volta" href="/diagnosticos"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Diagnósticos</a><h1>Série de receita 2025–2026</h1><p class="desc">A série mensal entregue em 28 de agosto, o que ela sustenta e o que ainda falta para fechar a matemática do forecast.</p><span class="meta">atualizado em 11/09/2026</span>
+</div></div>
+<div class="doc" id="doc"><div class="doc-main"><article class="md"><blockquote class="md-nota"><p><strong>O que é.</strong> Leitura da V4 sobre a planilha de evolução de receita que o Grupo OLX enviou em <strong>28/08/2026</strong> na thread "Onboarding V4 e Grupo OLX". Original e procedência em <span class="md-interno" title="documento interno do projeto, fora do portal"><code>assets/originais/A-visao-de-negocio-e-fluxo-de-receita/</code></span>. Estado de máquina em <span class="md-interno" title="documento interno do projeto, fora do portal"><code>dados/outputs/serie-receita-2025-2026.json</code></span>, gerado por <code>.claude/scripts/build_serie_receita.py</code>. Nenhum número desta página foi digitado à mão.</p>
+<p><strong>O que ela é, como dado.</strong> Receita <strong>bruta faturada</strong>, 19 meses fechados (jan/2025 a jul/2026), aberta em 39 linhas sobre 4 unidades de negócio. É declarada pelo cliente, não auditada pela V4.</p>
+<p><strong>O que ela não é.</strong> Não é truput. Não há coluna de custo, imposto ou margem, então ela não converte sozinha na métrica-mãe do método. E não é funil: continua sem volume por etapa.</p>
+<p><strong>Marcação de fonte:</strong> <code>[D]</code> = declarado pelo cliente · <code>[E]</code> = derivação da V4 sobre o declarado.</p></blockquote>
+<hr>
+<h2 id="1-o-que-a-série-fecha-e-por-que-isso-importa-mais-do-que-parece">1. O que a série fecha, e por que isso importa mais do que parece</h2>
+<p>Ela cobre o item <strong>A1</strong> do <a href="/diagnosticos/checklist-de-dados">checklist</a> quase inteiro: 20 meses de coluna contra os 24 pedidos, com a abertura por linha de negócio que o item exige.</p>
+<p>E ela passa no teste que nenhum material do projeto tinha passado até aqui: <strong>a soma das quatro unidades bate com a linha TOTAL nos 19 meses</strong>, com divergência máxima de R$ 51 sobre R$ 94,9 milhões, que é arredondamento ao real na exibição. A planilha é internamente consistente.</p>
+<p>Isso importa porque o projeto vinha operando sem denominador. A <span class="md-interno" title="documento interno do projeto, fora do portal">meta do projeto</span> propõe uma régua em pontos percentuais de run-rate, e até 28/08 não havia como dizer quanto vale um ponto. Agora há.</p>
+<div class="scrollx"><table><thead><tr><th>Candidata a vertical governante</th><th>Run-rate <code>[D]</code></th><th>1 p.p. vale</th></tr></thead><tbody><tr><td>Grupo inteiro</td><td>R$ 103,8 mi/mês</td><td>R$ 1,04 mi/mês · R$ 12,5 mi/ano</td></tr><tr><td>Real Estate (vertical cheia)</td><td>R$ 50,0 mi/mês</td><td>R$ 500 mil/mês · R$ 6,0 mi/ano</td></tr><tr><td><code>Classifieds - B&amp;A</code> (núcleo de Imóveis)</td><td>R$ 42,8 mi/mês</td><td>R$ 428 mil/mês · R$ 5,1 mi/ano</td></tr><tr><td>Autos (vertical cheia)</td><td>R$ 34,4 mi/mês</td><td>R$ 344 mil/mês · R$ 4,1 mi/ano</td></tr><tr><td><code>Classifieds - Dealers</code> (núcleo de Autos)</td><td>R$ 23,4 mi/mês</td><td>R$ 234 mil/mês · R$ 2,8 mi/ano</td></tr></tbody></table></div>
+<blockquote class="md-nota"><p>Run-rate = média mensal de jan–jul/2026, os 7 meses comparáveis entre os dois anos. Comparar 12 meses de 2025 com 7 de 2026 é o erro mais fácil de cometer com esta planilha, e o script recusa fazê-lo.</p></blockquote>
+<hr>
+<h2 id="2-o-grupo-cresce-98-e-imóveis-responde-por-um-quinto-disso">2. O grupo cresce 9,8%, e Imóveis responde por um quinto disso</h2>
+<div class="scrollx"><table><thead><tr><th>Unidade</th><th>jan–jul/25</th><th>jan–jul/26</th><th>YoY</th><th>Peso na receita</th><th>Peso no <strong>crescimento</strong></th></tr></thead><tbody><tr><td><strong>TOTAL</strong></td><td>R$ 661,4 mi</td><td>R$ 726,5 mi</td><td><strong>+9,8%</strong></td><td>100%</td><td>100%</td></tr><tr><td>Real Estate</td><td>R$ 337,6 mi</td><td>R$ 350,1 mi</td><td>+3,7%</td><td><strong>48,2%</strong></td><td><strong>19,2%</strong></td></tr><tr><td>Autos</td><td>R$ 215,5 mi</td><td>R$ 240,9 mi</td><td>+11,8%</td><td>33,2%</td><td>39,0%</td></tr><tr><td>Goods &amp; Services</td><td>R$ 108,3 mi</td><td>R$ 135,5 mi</td><td><strong>+25,1%</strong></td><td>18,6%</td><td><strong>41,8%</strong></td></tr><tr><td>Conecta</td><td>~0</td><td>~0</td><td>-</td><td>0%</td><td>0%</td></tr></tbody></table></div>
+<p><strong>A leitura:</strong> Imóveis é quase metade da receita e menos de um quinto da tração. Autos e Goods &amp; Services, juntos 52% da receita, carregam <strong>81% do crescimento</strong>.</p>
+<p>E o motor de Goods &amp; Services não é assinatura: são <code>Intermediação</code> (+71,2%, R$ +24,8 mi) e <code>Taxa de Entrega</code> (+17,6%), receita transacional de marketplace, take-rate sobre GMV. <strong>É outro modelo de negócio, com outra restrição.</strong> Isso torna a <span class="md-interno" title="documento interno do projeto, fora do portal">pendência 5</span> (escopo por unidade não delimitado) cara em dinheiro, e não mais só em método: escolher Imóveis ou Autos como vertical governante muda o denominador da meta em R$ 15,6 milhões por mês.</p>
+<hr>
+<h2 id="3-os-37-de-imóveis-são-um-artefato-de-portfólio-não-desempenho-comercial">3. Os 3,7% de Imóveis são um artefato de portfólio, não desempenho comercial</h2>
+<p>Quatro linhas dentro de Real Estate foram desligadas entre 2025 e 2026:</p>
+<div class="scrollx"><table><thead><tr><th>Linha</th><th>jan–jul/25</th><th>jan–jul/26</th><th>YoY</th></tr></thead><tbody><tr><td><code>CRM</code></td><td>R$ 5,3 mi</td><td>R$ 0,7 mi</td><td>−87,0%</td></tr><tr><td><code>Data</code></td><td>R$ 3,4 mi</td><td>R$ 0,6 mi</td><td>−82,2%</td></tr><tr><td><code>Transactional &amp; Fintech - For Sale</code></td><td>R$ 0,7 mi</td><td>R$ 0,0 mi</td><td>−97,1%</td></tr><tr><td><code>Transactional &amp; Fintech - Rentals</code></td><td>R$ 0,6 mi</td><td>R$ 0,0 mi</td><td>−100,0%</td></tr><tr><td><strong>Arrasto somado</strong></td><td></td><td></td><td><strong>R$ −8,7 mi</strong></td></tr></tbody></table></div>
+<p>Tirando as quatro, Real Estate cresce <strong>+6,5%</strong>, não +3,7%. E o núcleo, <code>Classifieds - B&amp;A</code>, que sozinho é 85% da vertical, cresce <strong>+6,4%</strong>.</p>
+<blockquote class="md-nota"><p><strong>Consequência de método:</strong> qualquer meta ancorada na vertical cheia carrega decisões de portfólio que a V4 não controla e que não têm nada a ver com trava de receita. A meta precisa ser ancorada na <strong>linha</strong>, não na unidade. Isso é a mesma regra 3 do repositório aplicada ao denominador.</p></blockquote>
+<hr>
+<h2 id="4-a-série-não-confirma-o-net-negativo-declarado-em-imóveis-e-essa-é-a-pergunta-mais-valiosa-que-ela-abre">4. A série não confirma o net negativo declarado em Imóveis: e essa é a pergunta mais valiosa que ela abre</h2>
+<p>No kick-off, Iuna Scheffler declarou: <em>"as nossas entradas não estão compensando o churn mais downgrade"</em> em Imóveis <code>[D]</code>. A <span class="md-interno" title="documento interno do projeto, fora do portal">meta do projeto</span> §6.1 construiu sobre isso o conceito de <strong>meta zero</strong>: uma base que encolhe não persegue crescimento, persegue inflexão, e metade da meta do ciclo se consumiria só em parar a sangria.</p>
+<p><strong>A receita de <code>Classifieds - B&amp;A</code> cresceu 6,4% em doze meses.</strong> Ela não está encolhendo.</p>
+<p>As duas afirmações só são compatíveis de três maneiras, e cada uma leva o Ciclo 1 para um lugar diferente:</p>
+<div class="scrollx"><table><thead><tr><th>#</th><th>Leitura</th><th>O que ela implicaria</th><th>Como testar</th></tr></thead><tbody><tr><td><strong>a</strong></td><td>O net negativo é de <strong>logo</strong>, não de receita. A base perde clientes e o preço segura o faturamento</td><td>A pior das três. Um sistema que parece saudável no P&amp;L e está se esvaziando por baixo. O ticket médio estaria subindo por reajuste, não por valor entregue</td><td>Contagem de clientes ativos B2B, mês a mês, ao lado da receita</td></tr><tr><td><strong>b</strong></td><td>O net negativo é de um <strong>subsegmento</strong> dentro de B&amp;A (uma praça, um porte, um produto)</td><td>A meta zero existe, mas é local, e o denominador dela é muito menor que R$ 42,8 mi/mês</td><td>Abertura de B&amp;A por porte de cliente e por praça</td></tr><tr><td><strong>c</strong></td><td>O net negativo é <strong>recente</strong> e a série ainda não o mostra no acumulado</td><td>Sustentável pelos dados: a tração cai de <strong>+9,2%</strong> (jan–mar) para <strong>+4,9%</strong> (mai–jul), −4,2 p.p. em um semestre</td><td>Fechamento de ago e set/26, que a planilha ainda não traz</td></tr></tbody></table></div>
+<p>A leitura <strong>c</strong> tem evidência dentro da própria série. As leituras <strong>a</strong> e <strong>b</strong> não são verificáveis com o que existe hoje, e a <strong>a</strong> é a que mais muda o projeto.</p>
+<blockquote class="md-nota"><p><strong>Isto não desmente o cliente.</strong> Iuna descreve um movimento que ela vê no sistema dela; a série mede receita bruta faturada. As duas coisas podem estar certas ao mesmo tempo, e o ponto onde elas se encontram é exatamente onde a trava de Retenção mora.</p></blockquote>
+<hr>
+<h2 id="5-o-churn-de-810-ao-mês-não-pode-ser-sobre-receita-a-série-impõe-o-limite">5. O churn de 8–10% ao mês não pode ser sobre receita: a série impõe o limite</h2>
+<p>O churn declarado é de <strong>8–10% ao mês</strong> <code>[D]</code>, com a <a href="/diagnosticos/jornada-do-cliente">ambiguidade 4</a> em aberto: é sobre cliente ou sobre receita? A série responde por aritmética <code>[E]</code>.</p>
+<p>A base de <code>Classifieds - B&amp;A</code> cresceu 6,4% em doze meses, o que é uma deriva líquida de <strong>+0,52% ao mês</strong>. Entradas brutas têm de repor o churn e ainda produzir essa deriva:</p>
+<div class="scrollx"><table><thead><tr><th>Se o churn de <strong>receita</strong> for</th><th>A OLX precisa vender, todo mês</th><th>Por ano</th><th>Equivalente à base</th></tr></thead><tbody><tr><td>2%/mês</td><td>R$ 1,08 mi</td><td>R$ 13 mi</td><td>30%</td></tr><tr><td>5%/mês</td><td>R$ 2,36 mi</td><td>R$ 28 mi</td><td>66%</td></tr><tr><td><strong>9%/mês</strong></td><td><strong>R$ 4,07 mi</strong></td><td><strong>R$ 49 mi</strong></td><td><strong>114%</strong></td></tr></tbody></table></div>
+<p>Ou seja: se 9% fosse churn de receita, o Grupo OLX reconstruiria <strong>mais que a totalidade</strong> da carteira de Imóveis todo ano, numa vertical onde metade da entrada nasce de prospecção ativa e depende de capacidade humana <code>[D]</code>. Isso não é impossível, mas é uma afirmação extraordinária, e ninguém no projeto a fez.</p>
+<p><strong>A leitura provável <code>[E]</code>:</strong> os 8–10% são churn de <strong>logo</strong>, concentrado numa cauda de contas pequenas, e o churn de receita é uma fração disso. Se for esse o caso, o modelo de elasticidade da <span class="md-interno" title="documento interno do projeto, fora do portal">meta do projeto</span> §4.1, que trata 9% como churn de receita, <strong>superestima o valor de um ponto de churn</strong>, e o ranking das alavancas precisa ser refeito antes de virar meta.</p>
+<blockquote class="md-nota"><p>Isto não invalida a direção do modelo, que é a de que retenção vale mais que aquisição numa base recorrente. Invalida a <strong>calibragem</strong>, e calibragem é o que separa uma faixa proposta de um número acordado. É o insumo 4 da §8 da meta do projeto, e ele acabou de ficar mais urgente.</p></blockquote>
+<hr>
+<h2 id="6-a-meta-de-ciclo-como-está-proposta-hoje-não-é-verificável-na-receita-bruta">6. A meta de ciclo, como está proposta hoje, não é verificável na receita bruta</h2>
+<p>Este é o achado com consequência operacional mais direta.</p>
+<p>A série é serrilhada. Medindo a variação de 90 dias sobre a média móvel de 3 meses, que é a forma mais estável de ler um trimestre, o <strong>ruído próprio</strong> de cada linha é:</p>
+<div class="scrollx"><table><thead><tr><th>Linha</th><th>Desvio de uma leitura de 90 dias (1σ)</th><th>Efeito mínimo detectável (2σ)</th></tr></thead><tbody><tr><td>Real Estate</td><td>±2,80%</td><td><strong>+5,60%</strong></td></tr><tr><td><code>Classifieds - B&amp;A</code></td><td>±2,83%</td><td><strong>+5,67%</strong></td></tr><tr><td><code>Classifieds - Dealers</code></td><td>±3,99%</td><td>+7,98%</td></tr><tr><td>Autos</td><td>±4,50%</td><td>+8,99%</td></tr><tr><td>Grupo inteiro</td><td>±4,16%</td><td>+8,32%</td></tr></tbody></table></div>
+<p>A <span class="md-interno" title="documento interno do projeto, fora do portal">meta do projeto</span> §6 propõe para o Ciclo 1 um alvo de <strong>+3 a +6 p.p. de run-rate</strong>. Contra uma banda de ±2,8%, <strong>a metade de baixo dessa faixa é indistinguível de ruído</strong>, e mesmo o topo fica na fronteira.</p>
+<p>Some-se a isso a inércia já documentada: com constante de tempo de 11 meses, uma injeção implantada no início do Ciclo 1 tem <strong>cerca de 24% do seu ganho de regime materializado</strong> ao fim de 3 meses <code>[E]</code>. O ciclo é curto para o sistema que ele mexe.</p>
+<p><strong>As três correções que isso obriga:</strong></p>
+<ol class="md-lista"><li><strong>A meta de ciclo se mede no indicador da restrição, não na receita.</strong> Uma taxa de conversão de primeira fatura tem denominador de milhares de contratos por mês e detecta 2 p.p. com folga; a receita bruta da vertical não detecta 5. O efeito em receita entra como <strong>consequência derivada</strong> e declarada, nunca como o número que prova o ciclo. Isso já é o que a régua de três níveis propõe, e a série agora dá a razão técnica para defendê-la.</li><li><strong>Se a receita for lida, é em média móvel de 3 meses com a banda declarada junto.</strong> Ler o mês isolado é pior: o desvio mensal de B&amp;A é de 5,96 p.p., maior que a meta inteira do ciclo.</li><li><strong>A sazonalidade da janela precisa ser descontada, e a notícia aqui é boa.</strong> De agosto a novembro de 2025, Real Estate variou <strong>−0,1%</strong> e <code>Classifieds - B&amp;A</code> <strong>+0,6%</strong>. A janela do Ciclo 1 é sazonalmente quase neutra em Imóveis, então o que aparecer ali é do ciclo. Em Autos não: <code>Classifieds - Dealers</code> sobe +3,1% sozinho no mesmo período, e uma meta de +3 p.p. medida em Autos seria integralmente entregue pelo calendário.</li></ol>
+<blockquote class="md-nota"><p>Testei antes a normalização por <strong>dia útil</strong>, que é o reflexo comum para receita serrilhada, e ela <strong>piora</strong> a variância em todas as linhas. O que reduz é dia corrido (de 5,48 para 3,49 em Real Estate), o que faz sentido para uma base de assinatura que acumula por dia de calendário, e não por expediente. Em Autos nem isso funciona, o que é mais uma evidência de que Autos é um sistema de receita diferente.</p></blockquote>
+<hr>
+<h2 id="7-três-coisas-na-planilha-que-precisam-de-explicação-do-cliente">7. Três coisas na planilha que precisam de explicação do cliente</h2>
+<ol class="md-lista"><li><strong>Valores negativos.</strong> <code>Transactional &amp; Fintech - For Sale</code> tem meses negativos em jul, ago e set/25 e em mar e abr/26. Estorno, reclassificação contábil ou provisão revertida mudam a leitura, e nenhuma delas é receita.</li><li><strong>Linhas que zeram no meio da série.</strong> <code>CRM</code> some em set/25, volta com R$ 561 mil em fev/26 e some de novo. <code>Data</code> cai a zero em abr/26. <code>Rentals</code> termina em dez/25 com R$ 566. Descontinuação de produto e migração de rubrica produzem o mesmo desenho e têm significados opostos.</li><li><strong><code>Conecta</code>.</strong> A unidade registra R$ 318, R$ 40 e R$ 20 nos três primeiros meses de 2025, nada depois, e um único lançamento de <strong>R$ 6.865.055 em set/25</strong>. Um valor isolado dessa ordem numa unidade zerada é reclassificação ou evento não recorrente, e ele está dentro do TOTAL do mês.</li></ol>
+<hr>
+<h2 id="8-o-que-a-série-ainda-não-resolve">8. O que a série ainda não resolve</h2>
+<div class="scrollx"><table><thead><tr><th>Falta</th><th>Consequência</th><th>Item</th></tr></thead><tbody><tr><td>P&amp;L por vertical</td><td>A receita não vira truput, e a métrica-mãe do método continua sem denominador</td><td>Insumo 2 da meta, DRI Matheus Rodrigues</td></tr><tr><td>Metas 2026 da OLX</td><td>A âncora da meta continua sendo só a matemática da V4</td><td>Insumo 1, próximo passo #2</td></tr><tr><td>Contagem de clientes ativos, mês a mês</td><td>Sem ela não se separa preço de volume, e a §4 fica sem resposta</td><td>Novo, ver PENDENCIAS</td></tr><tr><td>2024</td><td>Com 20 meses não se separa tendência de ciclo. O A1 pede 24 por isso</td><td>A1, parcial</td></tr><tr><td>Volumes por etapa do funil</td><td>O fluxo de receita continua sem reconciliar contra o faturamento (regra 8)</td><td>A2 e A3, abertos</td></tr></tbody></table></div>
+<hr>
+<h2 id="estado">Estado</h2>
+<ul class="md-lista"><li>Original: <code>assets/originais/A-visao-de-negocio-e-fluxo-de-receita/evolucao-receita-2025-2026.{csv,xlsx}</code></li><li>Estado de máquina: <span class="md-interno" title="documento interno do projeto, fora do portal"><code>dados/outputs/serie-receita-2025-2026.json</code></span></li><li>Regenerar: <code>python3 .claude/scripts/build_serie_receita.py</code></li><li>Alimenta: <span class="md-interno" title="documento interno do projeto, fora do portal"><code>03-estrategia/meta-do-projeto.md</code></span> §5, §6 e §8, o forecast (POP 27) e o diagnóstico da trava de Retenção</li></ul><p class="md-fonte">Documento-fonte do projeto: <code>02-diagnostico/serie-de-receita-2025-2026.md</code> · atualizado em 11/09/2026 · <a href="/diagnosticos">voltar para Diagnósticos</a></p></article></div><aside class="rail" aria-label="Índice da página">
+  <div class="rail-top">
+    <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    <button class="rail-tog" id="rail-tog" type="button" aria-label="Recolher o índice"
+            aria-expanded="true" aria-controls="toc" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <div id="toc"></div>
+</aside></div><button class="rail-abrir" id="rail-abrir" type="button" hidden>Nesta página</button>
+<footer><div class="wrap">
+  <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
+     iniciado em 24 de agosto de 2026.</p>
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX,
+     não repassar sem autorização escrita.</p>
+</div></footer>
+</body>
+</html>

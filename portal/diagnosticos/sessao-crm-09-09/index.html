@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CRM · parte 1 · 09 de setembro · Portal DR-E Grupo OLX</title>
+<meta name="description" content="O contexto da migração, o Campana e o que parou em março. É a sessão que abre o diagnóstico (i).">
+<link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/base.css?v=32834f49">
+<link rel="stylesheet" href="/assets/shell.css?v=3a715a13">
+<script src="/assets/shell.js?v=cd5ac90c"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <a class="brand" href="/" aria-label="Início">
+      <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
+    </a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+<div class="drawer-bd" id="drawer-bd" hidden></div>
+<nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
+  <div class="drawer-h">
+    <img src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+    <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="drawer-b">
+    <p class="side-label">Portal</p>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="nav-item" href="/metricas">Métricas</a>
+    <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
+    <div id="dtoc"></div>
+  </div>
+</nav>
+
+<div class="crumb"><div class="crumb-in">
+  <a class="volta" href="/diagnosticos"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Diagnósticos</a><h1>CRM · parte 1 · 09 de setembro</h1><p class="desc">O contexto da migração, o Campana e o que parou em março. É a sessão que abre o diagnóstico (i).</p><span class="meta">atualizado em 14/09/2026</span>
+</div></div>
+<div class="doc" id="doc"><div class="doc-main"><article class="md"><div class="scrollx"><table><tbody><tr><td><strong>Data</strong></td><td>09/09/2026, 15h01 · remoto · 01:02:42</td></tr><tr><td><strong>Origem</strong></td><td>Agenda "CRM e V4 consultoria · apresentação CRM", convocada por Michelle Morais. É o capítulo de CRM da varredura contratada, e Michelle o apresenta assim ao time interno: <em>"eles fazem uma varredura por todas as áreas e processos para entender aonde existe um potencial de receita que está travado"</em> (00:06:10)</td></tr><tr><td><strong>Fase do método</strong></td><td>1 · Identificar · <strong>camada experiencial</strong> do diagnóstico (i) CRM Marketing</td></tr><tr><td><strong>Serve a</strong></td><td>O diagnóstico (i), que fecha em <strong>17/09</strong> (<span class="md-interno" title="documento interno do projeto, fora do portal">sprint</span>), e o Comitê 1 do evento único de <strong>23/09</strong></td></tr><tr><td><strong>Entregável que ela alimenta</strong></td><td><a href="/diagnosticos/crm-marketing"><code>02-diagnostico/auditoria-i-crm-marketing.md</code></a></td></tr><tr><td><strong>Status</strong></td><td>✅ Realizado · <span class="md-interno" title="documento interno do projeto, fora do portal">transcrição completa</span> · <strong>não houve gravação</strong>, só transcrição</td></tr></tbody></table></div>
+<h2 id="o-que-esta-reunião-é-e-o-que-ela-não-é">O que esta reunião é, e o que ela não é</h2>
+<p><strong>É</strong> contexto, e a própria condutora avisou disso na abertura:</p>
+<blockquote class="md-nota"><p><strong>Michelle Morais (00:03:48):</strong> "não vai ser talvez uma agenda de CRM tão trivial, porque é uma agenda que vai contextualizar o momento em que a gente está, muito mais do que o que a gente tem em termos de jornada somente."</p></blockquote>
+<p><strong>Não é</strong> a camada analítica do diagnóstico (i): nenhum relatório de performance, nenhuma base, nenhum acesso à ferramenta. Tudo que está aqui é <strong>declarado em reunião</strong> (regra 1 do repositório).</p>
+<p>E não é a agenda que estava no cronograma: era para ser a sessão presencial de 10/09 com apresentação de diagnóstico da V4, e Leonardo Rosa a reabriu em 00:58:12 porque os acessos ainda não tinham chegado. Virou uma segunda sessão online, <a href="/diagnosticos/sessao-crm-10-09">10/09</a>.</p>
+<h3 id="presentes">Presentes</h3>
+<p><strong>OLX:</strong> Michelle Morais (CRM, conduziu) · Eduardo Santos (Core Solutions, dono de Sales e Service Cloud) · Mirella Mendonça (marketing) · Matheus Albuquerque (especialista Salesforce, Core Solutions) · Evelyn Milare (CRM, visão cross entre Autos e Imóveis) · Pietro Barbosa (CRM, em transição de área) · Juliana Arndt (CRM Imóveis) <strong>V4:</strong> Leonardo Rosa (consultor focal) · Rafael Corazza (coordenador) · Guilherme Lippert (cofundador, produtos de tech) · Matheus Gomes de Souza Netto (engenharia de dados) <strong>C3C:</strong> Augusto Vasconcelos e Gabriel Lopes constam do convite e <strong>não falam</strong> nesta sessão.</p>
+<blockquote class="md-nota"><p>O time de CRM B2B tem <strong>três pessoas</strong> e está em recomposição: Pietro Barbosa sai, Evelyn Milare assume Autos com olhar cross e Juliana Arndt fica em Imóveis (00:13:57 e 00:15:05).</p></blockquote>
+<h2 id="a-operação-declarada-em-quatro-frases">A operação declarada, em quatro frases</h2>
+<ol class="md-lista"><li><strong>CRM é canal de aquisição antes de ser canal de relacionamento.</strong> É um dos maiores fornecedores de MQL para o DBM, o time de inside sales que vende os planos menores (00:16:19).</li><li><strong>A aquisição roda em WhatsApp</strong>, <em>"99%, para não falar 100"</em> (00:16:19). E-mail existe nas jornadas de ciclo de vida, não na aquisição.</li><li><strong>O esforço foi deliberadamente desequilibrado para a aquisição.</strong> O upsell voltou para o time farmer e o CRM foi para onde há gap comercial: <em>"CRM tá com a missão maior aqui, aonde tem um gap maior comercial, que é conseguir leads para aquisição"</em> (00:16:19).</li><li><strong>O processo é manual de ponta a ponta</strong>, mesmo existindo Marketing Cloud: extração de base, cruzamento, limpeza, quebra por volume diário e upload na Blip (00:17:50 e 00:47:06).</li></ol>
+<h2 id="a-arquitetura-do-campana-por-matheus-albuquerque-003640-e-003856">A arquitetura do Campana, por Matheus Albuquerque (00:36:40 e 00:38:56)</h2>
+<div class="scrollx"><table><thead><tr><th>Camada</th><th>O que faz</th></tr></thead><tbody><tr><td>Sistemas internos</td><td>Conta, cobrança, notificação, geração de contrato</td></tr><tr><td><strong>Proxy</strong></td><td>Decide se o registro vai para o ambiente legado ou para o Campana</td></tr><tr><td>Salesforce</td><td><strong>Três orgs unificadas em uma</strong>: OLX, Zap e VivaReal. Padroniza campo, objeto e processo (<code>contract</code> e <code>service contract</code> faziam a mesma coisa no legado)</td></tr><tr><td>Marketing Cloud</td><td>Uma BU por origem: OLX, Zap e <strong>a BU do Campana</strong>, que recebe o dado já unificado</td></tr></tbody></table></div>
+<p>Fluxo de objetos de uma venda (00:40:22): lead → conta e contato → oportunidade → cotação → produtos → <strong>pedido</strong> → notificação, cobrança e ativação → contrato → jornada de onboarding.</p>
+<p><strong>O ponto que mais importa para o diagnóstico</strong> está em 00:38:56, e é o próprio arquiteto quem diz:</p>
+<blockquote class="md-nota"><p><strong>Matheus Albuquerque:</strong> "quando a gente fala de dado para campana, processo Salesforce, a gente tá falando de um dado <strong>qualificado para que a gente consiga fazer uma venda</strong> e não necessariamente um dado que vai estar super ultra limpo para que a gente consiga fazer um disparo totalmente formatado."</p></blockquote>
+<p>E o que Eduardo Santos acrescenta em 00:28:50 fecha o desenho:</p>
+<blockquote class="md-nota"><p><strong>Eduardo Santos:</strong> "nós não temos uma CDP única hoje, então hoje tá tudo pulverizado os dados. Então eu tenho dificuldade de saber onde estão cada um dos dados e como que eu construo essas jornadas."</p></blockquote>
+<h2 id="o-achado-da-sessão-cinco-meses-sem-jornada-de-ciclo-de-vida">O achado da sessão: cinco meses sem jornada de ciclo de vida</h2>
+<p>A migração para o Campana desligou o CRM de ciclo de vida para <strong>todo cliente novo</strong>, e ninguém religou:</p>
+<div class="scrollx"><table><thead><tr><th>Vertical</th><th>Migração começou</th><th>Efeito</th></tr></thead><tbody><tr><td><strong>Autos</strong></td><td>fim de <strong>março/2026</strong></td><td>Cliente novo cadastrado no Campana não recebe jornada nenhuma desde abril</td></tr><tr><td><strong>Imóveis</strong></td><td><strong>julho/2026</strong></td><td>Mesmo efeito, a partir de julho</td></tr></tbody></table></div>
+<blockquote class="md-nota"><p><strong>Michelle Morais (00:26:09):</strong> "os clientes começaram a serem cadastrados os novos clientes no ambiente novo, no Campana novo. A gente já parou de disparar para ele as novas jornadas, por exemplo, de autos. Elas ficaram no ambiente velho e não ligaram ainda. [...] a gente tá desde março, desde abril até agora, sem conversar dentro de um ciclo de vida com esse cliente de autos."</p></blockquote>
+<p>O que continua vivo: o <strong>transacional</strong> (confirmação de compra) e o <strong>billing</strong> (cobrança), que rodam por fora do time de CRM. O que parou é a camada promocional e de relacionamento. Quem já estava numa jornada no legado segue nela até o fim; o legado não foi desligado, ele é o ambiente <strong>atual do B2C</strong> (parte 2, 00:16:35).</p>
+<p><strong>Uma jornada voltou:</strong> o onboarding de Imóveis, migrado e ligado pouco antes desta sessão (00:23:38). A data tem duas versões, ver <span class="md-interno" title="documento interno do projeto, fora do portal">pendência 34</span>.</p>
+<h2 id="o-desencontro-e-ele-aconteceu-na-sala">O desencontro, e ele aconteceu na sala</h2>
+<p>Este é o registro mais valioso da sessão, porque não é opinião da V4: é o cliente descobrindo, ao vivo, que duas áreas tinham entendimentos incompatíveis sobre quem constrói jornada.</p>
+<blockquote class="md-nota"><p><strong>Eduardo Santos (00:28:50):</strong> "eu entendo que o que existia de jornada do legado a gente reconstruiu dentro de campana, porque a gente deu o OK, inclusive para autos, né?" <strong>Michelle Morais:</strong> "Ainda não, Edu. A gente tá começando agora. A gente migrou a DEX, só a data extension, só os dados para conseguir fazer os disparos de aquisição."</p>
+<p><strong>Mirella Mendonça (00:29:57):</strong> "do ponto de vista de dependência de engenharia aqui, isso foi em abril, porque montar a comunicação dentro do Marketing Cloud é coisa de marketing, depende da gente." <strong>Michelle Morais:</strong> "Não, a gente precisa do conhecimento técnico. [...] a gente sempre teve uma pessoa técnica que faz isso pra gente."</p>
+<p><strong>Eduardo Santos (00:30:26):</strong> "Esse era o meu entendimento também. Por isso que para mim tava tudo certo. [...] talvez a gente esteja fazendo um monte de coisa, mas não é o que vai resolver o nosso problema." <strong>Mirella Mendonça (00:34:24):</strong> "isso me parece ser algo bem simples, tá gente?"</p></blockquote>
+<p><strong>O que isso é, em método:</strong> não é falha de pessoa (regra 5 do repositório). É uma <strong>política implícita</strong>: a construção de jornada no Marketing Cloud nunca teve dono declarado, foi sempre executada por um especialista técnico, e quando esse especialista saiu em março (<a href="/diagnosticos/sessao-crm-10-09">parte 2</a>, 00:19:24) a atividade não caiu para ninguém. Cinco meses de silêncio com o cliente novo e nenhum alarme, porque nenhum indicador da empresa observa esse silêncio. O material vai para a CRT como causa candidata, não para uma lista de culpados.</p>
+<h2 id="blip-a-decisão-que-não-está-tomada">Blip: a decisão que não está tomada</h2>
+<p>O disparo de WhatsApp sai pela <strong>Blip</strong>, que não tem integração com o Marketing Cloud. A base é exportada, tratada e subida à mão (00:47:06).</p>
+<div class="scrollx"><table><thead><tr><th>Quem</th><th>O que disse</th></tr></thead><tbody><tr><td><strong>Eduardo Santos (00:52:42)</strong></td><td>"teoricamente a BP vai morrer, né?" · "a gente tem um down time muito grande com eles" · "não funciona" · "eles já nem tão participando do bid de disparo"</td></tr><tr><td><strong>Mirella Mendonça (00:52:42)</strong></td><td>"pelo que eu entendi hoje na reunião, isso não está pacificado de que Blip vai morrer"</td></tr><tr><td><strong>Eduardo Santos (00:53:48)</strong></td><td>Migração prevista para o <strong>Q1</strong>, e a discussão com o comercial "ainda precisa acontecer". O atendimento já vai 100% para o Salesforce</td></tr><tr><td><strong>Michelle Morais (00:56:14)</strong></td><td>"até que a gente tenha isso formalizado, a gente segue com o plano": há agenda na semana com Paloma e Etienne para integrar Blip e Marketing Cloud</td></tr><tr><td><strong>Eduardo Santos (00:57:16)</strong></td><td>"a gente não deveria ter essa premissa de integração com Blip, eu deveria ter a premissa de ter o disparo" · "a Blip deveria ser utilizada como um broker"</td></tr></tbody></table></div>
+<p>Duas pessoas da mesma empresa, na mesma sala, com leituras opostas sobre a permanência da ferramenta de que depende <strong>100% da aquisição de CRM</strong>. Vira <span class="md-interno" title="documento interno do projeto, fora do portal">pendência 31</span>.</p>
+<h2 id="riscos-que-o-próprio-cliente-levantou">Riscos que o próprio cliente levantou</h2>
+<p><strong>Mirella Mendonça (00:48:35)</strong>, sobre as etapas de tratamento, exclusão manual e disparo por fora:</p>
+<blockquote class="md-nota"><p>"o item quatro, cinco, o sete e o oito, digamos assim, eles são super críticos porque envolve LGPD, envolve inúmeros outros riscos aqui pra gente."</p></blockquote>
+<p>A V4 registra porque afeta o desenho da injeção, não porque o achado seja nosso: <span class="md-interno" title="documento interno do projeto, fora do portal">pendência 33</span>.</p>
+<h2 id="números-declarados-nesta-sessão">Números declarados nesta sessão</h2>
+<p>Todos <strong>declarados</strong>, nenhum apurado contra sistema. Marcados <code>[E]</code> onde são estimativa de quem falou.</p>
+<div class="scrollx"><table><thead><tr><th>Onde</th><th>Número</th><th>Fonte</th></tr></thead><tbody><tr><td>Aquisição, upsell e one shot</td><td><strong>99% a 100%</strong> em WhatsApp <code>[E]</code></td><td>00:16:19</td></tr><tr><td>Migração de Autos</td><td>começou no <strong>fim de março/2026</strong></td><td>00:26:09</td></tr><tr><td>Migração de Imóveis</td><td>começou em <strong>julho/2026</strong></td><td>00:26:09</td></tr><tr><td>Data Extension de Autos</td><td>concluída por volta de <strong>maio/2026</strong> <code>[E]</code></td><td>00:31:09, confirmado por Pietro Barbosa</td></tr><tr><td>Orgs de Salesforce unificadas</td><td><strong>3</strong> (OLX, Zap, VivaReal) em <strong>1</strong></td><td>00:37:47</td></tr><tr><td>Tempo de casa de Evelyn Milare</td><td>"três semanas" <code>[E]</code></td><td>00:13:57 · <strong>corrigido na parte 2</strong>: três semanas na área, um ano de OLX</td></tr></tbody></table></div>
+<h2 id="decisões">Decisões</h2>
+<p>O Gemini classificou a sessão como <strong>"Precisa de mais conversa"</strong>, e está certo: nenhuma decisão estrutural foi fechada. A única coisa acordada foi de agenda, ajustar o cronograma e manter uma segunda sessão online de cerca de uma hora para fechar o capítulo de CRM (00:58:12).</p>
+<p>Três assuntos ficaram explicitamente em aberto, e é isso que a ata precisa registrar: <strong>o escopo das jornadas com a C3C</strong>, <strong>a permanência da Blip</strong> e <strong>quem constrói jornada no Marketing Cloud</strong>.</p>
+<h2 id="próximos-passos-registrados-na-sessão">Próximos passos registrados na sessão</h2>
+<div class="scrollx"><table><thead><tr><th>#</th><th>Ação</th><th>DRI declarado</th></tr></thead><tbody><tr><td>1</td><td>Reunião à parte para detalhar o escopo das jornadas e as pendências da C3C</td><td>Eduardo Santos + Mirella Mendonça</td></tr><tr><td>2</td><td>Fórum técnico sobre a arquitetura do Campana e os fluxos do Sales Cloud, para a V4</td><td>Matheus Albuquerque</td></tr><tr><td>3</td><td>Enviar o plano de mídia para validação</td><td>Mirella Mendonça</td></tr><tr><td>4</td><td>Limpeza da base de Imóveis para consumo de marketing, até a semana seguinte</td><td>Evelyn Milare</td></tr><tr><td>5</td><td>Reunir Paloma e Etienne sobre automação do disparo de WhatsApp, com Matheus Albuquerque na sala</td><td>Eduardo Santos</td></tr><tr><td>6</td><td>Enviar a Michelle a relação de acessos pendentes que impacta o cronograma</td><td>Leonardo Rosa</td></tr><tr><td>7</td><td>Sessão online para fechar o CRM (aconteceu em 10/09)</td><td>O grupo</td></tr></tbody></table></div>
+<h2 id="para-onde-esta-sessão-manda-material">Para onde esta sessão manda material</h2>
+<div class="scrollx"><table><thead><tr><th>Destino</th><th>O quê</th></tr></thead><tbody><tr><td><a href="/diagnosticos/crm-marketing"><code>02-diagnostico/auditoria-i-crm-marketing.md</code></a></td><td>Todos os achados, com a leitura por trava</td></tr><tr><td><a href="/diagnosticos/checklist-de-dados"><code>02-diagnostico/checklist-dados-e-acessos.md</code></a></td><td>Bloco B: B2 sai de ⚪, e a nota das quatro ferramentas ganha resposta parcial</td></tr><tr><td><span class="md-interno" title="documento interno do projeto, fora do portal"><code>PENDENCIAS.md</code></span></td><td>Itens 30, 31, 32, 33 e 34</td></tr><tr><td>CRT (a montar)</td><td>O desencontro sobre a dona da jornada, como causa candidata em formato de política</td></tr></tbody></table></div><p class="md-fonte">Documento-fonte do projeto: <code>06-reunioes/2026-09-09-crm-contexto-e-campana.md</code> · atualizado em 14/09/2026 · <a href="/diagnosticos">voltar para Diagnósticos</a></p></article></div><aside class="rail" aria-label="Índice da página">
+  <div class="rail-top">
+    <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    <button class="rail-tog" id="rail-tog" type="button" aria-label="Recolher o índice"
+            aria-expanded="true" aria-controls="toc" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <div id="toc"></div>
+</aside></div><button class="rail-abrir" id="rail-abrir" type="button" hidden>Nesta página</button>
+<footer><div class="wrap">
+  <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
+     iniciado em 24 de agosto de 2026.</p>
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX,
+     não repassar sem autorização escrita.</p>
+</div></footer>
+</body>
+</html>

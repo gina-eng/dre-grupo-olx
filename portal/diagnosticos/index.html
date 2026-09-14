@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Diagnósticos · Portal DR-E Grupo OLX</title>
+<meta name="description" content="Os nove diagnósticos técnicos do contrato, o estado de cada um e os documentos que eles produzem.">
+<link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/base.css?v=32834f49">
+<link rel="stylesheet" href="/assets/shell.css?v=3a715a13">
+<script src="/assets/shell.js?v=cd5ac90c"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <a class="brand" href="/" aria-label="Início">
+      <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
+    </a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+<div class="drawer-bd" id="drawer-bd" hidden></div>
+<nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
+  <div class="drawer-h">
+    <img src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+    <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="drawer-b">
+    <p class="side-label">Portal</p>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="nav-item" href="/metricas">Métricas</a>
+    <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
+    <div id="dtoc"></div>
+  </div>
+</nav>
+
+<div class="crumb"><div class="crumb-in">
+  <h1>Diagnósticos</h1><p class="desc">Os nove diagnósticos técnicos do contrato, o estado de cada um e os documentos que eles produzem.</p><span class="meta">Fecham em 18 set · Comitê 1 em 23 set</span>
+</div></div>
+<div class="doc" id="doc"><div class="doc-main"><style>
+section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
+section.blk:first-of-type{margin-top:2rem}
+.blk-h{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;
+  border-bottom:1px solid var(--border);padding-bottom:.5rem;margin-bottom:1rem}
+.blk-h h2{margin:0;font-size:1.35rem;letter-spacing:-.01em}
+.eyebrow{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted-fg)}
+.lead{color:var(--muted-fg);max-width:52rem;line-height:1.65}
+.lead b{color:var(--fg)}
+.lead+.lead{margin-top:.8rem}
+
+.resumo{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
+  margin:1.3rem 0 1.6rem}
+.kpi{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  padding:.85rem 1rem}
+.kpi .v{font-family:var(--mono);font-size:1.5rem;font-weight:600;letter-spacing:-.02em;
+  line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:.78rem;color:var(--muted-fg);line-height:1.45;margin-top:.3rem}
+.kpi.alerta .v{color:var(--brand)}
+
+/* ---------- os nove, um a um ---------- */
+.nove{list-style:none;margin:1.2rem 0 0;padding:0;border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.dg{display:grid;gap:.35rem 1rem;padding:1rem 1.1rem;border-top:1px solid var(--border);
+  grid-template-columns:2.6rem minmax(0,1fr)}
+.dg:first-child{border-top:0}
+.dg-n{grid-row:span 2;font-family:var(--mono);font-size:.95rem;font-weight:600;
+  color:var(--muted-fg);padding-top:.1rem}
+.dg.feito .dg-n{color:var(--brand)}
+.dg-topo{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.dg-topo h3{margin:0;font-size:1rem}
+.dg p{margin:.15rem 0 0;font-size:.86rem;color:var(--muted-fg);line-height:1.55}
+.dg .quando{font-family:var(--mono);font-size:.72rem;color:var(--muted-fg);white-space:nowrap}
+.dg-pe{display:flex;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;margin-top:.5rem;
+  font-size:.78rem;color:var(--muted-fg)}
+.dg-pe b{color:var(--fg);font-weight:500}
+.st{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.14rem .5rem;border-radius:9999px;border:1px solid var(--border);
+  color:var(--muted-fg);white-space:nowrap}
+.st.ok{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);
+  background:var(--ok-bg)}
+.st.andando{border-color:color-mix(in srgb,var(--brand) 45%,transparent);color:var(--brand-ink);
+  background:var(--accent)}
+.st.espera{background:var(--muted)}
+.dg-doc{font-size:.8rem;font-weight:500;color:var(--brand);text-decoration:none;white-space:nowrap}
+.dg-doc:hover{text-decoration:underline}
+
+/* ---------- a semana, dia a dia ---------- */
+.tempo{list-style:none;margin:1.2rem 0 0;padding:0 0 0 1.15rem;border-left:2px solid var(--border)}
+.tempo li{position:relative;padding:0 0 1.15rem .35rem}
+.tempo li::before{content:"";position:absolute;left:-1.52rem;top:.42rem;width:.5rem;height:.5rem;
+  border-radius:50%;background:var(--border-strong);border:2px solid var(--bg)}
+.tempo li.passou::before{background:var(--muted-fg)}
+.tempo li.hoje::before{background:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 22%,transparent)}
+.tempo li.marco::before{background:var(--brand)}
+.tempo .dia{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--muted-fg)}
+.tempo li.hoje .dia,.tempo li.marco .dia{color:var(--brand)}
+.tempo .oque{display:block;font-size:.88rem;line-height:1.55;margin-top:.15rem}
+.tempo .oque b{font-weight:600}
+
+/* ---------- biblioteca (lista gerada pelo build) ---------- */
+.bib-grupo{margin-top:2.2rem}
+.bib-grupo:first-child{margin-top:1.2rem}
+.bib-grupo h3{margin:0;font-size:1.02rem}
+.bib-sub{margin:.25rem 0 0;font-size:.83rem;color:var(--muted-fg);line-height:1.5}
+.bib-cards{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
+  margin-top:.9rem}
+.bib-card{display:flex;flex-direction:column;border:1px solid var(--border);
+  border-radius:var(--radius);background:var(--card);padding:.95rem 1.05rem;text-decoration:none;
+  color:inherit;transition:border-color .15s,box-shadow .15s,transform .15s}
+.bib-card:hover{border-color:color-mix(in srgb,var(--brand) 50%,transparent);
+  box-shadow:var(--shadow-card);transform:translateY(-2px)}
+.bib-card h4{margin:.5rem 0 .35rem;font-size:.95rem}
+.bib-card p{margin:0;font-size:.82rem;color:var(--muted-fg);line-height:1.5}
+.bib-selo{align-self:flex-start;font-family:var(--mono);font-size:.6rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.12rem .45rem;border-radius:9999px;border:1px solid var(--border);
+  color:var(--muted-fg)}
+.bib-ok{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);background:var(--ok-bg)}
+.bib-andando{border-color:color-mix(in srgb,var(--brand) 45%,transparent);color:var(--brand-ink);
+  background:var(--accent)}
+.bib-alerta{border-color:color-mix(in srgb,var(--warn) 45%,transparent);color:var(--warn);
+  background:var(--warn-bg)}
+.bib-nota{background:var(--muted)}
+.bib-pe{margin-top:auto;padding-top:.85rem;display:flex;align-items:baseline;
+  justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.bib-abrir{font-size:.8rem;font-weight:500;color:var(--brand)}
+.bib-data{font-family:var(--mono);font-size:.68rem;color:var(--muted-fg)}
+
+/* ---------- o que depende do cliente ---------- */
+.depende{border:1px solid var(--border);border-left:3px solid var(--warn);
+  border-radius:var(--radius);background:var(--muted);padding:1.05rem 1.2rem;margin-top:1.2rem}
+.depende p{margin:0;font-size:.88rem;line-height:1.65}
+.depende p+p{margin-top:.7rem}
+.depende b{color:var(--fg)}
+.regra{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  padding:1rem 1.15rem;margin-top:.8rem}
+.regra h3{margin:0 0 .3rem;font-size:.92rem}
+.regra p{margin:0;font-size:.85rem;color:var(--muted-fg);line-height:1.6}
+.regras{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));
+  margin-top:1.2rem}
+</style>
+
+<section class="blk">
+  <div class="blk-h"><h2>O que esta aba mostra</h2>
+    <span class="eyebrow">atualizada a cada fechamento</span></div>
+  <p class="lead">O contrato inclui <b>nove diagnósticos técnicos</b>. Esta aba mostra em que pé
+    está cada um deles e dá acesso direto ao documento que cada um produz, do jeito que ele foi
+    escrito, sem resumo intermediário.</p>
+  <p class="lead">A aba <a href="/destrava">Destrava Receita</a> mostra a <b>conclusão</b> do ciclo,
+    o que foi descoberto e o que decorre disso. Esta aqui mostra o <b>trabalho</b>: o que já fechou,
+    o que está aberto, o que ainda depende de alguém e onde ler a evidência.</p>
+
+  <div class="resumo">
+    <div class="kpi"><div class="v">9</div>
+      <div class="l">diagnósticos contratados, todos abertos desde 11 de setembro</div></div>
+    <div class="kpi"><div class="v">2</div>
+      <div class="l">com análise escrita e publicada aqui</div></div>
+    <div class="kpi"><div class="v">59</div>
+      <div class="l">achados numerados nos dois documentos que já fecharam</div></div>
+    <div class="kpi alerta"><div class="v">18 set</div>
+      <div class="l" id="prazo">fechamento dos nove e revisão de qualidade</div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Os nove, um a um</h2>
+    <span class="eyebrow">estado em 14 de setembro</span></div>
+  <p class="lead">A ordem abaixo é a do estado, não a do contrato: primeiro o que fechou, depois o
+    que está aberto, por último o que ainda abre. A numeração romana é a do contrato.</p>
+
+  <ol class="nove">
+    <li class="dg feito"><span class="dg-n">vii</span>
+      <div class="dg-topo"><h3>Rastreamento · GA4 e GTM</h3>
+        <span class="st ok">fechado em 11 set</span></div>
+      <div>
+        <p>60 contêineres de GTM em 4 contas e 1.779 tags lidas uma a uma, mais a configuração do
+          GA4 por API. 43 achados, e o principal deles confirmado na versão que está em produção.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Cegueira, que é pré-condição das outras sete</span>
+          <a class="dg-doc" href="/diagnosticos/rastreamento">Ver documento ›</a></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">i</span>
+      <div class="dg-topo"><h3>CRM Marketing · Salesforce</h3>
+        <span class="st andando">camada de conversa fechada</span>
+        <span class="quando">fecha 17 set</span></div>
+      <div>
+        <p>As duas sessões de 09 e 10 de setembro com todo o time de CRM B2B fecharam a camada
+          experiencial com 16 achados. A camada de ferramenta depende de base, relatório de
+          performance e console do Marketing Cloud.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Interesse e Retenção</span>
+          <a class="dg-doc" href="/diagnosticos/crm-marketing">Ver documento ›</a></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">ii</span>
+      <div class="dg-topo"><h3>Ambientes CRO e SEO · domínios B2B</h3>
+        <span class="st andando">em curso</span><span class="quando">fecha 16 set</span></div>
+      <div>
+        <p>A camada pública já rodou antes do lote de acessos. O Search Console entrou em 10 de
+          setembro e é o que faltava para a leitura de busca orgânica.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Exposição e Interesse</span></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">viii</span>
+      <div class="dg-topo"><h3>Páginas de captura e fluxos de conversão</h3>
+        <span class="st andando">em curso</span><span class="quando">fecha 18 set</span></div>
+      <div>
+        <p>Unbounce e Mouseflow concedidos. Falta um dado, não um acesso: o volume absoluto do
+          teste A/B em curso, sem o qual o resultado não tem denominador.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Interesse e Compromisso</span></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">vi</span>
+      <div class="dg-topo"><h3>Mídia paga · Google e Meta</h3>
+        <span class="st andando">em curso</span><span class="quando">fecha 18 set</span></div>
+      <div>
+        <p>As duas contas de Meta entraram na ingestão em 14 de setembro, o que era o risco de
+          prazo deste diagnóstico. Com Google e Meta na mesma série, a leitura de mídia passou a ser
+          comparável entre as duas.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Exposição, Atenção e Qualificação</span></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">ix</span>
+      <div class="dg-topo"><h3>Pré-vendas, qualificação e sales engagement</h3>
+        <span class="st andando">abriu em 14 set</span><span class="quando">fecha 17 set</span></div>
+      <div>
+        <p>É o único diagnóstico que sozinho pontua três travas, e o que mais cobra hora do time do
+          Grupo OLX: de 10 a 15 gravações de call e dois blocos de entrevista, em 16 e 17.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Qualificação, Compromisso e Decisão</span></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">iv</span>
+      <div class="dg-topo"><h3>Criativos, anúncios e mensagens</h3>
+        <span class="st espera">abre 15 set</span><span class="quando">fecha 18 set</span></div>
+      <div>
+        <p>Depende do acervo de peças e do racional de campanha por trás delas. Sem o acervo em 15
+          de setembro, este é o primeiro a não fechar em 18.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Atenção</span></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">v</span>
+      <div class="dg-topo"><h3>Redes sociais e conteúdo orgânico</h3>
+        <span class="st espera">abre 15 set</span><span class="quando">fecha 18 set</span></div>
+      <div>
+        <p>Business Suite e LinkedIn já concedidos. Pouca entrevista: roda sobre o que está
+          publicado.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Exposição e Atenção</span></span>
+      </div></li>
+
+    <li class="dg"><span class="dg-n">iii</span>
+      <div class="dg-topo"><h3>GEO · IA e buscas generativas</h3>
+        <span class="st espera">abre 16 set</span><span class="quando">fecha 18 set</span></div>
+      <div>
+        <p>Roda de fora, sobre linha de base zero, e não cobra nada do time. Fecha por último de
+          propósito: não é insumo para nomear a trava principal, é linha de base do Ciclo 2.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Exposição e Atenção</span></span>
+      </div></li>
+  </ol>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>A semana que fecha os nove</h2>
+    <span class="eyebrow">10 a 23 de setembro</span></div>
+  <p class="lead">O lote completo de acessos chegou em <b>10 de setembro</b> e disparou a contagem.
+    O kick-off previa até 15 dias corridos a partir dali; a entrega acontece em <b>9</b>.</p>
+
+  <ul class="tempo">
+    <li class="passou"><span class="dia">qui 10 set</span><span class="oque"><b>Lote completo de
+      acessos recebido.</b> Abrem (vii) rastreamento, (ii) CRO e SEO e (viii) páginas de
+      captura.</span></li>
+    <li class="passou"><span class="dia">sex 11 set</span><span class="oque">Abrem (vi) mídia paga e
+      (i) CRM. <b>(vii) fecha</b> com a quarta rodada de leitura do GTM.</span></li>
+    <li class="hoje"><span class="dia">seg 14 set</span><span class="oque">Abre (ix) pré-vendas.
+      <b>Abre a consolidação causal</b>, que agora roda em paralelo aos diagnósticos, e não
+      depois deles.</span></li>
+    <li><span class="dia">ter 15 set</span><span class="oque">Abrem (iv) criativos e (v) conteúdo
+      orgânico. Pico de oito diagnósticos abertos ao mesmo tempo.</span></li>
+    <li><span class="dia">qua 16 set</span><span class="oque"><b>Bloco de entrevistas 1</b>, com
+      pré-vendas. Fecha (ii) e abre (iii) GEO. Começa a Árvore da Realidade Atual.</span></li>
+    <li><span class="dia">qui 17 set</span><span class="oque"><b>Bloco de entrevistas 2</b>, com
+      conteúdo e mídia. Fecham (ix) e (i).</span></li>
+    <li class="marco"><span class="dia">sex 18 set</span><span class="oque"><b>Fecham os cinco
+      últimos</b>, as oito travas ficam pontuadas, a trava principal é nomeada e o material passa
+      pela revisão de qualidade. Acaba o que depende da V4.</span></li>
+    <li><span class="dia">seg 21 set</span><span class="oque">Prévia do material com a liderança da
+      frente de receita, a pedido dela.</span></li>
+    <li class="marco"><span class="dia">qua 23 set</span><span class="oque"><b>Apresentação dos
+      diagnósticos e Comitê 1, na mesma sessão.</b> Sai com a trava principal nomeada em ata e o
+      plano de 30 dias com dono por ação.</span></li>
+  </ul>
+
+  <div class="depende">
+    <p><b>O que ainda depende do Grupo OLX nesta janela.</b> O gargalo deixou de ser acesso e passou
+      a ser agenda: boa parte do diagnóstico é feita em conjunto, em entrevista e validação de
+      achado.</p>
+    <p><b>Até 15 set:</b> o acervo de criativos e o racional de campanha, senão (iv) não fecha em
+      18. <b>16 e 17 set:</b> time de pré-vendas, de conteúdo e de mídia nos dois blocos de
+      entrevista. <b>23 set:</b> decisor presente no comitê, e um dono assumido para cada ação do
+      plano de 30 dias.</p>
+    <p><b>Sem data, e é a pendência mais silenciosa do projeto:</b> o funil com volumes e taxas por
+      etapa, e ticket, ciclo de venda e CAC. Não é acesso a ferramenta, é entrega de dado, e sem ele
+      não há matemática de forecast nem com os nove diagnósticos fechados. A série de receita, que
+      era o primeiro item desse bloco, chegou em 28 de agosto.</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Biblioteca de documentos</h2>
+    <span class="eyebrow">documento integral, como foi escrito</span></div>
+  <p class="lead">Cada documento abaixo é o arquivo de trabalho do projeto publicado aqui na
+    íntegra, com a data da última alteração. Eles se citam entre si: quando um link aponta para
+    outro documento desta lista, ele abre aqui; quando aponta para registro interno do projeto, o
+    texto fica e o link não.</p>
+  <div class="bib"><div class="bib-grupo"><h3>Diagnósticos técnicos com documento</h3><p class="bib-sub">Dos nove contratados, estes já têm análise escrita. Os outros sete fecham em 18 de setembro.</p><div class="bib-cards"><a class="bib-card" href="/diagnosticos/rastreamento"><span class="bib-selo bib-ok">fechado · 11 set</span><h4>(vii) Rastreamento · GA4 e GTM</h4><p>60 contêineres de GTM em 4 contas e 1.779 tags lidas uma a uma, mais a configuração do GA4 por API. 43 achados numerados, e o achado 1 confirmado na versão que está em produção.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 11/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/crm-marketing"><span class="bib-selo bib-andando">experiencial fechada</span><h4>(i) CRM Marketing · Salesforce</h4><p>As duas sessões de 09 e 10 de setembro com todo o time de CRM B2B, 2h08 de registro, 16 achados. A camada de ferramenta ainda depende de base, relatório de performance e console.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 14/09/2026</span></span></a></div></div><div class="bib-grupo"><h3>A leitura do sistema de receita</h3><p class="bib-sub">O que os diagnósticos alimentam: o fluxo ponta a ponta, o placar das travas e a maturidade.</p><div class="bib-cards"><a class="bib-card" href="/diagnosticos/fluxo-de-receita"><span class="bib-selo bib-andando">em construção</span><h4>Fluxo de receita ponta a ponta</h4><p>O mapa do sistema que produz receita, etapa a etapa, com volume e taxa onde existe dado apurado e vazio declarado onde não existe.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/travas"><span class="bib-selo bib-andando">2 de 8 fechadas</span><h4>Placar das 8 travas</h4><p>Cada trava pontuada em cinco dimensões de 0 a 5, com a evidência que sustenta cada nota e a regra que limita a 3 tudo que não tem evidência formal.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/trava-cegueira"><span class="bib-selo bib-ok">pontuada</span><h4>Dossiê da Trava de Cegueira</h4><p>A trava que é pré-condição das outras sete: enquanto a medição estiver assim, nenhuma taxa do funil B2B pode ser derivada de dado.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 11/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/maturidade-digital"><span class="bib-selo bib-andando">em construção</span><h4>Maturidade digital</h4><p>A leitura por prática e não por ferramenta: o que a operação faz de fato em mídia, conteúdo, CRM, conversão e dados.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/jornada-do-cliente"><span class="bib-selo bib-nota">declarada pela OLX</span><h4>Jornada do cliente profissional</h4><p>As seis etapas apresentadas pelo Grupo OLX em 28 de agosto e as seis taxas declaradas na sessão, com o que cada uma abre e o que ela ainda não fecha.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/mapa-de-numeros"><span class="bib-selo bib-nota">referência</span><h4>Mapa de números</h4><p>Todo número que circula no projeto com fonte, data e recorte. É aqui que se confere se um dado é apurado, declarado ou estimado.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 14/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/serie-de-receita"><span class="bib-selo bib-ok">bloco A1 recebido</span><h4>Série de receita 2025–2026</h4><p>A série mensal entregue em 28 de agosto, o que ela sustenta e o que ainda falta para fechar a matemática do forecast.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 11/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/lacunas-do-fluxo"><span class="bib-selo bib-nota">caderno vivo</span><h4>Lacunas do fluxo de receita</h4><p>O que falta ou está errado no fluxo, em lista aberta, com o que entra no formulário e o que depende de dado do Grupo OLX.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a></div></div><div class="bib-grupo"><h3>Dados, acessos e o que ainda falta</h3><p class="bib-sub">O estado da coleta, item a item, e o que depende do time do Grupo OLX.</p><div class="bib-cards"><a class="bib-card" href="/diagnosticos/os-nove-contratados"><span class="bib-selo bib-nota">mapa do escopo</span><h4>Os nove diagnósticos do contrato</h4><p>Cada diagnóstico contratado com o bloco de dados que o alimenta, a janela, o quanto ele custa de hora do time da OLX e as travas que informa.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/checklist-de-dados"><span class="bib-selo bib-nota">10 blocos · A a J</span><h4>Checklist de dados e acessos</h4><p>Os dez blocos de dados, item a item, com o estado de cada acesso concedido e de cada entrega de dado ainda pendente.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 11/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/coleta-pendente"><span class="bib-selo bib-alerta">o que falta chegar</span><h4>Coleta pendente</h4><p>A lista de controle do que ainda precisa vir do lado do Grupo OLX para os diagnósticos fecharem sem limitação declarada.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 11/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/guia-export-gtm"><span class="bib-selo bib-nota">operacional</span><h4>Guia de export do GTM</h4><p>Como exportar um contêiner do GTM em JSON, passo a passo, e por que export de espaço de trabalho não substitui a versão publicada.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 11/09/2026</span></span></a></div></div><div class="bib-grupo"><h3>Registro das sessões com o time</h3><p class="bib-sub">A camada experiencial do diagnóstico: o que foi dito em sessão, por quem, e o que virou achado.</p><div class="bib-cards"><a class="bib-card" href="/diagnosticos/sessao-jornada-28-08"><span class="bib-selo bib-ok">realizada</span><h4>Jornada do cliente · 28 de agosto</h4><p>A sessão de mapeamento do fluxo de receita com o time de operação, contada por quem opera, para ser cruzada depois com o dado do sistema.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 05/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/sessao-crm-09-09"><span class="bib-selo bib-ok">realizada</span><h4>CRM · parte 1 · 09 de setembro</h4><p>O contexto da migração, o Campana e o que parou em março. É a sessão que abre o diagnóstico (i).</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 14/09/2026</span></span></a><a class="bib-card" href="/diagnosticos/sessao-crm-10-09"><span class="bib-selo bib-ok">realizada</span><h4>CRM · parte 2 · 10 de setembro</h4><p>O mapa das 15 jornadas de relacionamento e o que está no ar depois da migração. É onde aparece o achado do ciclo de vida desligado.</p><span class="bib-pe"><span class="bib-abrir">Abrir documento ›</span><span class="bib-data">atualizado em 14/09/2026</span></span></a></div></div></div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Como ler estes documentos</h2></div>
+  <p class="lead">São documentos de trabalho, não material de apresentação. Quatro convenções
+    explicam quase tudo que parece estranho neles.</p>
+  <div class="regras">
+    <div class="regra"><h3>Campo vazio é falta de dado, não omissão</h3>
+      <p>Quando um número não existe com fonte, ele fica vazio e vira pendência com dono e prazo.
+        Nenhum valor é aproximado para preencher lacuna.</p></div>
+    <div class="regra"><h3>Estimativa vem marcada</h3>
+      <p>O que é estimado aparece com a marca <code>[E]</code> ao lado. O que não tem a marca é
+        apurado ou declarado, e o documento diz qual dos dois.</p></div>
+    <div class="regra"><h3>Nota acima de 3 exige evidência formal</h3>
+      <p>No placar das travas, percepção de time sustenta nota até 3. Passar disso só com evidência
+        apurada, e é por isso que trava com diagnóstico aberto não passa de 3.</p></div>
+    <div class="regra"><h3>Diagnóstico fecha com limitação declarada</h3>
+      <p>Nenhum documento espera certeza total para fechar. O que não foi possível auditar fica
+        escrito no próprio documento, na seção de limitações.</p></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+  var fim = new Date(2026, 8, 18);
+  var d = Math.round((fim - hoje) / 86400000);
+  var el = document.getElementById("prazo");
+  if (!el) return;
+  var quando = d === 0 ? "é hoje" : d === 1 ? "é amanhã" : d > 1 ? "em " + d + " dias" :
+               d === -1 ? "foi ontem" : "há " + Math.abs(d) + " dias";
+  el.textContent = "fechamento dos nove e revisão de qualidade, " + quando;
+})();
+</script>
+</div><aside class="rail" aria-label="Índice da página">
+  <div class="rail-top">
+    <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    <button class="rail-tog" id="rail-tog" type="button" aria-label="Recolher o índice"
+            aria-expanded="true" aria-controls="toc" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <div id="toc"></div>
+</aside></div><button class="rail-abrir" id="rail-abrir" type="button" hidden>Nesta página</button>
+<footer><div class="wrap">
+  <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
+     iniciado em 24 de agosto de 2026.</p>
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX,
+     não repassar sem autorização escrita.</p>
+</div></footer>
+</body>
+</html>

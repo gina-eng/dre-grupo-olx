@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="/assets/base.css?v=32834f49">
-<link rel="stylesheet" href="/assets/shell.css?v=7872a4ba">
+<link rel="stylesheet" href="/assets/shell.css?v=3a715a13">
 <script src="/assets/shell.js?v=cd5ac90c"></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
       <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
       <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
     </a>
-    <nav class="tabs" aria-label="Seções"><a class="tab" href="/" aria-current="page">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/" aria-current="page">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/diagnosticos">Diagnósticos</a><a class="tab" href="/metricas">Métricas</a></nav>
     <span class="spacer"></span>
     <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
   </div>
@@ -36,7 +36,7 @@
   </div>
   <div class="drawer-b">
     <p class="side-label">Portal</p>
-    <a class="nav-item" href="/" aria-current="page">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/metricas">Métricas</a>
+    <a class="nav-item" href="/" aria-current="page">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/diagnosticos">Diagnósticos</a><a class="nav-item" href="/metricas">Métricas</a>
     <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
     <div id="dtoc"></div>
   </div>
@@ -125,8 +125,9 @@ body > footer strong{color:#fff}
     <img class="mark" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
     <h1>Destrava Receita Estratégico</h1>
     <p class="cliente">Grupo OLX</p>
-    <p class="sub">Painel do Destrava Receita Estratégico. Aqui ficam o instrumento de levantamento do
-      kick-off, o calendário dos quatro ciclos e o catálogo de métricas que sustenta o diagnóstico.</p>
+    <p class="sub">Painel do Destrava Receita Estratégico. Aqui ficam as descobertas do ciclo, o
+      acompanhamento dos nove diagnósticos com a documentação de cada um, o calendário dos quatro
+      ciclos e o catálogo de métricas que sustenta a análise.</p>
 
     <div class="status">
       <div class="st"><span class="k">Kick-off</span><b class="v">24 ago 2026</b><span class="n" id="ko-rel"></span></div>
@@ -137,12 +138,19 @@ body > footer strong{color:#fff}
   </section>
 
   <nav class="doors" aria-label="Módulos">
-    <a class="door" href="/kickoff">
-      <span class="k">Instrumento interno</span>
-      <h2>Kick-off</h2>
-      <p>88 perguntas em 11 blocos e o checklist dos dez blocos de dados, cada linha com responsável e
-        prazo. Exporta a ata pronta ao final.</p>
-      <span class="foot"><span class="go">Abrir →</span><span class="st-pill" id="kf-prog"></span></span>
+    <a class="door" href="/destrava">
+      <span class="k">Descobertas do ciclo</span>
+      <h2>Destrava Receita</h2>
+      <p>O que o diagnóstico encontrou, na ordem em que o método produz: o sistema de receita, a
+        trava principal, o plano que ataca ela e o resultado.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill">Fase 1 · Identificar</span></span>
+    </a>
+    <a class="door" href="/diagnosticos">
+      <span class="k">Acompanhamento</span>
+      <h2>Diagnósticos</h2>
+      <p>Os nove diagnósticos técnicos do contrato, o estado de cada um dia a dia, e a biblioteca
+        com o documento integral de cada análise já escrita.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill warn" id="dg-prog">fecham em 18 set</span></span>
     </a>
     <a class="door" href="/cronograma">
       <span class="k">Material de cliente</span>
@@ -151,12 +159,26 @@ body > footer strong{color:#fff}
         em cada uma delas.</p>
       <span class="foot"><span class="go">Abrir →</span><span class="st-pill">12 comitês</span></span>
     </a>
+    <a class="door" href="/receita">
+      <span class="k">Mapa de trabalho</span>
+      <h2>Fluxo de receita</h2>
+      <p>A árvore de produção de receita do B2B, nó a nó, com o que já está apurado e a pergunta que
+        fecha cada parte que ainda não está.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill">v2</span></span>
+    </a>
     <a class="door" href="/metricas">
       <span class="k">Material de cliente</span>
       <h2>Métricas</h2>
       <p>As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade e o formato
         em que os dados devem chegar.</p>
       <span class="foot"><span class="go">Abrir →</span><span class="st-pill warn">v0 · validar hoje</span></span>
+    </a>
+    <a class="door" href="/kickoff">
+      <span class="k">Instrumento interno</span>
+      <h2>Kick-off</h2>
+      <p>88 perguntas em 11 blocos e o checklist dos dez blocos de dados, cada linha com responsável e
+        prazo. Exporta a ata pronta ao final.</p>
+      <span class="foot"><span class="go">Abrir →</span><span class="st-pill" id="kf-prog"></span></span>
     </a>
   </nav>
 
@@ -203,6 +225,15 @@ body > footer strong{color:#fff}
   }
   document.getElementById("com-rel").textContent =
     "Fecham " + frase(dias(fim9)) + " · material aprovado no mesmo dia · Comitê 1 até 29/10, a confirmar";
+
+  // A pilula da porta de Diagnosticos conta os dias ate o fechamento dos nove, igual
+  // ao cartao de proximo marco: sem isto ela envelhece sozinha depois de 18/09.
+  var dg = document.getElementById("dg-prog");
+  if (dg) {
+    var d9 = dias(fim9);
+    dg.textContent = d9 > 0 ? "fecham " + frase(d9) : "nove fechados";
+    if (d9 <= 0) dg.classList.remove("warn");
+  }
 
   var n = window.dreProgresso ? window.dreProgresso() : 0;
   var p = document.getElementById("kf-prog");

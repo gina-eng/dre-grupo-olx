@@ -12,7 +12,9 @@
 .brand img{height:2rem;width:auto;display:block}
 .brand .logo-claro{display:none}
 .tabs{display:none;align-items:center;gap:.25rem}
-@media(min-width:768px){.tabs{display:flex}}
+/* Sete abas nao cabem em 768px sem estourar a barra. Entre 768 e 980 a navegacao
+   fica so na gaveta, que o botao de hamburguer abre em qualquer largura. */
+@media(min-width:980px){.tabs{display:flex}}
 .tab{border-radius:.375rem;padding:.35rem .75rem;font-size:.875rem;color:var(--muted-fg);
   text-decoration:none;transition:background .14s,color .14s;white-space:nowrap}
 .tab:hover{background:var(--muted);color:var(--fg)}
@@ -126,3 +128,52 @@
 .wrap{max-width:80rem;margin:0 auto;padding:0 1rem}
 @media(min-width:768px){.wrap{padding:0 1.5rem}}
 .page{padding:2rem 0 1rem}
+
+/* ---------- documento do repositório publicado (HTML gerado por md.py) ---------- */
+/* Estas regras valem para as páginas de /diagnosticos/<documento>, que não têm
+   bloco de estilo próprio: o conteúdo vem de Markdown e a folha precisa cobrir
+   tudo que o conversor emite. */
+.md{max-width:54rem;padding:1.75rem 0 1rem}
+.md h2{font-size:1.25rem;margin:2.75rem 0 .9rem;padding-bottom:.45rem;
+  border-bottom:1px solid var(--border);scroll-margin-top:5rem}
+.md h2:first-child{margin-top:0}
+.md h2.md-parte{font-size:1.5rem;margin-top:3.5rem;padding-top:1.75rem;padding-bottom:.6rem;
+  border-top:3px solid var(--brand);border-bottom:0}
+.md h3{font-size:1.02rem;margin:2rem 0 .6rem;scroll-margin-top:5rem}
+.md h4{font-size:.92rem;margin:1.5rem 0 .5rem;color:var(--muted-fg);scroll-margin-top:5rem}
+.md p{margin:.85rem 0;line-height:1.7}
+.md a{text-decoration-thickness:1px;text-underline-offset:2px}
+.md .md-lista{margin:.85rem 0;padding-left:1.35rem}
+.md .md-lista li{margin:.4rem 0;line-height:1.65}
+.md .md-lista .md-lista{margin:.4rem 0}
+.md li.md-tarefa{list-style:none;margin-left:-1.35rem}
+.md .md-caixa{display:inline-block;width:.95rem;height:.95rem;flex:0 0 auto;margin-right:.5rem;
+  border:1.5px solid var(--border-strong);border-radius:.25rem;vertical-align:-2px;position:relative}
+.md .md-caixa.feito{background:var(--ok);border-color:var(--ok)}
+.md .md-caixa.feito::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:.7rem;
+  line-height:.9rem;text-align:center}
+.sr-so-leitor{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.md .scrollx{margin:1.2rem 0;border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--card)}
+.md table{font-size:.84rem}
+.md th,.md td{padding:.55rem .75rem}
+.md td{line-height:1.55}
+.md hr{border:0;border-top:1px solid var(--border);margin:2.25rem 0}
+.md code{font-family:var(--mono);font-size:.86em;background:var(--muted);
+  padding:.08rem .3rem;border-radius:.3rem;overflow-wrap:anywhere}
+.md pre{background:var(--muted);border:1px solid var(--border);border-radius:var(--radius);
+  padding:.9rem 1rem;overflow-x:auto;margin:1.2rem 0}
+.md pre code{background:none;padding:0;font-size:.8rem;line-height:1.6}
+.md blockquote.md-nota{margin:1.2rem 0;padding:.9rem 1.15rem;background:var(--muted);
+  border:1px solid var(--border);border-left:3px solid var(--border-strong);
+  border-radius:var(--radius)}
+.md blockquote.md-nota > :first-child{margin-top:0}
+.md blockquote.md-nota > :last-child{margin-bottom:0}
+.md blockquote.md-grave{border-left-color:var(--brand)}
+.md blockquote.md-alerta{border-left-color:var(--warn)}
+.md blockquote.md-ok{border-left-color:var(--ok)}
+/* Link para arquivo que não é publicado no portal: o texto fica, o destino não,
+   para não oferecer ao leitor um caminho que ele não consegue abrir. */
+.md .md-interno{border-bottom:1px dotted var(--border-strong);color:var(--muted-fg);cursor:help}
+.md .md-fonte{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);
+  font-size:.78rem;color:var(--muted-fg)}

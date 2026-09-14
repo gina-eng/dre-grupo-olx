@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Coleta pendente · Portal DR-E Grupo OLX</title>
+<meta name="description" content="A lista de controle do que ainda precisa vir do lado do Grupo OLX para os diagnósticos fecharem sem limitação declarada.">
+<link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/base.css?v=32834f49">
+<link rel="stylesheet" href="/assets/shell.css?v=3a715a13">
+<script src="/assets/shell.js?v=cd5ac90c"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <button class="icobtn menu-btn" id="menu-btn" type="button" aria-label="Abrir navegação" aria-expanded="false" aria-controls="drawer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg></button>
+    <a class="brand" href="/" aria-label="Início">
+      <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
+    </a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava">Destrava Receita</a><a class="tab" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+<div class="drawer-bd" id="drawer-bd" hidden></div>
+<nav class="drawer" id="drawer" aria-label="Navegação" aria-hidden="true">
+  <div class="drawer-h">
+    <img src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
+    <button class="icobtn" id="drawer-close" type="button" aria-label="Fechar navegação"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </div>
+  <div class="drawer-b">
+    <p class="side-label">Portal</p>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava">Destrava Receita</a><a class="nav-item" href="/diagnosticos" aria-current="page">Diagnósticos</a><a class="nav-item" href="/metricas">Métricas</a>
+    <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
+    <div id="dtoc"></div>
+  </div>
+</nav>
+
+<div class="crumb"><div class="crumb-in">
+  <a class="volta" href="/diagnosticos"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Diagnósticos</a><h1>Coleta pendente</h1><p class="desc">A lista de controle do que ainda precisa vir do lado do Grupo OLX para os diagnósticos fecharem sem limitação declarada.</p><span class="meta">atualizado em 11/09/2026</span>
+</div></div>
+<div class="doc" id="doc"><div class="doc-main"><article class="md"><blockquote class="md-nota md-ok"><p>✅ <strong>Atualizado em 02/09.</strong> O <strong>bloco 1 inteiro chegou</strong>: os 11 exports de contêiner estão em <code>assets/originais/H-rastreamento-gtm/</code>, incluindo o <code>GTM-PZ733B5</code> (ZapImóveis ANUNCIE), que era o item 🔴 da lista. Seis já foram auditados, ver <a href="/diagnosticos/rastreamento">auditoria (vii)</a>. <strong>O que segue aberto é o bloco 2</strong>, as telas de administração do GA4, que a API não entrega e só saem por print.</p></blockquote>
+<blockquote class="md-nota md-grave"><p>🔴 <strong>Atualizado em 11/09.</strong> Os 11 exports que temos são de <strong>espaço de trabalho</strong>, não da versão publicada: <code>containerVersionId: 0</code> nos onze. Eles descrevem o rascunho, não o que está no ar. O passo a passo de coleta desta janela, com os cinco lotes em ordem de valor e o comando de conferência, está em <a href="/diagnosticos/guia-export-gtm"><code>guia-export-gtm.md</code></a>. Os blocos 0 e 1 abaixo continuam valendo como lista de controle.</p></blockquote>
+<p>Lista de trabalho aberta em <strong>01/09/2026</strong>. Só itens que a V4 consegue buscar <strong>com os acessos que já tem</strong>, sem depender de concessão nova da OLX. O que depende da OLX está em <a href="/diagnosticos/checklist-de-dados"><code>checklist-dados-e-acessos.md</code></a> e em <span class="md-interno" title="documento interno do projeto, fora do portal"><code>PENDENCIAS.md</code></span>.</p>
+<p>Marcar <code>[x]</code> conforme entregar. Exports em JSON; telas de configuração, print serve.</p>
+<hr>
+<hr>
+<h2 id="bloco-0---o-gtm-tem-quatro-contas-não-uma-aberto-em-0209">Bloco 0 · 🔴 O GTM tem QUATRO contas, não uma: aberto em 02/09</h2>
+<p>A tela inicial do GTM (item 1.8 desta lista) foi vista em 02/09 e a resposta muda o tamanho do escopo da auditoria (vii):</p>
+<div class="scrollx"><table><thead><tr><th>Conta</th><th>ID</th><th>Selo</th><th style="text-align:right">Contêineres já recebidos</th></tr></thead><tbody><tr><td>BR - www.olx.com.br</td><td><code>94905</code></td><td>360</td><td style="text-align:right"><strong>10</strong></td></tr><tr><td><strong>Checkout Unificado - PRO</strong></td><td><code>6326134112</code></td><td>360</td><td style="text-align:right"><strong>0</strong></td></tr><tr><td><strong>VivaReal</strong></td><td><code>4412254379</code></td><td>360</td><td style="text-align:right"><strong>0</strong></td></tr><tr><td><strong>ZapImóveis</strong></td><td><code>2971905372</code></td><td>360</td><td style="text-align:right"><strong>1</strong> de N</td></tr></tbody></table></div>
+<p>Tudo que foi auditado até aqui cobre <strong>uma conta e um contêiner de outra</strong>. As quatro têm selo 360, ou seja, são todas do tier pago.</p>
+<blockquote class="md-nota"><p>O contêiner que temos da conta ZapImóveis chama-se <strong>"5. ZapImóveis - Container ANUNCIE"</strong>. O prefixo <code>5.</code> indica uma lista numerada, provavelmente há pelo menos cinco contêineres nessa conta, e vimos um.</p></blockquote>
+<h3 id="o-que-pedir-em-ordem-de-valor">O que pedir, em ordem de valor</h3>
+<ul class="md-lista"><li class="md-tarefa"><span class="sr-so-leitor">feito: </span><span class="md-caixa feito" aria-hidden="true"></span><strong>0.1 · Conta <code>Checkout Unificado - PRO</code> (<code>6326134112</code>): os quatro contêineres</strong> ✅ <strong>ENTREGUE em 11/09</strong> Enumerada e exportada em 11/09: <code>GTM-NGG9336B</code> (Master), <code>GTM-K4WBMGQV</code> (OLX), <code>GTM-NKSGWD6H</code> (Zap Imóveis) e <code>GTM-NRVS3M3D</code> (Viva Real). Um Master e uma instância por vertical. Os 4 JSON estão em <code>assets/originais/H-rastreamento-gtm/</code>. Auditados na <a href="/diagnosticos/rastreamento">terceira rodada</a>, achados 23 a 31. <strong>Ficam em rascunho:</strong> a versão publicada dos quatro segue pendente. <strong>É o pedido de maior valor do projeto.</strong> O nome junta as duas palavras que definem o escopo contratado: <em>checkout</em> é onde a receita acontece, e <em>PRO</em> é o anunciante profissional. Se a hipótese estiver certa, é aqui que mora a medição da receita B2B do grupo, e o <a href="/diagnosticos/rastreamento">achado 1</a> (<code>purchase</code> disparado pelo gatilho de <code>begin_checkout</code>, em <code>GTM-KGFGVFC</code>) precisa ser relido contra o que existir aqui, porque pode estar corrigido, pode estar duplicado, ou pode ser que a conta que auditamos seja a legada. <em>A leitura do nome é inferência, não conclusão. Confirmar antes de afirmar em comitê.</em></li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>0.2 · Conta <code>ZapImóveis</code> (<code>2971905372</code>): os contêineres restantes</strong> 🔴 Temos o <code>5.</code>, faltam os outros. É o lado Imóveis do escopo B2B.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>0.3 · Conta <code>VivaReal</code> (<code>4412254379</code>): todos os contêineres</strong> 🟠 Terceira vertical, nunca vista. O V4MOS ingere a MCC VivaReal (<code>526-656-0190</code>), esta é a contraparte de medição dela.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>0.4 · Print da tela inicial de cada uma das três contas novas</strong> Para saber quantos contêineres existem antes de pedir por nome, como foi feito na conta <code>94905</code>.</li></ul>
+<blockquote class="md-nota"><p>Mesmo caminho de export: abrir o contêiner → Administração → Exportar contêiner → versão publicada. Os JSON vão para <code>assets/originais/H-rastreamento-gtm/</code>, mantendo o padrão de nome <code>gtm-&lt;id&gt;_workspace&lt;n&gt;.json</code>.</p></blockquote>
+<h2 id="bloco-1--google-tag-manager-conta-br---wwwolxcombr">Bloco 1 · Google Tag Manager: conta <code>BR - www.olx.com.br</code></h2>
+<p><em>Caminho do export: abrir o contêiner → Administração → Exportar contêiner → workspace ou versão publicada.</em></p>
+<ul class="md-lista"><li class="md-tarefa"><span class="sr-so-leitor">feito: </span><span class="md-caixa feito" aria-hidden="true"></span><strong>1.1 · <code>GTM-PZ733B5</code> · Zapimóveis ANUNCIE</strong> 🔴 É o gêmeo do Planos Profissionais no lado Imóveis. Sem ele a auditoria cobre metade do escopo.</li><li class="md-tarefa"><span class="sr-so-leitor">feito: </span><span class="md-caixa feito" aria-hidden="true"></span><strong>1.2 · <code>GTM-TNX8FDS</code> · Buyer Journey</strong> Contraponto B2C. Serve para demonstrar em comitê se o consumidor é medido melhor que o anunciante.</li><li class="md-tarefa"><span class="sr-so-leitor">feito: </span><span class="md-caixa feito" aria-hidden="true"></span><strong>1.3 · <code>GTM-TW9TWPT5</code> · Login</strong> Confirma ou descarta o <code>page_view</code> duplicado em <code>conta.olx.com.br/acesso</code> e <code>/cadastro</code>.</li><li class="md-tarefa"><span class="sr-so-leitor">feito: </span><span class="md-caixa feito" aria-hidden="true"></span><strong>1.4 · <code>GTM-KP8QMDH</code> · LPs Unbounce</strong> É onde as landing pages vivem de fato. Insumo direto da auditoria (viii).</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>1.5 · <code>GTM-5WWRGTQ</code> (VAS) · <code>GTM-T2H3VFL</code> (Google Shopping) · <code>GTM-PWP7Z4C</code> (Wallet)</strong> Prioridade menor. Fecham o inventário. ⚠️ <strong>Reaberto em 11/09:</strong> VAS e Wallet estão na pasta, <strong><code>GTM-T2H3VFL</code> não</strong>. Ou nunca veio, ou veio e não foi versionado.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>1.6 · Print da lista completa de contêineres</strong>, rolando até o fim. Sabemos que 22 é piso, não total.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>1.7 · Print da aba <em>Versões</em> do <code>GTM-KGFGVFC</code></strong> 🔴 <strong>Data desde quando o <code>purchase</code> está preso ao gatilho de <code>begin_checkout</code>.</strong> Sem essa data não sei que janela do histórico de conversão está contaminada, e o forecast depende de saber.</li><li class="md-tarefa"><span class="sr-so-leitor">feito: </span><span class="md-caixa feito" aria-hidden="true"></span><strong>1.8 · Print da tela inicial do GTM, com todas as contas visíveis</strong> ✅ <strong>respondido em 02/09</strong> <strong>Sim, existe</strong>: e não uma, três: <code>Checkout Unificado - PRO</code>, <code>VivaReal</code> e <code>ZapImóveis</code>, além da <code>BR - www.olx.com.br</code>. Ver <strong>Bloco 0</strong> acima, que é a consequência disso.</li></ul>
+<h2 id="bloco-2--ga4-propriedade-olx-app--web-152644854">Bloco 2 · GA4: propriedade <strong>OLX App + Web</strong> (<code>152644854</code>)</h2>
+<p><em>Tudo em Administrador. Só prints; são telas que a API não me entrega.</em></p>
+<ul class="md-lista"><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>2.1 · Vínculos de produto → BigQuery</strong> 🔴 <strong>A maior alavanca da lista.</strong> Se houver export ativo, temos dado na granularidade da linha e o funil (A2) deixa de depender de pedido à OLX.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>2.2 · Coleta e modificação de dados → Retenção de dados</strong> 🔴 Se estiver em 2 meses, <strong>o forecast de 24 meses não tem lastro no GA4</strong>, e isso muda a estratégia agora, não em outubro.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>2.3 · Coleta e modificação de dados → Fluxos de dados</strong> Fecha o mapa propriedade × measurement ID × superfície, e revela Measurement Protocol ou server-side.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>2.4 · Eventos-chave (lista completa)</strong> Explica por que <code>ad_edition</code> (4,14 mi/mês) não é conversão e <code>session_start</code> é.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>2.5 · Gerenciamento de acesso à propriedade</strong> Fecha de vez a dúvida do papel (Leitor vs. Editor) e mostra <strong>com qual conta</strong> o acesso foi dado.</li></ul>
+<h2 id="bloco-3--meta-portfólio-new-olx-brasil">Bloco 3 · Meta: portfólio <code>New OLX Brasil</code></h2>
+<p><em>Configurações do portfólio. Dois prints.</em></p>
+<ul class="md-lista"><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>3.1 · Contas → Contas de anúncios</strong> Quero saber se a operação é maior que as duas contas pendentes.</li><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>3.2 · Fontes de dados → Conjuntos de dados / Pixels</strong> Cruzar com os três pixels achados no GTM: <code>592658194155317</code>, <code>818079879779548</code>, <code>935989184453347</code>.</li></ul>
+<h2 id="bloco-4--google-ads">Bloco 4 · Google Ads</h2>
+<ul class="md-lista"><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>4.1 · Lista de subcontas do MCC <code>526-656-0190</code></strong> O GA4 mostrou 7 customer IDs vinculados ao ZapImóveis e nenhum é o nosso. Se algum aparecer aqui, a <span class="md-interno" title="documento interno do projeto, fora do portal">pendência 12</span> fecha sozinha: <code>9221562141</code> · <code>6794249680</code> · <code>7581320191</code> · <code>6386557247</code> · <code>1973081572</code> · <code>5004050899</code> · <code>4632447364</code></li></ul>
+<h2 id="bloco-5--teste-rápido">Bloco 5 · Teste rápido</h2>
+<ul class="md-lista"><li class="md-tarefa"><span class="sr-so-leitor">aberto: </span><span class="md-caixa" aria-hidden="true"></span><strong>5.1 · Abrir <code>search.google.com/search-console</code> e ver se aparece alguma propriedade.</strong> Trinta segundos. O GA4 também estava liberado e ninguém sabia.</li></ul>
+<hr>
+<h2 id="onde-guardar">Onde guardar</h2>
+<p>Os JSONs de contêiner vão para <code>assets/originais/H-rastreamento-gtm/</code> (pasta já criada). Prints de tela de configuração vão para <code>assets/originais/H-rastreamento-gtm/telas/</code>.</p>
+<blockquote class="md-nota md-alerta"><p>⚠️ Os exports contêm IDs de pixel, chaves públicas de SDK e IDs de conversão. Nada disso é segredo, tudo aparece no código-fonte das páginas, mas o material é confidencial pelo aviso da OLX e não sai deste repositório privado.</p></blockquote><p class="md-fonte">Documento-fonte do projeto: <code>02-diagnostico/coleta-pendente.md</code> · atualizado em 11/09/2026 · <a href="/diagnosticos">voltar para Diagnósticos</a></p></article></div><aside class="rail" aria-label="Índice da página">
+  <div class="rail-top">
+    <p class="side-label" id="toc-label" hidden>Nesta página</p>
+    <button class="rail-tog" id="rail-tog" type="button" aria-label="Recolher o índice"
+            aria-expanded="true" aria-controls="toc" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+  <div id="toc"></div>
+</aside></div><button class="rail-abrir" id="rail-abrir" type="button" hidden>Nesta página</button>
+<footer><div class="wrap">
+  <p><strong>Destrava Receita Estratégico</strong> · V4 Company × Grupo OLX · contrato de 12 meses
+     iniciado em 24 de agosto de 2026.</p>
+  <p style="margin-top:.4rem">Acesso restrito. Contém informação confidencial do Grupo OLX,
+     não repassar sem autorização escrita.</p>
+</div></footer>
+</body>
+</html>
