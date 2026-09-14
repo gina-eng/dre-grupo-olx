@@ -1,0 +1,107 @@
+{
+ "meta": {
+  "gerado_em": "2026-09-14",
+  "natureza": "estimativa da V4 a partir de fonte publica e legislacao vigente",
+  "nao_e": "a apuracao fiscal do Grupo OLX. O numero definitivo esta no P&L por vertical, item 4 do mapa de numeros, vencido em 09/09",
+  "motivo": "o cliente declarou no kick-off margem bruta perto de 100%, citando midia e IMPOSTO como os dois unicos ofensores. O imposto nunca foi quantificado."
+ },
+ "entidade": {
+  "cnpj": "13.673.743/0004-17",
+  "razao_social": "BOM NEGOCIO ATIVIDADES DE INTERNET LTDA",
+  "tipo": "FILIAL. A matriz e 13.673.743/0001-XX e o grupo opera varios CNPJs (OLX, ZAP, VivaReal)",
+  "natureza_juridica": "206 · Sociedade Empresaria Limitada",
+  "municipio": "Sao Paulo, SP",
+  "endereco": "Avenida Paulista, 1106, Bela Vista, 01310-914",
+  "abertura": "2014-09-16",
+  "situacao": "ativa",
+  "capital_social": 2222010000.0,
+  "cnae_principal": "6319-4/00 Portais, provedores de conteudo e outros servicos de informacao na internet",
+  "cnaes_que_mudam_o_tratamento": {
+   "6462-0/00": "Holdings de instituicoes nao-financeiras: dividendo recebido nao e receita tributavel pela mesma regra",
+   "6810-2/01": "Compra e venda de imoveis proprios: ganho de capital, regime proprio",
+   "6619-3/02": "Correspondentes de instituicoes financeiras: receita financeira tem regra propria"
+  }
+ },
+ "regime": {
+  "apuracao": "Lucro Real, obrigatorio acima de R$ 78 mi de receita bruta anual. O grupo fez R$ 1,156 bi em 2025",
+  "pis_cofins": "nao cumulativo, obrigatorio no Lucro Real"
+ },
+ "sobre_a_receita": {
+  "nota": "E SO ISTO que sai da margem de contribuicao. Imposto sobre lucro vem depois.",
+  "pis": 0.0165,
+  "cofins": 0.076,
+  "pis_cofins_total": 0.0925,
+  "credito_pis_cofins": "o regime permite credito sobre insumo, energia, aluguel PJ e depreciacao. FOLHA DE PAGAMENTO NAO GERA CREDITO, e num negocio digital a folha e o maior custo: o efetivo fica perto do nominal",
+  "iss_sao_paulo": {
+   "ti_item_1x_e_17_24": 0.029,
+   "regra_geral_art_16": 0.05,
+   "base_legal": "Lei 13.701/2003, art. 16, com a alteracao da Lei 16.757/2017 que levou TI de 2% para 2,9%",
+   "o_que_decide": "como a NFS-e e codificada. Portal e insercao de publicidade cabem em 2,9%; agenciamento e propaganda (17.06) caem na regra geral de 5%"
+  }
+ },
+ "cenarios_sobre_receita": {
+  "piso_iss_ti": {
+   "aliquota": 0.1215,
+   "teto_margem_contribuicao": 0.8785
+  },
+  "pior_caso_iss_cheio": {
+   "aliquota": 0.1425,
+   "teto_margem_contribuicao": 0.8575
+  },
+  "2027_cbs": {
+   "aliquota": 0.1443,
+   "teto_margem_contribuicao": 0.8557,
+   "nota": "CBS estimada em 9,43% substitui PIS/COFINS, ISS ainda roda. Aliquota oficial fixada pelo Senado ate 31/10"
+  },
+  "2033_ibs_cbs": {
+   "aliquota": 0.2791,
+   "teto_margem_contribuicao": 0.7209,
+   "nota": "estimativa do CGIBS para IBS+CBS somados no regime pleno"
+  }
+ },
+ "sobre_o_lucro": {
+  "nota": "NAO entra na margem de contribuicao",
+  "irpj": 0.15,
+  "irpj_adicional": "10% sobre o que exceder R$ 240 mil/ano, o que leva o efetivo a ~25%",
+  "csll": 0.09,
+  "total": 0.34
+ },
+ "impacto_no_projeto": {
+  "pior_caso_usado": 0.1425,
+  "grupo": {
+   "receita_mes": 103778881.14,
+   "imposto_mes": 14788540.6,
+   "truput_mes": 88990340.5,
+   "erro_ano": 177462487.2
+  },
+  "classifieds_b_e_a": {
+   "receita_mes": 42784012.29,
+   "imposto_mes": 6096721.75,
+   "truput_mes": 36687290.54,
+   "erro_ano": 73160661.0
+  },
+  "inside_sales": {
+   "receita_mes": 25450000.0,
+   "imposto_mes": 3626625.0,
+   "truput_mes": 21823375.0,
+   "erro_ano": 43519500.0
+  },
+  "regua_recalibrada": {
+   "1pp_run_rate_b_e_a_receita": 427840.12,
+   "1pp_em_truput_85_75": 366873.0,
+   "diferenca": 60967.0
+  }
+ },
+ "o_que_falta_para_fechar": [
+  "P&L por vertical com imposto aberto (item 4 do mapa de numeros, DRI Matheus Rodrigues, vencido em 09/09)",
+  "como a NFS-e e codificada, que decide entre ISS de 2,9% e 5%",
+  "credito efetivo de PIS/COFINS apurado, que so o razao contabil mostra",
+  "os demais custos variaveis: comissionamento do Inside Sales, inadimplencia, meio de pagamento no checkout e infra que escala com uso"
+ ],
+ "fontes": [
+  "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+  "https://legislacao.prefeitura.sp.gov.br/lei-13701-de-24-de-dezembro-de-2003",
+  "https://www.contabeis.com.br/noticias/76628/cbs-pode-comecar-com-aliquota-de-9-43/",
+  "https://www.contabeis.com.br/noticias/78568/cgibs-estima-aliquota-de-referencia-de-27-91-para-ibs-e-cbs/"
+ ]
+}
