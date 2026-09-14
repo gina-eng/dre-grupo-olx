@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Métricas · Portal DR-E Grupo OLX</title>
-<meta name="description" content="As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade e formato de entrega.">
+<meta name="description" content="As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade, formato de entrega e o status de cobertura de cada uma.">
 <link rel="icon" href="/assets/favicon.svg?v=8f831273" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-icon.png?v=813a2607" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
 </nav>
 
 <div class="crumb"><div class="crumb-in">
-  <h1>Dicionário de Métricas</h1><p class="desc">As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade e formato de entrega.</p><span class="meta">v0 · validar no kick-off</span>
+  <h1>Dicionário de Métricas</h1><p class="desc">As 78 métricas do diagnóstico, por camada e prioridade, com fonte, granularidade, formato de entrega e o status de cobertura de cada uma.</p><span class="meta">v1 · cobertura apurada em 14/09/2026</span>
 </div></div>
 <div class="doc" id="doc"><div class="doc-main"><style>
 section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
@@ -85,16 +85,16 @@ section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
 /* Em tela estreita a barra chegava a 231px de altura fixa. Os filtros de camada
    ficam recolhidos atrás de um <details>; prioridade e busca continuam à mão. */
 @media(max-width:560px){
-  #tcolapso{width:100%}
-  #tcolapso summary{cursor:pointer;font-size:.78rem;color:var(--muted-fg);padding:.2rem 0;list-style:none}
-  #tcolapso summary::-webkit-details-marker{display:none}
-  #tcolapso summary::before{content:"▸ ";color:var(--brand-ink)}
-  #tcolapso[open] summary::before{content:"▾ "}
-  #tfilters{display:flex;flex-wrap:wrap;gap:.35rem;padding-top:.4rem}
+  #tcolapso,#ccolapso{width:100%}
+  #tcolapso summary,#ccolapso summary{cursor:pointer;font-size:.78rem;color:var(--muted-fg);padding:.2rem 0;list-style:none}
+  #tcolapso summary::-webkit-details-marker,#ccolapso summary::-webkit-details-marker{display:none}
+  #tcolapso summary::before,#ccolapso summary::before{content:"▸ ";color:var(--brand-ink)}
+  #tcolapso[open] summary::before,#ccolapso[open] summary::before{content:"▾ "}
+  #tfilters,#cfilters{display:flex;flex-wrap:wrap;gap:.35rem;padding-top:.4rem}
 }
 @media(min-width:561px){
-  #tcolapso summary{display:none}
-  #tcolapso{display:contents}
+  #tcolapso summary,#ccolapso summary{display:none}
+  #tcolapso,#ccolapso{display:contents}
 }
 
 tr.grp td{background:var(--muted);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;
@@ -128,14 +128,39 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
 .dlg-b{padding:1rem 1.2rem}
 .dlg-b textarea{width:100%;min-height:55vh;font-family:var(--mono);font-size:.76rem;line-height:1.5;
   color:var(--fg);background:var(--bg);border:1px solid var(--input);border-radius:var(--radius-sm);padding:.6rem;resize:vertical}
-@media print{.filters,.bar-prio,.toast{display:none}.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+/* Cobertura: verde = a fonte resolve, âmbar = existe algo que não serve como está,
+   cinza = não existe fonte. Sólido = dado em mãos, contornado = ainda por buscar. */
+.tag-cob{font-family:var(--mono);font-size:.68rem;letter-spacing:.03em;padding:.14rem .44rem;
+  border-radius:9999px;white-space:nowrap;border:1px solid transparent;display:inline-block}
+.cob-medido{background:var(--ok-bg);color:var(--ok);border-color:var(--ok)}
+.cob-concedido{background:transparent;color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
+.cob-parcial{background:var(--warn-bg);color:var(--warn);border-color:var(--warn)}
+.cob-declarado{background:transparent;color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+.cob-falta{background:var(--muted);color:var(--muted-fg);border-color:var(--border-strong)}
+td.nota{color:var(--muted-fg);font-size:.78rem}
+
+.bar-cob{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--muted);min-width:9rem}
+.bar-cob i{display:block;height:100%}
+.bar-cob .c-medido{background:var(--ok)}
+.bar-cob .c-concedido{background:color-mix(in srgb,var(--ok) 42%,var(--muted))}
+.bar-cob .c-parcial{background:var(--warn)}
+.bar-cob .c-declarado{background:color-mix(in srgb,var(--warn) 42%,var(--muted))}
+.bar-cob .c-falta{background:var(--border-strong)}
+
+.legenda{display:grid;gap:.55rem;margin-top:1.3rem}
+@media(min-width:820px){.legenda{grid-template-columns:1fr 1fr}}
+.legenda div{display:flex;gap:.6rem;align-items:baseline;font-size:.85rem;color:var(--muted-fg)}
+.legenda .tag-cob{flex:none;min-width:5.6rem;text-align:center}
+
+@media print{.filters,.bar-prio,.bar-cob,.toast{display:none}.hero{background:#970013!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 
 <main class="wrap"><div class="page">
 
 <p class="lead" style="max-width:70ch;font-size:1.02rem;margin-bottom:1.5rem">Catálogo das métricas
 necessárias para diagnosticar as travas de receita do negócio B2B do Grupo OLX. Cada linha diz o que a
-métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comitê 1 ou não.</p>
+métrica mede, de onde ela sai, em que granularidade, se ela bloqueia o Comitê 1, e <b>em que estado de
+cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o que ainda falta pedir.</p>
 
 <div class="stats">
   <div class="stat"><b id="s-tot">78</b><span>métricas catalogadas</span></div>
@@ -145,6 +170,52 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
 </div>
 
 <section class="blk" style="margin-top:3rem">
+  <div class="blk-h"><h2>Cobertura hoje</h2><span class="eyebrow">apurado em 14/09/2026</span></div>
+  <p class="lead">O catálogo diz o que <b>precisa</b> ser medido. Esta seção diz o que <b>já pode</b> ser
+    medido, indicador a indicador. A marca de cada linha está no catálogo abaixo, na coluna Cobertura,
+    junto com a procedência que sustenta a marca.</p>
+
+  <div class="stats" style="margin-top:1.4rem;grid-template-columns:repeat(2,1fr)">
+    <div class="stat"><b id="c-medido">0</b><span>Medido</span></div>
+    <div class="stat"><b id="c-concedido">0</b><span>Concedido</span></div>
+    <div class="stat"><b id="c-parcial">0</b><span>Parcial</span></div>
+    <div class="stat"><b id="c-declarado">0</b><span>Declarado</span></div>
+    <div class="stat"><b id="c-falta">0</b><span>Falta</span></div>
+    <div class="stat"><b id="c-p0falta">0</b><span>P0 ainda sem fonte</span></div>
+  </div>
+
+  <div class="legenda">
+    <div><span class="tag-cob cob-medido">Medido</span>
+      <span>Dado em mãos, versionado no repositório, com fonte rastreável e conferida.</span></div>
+    <div><span class="tag-cob cob-concedido">Concedido</span>
+      <span>A fonte foi liberada, o dado é extraível e o trabalho de extrair é da V4. Não depende de novo pedido à OLX.</span></div>
+    <div><span class="tag-cob cob-parcial">Parcial</span>
+      <span>Temos parte: série incompleta, ou o recorte errado, como mídia que mistura B2C e B2B.</span></div>
+    <div><span class="tag-cob cob-declarado">Declarado</span>
+      <span>Existe só como número dito em reunião, sem lastro auditável. Vale como hipótese, não como base de meta.</span></div>
+    <div><span class="tag-cob cob-falta">Falta</span>
+      <span>Nem fonte nem dado. Depende de entrega da OLX ou de uma decisão que ainda não foi tomada.</span></div>
+  </div>
+
+  <div class="warnbox">
+    <h3>Nenhum indicador está medido hoje</h3>
+    <p>Dos 78, <b>zero</b> estão em Medido. Não é descuido de coleta: é o mesmo achado que pontuou a
+      Trava de Cegueira em <b>5 de 25</b>, estruturalmente travada. A única série auditável do projeto,
+      a receita mensal por linha de negócio de jan/2025 a jul/2026, não é um destes 78 indicadores: ela
+      é a régua contra a qual todos eles serão conferidos.</p>
+    <p style="margin-top:.6rem">A leitura prática é melhor do que o zero sugere. Os <b>35 Concedido</b>
+      viraram trabalho da V4 quando o lote de acessos entrou em 10/09, e saem sem pedir nada novo. O que
+      exige a OLX são os <b>25 em Falta</b>, e dentro deles o bloco que a planilha de metas precisa:
+      ticket médio de entrada, base ativa de anunciantes e a separação entre churn de logo e de receita.</p>
+    <p style="margin-top:.6rem">Nove marcas de mídia subiram para Parcial em <b>12/09</b>, quando as duas
+      contas de Meta passaram a responder ao conector: 16 campanhas, <b>1.079 anúncios</b> com métrica por
+      peça e R$ 1,65 mi de investimento, onde antes havia zero. A janela coletada é de 90 dias, de 14/06 a
+      12/09, então ela sustenta leitura de criativo e de eficiência, mas ainda não a série mensal desde
+      jan/2025 que o forecast exige.</p>
+  </div>
+</section>
+
+<section class="blk">
   <div class="blk-h"><h2>Convenções</h2><span class="eyebrow">ler antes de preencher</span></div>
   <p class="lead">O dicionário é organizado de baixo para cima no funil, da métrica mais perto do
     dinheiro para a mais distante. Essa ordem não é estética: é a ordem de investigação. Uma trava de
@@ -192,12 +263,13 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
   </div>
 
   <div class="card warnbox">
-    <h3>Esta é a versão 0: validar no kick-off</h3>
+    <h3>Versão 1: o modelo de receita está confirmado, a medição não</h3>
     <p>O catálogo foi construído sobre a leitura de que a receita B2B do Grupo OLX vem de plano ou
-      assinatura de anunciante, com motion sales-led. Essa leitura ainda não foi confirmada pela OLX.
-      Se o modelo de receita for outro, take rate por transação, lead avulso, mídia, as camadas de
-      Decisão e Retenção mudam de forma relevante. As perguntas que confirmam isso estão no bloco 03
-      do formulário de kick-off, e a versão 1 deste dicionário sai da mesma reunião.</p>
+      assinatura de anunciante, com motion sales-led. A leitura <b>se confirmou</b>: a jornada do
+      cliente profissional apresentada em 28/08 descreve contrato, cobrança e publicação nessa ordem,
+      e a série de receita mostra o núcleo de assinatura B2B respondendo por <b>65,5%</b> do grupo.
+      O que a versão 1 acrescenta não é uma correção de escopo: é a coluna de cobertura, que separa
+      o que este dicionário pede do que a operação hoje consegue entregar.</p>
   </div>
 </section>
 
@@ -209,6 +281,8 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
       <button class="fbtn" type="button" data-p="P1" aria-pressed="false">P1</button>
       <button class="fbtn" type="button" data-p="P2" aria-pressed="false">P2</button>
       <span style="width:.6rem"></span>
+      <details id="ccolapso" open><summary>Filtrar por cobertura</summary><span id="cfilters"></span></details>
+      <span style="width:.6rem"></span>
       <details id="tcolapso" open><summary>Filtrar por camada</summary><span id="tfilters"></span></details>
       <input id="q" type="text" placeholder="Buscar métrica, fonte ou definição…" aria-label="Buscar">
       <span class="count" id="count"></span>
@@ -218,8 +292,10 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
   <div class="card scrollx" style="margin-top:1rem">
     <table>
       <thead><tr>
-        <th>Métrica</th><th style="width:5rem">Unidade</th><th style="width:14rem">Fonte principal</th>
+        <th>Métrica</th><th style="width:6.5rem">Cobertura</th><th style="width:5rem">Unidade</th>
+        <th style="width:14rem">Fonte principal</th>
         <th style="width:6rem">Granul.</th><th style="width:4rem">Prio.</th><th>O que mede</th>
+        <th style="width:22rem">Procedência da marca</th>
       </tr></thead>
       <tbody id="body"></tbody>
     </table>
@@ -236,7 +312,8 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
     <table class="bars">
       <thead><tr><th>Camada</th><th style="width:9rem">Macrofase</th><th style="width:4rem">Total</th>
         <th style="width:4rem">P0</th><th style="width:4rem">P1</th><th style="width:4rem">P2</th>
-        <th style="width:12rem">Composição</th></tr></thead>
+        <th style="width:11rem">Composição</th>
+        <th style="width:11rem">Cobertura</th></tr></thead>
       <tbody id="resumo"></tbody>
     </table>
   </div>
@@ -285,14 +362,26 @@ métrica mede, de onde ela sai, em que granularidade, e se ela bloqueia o Comit�
   <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Dicionário de métricas em CSV"></textarea></div>
 </dialog>
 
-<script src="/assets/metrics-data.js?v=de5d7d98"></script>
+<script src="/assets/metrics-data.js?v=c37ac2b6"></script>
 <script>
 const ORDEM = ["T1 Retenção","T2 Decisão","T3 Compromisso","T4 Qualificação","T5 Interesse","T6 Atenção","T7 Exposição","Unit Economics"];
 const MACRO = {};
 M.forEach(r => { MACRO[r[0]] = r[1]; });
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-const fp = new Set(), ft = new Set();
+const COB = [["medido","Medido"],["concedido","Concedido"],["parcial","Parcial"],
+              ["declarado","Declarado"],["falta","Falta"]];
+const COBLAB = {}; COB.forEach(([k, v]) => { COBLAB[k] = v; });
+
+const fp = new Set(), ft = new Set(), fc = new Set();
+const cf = document.getElementById("cfilters");
+COB.forEach(([k, rot]) => {
+  const b = document.createElement("button");
+  b.className = "fbtn"; b.type = "button"; b.dataset.c = k; b.setAttribute("aria-pressed", "false");
+  b.textContent = rot;
+  cf.appendChild(b);
+});
+
 const tf = document.getElementById("tfilters");
 ORDEM.forEach(t => {
   const b = document.createElement("button");
@@ -310,7 +399,8 @@ function visible(){
   return M.filter(r =>
     (!fp.size || fp.has(r[6])) &&
     (!ft.size || ft.has(r[0])) &&
-    (!q || (r[2] + " " + r[4] + " " + r[7]).toLowerCase().includes(q)));
+    (!fc.size || fc.has(r[8])) &&
+    (!q || (r[2] + " " + r[4] + " " + r[7] + " " + r[9]).toLowerCase().includes(q)));
 }
 
 function render(){
@@ -322,17 +412,19 @@ function render(){
       if (last !== t) {
         const g = document.createElement("tr");
         g.className = "grp";
-        g.innerHTML = '<td colspan="6">' + esc(t) + " · " + esc(MACRO[t]) + "</td>";
+        g.innerHTML = '<td colspan="8">' + esc(t) + " · " + esc(MACRO[t]) + "</td>";
         body.appendChild(g); last = t;
       }
       const tr = document.createElement("tr");
       tr.innerHTML =
         '<td class="met">' + esc(r[2]) + "</td>" +
+        '<td><span class="tag-cob cob-' + r[8] + '">' + esc(COBLAB[r[8]]) + "</span></td>" +
         '<td class="un">' + esc(r[3]) + "</td>" +
         '<td class="fonte">' + esc(r[4]) + "</td>" +
         '<td class="gran">' + esc(r[5]) + "</td>" +
         '<td><span class="tag ' + (r[6] === "P0" ? "tag-p0" : r[6] === "P1" ? "tag-p1" : "") + '">' + r[6] + "</span></td>" +
-        '<td class="mede">' + esc(r[7]) + "</td>";
+        '<td class="mede">' + esc(r[7]) + "</td>" +
+        '<td class="nota">' + esc(r[9]) + "</td>";
       body.appendChild(tr);
     });
   });
@@ -342,7 +434,8 @@ function render(){
 
 document.addEventListener("click", e => {
   const b = e.target.closest(".fbtn"); if (!b) return;
-  const set = b.dataset.p ? fp : ft, key = b.dataset.p || b.dataset.t;
+  const set = b.dataset.p ? fp : b.dataset.c ? fc : ft,
+        key = b.dataset.p || b.dataset.c || b.dataset.t;
   if (set.has(key)) set.delete(key); else set.add(key);
   b.setAttribute("aria-pressed", set.has(key) ? "true" : "false");
   render();
@@ -366,14 +459,26 @@ ORDEM.forEach(t => {
     '<td class="b"><span class="bar-prio">' +
       '<i class="p0" style="width:' + (c0 / rs.length * 100) + '%"></i>' +
       '<i class="p1" style="width:' + (c1 / rs.length * 100) + '%"></i>' +
-      '<i class="p2" style="width:' + (c2 / rs.length * 100) + '%"></i></span></td>';
+      '<i class="p2" style="width:' + (c2 / rs.length * 100) + '%"></i></span></td>' +
+    '<td class="b"><span class="bar-cob">' + COB.map(([k]) =>
+      '<i class="c-' + k + '" style="width:' +
+      (rs.filter(r => r[8] === k).length / rs.length * 100) + '%"></i>').join("") + "</span></td>";
   resumo.appendChild(tr);
 });
 const tr = document.createElement("tr");
 tr.innerHTML = '<td><strong>Total</strong></td><td></td><td class="num"><strong>' + tot +
   '</strong></td><td class="num" style="color:var(--brand-ink)"><strong>' + g0 +
-  '</strong></td><td class="num">' + g1 + '</td><td class="num">' + g2 + "</td><td></td>";
+  '</strong></td><td class="num">' + g1 + '</td><td class="num">' + g2 + "</td><td></td>" +
+  '<td class="b"><span class="bar-cob">' + COB.map(([k]) =>
+    '<i class="c-' + k + '" style="width:' + (M.filter(r => r[8] === k).length / M.length * 100) +
+    '%"></i>').join("") + "</span></td>";
 resumo.appendChild(tr);
+
+COB.forEach(([k]) => {
+  document.getElementById("c-" + k).textContent = M.filter(r => r[8] === k).length;
+});
+document.getElementById("c-p0falta").textContent =
+  M.filter(r => r[6] === "P0" && r[8] === "falta").length;
 
 document.getElementById("s-tot").textContent = tot;
 document.getElementById("s-p0").textContent = g0;
@@ -389,7 +494,8 @@ function say(m){
 }
 
 function buildCsv(){
-  const head = ["trava","macrofase","metrica","unidade","fonte","granularidade","prioridade","o_que_mede"];
+  const head = ["trava","macrofase","metrica","unidade","fonte","granularidade","prioridade",
+                "o_que_mede","cobertura","procedencia_da_marca"];
   const q = s => '"' + String(s).replace(/"/g, '""') + '"';
   return [head.map(q).join(",")].concat(visible().map(r => r.map(q).join(","))).join("\n");
 }

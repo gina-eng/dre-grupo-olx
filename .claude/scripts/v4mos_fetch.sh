@@ -4,7 +4,8 @@
 #
 # Reads:  <client_dir>/client.json (meta.workspace_id, meta.name)
 #         .credentials/clients.json (client_id, client_secret)
-# Writes: <client_dir>/client.json (connectors section)
+# Writes: <client_dir>/cache/v4mos-<data>.json  (payload cru, fora do git)
+#         <client_dir>/client.json  (resumo, em connectors E conectores.v4mos.ultima_coleta)
 #
 # API: https://api.data.v4.marketing/v1
 # Auth: x-client-id + x-client-secret headers
@@ -509,20 +510,82 @@ PYEOF
   echo "✅ Facebook Ads: $(echo "$FADS_AGGREGATED" | jq -r '.total_campaigns') campanhas · $(echo "$FADS_AGGREGATED" | jq -r '.total_ads') ads · $(echo "$FADS_AGGREGATED" | jq -r '.monthly_evolution | length') meses · R\$$(echo "$FADS_AGGREGATED" | jq -r '.total_spend') gasto"
 fi
 
-# ── Write back to client.json.connectors ────────────────────────────────────
-TMP="$CLIENT_JSON.tmp"
-jq \
+# ── Write back ──────────────────────────────────────────────────────────────
+# Tres regras aprendidas na marra, todas em setembro de 2026:
+#
+# 1. --argjson passa o JSON inteiro como argumento de linha de comando e estoura
+#    ARG_MAX assim que o cliente tem campanhas demais. Foi o "Argument list too
+#    long" de 11/09, que buscou o dado e perdeu na escrita. --slurpfile le de
+#    arquivo, sem passar pela linha de comando.
+#
+# 2. O PAYLOAD CRU NAO ENTRA NO ARQUIVO DE ESTADO. Em 12/09 este script gravou
+#    1,58 MB de criativos dentro de client.json, que e a fonte unica de estado do
+#    projeto e vivia em 86 KB. O cru agora vai para <client_dir>/cache/, que o
+#    .gitignore bloqueia e que este script regenera; no estado fica so o resumo.
+#
+# 3. A CHAVE E ESCRITA NOS DOIS IDIOMAS. As skills ee-* reaproveitadas leem
+#    `connectors`, em ingles; as skills dre-* deste projeto leem `conectores`,
+#    em portugues. Gravar so numa delas deixa o dado invisivel para metade do
+#    sistema: foi o que escondeu a entrada do Meta por dois dias, em 12/09.
+CACHE_DIR="$CLIENT_DIR/cache"
+mkdir -p "$CACHE_DIR"
+CACHE_FILE="$CACHE_DIR/v4mos-${FETCHED_AT%%T*}.json"
+
+GADS_FILE=$(mktemp)
+FADS_FILE=$(mktemp)
+trap 'rm -f "$GADS_FILE" "$FADS_FILE"' EXIT
+printf '%s' "$GADS_AGGREGATED" > "$GADS_FILE"
+printf '%s' "$FADS_AGGREGATED" > "$FADS_FILE"
+
+# 1 · payload cru completo, fora do git e regeneravel
+jq -n \
   --arg fetched_at "$FETCHED_AT" \
-  --arg period_start "$DATE_START" \
-  --arg period_end "$DATE_END" \
-  --argjson google_ads "$GADS_AGGREGATED" \
-  --argjson facebook_ads "$FADS_AGGREGATED" \
-  '.connectors = {
-    fetched_at: $fetched_at,
-    period: { start: $period_start, end: $period_end },
-    google_ads: $google_ads,
-    facebook_ads: $facebook_ads
-  }' "$CLIENT_JSON" > "$TMP" && mv "$TMP" "$CLIENT_JSON"
+  --arg ps "$DATE_START" \
+  --arg pe "$DATE_END" \
+  --slurpfile google_ads "$GADS_FILE" \
+  --slurpfile facebook_ads "$FADS_FILE" \
+  '{ fetched_at: $fetched_at,
+     period: { start: $ps, end: $pe },
+     google_ads: $google_ads[0],
+     facebook_ads: $facebook_ads[0] }' > "$CACHE_FILE"
+
+# 2 · resumo no estado: os criativos viram contagem mais os 15 maiores por gasto
+TMP="$CLIENT_JSON.tmp"
+if ! jq \
+  --arg fetched_at "$FETCHED_AT" \
+  --arg ps "$DATE_START" \
+  --arg pe "$DATE_END" \
+  --arg cache "$CACHE_FILE" \
+  --slurpfile google_ads "$GADS_FILE" \
+  --slurpfile facebook_ads "$FADS_FILE" \
+  '
+    ($google_ads[0]) as $g
+  | ($facebook_ads[0]) as $f
+  | (if $f == null then null else
+       $f
+       | .creatives_resumo = {
+           total: ((.creatives // []) | length),
+           detalhe_completo_em: ($cache + " (fora do git, regeneravel por este script)"),
+           top_15_por_investimento: ((.creatives // [])
+             | sort_by(-(.spend // 0)) | .[0:15]
+             | map({ ad_name, spend, impressions, reach, ctr, cpm }))
+         }
+       | del(.creatives)
+     end) as $fr
+  | { fetched_at: $fetched_at,
+      period: { start: $ps, end: $pe },
+      google_ads: $g,
+      facebook_ads: $fr } as $resumo
+  | .connectors = $resumo
+  | .conectores = ((.conectores // {})
+      | .v4mos = ((.v4mos // {}) | .ultima_coleta = $resumo))
+  ' "$CLIENT_JSON" > "$TMP"; then
+  rm -f "$TMP"
+  echo "ERRO: a gravacao em client.json falhou. O payload cru esta salvo em $CACHE_FILE."
+  exit 1
+fi
+mv "$TMP" "$CLIENT_JSON"
 
 echo ""
-echo "✓ client.json atualizado (connectors.fetched_at: $FETCHED_AT)"
+echo "✓ payload cru em $CACHE_FILE ($(du -h "$CACHE_FILE" | cut -f1 | tr -d ' '))"
+echo "✓ client.json atualizado · resumo em connectors e em conectores.v4mos.ultima_coleta (fetched_at: $FETCHED_AT)"
