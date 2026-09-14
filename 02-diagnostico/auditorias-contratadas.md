@@ -17,7 +17,7 @@ investigação que a ordena não mudou. O que mudou duas vezes em três dias foi
    **adiada para 24/09**, e o Comitê 1 de 17/09 foi para **01/10**.
 
 Grade dia a dia em
-[04-execucao/sprint-diagnosticos-09-a-23-09.md](../04-execucao/sprint-diagnosticos-09-a-23-09.md);
+[04-execucao/sprint-diagnosticos-10-a-18-09.md](../04-execucao/sprint-diagnosticos-10-a-18-09.md);
 marcos e o deslize dos Comitês 2 e 3 em
 [04-execucao/cronograma-e-marcos.md](../04-execucao/cronograma-e-marcos.md).
 
@@ -42,6 +42,11 @@ filtro, de curto prazo, aplicado sobre ela, como era o de habilitação até 02/
 | **iv** | Criativos Ads & Mensagens | [E](checklist-dados-e-acessos.md#e-criativos-ads--mensagens) | 16–22 set | 🟠 Médio, acervo de peças e racional de campanha | Atenção |
 | **v** | Redes Sociais e Conteúdo Orgânico | [F](checklist-dados-e-acessos.md#f-redes-sociais-e-conteúdo-orgânico) | 16–22 set | 🟢 Baixo, Business Suite e LinkedIn concedidos | Exposição · Atenção |
 | **iii** | GEO: IA e Buscas Generativas | [D](checklist-dados-e-acessos.md#d-geo-ia-e-buscas-generativas) | 21–23 set | 🟢 Nenhum · roda de fora | Exposição · Atenção |
+
+> ✅ **(i) saiu na frente e já tem documento.** As duas sessões de CRM aconteceram em **09 e
+> 10/09**, antes do lote de acessos, e fecharam a camada experiencial com 16 achados em
+> [`auditoria-i-crm-marketing.md`](auditoria-i-crm-marketing.md). A janela efetiva do diagnóstico
+> passou a ser **11–17/09**, ver [sprint](../04-execucao/sprint-diagnosticos-10-a-18-09.md).
 
 **Os nove rodam. Nenhum fica congelado, desde que o lote de 03/09 chegue utilizável, e não só
 concedido.** Essa condicional é o que a tabela existe para não deixar esquecer: o GA4 já chegou uma

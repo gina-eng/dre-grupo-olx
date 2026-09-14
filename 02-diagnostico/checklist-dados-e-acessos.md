@@ -38,12 +38,12 @@ o restante pode ser complementado nas duas primeiras semanas."
 ## B. CRM Marketing
 *Alimenta o diagnóstico (i), Salesforce Marketing Cloud.*
 
-| # | Item | Status |
-|---|---|---|
-| B1 | Acesso de visualização | ⚪ |
-| B2 | Arquitetura de Data Extensions e lógica de segmentação atual | ⚪ |
-| B3 | Relatórios de performance de e-mail dos últimos 12 meses (entregabilidade, open, CTR, conversão) | ⚪ |
-| B4 | Tamanho e saúde da base opt-in | ⚪ |
+| # | Item | Status | Obs. |
+|---|---|---|---|
+| B1 | Acesso de visualização | 🟠 | Declarado concedido no lote de 10/09, **sem conferência na ferramenta** ([pendência 18](../PENDENCIAS.md)). O Sales Cloud depende do e-mail `@olxbr` habilitado no MyApps |
+| B2 | Arquitetura de Data Extensions e lógica de segmentação atual | 🟡 | **Descrita nas sessões de 09 e 10/09**, incluindo o comparativo DEX legado vs. Campana e as regras de segmentação em uso. Os slides foram apresentados em tela e **não recebidos** |
+| B3 | Relatórios de performance de e-mail dos últimos 12 meses (entregabilidade, open, CTR, conversão) | ⚪ | O pedido mudou de sentido: **o e-mail está desligado na aquisição desde a migração**, então a série de 12 meses é de ciclo de vida, não de aquisição |
+| B4 | Tamanho e saúde da base opt-in | 🟡 | A **saúde** foi descrita e é ruim: CEP ausente em mais de 50%, nomes duplicados e `undefined`, documento em campo de nome. O **tamanho** não foi dito em nenhuma das duas sessões |
 
 > ⚠️ **O bloco B foi desenhado para uma ferramenta e o GTM mostrou quatro.** Além do Salesforce
 > Marketing Cloud, o export de 01/09 revelou **Insider** (`10007563`, web push e personalização,
@@ -51,6 +51,19 @@ o restante pode ser complementado nas duas primeiras semanas."
 > **RD Station** (contêiner `GTM-MVQWQJFB` em `materiais.olx.com.br`). Mais os cookies `sf_utm_*`
 > que alimentam atribuição no Salesforce. **Perguntar qual é a ferramenta oficial e o que as outras
 > três fazem**, quatro plataformas de relacionamento convivendo já é achado de maturidade.
+
+> ✅ **A camada experiencial do bloco B fechou em 10/09**, com duas sessões e todo o time de CRM B2B
+> na sala. Leitura completa, com 16 achados, em
+> [`auditoria-i-crm-marketing.md`](auditoria-i-crm-marketing.md). O que ela muda aqui:
+>
+> - **A stack declarada é Salesforce Marketing Cloud + Blip**, e mais nada. Em duas horas de CRM,
+>   **Insider, Braze e RD Station não foram citados uma única vez**. A pergunta da nota acima
+>   continua aberta, agora com peso: ou as três são de outra área, ou não têm dono.
+> - **A Blip entra no bloco B como quinta ferramenta**, e é por ela que sai 99% a 100% da aquisição.
+>   Não tem integração com o Marketing Cloud: a base sai em planilha e sobe à mão.
+> - **O que mais importa não é o que falta receber, é o que está desligado.** As jornadas de ciclo
+>   de vida do cliente novo estão fora do ar desde abril em Autos e julho em Imóveis. Pedir
+>   relatório de performance de uma operação parada mede o período anterior, não o atual.
 
 ## C. Ambientes CRO/SEO (domínios B2B)
 *Alimenta o diagnóstico (ii).*

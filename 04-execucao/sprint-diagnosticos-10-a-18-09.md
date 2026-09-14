@@ -106,7 +106,7 @@ e não pela ordem de contrato.
 | # | Diagnóstico | Janela | Onde o time da OLX entra |
 |---|---|---|---|
 | **vi** | Mídia paga (Google e Meta) | 11–18 set | Finalidade de cada conta. **Depende de ingestão no V4MOS**, ver risco 3 |
-| **i** | CRM Marketing (Salesforce MC) | 11–17 set | **Reuniões já realizadas, 09 e 10/09.** É essa dianteira que permite fechar em 17 |
+| **i** | CRM Marketing (Salesforce MC) | 11–17 set | **Reuniões já realizadas, 09 e 10/09.** É essa dianteira que permite fechar em 17. Camada experiencial fechada e escrita em [`auditoria-i-crm-marketing.md`](../02-diagnostico/auditoria-i-crm-marketing.md), 16 achados |
 | **ix** | Pré-vendas e qualificação | **14–17 set** | **Entrevistas nos blocos de 16 e 17 + as 10 a 15 gravações de call**, concentradas em 4 dias |
 | **iv** | Criativos e mensagens | 15–18 set | Racional de campanha por trás do acervo, que entra em 15 |
 | **v** | Redes e conteúdo orgânico | 15–18 set | Pouca entrevista; Business Suite e LinkedIn já concedidos |

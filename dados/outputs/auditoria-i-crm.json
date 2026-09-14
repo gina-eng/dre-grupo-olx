@@ -1,0 +1,411 @@
+{
+  "diagnostico": "i",
+  "nome": "CRM Marketing (Salesforce Marketing Cloud)",
+  "bloco_checklist": "B",
+  "status": "camada_experiencial_fechada",
+  "camadas": {
+    "experiencial": {
+      "estado": "fechada",
+      "data": "2026-09-10"
+    },
+    "analitica": {
+      "estado": "aberta",
+      "bloqueio": "sem base, sem relatorio de performance, sem console conferido"
+    }
+  },
+  "fechamento_previsto": "2026-09-17",
+  "atualizado_em": "2026-09-14",
+  "documento": "02-diagnostico/auditoria-i-crm-marketing.md",
+  "fontes": [
+    {
+      "tipo": "reuniao",
+      "data": "2026-09-09",
+      "duracao": "01:02:42",
+      "gravacao": false,
+      "ata": "06-reunioes/2026-09-09-crm-contexto-e-campana.md",
+      "transcricao": "06-reunioes/2026-09-09-crm-contexto-e-campana-transcricao.md",
+      "sha256_original": "1d3854c0c3c4b3ed2ae0da1f2f0f65a100ec41a69a8e4c8f4898126f650dee6a"
+    },
+    {
+      "tipo": "reuniao",
+      "data": "2026-09-10",
+      "duracao": "01:05:41",
+      "gravacao": false,
+      "ata": "06-reunioes/2026-09-10-crm-jornadas.md",
+      "transcricao": "06-reunioes/2026-09-10-crm-jornadas-transcricao.md",
+      "sha256_original": "af5899dcd1504f98cdd4888d4d777eab05a99fc3dcb07819eb3b89845ae85168"
+    }
+  ],
+  "achados": [
+    {
+      "id": 1,
+      "severidade": "critico",
+      "titulo": "O CRM de ciclo de vida esta desligado para todo cliente novo desde abril",
+      "resumo": "Migracao para o Campana desligou as jornadas de ciclo de vida do cliente novo: Autos desde abril de 2026, Imoveis desde julho. Transacional e billing seguem ativos. Uma unica jornada voltou, o onboarding de Imoveis.",
+      "fonte": "09/09 00:26:09 e 10/09 00:17:51",
+      "travas": [
+        "retencao",
+        "interesse",
+        "compromisso"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 2,
+      "severidade": "critico",
+      "titulo": "A construcao de jornada nunca teve dono, e o dono de fato saiu em marco",
+      "resumo": "Eduardo Santos e Mirella Mendonca acreditavam que as jornadas ja tinham sido reconstruidas no Campana; Michelle Morais diz que so a Data Extension foi migrada. A especialista interna de Marketing Cloud saiu em marco junto com uma analista, e a atividade nao caiu para nenhuma area. Politica implicita: a execucao tecnica de CRM e tratada como servico de terceiro, nao como capacidade da area.",
+      "fonte": "09/09 00:28:50 a 00:34:24 e 10/09 00:19:24",
+      "travas": [
+        "crt"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 3,
+      "severidade": "critico",
+      "titulo": "Cinco meses de silencio e nenhum indicador acusou",
+      "resumo": "A parada nao foi detectada por metrica, alerta ou relatorio. Apareceu numa conversa com consultoria externa. Confirma a dimensao E da Trava de Cegueira por outro caminho.",
+      "fonte": "09/09 e 10/09, leitura da V4 sobre as duas sessoes",
+      "travas": [
+        "cegueira"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 4,
+      "severidade": "critico",
+      "titulo": "Toda a aquisicao de CRM depende de uma ferramenta cuja permanencia nao esta decidida",
+      "resumo": "99% a 100% da aquisicao sai por WhatsApp via Blip. O dono tecnico diz que a Blip nao funciona e vai morrer no Q1; marketing diz que a decisao nao esta pacificada; o time de CRM investe em integra-la ao Marketing Cloud.",
+      "fonte": "09/09 00:52:42 a 00:58:12",
+      "travas": [
+        "interesse",
+        "atencao"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 5,
+      "severidade": "relevante",
+      "titulo": "A base de clientes sai em planilha e sobe a mao na Blip",
+      "resumo": "Sem integracao Marketing Cloud x Blip. Custa exposicao (LGPD, levantado pela propria OLX), medicao (sem tag de campanha nao ha atribuicao de CRM, o que casa com o 'entra tudo como Direto' do slide FLUXOS de 28/08) e capacidade do time.",
+      "fonte": "09/09 00:47:06 e 00:48:35",
+      "travas": [
+        "cegueira",
+        "retencao"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 6,
+      "severidade": "relevante",
+      "titulo": "O dado que chega ao Marketing Cloud e qualificado para vender, nao para falar",
+      "resumo": "Sanitizacao anterior foi feita com criterio de billing. CEP ausente em mais de 50% da base; nomes em caixa alta/baixa, duplicados e undefined; documento em campo de nome; telefone sem mascara; datas em formatos distintos. Contradicao interna sobre o CEP ser bloqueio (Michelle) ou atrito (Juliana).",
+      "fonte": "09/09 00:38:56 e 10/09 00:08:14 a 00:11:44",
+      "travas": [
+        "qualificacao"
+      ],
+      "estimado": true
+    },
+    {
+      "id": 7,
+      "severidade": "relevante",
+      "titulo": "O CRM nao enxerga o produto do cliente",
+      "resumo": "Plano contratado, quantidade de anuncios e uso nao chegam ao Marketing Cloud. A segmentacao disponivel e cadastral. Isso impede a jornada de quem comprou e nao publicou.",
+      "fonte": "10/09 00:06:55",
+      "travas": [
+        "retencao",
+        "interesse"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 8,
+      "severidade": "relevante",
+      "titulo": "A jornada de quem contrata e nao anuncia foi testada, funcionou e foi desligada",
+      "resumo": "Disparos pontuais de teste tiveram boa resposta declarada; a automacao comecou e parou pela migracao. E evidencia gerada pelo proprio cliente, nao hipotese da V4.",
+      "fonte": "10/09 00:31:38",
+      "travas": [
+        "retencao"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 9,
+      "severidade": "relevante",
+      "titulo": "O canal mais barato foi desligado e o unico canal ativo encarece em outubro",
+      "resumo": "E-mail saiu da aquisicao na migracao. Sobrou WhatsApp, e a Meta muda a regra de cobranca ate outubro de 2026.",
+      "fonte": "10/09 00:14:04",
+      "travas": [
+        "atencao",
+        "interesse"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 10,
+      "severidade": "relevante",
+      "titulo": "Nao existe CDP e o dado esta pulverizado",
+      "resumo": "O Campana unificou tres orgs de Salesforce em uma, o que resolve padronizacao de campo e objeto. Nao resolve perfil unico de cliente, segundo o proprio dono tecnico.",
+      "fonte": "09/09 00:28:50",
+      "travas": [
+        "cegueira"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 11,
+      "severidade": "relevante",
+      "titulo": "Tres plataformas de relacionamento existem no GTM e nao apareceram em duas horas de CRM",
+      "resumo": "Insider (tag CRM Web Push ativa em GTM-KGFGVFC e GTM-MJX9PG4), Braze (7 de 7 tags pausadas em producao) e RD Station (conteiner GTM-MVQWQJFB) nunca foram citados pelo time de CRM. Hipotese a confirmar: o Insider e o web push que aparece no mapa de jornadas de Imoveis.",
+      "fonte": "auditoria (vii), achados 10 e 14, contra as duas sessoes",
+      "travas": [
+        "cegueira",
+        "retencao"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 12,
+      "severidade": "relevante",
+      "titulo": "No ritmo declarado, o CRM so volta a operar inteiro no fim do Ciclo 1",
+      "resumo": "15 jornadas mapeadas, 5 temas de migracao, ritmo declarado de cerca de duas semanas por tema a partir de 10/09: projecao de meados de novembro de 2026. O Ciclo 1 fecha no Comite 3, em 01/12, e a migracao de clientes de Imoveis corre ate o fim do ano.",
+      "fonte": "10/09 00:37:50, aritmetica da V4 sobre taxa declarada",
+      "travas": [
+        "frt_prt",
+        "forecast"
+      ],
+      "estimado": true
+    },
+    {
+      "id": 13,
+      "severidade": "a_esclarecer",
+      "titulo": "Existe jornada desenhada que ninguem consegue reconstruir",
+      "resumo": "A maquina de inbound de Imoveis usa lead score customizado no Salesforce, nao o nativo do Marketing Cloud. Mesmo documentada, nao e replicavel. Duas versoes convivem, a antiga ligada e a nova parada.",
+      "fonte": "10/09 00:33:02 e 00:35:22",
+      "travas": [
+        "interesse"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 14,
+      "severidade": "a_esclarecer",
+      "titulo": "A documentacao e reconhecidamente insuficiente e esta sendo refeita por engenharia reversa",
+      "resumo": "Padrao novo decidido na sessao: Miro para o fluxo visual, Confluence para a especificacao textual, escrita pela C3C. O Miro atual nao registra tempo entre toques.",
+      "fonte": "10/09 00:25:29 e 00:29:20",
+      "travas": [
+        "maturidade"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 15,
+      "severidade": "a_esclarecer",
+      "titulo": "Quase nao ha teste A/B, e a automacao vai reduzir o improviso que hoje faz as vezes de teste",
+      "resumo": "Testes concentrados na aquisicao e escassos no resto, por declaracao da propria gestora. O processo manual tem liberdade de ajuste que a automacao remove.",
+      "fonte": "10/09 00:12:59 e 00:59:14",
+      "travas": [
+        "interesse",
+        "atencao"
+      ],
+      "estimado": false
+    },
+    {
+      "id": 16,
+      "severidade": "a_esclarecer",
+      "titulo": "O ambiente legado nao e legado: e o B2C em producao",
+      "resumo": "A BU antiga do Marketing Cloud segue ativa porque atende o B2C. Cliente B2B que entrou numa jornada antes da migracao continua nela. Convivem dois CRMs B2B, um que so esvazia e outro que quase nao enche.",
+      "fonte": "10/09 00:16:35",
+      "travas": [
+        "cegueira"
+      ],
+      "estimado": false
+    }
+  ],
+  "jornadas": {
+    "fonte": "Miro apresentado em 10/09, nao recebido como arquivo",
+    "imoveis": [
+      {
+        "nome": "Pos-cadastro",
+        "recorte": "limbo entre cadastro na landing page e contato comercial",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Onboarding",
+        "recorte": "por tipo de plano contratado",
+        "estado": "ativa"
+      },
+      {
+        "nome": "Educacional",
+        "recorte": "pos-onboarding, a partir do 3o mes",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Retencao preventiva",
+        "recorte": "cliente ativo no 3o mes",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Recuperacao imediata",
+        "recorte": "inativo ate 30 dias, trilhas de churn e inadimplencia",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Recuperacao total",
+        "recorte": "inatividade acima de 30 dias",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Maquina de inbound (lead score)",
+        "recorte": "nutricao 1, nutricao 2 e venda, por score; duas versoes",
+        "estado": "legado"
+      },
+      {
+        "nome": "Venda online (carrinho abandonado)",
+        "recorte": "web push real time, vitrine por e-mail, checkout",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Recuperacao manual",
+        "recorte": "disparos de WhatsApp para inativos",
+        "estado": "manual"
+      }
+    ],
+    "autos": [
+      {
+        "nome": "Aquisicao de planos profissionais",
+        "recorte": "abandono de carrinho e navegacao na pagina de autos",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Onboarding",
+        "recorte": "cerca de seis variacoes: offline, online, upgrade, generico e Autos 360",
+        "estado": "em_migracao"
+      },
+      {
+        "nome": "Retencao preventiva e engajamento",
+        "recorte": "primeiros quatro meses",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Upsell",
+        "recorte": "plano ativo e limite de anuncios esgotado",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Recuperacao",
+        "recorte": "ate 30 dias com cupom, 30 a 180 dias, 180 dias a 1 ano, acima de 1 ano via push",
+        "estado": "desligada"
+      },
+      {
+        "nome": "Autos 360",
+        "recorte": "onboarding desde agosto de 2025 e engajamento com dois touch points",
+        "estado": "desligada"
+      }
+    ],
+    "canais": {
+      "imoveis": {
+        "ambiente": "Canal Pro",
+        "canais": [
+          "e-mail"
+        ],
+        "push_app": false
+      },
+      "autos": {
+        "ambiente": "My Plan, dentro do site e app da OLX",
+        "canais": [
+          "e-mail",
+          "push"
+        ],
+        "push_app": true
+      },
+      "regra_whatsapp": "WhatsApp so quando ha receita direta. Excecoes: CredAluga e Autos 360"
+    }
+  },
+  "bloco_b": {
+    "B1": {
+      "status": "solicitado_pendente",
+      "nota": "declarado concedido em 10/09, sem conferencia na ferramenta"
+    },
+    "B2": {
+      "status": "parcial",
+      "nota": "descrita nas duas sessoes; slides nao recebidos"
+    },
+    "B3": {
+      "status": "nao_iniciado",
+      "nota": "e-mail esta desligado na aquisicao: a serie de 12 meses e de ciclo de vida"
+    },
+    "B4": {
+      "status": "parcial",
+      "nota": "saude descrita e ruim; tamanho da base nao foi dito"
+    }
+  },
+  "numeros_declarados": [
+    {
+      "metrica": "share de WhatsApp na aquisicao de CRM",
+      "valor": "99% a 100%",
+      "fonte": "09/09 00:16:19",
+      "estimado": true
+    },
+    {
+      "metrica": "perda de base por CEP ausente",
+      "valor": "mais de 50%",
+      "fonte": "10/09 00:08:14",
+      "estimado": true
+    },
+    {
+      "metrica": "clientes de Autos migrados para o Campana",
+      "valor": "100%",
+      "fonte": "10/09 00:02:23",
+      "estimado": false
+    },
+    {
+      "metrica": "regua de qualificacao do bot",
+      "valor": "9 para 7 para 4 perguntas",
+      "fonte": "10/09 00:10:30",
+      "estimado": false
+    },
+    {
+      "metrica": "ritmo de migracao de jornada",
+      "valor": "cerca de duas semanas por tema",
+      "fonte": "10/09 00:37:50",
+      "estimado": true
+    },
+    {
+      "metrica": "jornadas mapeadas no Miro",
+      "valor": "15 (9 Imoveis, 6 Autos)",
+      "fonte": "10/09, contagem da V4 sobre a tela",
+      "estimado": true
+    },
+    {
+      "metrica": "saidas do time de CRM em marco de 2026",
+      "valor": "2 (uma especialista, uma analista)",
+      "fonte": "10/09 00:19:24",
+      "estimado": false
+    }
+  ],
+  "o_que_falta": [
+    "Coorte sem ciclo de vida: volume e churn contra a coorte anterior (pendencia 30)",
+    "Resultado do teste de 'contratou e nao anunciou' (achado 8)",
+    "Performance das jornadas antes da migracao (B3)",
+    "Tamanho da base opt-in por vertical e perda efetiva na higienizacao (B4)",
+    "Console do Marketing Cloud conferido: inventario de jornadas ativas por BU (B1)",
+    "Quem opera Insider, Braze e RD Station (achado 11)"
+  ],
+  "pendencias_geradas": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "ressalvas": [
+    "Fonte unica: duas reunioes conduzidas pela mesma pessoa",
+    "Sem gravacao em 09/09, so transcricao automatica",
+    "Nenhum material recebido: slides, Miro, Confluence e dois dashboards do Looker foram apresentados em tela",
+    "Duas datas para a ativacao do onboarding de Imoveis: 31/05 no resumo automatico, 'dia 31' recente na transcricao",
+    "A contagem de 15 jornadas e do que foi mostrado no Miro, nao de inventario do console"
+  ]
+}
