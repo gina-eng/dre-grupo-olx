@@ -90,6 +90,7 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
 .cob-concedido{background:transparent;color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,transparent)}
 .cob-parcial{background:var(--warn-bg);color:var(--warn);border-color:var(--warn)}
 .cob-declarado{background:transparent;color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+.cob-conferir{background:var(--accent);color:var(--brand-ink);border-color:var(--brand-ink)}
 .cob-falta{background:var(--muted);color:var(--muted-fg);border-color:var(--border-strong)}
 td.nota{color:var(--muted-fg);font-size:.78rem}
 td.valor{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--fg);
@@ -102,6 +103,7 @@ td.vazio{font-family:var(--mono);font-size:.8rem;color:var(--border-strong);text
 .bar-cob .c-concedido{background:color-mix(in srgb,var(--ok) 42%,var(--muted))}
 .bar-cob .c-parcial{background:var(--warn)}
 .bar-cob .c-declarado{background:color-mix(in srgb,var(--warn) 42%,var(--muted))}
+.bar-cob .c-conferir{background:var(--brand)}
 .bar-cob .c-falta{background:var(--border-strong)}
 
 .legenda{display:grid;gap:.55rem;margin-top:1.3rem}
@@ -135,17 +137,20 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
   <div class="stats" style="margin-top:1.4rem;grid-template-columns:repeat(2,1fr)">
     <div class="stat"><b id="c-medido">0</b><span>Medido</span></div>
     <div class="stat"><b id="c-concedido">0</b><span>Concedido</span></div>
+    <div class="stat"><b id="c-conferir">0</b><span>A conferir</span></div>
     <div class="stat"><b id="c-parcial">0</b><span>Parcial</span></div>
     <div class="stat"><b id="c-declarado">0</b><span>Declarado</span></div>
     <div class="stat"><b id="c-falta">0</b><span>Falta</span></div>
-    <div class="stat"><b id="c-p0falta">0</b><span>P0 ainda sem fonte</span></div>
+    <div class="stat"><b id="c-p0conf">0</b><span>P0 presos em acesso não conferido</span></div>
   </div>
 
   <div class="legenda">
     <div><span class="tag-cob cob-medido">Medido</span>
       <span>Dado em mãos, versionado no repositório, com fonte rastreável e conferida.</span></div>
     <div><span class="tag-cob cob-concedido">Concedido</span>
-      <span>A fonte foi liberada, o dado é extraível e o trabalho de extrair é da V4. Não depende de novo pedido à OLX.</span></div>
+      <span>A fonte foi <b>aberta e testada</b>: ela respondeu. Falta só extrair, e isso é trabalho da V4.</span></div>
+    <div><span class="tag-cob cob-conferir">A conferir</span>
+      <span>O acesso foi <b>declarado concedido em 10/09 e nunca aberto na ferramenta</b>. Pode estar no nível errado, como já aconteceu duas vezes neste projeto.</span></div>
     <div><span class="tag-cob cob-parcial">Parcial</span>
       <span>Temos parte: série incompleta, ou o recorte errado, como mídia que mistura B2C e B2B.</span></div>
     <div><span class="tag-cob cob-declarado">Declarado</span>
@@ -155,29 +160,33 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
   </div>
 
   <div class="warnbox">
-    <h3>O pago declarado é 20 vezes maior que o pago medido</h3>
-    <p>O slide de fluxos apresentado em 28/08 declara a origem do contato como CRM 29% · Direto 36% ·
-      <b>Pago 16%</b> · Orgânico 5% · Outros 11%. O GA4 dos domínios <code>*.grupoolx.com.br</code>, sobre
-      987.566 sessões de jan/2025 a set/2026, mede <b>Pago 0,8%</b>. Vinte vezes menos, com R$ 10,12 milhões
-      de mídia rodando no período.</p>
-    <p style="margin-top:.6rem">As duas leituras não medem a mesma coisa, o slide fala de origem de contato
-      e o GA4 de sessão, mas a distância é grande demais para ser só isso. O próprio slide anota que campanha
-      paga para WhatsApp "entra tudo como Direto", e a auditoria de rastreamento achou o evento de compra no
-      gatilho errado. A hipótese mais simples é que o pago existe e não está sendo atribuído.</p>
+    <h3>23 indicadores estão presos num acesso que ninguém abriu</h3>
+    <p>O lote completo de acessos foi declarado entregue em <b>10/09</b>: Salesforce Marketing Cloud,
+      Search Console, o CRM comercial e mais. A conferência item a item, abrindo cada ferramenta,
+      <b>nunca foi feita</b>. Enquanto isso, <code>dados/acessos.json</code> ainda registra o Salesforce
+      como pendente e está parado em 01/09.</p>
+    <p style="margin-top:.6rem">Isso não é formalidade. Duas vezes neste projeto o acesso chegou e não
+      servia: o <b>GA4 veio em nível Leitor</b>, que não abre a configuração onde mora a causa, e o
+      <b>Meta veio com "nenhum ativo conectado"</b>. Por isso esses 23 saíram de Concedido e estão em
+      <b>A conferir</b>, e <b>18 deles são P0</b>. Vinte dependem do CRM comercial, que é a fonte de
+      quase todo o funil.</p>
+    <p style="margin-top:.6rem">Só três indicadores continuam em Concedido, os do GA4, porque a fonte foi
+      <b>aberta e testada em 14/09</b> e respondeu. O Meta também se confirmou sozinho: passou a ingerir
+      no V4MOS em 12/09, e é de lá que vêm os números de mídia desta página.</p>
   </div>
 
   <div class="card tpl">
     <p style="font-size:.88rem;margin-bottom:.7rem"><b>Por que 26 indicadores têm número e 52 não.</b></p>
-    <p style="font-size:.86rem;color:var(--muted-fg)">Os <b>9 em Medido</b> saíram do GA4 e do V4MOS hoje, e
-      são reproduzíveis. Os <b>14 em Parcial</b> têm número, mas o número ainda não é do recorte contratado:
-      a mídia não separa B2B de B2C, e o Google tem seis meses ausentes na série. Os <b>4 em Declarado</b> têm
-      número dito em reunião, sem lastro. Os <b>26 em Concedido</b> não têm número porque a fonte foi liberada
-      em 10/09 e ninguém extraiu ainda: é fila de trabalho da V4, não pedido à OLX. Os <b>25 em Falta</b> são
-      os que dependem da OLX, e <b>18 deles são P0</b>.</p>
+    <p style="font-size:.86rem;color:var(--muted-fg)">Os <b>9 em Medido</b> saíram do GA4 e do V4MOS, e são
+      reproduzíveis. Os <b>14 em Parcial</b> têm número, mas ele ainda não é do recorte contratado: a mídia
+      não separa B2B de B2C, e o Google tem seis meses ausentes na série. Os <b>4 em Declarado</b> têm número
+      dito em reunião, sem lastro. Os <b>23 em A conferir</b> e os <b>25 em Falta</b> não têm número, e a
+      diferença entre os dois é quem resolve: o primeiro grupo precisa de alguém abrindo a ferramenta, o
+      segundo precisa da OLX entregar dado que não existe em ferramenta nenhuma.</p>
     <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.7rem">Para a planilha de metas, o bloqueio
-      está concentrado: <b>ticket médio de entrada</b>, <b>base ativa de anunciantes</b>, <b>contratos novos
-      por mês</b> e a separação entre <b>churn de logo e de receita</b>. Sem esses quatro, o funil não vira
-      receita e a meta não tem régua.</p>
+      está concentrado em quatro: <b>ticket médio de entrada</b>, <b>base ativa de anunciantes</b>,
+      <b>contratos novos por mês</b> e a separação entre <b>churn de logo e de receita</b>. Os três primeiros
+      podem sair do CRM, se o acesso de 10/09 for real. O quarto exige a OLX responder.</p>
   </div>
 </section>
 
@@ -337,8 +346,8 @@ const MACRO = {};
 M.forEach(r => { MACRO[r[0]] = r[1]; });
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-const COB = [["medido","Medido"],["concedido","Concedido"],["parcial","Parcial"],
-              ["declarado","Declarado"],["falta","Falta"]];
+const COB = [["medido","Medido"],["concedido","Concedido"],["conferir","A conferir"],
+              ["parcial","Parcial"],["declarado","Declarado"],["falta","Falta"]];
 const COBLAB = {}; COB.forEach(([k, v]) => { COBLAB[k] = v; });
 
 const fp = new Set(), ft = new Set(), fc = new Set();
@@ -454,8 +463,8 @@ resumo.appendChild(tr);
 COB.forEach(([k]) => {
   document.getElementById("c-" + k).textContent = M.filter(r => r[8] === k).length;
 });
-document.getElementById("c-p0falta").textContent =
-  M.filter(r => r[6] === "P0" && r[8] === "falta").length;
+document.getElementById("c-p0conf").textContent =
+  M.filter(r => r[6] === "P0" && r[8] === "conferir").length;
 
 document.getElementById("s-tot").textContent = tot;
 document.getElementById("s-p0").textContent = g0;

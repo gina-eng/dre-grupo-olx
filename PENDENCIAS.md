@@ -589,6 +589,37 @@ entrega de dado e segue sem nenhum item recebido. Nenhuma concessão de ferramen
 ele não há mapeamento do fluxo de receita nem matemática de forecast, com ou sem os nove
 diagnósticos fechados.
 
+### Atualização de 14/09: o resíduo agora tem tamanho, e ele é grande
+
+A conferência **continua sem ser feita**, quatro dias depois. O custo disso deixou de ser hipotético
+quando a aba de Métricas do portal passou a marcar cobertura indicador a indicador:
+
+| | |
+|---|---|
+| Indicadores presos em acesso declarado e não conferido | **23** |
+| Destes, **P0** (bloqueiam o Comitê 1) | **18** |
+| Quantos dependem só do **CRM comercial** | **20** |
+
+Os outros três se dividem entre Salesforce Marketing Cloud (2) e Search Console (1).
+
+**O que está verificado, e só isso:** o **GA4** respondeu pela API em 14/09 e entregou 987.566 sessões
+nos domínios `*.grupoolx.com.br`; o **Meta** se confirmou sozinho ao passar a ingerir no V4MOS em
+12/09, com 90 campanhas e R$ 7,38 mi. Nenhuma outra ferramenta do lote de 10/09 foi aberta.
+
+**Agravante prático:** não há conector de Salesforce, de Search Console nem do CRM comercial neste
+ambiente. Não dá para testar por API como se fez com GA4 e Meta. A conferência exige **abrir a
+ferramenta na interface**, ou pedir export.
+
+**Por que isso trava a planilha de metas:** dos quatro dados que faltam para o forecast, três saem do
+CRM (ticket médio de entrada, base ativa de anunciantes, contratos novos por mês). Se o acesso de
+10/09 for real, os três saem sem pedir nada à OLX. Se não for, eles viram pedido, e o pedido tem
+prazo de resposta que a janela até 18/09 não comporta.
+
+**Ação:** abrir CRM comercial, Salesforce Marketing Cloud e Search Console, **nesta ordem**, e
+registrar o nível de permissão de cada um em `dados/acessos.json`, que segue parado em 01/09 com o
+Salesforce marcado como pendente. O que estiver em nível insuficiente escala no mesmo dia.
+**Responsável:** operador + Michelle Morais · **Prazo:** 15/09, antes do meio do sprint
+
 **Responsável:** operador + Michelle Morais · **Prazo:** conferência em 10/09, escalada no mesmo dia
 
 ---
@@ -867,6 +898,168 @@ contaminar o modelo de recomendação dos dois portais.
 É uma tela do console e não depende da V4.
 **Responsável:** Operador V4 junto ao time de dados da OLX · **Prazo:** sem urgência de comitê,
 mas antes do fim do Ciclo 1
+
+---
+
+## 🔴 30. Cinco meses sem jornada de ciclo de vida, e o tamanho disso não está medido
+
+Achado 1 da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md), levantado nas sessões de
+CRM de 09 e 10/09.
+
+A migração para o Campana desligou as jornadas de ciclo de vida para **todo cliente novo**: Autos
+desde abril, Imóveis desde julho. Quem entrou no ambiente novo não recebeu onboarding, educacional,
+retenção preventiva, upsell nem recuperação. Só transacional e billing, que são de outros times.
+
+> **Michelle Morais**, 09/09 (00:26:09): *"a gente tá desde março, desde abril até agora, sem
+> conversar dentro de um ciclo de vida com esse cliente de autos."*
+
+**Por que é pendência e não só achado.** O achado é estrutural e já está registrado. O que falta é
+**tamanho**, e sem ele não dá para ordenar a trava nem alimentar o forecast:
+
+| O que pedir | Por quê |
+|---|---|
+| Nº de clientes novos no Campana, por vertical e por mês, desde abril | É o denominador da coorte afetada |
+| Churn dessa coorte contra o da coorte imediatamente anterior, mesma janela de vida | É a medida do que a parada custou |
+| Receita da coorte, para converter a diferença em reais | Sem isso o achado não entra em forecast |
+
+A OLX tem o dado: o funil B2B com MQL, SQL e vendas, por vertical e por período, existe no Looker
+sobre BigQuery (28/08 e 10/09, 01:02:16). É extração, não construção.
+
+**Cuidado de leitura:** a comparação de coortes vai carregar o efeito da própria migração, não só o
+da ausência de CRM. Pedir junto qualquer outra mudança de preço, produto ou política comercial na
+janela, senão a diferença vira causa única por descuido.
+
+**Ação:** pedir as três linhas acima no grupo do projeto, junto com o link do dashboard.
+**Responsável:** Operador V4 + Michelle Morais · **Prazo:** antes do fechamento de (i), **17/09**
+
+---
+
+## 🔴 31. A saída da Blip não está decidida, e 100% da aquisição de CRM depende dela
+
+Achado 4 da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md).
+
+Duas pessoas da OLX, na mesma sala, em 09/09:
+
+| Quem | Posição |
+|---|---|
+| Eduardo Santos, dono técnico de Sales e Service Cloud | *"teoricamente a BP vai morrer"* · *"a gente tem um down time muito grande com eles"* · **"não funciona"** · a Blip nem foi convidada para o bid de disparo de WhatsApp |
+| Mirella Mendonça, marketing | *"pelo que eu entendi hoje na reunião, isso não está pacificado de que Blip vai morrer"* |
+
+Enquanto a decisão não sai, o time de CRM investe horas em **integrar ao Marketing Cloud a
+ferramenta que o time técnico quer desligar**, e há agenda marcada para isso. Substituição prevista
+para o **Q1**, com a discussão comercial ainda por acontecer.
+
+**Por que isso é da V4 e não só da OLX:** a Blip é o gargalo declarado de três coisas ao mesmo
+tempo, automação de disparo, tag de campanha e atribuição de CRM. Qualquer injeção que passe por
+CRM esbarra nela, e a Árvore de Pré-Requisitos precisa saber se a ferramenta fica ou sai antes de
+desenhar o obstáculo.
+
+**Ação:** pedir a posição formal, uma frase, no grupo do projeto: a Blip fica como broker de
+disparo ou é substituída, e com que data. Não é a V4 que decide, mas é a V4 que precisa registrar.
+**Responsável:** Eduardo Santos, via operador · **Prazo:** antes do Comitê 1, **23/09**
+
+---
+
+## 🟠 32. O material de CRM foi apresentado em tela e não chegou
+
+Quatro entregas foram prometidas em 09 e 10/09 e, até **14/09**, nenhuma chegou:
+
+| # | O que | DRI declarado |
+|---|---|---|
+| 1 | Acesso ao **Miro** com o mapeamento de todas as jornadas, B2B e B2C | Michelle Morais |
+| 2 | Planilha de **links, logins e acessos** a dashboards e plataformas internas | Michelle Morais |
+| 3 | Link do dashboard do **Looker** com resultados de canais de marketing e CRM | Michelle Morais |
+| 4 | Link do dashboard de **CRM offline**, que teve um bug corrigido em 09/09 | Michelle Morais |
+
+Somam-se os **slides** apresentados nas duas sessões (fluxo de disparo, comparativo DEX legado vs.
+Campana, plano de migração de jornadas), que não foram enviados.
+
+**Consequência prática:** o mapa de 15 jornadas da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md)
+foi reconstruído a partir de uma tela compartilhada. Ele serve para o diagnóstico e **não serve
+como fonte citável** em comitê enquanto o Miro não chegar. É o mesmo problema do slide FLUXOS
+([pendência 20](#-20-o-slide-fluxos-não-está-versionado-e-todo-o-mix-de-canais-depende-dele)), e já
+é a segunda vez.
+
+**Ação:** cobrar as quatro no grupo, em uma mensagem só, com o pedido do bloco A junto.
+**Responsável:** Operador V4 + Michelle Morais · **Prazo:** **17/09**, para entrar em (i)
+
+---
+
+## 🟠 33. A base pessoal trafega em planilha até a Blip, e a perda na higienização não tem número
+
+Achados 5 e 6 da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md). São dois problemas
+com a mesma origem: não há integração entre o Marketing Cloud e a Blip.
+
+**Parte 1, a exposição.** O ciclo de cada disparo é extrair a base, tratar, quebrar por volume
+diário, exportar e subir à mão. Quem levantou o risco foi a própria OLX:
+
+> **Mirella Mendonça**, 09/09 (00:48:35): *"o item quatro, cinco, o sete e o oito [...] são super
+> críticos porque envolve LGPD, envolve inúmeros outros riscos aqui pra gente."*
+
+A V4 registra porque o desenho da injeção depende disso, **não porque o achado seja nosso**, e não
+opina sobre conformidade. É o segundo registro de dado pessoal fora de ambiente controlado neste
+projeto, depois do [achado 26 da auditoria (vii)](02-diagnostico/auditoria-vii-rastreamento.md),
+que manda e-mail, telefone, CEP e gênero ao GA4 como propriedade de usuário.
+
+**Parte 2, o número que não existe.** Rafael Corazza perguntou o tamanho da perda na higienização e
+a resposta veio pela metade: **CEP ausente em mais de 50%** `[E]`, e o percentual de correção de
+nome ninguém lembrou. Sem esse número, não dá para dizer quanto da base elegível é perdida por
+qualidade de dado, que é justamente o que separa um problema de **volume** de um problema de
+**cadastro**.
+
+E há uma contradição a resolver junto: Michelle trata o CEP como campo mandatório da qualificação
+do bot, Juliana Arndt diz que dá para disparar sem ele, o fluxo só demora mais (10/09, 00:09:23).
+As duas leituras produzem bases elegíveis de tamanhos diferentes.
+
+**Ação:** pedir a Evelyn Milare o antes e depois da automação de higienização, em número de
+registros, por vertical. E fechar, numa frase, se o CEP é bloqueio ou atrito.
+**Responsável:** Operador V4 + Evelyn Milare · **Prazo:** **17/09**
+
+---
+
+## 🟡 34. Duas datas para a ativação do onboarding de Imóveis
+
+A primeira, e até agora única, jornada de ciclo de vida religada no ambiente novo tem duas datas na
+mesma fonte:
+
+| Onde | Data |
+|---|---|
+| Resumo automático do Gemini, 10/09 | *"o onboarding ativado em **31 de maio**"* |
+| Transcrição, 10/09 (00:26:49) | *"foi essa aqui que aconteceu agora no **dia 31**"* |
+| Transcrição, 10/09 (00:41:27) | Evelyn Milare: *"a gente ativou semana passada, se não me engano. Retrasada. É bem novinha"* |
+
+As três não fecham. "Semana retrasada" a partir de 10/09 cai na semana de 24 a 30/08, o que aponta
+para **31/08**, e 31/05 seria incompatível com "bem novinha" e com a migração de Imóveis ter
+começado em julho. **A leitura provável é 31/08**, e leitura provável não entra em documento de
+cliente.
+
+**Por que importa:** é a data que marca o fim da janela sem onboarding em Imóveis. Três meses de
+diferença mudam o tamanho da coorte da [pendência 30](#-30-cinco-meses-sem-jornada-de-ciclo-de-vida-e-o-tamanho-disso-não-está-medido).
+
+**Ação:** confirmar a data com Michelle Morais. Pergunta de uma linha.
+**Responsável:** Operador V4 · **Prazo:** **17/09**
+
+---
+
+## 🟡 35. A Meta encarece o WhatsApp em outubro, e é o único canal de aquisição de CRM que restou
+
+Achado 9 da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md).
+
+> **Michelle Morais**, 10/09 (00:14:04): *"o e-mail hoje tá esquecido, a gente não faz mais nenhum
+> tipo de disparo de e-mail para aquisição"* · *"a gente tem uma regra nova que a meta tá
+> implantando até outubro, que deve encarecer a forma de cobrança que os disparos de WhatsApp vão
+> passar a ter."*
+
+O canal de custo marginal quase zero saiu na migração, e ficou só o canal pago, prestes a ficar mais
+caro, carregando 99% a 100% da aquisição de CRM.
+
+**O que não se sabe:** quanto a OLX gasta hoje em disparo de WhatsApp, e qual o impacto da nova
+regra sobre esse gasto. Sem os dois, não dá para dizer se isto é ajuste de rodapé ou alavanca de
+margem, e a meta do projeto é **margem**.
+
+**Ação:** pedir o custo mensal de disparo de WhatsApp dos últimos 12 meses e a estimativa de
+impacto que a OLX já tenha feito. Se não houver estimativa, isso é achado, não lacuna.
+**Responsável:** Operador V4 + Michelle Morais · **Prazo:** antes do Comitê 1, **23/09**
 
 ---
 
