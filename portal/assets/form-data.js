@@ -24,11 +24,11 @@ const BLOCOS = [
  {q:"Como a receita é gerada?", h:"Assinatura de plano, destaque/impulsionamento, lead pago, take rate, mídia/publicidade, serviços. Listar todas as linhas.", t:"L", f:"Fluxo de Receita", c:1, v:"e"},
  {q:"Receita dos últimos 24 meses, aberta por unidade, segmento e linha de receita", h:"Bloco A1. Insumo matemático do Forecast.", t:"L", f:"Forecast", c:1, v:"p"},
  {q:"MRR e ARR atuais, se o modelo é de assinatura", t:"t", f:"Retenção", v:"p"},
- {q:"Ticket médio por segmento de cliente", t:"L", f:"Forecast", c:1, v:"p"},
+ {q:"Ticket médio por segmento de cliente", h:"JÁ TEMOS EM PARTE (Inside Sales, 28/08): ticket de ENTRADA de R$ 707 em Real Estate e R$ 602 em Autos, o ARPU das células hunter; ARPU de CARTEIRA de R$ 1.175 e R$ 858. Falta a abertura por segmento (PP, P, M, G).", t:"L", f:"Forecast", c:1, v:"e"},
  {q:"Ciclo de venda médio, por segmento", t:"L", f:"Forecast", c:1, v:"p"},
  {q:"Base de anunciantes ativos hoje; entradas e saídas por mês", t:"L", f:"Retenção", c:1, v:"p"},
  {q:"CAC por canal: existe cálculo? Quem o mantém?", h:"Se não existe, é sintoma de Trava de Cegueira e vira achado do Ciclo 1.", t:"L", f:"Unit Economics", c:1, v:"e"},
- {q:"LTV, payback e margem de contribuição por anunciante", t:"L", f:"Unit Economics", v:"p"},
+ {q:"LTV, payback e margem de contribuição por anunciante", h:"A margem de 100% declarada no kick-off é aritmeticamente impossível: só o imposto sobre receita consome 14,25% no pior cenário (PIS/COFINS 9,25% + ISS SP até 5%), o que põe o TETO em 85,75%. Perguntar o P&L por vertical, não a margem.", t:"L", f:"Unit Economics", c:1, v:"e"},
  {q:"Sazonalidade: quais meses puxam e quais derrubam, e por quê?", t:"L", f:"Forecast", v:"p"},
  {q:"Qual a meta de receita dos próximos 12 meses e de onde ela veio?", h:"Meta herdada do board ou construída da matemática do sistema? Muda a conversa do Comitê 1.", t:"L", f:"Forecast", c:1, v:"e"},
  {q:"Qual a maior mudança estrutural dos últimos 24 meses?", h:"Fusão, novo produto, mudança de pricing, entrada de concorrente. Explica quebras na série histórica.", t:"L", f:"Fluxo de Receita", v:"e"}
@@ -50,8 +50,8 @@ const BLOCOS = [
 ]},
 {n:"04", t:"Funil e operação comercial", d:"Da geração de demanda ao pagamento e à renovação. Aqui moram as travas de Qualificação, Compromisso e Decisão.", tempo:"25 min", qs:[
  {q:"Desenhe o funil ponta a ponta, etapa por etapa, com o nome que vocês usam internamente", h:"Um funil que o cliente não reconhece não serve para conduzir comitê.", t:"L", f:"Fluxo de Receita", c:1, v:"e"},
- {q:"Volumes e taxas de conversão por etapa, últimos 12–24 meses", h:"Bloco A2.", t:"L", f:"Fluxo de Receita", c:1, v:"p"},
- {q:"Estrutura do time comercial: quantos SDRs, closers, farmers, CS; a quem reportam", h:"Bloco A4.", t:"L", f:"Pré-vendas", v:"p"},
+ {q:"Volumes e taxas de conversão por etapa, últimos 12–24 meses", h:"JÁ TEMOS EM PARTE (Inside Sales, 28/08): abr a jul/26, etapas Lead B2B → Abordagem → Negociação → Venda, por vertical e por papel. Em jul/26: 3.132 leads e 720 vendas, conversão de 23%. FALTA: são 4 meses, não 12 a 24, e cobrem só Inside Sales (39% da receita de RE, 17% de Autos). PERGUNTAR: julho fechou? O funil caiu 39% nele.", t:"L", f:"Fluxo de Receita", c:1, v:"e"},
+ {q:"Estrutura do time comercial: quantos SDRs, closers, farmers, CS; a quem reportam", h:"JÁ TEMOS EM PARTE (Inside Sales, 28/08): 101 HCs, 74 em RE e 27 em Autos, divididos em HUNTER (aquisição, foco PP/P/M) e FARMER (rentabilização e retenção, foco P/M), com 1 célula hunter e 5 farmer por vertical. Falta Marketing e Pré-vendas.", t:"L", f:"Pré-vendas", c:1, v:"e"},
  {q:"Metas e modelo de comissionamento por papel", h:"O comissionamento explica o comportamento do funil melhor que o processo escrito.", t:"L", f:"Pré-vendas", c:1, v:"e"},
  {q:"Qual CRM? Qual a fonte de verdade do pipeline?", t:"t", f:"Pré-vendas", c:1, v:"p"},
  {q:"Quais são os estágios do pipeline e a definição objetiva de cada um?", h:"Definição objetiva = o que precisa ser verdade para o negócio avançar.", t:"L", f:"Pré-vendas", c:1, v:"e"},
@@ -120,14 +120,14 @@ const BLOCOS = [
 ];
 
 const BLOCOS_DADOS = [
- {id:"A", nome:"Visão de negócio e Fluxo de Receita", prio:1, itens:"Receita 24m por linha · funil 12–24m · ticket, ciclo e CAC · organograma de Mkt/Pré-vendas/Vendas · OKRs e metas · ICP atual", alim:"Fluxo de Receita e Forecast"},
+ {id:"A", nome:"Visão de negócio e Fluxo de Receita", prio:1, itens:"RECEBIDO EM PARTE, lido em 14/09 · A1 receita 19 meses ✔ · A2 funil 4 meses, só Inside Sales · A3 ticket de entrada R$ 707 e R$ 602, CAC ainda não · A4 101 HCs ✔ · A5 OKRs sem número absoluto · A6 portes PP/P/M/G", alim:"Fluxo de Receita e Forecast"},
  {id:"B", nome:"CRM Marketing (Salesforce Marketing Cloud)", prio:0, itens:"Jornadas ativas · bases e segmentações · métricas de e-mail · integrações", alim:"Diagnóstico (i) · Interesse e Retenção"},
  {id:"C", nome:"Ambientes CRO/SEO (domínios B2B)", prio:0, itens:"Domínios · acesso ao CMS · Search Console · mapa de páginas", alim:"Diagnóstico (ii) · Exposição e Interesse"},
  {id:"D", nome:"GEO: IA e Buscas Generativas", prio:0, itens:"Presença em respostas de IA · termos monitorados (se houver)", alim:"Diagnóstico (iii) · Exposição e Atenção"},
  {id:"E", nome:"Criativos Ads & Mensagens", prio:0, itens:"Biblioteca de criativos · mensagens por segmento · histórico de testes", alim:"Diagnóstico (iv) · Atenção"},
  {id:"F", nome:"Redes Sociais e Conteúdo Orgânico", prio:0, itens:"Perfis B2B · calendário · métricas orgânicas 12m", alim:"Diagnóstico (v) · Exposição e Atenção"},
- {id:"G", nome:"Mídia Paga (Google e Meta)", prio:1, itens:"Acesso às contas · investimento e performance 12m por campanha", alim:"Diagnóstico (vi) · Exposição, Atenção e Qualificação"},
- {id:"H", nome:"Rastreamento Completo (GA4 e GTM)", prio:1, itens:"Acesso GA4 e GTM · data layer · eventos e conversões configuradas", alim:"Diagnóstico (vii) · Cegueira"},
+ {id:"G", nome:"Mídia Paga (Google e Meta)", prio:1, itens:"Meta ENTROU em 12/09 · 90 campanhas, 1.079 anúncios, R$ 7,38 mi (piso, falta a lista de contas do portfólio) · Google 23 campanhas, R$ 2,75 mi, com buraco de nov/25 a abr/26", alim:"Diagnóstico (vi) · Exposição, Atenção e Qualificação"},
+ {id:"H", nome:"Rastreamento Completo (GA4 e GTM)", prio:1, itens:"GA4 e GTM conferidos por API em 14/09 · GA4 em nível Leitor, 26 propriedades · GTM devolve 403, sem escopo na credencial · setembro repete agosto: nenhum evento de lead, cliente ou receita", alim:"Diagnóstico (vii) · Cegueira"},
  {id:"I", nome:"Páginas de Captura e Fluxos de Conversão", prio:0, itens:"LPs ativas · formulários · fluxos pós-conversão", alim:"Diagnóstico (viii) · Interesse e Compromisso"},
  {id:"J", nome:"Pré-Vendas, Qualificação e Sales Engagement", prio:1, itens:"CRM · cadências · scripts · gravações · motivos de perda", alim:"Diagnóstico (ix) · Qualificação, Compromisso e Decisão"}
 ];

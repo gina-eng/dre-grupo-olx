@@ -8,7 +8,7 @@
   "ciclo_atual": 1,
   "fase_atual": "Identificar",
   "semana_corrente": 3,
-  "version": 33,
+  "version": 34,
   "atualizado_em": "2026-09-14",
   "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
  },
@@ -2795,6 +2795,11 @@
    "data": "2026-09-14",
    "version": 33,
    "evento": "MARGEM DE CONTRIBUICAO DE 100% E ARITMETICAMENTE IMPOSSIVEL, e agora tem numero. O cliente declarou no kick-off margem bruta perto de 100% citando midia e IMPOSTO como os dois unicos ofensores; a midia ja estava medida (R$ 10,12 mi em 21 meses) e o imposto nunca tinha sido quantificado. Levantamento sobre o CNPJ 13.673.743/0004-17, BOM NEGOCIO ATIVIDADES DE INTERNET LTDA, filial em Sao Paulo capital, Av. Paulista 1106, ativa desde 2014, capital social R$ 2,22 bi, CNAE principal 6319-4/00. Receita do grupo de R$ 1,156 bi em 2025 torna o LUCRO REAL obrigatorio e com ele o PIS/COFINS nao cumulativo. SOBRE A RECEITA, que e o que sai da margem de contribuicao: PIS 1,65% mais COFINS 7,6% igual a 9,25%, mais ISS de Sao Paulo entre 2,9% (TI, Lei 16.757/17) e 5% (regra geral, Lei 13.701/03 art. 16). PIOR CENARIO 14,25%, o que poe o TETO DA MARGEM DE CONTRIBUICAO EM 85,75%. Credito de PIS/COFINS nao salva porque FOLHA NAO GERA CREDITO e num negocio digital a folha e o maior custo. IMPACTO: sobre o run-rate de 2026 o imposto e de R$ 14,79 mi/mes no grupo e R$ 6,10 mi/mes em Classifieds - B&A, ou R$ 177,5 mi e R$ 73,2 mi ao ano de superestimativa. A REGUA DO PROJETO MUDA: 1 p.p. de run-rate em Classifieds - B&A vinha sendo citado como R$ 428 mil/mes; em truput vale R$ 367 mil, e os R$ 61 mil de diferenca sao imposto. REFORMA TRIBUTARIA DENTRO DO CONTRATO: em 2027 PIS/COFINS sao extintos e a CBS entra cheia, estimada em 9,43%, quase neutra; o risco esta em 2033, quando o CGIBS estima 27,91% para IBS mais CBS e o teto da margem cai para 72,09%. IRPJ 15% mais adicional de 10% e CSLL 9%, somando 34%, NAO entram na margem de contribuicao. RECOMENDACAO REGISTRADA: parar de usar 100% e adotar 85% como premissa marcada [E] ate o P&L por vertical chegar, item 4 do mapa de numeros, DRI Matheus Rodrigues, vencido em 09/09. Entregaveis: 02-diagnostico/carga-tributaria-e-margem.md e dados/outputs/carga-tributaria.json."
+  },
+  {
+   "data": "2026-09-14",
+   "version": 34,
+   "evento": "PROPAGACAO DOS ACHADOS DE 14/09 PARA O PORTAL INTEIRO. Tudo o que a sessao produziu foi levado para as abas que dependiam disso. (1) DIAGNOSTICOS, bloco 'Os sete numeros que decidem o Comite 1': QUATRO dos sete sairam do zero, todos respondidos pela Estrutura Comercial Inside Sales que estava conosco desde 28/08. Ticket de entrada, base ativa, contratos novos por mes e metas 2026 passam a 'respondido em parte', com o numero e o que ainda falta em cada um; o P&L ganha o selo 'teto estimado' com os 85,75%. Entraram tres molduras novas: a regua recalibrada (1 p.p. de run-rate vale R$ 367 mil em truput, nao R$ 428 mil de receita), o mergulho de julho com as duas hipoteses, e a atualizacao dos acessos com a dependencia do MyApps. (2) METRICAS: 18 notas refinadas com a conferencia de 14/09, e o investimento em midia passa a dizer que R$ 7,38 mi do Meta e PISO e nao total, porque a lista de contas do portfolio nunca veio. Placar em 9 medido, 3 concedido, 17 a conferir, 15 parcial, 15 declarado e 19 em falta, com 38 dos 78 tendo numero. (3) KICK-OFF: quatro perguntas sairam de pendente para evidencia existente, com a resposta no proprio hint (ticket medio, margem de contribuicao, estrutura do time e volumes do funil), e os blocos de dados A, G e H passaram a mostrar o estado real em vez do pedido original. Nada foi tocado nas contagens de diagnostico da sessao paralela."
   }
  ],
  "connectors": {
