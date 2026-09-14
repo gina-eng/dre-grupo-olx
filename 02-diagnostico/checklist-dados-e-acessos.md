@@ -46,11 +46,11 @@ evidência de abertura**, e é por isso que a maior parte da tabela continua com
 | # | Item | Status | Obs. |
 |---|---|---|---|
 | A1 | Receita mensal dos últimos **24 meses**, aberta por linha de negócio / segmento / produto | 🟡 | **Recebido em 28/08.** 20 meses (jan/25 a jul/26) contra 24, 39 linhas sobre 4 unidades. Falta 2024. [Leitura](serie-de-receita-2025-2026.md) |
-| A2 | Funil comercial completo (volumes e taxas de conversão por etapa), últimos **12–24 meses** | ⚪ | |
-| A3 | Ticket médio, ciclo de vendas e CAC por canal (se disponível) | ⚪ | |
-| A4 | Estrutura organizacional de Marketing, Pré-Vendas e Vendas (organograma e responsabilidades) | ⚪ | |
-| A5 | Planejamento estratégico / OKRs vigentes e metas comerciais | ⚪ | |
-| A6 | Definição atual de ICP e segmentação de mercado | ⚪ | |
+| A2 | Funil comercial completo (volumes e taxas de conversão por etapa), últimos **12–24 meses** | 🟡 | **Recebido em 28/08, versionado em 14/09.** 4 meses (abr a jul/26) contra 12–24, e só Inside Sales, que cobre 39% da receita de RE e 17% de Autos. [Leitura](estrutura-comercial-inside-sales.md) |
+| A3 | Ticket médio, ciclo de vendas e CAC por canal (se disponível) | 🟡 | Ticket de entrada (R$ 707 RE, R$ 602 Autos) e lead time (1,2 a 2,4 dias) recebidos. **CAC por canal continua ausente.** [Leitura](estrutura-comercial-inside-sales.md) |
+| A4 | Estrutura organizacional de Marketing, Pré-Vendas e Vendas (organograma e responsabilidades) | 🟡 | 101 HCs de Inside Sales por célula e papel (hunter e farmer). Falta Marketing e Pré-Vendas. [Leitura](estrutura-comercial-inside-sales.md) |
+| A5 | Planejamento estratégico / OKRs vigentes e metas comerciais | 🟡 | Mapa Estratégico 2026 e mapa de OKRs com % de atingimento por vertical. **Sem meta comercial em número absoluto.** [Leitura](estrutura-comercial-inside-sales.md) |
+| A6 | Definição atual de ICP e segmentação de mercado | 🟡 | Segmentação por porte operada de fato: RE usa PP (<25), P (25–80), M (80–600), G (650+); Autos usa P (<10), M (11–50), G (50+). Não é ICP, é corte de carteira. [Leitura](estrutura-comercial-inside-sales.md) |
 
 > A1–A3 são os insumos **matemáticos** do Forecast. Sem eles, o funil não valida contra o
 > faturamento declarado e o forecast não pode ser construído.
@@ -58,8 +58,17 @@ evidência de abertura**, e é por isso que a maior parte da tabela continua com
 > **A1 saiu de ⚪ em 08/09**, com a série de receita 2025–2026 recebida em 28/08. É o primeiro
 > denominador auditável do projeto: a soma das unidades bate com o TOTAL nos 19 meses fechados.
 > Com ele, um ponto percentual de run-rate deixou de ser abstração e virou R$ 428 mil por mês na
-> linha `Classifieds - B&A`. **A2 e A3 continuam sendo o bloqueio**: sem volume por etapa, o fluxo
-> não reconcilia contra o faturamento e a regra 8 do repositório não pode ser verificada.
+> linha `Classifieds - B&A`.
+
+> 🔴 **O bloco A inteiro saiu de ⚪ em 14/09, e o material estava conosco desde 28/08.** A apresentação
+> Estrutura Comercial Inside Sales chegou no mesmo dia que a série A1, ficou na pasta de Downloads do
+> operador e nunca foi versionada nem lida. Ela fecha A2 e A3 em nível parcial, mais A4, A5 e A6.
+> **A lição operacional é a mesma da pendência 18:** material recebido que ninguém abre vale zero, e o
+> projeto passou 17 dias tratando como bloqueio uma coisa que já tinha.
+
+> **O que A2 ainda não resolve:** são 4 meses contra os 12–24 pedidos, e cobrem só a operação de Inside
+> Sales, que responde por 39% da receita de Real Estate e 17% de Autos. Para o forecast falta série
+> longa, movimento mensal de base (entrada e saída) e CAC.
 
 ## B. CRM Marketing
 *Alimenta o diagnóstico (i), Salesforce Marketing Cloud.*

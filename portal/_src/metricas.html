@@ -160,33 +160,35 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
   </div>
 
   <div class="warnbox">
-    <h3>23 indicadores estão presos num acesso que ninguém abriu</h3>
-    <p>O lote completo de acessos foi declarado entregue em <b>10/09</b>: Salesforce Marketing Cloud,
-      Search Console, o CRM comercial e mais. A conferência item a item, abrindo cada ferramenta,
-      <b>nunca foi feita</b>. Enquanto isso, <code>dados/acessos.json</code> ainda registra o Salesforce
-      como pendente e está parado em 01/09.</p>
-    <p style="margin-top:.6rem">Isso não é formalidade. Duas vezes neste projeto o acesso chegou e não
-      servia: o <b>GA4 veio em nível Leitor</b>, que não abre a configuração onde mora a causa, e o
-      <b>Meta veio com "nenhum ativo conectado"</b>. Por isso esses 23 saíram de Concedido e estão em
-      <b>A conferir</b>, e <b>18 deles são P0</b>. Vinte dependem do CRM comercial, que é a fonte de
-      quase todo o funil.</p>
-    <p style="margin-top:.6rem">Só três indicadores continuam em Concedido, os do GA4, porque a fonte foi
-      <b>aberta e testada em 14/09</b> e respondeu. O Meta também se confirmou sozinho: passou a ingerir
-      no V4MOS em 12/09, e é de lá que vêm os números de mídia desta página.</p>
+    <h3>O funil B2B caiu 39% em julho, e a causa provável já tem nome</h3>
+    <p>A apresentação <b>Estrutura Comercial Inside Sales</b>, entregue pelo Grupo OLX em 28/08, traz o
+      funil de abril a julho de 2026. Entre junho e julho os leads B2B caem de 4.109 para 3.132
+      (<b>-23,8%</b>) e as vendas de 1.177 para 720 (<b>-38,8%</b>). Em Real Estate farmer a queda chega
+      a <b>-61,1%</b> em vendas, com a taxa de abordagem caindo de 90% para 59%.</p>
+    <p style="margin-top:.6rem">Pode ser mês incompleto. Mas dois indícios apontam para quebra real: a
+      auditoria de CRM achou que a migração para o Campana <b>desligou as jornadas de ciclo de vida de
+      todo cliente novo em Imóveis desde julho</b>, exatamente a vertical e o mês; e <b>Autos hunter
+      recebeu 74% mais lead em julho</b> enquanto a abordagem caía de 100% para 58%, e mês incompleto
+      derruba volume, não faz o volume subir. Resolver pede uma coisa só: julho e agosto fechados.</p>
   </div>
 
   <div class="card tpl">
-    <p style="font-size:.88rem;margin-bottom:.7rem"><b>Por que 26 indicadores têm número e 52 não.</b></p>
-    <p style="font-size:.86rem;color:var(--muted-fg)">Os <b>9 em Medido</b> saíram do GA4 e do V4MOS, e são
-      reproduzíveis. Os <b>14 em Parcial</b> têm número, mas ele ainda não é do recorte contratado: a mídia
-      não separa B2B de B2C, e o Google tem seis meses ausentes na série. Os <b>4 em Declarado</b> têm número
-      dito em reunião, sem lastro. Os <b>23 em A conferir</b> e os <b>25 em Falta</b> não têm número, e a
-      diferença entre os dois é quem resolve: o primeiro grupo precisa de alguém abrindo a ferramenta, o
-      segundo precisa da OLX entregar dado que não existe em ferramenta nenhuma.</p>
-    <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.7rem">Para a planilha de metas, o bloqueio
-      está concentrado em quatro: <b>ticket médio de entrada</b>, <b>base ativa de anunciantes</b>,
-      <b>contratos novos por mês</b> e a separação entre <b>churn de logo e de receita</b>. Os três primeiros
-      podem sair do CRM, se o acesso de 10/09 for real. O quarto exige a OLX responder.</p>
+    <p style="font-size:.88rem;margin-bottom:.7rem"><b>Os dois bloqueios da planilha de metas caíram
+      hoje, com material de 28/08.</b></p>
+    <p style="font-size:.86rem;color:var(--muted-fg)"><b>Ticket médio de entrada:</b> R$ 707 em Real
+      Estate e R$ 602 em Autos, que é o ARPU das células de aquisição. Contra o ARPU da carteira,
+      R$ 1.175 e R$ 858, a entrada vale 60% e 70%: a diferença é expansão dentro da base, e um forecast
+      que projete apenas <i>N × ticket de entrada</i> subestima a receita de regime em 40% em Imóveis.
+      <b>Base ativa:</b> 23.516 clientes, 16.724 em RE e 6.792 em Autos.</p>
+    <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.7rem"><b>A ressalva que decide o
+      tamanho da meta:</b> este funil é só Inside Sales, que responde por <b>39,3%</b> da receita de
+      Real Estate e <b>16,9%</b> de Autos. Meta construída só sobre ele fala de menos da metade do
+      problema em Imóveis e de um sexto em Autos. E são quatro meses, não os 12 a 24 que uma tendência
+      exige.</p>
+    <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.7rem"><b>Placar:</b> 37 dos 78
+      indicadores têm número. 9 em Medido, extraídos por nós do GA4 e do V4MOS; 15 em Declarado, com
+      número entregue pelo cliente e não auditado; 14 em Parcial; 3 em Concedido. Seguem sem número
+      17 em <b>A conferir</b>, presos em acesso declarado e nunca aberto, e 20 em <b>Falta</b>.</p>
   </div>
 </section>
 

@@ -1,0 +1,613 @@
+{
+ "meta": {
+  "fonte": "assets/originais/A-visao-de-negocio-e-fluxo-de-receita/estrutura-comercial-inside-sales.pdf",
+  "sha256": "3fef10011a18f082d6bdf899d684cc750c7b90822e6ebeeb07b5f4d0908ae515",
+  "recebido_em": "2026-08-28",
+  "versionado_em": "2026-09-14",
+  "itens_do_checklist": [
+   "A2",
+   "A3",
+   "A4",
+   "A5"
+  ],
+  "natureza": "declarado pelo cliente em apresentacao, nao auditado pela V4",
+  "nota": "Estava na pasta de Downloads do operador desde 28/08, mesmo dia da serie de receita A1, e nao havia sido versionado nem lido.",
+  "fontes_citadas_no_pdf": [
+   "https://docs.google.com/spreadsheets/d/1hlK-cDW7XQZKjNyxpsTzZYvPmq_TEvXd2RdJZHsOVRI (estrutura e carteira)",
+   "https://docs.google.com/spreadsheets/d/1-KTGd1XAQkZ8vRX0wyb7fDVHglHW0CtBXtd3wo8mWyM (funil comercial)"
+  ]
+ },
+ "estrutura": {
+  "real_estate": {
+   "total": {
+    "clientes": 16724,
+    "receita_mes": 19650000,
+    "arpu": 1175.0
+   },
+   "celulas": [
+    {
+     "nome": "BRASIL",
+     "papel": "hunter",
+     "hcs": 16,
+     "clientes": 1092,
+     "receita_mes": 770000,
+     "arpu": 707.0
+    },
+    {
+     "nome": "N+N+CO",
+     "papel": "farmer",
+     "hcs": 14,
+     "clientes": 4372,
+     "receita_mes": 3900000,
+     "arpu": 895.0
+    },
+    {
+     "nome": "SUL+SP INTERIOR",
+     "papel": "farmer",
+     "hcs": 16,
+     "clientes": 3752,
+     "receita_mes": 4540000,
+     "arpu": 1211.0
+    },
+    {
+     "nome": "RJ+MG+ES",
+     "papel": "farmer",
+     "hcs": 14,
+     "clientes": 4228,
+     "receita_mes": 5280000,
+     "arpu": 1249.0
+    },
+    {
+     "nome": "SP CAPITAL",
+     "papel": "farmer",
+     "hcs": 13,
+     "clientes": 3080,
+     "receita_mes": 4880000,
+     "arpu": 1587.0
+    },
+    {
+     "nome": "RE/MAX+ON",
+     "papel": "farmer",
+     "hcs": 1,
+     "clientes": 200,
+     "receita_mes": 255000,
+     "arpu": 1280.0,
+     "obs": "projeto especial"
+    }
+   ]
+  },
+  "autos": {
+   "total": {
+    "clientes": 6792,
+    "receita_mes": 5800000,
+    "arpu": 858.0
+   },
+   "celulas": [
+    {
+     "nome": "BRASIL",
+     "papel": "hunter",
+     "hcs": 11,
+     "clientes": 593,
+     "receita_mes": 360000,
+     "arpu": 602.0,
+     "obs": "1 HC dedicado a Goods"
+    },
+    {
+     "nome": "CENTRO-OESTE",
+     "papel": "farmer",
+     "hcs": 2,
+     "clientes": 640,
+     "receita_mes": 642000,
+     "arpu": 1004.0
+    },
+    {
+     "nome": "NO/NE",
+     "papel": "farmer",
+     "hcs": 3,
+     "clientes": 1184,
+     "receita_mes": 1180000,
+     "arpu": 945.0
+    },
+    {
+     "nome": "SUDESTE",
+     "papel": "farmer",
+     "hcs": 8,
+     "clientes": 2705,
+     "receita_mes": 2370000,
+     "arpu": 878.0
+    },
+    {
+     "nome": "SUL",
+     "papel": "farmer",
+     "hcs": 2,
+     "clientes": 959,
+     "receita_mes": 798000,
+     "arpu": 833.0
+    },
+    {
+     "nome": "GOODS",
+     "papel": "farmer",
+     "hcs": 1,
+     "clientes": 857,
+     "receita_mes": 717000,
+     "arpu": 752.0
+    }
+   ]
+  },
+  "definicoes": {
+   "hunter": "aquisicao de novos clientes, atende leads de origem B2B e prospeccao ativa, foco em PP, P e M",
+   "farmer": "rentabilizacao e retencao da carteira, upsell, campanha e relacionamento, foco em P e M"
+  }
+ },
+ "funil": {
+  "janela": "abril a julho de 2026",
+  "real_estate": {
+   "hunter": {
+    "meses": [
+     "2026-04",
+     "2026-05",
+     "2026-06",
+     "2026-07"
+    ],
+    "leads_b2b": [
+     1387,
+     2331,
+     1723,
+     1018
+    ],
+    "opps_prospeccao": [
+     124,
+     4942,
+     8159,
+     20505
+    ],
+    "b2b_abordagem_pct": [
+     98,
+     98,
+     97,
+     84
+    ],
+    "b2b_abordagens": [
+     1359,
+     2284,
+     1671,
+     855
+    ],
+    "prospeccao_abordagem": [
+     120,
+     2669,
+     4406,
+     9842
+    ],
+    "prospeccao_abordagem_pct": [
+     97,
+     54,
+     54,
+     48
+    ],
+    "b2b_negociacao": [
+     1026,
+     1841,
+     1378,
+     570
+    ],
+    "b2b_negociacao_pct": [
+     74,
+     79,
+     80,
+     56
+    ],
+    "prospeccao_negociacao": [
+     114,
+     939,
+     1713,
+     5536
+    ],
+    "prospeccao_negociacao_pct": [
+     92,
+     19,
+     21,
+     27
+    ],
+    "b2b_conversao_pct": [
+     21,
+     23,
+     25,
+     26
+    ],
+    "b2b_vendas": [
+     291,
+     541,
+     431,
+     266
+    ],
+    "prospeccao_conversao_pct": [
+     55,
+     5,
+     5,
+     8
+    ],
+    "prospeccao_vendas": [
+     68,
+     350,
+     829,
+     757
+    ],
+    "b2b_lead_time_dias": [
+     6,
+     3.7,
+     5.3,
+     2.1
+    ]
+   },
+   "farmer": {
+    "meses": [
+     "2026-04",
+     "2026-05",
+     "2026-06",
+     "2026-07"
+    ],
+    "leads_b2b": [
+     1508,
+     1399,
+     1194,
+     579
+    ],
+    "opps_prospeccao": [
+     16418,
+     12208,
+     15494,
+     9869
+    ],
+    "b2b_abordagem_pct": [
+     91,
+     94,
+     90,
+     59
+    ],
+    "b2b_abordagens": [
+     1372,
+     1315,
+     1075,
+     342
+    ],
+    "prospeccao_abordagem": [
+     14284,
+     11476,
+     11311,
+     5033
+    ],
+    "prospeccao_abordagem_pct": [
+     87,
+     94,
+     73,
+     51
+    ],
+    "b2b_negociacao": [
+     1025,
+     979,
+     824,
+     203
+    ],
+    "b2b_negociacao_pct": [
+     68,
+     70,
+     69,
+     35
+    ],
+    "prospeccao_negociacao": [
+     9030,
+     3907,
+     6043,
+     2566
+    ],
+    "prospeccao_negociacao_pct": [
+     55,
+     32,
+     39,
+     26
+    ],
+    "b2b_conversao_pct": [
+     25,
+     31,
+     30,
+     24
+    ],
+    "b2b_vendas": [
+     372,
+     439,
+     360,
+     140
+    ],
+    "prospeccao_conversao_pct": [
+     3,
+     5,
+     7,
+     8
+    ],
+    "prospeccao_vendas": [
+     542,
+     872,
+     1631,
+     411
+    ],
+    "b2b_lead_time_dias": [
+     4.1,
+     4,
+     4.1,
+     2.4
+    ]
+   }
+  },
+  "autos": {
+   "hunter": {
+    "meses": [
+     "2026-04",
+     "2026-05",
+     "2026-06",
+     "2026-07"
+    ],
+    "leads_b2b": [
+     744,
+     700,
+     630,
+     1098
+    ],
+    "opps_prospeccao": [
+     1134,
+     4254,
+     6006,
+     6080
+    ],
+    "b2b_abordagem_pct": [
+     100,
+     100,
+     100,
+     58
+    ],
+    "b2b_abordagens": [
+     744,
+     700,
+     630,
+     637
+    ],
+    "prospeccao_abordagem": [
+     1043,
+     3829,
+     2823,
+     2371
+    ],
+    "prospeccao_abordagem_pct": [
+     92,
+     90,
+     47,
+     39
+    ],
+    "b2b_negociacao": [
+     454,
+     539,
+     397,
+     362
+    ],
+    "b2b_negociacao_pct": [
+     61,
+     77,
+     63,
+     33
+    ],
+    "prospeccao_negociacao": [
+     341,
+     1531,
+     1201,
+     790
+    ],
+    "prospeccao_negociacao_pct": [
+     30.1,
+     36,
+     20,
+     13
+    ],
+    "b2b_conversao_pct": [
+     18.1,
+     27,
+     37,
+     19
+    ],
+    "b2b_vendas": [
+     135,
+     190,
+     232,
+     213
+    ],
+    "prospeccao_conversao_pct": [
+     7.7,
+     4,
+     3,
+     4.2
+    ],
+    "prospeccao_vendas": [
+     87,
+     180,
+     205,
+     257
+    ],
+    "b2b_lead_time_dias": [
+     0.8,
+     1,
+     1.3,
+     1.3
+    ]
+   },
+   "farmer": {
+    "meses": [
+     "2026-04",
+     "2026-05",
+     "2026-06",
+     "2026-07"
+    ],
+    "leads_b2b": [
+     644,
+     626,
+     562,
+     437
+    ],
+    "opps_prospeccao": [
+     3125,
+     2237,
+     1980,
+     1841
+    ],
+    "b2b_abordagem_pct": [
+     100,
+     99,
+     99,
+     99
+    ],
+    "b2b_abordagens": [
+     644,
+     620,
+     556,
+     433
+    ],
+    "prospeccao_abordagem": [
+     2688,
+     2192,
+     1921,
+     1767
+    ],
+    "prospeccao_abordagem_pct": [
+     86,
+     98,
+     97,
+     96
+    ],
+    "b2b_negociacao": [
+     522,
+     520,
+     393,
+     345
+    ],
+    "b2b_negociacao_pct": [
+     81,
+     83,
+     70,
+     79
+    ],
+    "prospeccao_negociacao": [
+     2134,
+     1678,
+     1465,
+     1473
+    ],
+    "prospeccao_negociacao_pct": [
+     68.3,
+     75,
+     74,
+     80
+    ],
+    "b2b_conversao_pct": [
+     26.4,
+     28,
+     27,
+     23
+    ],
+    "b2b_vendas": [
+     170,
+     174,
+     154,
+     101
+    ],
+    "prospeccao_conversao_pct": [
+     9.9,
+     20,
+     28,
+     20.7
+    ],
+    "prospeccao_vendas": [
+     309,
+     453,
+     560,
+     381
+    ],
+    "b2b_lead_time_dias": [
+     0.5,
+     1.2,
+     1.4,
+     1.2
+    ]
+   }
+  }
+ },
+ "canais_de_entrada": {
+  "base": "representatividade de MQL e SQL por vertical, periodo historico",
+  "whatsapp": {
+   "mql": {
+    "autos": 70,
+    "re": 38,
+    "total": 42
+   },
+   "sql": {
+    "autos": 70,
+    "re": 65,
+    "total": 66
+   }
+  },
+  "formulario": {
+   "mql": {
+    "autos": 20,
+    "re": 49,
+    "total": 44
+   },
+   "sql": {
+    "autos": 16,
+    "re": 24,
+    "total": 22
+   }
+  },
+  "telefone": {
+   "mql": {
+    "autos": 5,
+    "re": 3,
+    "total": 3
+   },
+   "sql": {
+    "autos": 7,
+    "re": 3,
+    "total": 4
+   }
+  },
+  "outros": {
+   "mql": {
+    "autos": 4,
+    "re": 11,
+    "total": 10
+   },
+   "sql": {
+    "autos": 6,
+    "re": 9,
+    "total": 7
+   }
+  }
+ },
+ "mix_canais_marketing": {
+  "nota": "o slide FLUXOS, que a pendencia 20 registrava como NAO VERSIONADO. Agora esta versionado neste PDF.",
+  "crm": 29,
+  "direto": 36,
+  "pago": 16,
+  "organico": 5,
+  "outros": 11,
+  "perdas_de_atribuicao_admitidas": [
+   "teste de campanha paga para WhatsApp: entra tudo como Direto",
+   "usuario salva o numero e chama depois: entra tudo como Direto",
+   "canais de entrada Telefone e WhatsApp quebram a rastreabilidade da origem"
+  ]
+ },
+ "funil_agregado_pdf": {
+  "nota": "numeros redondos da pagina 24, sem mes nem vertical declarados. Provavelmente ilustrativos.",
+  "mql": 1200,
+  "sql": 540,
+  "vendas": 180,
+  "lead_time_dias": 4.2,
+  "ressalva": "NAO usar em forecast: nao batem com as tabelas de funil das paginas 5 e 6."
+ }
+}
