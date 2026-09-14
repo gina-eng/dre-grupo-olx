@@ -615,7 +615,7 @@ Já aconteceu duas vezes neste projeto:
 | Precedente | O que veio | O que faltava |
 |---|---|---|
 | GA4, 31/08 | Acesso às 26 propriedades | Nível **Leitor**, que não abre fluxos de dados, regras de evento nem consentimento (pendência 13) |
-| Meta, 01/09 | Portfólio `New OLX Brasil` visível | **"Nenhum ativo conectado"**: nenhuma conta de anúncio compartilhada (pendência 11) |
+| Meta, 01/09 | Portfólio `New OLX Brasil` visível | **"Nenhum ativo conectado"**: nenhuma conta de anúncio compartilhada (pendência 11). ✅ **Resolvido em 12/09**, e a explicação foi a suspeitada: era limitação de permissão do usuário logado, não ausência de ativo |
 
 **Ação:** conferência item a item em **10/09**, contra o
 [checklist de dados e acessos](02-diagnostico/checklist-dados-e-acessos.md), **abrindo cada
@@ -631,10 +631,31 @@ entrega de dado e segue sem nenhum item recebido. Nenhuma concessão de ferramen
 ele não há mapeamento do fluxo de receita nem matemática de forecast, com ou sem os nove
 diagnósticos fechados.
 
-### Atualização de 14/09: o resíduo agora tem tamanho, e ele é grande
+### Atualização de 14/09: a conferência foi feita até onde este ambiente alcança
 
-A conferência **continua sem ser feita**, quatro dias depois. O custo disso deixou de ser hipotético
-quando a aba de Métricas do portal passou a marcar cobertura indicador a indicador:
+**Feito, abrindo a fonte e não o e-mail:**
+
+| Ferramenta | Método | Resultado |
+|---|---|---|
+| **GA4** | Admin API + Data API | ✅ 26 propriedades em 3 contas, **as mesmas de 31/08**, `can_edit=false` em todas e `custom_dimensions` vazias na 503925542. Leitura de dado funciona: 01 a 13/09 devolve os mesmos 10 eventos automáticos de agosto |
+| **V4MOS** | 3 endpoints + os 2 controles de sanidade | ✅ Google 500 e Facebook 114 registros em setembro. Secret inválido devolve **401**, organização inexistente devolve **403**: os dois controles passam |
+| **Meta Ads**, as duas contas | Indireto, pela ingestão | ✅ De `data: []` para 1.079 anúncios. Só ativo compartilhado produz isso, o que confirma que o "Nenhum ativo conectado" de 01/09 era limitação de permissão do usuário logado |
+| **Google Ads**, MCC 526-656-0190 | Indireto, pela ingestão | 🟡 O V4MOS puxa a conta, mas **a interface não foi aberta**. A API do Google Ads também não serviu: o conector deste ambiente está sem `GOOGLE_ADS_DEVELOPER_TOKEN` e o conector alternativo falha com 502 |
+| **GTM** | API do Tag Manager | 🔴 **403**, sem o escopo `tagmanager.readonly`. Confirma a [pendência 26](#-26-a-coleta-do-gtm-não-pode-ser-automatizada-com-a-credencial-atual): export segue manual |
+
+**Não feito, e é o que importa.** As quatro ferramentas que decidem o Comitê 1 continuam sem
+conferência: **CRM comercial**, **Salesforce Marketing Cloud**, **Google Search Console** e o
+**Meta Business Manager**. Não há conector de nenhuma delas neste ambiente, e a do Meta exige uma
+autorização OAuth que só uma sessão interativa consegue fazer. **Só abrindo a interface, ou
+pedindo export.**
+
+`dados/acessos.json` foi atualizado com exatamente isso: o que abriu está como concedido ou
+parcial, com a evidência; o que não abriu **continua pendente**, e nenhum item subiu de status sem
+prova de abertura.
+
+O custo do resíduo deixou de ser hipotético quando a aba de Métricas do portal passou a marcar
+cobertura indicador a indicador, e ele não diminuiu com esta conferência, porque nada do que foi
+conferido é o que prende os indicadores:
 
 | | |
 |---|---|
@@ -644,22 +665,29 @@ quando a aba de Métricas do portal passou a marcar cobertura indicador a indica
 
 Os outros três se dividem entre Salesforce Marketing Cloud (2) e Search Console (1).
 
-**O que está verificado, e só isso:** o **GA4** respondeu pela API em 14/09 e entregou 987.566 sessões
-nos domínios `*.grupoolx.com.br`; o **Meta** se confirmou sozinho ao passar a ingerir no V4MOS em
-12/09, com 90 campanhas e R$ 7,38 mi. Nenhuma outra ferramenta do lote de 10/09 foi aberta.
+**Os 23 seguem presos.** Nenhuma das ferramentas conferidas em 14/09 os destrava: 20 dependem do
+CRM comercial, 2 do Marketing Cloud e 1 do Search Console, e são justamente as três que não têm
+conector aqui.
 
 **Agravante prático:** não há conector de Salesforce, de Search Console nem do CRM comercial neste
-ambiente. Não dá para testar por API como se fez com GA4 e Meta. A conferência exige **abrir a
-ferramenta na interface**, ou pedir export.
+ambiente. Não dá para testar por API como se fez com GA4, V4MOS e GTM. A conferência exige **abrir
+a ferramenta na interface**, ou pedir export.
+
+**Dependência técnica que saiu das sessões de CRM de 09 e 10/09, e que pode explicar tudo:** o
+Sales Cloud exige o e-mail **`@olxbr` habilitado no MyApps**. Se a habilitação não foi feita, o
+acesso nominal existe e a ferramenta não abre, que é exatamente o padrão de calote que esta
+pendência existe para pegar. **Perguntar isso antes de abrir**, é a checagem mais barata da lista.
 
 **Por que isso trava a planilha de metas:** dos quatro dados que faltam para o forecast, três saem do
 CRM (ticket médio de entrada, base ativa de anunciantes, contratos novos por mês). Se o acesso de
 10/09 for real, os três saem sem pedir nada à OLX. Se não for, eles viram pedido, e o pedido tem
 prazo de resposta que a janela até 18/09 não comporta.
 
-**Ação:** abrir CRM comercial, Salesforce Marketing Cloud e Search Console, **nesta ordem**, e
-registrar o nível de permissão de cada um em `dados/acessos.json`, que segue parado em 01/09 com o
-Salesforce marcado como pendente. O que estiver em nível insuficiente escala no mesmo dia.
+**Ação:** abrir **CRM comercial**, **Salesforce Marketing Cloud** e **Search Console**, nesta
+ordem, na interface, e registrar o nível de permissão de cada um em
+[`dados/acessos.json`](dados/acessos.json), que deixou de estar parado em 01/09 e agora traz a
+conferência de 14/09 com a lista do que não foi aberto. Confirmar antes se o `@olxbr` está
+habilitado no MyApps. O que estiver em nível insuficiente escala no mesmo dia.
 **Responsável:** operador + Michelle Morais · **Prazo:** 15/09, antes do meio do sprint
 
 **Responsável:** operador + Michelle Morais · **Prazo:** conferência em 10/09, escalada no mesmo dia

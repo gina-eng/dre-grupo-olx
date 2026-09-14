@@ -1,7 +1,7 @@
 {
   "_comment": "Fonte da verdade dos acessos do DR-E Grupo OLX, agrupados por conta. Editado pelo portal em /kickoff, que grava aqui via /api/acessos.",
-  "atualizado_em": "2026-09-01",
-  "atualizado_por": "claude (GTM confirmado pelo operador: conta BR - www.olx.com.br, 22+ conteineres)",
+  "atualizado_em": "2026-09-14",
+  "atualizado_por": "claude · conferencia do lote de 10/09. Conferido por API: GA4, V4MOS e GTM (este ultimo devolve 403). Conferido indiretamente pela ingestao: as duas contas de Meta e a MCC do Google. NAO CONFERIDOS, por falta de conector neste ambiente: CRM comercial, Salesforce Marketing Cloud, Search Console e Business Manager. Esses quatro exigem abrir a interface e continuam registrados como pendentes.",
   "acessos": [
     {
       "o": "Google",
@@ -10,29 +10,33 @@
       "p": "",
       "s": "parcial",
       "itens": [
-        "Google Ads, VR09 ZAP+ MCC VivaReal (526-656-0190): CONCEDIDO, aceite feito em gina@v4company.com",
-        "Google Ads, demais contas B2B em leitura: NAO CONCEDIDO",
-        "GA4: ACESSO CONFIRMADO (31/08), leitura funciona. 3 contas, 26 propriedades: Grupo OLX (285763706, 6 props), OLX (70177409, 17 props), Viva Real (126375, 3 props). Nivel de permissao a confirmar",
-        "Google Tag Manager: ACESSO CONFIRMADO (01/09) pelo operador. Conta 'BR - www.olx.com.br', selo 360, 22+ conteineres. Relevantes ao escopo B2B: GTM-KGFGVFC (Planos Profissionais & PAYG), GTM-MXQKDG3 (Seller Journey), GTM-546N2JV (Container Master), GTM-M4TL57GX (Checkout), GTM-MJX9PG4 (Conecta Autos)",
-        "Google Search Console de cada propriedade B2B: NAO CONCEDIDO"
+        "Google Ads, VR09 ZAP+ MCC VivaReal (526-656-0190): CONCEDIDO. Conferido INDIRETAMENTE em 14/09, o V4MOS puxa 23 campanhas e R$ 2.746.029,59 da conta. Nao conferido na interface do Google Ads.",
+        "Google Ads, demais contas B2B em leitura: NAO CONCEDIDO. As 7 contas vinculadas a propriedade GA4 ZapImoveis seguem fora do acesso (PENDENCIAS 12).",
+        "GA4: CONFERIDO POR API EM 14/09. Admin API devolve 3 contas OLX e 26 propriedades (Grupo OLX 285763706 com 6, OLX 70177409 com 17, Viva Real 126375 com 3), o mesmo numero de 31/08: o lote de 10/09 NAO acrescentou propriedade nenhuma.",
+        "GA4, nivel de permissao: can_edit=false nas 26 propriedades, e custom_dimensions e custom_metrics da propriedade B2B 503925542 voltam VAZIOS. Coerente com nivel Leitor (PENDENCIA 13), ainda sem confirmacao na interface.",
+        "GA4, leitura de dado: FUNCIONA. Relatorio de 01 a 13/09 na 503925542 devolve os MESMOS 10 eventos automaticos de agosto, page_view 677.371, session_start 601.711, form_submit 218. Nenhum evento de lead, cliente ou receita. A Trava de Cegueira se confirma em setembro.",
+        "Google Tag Manager: interface confirmada pelo operador em 01/09. API SEGUE BLOQUEADA, testada em 14/09: 403, a credencial nao tem o escopo tagmanager.readonly (PENDENCIA 26). Export continua manual.",
+        "Google Search Console de cada propriedade B2B: NAO CONFERIDO na ferramenta. Nao ha conector desta fonte neste ambiente: exige abrir a interface ou pedir export. Nao consta concessao. E uma das tres ferramentas que a pendencia 18 manda abrir."
       ],
-      "v": "verificado em 31/08: o GA4 responde pela API de dados nas 26 propriedades e devolve dado real (VivaReal 37,9 mi de sessoes em jun-ago). O V4MOS segue devolvendo 655 registros de campanha do Google Ads e vazio nos seis endpoints do Facebook.",
-      "n": "GA4 entrou e destrava a auditoria (vii), a prioritaria. Nivel de permissao NAO CONFIRMADO. O resumo de contas do GA4 devolve can_edit=false nas 26 propriedades, e o campo e coerente (da true nas contas onde a V4 e admin), mas e um sinal unico e nao prova o papel. Nenhuma chamada disponivel distingue Leitor de Editor: o Admin API responde igual nos dois casos. Confirmar na interface, em Administracao > Gerenciamento de acesso a propriedade. Confirmar tambem com qual conta Google o conector esta autenticado, porque o papel pode diferir entre gina@ e leonardo.rosa@. Segunda ressalva, independente do nivel: o vinculo com o Google Ads mostra que a conta a que a V4 tem acesso (526-656-0190) nao esta entre as 7 vinculadas a propriedade GA4 ZapImoveis, ver PENDENCIAS 12. Faltam GTM e Search Console para fechar o bloco H. Em 01/09 o GTM foi confirmado, fechando o bloco H. Falta o export em JSON dos conteineres, porque nao ha conector de GTM neste ambiente."
+      "v": "CONFERIDO POR API EM 14/09/2026. GA4: Admin API e Data API respondem, 26 propriedades, can_edit=false em todas, leitura de dado funciona e o retrato de setembro repete o de agosto. GTM: API devolve 403 por falta de escopo. Google Ads: NAO conferido na interface nem pela API do Google (o conector deste ambiente esta sem GOOGLE_ADS_DEVELOPER_TOKEN e o conector claude.ai Google Ads falha com 502); o que existe e prova indireta pelo V4MOS. Search Console: sem conector, nao conferido.",
+      "n": "O nivel de permissao do GA4 continua NAO PROVADO. can_edit=false nas 26 e custom dimensions vazias sao dois sinais coerentes com Leitor, e nenhum deles prova o papel: o Admin API responde igual para Leitor e Editor. Confirmar em Administracao > Gerenciamento de acesso a propriedade, e confirmar com qual conta Google o conector esta autenticado, porque o papel pode diferir entre gina@ e leonardo.rosa@. O lote de 10/09 nao mudou nada do lado Google: mesmas 26 propriedades de 31/08, Search Console segue sem concessao."
     },
     {
       "o": "Meta",
       "f": "Mídia, redes sociais",
       "r": "Michelle Morais",
       "p": "",
-      "s": "pendente",
+      "s": "parcial",
       "itens": [
-        "Meta Ads, VR ZAP+ (612188193108418)",
-        "Meta Ads, OLX | Autos | B2B (1742214902479721)",
-        "Business Manager, acesso de parceiro",
-        "Business Suite, nível analista"
+        "Meta Ads, VR ZAP+ (612188193108418): CONCEDIDA no lote de 10/09. Conferida INDIRETAMENTE em 14/09, ingere no V4MOS.",
+        "Meta Ads, OLX | Autos | B2B (1742214902479721): CONCEDIDA no lote de 10/09. Conferida INDIRETAMENTE em 14/09, ingere no V4MOS.",
+        "V4MOS, lado Facebook: 90 campanhas, 1.079 anuncios, R$ 7.375.303,34, 1,88 bi de impressoes, 1,41 bi de alcance, CPM R$ 3,91 e CTR 1,56%, sobre 01/01/2025 a 14/09/2026, em 21 meses continuos.",
+        "Business Manager, acesso de parceiro: NAO CONFERIDO na ferramenta. Nao ha conector desta fonte neste ambiente: exige abrir a interface ou pedir export. O servidor MCP de Meta Ads exige autorizacao OAuth e a sessao nao e interativa.",
+        "Business Suite, nivel analista: NAO CONFERIDO na ferramenta. Nao ha conector desta fonte neste ambiente: exige abrir a interface ou pedir export.",
+        "Lista de contas de anuncio do portfolio New OLX Brasil: NAO RECEBIDA. Enquanto nao vier, R$ 7,38 mi e piso do investimento em Meta, nao total (PENDENCIA 11)."
       ],
-      "v": "verificado em 01/09 na interface: a V4 enxerga o portfolio empresarial 'New OLX Brasil', com uma unica pagina, 'Grupo OLX' (ID 1239097169583910), e a aba Ativos conectados devolve 'Nenhum ativo conectado'. Coerente com os seis endpoints do Facebook no V4MOS devolvendo vazio.",
-      "n": "As duas contas de anuncio seguem sem compartilhamento. Confirmado agora pela interface, nao so pela API. E o que falta para fechar a auditoria (vi); alimenta tambem (iv) e (v). Pedir: aprovacao de 612188193108418 e 1742214902479721, acesso de parceiro no portfolio New OLX Brasil com os ativos atribuidos, e confirmacao de quantas paginas e contas existem de fato, porque a visao atual pode estar limitada pela permissao do usuario."
+      "v": "CONFERIDO INDIRETAMENTE EM 14/09/2026, pela ingestao. As duas contas saem de data vazio e devolvem dado em volume, o que so acontece com ativo compartilhado: o 'Nenhum ativo conectado' de 01/09 era limitacao de permissao do usuario logado, como a propria pendencia 11 suspeitava. A INTERFACE NAO FOI ABERTA: o nivel de permissao no Business Manager e no Business Suite segue sem conferencia, e nao da para saber se o portfolio tem mais contas alem das duas.",
+      "n": "Acesso as contas de anuncio: provado. Acesso de parceiro ao portfolio: nao provado. Sao coisas diferentes e o projeto precisa das duas, a segunda porque a auditoria (iv) de criativos depende da Biblioteca de Anuncios e do acervo de pecas."
     },
     {
       "o": "Conta corporativa @olxbr.com",
@@ -44,7 +48,8 @@
         "Conta de Rafael Corazza (rafael.corazza-ext@olxbr.com): CONCEDIDA, credenciais recebidas em 24/08 de ga-account@olxbr.com",
         "Conta para Anselmo Bueno",
         "Conta para Guilherme Monteiro",
-        "Pasta do data room no Google Drive: ABERTA e testada em 24/08, primeiro lote baixado"
+        "Pasta do data room no Google Drive: ABERTA e testada em 24/08, primeiro lote baixado",
+        "Habilitacao do e-mail @olxbr no MyApps para abrir o Sales Cloud: NAO CONFIRMADA. Levantada nas sessoes de CRM de 09 e 10/09 como pre-requisito do acesso ao CRM comercial."
       ],
       "v": "verificado em 24/08: o data room abriu com a conta nova e o primeiro lote foi baixado, 9 arquivos dos blocos E e I (457 MB). Índice em assets/originais/README.md.",
       "n": "Decisão de 24/08: por enquanto a V4 opera pelo domínio OLX através desta única conta, compartilhada dentro do time. Isso destrava o data room e o que mais o Grupo OLX restringe a e-mail corporativo. Três consequências a tratar: trocar a senha no primeiro acesso e ligar 2FA, já que ela circulou por e-mail e por chat; seguir cobrando as contas de Anselmo Bueno e Guilherme Monteiro, porque login compartilhado não deixa rastro de quem leu o quê e enfraquece o controle de LGPD; e pedir todo acesso novo do lado da OLX para esta conta, não mais para gina@v4company.com. A senha não fica no repositório: gerenciador de senhas da V4. O data room deixou de ser bloqueio em 24/08: o primeiro lote entrou. O que sobra do bloqueio é a carga sobre uma pessoa só, porque só o Rafael tem login para ir buscar material novo lá."
@@ -52,14 +57,16 @@
     {
       "o": "Salesforce",
       "f": "CRM e pré-vendas",
-      "r": "",
+      "r": "Michelle Morais",
       "p": "",
       "s": "pendente",
       "itens": [
-        "Marketing Cloud, visualização: jornadas, bases e métricas de e-mail",
-        "CRM comercial, leitura: pipeline, estágios e motivos de perda"
+        "Marketing Cloud, visualizacao: DECLARADO CONCEDIDO no lote de 10/09 e NAO CONFERIDO. NAO CONFERIDO na ferramenta. Nao ha conector desta fonte neste ambiente: exige abrir a interface ou pedir export.",
+        "CRM comercial, leitura de pipeline, estagios e motivos de perda: DECLARADO CONCEDIDO no lote de 10/09 e NAO CONFERIDO. NAO CONFERIDO na ferramenta. Nao ha conector desta fonte neste ambiente: exige abrir a interface ou pedir export.",
+        "Dependencia tecnica levantada nas sessoes de CRM de 09 e 10/09: o Sales Cloud exige o e-mail @olxbr habilitado no MyApps. Sem isso o acesso nominal nao abre a ferramenta."
       ],
-      "n": "Confirmar no kick-off se o CRM comercial também é Salesforce ou outra ferramenta. Alimenta as auditorias (i) e (ix), e o bloco J, prioritário."
+      "n": "PRIORIDADE 1 da conferencia manual. Abrir CRM comercial primeiro, depois Marketing Cloud, e registrar o nivel de permissao de cada um. Prazo da pendencia 18: 15/09, antes do meio do sprint.",
+      "v": "NAO CONFERIDO ate 14/09/2026, quatro dias depois do lote. Esta e a lacuna mais cara do projeto: 23 indicadores do catalogo estao presos em acesso declarado e nao conferido, 18 deles P0, e 20 dependem so do CRM comercial. Tres dos quatro dados que faltam para o forecast saem daqui, o ticket medio de entrada, a base ativa de anunciantes e os contratos novos por mes. Fica em 'pendente' de proposito: promover para 'concedido' sem abrir a ferramenta seria trocar registro desatualizado por registro otimista, e o projeto ja levou dois calotes assim, o GA4 em nivel Leitor e o Meta sem ativo conectado."
     },
     {
       "o": "Sales engagement e telefonia",
@@ -71,7 +78,8 @@
         "Plataforma de cadência e discagem",
         "Gravações de calls de qualificação, 10 a 15 recentes"
       ],
-      "n": "Auditoria (ix). As gravações envolvem consentimento e LGPD, então é a de prazo mais imprevisível."
+      "n": "Auditoria (ix). As gravações envolvem consentimento e LGPD, então é a de prazo mais imprevisível.",
+      "v": "NAO CONFERIDO em 14/09/2026. Nenhum item desta frente consta do lote de 10/09 e nao ha conector neste ambiente. Segue pendente sem alteracao de estado."
     },
     {
       "o": "Domínios B2B",
@@ -84,7 +92,8 @@
         "Ferramenta de comportamento (Hotjar, Clarity ou similar)",
         "Ferramenta de SEO (SEMrush, Ahrefs ou similar)"
       ],
-      "n": "Auditorias (ii) e (viii). As duas ferramentas podem não existir: se não existirem, isso já é achado de maturidade."
+      "n": "Auditorias (ii) e (viii). As duas ferramentas podem não existir: se não existirem, isso já é achado de maturidade.",
+      "v": "NAO CONFERIDO em 14/09/2026. Nenhum item desta frente consta do lote de 10/09 e nao ha conector neste ambiente. Segue pendente sem alteracao de estado."
     },
     {
       "o": "Demais canais sociais",
@@ -96,7 +105,8 @@
         "LinkedIn, páginas da empresa",
         "YouTube, TikTok e outros canais ativos"
       ],
-      "n": "Auditoria (v). Levantar no kick-off quais estão de fato ativos no B2B."
+      "n": "Auditoria (v). Levantar no kick-off quais estão de fato ativos no B2B.",
+      "v": "NAO CONFERIDO em 14/09/2026. Nenhum item desta frente consta do lote de 10/09 e nao ha conector neste ambiente. Segue pendente sem alteracao de estado."
     },
     {
       "o": "Dados internos",
@@ -108,20 +118,43 @@
         "BI ou fonte única de verdade",
         "ERP e financeiro: custo variável e margem"
       ],
-      "n": "Bloco A. Se não houver fonte única, isso já é sintoma da Trava de Cegueira."
+      "n": "Bloco A. Se não houver fonte única, isso já é sintoma da Trava de Cegueira.",
+      "v": "NAO CONFERIDO em 14/09/2026. Nenhum item desta frente consta do lote de 10/09 e nao ha conector neste ambiente. Segue pendente sem alteracao de estado."
     },
     {
       "o": "V4MOS",
       "f": "Dados",
       "r": "Guilherme Monteiro",
       "p": "",
-      "s": "parcial",
+      "s": "concedido",
       "itens": [
-        "Workspace do Grupo OLX: credencial e organização",
-        "Ingestão das contas de mídia no workspace"
+        "Workspace do Grupo OLX (5abc02b3-cf0c-464d-a003-5ee5b4985c61): ATIVO e conferido em 14/09.",
+        "Ingestao das contas de midia: COMPLETA. Google e Facebook ingerindo. A ingestao do Meta comecou em 12/09, depois do lote de acessos de 10/09.",
+        "Payload cru da coleta de 14/09 em dados/cache/v4mos-2026-09-14.json, fora do git e regeneravel pelo script."
       ],
-      "v": "verificado em 24/08: autenticação OK nos seis endpoints, com secret inválido devolvendo 401 e organização inexistente devolvendo 403",
+      "v": "CONFERIDO AO VIVO EM 14/09/2026, com os dois controles de sanidade do metodo. Chamada direta a API sobre 01 a 14/09: google/ads/campaigns devolve HTTP 200 com 500 registros e facebook/ads/campaigns devolve HTTP 200 com 114 registros. Controle 1, secret invalido: 401. Controle 2, organizationId inexistente: 403. Os dois passam, entao o dado e do workspace certo e a ausencia de dado, quando houver, sera acesso e nao falha tecnica. O lado Facebook, que devolvia data vazio desde 24/08, devolve dado.",
       "n": "O acesso funciona, mas o workspace não tem nenhum dado de mídia ingerido, o que depende das contas Google e Meta. Ver PENDENCIAS 11."
     }
-  ]
+  ],
+  "conferencia_10_09": {
+    "feita_em": "2026-09-14",
+    "metodo": "abrir a fonte, nunca ler o e-mail de concessao",
+    "conferido_por_api": [
+      "GA4 (Admin API e Data API)",
+      "V4MOS (3 endpoints + 2 controles de sanidade)",
+      "GTM (403, sem escopo tagmanager.readonly)"
+    ],
+    "conferido_indiretamente_pela_ingestao": [
+      "Meta Ads 612188193108418",
+      "Meta Ads 1742214902479721",
+      "Google Ads MCC 526-656-0190"
+    ],
+    "nao_conferido_sem_conector": [
+      "CRM comercial (Salesforce Sales Cloud)",
+      "Salesforce Marketing Cloud",
+      "Google Search Console",
+      "Meta Business Manager e Business Suite"
+    ],
+    "regra": "Nenhum item foi promovido a concedido sem evidencia de abertura. Registro otimista e pior que registro desatualizado."
+  }
 }

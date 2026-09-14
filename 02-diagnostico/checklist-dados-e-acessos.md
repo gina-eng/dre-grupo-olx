@@ -12,7 +12,31 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 **Acessos verificados em 31/08 e 01/09/2026:** GA4 liberado (H1 ✅) e **GTM confirmado** (H2 ✅), o bloco H, prioritário, está com os dois acessos. Search Console, Salesforce, CRM e ferramentas de SEO/comportamento seguem sem concessão.
 
-**Atualização de 14/09, apurada na API e não declarada:** o V4MOS **deixou de estar inalterado**. As duas contas de Meta foram aprovadas no lote de 10/09, a ingestão começou em 12/09 e a recoleta de 14/09 devolve 90 campanhas, 1.079 anúncios e R$ 7,38 mi no Meta, contra 23 campanhas e R$ 2,75 mi no Google, sobre 01/01/2025 a 14/09/2026. Isto entra aqui porque foi **medido na ferramenta**, não porque alguém informou. O restante do lote de 10/09 segue por conferir, ver a nota abaixo e a [pendência 18](../PENDENCIAS.md).
+**Atualização de 14/09, apurada na API e não declarada:** o V4MOS **deixou de estar inalterado**. As duas contas de Meta foram aprovadas no lote de 10/09, a ingestão começou em 12/09 e a recoleta de 14/09 devolve 90 campanhas, 1.079 anúncios e R$ 7,38 mi no Meta, contra 23 campanhas e R$ 2,75 mi no Google, sobre 01/01/2025 a 14/09/2026. Isto entra aqui porque foi **medido na ferramenta**, não porque alguém informou.
+
+### Conferência do lote de 10/09, feita em 14/09
+
+O método é abrir a fonte, nunca ler o e-mail de concessão. **Nenhum item subiu de status sem
+evidência de abertura**, e é por isso que a maior parte da tabela continua como estava.
+
+| Ferramenta | Como foi conferida | Resultado |
+|---|---|---|
+| **GA4** | Admin API e Data API, ao vivo | ✅ 26 propriedades em 3 contas, **as mesmas de 31/08**: o lote de 10/09 não acrescentou nenhuma. Leitura de dado funciona |
+| **V4MOS** | 3 endpoints + os 2 controles de sanidade | ✅ Google 500 e Facebook 114 registros em setembro. Secret inválido devolve 401, organização inexistente devolve 403 |
+| **Meta Ads**, as duas contas | Indiretamente, pela ingestão | ✅ Saem de `data: []` para 1.079 anúncios. Só ativo compartilhado produz isso |
+| **Google Ads**, MCC 526-656-0190 | Indiretamente, pela ingestão | 🟡 O V4MOS puxa a conta. **A interface não foi aberta** |
+| **GTM** | API do Tag Manager | 🔴 **403**, a credencial não tem o escopo `tagmanager.readonly` ([pendência 26](../PENDENCIAS.md)). Export segue manual |
+| **CRM comercial** · **Marketing Cloud** · **Search Console** · **Business Manager** | - | 🔴 **Não conferidos.** Não há conector destas fontes neste ambiente: exigem abrir a interface ou pedir export |
+
+> 🔴 **As quatro não conferidas são as que importam para o Comitê 1.** São elas que prendem os **23
+> indicadores** marcados como acesso declarado e não conferido no catálogo de métricas, **18 deles
+> P0**, e **20 dependem só do CRM comercial**. Três dos quatro dados que faltam para o forecast
+> saem de lá: ticket médio de entrada, base ativa de anunciantes e contratos novos por mês.
+>
+> Elas ficam registradas como pendentes **de propósito**. Promover para concedido sem abrir a
+> ferramenta seria trocar um registro desatualizado por um registro otimista, e este projeto já
+> levou dois calotes assim: o GA4 chegou em nível Leitor e o Meta chegou com "nenhum ativo
+> conectado". Estado item a item em [`dados/acessos.json`](../dados/acessos.json).
 
 ---
 
@@ -73,7 +97,7 @@ o restante pode ser complementado nas duas primeiras semanas."
 | # | Item | Status | Obs. |
 |---|---|---|---|
 | C1 | Relação de domínios e subdomínios B2B em escopo | 🟡 | **Reconstruída do GA4 em 01/09**, não recebida da OLX, falta a OLX confirmar quais estão em escopo. Ver tabela abaixo |
-| C2 | Acesso ao Google Search Console de cada propriedade | 🟠 | Sem concessão |
+| C2 | Acesso ao Google Search Console de cada propriedade | 🟠 | Sem concessão. **Declarado no lote de 10/09 e não conferido em 14/09**: não há conector de Search Console neste ambiente, a conferência exige abrir a interface. É uma das quatro ferramentas que a [pendência 18](../PENDENCIAS.md) manda abrir |
 | C3 | Acesso à ferramenta de SEO utilizada internamente (SEMrush, Ahrefs ou similar), se houver | ⚪ | Pode não existir, se não existir, é achado de maturidade |
 
 **C1 · Domínios com tráfego na propriedade GA4 Grupo OLX** (`503925542`), jun–ago/2026, por sessões:
@@ -129,8 +153,8 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 | # | Item | Status | Obs. |
 |---|---|---|---|
-| G1 | Acesso de leitura às contas de Google Ads e Meta Ads (IDs das contas) | 🟡 | 3 contas mapeadas, ver [acessos](../01-cliente/acessos-e-ferramentas.md). Em 31/08 o GA4 revelou **7 contas de Google Ads** vinculadas à propriedade ZapImóveis, e a conta a que a V4 tem acesso não está entre elas, ver PENDÊNCIAS 12 |
-| G2 | Investimento mensal por canal/campanha dos últimos 12 meses | ⚪ | |
+| G1 | Acesso de leitura às contas de Google Ads e Meta Ads (IDs das contas) | ✅ | **As três contas ingerem, conferido em 14/09.** As duas de Meta (612188193108418 e 1742214902479721) saíram no lote de 10/09 e a MCC do Google já estava. Conferência **indireta, pela ingestão no V4MOS**, que é prova de acesso de leitura: nenhuma das duas interfaces foi aberta. Segue faltando o escopo, não o acesso: em 31/08 o GA4 revelou **7 contas de Google Ads** vinculadas à propriedade ZapImóveis, e a conta a que a V4 tem acesso não está entre elas, e a lista de contas do portfólio Meta nunca veio, ver PENDÊNCIAS 11 e 12 |
+| G2 | Investimento mensal por canal/campanha dos últimos 12 meses | 🟡 | **Existe desde 14/09, e não serve como está.** A coleta do V4MOS entrega R$ 10,12 mi com quebra mensal e por campanha sobre 21 meses (Meta R$ 7,38 mi em 90 campanhas, Google R$ 2,75 mi em 23). Duas ressalvas: **nenhuma conta separa B2B de B2C**, então isto não é o investimento do recorte contratado, e o Google tem só 11 meses com dado, faltam nov/2025 a abr/2026. O item fecha quando o time de mídia disser qual campanha é captação de anunciante |
 | G3 | Plano de mídia vigente e definição das conversões otimizadas em cada plataforma | ⚪ | |
 | G4 | Metas de CPA/ROAS praticadas e contato da agência, caso a operação seja terceirizada | ⚪ | |
 
@@ -139,8 +163,8 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 | # | Item | Status | Obs. |
 |---|---|---|---|
-| H1 | Acesso de analista à(s) propriedade(s) GA4 | ✅ | **Liberado · confirmado em 31/08.** 3 contas e 26 propriedades: Grupo OLX (285763706), OLX (70177409), Viva Real (126375). **Nível: Leitor**, confirmado na interface pelo operador em 01/09, bate com o `can_edit=false` que a API devolve nas 26 propriedades. O documento de 25/08 pede Editor ou Administrador: **pedido em aberto** |
-| H2 | Acesso de leitura ao(s) contêiner(es) GTM publicados | ✅ | **Confirmado em 01/09.** Conta `BR - www.olx.com.br`, selo 360, com **22+ contêineres**. Inventário abaixo |
+| H1 | Acesso de analista à(s) propriedade(s) GA4 | ✅ | **Liberado · confirmado em 31/08.** 3 contas e 26 propriedades: Grupo OLX (285763706), OLX (70177409), Viva Real (126375). **Nível: Leitor**, confirmado na interface pelo operador em 01/09, bate com o `can_edit=false` que a API devolve nas 26 propriedades. **Reconferido por API em 14/09**, e o quadro não mudou: as mesmas 26 propriedades, `can_edit=false` em todas, e `custom_dimensions` e `custom_metrics` vazias na propriedade B2B 503925542, o que é coerente com Leitor. **O lote de 10/09 não acrescentou nenhuma propriedade.** O documento de 25/08 pede Editor ou Administrador: **pedido em aberto** |
+| H2 | Acesso de leitura ao(s) contêiner(es) GTM publicados | ✅ | **Confirmado em 01/09** na interface. Conta `BR - www.olx.com.br`, selo 360, com **22+ contêineres**. Inventário abaixo. ⚠️ **A API segue fechada, testada em 14/09**: devolve `403`, a credencial não tem o escopo `tagmanager.readonly`, então todo export continua manual ([pendência 26](../PENDENCIAS.md)) |
 | H3 | Plano de mensuração e taxonomia de eventos e conversões, se documentado | 🟡 | Não recebido, mas **reconstruído** a partir do export de 5 contêineres em 01/09, ver [auditoria (vii)](auditoria-vii-rastreamento.md). A taxonomia praticada tem duas grafias para o mesmo conceito e um gatilho que escuta evento inexistente |
 | H4 | Configuração de consentimento (LGPD / consent mode) e eventual tagueamento server-side | 🟡 | **Auditado em 01/09 pelo export.** Consent mode via AdOpt, client-side, sem contêiner server-side. Três problemas: padrão `granted` em tudo, botão de recusar oculto por CSS, injetor com 4s de atraso, ver [auditoria (vii)](auditoria-vii-rastreamento.md) achado 2 |
 
