@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
 <link rel="stylesheet" href="/assets/base.css?v=32834f49">
-<link rel="stylesheet" href="/assets/shell.css?v=7872a4ba">
+<link rel="stylesheet" href="/assets/shell.css?v=3a715a13">
 <script src="/assets/shell.js?v=cd5ac90c"></script>
 </head>
 <body>
@@ -23,7 +23,7 @@
       <img class="logo-escuro" src="/assets/logo-dark.svg?v=4410af69" alt="Destrava Receita" width="722" height="279">
       <img class="logo-claro" src="/assets/logo.svg?v=1a3fcb7d" alt="Destrava Receita" width="722" height="279">
     </a>
-    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava" aria-current="page">Destrava Receita</a><a class="tab" href="/metricas">Métricas</a></nav>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="/">Painel</a><a class="tab" href="/kickoff">Kick-off</a><a class="tab" href="/receita">Receita</a><a class="tab" href="/cronograma">Cronograma</a><a class="tab" href="/destrava" aria-current="page">Destrava Receita</a><a class="tab" href="/diagnosticos">Diagnósticos</a><a class="tab" href="/metricas">Métricas</a></nav>
     <span class="spacer"></span>
     <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
   </div>
@@ -36,14 +36,14 @@
   </div>
   <div class="drawer-b">
     <p class="side-label">Portal</p>
-    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava" aria-current="page">Destrava Receita</a><a class="nav-item" href="/metricas">Métricas</a>
+    <a class="nav-item" href="/">Painel</a><a class="nav-item" href="/kickoff">Kick-off</a><a class="nav-item" href="/receita">Receita</a><a class="nav-item" href="/cronograma">Cronograma</a><a class="nav-item" href="/destrava" aria-current="page">Destrava Receita</a><a class="nav-item" href="/diagnosticos">Diagnósticos</a><a class="nav-item" href="/metricas">Métricas</a>
     <p class="side-label" id="dtoc-label" hidden>Nesta página</p>
     <div id="dtoc"></div>
   </div>
 </nav>
 
 <div class="crumb"><div class="crumb-in">
-  <a class="volta" href="/destrava"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Destrava Receita</a><h1>Fase 1 · Identificar</h1><p class="desc">O diagnóstico do sistema de receita: o fluxo ponta a ponta, as 8 travas pontuadas com evidência, e a maturidade digital lida por prática.</p><span class="meta">Ciclo 1 · leitura de 04 set 2026</span>
+  <a class="volta" href="/destrava"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Destrava Receita</a><h1>Fase 1 · Identificar</h1><p class="desc">O diagnóstico do sistema de receita: o fluxo ponta a ponta, as 8 travas pontuadas com evidência, e a maturidade digital lida por prática.</p><span class="meta">Ciclo 1 · placar de 04 set · evidência até 14 set</span>
 </div></div>
 <div class="doc" id="doc"><div class="doc-main"><style>
 section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
@@ -161,6 +161,24 @@ details.mais>summary{cursor:pointer;font-family:var(--mono);font-size:.7rem;lett
 details.mais[open]>summary{margin-bottom:.85rem}
 .fonte{font-size:.8rem;color:var(--muted-fg);margin-top:.9rem}
 
+/* Quadro de jornadas: o que está no ar e o que não está */
+.jornadas{width:100%;border-collapse:collapse;margin-top:1.1rem;font-size:.86rem}
+.jornadas th{text-align:left;font-family:var(--mono);font-size:.62rem;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--muted-fg);font-weight:400;padding:.45rem .7rem;
+  border-bottom:1px solid var(--border)}
+.jornadas td{padding:.55rem .7rem;border-bottom:1px solid var(--border);line-height:1.5;
+  vertical-align:top;color:var(--muted-fg)}
+.jornadas td:first-child{color:var(--fg);font-weight:500}
+.jornadas tr:last-child td{border-bottom:0}
+.jornadas .no-ar{color:var(--fg);font-weight:500}
+.pill{display:inline-block;font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.1rem .45rem;border-radius:9999px;border:1px solid var(--border);
+  color:var(--muted-fg);white-space:nowrap}
+.pill.viva{border-color:color-mix(in srgb,var(--ok) 55%,transparent);color:var(--fg);
+  background:color-mix(in srgb,var(--ok) 16%,transparent)}
+.pill.parada{border-color:color-mix(in srgb,var(--brand) 45%,transparent);color:var(--brand)}
+.rolagem{overflow-x:auto}
+
 @media (max-width:760px){
   .linha>summary{grid-template-columns:1fr auto;row-gap:.6rem}
   .dims{grid-column:1/-1}
@@ -175,14 +193,24 @@ details.mais[open]>summary{margin-bottom:.85rem}
     travas tem tela até agora</b>, as outras duas existem como documento.</p>
 
   <div class="posterior">
-    <p><b>Entrou evidência depois desta leitura.</b> O diagnóstico desta página foi fechado em
-      <b>4 de setembro</b>. Depois disso chegaram duas coisas que ainda não entraram em nenhuma nota:
-      a <b>série de receita de 2025 e 2026</b>, 19 meses fechados abertos em 4 unidades de negócio,
-      que é o primeiro denominador auditável do projeto, e uma <b>recoleta da conta de Google
-      Ads</b> sobre janela ampliada.</p>
-    <p>As duas pendências que nasceram da série tocam o <b>churn</b>, que é evidência da trava de
-      Retenção, hoje a única trava de receita com nota fechada. A leitura abaixo continua válida
-      como retrato de 4 de setembro, e é assim que ela deve ser lida até o próximo fechamento.</p>
+    <p><b>O placar tem base de 4 de setembro, com duas atualizações aplicadas em 14 de setembro.</b>
+      Este aviso existe para dizer exatamente o que mudou e o que não mudou, porque as duas coisas
+      importam.</p>
+    <p><b>Mudou:</b> a trava de <b>Cegueira</b>, repontuada em 11/09 sobre o fechamento da auditoria
+      de rastreamento, caiu de <b>6 para 5</b>. A faixa não muda, segue estruturalmente travada, e a
+      leitura também não: enquanto a Cegueira não subir, o score das outras sete nasce com
+      confiabilidade reduzida.</p>
+    <p><b>Não mudou, e é deliberado:</b> a <b>recoleta das contas de mídia</b> de 14/09 trouxe o Meta
+      de zero para 1.079 anúncios e R$ 7,38 milhões, mas <b>nenhuma nota subiu por causa dela</b>.
+      Duas dimensões que se descreviam como "sem nenhum dado", o alcance em Exposição e o CTR em
+      Atenção, passaram a ter medição e continuam sem nota: o que as segura agora é que nenhuma
+      conta de mídia separa anunciante de consumidor, e não existe base de comparação de mercado no
+      projeto. Medir não é o mesmo que poder pontuar, e o placar não vai fingir que é.</p>
+    <p>Também entraram desde 4 de setembro, sem alterar notas: a <b>série de receita de 2025 e
+      2026</b>, 19 meses fechados abertos em 4 unidades de negócio, primeiro denominador auditável
+      do projeto; e as <b>duas sessões de CRM</b> de 09 e 10/09, que fecharam a camada experiencial
+      do diagnóstico de CRM Marketing e produziram o achado da seção seguinte.</p>
+    <p>O próximo fechamento do placar acontece junto com os nove diagnósticos.</p>
   </div>
 
   <div class="entregas">
@@ -198,6 +226,112 @@ details.mais[open]>summary{margin-bottom:.85rem}
       <p>Nível 2, em estruturação, nas três dimensões, apurado sobre o que a ferramenta mostra e não
         sobre o que se declara. Leitura provisória: cobre 6 dos 11 contêineres, em 2 das 4 contas.</p>
       <span class="st">tela em construção</span></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Os nove diagnósticos técnicos</h2>
+    <span class="eyebrow">dois já entregaram</span></div>
+  <p class="lead">O contrato inclui nove diagnósticos técnicos dentro do escopo. Eles não são o
+    placar: são o que <b>alimenta</b> o placar com evidência apurada, no lugar da fala de reunião.
+    Todos os nove fecham até <b>18 de setembro</b>. Dois já têm material escrito.</p>
+
+  <div class="entregas">
+    <div class="ent"><h3>(vii) Rastreamento · GA4 e GTM</h3>
+      <p>60 contêineres em 4 contas, 1.779 tags lidas uma a uma. <b>43 achados</b>, 5 deles
+        confirmados na versão que está no ar. É o diagnóstico que repontuou a trava de Cegueira.</p>
+      <span class="st pronto">fechado em 11/09</span></div>
+    <div class="ent"><h3>(i) CRM Marketing · Salesforce</h3>
+      <p>Duas sessões com todo o time de CRM B2B, 2h08 de registro. <b>16 achados</b>. A camada
+        de conversa fechou; falta a camada de ferramenta, que depende do console.</p>
+      <span class="st pronto">experiencial · 10/09</span></div>
+    <div class="ent"><h3>Os outros sete</h3>
+      <p>Mídia paga, pré-vendas, ambientes CRO/SEO, páginas de captura, criativos, redes sociais e
+        buscas generativas. Todos abertos, todos com fechamento em 18/09.</p>
+      <span class="st">em andamento</span></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>O CRM de ciclo de vida está desligado desde abril</h2>
+    <span class="eyebrow">achado de 10 de setembro</span></div>
+  <p class="lead">A migração do Marketing Cloud para o ambiente novo desligou as jornadas
+    automatizadas de relacionamento para <b>todo cliente que entrou depois dela</b>: em Autos desde
+    abril, em Imóveis desde julho. Quem já estava numa jornada antiga continua nela até o fim, e
+    quem chegou depois não recebeu onboarding, educacional, retenção preventiva, upsell nem
+    recuperação. <b>Foi a própria área de CRM que descreveu o quadro</b>, nas duas sessões de 09 e
+    10 de setembro.</p>
+
+  <div class="resumo">
+    <div class="kpi"><div class="v">15</div>
+      <div class="l">jornadas de relacionamento mapeadas: 9 em Imóveis, 6 em Autos</div></div>
+    <div class="kpi alerta"><div class="v">1</div>
+      <div class="l">no ar no ambiente novo: o onboarding de Imóveis</div></div>
+    <div class="kpi alerta"><div class="v">5 meses</div>
+      <div class="l">de abril a setembro sem jornada de ciclo de vida para o cliente novo de
+        Autos</div></div>
+    <div class="kpi"><div class="v">16</div>
+      <div class="l">achados no diagnóstico de CRM, todos ainda declarados</div></div>
+  </div>
+
+  <div class="prosa">
+    <p><b>O que continuou funcionando.</b> O transacional, que confirma a compra, e o billing, que
+      cobra: os dois rodam por fora do time de CRM e nunca pararam. E a aquisição, que é o disparo
+      de WhatsApp para vender plano, nunca parou porque é feita à mão, fora da automação. Entre 99%
+      e 100% da aquisição de CRM sai por WhatsApp.</p>
+    <p><b>Em uma frase: parou o que protege a receita do mês seguinte, e seguiu o que produz receita
+      neste mês.</b> Isso não é escolha de ninguém em particular, é o que um sistema sob pressão faz
+      quando a capacidade encolhe: sustenta o que aparece no resultado do mês.</p>
+    <p><b>E o mecanismo é de política, não de pessoa.</b> A construção de jornada no Marketing Cloud
+      sempre foi executada por um perfil técnico especializado, e nunca foi atribuída formalmente a
+      uma área. Quando esse perfil deixou de existir internamente, em março, a atividade não teve
+      para onde cair. Duas áreas seguiram meses com entendimentos diferentes sobre quem deveria
+      reconstruir as jornadas, e a diferença só apareceu quando alguém de fora perguntou.</p>
+    <p><b>O que isso diz sobre medição.</b> Cinco meses de silêncio com o cliente recém-comprado não
+      dispararam alerta, relatório nem indicador. A parada não foi descoberta por uma métrica: foi
+      descoberta numa conversa. É a mesma leitura que a trava de Cegueira já registra por outro
+      caminho, agora confirmada por um evento concreto.</p>
+  </div>
+
+  <div class="rolagem">
+  <table class="jornadas">
+    <thead><tr><th>Jornada</th><th>Vertical</th><th>Estado</th></tr></thead>
+    <tbody>
+      <tr><td class="no-ar">Onboarding</td><td>Imóveis</td><td><span class="pill viva">no ar</span> religada no fim de agosto</td></tr>
+      <tr><td class="no-ar">Recuperação de inativos</td><td>Imóveis</td><td><span class="pill">manual</span> WhatsApp, sustentada à mão pelo time</td></tr>
+      <tr><td>Onboarding</td><td>Autos</td><td><span class="pill parada">em migração</span> primeira régua em teste desde 11/09</td></tr>
+      <tr><td>Pós-cadastro</td><td>Imóveis</td><td><span class="pill parada">parada</span> o limbo entre o cadastro e o contato comercial</td></tr>
+      <tr><td>Educacional</td><td>Imóveis</td><td><span class="pill parada">parada</span> a partir do 3º mês</td></tr>
+      <tr><td>Retenção preventiva</td><td>Imóveis · Autos</td><td><span class="pill parada">parada</span> 3º mês em Imóveis, 4 primeiros meses em Autos</td></tr>
+      <tr><td>Recuperação por tempo de saída</td><td>Imóveis · Autos</td><td><span class="pill parada">parada</span> 4 réguas em Autos, de 30 dias a mais de 1 ano</td></tr>
+      <tr><td>Carrinho abandonado</td><td>Imóveis · Autos</td><td><span class="pill parada">parada</span> web push, vitrine e checkout</td></tr>
+      <tr><td>Upsell</td><td>Autos</td><td><span class="pill parada">parada</span> inclui quem esgotou o limite de anúncios</td></tr>
+      <tr><td>Nutrição por lead score</td><td>Imóveis</td><td><span class="pill parada">no legado</span> a versão nova parou por dependência técnica</td></tr>
+      <tr><td>Autos 360</td><td>Autos</td><td><span class="pill parada">parada</span> onboarding e engajamento do hub do lojista</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="fonte">Inventário reconstruído a partir do quadro de jornadas apresentado em tela em
+    10/09. O arquivo original ainda não foi recebido, então esta contagem é do que foi mostrado, não
+    de um inventário da ferramenta.</p>
+
+  <h3 style="margin:2rem 0 .5rem;font-size:1rem">Quando o CRM volta a operar inteiro</h3>
+  <p class="lead">A migração roda por temas, ao ritmo declarado de cerca de <b>duas semanas por
+    tema</b>, e são cinco temas: onboarding, carrinho abandonado, inativos e cancelados, upsell, e
+    pós-cadastro com nutrição. A conta dá <b>meados de novembro</b>, que é o último mês do Ciclo 1.
+    Em paralelo, a migração da base de clientes de Imóveis corre em ondas até o fim do ano.</p>
+  <p class="lead" style="margin-top:.7rem">A consequência é de planejamento, não de diagnóstico:
+    <b>qualquer ação deste ciclo que dependa de jornada automatizada de CRM não roda em escala
+    dentro do ciclo</b>. Isso não tira o CRM do caminho, ao contrário. Muda o que se pode prometer
+    para dezembro e o que precisa ser feito à mão até lá.</p>
+
+  <div class="regua">
+    <p><b>O que este achado ainda não autoriza.</b> Ele não pontua trava nenhuma. Tudo aqui é
+      declarado em reunião, e o método exige documento formal do cliente para nota acima de 3.</p>
+    <p><b>E ele ainda não tem tamanho.</b> Falta o número que transforma o achado em decisão:
+      quantos clientes entraram no ambiente novo desde abril, e qual o churn desse grupo comparado
+      com o de quem entrou antes. O dado existe no painel de funil do próprio Grupo OLX, é extração,
+      não construção. Enquanto ele não chega, o achado é <b>estrutural e não dimensionado</b>.</p>
   </div>
 </section>
 
@@ -278,7 +412,7 @@ details.mais[open]>summary{margin-bottom:.85rem}
   <div class="prosa" id="denominador"></div>
 </section>
 
-<script src="/assets/travas-data.js?v=429e9ce3"></script>
+<script src="/assets/travas-data.js?v=4e082b3c"></script>
 <script src="/assets/travas-placar.js?v=059463d7"></script>
 </div><aside class="rail" aria-label="Índice da página">
   <div class="rail-top">

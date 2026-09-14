@@ -72,6 +72,23 @@ Ciclo 1 perde três segundas (07/set, 12/out, 02/nov) e o Ciclo 3 abre no Carnav
 **Métricas** (cliente): 78 métricas, 51 delas P0, organizadas de baixo para cima no funil, no mesmo
 formato do dicionário do Grupo Lupo.
 
+**Receita** (cliente): a árvore de produção de receita, com o status de cada nó, aberto, hipótese ou
+confirmado.
+
+**Destrava Receita** (cliente): a aba das descobertas, uma página por fase do método. Só a Fase 1,
+Identificar, tem material: o placar das 8 travas, os nove diagnósticos técnicos do contrato e os
+achados que ainda não viraram nota.
+
+> ⚠️ **O placar das travas é gerado, não editado à mão.** `portal/assets/travas-data.js` sai de
+> `.claude/scripts/build_travas_data.py` sobre `dados/outputs/dre-diagnostico-travas.json`. Editar o
+> `.js` é sempre errado: a correção é mexer na fonte e regerar.
+>
+> ✅ **Sincronizado em 14/09.** A fonte recebeu a repontuação da trava de Cegueira de 11/09 (6 para
+> 5) e a coleta de mídia de 14/09, e o asset foi regerado. O placar deixou de estar atrás do
+> repositório. O aviso no topo da página agora explica o que mudou e, mais importante, o que **não**
+> mudou: a coleta de mídia não subiu nota nenhuma, porque medição sem recorte B2B e sem base de
+> comparação não vira score.
+
 > ⚠️ O dicionário é **v0**. Pressupõe receita B2B por plano ou assinatura de anunciante com motion
 > sales-led: leitura ainda não confirmada pela OLX (`briefing.modelo_receita` segue `null` em
 > [dados/client.json](../dados/client.json)). As perguntas que confirmam isso estão no bloco 03 do

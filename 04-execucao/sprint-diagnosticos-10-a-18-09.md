@@ -181,17 +181,26 @@ limitadas a 3 estreita bastante o que a consolidação causal consegue afirmar.
 de 16 e 17 as perguntas que as gravações não responderem, em vez de usar os blocos para cobrir
 terreno já coberto.
 
-**3. 🔴 (vi) Mídia paga é o único cujo prazo não depende só de esforço.** Fechar em 18/09 exige que
-as duas contas de Meta estejam **ingeridas no V4MOS**, e ingestão é processo técnico com latência
-própria: não acelera com prioridade. Em 08/09 o Meta ainda devolvia zero nos seis endpoints, contra
-23 campanhas e R$ 2,59 mi já ingeridos do Google.
+**3. ✅ (vi) Mídia paga era o único cujo prazo não dependia só de esforço. O risco não se
+materializou.** Fechar em 18/09 exigia que as duas contas de Meta estivessem **ingeridas no V4MOS**,
+e em 08/09 o Meta ainda devolvia zero nos seis endpoints, contra 23 campanhas e R$ 2,59 mi já
+ingeridos do Google.
 
-Se a ingestão não fechar dentro da semana, **(vi) fecha só com Google** e a camada de Meta entra como
-limitação declarada. Isso afeta as travas de Exposição, Atenção e Qualificação, e é material: as
-duas contas de Meta são justamente as do B2B em escopo, `VR ZAP+` e `OLX Autos B2B`.
+**A verificação de 14/09 foi feita, e o resultado foi melhor que o cenário-base.** As contas saíram
+no lote de 10/09, a ingestão começou em **12/09** e a recoleta sobre 01/01/2025 a 14/09/2026 trouxe
+**90 campanhas, 1.079 anúncios, R$ 7.375.303,34, 1,88 bi de impressões e CTR de 1,56%** no Meta,
+com série mensal de 21 meses contínuos. (vi) não fecha só com Google: fecha com os dois lados, e o
+Meta é o lado maior, **2,7 vezes o investimento do Google**.
 
-**Ação:** verificar a ingestão na segunda 14/09, não na quinta. Se não estiver rodando, escalar no
-mesmo dia e decidir conscientemente se (vi) fecha parcial ou se é o único a estourar 18/09.
+**O risco mudou de lugar, não desapareceu.** O que ameaça o fechamento de (vi) em 18/09 agora não é
+ingestão, é **recorte**: nenhuma das contas separa B2B de B2C, e sem uma frase do time de mídia
+dizendo qual campanha é captação de anunciante, (vi) fecha com o retrato da mídia do grupo inteiro
+em vez do funil contratado. Isso afeta as travas de Exposição, Atenção e Qualificação exatamente
+como a falta de ingestão afetaria. Ver [PENDÊNCIAS 12](../PENDENCIAS.md).
+
+**Ação:** cobrar a definição de `pf`, `sc` e `ppl` na convenção de campanha e a lista de qual conta
+é captação de anunciante, com Mirella Mendonça, até 18/09. É o único insumo que falta para (vi)
+fechar cheio.
 
 **4. A revisão de qualidade não tem dono.** O método exige que o material de comitê seja validado
 por **alguém que não participou da análise**, é a única proteção contra material fraco chegar ao

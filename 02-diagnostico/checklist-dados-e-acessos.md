@@ -10,7 +10,9 @@ o restante pode ser complementado nas duas primeiras semanas."
 
 **Material recebido até agora:** primeiro lote do data room baixado em **24/08/2026**, 9 arquivos nos blocos E e I; a série de receita do bloco A por e-mail em **28/08**; os exports de GTM do bloco H em **01/09**. Índice, procedência e leitura inicial em [`assets/originais/README.md`](../assets/originais/README.md).
 
-**Acessos verificados em 31/08 e 01/09/2026:** GA4 liberado (H1 ✅) e **GTM confirmado** (H2 ✅), o bloco H, prioritário, está com os dois acessos. V4MOS inalterado: Google Ads ingerindo, Meta vazio. Search Console, Salesforce, CRM e ferramentas de SEO/comportamento seguem sem concessão.
+**Acessos verificados em 31/08 e 01/09/2026:** GA4 liberado (H1 ✅) e **GTM confirmado** (H2 ✅), o bloco H, prioritário, está com os dois acessos. Search Console, Salesforce, CRM e ferramentas de SEO/comportamento seguem sem concessão.
+
+**Atualização de 14/09, apurada na API e não declarada:** o V4MOS **deixou de estar inalterado**. As duas contas de Meta foram aprovadas no lote de 10/09, a ingestão começou em 12/09 e a recoleta de 14/09 devolve 90 campanhas, 1.079 anúncios e R$ 7,38 mi no Meta, contra 23 campanhas e R$ 2,75 mi no Google, sobre 01/01/2025 a 14/09/2026. Isto entra aqui porque foi **medido na ferramenta**, não porque alguém informou. O restante do lote de 10/09 segue por conferir, ver a nota abaixo e a [pendência 18](../PENDENCIAS.md).
 
 ---
 

@@ -89,19 +89,34 @@ Rode os dois antes de concluir qualquer coisa sobre ausencia de dado.
 
 ## Estado no Grupo OLX
 
-Verificado em **24/08/2026**: autenticacao **OK** nos seis endpoints (401 com secret errado, 403 com
-org inexistente, os dois controles passam), e **zero registros** em qualquer janela, inclusive sem
-filtro de data.
+Atualizado em **14/09/2026**. As tres contas ingerem, e a coleta larga (01/01/2025 a 14/09/2026) e a
+referencia atual do projeto:
 
-Conclusao: o workspace existe e a credencial e valida, mas **nenhuma conta de midia foi ingerida
-ainda**. Isso e coerente com o **bloco G (Midia Paga)** do
-[checklist de dados](../../../02-diagnostico/checklist-dados-e-acessos.md), que segue pendente, os
-acessos as contas Google e Meta ainda nao foram concedidos a `gina@v4company.com`.
+| Lado | Coleta de 14/09 |
+|---|---|
+| **Google Ads** (MCC 526-656-0190) | 23 campanhas, R$ 2.746.029,59, 56,4 mi de impressoes, 10,17 mi de cliques, CTR 18,03%, CPA R$ 3,06. **So 11 dos 21 meses tem dado**: faltam nov/2025 a abr/2026 |
+| **Meta Ads** (612188193108418 e 1742214902479721) | 90 campanhas, 1.079 anuncios, R$ 7.375.303,34, 1,88 bi de impressoes, 29,4 mi de cliques, 1,41 bi de alcance, CPM R$ 3,91, CTR 1,56%. **21 meses continuos** |
 
-**Enquanto o bloco G nao fechar**, o diagnostico de midia depende de exportacao manual. Registre isso
-em `PENDENCIAS.md` em vez de tratar a lista vazia como dado real: um diagnostico de Exposicao que le
-"investimento = 0" e conclui "o cliente nao investe em midia" e um erro grave e perfeitamente
-evitavel.
+O Meta investe **2,7 vezes** o Google na mesma janela, e e a unica serie mensal de midia sem buraco,
+portanto a unica utilizavel em `/dre-forecast`.
+
+**Historico, porque ele explica dois defeitos ja corrigidos.** Ate 08/09 o Meta devolvia zero nos
+seis endpoints, com os dois controles de sanidade passando, isto e, acesso nao concedido e nao falha
+tecnica. As contas sairam no lote de acessos de 10/09 e a ingestao comecou em 12/09, mas ficou
+invisivel por dois dias porque o script gravava so na chave `connectors`, em ingles, que as skills
+`dre-*` nao leem. Hoje ele grava nas duas, `connectors` e `conectores.v4mos.ultima_coleta`. O
+segundo defeito era o payload cru ir para dentro do `client.json`; agora ele vai para
+`dados/cache/v4mos-<data>.json`, fora do git e regeneravel.
+
+**A ressalva que substituiu a antiga, e que vale para todo consumidor desta skill:** o bloco G
+fechou no que era acesso, e nao fechou no que e recorte. **Nenhuma das tres contas separa B2B de
+B2C**, e 90,4% do investimento de Meta esta em campanhas com sufixo `_pf`, a mesma nomenclatura que
+levanta a hipotese de consumidor final no Google (`PENDENCIAS.md`, pendencia 12). Os R$ 10,12 mi
+medidos **nao sao** o investimento do recorte B2B contratado.
+
+O erro a evitar mudou de forma, nao de natureza. Antes era ler "investimento = 0" e concluir que o
+cliente nao investe em midia. Agora e ler R$ 10,12 mi e usar como numerador de um CAC B2B. Os dois
+sao o mesmo erro: tratar o que a ferramenta devolve como se fosse a pergunta que foi feita.
 
 ## Quem consome
 

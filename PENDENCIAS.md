@@ -211,40 +211,49 @@ cláusula 3.1 usa numeração romana (**I** e **II**). A referência cruzada est
 
 ---
 
-## 🟠 11. V4MOS com o Google ingerido, Meta ainda vazio
+## ✅ 11. V4MOS com o Google ingerido, Meta ainda vazio · RESOLVIDA
 
-Revalidado em **24/08/2026**, depois de a V4 aceitar o convite do MCC VivaReal.
+**Resolvida em 14/09/2026.** O lote de acessos de 10/09 liberou as duas contas de anúncio, o V4MOS
+começou a ingerir Meta em **12/09** e a recoleta de **14/09**, sobre 01/01/2025 a 14/09/2026,
+fechou a pendência com dado em volume.
 
 | Lado | Estado |
 |---|---|
-| **Google Ads** | ✅ Ingerindo. 655 registros de campanha, 8 campanhas distintas, de 16/05/2025 a 22/06/2026, R$ 1,91 mi de investimento e 7,1 mi de cliques |
-| **Meta Ads** | 🟠 Vazio. Os seis endpoints do Facebook devolvem `data: []`, coerente com as duas contas de anúncio ainda pendentes de aprovação na OLX |
+| **Google Ads** | ✅ Ingerindo. 23 campanhas, R$ 2.746.029,59, 56,4 mi de impressões, 10,17 mi de cliques, CTR 18,03% e CPA R$ 3,06, de 01/01/2025 a 14/09/2026. **Só 11 dos 21 meses têm dado**, faltam nov/2025 a abr/2026 inteiros |
+| **Meta Ads** | ✅ Ingerindo. 90 campanhas, 1.079 anúncios, R$ 7.375.303,34, 1,88 bi de impressões, 29,4 mi de cliques, 1,41 bi de alcance, CPM R$ 3,91 e CTR 1,56%, em **21 meses contínuos** |
 
-**Atualização de 01/09 · agora com evidência de interface, não só de API.** A V4 já enxerga o
-portfólio empresarial **`New OLX Brasil`**. Dentro dele, em Contas → Páginas, existe **uma única
-página**, `Grupo OLX` (ID `1239097169583910`), e a aba **Ativos conectados** devolve
-**"Nenhum ativo conectado"**.
+**O achado que a resolução produziu, e que vale mais que a resolução:** o investimento do Meta é
+**2,7 vezes o do Google** na mesma janela. Todo o material do projeto anterior a 12/09 foi escrito
+quando o Meta devolvia `data: []`, isto é, sobre uma leitura de mídia invertida. O Meta é também a
+única série mensal de mídia contínua que o projeto tem, e portanto a única utilizável no forecast.
 
-Duas leituras, e convém não confundi-las:
+**Nota de método sobre por que isso demorou dois dias a aparecer.** A ingestão começou em 12/09 e
+ficou invisível até 14/09 porque o script gravava o resultado na chave `connectors`, em inglês, que
+só as skills `ee-*` reaproveitadas leem, enquanto as skills `dre-*` deste projeto leem `conectores`.
+O script passou a gravar nas duas. Ver o histórico v28 em [`dados/client.json`](dados/client.json).
 
-1. **A confirmação esperada:** nenhuma conta de anúncio foi compartilhada com a V4. Isso explica os
-   seis endpoints de Facebook do V4MOS devolverem vazio, não é falha técnica, é ativo não concedido.
-2. **A leitura que precisa de confirmação:** se a página `Grupo OLX` de fato não tem **nenhum** ativo
-   conectado no portfólio, isso quebra vínculo de página com conta de anúncio, pixel e catálogo, e
-   afeta lead ads, Advantage+ e atribuição em nível de página. **Mas pode ser artefato de permissão:**
-   a interface mostra o que o usuário logado enxerga, não necessariamente o que existe. Confirmar com
-   alguém que tenha visão administrativa antes de tratar como achado.
+### O que sobrou de aberto, e virou item próprio
 
-**Ação:** cobrar a aprovação das contas `612188193108418` (VR ZAP+) e `1742214902479721`
-(OLX Autos B2B). Sem elas, a auditoria (vi) fecha só pela metade e o CAC do forecast
-fica sem o custo de Meta. Pedir junto: acesso de parceiro no portfólio `New OLX Brasil` com os
-ativos atribuídos, e confirmação de quantas páginas e contas existem de fato.
+1. **A lista de contas de anúncio do portfólio `New OLX Brasil`.** A leitura de 01/09 pela interface
+   mostrava uma única página, `Grupo OLX` (ID `1239097169583910`), com **"Nenhum ativo conectado"**,
+   e havia dúvida sobre se era artefato de permissão do usuário logado. As duas contas concedidas
+   provam que era: existiam ativos e a visão estava limitada. O que segue sem resposta é **quantas
+   contas de anúncio existem de fato no portfólio**, porque a operação pode ser maior que as duas.
+   Enquanto isso não vier, R$ 7,38 mi é o piso do investimento em Meta, não o total.
+   **Responsável:** Mirella Mendonça · **Prazo:** antes do Comitê 1 de 23/09
+2. **Os seis meses ausentes da série do Google**, nov/2025 a abr/2026, origem não apurada entre
+   pausa real da conta e falha de ingestão. **Responsável:** Michelle Morais · **Prazo:** 22/09
+3. **A separação de B2B e B2C**, que é o que impede esses R$ 10,12 mi de virarem numerador de CAC.
+   Segue na [pendência 12](#-12-as-campanhas-visíveis-no-google-ads-parecem-ser-b2c-não-b2b), que
+   continua aberta e agora vale para as duas contas de Meta também.
+
 
 ---
 
 ## 🔴 12. As campanhas visíveis no Google Ads parecem ser B2C, não B2B
 
-Achado ao ler o primeiro dado real que chegou pelo V4MOS. As 8 campanhas do MCC recém-liberado:
+Achado ao ler o primeiro dado real que chegou pelo V4MOS. As 8 campanhas do MCC recém-liberado,
+na leitura de 22/06 (a recoleta de 14/09 mostra 23 campanhas nesta mesma conta):
 
 ```
 dsageralbr_gg_se_bg_ld_ao_wb_re_vr_pf
@@ -287,13 +296,46 @@ tem **7 contas de Google Ads vinculadas**:
 Duas leituras, e as duas mudam o plano de mídia:
 
 1. A operação de Google Ads do grupo é **muito maior** do que a conta liberada. A V4 enxerga hoje
-   R$ 1,91 mi de investimento; o conjunto vinculado ao ZapImóveis é outra ordem de grandeza.
+   R$ 2,75 mi de investimento nesta conta; o conjunto vinculado ao ZapImóveis é outra ordem de
+   grandeza.
 2. A conta liberada pode ser uma conta lateral, não a conta principal de nenhuma das duas frentes.
 
 **Ação revista:** pedir a relação completa das contas de Google Ads do grupo, com o dono e a
 finalidade de cada uma, e identificar **qual carrega a captação de anunciante**. Este é o pedido que
 mais muda o resultado da auditoria (vi).
 **Responsável:** Michelle Morais · **Prazo:** antes da apresentação de 29/09
+
+**Atualização de 14/09 · a hipótese atravessou para o Meta, e com peso.** As duas contas de Meta
+entraram em ingestão e trouxeram 90 campanhas. A convenção de nomenclatura é a mesma, e o resultado
+é mais forte do que no Google:
+
+| | |
+|---|---|
+| Campanhas de Meta terminadas em **`_pf`** | 30 de 90 |
+| **Investimento nelas** | **R$ 6.664.682,43 de R$ 7.375.303,34, ou 90,4%** |
+| O que carrega o resto | 26 campanhas em `_sc`, quase todas de alcance e engajamento no Instagram, mais 34 com nomenclatura livre (`Q1_2025_Março_Engajamento`, `Q3_2025_setembro_alcance`) |
+
+Os maiores itens de gasto são explícitos no objetivo: `folocalizanewpplbr_mt_ct_bo_fm_ao_cr_at_ol_pf`
+(R$ 667 mil, `OUTCOME_LEADS`), `founidaspplbr_mt_ct_bo_fm_ao_cr_at_ol_pf` (R$ 603 mil,
+`LEAD_GENERATION`), `cmat26f1-alcance_mt_pm_os_aw_tp_cr_at_ol_pf` (R$ 654 mil,
+`OUTCOME_AWARENESS`). O infixo **`ppl`** e o objetivo de geração de lead convivendo com o sufixo
+`pf` é exatamente a ambiguidade que a pergunta do kick-off deveria ter resolvido e não resolveu.
+
+**O que isso muda na pendência.** Se `pf` significa pessoa física, então **90% do maior investimento
+de mídia do grupo está fora do recorte contratado**, e o diagnóstico (vi) mediria o funil errado
+numa escala muito maior do que a suspeitada em agosto. Se `pf` significa outra coisa na convenção
+interna, a leitura inteira cai. A diferença entre os dois cenários é uma frase, e ela continua sem
+dono desde 24/08.
+
+> Vale aqui a mesma ressalva do topo, e ela fica mais importante, não menos, agora que o número é
+> grande: **isto é leitura de nomenclatura, não de dado de negócio.** Nenhum material de comitê pode
+> afirmar que 90% da mídia é B2C. O que o material pode afirmar é que **R$ 10,12 mi de mídia medida
+> não têm recorte declarado**, e que ninguém no projeto sabe qual parte é captação de anunciante.
+
+**Ação atualizada:** obter do time de mídia, por escrito, o significado de `pf`, `sc` e `ppl` na
+convenção, e a lista de qual conta e qual campanha é captação de anunciante.
+**Responsável:** Mirella Mendonça + Michelle Morais · **Prazo:** antes do Comitê 1 de 23/09
+
 
 ---
 

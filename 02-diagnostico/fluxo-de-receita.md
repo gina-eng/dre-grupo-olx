@@ -622,10 +622,12 @@ Todos com propriedade e período. A coluna final diz se o número entra no mapa,
 | `Sessões` | 119 | GA4 OLX PRO (382768600) | três meses até 31/08/2026 | não | É o produto do anunciante profissional, exatamente o recorte B2B contratado, e registra 119 sessões em três meses, só tráfego direto. Significa propriedade órfã, não produto sem tráfego. Não é volume utilizável. |
 | `Eventos registrados` | 0 | GA4 OLX Pro Landing (382776122) | junho–agosto/2026 | não | Zero evento no período. Achado de instrumentação. |
 | `Contas de Google Ads vinculadas` | 7 (9221562141 · 6794249680 · 7581320191 · 6386557247 · 1973081572 · 5004050899 · 4632447364) | GA4 ZapImóveis (407374944) | leitura de 31/08/2026 | não | Nenhuma delas é a 526-656-0190, a única a que a V4 tem acesso. Mede o tamanho do que a V4 NÃO enxerga, não uma etapa do fluxo. |
-| `Investimento em Google Ads` | R$ 1,91 mi | Não é propriedade GA4, V4MOS, MCC ZAP+ VivaReal 526-656-0190 | 16/05/2025 a 22/06/2026 (agregado, sem quebra mensal nem por campanha) | não | Não tem quebra mensal nem por campanha, e as 8 campanhas visíveis têm sufixo 'pf' e temas de aluguel, compra e MCMV, o que sugere B2C (pendência 12). Sem CAC por canal e sem certeza de recorte, não entra no mapa. |
-| `Cliques em Google Ads` | 7,1 mi | V4MOS, MCC 526-656-0190 | 16/05/2025 a 22/06/2026 | não | Mesmo motivo do investimento. Não há nenhuma métrica unitária de mídia (CPC, CPM, CPA, CPL, CTR, ROAS) em todo o repositório, só investimento total e cliques totais. |
-| `Registros de campanha / campanhas distintas` | 655 registros · 8 campanhas | V4MOS, MCC 526-656-0190 | 16/05/2025 a 22/06/2026 | não | O retorno bruto não está versionado, dados/cache/ está vazia, então não dá para recalcular nem separar investimento por campanha. |
-| `Meta Ads · todos os endpoints` | 0 (data: []) | V4MOS, seis endpoints do Facebook | revalidado em 24/08/2026 e 01/09/2026 | não | Zero apurado, e a causa é conhecida: as contas 612188193108418 e 1742214902479721 não foram concedidas. É ativo não concedido, não falha técnica. |
+| `Investimento em Google Ads` | R$ 2.746.029,59 | Não é propriedade GA4, V4MOS, MCC ZAP+ VivaReal 526-656-0190 | 01/01/2025 a 14/09/2026, coleta de 14/09, com quebra mensal e por campanha | não | RECOLETADO EM 14/09 sobre janela larga, substitui os R$ 1,91 mi de 22/06. Agora tem quebra: 23 campanhas e série mensal. Duas ressalvas impedem o uso: **só 11 meses têm dado, faltam nov/2025 a abr/2026 inteiros**, origem não apurada entre pausa real e falha de ingestão; e a conta não separa B2B de B2C (pendência 12). Sem CAC por canal e sem certeza de recorte, não entra no mapa. |
+| `Cliques em Google Ads` | 10,17 mi | V4MOS, MCC 526-656-0190 | 01/01/2025 a 14/09/2026 | não | Mesmo motivo do investimento. CTR de 18,03% e CPA de R$ 3,06 sobre 896.625 conversões, e é justamente o CPA que não pode ser lido: a coleta não diz QUAL ação de conversão o Google está contando, item 4 da lista de exports do [mapa de números](mapa-de-numeros.md). |
+| `Registros de campanha / campanhas distintas` | 23 campanhas | V4MOS, MCC 526-656-0190 | 01/01/2025 a 14/09/2026 | não | Eram 8 na leitura de 22/06. O retorno bruto agora **está versionado como cache regenerável** em `dados/cache/v4mos-2026-09-14.json`, fora do git por peso (1,8 MB), então dá para recalcular e separar por campanha. |
+| `Meta Ads · investimento` | R$ 7.375.303,34 | V4MOS, contas 612188193108418 (VR ZAP+) e 1742214902479721 (OLX Autos B2B) | 01/01/2025 a 14/09/2026 | não | **O Meta saiu de zero.** As contas pedidas em 21/08 foram concedidas no lote de 10/09, o V4MOS passou a ingerir em 12/09 e a recoleta de 14/09 cobre 21 meses. São 90 campanhas e 1.079 anúncios. O Meta pesa **2,7 vezes o Google**, o que inverte a leitura de mídia que o projeto carregava. Não entra no mapa porque a conta não separa B2B de B2C: R$ 7,38 mi é mídia do grupo, majoritariamente consumidor. |
+| `Meta Ads · impressões, alcance e cliques` | 1,88 bi · 1,41 bi · 29,41 mi | V4MOS, duas contas de Meta | 01/01/2025 a 14/09/2026 | não | CPM de R$ 3,91 e CTR de 1,56%. **É a única série mensal de mídia contínua que o projeto tem**, 21 meses sem nenhum mês faltando, e por isso é a única utilizável no forecast. Mesmo bloqueio de recorte B2B. |
+| `Métricas unitárias de mídia` | CPM R$ 3,91 · CTR 1,56% · CPC R$ 0,25 (Meta) · CTR 18,03% · CPC R$ 0,27 · CPA R$ 3,06 (Google) | V4MOS, dois lados | 01/01/2025 a 14/09/2026 | não | CORREÇÃO DE UMA AFIRMAÇÃO DESTE DOCUMENTO: até 12/09 ele dizia que não havia nenhuma métrica unitária de mídia no repositório. Há, desde 14/09. Não entram no mapa por dois motivos: recorte B2B ausente, e o CTR de 1,56% contra 18,03% denuncia que as duas contas contam clique de formas diferentes, o que precisa ser resolvido antes de somar ou comparar. |
 | `Contêineres de GTM auditados / inventariados` | 11 exports recebidos · 6 auditados · 22+ contêineres numa das quatro contas do grupo | GTM, contas 94905 · 6326134112 · 4412254379 · 2971905372 | exports de 01/09 e 02/09/2026 | não | Contagem apurada de configuração, não de negócio. Duas das quatro contas estão inteiramente por auditar, e cinco exports já no repositório ainda não foram lidos, a frase 'a auditoria (vii) cobre o escopo B2B' não se sustenta até isso chegar. |
 | `Nível de serviço das propriedades GA4` | 360 (pago): VivaReal 407391347 · ZapImóveis 407374944 · OLX App + Web 152644854 · Autos 360 516288559. STANDARD (gratuito): GA4 Grupo OLX 503925542 | GA4, cinco propriedades | leitura de 01/09/2026 | não | A única propriedade no tier gratuito é a que carrega toda a superfície B2B do escopo contratado. É alocação de orçamento de ferramenta, evidência de política implícita para a pré-condição de Cegueira, não etapa de fluxo. |
 
@@ -806,8 +808,10 @@ tudo com fonte, propriedade e data-base, session_start 13,27 mi, generate_lead 8
 generate_lead_pro 661.144 na GA4 VivaReal (407391347, agosto/2026); 2,47 mi de sessões na GA4
 Grupo OLX e 1,14 mi na Autos 360 com 449 nomes de evento, 11,19 mi de page_view na ANAPRO e 119
 sessões na OLX PRO (jun–ago/2026); 247.694 sessões do canal AI Assistant; os tiers de serviço das
-cinco propriedades; e, fora do GA4, R$ 1,91 mi de investimento e 7,1 mi de cliques em 655
-registros de campanha do MCC 526-656-0190 no V4MOS (16/05/2025 a 22/06/2026). Está tudo em
+cinco propriedades; e, fora do GA4, **R$ 10,12 mi de investimento medido em mídia na recoleta de
+14/09** (Meta R$ 7,38 mi em 90 campanhas e 1.079 anúncios, Google R$ 2,75 mi em 23 campanhas,
+01/01/2025 a 14/09/2026), que substituiu os R$ 1,91 mi agregados do MCC 526-656-0190 que este
+parágrafo citava. Está tudo em
 PENDENCIAS.md, em dados/client.json e no campo numeros_apurados deste JSON, e o próprio
 client.json anota: 'Nenhum numero acima foi usado ainda em diagnostico. Sao leituras de
 verificacao de acesso.' Bastaria um board member abrir o PENDENCIAS.md do próprio projeto para
@@ -1003,8 +1007,13 @@ depende deles, e os LINKS AINDA NÃO CHEGARAM (lacuna 1 da ata, DRI Leonardo Ros
 
 10. INVESTIMENTO DE MÍDIA FORA DO DASHBOARD, em controle à parte com Mirella Mendonça (00:10:08).
 Sem ele não existe CAC por canal, e, com o problema de atribuição do Direto, nem com ele o CAC
-fecha. O único valor de investimento no repositório é o agregado do V4MOS (R$ 1,91 mi, 16/05/2025
-a 22/06/2026), sem quebra mensal nem por campanha, e possivelmente de conta B2C (pendência 12).
+fecha. ATUALIZADO EM 14/09: o investimento medido no V4MOS deixou de ser um agregado sem quebra e
+passou a ser **R$ 10,12 mi com quebra mensal e por campanha** (Meta R$ 7,38 mi, Google R$ 2,75 mi,
+01/01/2025 a 14/09/2026). O que continua faltando é o mesmo de antes, e agora é a única coisa que
+falta: **saber qual campanha é captação de anunciante e qual é consumidor**. Nenhuma das duas
+contas separa B2B de B2C (pendência 12), e essa separação não está nos dados, está na cabeça de
+quem montou as campanhas. É uma frase do time de mídia que transforma R$ 10,12 mi no numerador de
+um CAC.
 
 11. DUAS CAMADAS DE ATRIBUIÇÃO CONVIVENDO: o GA4 e, em paralelo, cookies `sf_utm_*` gravados em
 .olx.com.br pela tag 162 do Container Master, modelo last-click não-direto, janela de 90 dias,

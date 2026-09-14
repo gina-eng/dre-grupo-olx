@@ -8,6 +8,19 @@
 >
 > Par de máquina: [`dados/outputs/dre-diagnostico-travas.json`](../dados/outputs/dre-diagnostico-travas.json)
 
+> 🔄 **Atualizado em 14/09 com a coleta de mídia, sem repontuar nenhuma trava.** O lote de acessos
+> de 10/09 liberou as duas contas de Meta Ads e o V4MOS saiu de zero. A recoleta de 14/09, sobre
+> 01/01/2025 a 14/09/2026, trouxe **90 campanhas, 1.079 anúncios, R$ 7,38 mi, 1,88 bi de
+> impressões, 1,41 bi de alcance, CPM de R$ 3,91 e CTR de 1,56%**, em 21 meses contínuos, contra
+> R$ 2,75 mi e 23 campanhas do Google na mesma janela. **O Meta pesa 2,7 vezes o Google**, o
+> inverso da leitura que este documento tinha em 04/09.
+>
+> Duas dimensões descreviam a si mesmas como 'sem nenhum dado', e não é mais verdade: **(A) Alcance
+> mensal** em Exposição e **(A) CTR / resposta inicial** em Atenção. As duas seguem `null`, e as
+> justificativas foram reescritas: o que as segura agora é **falta de recorte B2B e de base de
+> comparação**, não falta de medição. Nenhuma nota mudou, nenhuma soma mudou, e a razão de não
+> repontuar está em cada célula.
+
 
 ---
 
@@ -19,14 +32,14 @@ contra a faixa de 0–25 do playbook seria erro de escala.
 
 | Trava | Dimensões com nota | Soma | Confiabilidade | Escala |
 |---|---|---|---|---|
-| **Cegueira** | 5 de 5 | 6 | media | 5 de 5 dimensões pontuadas · soma bruta 6 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 10,0 de 25 `[E]`, faixa 0–10 (Estruturalmente travada) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 6 lida contra as faixas do playbook é erro de escala. Comparável apenas com Retenção (9 bruto · 15,0 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si. |
-| **Exposição** | 3 de 5 | `null` | baixa | 6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, Alcance mensal e Share of voice, que são exatamente as duas que decidem a trava. |
-| **Atenção** | 3 de 5 | `null` | baixa | 6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, CTR/resposta inicial e Força de interrupção, que são as duas que definem a trava operacionalmente. |
-| **Interesse** | 3 de 5 | `null` | baixa | 6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, ambas por defeito de instrumentação. |
-| **Qualificação** | 4 de 5 | `null` | baixa | 9 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,25 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado), a coincidência de a soma bruta ser 9 nas duas não significa empate: aqui o 9 vem de quatro dimensões e lá de cinco. 1 dimensão sem evidência, Alinhamento ICP vs. leads. |
-| **Compromisso** | 2 de 5 | `null` | baixa | 4 pontos em 2 das 5 dimensões · máximo praticável 6 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 3 dimensões sem evidência, Tempo até o 1º contato, Conversão para agendamento e Taxa de comparecimento. A soma de 4 NÃO significa que a trava esteja pior: significa que ela quase não foi observada. |
-| **Decisão** | 4 de 5 | `null` | baixa | 8 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 1 dimensão sem evidência, Tempo médio de decisão. É a trava mais perto de fechar score: uma nota de 0 a 3 em (B) fecharia as cinco. |
-| **Retenção** | 5 de 5 | 9 | baixa | 5 de 5 dimensões pontuadas · soma bruta 9 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 15,0 de 25 `[E]`, faixa 11–15 (Frágil. Vazamento relevante) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 9 lida contra as faixas do playbook é erro de escala, e é o erro que produziu a manchete 'estruturalmente travada' da versão anterior. Comparável apenas com Cegueira (6 bruto · 10,0 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si. |
+| **Cegueira** | 5 de 5 | **5** | parcial | 5 de 5 dimensões pontuadas · soma bruta 5 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 8,3 de 25 `[E]`, faixa 0–10 (Estruturalmente travada) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 5 lida contra as faixas do playbook é erro de escala. Comparável apenas com Retenção (9 bruto · 15,0 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si. |
+| **Exposição** | 3 de 5 | `null` | baixa | 6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, Alcance mensal e Share of voice, que são exatamente as duas que decidem a trava. |
+| **Atenção** | 3 de 5 | `null` | baixa | 6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem nota, CTR/resposta inicial e Força de interrupção, que são as duas que definem a trava operacionalmente. Desde 14/09, (A) já tem medição, CTR de 1,56% no Meta sobre 1.079 anúncios: o que a segura é falta de base de comparação e de recorte B2B, não falta de dado. |
+| **Interesse** | 3 de 5 | `null` | baixa | 6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, ambas por defeito de instrumentação. |
+| **Qualificação** | 4 de 5 | `null` | baixa | 9 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,25 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado), a coincidência de a soma bruta ser 9 nas duas não significa empate: aqui o 9 vem de quatro dimensões e lá de cinco. 1 dimensão sem evidência, Alinhamento ICP vs. leads. |
+| **Compromisso** | 2 de 5 | `null` | baixa | 4 pontos em 2 das 5 dimensões · máximo praticável 6 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 3 dimensões sem evidência, Tempo até o 1º contato, Conversão para agendamento e Taxa de comparecimento. A soma de 4 NÃO significa que a trava esteja pior: significa que ela quase não foi observada. |
+| **Decisão** | 4 de 5 | `null` | baixa | 8 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 1 dimensão sem evidência, Tempo médio de decisão. É a trava mais perto de fechar score: uma nota de 0 a 3 em (B) fecharia as cinco. |
+| **Retenção** | 5 de 5 | 9 | baixa | 5 de 5 dimensões pontuadas · soma bruta 9 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 15,0 de 25 `[E]`, faixa 11–15 (Frágil. Vazamento relevante) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 9 lida contra as faixas do playbook é erro de escala, e é o erro que produziu a manchete 'estruturalmente travada' da versão anterior. Comparável apenas com Cegueira (5 bruto · 8,3 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si. |
 
 ---
 
@@ -47,7 +60,7 @@ O ESTADO DE FATO, SEM SUAVIZAR. Em `dados/client.json`, hoje, as OITO travas est
 null` e `dimensoes: {}`, a pré-condição literal falha 8 de 8, porque este dossiê ainda não foi
 escrito de volta no estado de máquina. E mesmo tomando este dossiê como se já estivesse gravado,
 SEIS das oito continuam sem `score_total`: Exposição, Atenção, Interesse, Qualificação,
-Compromisso e Decisão. Apenas Cegueira (6 bruto · 10,0 de 25 normalizado) e Retenção (9 bruto ·
+Compromisso e Decisão. Apenas Cegueira (5 bruto · 8,3 de 25 normalizado) e Retenção (9 bruto ·
 15,0 de 25 normalizado) têm as cinco dimensões pontuadas, e Cegueira, pelo playbook §3 e pela
 SKILL.md linha 28, é pré-condição e não concorre pela restrição. Sobra UMA trava de receita
 pontuada de sete. A consolidação que a skill pede, a tabela dos 8 scores (Passo 1), a regra de
@@ -72,18 +85,23 @@ checklist com volumes por etapa. Fica registrado que nomenclatura de campanha ('
 esta dimensão, o significado do sufixo foi perguntado no kick-off e segue sem resposta.
 
 3) EXPOSIÇÃO: faltam 2 dimensões, e são as duas que decidem a trava: (A) Alcance mensal e (C)
-Share of voice vs. concorrência. (A) depende das duas contas de Meta Ads pedidas em 21/08 e nunca
-aprovadas (612188193108418 VR ZAP+ e 1742214902479721 OLX Autos B2B, o V4MOS devolve `data` vazio
-nos seis endpoints do Facebook e o teste de sanidade de autenticação passou, logo é acesso não
-concedido e não falha técnica), das contas de Google Ads que aparecem no código do próprio site e
-não estão na MCC liberada (963385983, 791128603, 10779204119), da lista de subcontas da MCC
-526-656-0190 (item 4.1 da coleta pendente) e da reingestão do V4MOS, cuja série para em
-22/06/2026. (C) não tem fonte nenhuma no repositório hoje: exige o Mapa de Exposição Competitiva e
-uma medida de share contra Webmotors, Chaves na Mão e, o caso que importa, contra Meta e Google,
-que são simultaneamente canal e concorrente.
+Share of voice vs. concorrência. **(A) deixou de estar sem fonte em 14/09**: as duas contas de
+Meta Ads pedidas em 21/08 (612188193108418 VR ZAP+ e 1742214902479721 OLX Autos B2B) foram
+liberadas no lote de 10/09 e o V4MOS passou a ingerir. A recoleta de 14/09, sobre 01/01/2025 a
+14/09/2026, devolve **1,41 bi de alcance e 1,88 bi de impressões no Meta, em 21 meses contínuos,
+sem nenhum mês faltando**. O que ainda impede a nota não é mais ausência de dado, é recorte:
+**nenhuma das duas contas separa B2B de B2C**, então o alcance medido é o do grupo inteiro, não o
+da captação de anunciante. Seguem pendentes as contas de Google Ads que aparecem no código do
+próprio site e não estão na MCC liberada (963385983, 791128603, 10779204119) e a lista de
+subcontas da MCC 526-656-0190 (item 4.1 da coleta pendente). (C) não tem fonte nenhuma no
+repositório hoje: exige o Mapa de Exposição Competitiva e uma medida de share contra Webmotors,
+Chaves na Mão e, o caso que importa, contra Meta e Google, que são simultaneamente canal e
+concorrente.
 
 4) ATENÇÃO: faltam 2 dimensões, também as definidoras: (A) CTR / resposta inicial e (D) Força de
-interrupção. (A) depende das mesmas contas de Meta e da leitura efetiva do lado Google do V4MOS.
+interrupção. **(A) mudou de natureza em 14/09 e precisa ser relida**: o CTR existe agora, 1,56% no
+Meta sobre 1.079 anúncios e 21 meses, contra 18,03% no Google. O que segura a nota passou a ser a
+falta de base de comparação, não a falta de dado, ver a dimensão (A) no dossiê de Atenção.
 (D) depende do acervo de peças, do racional e dos briefings de campanha da auditoria (iv), hoje
 há 8 peças de uma campanha e nenhum dado de veiculação, e do acesso ao Meta Business Suite e à
 Biblioteca de Anúncios. É a trava com o pior lastro do conjunto: as três notas existentes se
@@ -258,7 +276,7 @@ coletada, mais o inventário do que falta para determiná-la. E a regra 3 do rep
 valendo, uma restrição por vez, o que significa que Retenção é a única hipótese que segue para
 teste, não que o teste já foi feito.
 
-CEGUEIRA NÃO CONCORRE, e agora com número: soma bruta 6 (10,0 de 25 normalizado `[E]`), a nota
+CEGUEIRA NÃO CONCORRE, e agora com número: soma bruta 5 (8,3 de 25 normalizado `[E]`), a nota
 mais baixa do conjunto, apoiada na única evidência apurada do projeto. O método a define como pré-
 condição e não como restrição de receita (playbook §3; SKILL.md linha 28), e a cláusula 1.2 do
 contrato fala em sete travas por isso. Ela é o que precisa ser resolvido ANTES, não em vez de, e
@@ -527,15 +545,33 @@ os seis percentuais da jornada.
 
 ### Cegueira
 
-`media`  ·  5 de 5 dimensões pontuadas · soma bruta 6 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 10,0 de 25 `[E]`, faixa 0–10 (Estruturalmente travada) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 6 lida contra as faixas do playbook é erro de escala. Comparável apenas com Retenção (9 bruto · 15,0 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si.
+`parcial`  ·  5 de 5 dimensões pontuadas · soma bruta **5** · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: **8,3 de 25** `[E]`, faixa 0–10 (Estruturalmente travada) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 5 lida contra as faixas do playbook é erro de escala. Comparável apenas com Retenção (9 bruto · 15,0 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si.
+
+
+> 🔄 **Esta trava foi repontuada em 11/09 e as notas abaixo são as de 11/09, não as de 04/09.**
+> O dossiê completo, com o teste que produziu o diagnóstico e a evidência de cada dimensão, está em
+> [`trava-cegueira.md`](trava-cegueira.md), par de máquina em
+> [`dados/outputs/dre-trava-cegueira.json`](../dados/outputs/dre-trava-cegueira.json).
+>
+> A soma caiu de **6 para 5** e a faixa não mudou: estruturalmente travada nas duas leituras. O que
+> mudou, dimensão a dimensão: **(A) 2 para 1**, a leitura anterior creditava ao sistema digital uma
+> separação de lead e cliente que ele não tem, só a receita está separada, e está na série A1;
+> **(B) 1 para 0**, porque não é dado faltante e sim ausência demonstrada, ficou provado que o CAC
+> não é produzível pelo sistema atual; **(D) 1 para 2**, porque existe camada de BI e um time que
+> responde por ela, o que a leitura anterior subestimava. (C) e (E) não mudaram.
+>
+> ⚠️ **Ressalva de citação.** O dossiê de 11/09 publica o número como **'5 de 25'**, que é a soma
+> bruta lida contra o denominador não rebaixado pela regra 6. As duas leituras caem na mesma faixa
+> 0–10 e a conclusão é idêntica, mas em material de comitê o número citado precisa ser o
+> normalizado, **8,3 de 25**.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
-| (A) Existência de dados básicos (lead, cliente, receita separados) | 2 | analitica | Nota 2. A favor, DECLARADO [D]: o dashboard comercial separa MQL, SQL, venda e receita, com filtro por vertical, canal, time e período e processamento diário às 3h (Lu Machim, 28/08, 00:05:42–00:08:59; registrado em lacunas-do-fluxo-de-receita.md L6). Nada dele foi extraído, os links são a lacuna 1 da ata de 28/08. Contra, APURADO por contagem de eventos no GA4 (agosto/2026, auditoria-vii-rastreamento.md): `lead_b2b` = 0 eventos com a tag 429 montada e ativa (achado 3), e a tag 426 `[TAG] GA4 - Purchase` dispara no gatilho 215, que escuta `begin_checkout` (achado 1, conferido no export gtm-kgfgvfc_workspace131.json), na camada digital, receita e início de checkout não estão separados, e lead B2B não existe. Contra, LEITURA DE CONFIGURAÇÃO de workspace não confirmada em runtime: a tag 57 pausada derrubaria `seller_category`, o corte profissional × particular sobre 4,6 mi de `ad_insertion`/mês (achado 4), a própria auditoria registra na ressalva 2 que este achado 'cai por terra se o site gravar user_olx por código próprio', e não há registro de verificação. Contra, no estado do repositório: dados/client.json traz ticket_medio, ciclo_venda_dias, receita_declarada_12m e modelo_receita todos null, e o bloco A do checklist (A1–A3) segue sem nenhum item recebido. Escolhi 2 e não 3 porque a única evidência afirmativa é declarada e nunca verificada, e porque a SKILL.md linha 39 exige par de comparação (benchmark e série própria de 12 meses) que aqui não existe; escolhi 2 e não 1 pela mesma razão que dou em (E), o dashboard descrito é mais que informal, só não foi visto. |
-| (B) CAC calculado e confiável | 1 | analitica | Nota 1. Existe um CAC, e ele é médio: UDE 9, 'o CAC é uma média, sem abertura por iniciativa ou frente', ancorado em [sala SP], 01:41:53, fala da sala de São Paulo NÃO atribuível a pessoa pelo padrão do cabeçalho da própria transcrição. O que sustenta a nota sem depender dela é UDE 7, atribuível: 'não existe leitura por safra, nem LTV, nem CAC por cliente, para orientar a aquisição', Florence Scappini (Grupo OLX, lidera a frente de receita, ata do kick-off) 01:01:09 e Iuna Scheffler 01:02:48. Somam-se: o investimento de mídia não está no dashboard, é controle à parte de Mirella Mendonça (L9, 00:10:08) e não foi entregue; o item A3 do checklist (ticket médio, ciclo e CAC por canal) está ⚪ não recebido; e G2 (investimento mensal por canal/campanha) não existe em nenhum lugar do repositório. Há aqui a única evidência FORMAL do dossiê produzida pelo próprio cliente: as duas anotações do slide FLUXOS sobre o canal Direto ('teste de campanha paga para WhatsApp: entra tudo como Direto' e 'perde atribuição: entra tudo como Direto'), das quais lacunas-do-fluxo-de-receita.md §2 conclui, com todas as letras, que 'CAC por canal não existe hoje'. Ressalva sobre a fonte: o arquivo original do slide não está versionado (L28). |
-| (C) LTV e payback calculados | 0 | analitica | Nota 0, e 0 aqui é evidência de inexistência, não ausência de evidência. UDE 7, declarado por dois nomes do lado da OLX: 'não existe leitura por safra, nem LTV, nem CAC por cliente' (Florence Scappini 01:01:09; Iuna Scheffler 01:02:48). Grep por 'LTV' em todo o repositório retorna a métrica apenas como conceito de método (00-playbook, skills) e como item de checklist, nunca como valor do Grupo OLX. Não há payback em documento nenhum. E os insumos que permitiriam calculá-lo estão null em dados/client.json (ticket_medio, base_ativa) ou em aberto (a unidade do churn, ambiguidade 4 de jornada-do-cliente-profissional.md, segue sem resposta). |
-| (D) Fonte única de verdade (CRM/BI) vs. planilhas paralelas | 1 | analitica | Nota 1. DECLARADO [D]: UDE 11, 'o dado existe mas não está em harmonia entre as áreas, e não vira análise' (Florence Scappini, 01:00:04 e 01:01:55); e L9, o investimento de mídia é 'outro controle que a gente tem' fora do dashboard (Mirella Mendonça, 00:10:08), que é um controle paralelo declarado pelo cliente. APURADO / leitura de configuração dos exports: a superfície B2B escreve em pelo menos três propriedades do GA4, G-50C013M2CC (OLX App + Web, 152644854, tier 360), G-6TV9FSHYVM e G-ZBYP2KJ7L9 (achado 19), enquanto o onboarding apontou uma quarta, GA4 Grupo OLX (503925542), que não recebe de nenhum dos 6 contêineres auditados; o GTM do grupo tem quatro contas, das quais duas (Checkout Unificado - PRO 6326134112 e VivaReal 4412254379) estão inteiramente por auditar (ressalva 3 da auditoria); o bloco B do checklist registra quatro plataformas de relacionamento convivendo (Salesforce Marketing Cloud, Insider, Braze, RD Station) onde o escopo previa uma; e os cookies sf_utm_* mantêm uma segunda camada de atribuição (last-click não-direto, janela 90 dias) alimentando o Salesforce em paralelo ao GA4 (achado 15). Escolhi 1 e não 2 porque não há candidato único a fonte de verdade nem no lado comercial nem no lado digital. |
-| (E) Cadência de leitura dos indicadores | 2 | analitica | Nota 2. A favor, DECLARADO [D]: a receita é a principal métrica de acompanhamento diário (Iuna Scheffler e Matheus Rodrigues, kick-off 01:55:41), e o dashboard processa a base às 3h com histórico padrão de 12 meses (Lu Machim, 00:05:42–00:08:59). Contra, DECLARADO: UDE 11, o dado 'não vira análise'. Contra, APURADO por contagem de eventos: `lead_b2b` = 0 em agosto com a tag montada e ativa; `ad_remove` registrou 157.632 eventos enquanto o gatilho 377 escuta a grafia `ads_remove`, que deu zero (achado 8); `session_start` está marcado como evento-chave na propriedade GA4 VivaReal, com 13,27 mi de eventos em agosto. Contra, leitura de configuração de workspace não confirmada contra a versão publicada: 93 de 367 tags pausadas (25,3%), contagem própria sobre os 11 exports de assets/originais/H-rastreamento-gtm/, feita em 04/09/2026 e ainda NÃO versionada no .md da auditoria nem em dados/outputs/, e UA-70177409-2 configurado como ativo em GTM-KGFGVFC e GTM-MJX9PG4 dois anos depois de o Google desligar a plataforma. Escolhi 2 e não 3 porque a cadência declarada cobre a receita e nenhuma cadência cobre a saúde da própria medição; escolhi 2 e não 1 por consistência com (A), é o mesmo dashboard declarado sustentando as duas. |
+| (A) Existência de dados básicos (lead, cliente, receita separados) | 1 | analitica | **Nota 1, e não 0, porque a receita existe e está separada**, só que em outro lugar: a série A1, 20 meses abertos por unidade, segmento e produto, que chegou como anexo de e-mail em 28/08. **Lead e cliente não existem como dado no sistema digital.** APURADO: a propriedade GA4 Grupo OLX (503925542), que carrega `ads.grupoolx.com.br`, `imoveis.`, `autos.`, o institucional e `vender.olx.com.br`, registrou em agosto/2026 apenas **10 nomes de evento, todos automáticos** de enhanced measurement: `page_view` 1.406.689, `session_start` 1.203.225, `first_visit` 862.074, `user_engagement` 224.592, `scroll` 137.399, `click` 127.734, `form_start` 7.598, `form_submit` 506, `file_download` 296, `view_search_results` 54. Nenhum evento de lead, cliente ou receita. EXPERIENCIAL: teste executado pela V4 em 11/09, tentativa de responder *'quantos anunciantes profissionais novos em agosto, e quanto custou cada um'* com as ferramentas concedidas. Impossível. O melhor proxy disponível são **506 `form_submit`**, evento automático do navegador que não identifica o formulário, a intenção nem o desfecho, sobre 862 mil primeiras visitas. Fonte: GA4 Data API, propriedade 503925542, agosto/2026; auditoria (vii) achados 42 e 43. Confiabilidade da dimensão: alta. |
+| (B) CAC calculado e confiável | 0 | analitica | **Nota 0, e não `null`, e a diferença importa:** `null` é para dimensão cujo dado a V4 não conseguiu obter. Aqui o dado foi obtido e demonstra ausência. **Está provado que o CAC não é produzível pelo sistema atual.** APURADO: não há contagem de clientes em nenhuma camada do sistema digital, zero ocorrência de `purchase`, `qualify_lead` ou `close_convert_lead` na propriedade B2B nos últimos 60 dias. O investimento existe e é mensurável, o V4MOS ingere as três contas de mídia desde 14/09. **Falta o denominador, não a ferramenta.** O item A3 do checklist, que traria CAC por canal, segue não entregue. EXPERIENCIAL: mesmo teste de 11/09, com numerador de investimento e sem denominador de cliente, o CAC não é calculável por nenhum caminho. Fonte: GA4 Data API 503925542; checklist-dados-e-acessos.md item A3; V4MOS. Confiabilidade da dimensão: alta. |
+| (C) LTV e payback calculados | 0 | analitica | **Nota 0, pela mesma lógica da dimensão B: ausência demonstrada, não dado faltante.** Sem identidade de cliente não há coorte, e sem coorte não há LTV nem payback. Os itens **A2** (funil comercial com volumes e taxas por etapa) e **A3** (ticket médio, ciclo de vendas) seguem não entregues. O churn de 8–10% ao mês que circula no modelo da meta está registrado como **não verificado** ([PENDÊNCIAS 22](../PENDENCIAS.md)). EXPERIENCIAL: mesmo teste de 11/09, nenhum caminho disponível produz valor de cliente ao longo do tempo. Fonte: checklist-dados-e-acessos.md itens A2 e A3; PENDENCIAS 22. Confiabilidade da dimensão: alta. |
+| (D) Fonte única de verdade (CRM/BI) vs. planilhas paralelas | 2 | analitica e experiencial | **Nota 2, e não menor, porque existe camada de BI e existe um time que responde por ela.** Não chega a 3 porque não há processo único: o parque de GTM escreve em **16 measurement IDs** distintos, mapeados para **8 propriedades GA4** identificadas mais **4 streams que a V4 não enxerga** ([PENDÊNCIAS 27](../PENDENCIAS.md)); há **escrita dupla deliberada**, as tags `[GA4 - Verticalizado]` e `[GA4 - Unificado]` mandam o mesmo evento para a propriedade da vertical e para uma combinada, então qualquer soma entre propriedades conta o mesmo lead duas vezes; **Salesforce Marketing Cloud e RD Station convivem** no GTM sem oficialidade declarada; e **o número de receita que o projeto usa chegou por anexo de e-mail**, não de um sistema. EXPERIENCIAL: kick-off de 24/08 e sessão de 28/08, existem dashboards internos sob responsabilidade de Lu Machim e um time de FP&A dedicado, mas **os links ficaram como ação pendente em 28/08 e nunca foram compartilhados**, então a V4 não verificou o que eles consolidam. Fonte: auditoria (vii) achado 37; checklist-dados-e-acessos.md bloco B; atas de 24/08 e 28/08. Confiabilidade da dimensão: parcial. |
+| (E) Cadência de leitura dos indicadores | 2 | analitica e experiencial | **Nota 2, e o motivo é o ponto mais importante deste diagnóstico, porque não é o que parece.** A cadência **existe, é diária e é disciplinada**: no kick-off de 24/08, Iuna Scheffler e Matheus Rodrigues descrevem a receita como a principal métrica diária de acompanhamento, com EBITDA monitorado em paralelo e metas abertas por vertical, linha e canal, e há um gerente de planejamento financeiro dedicado a acompanhar performance. **O problema não é falta de rotina, é o que a rotina lê.** Uma cadência que lê receita e EBITDA sem ler CAC, LTV e origem de cliente informa, mas não permite dirigir: ela diz que o número caiu, não diz onde mexer. ANALÍTICA: os indicadores que esta trava mede (CAC, LTV, payback, distinção lead/cliente) não existem, logo não podem estar em cadência nenhuma. A nota não passa de 3 também pela **regra 6**: a evidência é transcrição de reunião, não dashboard verificado, porque os links nunca vieram. Fonte: 06-reunioes/2026-08-24-kickoff-transcricao.md; 06-reunioes/2026-08-28-jornada-do-cliente-transcricao.md. Confiabilidade da dimensão: parcial. |
 
 **Interpretação.** CORREÇÃO DE MÉTODO NA RAIZ: a versão anterior deste diagnóstico declarou Cegueira 'não pontuável'
 porque 'o playbook não nomeia dimensões de score' para ela. A afirmação sobre o arquivo
@@ -545,7 +581,7 @@ conclusão é falsa neste repositório: .claude/skills/dre-diagnostico-trava/ref
 por-trava.md nomeia as cinco dimensões de Cegueira e a entrada visual (Inventário de Indicadores),
 e a SKILL.md linha 22 declara esse arquivo canônico ao lado do playbook. Cegueira foi pontuada
 aqui com essas cinco dimensões. Isso desfaz o argumento que elegia Retenção por exclusividade de
-score. Resultado: soma bruta 6, que na escala do playbook só pode ser citada normalizada, 10,0 de
+score. Resultado: soma bruta 5, que na escala do playbook só pode ser citada normalizada, 10,0 de
 25 `[E]` (ver NORMALIZAÇÃO DE ESCALA ao fim deste campo). Cegueira é a trava com a nota mais baixa
 do conjunto e a única cujas notas repousam em dado APURADO, contagem de eventos no GA4 e exports
 de contêiner, não em fala de reunião. A faixa 0–10 do playbook lê 'estruturalmente travada'; a
@@ -585,7 +621,7 @@ frágil · 16–20 funcional · 21–25 forte e governada) pressupõe 25 pontos 
 dimensões livres de 0 a 5. Aqui o teto de 3 da regra 5 do CLAUDE.md foi aplicado em TODAS as cinco
 dimensões, por ausência de evidência formal e de camada experiencial: o máximo praticável é 15,
 não 25. Comparar uma escala censurada em 15 com uma faixa calibrada em 25 empurra toda trava para
-baixo por construção. Normalizada (×25/15), a soma 6 de 15 equivale a 10,0 de 25 `[E]`, que AINDA
+baixo por construção. Normalizada (×25/15), a soma 6 de 15 equivale a 8,3 de 25 `[E]`, que AINDA
 cai na faixa 0–10, 'Estruturalmente travada', mas exatamente na borda: um único ponto a mais em
 qualquer dimensão (7/15 = 11,7/25) já move Cegueira para a faixa 11–15, 'Frágil'. Ou seja: a
 leitura 'estruturalmente travada' de Cegueira sobrevive à normalização, e sobrevive por um ponto,
@@ -627,11 +663,11 @@ parcial | baixa; linha 60: falta de uma das duas camadas rebaixa a 'parcial').
 
 ### Exposição
 
-`baixa`  ·  6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, Alcance mensal e Share of voice, que são exatamente as duas que decidem a trava.
+`baixa`  ·  6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, Alcance mensal e Share of voice, que são exatamente as duas que decidem a trava.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
-| (A) Alcance mensal | `null` | ausente | Sem nota. Não existe alcance B2B mensurado, e a leitura anterior superdimensionava o que existe. CORREÇÃO: a propriedade GA4 Grupo OLX (503925542) registrou 2,47 mi de sessões em jun–ago/2026, das quais 87% (2.146.626) vêm de lp.olx.com.br, um farm de landing pages, dado da tabela C1 de checklist-dados-e-acessos.md. Os domínios do recorte B2B somam ~405 mil sessões (ads.grupoolx.com.br 168.238 · vender.olx.com.br 165.796 · grupoolx.com.br+www 34.069 · imoveis.grupoolx.com.br 23.373 · autos.grupoolx.com.br 13.963), cerca de 16% da propriedade. Atribuir 2,47 mi aos domínios B2B, como a versão anterior fez, entrega um volume seis vezes maior do que a fonte sustenta. Some-se que o próprio C1 marca a leitura como 'de tráfego, não de negócio, pendente de confirmação da OLX', e que a propriedade não recebe de nenhum dos 6 contêineres auditados. A propriedade OLX PRO (382768600) registrou 119 sessões em três meses, o repositório lê corretamente como propriedade órfã, não como produto sem tráfego. Do lado de mídia, o V4MOS entrega 7,1 mi de cliques e R$ 1,91 mi em 655 registros de campanha entre 16/05/2025 e 22/06/2026, mas em 8 campanhas de uma única conta (MCC VR09 - ZAP+ VivaReal, 526-656-0190), cujo tema sugere B2C, e PENDENCIAS 12 marca isso explicitamente como leitura de nomenclatura, que não sustenta conclusão. Nenhum desses números é alcance B2B, e não existe universo de anunciantes profissionais contra o qual julgar adequação. Null. |
+| (A) Alcance mensal | `null` | ausente | Sem nota. Não existe alcance B2B mensurado, e a leitura anterior superdimensionava o que existe. CORREÇÃO: a propriedade GA4 Grupo OLX (503925542) registrou 2,47 mi de sessões em jun–ago/2026, das quais 87% (2.146.626) vêm de lp.olx.com.br, um farm de landing pages, dado da tabela C1 de checklist-dados-e-acessos.md. Os domínios do recorte B2B somam ~405 mil sessões (ads.grupoolx.com.br 168.238 · vender.olx.com.br 165.796 · grupoolx.com.br+www 34.069 · imoveis.grupoolx.com.br 23.373 · autos.grupoolx.com.br 13.963), cerca de 16% da propriedade. Atribuir 2,47 mi aos domínios B2B, como a versão anterior fez, entrega um volume seis vezes maior do que a fonte sustenta. Some-se que o próprio C1 marca a leitura como 'de tráfego, não de negócio, pendente de confirmação da OLX', e que a propriedade não recebe de nenhum dos 6 contêineres auditados. A propriedade OLX PRO (382768600) registrou 119 sessões em três meses, o repositório lê corretamente como propriedade órfã, não como produto sem tráfego. ATUALIZAÇÃO DE 14/09, e ela é grande: o Meta entrou. As duas contas liberadas no lote de 10/09 fizeram o V4MOS sair de zero, e a recoleta sobre 01/01/2025 a 14/09/2026 entrega **1,41 bi de alcance, 1,88 bi de impressões e 29,4 mi de cliques em 90 campanhas e 1.079 anúncios, R$ 7,38 mi**, com série mensal de 21 meses contínuos. O Google, na mesma janela, traz 23 campanhas, R$ 2,75 mi, 56,4 mi de impressões e 10,17 mi de cliques, com o buraco de nov/2025 a abr/2026 sem nenhum registro. Existe alcance medido, portanto, e ele é grande. O QUE MANTÉM A NOTA EM NULL MUDOU DE MOTIVO: não é mais ausência de dado, é ausência de recorte. Nenhuma das duas contas separa B2B de B2C, então 1,41 bi é o alcance do grupo inteiro, majoritariamente consumidor, e PENDENCIAS 12 segue de pé. Continua não existindo universo de anunciantes profissionais contra o qual julgar adequação, item A6 do checklist. Pontuar esta dimensão com o alcance total seria pontuar a trava errada. Null, agora por recorte e não por acesso. |
 | (B) Frequência e consistência | 2 | analitica | Nota 2. UDE 10, Florence Scappini (Grupo OLX), kick-off 00:39:13: 'quando a verba de mídia acaba, a aquisição para' [D], descrição de exposição intermitente feita por quem lidera a frente de receita. A série do V4MOS existe (655 registros, 16/05/2025 a 22/06/2026) e permitiria testar continuidade, mas nunca foi lida nesse corte, termina há mais de dois meses e o retorno bruto não está versionado (dados/cache/ vazia). Escolhi 2 e não 3 porque a intermitência está declarada e não há série de investimento mensal para contrapor: o controle de investimento por canal está fora do dashboard, com Mirella Mendonça (L9), e o item G2 do checklist não existe em lugar nenhum do repositório. Pela SKILL.md linha 39 não há par de comparação, nem benchmark setorial nem série própria utilizável, então a nota descreve fragilidade declarada, não medida. |
 | (C) Share of voice vs. concorrentes | `null` | ausente | Sem nota. Os concorrentes estão nomeados, Webmotors em autos, Chaves na Mão em imóveis, e Meta e Google diretamente, com o mercado descrito pelo cliente como 'rouba-monte' e clientes pequenos migrando verba para Meta e Google, o que o próprio cliente classificou como ponto cego de rastreamento (item 05-10 da conferência do kick-off). Mas não há uma única medida de participação, e o Mapa de Exposição Competitiva (cliente vs. 2+ concorrentes por canal), entrada visual obrigatória da trava, não existe. Nomear concorrente não é medir share of voice. Null. |
 | (D) Diversidade de canais | 2 | analitica | Nota 2 · REBAIXADA de 3. O que está apurado nos exports de GTM prova INSTRUMENTAÇÃO, não operação de canal: Google Ads em pelo menos quatro IDs de conversão (AW-10947843670, contas 963385983, 791128603 e 10779204119), cinco pixels distintos do Meta (592658194155317, 818079879779548, 935989184453347, 328237602412769, 191084528414847), Floodlight (advertiser 14127847) e TikTok (CO25OBRC77U47AMPJES0), além de LPs Unbounce, RD Station, Insider e Braze. Pixel instalado não é canal operando, e o próprio texto da versão anterior admitia isso enquanto mantinha a nota 3, que na escala da SKILL.md linha 58 significa 'processo definido mas não governado', afirmação sobre governo de canais que nenhuma evidência do dossiê sustenta. Do lado do funil B2B, o mix declarado no slide FLUXOS traz cinco canais: CRM 29 · Direto 36 · Pago 16 · Orgânico 5 · Outros 11 [D], que somam 97%, não 100%, com os 3 pontos faltantes registrados como lacuna aberta L29 ('pode ser arredondamento ou canal não rotulado'). O arquivo-fonte do slide não está versionado (L28). E 36 pontos desse mix estão contaminados por atribuição. A nota 2 se justifica pelo mix declarado, não pelo inventário de pixel; e pela SKILL.md linha 39 não há par de comparação, nem benchmark de diversidade de canais, nem série própria utilizável. |
@@ -662,7 +698,7 @@ não existe soma de cinco dimensões. A soma parcial de 6 em 3 dimensões tem m�
 denominador do playbook, 25 pontos em cinco dimensões livres, não existe neste caso nem depois de
 normalizado. Duas proibições decorrem disso e valem para qualquer material: (i) esta soma NÃO pode
 ser lida contra as faixas 0–10 estruturalmente travada · 11–15 frágil · 16–20 funcional · 21–25
-forte e governada; (ii) esta soma NÃO pode ser comparada com o 6 de Cegueira nem com o 9 de
+forte e governada; (ii) esta soma NÃO pode ser comparada com o 5 de Cegueira nem com o 9 de
 Retenção, uma trava soma menos por ter sido MENOS OBSERVADA, não por estar melhor. Aritmética de
 ilustração, `[E]`, que NÃO é score e não entra em material de comitê: a média por dimensão
 pontuada é 2,00; se as 2 dimensões vazias pontuassem nessa mesma média, suposição que NENHUMA
@@ -672,15 +708,19 @@ dessa conta é um só: mostrar que a leitura ingênua 'a soma é 6, menor que o 
 esta trava está pior' está invertida. A única comparação entre travas que é consistente de escala
 neste dossiê é a média por dimensão pontuada, e é a que candidata_a_restricao usa.
 
-**O que falta.** As duas contas de Meta Ads pedidas em 21/08 e nunca aprovadas (612188193108418 VR ZAP+ e
-1742214902479721 OLX Autos B2B), o V4MOS devolve data vazio nos seis endpoints do Facebook e o
-teste de sanidade da autenticação passou (secret inválido devolve 401, organizationId inexistente
-devolve 403), logo o vazio é acesso não concedido, não falha técnica; as contas de Google Ads que
+**O que falta.** ✅ **Duas linhas desta lista fecharam em 14/09.** As duas contas de Meta Ads
+pedidas em 21/08 (612188193108418 VR ZAP+ e 1742214902479721 OLX Autos B2B) foram concedidas no
+lote de 10/09, o V4MOS saiu de `data: []` e a reingestão aconteceu: a coleta de 14/09 cobre
+01/01/2025 a 14/09/2026 e o retorno bruto está versionado como cache regenerável em
+`dados/cache/v4mos-2026-09-14.json`, fora do git por peso. A série não para mais em 22/06/2026.
+Segue faltando: as contas de Google Ads que
 aparecem no código do próprio site e não estão na MCC liberada (963385983, 791128603, 10779204119),
 o pedido é por estes IDs, não por acesso genérico; a lista de subcontas da MCC 526-656-0190
 (item 4.1 da coleta pendente), que fecharia sozinha a pendência 12; a relação completa das contas
 de Google Ads do grupo com dono e finalidade (pendência 12, DRI Michelle Morais, prazo antes de
-29/09); a reingestão do V4MOS, cuja série para em 22/06/2026, e o versionamento do retorno bruto;
+29/09); a apuração dos seis meses ausentes na série do Google, nov/2025 a abr/2026, entre pausa
+real da conta e falha de ingestão; **a separação de B2B e B2C dentro das contas, que é o que hoje
+impede os números medidos de virarem nota nesta trava**;
 o controle de investimento por canal com Mirella Mendonça (lacuna 2 da ata de 28/08, prazo '-', a
 ata registra explicitamente que nenhum prazo foi acordado na sessão e manda não inventar); o
 dimensionamento de quanto do canal Direto é mídia paga sem atribuição (F12, sem DRI e sem prazo);
@@ -690,19 +730,23 @@ obrigatória. Camada experiencial: não executada.
 
 ### Atenção
 
-`baixa`  ·  6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, CTR/resposta inicial e Força de interrupção, que são as duas que definem a trava operacionalmente.
+`baixa`  ·  6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem nota, CTR/resposta inicial e Força de interrupção, que são as duas que definem a trava operacionalmente. Desde 14/09, (A) já tem medição, CTR de 1,56% no Meta sobre 1.079 anúncios: o que a segura é falta de base de comparação e de recorte B2B, não falta de dado.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
-| (A) CTR / resposta inicial | `null` | ausente | Sem nota. Não há um único CTR no repositório, grep por CPC, CPM, CPA, CPL, CTR, ROAS, impressões e alcance em .md e .json retorna essas métricas apenas como conceito de método, nunca como valor do Grupo OLX. O V4MOS expõe seis endpoints e só seis; o lado Meta, que entregaria CTR e CPC por anúncio, devolve zero registros nos três endpoints porque as duas contas nunca foram aprovadas; do lado Google há contagem agregada de campanha (655 registros) e os cortes de keywords e gender existem em client.json apenas como '>0', nunca quantificados. Não há endpoint de conversão, receita ou CPA em nenhum dos dois lados. A auditoria (iv) Criativos Ads & Mensagens, que informa esta trava, está na janela 16–22/09 e não rodou. Null. |
+| (A) CTR / resposta inicial | `null` | medida sem par de comparação | Sem nota, **e o motivo mudou por inteiro em 14/09**. A afirmação anterior desta célula, 'não há um único CTR no repositório', deixou de ser verdadeira: as duas contas de Meta foram liberadas no lote de 10/09 e a recoleta do V4MOS sobre 01/01/2025 a 14/09/2026 entrega **CTR de 1,56% no Meta, apurado sobre 90 campanhas, 1.079 anúncios e 1,88 bi de impressões, com série mensal de 21 meses contínuos**, mais CTR por campanha e CPM de R$ 3,91. Do lado Google, 18,03% sobre 23 campanhas. Existe CTR medido, e em volume. TRÊS RAZÕES INDEPENDENTES MANTÊM A NOTA EM `null`, e nenhuma delas é falta de dado. PRIMEIRA, a regra de duas bases: o método exige comparar cada métrica com benchmark setorial E com o histórico da própria conta (`dre-diagnostico-trava`, camada 1, passo 3: 'uma métrica sem par de comparação não vira nota'). O histórico agora existe, 21 meses. O benchmark setorial não: não há nenhum CTR de mercado com fonte documental nomeada neste repositório, e inventar um violaria a regra 1. É meia base, não duas. SEGUNDA, o recorte: nenhuma das duas contas separa B2B de B2C, então 1,56% é o CTR do grupo inteiro, majoritariamente consumidor, e esta trava pergunta pela atenção do anunciante profissional. TERCEIRA, e é a que impede até a leitura interna: 1,56% no Meta contra 18,03% no Google é uma distância de onze vezes que não descreve qualidade, descreve duas contas contando clique de formas diferentes. Enquanto isso não for resolvido, não existe um CTR da operação, existem dois números que não se somam. Soma-se que a auditoria (iv) Criativos Ads & Mensagens, que traria a camada experiencial desta dimensão, está na janela 16–22/09 e não rodou, e a regra de que toda nota precisa das duas camadas rebaixaria a confiabilidade de qualquer nota tirada só daqui. Null, por falta de par de comparação e de recorte, não por falta de medição. |
 | (B) Diferenciação | 2 | analitica | Nota 2. Evidência declarada [D] de diferenciação contestada, registrada no item 05-10 da conferência do kick-off: os concorrentes incluem Meta e Google diretamente, o mercado é descrito pelo cliente como 'rouba-monte', e clientes pequenos migram verba para Meta e Google, movimento que o próprio cliente classificou como ponto cego de rastreamento. Escolhi 2 e não 3 porque não há uma única peça auditada e o Painel Comparativo de Atenção (headline, promessa, visual, gatilho, cliente vs. concorrentes), entrada visual obrigatória da trava, não existe. A nota descreve fragilidade declarada, não medida. |
 | (C) Clareza da promessa | 2 | analitica | Nota 2. A promessa é clara no que vende e silenciosa no que o comprador quer. Item 05-11 da conferência: 'o que se comunica é visibilidade e inserção, sem garantia de performance', com a frase 'a gente deveria blindar essa aquisição e a gente não garante' registrada sob o rótulo [sala SP], fala da sala presencial NÃO atribuível a pessoa, pelo padrão declarado no cabeçalho da transcrição do kick-off, e por isso citada aqui com peso reduzido. O que sustenta a nota com autoria confirmada é o UDE 2: a formulação é de Dener Lippert (V4), 'o cara que compra um pacote de leads aqui, ele não compra um pacote de leads, ele compra um inventário, um grau de posição, e ele pode receber zero ou 100 leads', e a confirmação é de Leonardo Costa (Grupo OLX): 'Exato. Não tem garantia. O range é gigantesco' (01:35:23). Ou seja: leitura da V4 confirmada explicitamente pelo cliente, e é assim que precisa ser citada. Escolhi 2 e não 3 porque a promessa não é confusa, está descolada da expectativa que o próprio cliente reconhece existir, e nenhuma mensagem foi auditada para confirmar como isso chega ao anunciante. |
 | (D) Força de interrupção | `null` | ausente | Sem nota. Nenhum criativo, headline, vídeo ou tempo médio de visualização com dado no repositório. O que existe são 8 peças de uma única campanha (Mês do Corretor 2026), sem período de veiculação registrado, sem canal, sem verba e sem nenhuma métrica de performance por criativo; os briefings (item E3) não vieram, então nem se sabe se V1, V2 e V3 eram teste de mensagem deliberado ou três entregas soltas; e o brandbook e a messaging house (item E2) não foram recebidos. Nada a pontuar. Null. |
 | (E) Competitividade | 2 | analitica | Nota 2. O cliente descreveu a deterioração competitiva com data e mecanismo: '[esse ano] a gente aumentou muito o preço... a gente foi mexendo no preço dele e ele foi tendo a perda de performance pelo cenário mais competitivo. Então ele foi vendo que vocês estão aumentando o meu preço e a performance minha está caindo' (01:20:27–01:21:24, base do UDE 3). RESSALVA DE ATRIBUIÇÃO: a fala está sob o rótulo [sala SP], que é o nome do EQUIPAMENTO da sala de São Paulo e não de uma pessoa, sob ele se misturam Florence Scappini, o time da V4 e quem estava presencialmente. O conteúdo é enunciado da posição da OLX ('a gente aumentou o preço', 'vocês estão aumentando o meu preço' como fala reportada do anunciante), o que situa o falante do lado do cliente, mas o interlocutor não foi confirmado e nenhuma política implícita repousa sobre ele. É tentativa que falhou, declarada, insumo direto da Nuvem de Conflito. Escolhi 2 e não 3 porque não há nenhuma medida de posição competitiva, só o relato do movimento e do efeito percebido. Higiene: na transcrição a consultoria contratada aparece como 'consultoria de privacy', quase certamente corrupção automática de 'pricing' pelo contexto, confirmar o nome antes de citar em comitê. |
 
-**Interpretação.** Três notas, todas 2, todas apoiadas exclusivamente em falas de reunião, nenhuma métrica de canal,
-nenhuma peça, nenhum CTR, e duas delas com ressalva de atribuição que precisa viajar junto com a
-citação. É a trava com o pior lastro do conjunto. As três pontuadas descrevem um problema de
+**Interpretação.** Três notas, todas 2, todas apoiadas exclusivamente em falas de reunião, nenhuma
+peça auditada, e duas delas com ressalva de atribuição que precisa viajar junto com a citação. Era
+a trava com o pior lastro do conjunto, e desde 14/09 isso está mudando por baixo: já existe métrica
+de canal em volume, 1.079 anúncios e 21 meses de CTR mensal no Meta, que ainda não vira nota por
+falta de base de comparação e de recorte B2B, ver a dimensão (A). O lastro de Atenção é hoje o que
+mais depende de duas coisas baratas: um benchmark de CTR com fonte nomeada e uma frase do time de
+mídia dizendo qual campanha é captação de anunciante. As três pontuadas descrevem um problema de
 proposta de valor mais do que de comunicação, e isso importa para a ordenação: o que as evidências
 de Atenção sugerem é que a promessa 'visibilidade sem garantia' e o aumento de preço de 2026
 alimentam a mesma cadeia que termina em churn, elas reforçam Retenção em vez de competir com ela.
@@ -718,7 +762,7 @@ dimensões tem máximo praticável 9, o denominador do playbook, 25 pontos em ci
 livres, não existe neste caso nem depois de normalizado. Duas proibições decorrem disso e valem
 para qualquer material: (i) esta soma NÃO pode ser lida contra as faixas 0–10 estruturalmente
 travada · 11–15 frágil · 16–20 funcional · 21–25 forte e governada; (ii) esta soma NÃO pode ser
-comparada com o 6 de Cegueira nem com o 9 de Retenção, uma trava soma menos por ter sido MENOS
+comparada com o 5 de Cegueira nem com o 9 de Retenção, uma trava soma menos por ter sido MENOS
 OBSERVADA, não por estar melhor. Aritmética de ilustração, `[E]`, que NÃO é score e não entra em
 material de comitê: a média por dimensão pontuada é 2,00; se as 2 dimensões vazias pontuassem
 nessa mesma média, suposição que NENHUMA evidência autoriza, e menos ainda aqui, onde as vazias
@@ -739,7 +783,7 @@ de 01:20:27 entrar em qualquer material; e a identificação nominal do falante 
 
 ### Interesse
 
-`baixa`  ·  6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, ambas por defeito de instrumentação.
+`baixa`  ·  6 pontos em 3 das 5 dimensões · máximo praticável 9 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 2 dimensões sem evidência, ambas por defeito de instrumentação.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
@@ -767,7 +811,7 @@ existe soma de cinco dimensões. A soma parcial de 6 em 3 dimensões tem máximo
 denominador do playbook, 25 pontos em cinco dimensões livres, não existe neste caso nem depois de
 normalizado. Duas proibições decorrem disso e valem para qualquer material: (i) esta soma NÃO pode
 ser lida contra as faixas 0–10 estruturalmente travada · 11–15 frágil · 16–20 funcional · 21–25
-forte e governada; (ii) esta soma NÃO pode ser comparada com o 6 de Cegueira nem com o 9 de
+forte e governada; (ii) esta soma NÃO pode ser comparada com o 5 de Cegueira nem com o 9 de
 Retenção, uma trava soma menos por ter sido MENOS OBSERVADA, não por estar melhor. Aritmética de
 ilustração, `[E]`, que NÃO é score e não entra em material de comitê: a média por dimensão
 pontuada é 2,00; se as 2 dimensões vazias pontuassem nessa mesma média, suposição que NENHUMA
@@ -797,7 +841,7 @@ não executada.
 
 ### Qualificação
 
-`baixa`  ·  9 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,25 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado), a coincidência de a soma bruta ser 9 nas duas não significa empate: aqui o 9 vem de quatro dimensões e lá de cinco. 1 dimensão sem evidência, Alinhamento ICP vs. leads.
+`baixa`  ·  9 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,25 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado), a coincidência de a soma bruta ser 9 nas duas não significa empate: aqui o 9 vem de quatro dimensões e lá de cinco. 1 dimensão sem evidência, Alinhamento ICP vs. leads.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
@@ -836,7 +880,7 @@ dimensões. A soma parcial de 9 em 4 dimensões tem máximo praticável 12, o de
 playbook, 25 pontos em cinco dimensões livres, não existe neste caso nem depois de normalizado.
 Duas proibições decorrem disso e valem para qualquer material: (i) esta soma NÃO pode ser lida
 contra as faixas 0–10 estruturalmente travada · 11–15 frágil · 16–20 funcional · 21–25 forte e
-governada; (ii) esta soma NÃO pode ser comparada com o 6 de Cegueira nem com o 9 de Retenção, uma
+governada; (ii) esta soma NÃO pode ser comparada com o 5 de Cegueira nem com o 9 de Retenção, uma
 trava soma menos por ter sido MENOS OBSERVADA, não por estar melhor, e aqui o mesmo 9 de Retenção
 foi produzido por quatro dimensões e não por cinco. Aritmética de ilustração, `[E]`, que NÃO é
 score e não entra em material de comitê: a média por dimensão pontuada é 2,25, a MAIS ALTA das
@@ -867,7 +911,7 @@ do canal Direto, nem com ele o CAC fecha.
 
 ### Compromisso
 
-`baixa`  ·  4 pontos em 2 das 5 dimensões · máximo praticável 6 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 3 dimensões sem evidência, Tempo até o 1º contato, Conversão para agendamento e Taxa de comparecimento. A soma de 4 NÃO significa que a trava esteja pior: significa que ela quase não foi observada.
+`baixa`  ·  4 pontos em 2 das 5 dimensões · máximo praticável 6 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 3 dimensões sem evidência, Tempo até o 1º contato, Conversão para agendamento e Taxa de comparecimento. A soma de 4 NÃO significa que a trava esteja pior: significa que ela quase não foi observada.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
@@ -905,7 +949,7 @@ dimensões, existem duas. A soma parcial de 4 em 2 dimensões tem máximo pratic
 denominador do playbook, 25 pontos em cinco dimensões livres, não existe neste caso nem depois de
 normalizado. Duas proibições decorrem disso e valem para qualquer material: (i) esta soma NÃO pode
 ser lida contra as faixas 0–10 estruturalmente travada · 11–15 frágil · 16–20 funcional · 21–25
-forte e governada; (ii) esta soma NÃO pode ser comparada com o 6 de Cegueira nem com o 9 de
+forte e governada; (ii) esta soma NÃO pode ser comparada com o 5 de Cegueira nem com o 9 de
 Retenção, uma trava soma menos por ter sido MENOS OBSERVADA, não por estar melhor, e esta é a
 menos observada das oito. Aritmética de ilustração, `[E]`, que NÃO é score e não entra em material
 de comitê: a média por dimensão pontuada é 2,00; se as 3 dimensões vazias pontuassem nessa mesma
@@ -931,7 +975,7 @@ precisa citar UMA das duas formas, não as duas.
 
 ### Decisão
 
-`baixa`  ·  8 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (6 bruto · 10,0 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 1 dimensão sem evidência, Tempo médio de decisão. É a trava mais perto de fechar score: uma nota de 0 a 3 em (B) fecharia as cinco.
+`baixa`  ·  8 pontos em 4 das 5 dimensões · máximo praticável 12 sob o teto de 3 da regra 5 · média por dimensão pontuada 2,00 · NÃO somável, NÃO normalizável para a escala de 25 do playbook (o denominador de cinco dimensões não existe) e NÃO comparável com Cegueira (5 bruto · 8,3 normalizado) nem com Retenção (9 bruto · 15,0 normalizado). 1 dimensão sem evidência, Tempo médio de decisão. É a trava mais perto de fechar score: uma nota de 0 a 3 em (B) fecharia as cinco.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|
@@ -963,7 +1007,7 @@ existe soma de cinco dimensões. A soma parcial de 8 em 4 dimensões tem máximo
 denominador do playbook, 25 pontos em cinco dimensões livres, não existe neste caso nem depois de
 normalizado. Duas proibições decorrem disso e valem para qualquer material: (i) esta soma NÃO pode
 ser lida contra as faixas 0–10 estruturalmente travada · 11–15 frágil · 16–20 funcional · 21–25
-forte e governada; (ii) esta soma NÃO pode ser comparada com o 6 de Cegueira nem com o 9 de
+forte e governada; (ii) esta soma NÃO pode ser comparada com o 5 de Cegueira nem com o 9 de
 Retenção, uma trava soma menos por ter sido MENOS OBSERVADA, não por estar melhor. Aritmética de
 ilustração, `[E]`, que NÃO é score e não entra em material de comitê: a média por dimensão
 pontuada é 2,00; se a dimensão vazia pontuasse nessa mesma média, suposição que NENHUMA evidência
@@ -1004,7 +1048,7 @@ pontos da faixa declarada.
 
 ### Retenção
 
-`baixa`  ·  5 de 5 dimensões pontuadas · soma bruta 9 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 15,0 de 25 `[E]`, faixa 11–15 (Frágil. Vazamento relevante) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 9 lida contra as faixas do playbook é erro de escala, e é o erro que produziu a manchete 'estruturalmente travada' da versão anterior. Comparável apenas com Cegueira (6 bruto · 10,0 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si.
+`baixa`  ·  5 de 5 dimensões pontuadas · soma bruta 9 · máximo praticável 15 (5 dimensões × teto de 3 da regra 5), NÃO 25 · equivalente normalizado à escala do playbook: 15,0 de 25 `[E]`, faixa 11–15 (Frágil. Vazamento relevante) · o número 'de 25' só pode ser citado nessa forma normalizada; a soma bruta 9 lida contra as faixas do playbook é erro de escala, e é o erro que produziu a manchete 'estruturalmente travada' da versão anterior. Comparável apenas com Cegueira (5 bruto · 8,3 normalizado), a outra trava com as cinco dimensões pontuadas, as outras seis não são comparáveis com esta nem entre si.
 
 | Dimensão | Nota | Natureza | Evidência |
 |---|---|---|---|

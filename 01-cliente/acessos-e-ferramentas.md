@@ -24,14 +24,27 @@ que os acessos novos do lado da OLX devem ser concedidos.
 
 ## 2. Contas de mídia (Google / Meta)
 
-| Unidade | Conta | ID | Status (21/08/2026) |
+| Unidade | Conta | ID | Status (14/09/2026) |
 |---|---|---|---|
-| Imóveis | VR09 · ZAP+ MCC VivaReal | 526-656-0190 | 🟢 Aceite feito, ingerindo no V4MOS |
-| Imóveis | VR · ZAP+ | 612188193108418 | 🟠 Pendente de aprovação (lado OLX) |
-| Autos | OLX \| Autos \| B2B | 1742214902479721 | 🟠 Pendente de aprovação (lado OLX) |
+| Imóveis | VR09 · ZAP+ MCC VivaReal | 526-656-0190 | 🟢 Ingerindo. 23 campanhas, R$ 2,75 mi |
+| Imóveis | VR · ZAP+ | 612188193108418 | 🟢 **Aprovada no lote de 10/09, ingerindo desde 12/09** |
+| Autos | OLX \| Autos \| B2B | 1742214902479721 | 🟢 **Aprovada no lote de 10/09, ingerindo desde 12/09** |
 
-> **Situação em 31/08:** o aceite da MCC saiu e o lado Google ingere. As duas contas de Meta seguem
-> pendentes de aprovação da OLX, os seis endpoints de Facebook do V4MOS continuam devolvendo vazio.
+> ✅ **Situação em 14/09: as três contas ingerem.** As duas contas de Meta pedidas em 21/08 foram
+> aprovadas no lote de 10/09 e o V4MOS saiu de `data: []`. A recoleta de 14/09, sobre 01/01/2025 a
+> 14/09/2026, devolve **90 campanhas, 1.079 anúncios e R$ 7.375.303,34 no Meta**, contra 23
+> campanhas e R$ 2.746.029,59 no Google. **O Meta pesa 2,7 vezes o Google**, o inverso da leitura
+> que este documento carregava desde agosto.
+>
+> Duas ressalvas seguem de pé, e são as que importam para o diagnóstico (vi):
+>
+> - **Nenhuma das três contas separa B2B de B2C.** 90,4% do investimento de Meta está em campanhas
+>   com sufixo `_pf`, a mesma nomenclatura que no Google levanta a hipótese de consumidor final
+>   ([PENDÊNCIAS 12](../PENDENCIAS.md)). Isso não é conclusão, é nomenclatura sem confirmação.
+> - **O portfólio pode ser maior que as duas contas.** A lista de contas de anúncio de
+>   `New OLX Brasil` nunca foi recebida, então R$ 7,38 mi é piso, não total
+>   ([PENDÊNCIAS 11](../PENDENCIAS.md)).
+>
 > O GA4 mostrou que existem ao menos **7 outras contas de Google Ads** na operação do grupo, nenhuma
 > liberada. Ver [PENDÊNCIAS 12](../PENDENCIAS.md).
 
