@@ -15,6 +15,10 @@ investigação que a ordena não mudou. O que mudou duas vezes em três dias foi
    de acessos para as 17h de 03/09**, e a V4 dimensionou os nove em **15 dias corridos**. Com todos
    habilitados ao mesmo tempo, não há mais o que separar por acesso. A apresentação de 10/09 foi
    **adiada para 24/09**, e o Comitê 1 de 17/09 foi para **01/10**.
+3. **11/09 · a apresentação e o Comitê 1 viraram uma sessão só, em 23/09.** A OLX confirmou o
+   evento único nesse dia, a pedido dela, e as datas de 24/09 e 01/10 do item anterior
+   deixaram de valer. Os nove passaram a fechar em **18/09**, e a revisão de qualidade
+   acontece no mesmo dia. **É esta a grade em vigor.**
 
 Grade dia a dia em
 [04-execucao/sprint-diagnosticos-10-a-18-09.md](../04-execucao/sprint-diagnosticos-10-a-18-09.md);

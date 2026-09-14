@@ -149,6 +149,12 @@ experiencial não foi executada em trava nenhuma: mesmo Cegueira e Retenção, q
 notas, estão pontuadas por metade do método. Um score existente não é, por si, um score que
 satisfaz a régua.
 
+> ⚠️ **As datas deste trecho mudaram em 11/09, depois desta redação.** A OLX confirmou
+> apresentação e Comitê 1 numa **sessão única em 23/09**, e os nove diagnósticos passaram a
+> fechar em **18/09**, com a revisão de qualidade no mesmo dia. Onde se lê 29/09, 05/10 e
+> 06/10, leia **18/09** e **23/09**. O raciocínio do gate continua valendo: mudou o
+> calendário, não a regra.
+
 CONSEQUÊNCIA DE CRONOGRAMA, para não haver surpresa em outubro. `04-execucao/cronograma-e-
 marcos.md` fixa a apresentação dos diagnósticos em 29/09, a Matriz do GP aprovada em 05/10 e o
 Comitê 1 em 06/10 (a data de 10/09 foi riscada em 03/09 e nunca foi Comitê 1). Enquanto este gate
@@ -402,6 +408,12 @@ incentivado"), com Leonardo Costa delimitando "para B2B"; e a formulação do UD
 Lippert (V4), confirmada por Leonardo Costa (OLX, "Exato. Não tem garantia"). Recomenda-se uma
 varredura de todas as citações separando quem pergunta de quem responde antes de qualquer material
 ir ao Comitê.
+
+> ⚠️ **As datas deste trecho mudaram em 11/09, depois desta redação.** A OLX confirmou
+> apresentação e Comitê 1 numa **sessão única em 23/09**, e os nove diagnósticos passaram a
+> fechar em **18/09**, com a revisão de qualidade no mesmo dia. Onde se lê 29/09, 05/10 e
+> 06/10, leia **18/09** e **23/09**. O raciocínio do gate continua valendo: mudou o
+> calendário, não a regra.
 
 (f) CRONOGRAMA. A frase de fechamento da versão anterior apontava "antes do Comitê 1 de 10/09". A
 data não existe mais e o evento estava trocado: 04-execucao/cronograma-e-marcos.md riscou 10/09

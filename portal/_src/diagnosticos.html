@@ -1,4 +1,4 @@
-<!--@ diagnosticos | Diagnósticos · Portal DR-E Grupo OLX | Diagnósticos | Os nove diagnósticos técnicos do contrato, o estado de cada um e os documentos que eles produzem. | Fecham em 18 set · Comitê 1 em 23 set -->
+<!--@ diagnosticos | Diagnósticos · Portal DR-E Grupo OLX | Diagnósticos | O entregável da fase Identificar: o que foi auditado, quanto cada trava pontua, o que já está escrito para corrigir e o que ainda falta. | Material de 14 set · a trava principal é nomeada em 18 set -->
 <style>
 section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
 section.blk:first-of-type{margin-top:2rem}
@@ -10,6 +10,7 @@ section.blk:first-of-type{margin-top:2rem}
 .lead{color:var(--muted-fg);max-width:52rem;line-height:1.65}
 .lead b{color:var(--fg)}
 .lead+.lead{margin-top:.8rem}
+h3.sub{margin:2.2rem 0 .6rem;font-size:1.02rem}
 
 .resumo{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
   margin:1.3rem 0 1.6rem}
@@ -20,36 +21,104 @@ section.blk:first-of-type{margin-top:2rem}
 .kpi .l{font-size:.78rem;color:var(--muted-fg);line-height:1.45;margin-top:.3rem}
 .kpi.alerta .v{color:var(--brand)}
 
-/* ---------- os nove, um a um ---------- */
+/* Blocos de moldura: o que o material é, o que ele não é, e o que não espera */
+.moldura{border:1px solid var(--border);border-left:3px solid var(--border-strong);
+  border-radius:var(--radius);background:var(--muted);padding:1.05rem 1.2rem;margin-top:1.2rem}
+.moldura p{margin:0;font-size:.88rem;line-height:1.65}
+.moldura p+p{margin-top:.7rem}
+.moldura b{color:var(--fg)}
+.moldura.urgente{border-left-color:var(--brand);background:var(--accent)}
+.moldura.juridico{border-left-color:var(--warn);background:var(--warn-bg)}
+.moldura.regra{border-left-color:var(--ok)}
+
+/* Pontuação das 8 travas: desenhada por assets/pontuacao.js */
+.pt-caixa{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  margin:1.2rem 0 .8rem}
+.pt-grade{font-size:.84rem}
+.pt-grade th[scope="row"]{font-family:var(--sans);font-size:.86rem;text-transform:none;
+  letter-spacing:0;color:var(--fg);font-weight:600;white-space:nowrap}
+.pt-grade td,.pt-grade th{padding:.5rem .6rem;vertical-align:middle}
+.pt-dim{text-align:center;width:2.2rem}
+.pt-nota{text-align:center;font-family:var(--mono);font-variant-numeric:tabular-nums;
+  font-weight:600;color:var(--fg)}
+.pt-vazia{color:var(--muted-fg);font-weight:400}
+.pt-teto{color:var(--brand-ink)}
+.pt-soma,.pt-norm{font-family:var(--mono);font-size:.78rem;white-space:nowrap}
+.pt-parcial{color:var(--muted-fg)}
+.pt-fechada{background:color-mix(in srgb,var(--accent) 45%,transparent)}
+.pt-quem{line-height:1.9}
+.pt-dg{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;
+  padding:.1rem .4rem;margin-right:.25rem;border-radius:9999px;border:1px solid var(--border);
+  color:var(--muted-fg);white-space:nowrap}
+.pt-dg.pt-fechado{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);
+  background:var(--ok-bg)}
+.pt-dg.pt-parcial{border-color:color-mix(in srgb,var(--brand) 40%,transparent);color:var(--brand-ink)}
+.pt-rodape{font-size:.8rem;color:var(--muted-fg);line-height:1.55;margin:0 0 .5rem}
+.pt-rodape b{color:var(--fg)}
+
+/* Tabelas do entregável */
+.quadro{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
+  margin:1.2rem 0}
+.quadro table{font-size:.84rem;width:100%}
+.quadro td,.quadro th{padding:.6rem .75rem}
+.quadro th{white-space:normal}
+.quadro td b{font-weight:600}
+/* Coluna de texto larga, colunas de rótulo estreitas: sem isto a tabela do
+   entregável estoura para rolagem horizontal, que num documento de leitura é pior
+   do que a linha alta. */
+.quadro.correcoes td:first-child,.quadro.correcoes th:first-child{width:46%}
+.quadro.correcoes td:nth-child(2),.quadro.correcoes th:nth-child(2){width:16%}
+.quadro.correcoes td:nth-child(3),.quadro.correcoes th:nth-child(3){width:19%}
+.quadro.correcoes td:nth-child(4),.quadro.correcoes th:nth-child(4){width:19%}
+.quadro.tres td:first-child,.quadro.tres th:first-child{width:26%}
+.quadro.tres td:nth-child(2),.quadro.tres th:nth-child(2){width:40%}
+.quadro.tres td:nth-child(3),.quadro.tres th:nth-child(3){width:34%}
+.quadro.duas td:first-child,.quadro.duas th:first-child{width:38%}
+.quadro.sete td:first-child,.quadro.sete th:first-child{width:30%}
+.quadro.sete td:nth-child(2),.quadro.sete th:nth-child(2){width:40%}
+.quadro.sete td:nth-child(3),.quadro.sete th:nth-child(3){width:18%}
+.quadro.sete td:nth-child(4),.quadro.sete th:nth-child(4){width:12%}
+@media(max-width:700px){.quadro table{table-layout:auto}
+  .quadro td,.quadro th{width:auto!important;min-width:9rem}}
+.marca{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.05em;
+  text-transform:uppercase;padding:.1rem .4rem;border-radius:9999px;border:1px solid var(--border);
+  color:var(--muted-fg)}
+/* Sem nowrap: o selo dentro de célula estreita empurraria a tabela para rolagem
+   horizontal e o texto da coluna vizinha por cima. */
+.quadro .marca{margin-bottom:.15rem}
+.marca.prod{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);background:var(--ok-bg)}
+.marca.rasc{background:var(--muted)}
+.marca.verif{border-color:color-mix(in srgb,var(--warn) 45%,transparent);color:var(--warn);background:var(--warn-bg)}
+
+/* Os nove diagnósticos */
 .nove{list-style:none;margin:1.2rem 0 0;padding:0;border:1px solid var(--border);
   border-radius:var(--radius);overflow:hidden;background:var(--card)}
-.dg{display:grid;gap:.35rem 1rem;padding:1rem 1.1rem;border-top:1px solid var(--border);
+.dg{display:grid;gap:.35rem 1rem;padding:.9rem 1.1rem;border-top:1px solid var(--border);
   grid-template-columns:2.6rem minmax(0,1fr)}
 .dg:first-child{border-top:0}
 .dg-n{grid-row:span 2;font-family:var(--mono);font-size:.95rem;font-weight:600;
   color:var(--muted-fg);padding-top:.1rem}
 .dg.feito .dg-n{color:var(--brand)}
 .dg-topo{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
-.dg-topo h3{margin:0;font-size:1rem}
-.dg p{margin:.15rem 0 0;font-size:.86rem;color:var(--muted-fg);line-height:1.55}
+.dg-topo h4{margin:0;font-size:.97rem}
+.dg p{margin:.15rem 0 0;font-size:.85rem;color:var(--muted-fg);line-height:1.55}
 .dg .quando{font-family:var(--mono);font-size:.72rem;color:var(--muted-fg);white-space:nowrap}
-.dg-pe{display:flex;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;margin-top:.5rem;
+.dg-pe{display:flex;align-items:center;gap:.5rem 1rem;flex-wrap:wrap;margin-top:.45rem;
   font-size:.78rem;color:var(--muted-fg)}
 .dg-pe b{color:var(--fg);font-weight:500}
 .st{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;
   text-transform:uppercase;padding:.14rem .5rem;border-radius:9999px;border:1px solid var(--border);
   color:var(--muted-fg);white-space:nowrap}
-.st.ok{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);
-  background:var(--ok-bg)}
+.st.ok{border-color:color-mix(in srgb,var(--ok) 45%,transparent);color:var(--ok);background:var(--ok-bg)}
 .st.andando{border-color:color-mix(in srgb,var(--brand) 45%,transparent);color:var(--brand-ink);
   background:var(--accent)}
 .st.espera{background:var(--muted)}
 .dg-doc{font-size:.8rem;font-weight:500;color:var(--brand);text-decoration:none;white-space:nowrap}
 .dg-doc:hover{text-decoration:underline}
 
-/* ---------- a semana, dia a dia ---------- */
+/* Linha do tempo */
 .tempo{list-style:none;margin:1.2rem 0 0;padding:0 0 0 1.15rem;border-left:2px solid var(--border)}
-.tempo li{position:relative;padding:0 0 1.15rem .35rem}
+.tempo li{position:relative;padding:0 0 1.05rem .35rem}
 .tempo li::before{content:"";position:absolute;left:-1.52rem;top:.42rem;width:.5rem;height:.5rem;
   border-radius:50%;background:var(--border-strong);border:2px solid var(--bg)}
 .tempo li.passou::before{background:var(--muted-fg)}
@@ -58,13 +127,12 @@ section.blk:first-of-type{margin-top:2rem}
 .tempo .dia{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;
   color:var(--muted-fg)}
 .tempo li.hoje .dia,.tempo li.marco .dia{color:var(--brand)}
-.tempo .oque{display:block;font-size:.88rem;line-height:1.55;margin-top:.15rem}
-.tempo .oque b{font-weight:600}
+.tempo .oque{display:block;font-size:.87rem;line-height:1.55;margin-top:.15rem}
 
-/* ---------- biblioteca (lista gerada pelo build) ---------- */
-.bib-grupo{margin-top:2.2rem}
+/* Biblioteca */
+.bib-grupo{margin-top:2rem}
 .bib-grupo:first-child{margin-top:1.2rem}
-.bib-grupo h3{margin:0;font-size:1.02rem}
+.bib-grupo h3{margin:0;font-size:1rem}
 .bib-sub{margin:.25rem 0 0;font-size:.83rem;color:var(--muted-fg);line-height:1.5}
 .bib-cards{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));
   margin-top:.9rem}
@@ -88,223 +156,529 @@ section.blk:first-of-type{margin-top:2rem}
   justify-content:space-between;gap:.6rem;flex-wrap:wrap}
 .bib-abrir{font-size:.8rem;font-weight:500;color:var(--brand)}
 .bib-data{font-family:var(--mono);font-size:.68rem;color:var(--muted-fg)}
-
-/* ---------- o que depende do cliente ---------- */
-.depende{border:1px solid var(--border);border-left:3px solid var(--warn);
-  border-radius:var(--radius);background:var(--muted);padding:1.05rem 1.2rem;margin-top:1.2rem}
-.depende p{margin:0;font-size:.88rem;line-height:1.65}
-.depende p+p{margin-top:.7rem}
-.depende b{color:var(--fg)}
-.regra{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);
-  padding:1rem 1.15rem;margin-top:.8rem}
-.regra h3{margin:0 0 .3rem;font-size:.92rem}
-.regra p{margin:0;font-size:.85rem;color:var(--muted-fg);line-height:1.6}
-.regras{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));
-  margin-top:1.2rem}
 </style>
 
 <section class="blk">
-  <div class="blk-h"><h2>O que esta aba mostra</h2>
-    <span class="eyebrow">atualizada a cada fechamento</span></div>
-  <p class="lead">O contrato inclui <b>nove diagnósticos técnicos</b>. Esta aba mostra em que pé
-    está cada um deles e dá acesso direto ao documento que cada um produz, do jeito que ele foi
-    escrito, sem resumo intermediário.</p>
-  <p class="lead">A aba <a href="/destrava">Destrava Receita</a> mostra a <b>conclusão</b> do ciclo,
-    o que foi descoberto e o que decorre disso. Esta aqui mostra o <b>trabalho</b>: o que já fechou,
-    o que está aberto, o que ainda depende de alguém e onde ler a evidência.</p>
+  <div class="blk-h"><h2>O que este material é, e o que ele ainda não é</h2>
+    <span class="eyebrow">fase 1 · Identificar</span></div>
+  <p class="lead"><b>É o entregável parcial da fase Identificar</b>: o que foi auditado, com que
+    cobertura, o que cada diagnóstico encontrou, quanto cada uma das oito travas pontua hoje, o que
+    já está escrito para corrigir, e o que não foi possível apurar. Está organizado do jeito que o
+    método exige a saída de um diagnóstico, não na ordem em que o trabalho aconteceu.</p>
+  <p class="lead"><b>Não é a conclusão do ciclo.</b> A trava principal é nomeada em <b>18 de
+    setembro</b>, junto com a revisão de qualidade, e decidida em comitê em <b>23 de setembro</b>,
+    data confirmada pela OLX em 11/09. Este material é de antes: nada aqui nomeia a restrição, e
+    nenhuma nota abaixo é definitiva.</p>
 
   <div class="resumo">
-    <div class="kpi"><div class="v">9</div>
-      <div class="l">diagnósticos contratados, todos abertos desde 11 de setembro</div></div>
-    <div class="kpi"><div class="v">2</div>
-      <div class="l">com análise escrita e publicada aqui</div></div>
+    <div class="kpi"><div class="v">2 <span style="font-size:.9rem;font-weight:400">de 9</span></div>
+      <div class="l">com análise escrita: (vii) Rastreamento e (i) CRM. Os outros sete fecham até 18 set</div></div>
     <div class="kpi"><div class="v">59</div>
-      <div class="l">achados numerados nos dois documentos que já fecharam</div></div>
-    <div class="kpi alerta"><div class="v">18 set</div>
-      <div class="l" id="prazo">fechamento dos nove e revisão de qualidade</div></div>
+      <div class="l">achados numerados: 43 em rastreamento, 16 em CRM</div></div>
+    <div class="kpi"><div class="v">29 <span style="font-size:.9rem;font-weight:400">de 40</span></div>
+      <div class="l">notas atribuídas nas 8 travas, 5 dimensões cada</div></div>
+    <div class="kpi alerta"><div class="v">9</div>
+      <div class="l" id="prazo">correções já escritas, prontas para virar plano em 18 set</div></div>
+  </div>
+
+  <div class="moldura regra">
+    <p><b>Como este material foi montado.</b> Toda afirmação daqui sai de um documento de trabalho do
+      projeto, e cada seção diz qual. Número sem fonte não entra: onde o dado não existe, está
+      escrito que não existe, e quem o tem. Estimativa vem marcada com <b>[E]</b>, e número
+      declarado pelo cliente e ainda não conferido, com <b>[D]</b>.</p>
   </div>
 </section>
 
 <section class="blk">
-  <div class="blk-h"><h2>Os nove, um a um</h2>
+  <div class="blk-h"><h2>A ação que não espera o comitê</h2>
+    <span class="eyebrow">custo estimado pela V4: um clique</span></div>
+  <p class="lead">Dos 43 achados do diagnóstico de rastreamento, <b>um só piora enquanto ninguém
+    age</b>. Os outros descrevem um estado que continua igual até ser corrigido. Este descarta dado
+    todos os dias. Do lado do CRM há outros dois que também pioram com o tempo, e eles aparecem mais
+    abaixo.</p>
+
+  <div class="moldura urgente">
+    <p><b>Cinco propriedades do GA4 guardam 2 meses de dado de evento, e as duas que carregam a
+      superfície B2B contratada estão entre elas:</b> <b>GA4 Grupo OLX</b> (503925542) e <b>GA4
+      ZapImóveis + VivaReal</b> (494455315). As outras três são ANAPRO, Autos 360 e OLX PRO. As três
+      de consumidor, OLX App + Web, GA4 ZapImóveis e GA4 VivaReal, foram levadas ao máximo e guardam
+      <b>50 meses</b>. Leitura por API em 11/09, produção observada e não rascunho. Dois meses é o
+      padrão de fábrica do GA4: é o que fica quando ninguém mexe.</p>
+    <p><b>O que isso custa ao projeto:</b> não existe série histórica no recorte contratado. Sem
+      linha de base anterior a meados de julho de 2026 não há comparação ano a ano nem funil
+      histórico para calibrar o forecast de 12 meses. Onde o forecast precisar de histórico B2B, a
+      fonte terá de ser a série de receita declarada, não o GA4.</p>
+    <p><b>O que fazer, e por quem:</b> subir a retenção de 2 para 14 ou 50 meses, conforme o tier de
+      cada propriedade. O dossiê dimensiona como <b>um clique</b> na administração do GA4, e executa
+      quem tem permissão de escrita. <b>A V4 não tem</b>: o acesso concedido dá leitura completa e
+      bloqueia escrita, conferido por API em 11/09. <b>A ressalva honesta:</b> subir a retenção
+      protege o dado daqui para a frente, não devolve o que já foi apagado.</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>A pontuação das 8 travas</h2>
+    <span class="eyebrow">29 de 40 notas · nenhuma definitiva</span></div>
+  <p class="lead">Cada trava é avaliada em cinco dimensões, de 0 a 5. <b>Quanto mais baixa a nota,
+    pior o estado.</b> A grade abaixo sai do mesmo dado que alimenta o placar da aba Destrava
+    Receita: nenhum número aqui foi digitado à mão.</p>
+
+  <div id="pontuacao"></div>
+
+  <div class="moldura regra">
+    <p><b>A régua, antes dos números.</b> Percepção de time sustenta nota até 3. Passar disso exige
+      evidência formal, então <b>o máximo praticável hoje é 15 por trava, não 25</b>. Só trava com
+      as cinco dimensões pontuadas pode ser somada e convertida para a escala de 25 do método. Duas
+      estão nessa condição: <b>Cegueira, 5 bruto, equivalente a 8,3 de 25 [E]</b>, e <b>Retenção, 9
+      bruto, equivalente a 15,0 de 25 [E]</b>. A conversão para a escala de 25 é cálculo da V4 sobre
+      a soma, por isso vem marcada.</p>
+    <p><b>As outras seis não são somáveis, não são normalizáveis e não são comparáveis</b>, nem
+      entre si nem com essas duas. Compromisso aparece com duas notas porque foi menos observada:
+      a soma dela não diz que esteja pior nem melhor, diz que três das cinco dimensões nunca foram
+      observadas. Ler soma incompleta contra a escala do método é o erro que já produziu
+      uma manchete errada neste projeto, e é por isso que não há gráfico de barras nem ordenação por
+      nota nesta página.</p>
+  </div>
+
+  <h3 class="sub">Cegueira é a mais baixa, e não disputa o posto de trava principal</h3>
+  <p class="lead">Cegueira é a mais baixa na única comparação defensável hoje, a média por dimensão
+    pontuada: <b>1,0 contra 1,8 de Retenção</b>. Seu equivalente na escala do método é <b>8,3 de
+    25 [E]</b>. O método a trata como
+    <b>pré-condição, não como restrição de receita</b>: ela não concorre a trava governante, ela
+    determina se as outras sete podem ser medidas. A consequência é a que o Comitê 1 precisa ouvir:
+    <b>enquanto a Cegueira não subir, o score das outras sete nasce com confiabilidade reduzida</b>.
+    Isso também dá o argumento de sequência mais forte do diagnóstico: ela se resolve <b>antes</b>,
+    não <b>em vez</b> das outras.</p>
+
+  <h3 class="sub">Retenção é hipótese de trabalho, e a comparação entre travas está suspensa</h3>
+  <p class="lead">Retenção é a outra trava com as cinco notas, e por isso aparece com número. Isso
+    <b>não</b> a torna a restrição: os três argumentos que a sustentavam como candidata caíram na
+    conferência com as fontes. O que sobra ainda aponta para ela, com força muito menor, e o que está
+    <b>formalmente bloqueado</b> é a consolidação causal, que é o passo onde a restrição se nomeia. Ela é citada aqui como hipótese de trabalho, com o inventário do que
+    falta, e não como conclusão.</p>
+
+  <h3 class="sub">Nenhuma das oito satisfaz a régua completa do método</h3>
+  <p class="lead">O método exige duas camadas de evidência por dimensão, a analítica e a
+    experiencial. <b>A camada experiencial exigida pelo método, sobre pessoas e jornada, não foi executada em trava
+    nenhuma</b>: o único teste experiencial que sustenta nota de trava, o de 11 de setembro na
+    Cegueira, foi sobre as ferramentas e não sobre o time. Mesmo
+    Cegueira e Retenção, que têm as cinco notas, estão pontuadas por metade do método. Faltam duas
+    validações, e elas têm nome: <b>cliente oculto no funil B2B da própria OLX</b> e <b>jornada real
+    até o checkout de plano</b>. A camada experiencial que fechou em CRM é do diagnóstico (i), e o
+    próprio documento avisa que nenhuma trava é pontuada ali.</p>
+  <p class="lead">O método também exige uma <b>entrada visual por trava</b>. Existe uma, o
+    Inventário de Indicadores da Cegueira. As outras sete saem dos diagnósticos que fecham até 18 de
+    setembro, com duas ressalvas: o de pré-vendas foi comprimido a quatro dias e pode fechar sem
+    camada experiencial, e o Scorecard de Retenção depende da coorte que esta página lista como
+    número que falta. São eles: Mapa de Exposição Competitiva, Painel Comparativo de Atenção, Mapa de Profundidade de
+    Interesse, Matriz ICP contra Realidade, Linha do Tempo do Compromisso, Matriz de Decisão e
+    Scorecard de Retenção com coorte.</p>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Antes de corrigir: os dois achados que vão para o jurídico</h2>
+    <span class="eyebrow">a primeira ação é declarar</span></div>
+  <p class="lead">Dois dos 43 achados de rastreamento não são problema de medição, são exposição.
+    Eles vêm antes da lista de correções de propósito, e o tratamento de cada um é diferente.</p>
+
+  <div class="moldura juridico">
+    <p><b>1. O consentimento entra concedido por padrão, e o botão de recusar está escondido.</b>
+      Nas três verticais do grupo o consentimento do usuário já entra concedido em todas as
+      categorias, e o botão de recusar tudo é escondido por CSS. Dos <b>26 contêineres que declaram
+      consentimento, 21 trazem o padrão correto</b>, tudo negado até o usuário escolher. Tudo negado
+      menos o armazenamento de segurança, que é o padrão correto. Os cinco em que ele foi editado
+      para conceder são os Masters de OLX, ZapImóveis e VivaReal, o Master do Checkout Unificado e um
+      contêiner de teste: <b>quatro deles são justamente os que carregam todos os outros</b>. <b>No
+      Master da OLX, e só nele entre as três verticais</b>, o injetor do banner ainda é adiado para o
+      primeiro momento ocioso do navegador, com teto de 4 segundos, tempo em que as tags já
+      dispararam sob o padrão concedido. <span class="marca rasc">lido em rascunho</span></p>
+    <p><b>2. E-mail, telefone e CEP do usuário vão ao GA4 sem proteção.</b> Enviados como propriedade
+      de usuário, direto do dataLayer, sem hash e sem transformação. No contêiner de Planos
+      Profissionais e PAYG são <b>duas tags ativas, confirmadas na versão publicada</b>, e uma delas
+      acrescenta o gênero, lido do armazenamento do navegador. <b>No parque lido em rascunho o
+      alcance é maior: 22 tags ativas em 15 contêineres.</b>
+      <span class="marca prod">confirmado na versão publicada</span>
+      <span class="marca rasc">alcance lido em rascunho</span></p>
+    <p><b>O tratamento que a auditoria determina é diferente nos dois.</b> Para o envio de dado
+      pessoal ao GA4 a instrução é literal: não é decisão da V4, e não deve ser corrigido por ninguém
+      antes de a OLX saber que existe. Para o consentimento, a auditoria manda levar o achado à OLX
+      com o jurídico na sala e já escreve a correção técnica, que por isso aparece na lista abaixo.
+      Nos dois casos <b>a primeira ação não é corrigir, é declarar</b>, com o jurídico e o DPO da
+      OLX.</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>As nove correções que já estão escritas</h2>
+    <span class="eyebrow">com o achado de origem</span></div>
+  <p class="lead">Não é uma lista de recomendações genéricas: são as correções que os próprios
+    documentos de diagnóstico escrevem, cada uma amarrada ao achado que a origina. <b>Seis vêm da
+    auditoria de rastreamento, nos achados 1, 32, 33, 34, 35 e 36, e três do dossiê da Trava de
+    Cegueira.</b></p>
+  <p class="lead"><b>Onde foi lido</b> é a coluna que separa o que é fato de produção do que é
+    leitura de configuração: 59 dos 60 contêineres foram lidos em espaço de trabalho, não na versão
+    que está no ar.</p>
+
+  <div class="quadro correcoes scrollx"><table>
+    <thead><tr><th>Correção</th><th>De onde vem</th><th>Onde foi lido</th><th>Tamanho, quando declarado</th></tr></thead>
+    <tbody>
+      <tr><td><b>Subir a retenção de dado das cinco propriedades em 2 meses</b><br>
+        Única que piora a cada dia de espera. Detalhe no bloco acima.</td>
+        <td>Dossiê da Cegueira · achado 43</td><td><span class="marca prod">produção</span><br>lido por API</td>
+        <td>um clique</td></tr>
+      <tr><td><b>Apontar a tag de <code>purchase</code> para o gatilho de compra, e não para o de
+        início de checkout</b><br>Nos domínios de Planos Profissionais e PAYG, quem começa a comprar
+        é contado como quem comprou. O gatilho correto existe, está construído e nenhuma tag o usa.
+        <b>Antes dela</b>: o mesmo produto está escrito de duas formas em quatro gatilhos ativos, e a
+        grafia precisa ser resolvida primeiro, senão a correção aponta para um gatilho que nunca
+        dispara (achado 9).</td>
+        <td>Achado 1 · rastreamento</td><td><span class="marca prod">produção</span><br>no ar desde julho</td>
+        <td>edição de uma tag</td></tr>
+      <tr><td><b>Trocar o padrão de consentimento para negado nos cinco contêineres, e fazer a
+        atualização vir do gerenciador de consentimento</b><br>
+        Vai junto com o bloco do jurídico acima, não antes dele.</td>
+        <td>Achados 32 e 28 · rastreamento</td><td><span class="marca rasc">rascunho</span></td>
+        <td>edição em contêiner Master, resolve o parque</td></tr>
+      <tr><td><b>Parar a contaminação da receita vinda dos ambientes de teste</b><br>
+        Três dos quatro ambientes de homologação escrevem na propriedade de produção, e um deles tem
+        três tags de compra ativas. A saída definitiva é propriedade separada; a mínima, que cabe na
+        semana, é marcar ambiente em toda tag de teste e filtrar na propriedade.</td>
+        <td>Achado 33 · rastreamento</td><td><span class="marca rasc">rascunho</span></td>
+        <td>paliativo cabe na semana [E]</td></tr>
+      <tr><td><b>Corrigir o gatilho impossível do anunciante privado do ZapImóveis</b><br>
+        Ele exige que a página seja dois endereços ao mesmo tempo, então nunca disparou. Há venda sem
+        início de checkout, e a taxa de conversão desse fluxo é indefinida, não baixa.</td>
+        <td>Achado 34 · rastreamento</td><td><span class="marca rasc">rascunho</span></td>
+        <td>edição de um gatilho, em dois lugares [E]</td></tr>
+      <tr><td><b>Excluir, não pausar, as 114 tags ativas de uma ferramenta desligada</b><br>
+        São 153 tags de Universal Analytics em 25 dos 60 contêineres, e 114 delas estão ativas, em 18
+        contêineres.
+        Pausar preserva o ruído e mantém a aparência de cobertura.</td>
+        <td>Achado 35 · rastreamento</td><td><span class="marca rasc">rascunho</span></td>
+        <td>reversível pela versão anterior do contêiner [E]</td></tr>
+      <tr><td><b>Impedir que a tag dispare sem destino quando o site não está na lista</b><br>
+        Sete contêineres têm um identificador de exemplo como padrão. Quando o endereço não casa, a
+        tag dispara mesmo assim e o dado é descartado sem aviso. Protege toda campanha em domínio
+        novo daqui para a frente.</td>
+        <td>Achado 36 · rastreamento</td><td><span class="marca rasc">rascunho</span></td>
+        <td>sete contêineres nomeados</td></tr>
+      <tr><td><b>Emitir os eventos de qualificação e de fechamento de lead no site B2B</b><br>
+        Os dois já estão configurados como evento-chave no GA4 desde setembro de 2025. Falta o site
+        empurrá-los.</td>
+        <td>Dossiê da Cegueira</td><td><span class="marca prod">produção</span><br>lido por API</td>
+        <td>implementação, dentro do Ciclo 1</td></tr>
+      <tr><td><b>Declarar qual é a fonte oficial de verdade do CRM</b><br>
+        Salesforce Marketing Cloud e RD Station convivem na instrumentação do site. O contrato trata
+        o Marketing Cloud como o CRM de marketing, e o que nunca foi declarado é se o RD Station
+        também opera e quem responde por ele. No GTM aparecem ainda Insider e Braze.</td>
+        <td>Dossiê da Cegueira</td><td><span class="marca rasc">rascunho</span><br>lido no GTM</td>
+        <td>decisão, antes do Comitê 1</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="moldura">
+    <p><b>O que estas nove ainda não têm, e por quê.</b> Nenhuma carrega custo em reais nem dono
+      nomeado. Três, as do dossiê da Cegueira, já carregam urgência declarada: hoje, dentro do Ciclo
+      1 e antes do Comitê 1. O resto é exatamente o que o <b>plano de 30 dias do Comitê 1</b> produz,
+      ação por ação, com DRI assumido na sala e indicador de sucesso. Atribuir dono antes disso seria
+      decidir pelo cliente.</p>
+    <p><b>O que elas não fazem.</b> Nenhuma mexe no score já atribuído: o diagnóstico de rastreamento
+      fechou em 11/09 com a Cegueira em soma bruta 5, e passar de 3 em qualquer dimensão exige
+      evidência formal. O que ainda pode mover nota nesta rodada são as entrevistas de 16 e 17 de
+      setembro, não a execução destas correções. E nenhuma delas antecipa a restrição, que só é
+      nomeada em 18 de setembro.</p>
+  </div>
+
+  <h3 class="sub">O que o time da OLX já tem em curso, e a decisão que saiu da sessão</h3>
+  <p class="lead">Registrado nas duas sessões de CRM de 09 e 10 de setembro. Não são recomendações da
+    V4, e também não são todas decisões fechadas: a coluna do meio diz em que pé cada uma está.</p>
+  <div class="quadro tres scrollx"><table>
+    <thead><tr><th>Frente</th><th>Em que pé está</th><th>O que ainda falta</th></tr></thead>
+    <tbody>
+      <tr><td><b>Higienização da base dentro do Marketing Cloud</b></td>
+        <td><b>Em execução.</b> Automatizada sem tocar no arquivo-fonte, já rodou para Autos e está
+          prevista para Imóveis na semana de 15/09</td>
+        <td>Resolver a contradição do CEP: ele bloqueia o disparo ou só atrasa? As duas leituras
+          produzem bases elegíveis diferentes. O antes e depois em registros é pedido aberto</td></tr>
+      <tr><td><b>E-mail antes do WhatsApp na aquisição</b></td>
+        <td><b>Intenção declarada</b>, desenhada pela própria área: e-mail primeiro, WhatsApp como
+          segunda tentativa. <b>Não roda em escala nesta janela</b>, porque depende de jornada
+          automatizada de CRM, que o próprio diagnóstico aponta como indisponível até a migração
+          avançar</td>
+        <td>O fluxo de atendimento para o lead que chega por e-mail, que hoje não existe. A OLX
+          declarou que a Meta implanta até outubro uma regra de cobrança que deve encarecer o
+          disparo <b>[D]</b>, e o impacto não está dimensionado</td></tr>
+      <tr><td><b>Padrão de documentação de jornada</b></td>
+        <td><b>Decisão registrada na sessão</b>, e a única das três: fluxo visual no Miro e
+          especificação textual no Confluence, <b>escrita pela consultoria que executa a
+          migração</b> conforme ela avança. Saiu também a ordem de migração, por impacto de negócio
+          e churn</td>
+        <td>O registro de tempo entre toques, que hoje só existe no texto</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>O que ainda não tem tamanho</h2>
+    <span class="eyebrow">e por que não inventamos um</span></div>
+  <p class="lead"><b>Nenhum achado deste material tem valor em reais</b>, e não há número de perda em
+    reais em documento nenhum do projeto. O que existe são taxas de vazamento declaradas pela OLX,
+    todas <b>[D]</b> e sem volume absoluto. O caminho fácil seria usar os volumes do achado de
+    <code>purchase</code> como se fossem o tamanho do estrago: em agosto a propriedade <b>GA4 OLX App
+    + Web</b> registrou 2.686.897 inícios de checkout e 565.258 compras, leitura de 01/09.
+    <b>Não serve</b>: são números de toda a propriedade, aplicativo e outras superfícies incluídos, e
+    a contaminação é da parcela B2B, que não está medida.</p>
+  <p class="lead">Três números destravam o dimensionamento. <b>Um está com a OLX, um depende de
+    entrega que o projeto já cobra, e o terceiro depende de corrigir a instrumentação:</b></p>
+  <div class="quadro tres scrollx"><table>
+    <thead><tr><th>Número que falta</th><th>O que ele dimensiona</th><th>De onde ele vem</th></tr></thead>
+    <tbody>
+      <tr><td><b>A coorte de clientes novos sem ciclo de vida, o churn dela contra a coorte anterior
+        e a receita dessa coorte</b></td>
+        <td>Transforma o achado do CRM desligado em dinheiro: é a diferença entre quem recebeu
+          jornada e quem não recebeu. Em Autos a coorte começa em abril, em Imóveis em julho</td>
+        <td>Está com a OLX. Pedido aberto com a área de CRM, acompanhado pela V4</td></tr>
+      <tr><td><b>A base ativa de anunciantes, por vertical, mês a mês</b></td>
+        <td>É o denominador de churn, de CAC e de LTV ao mesmo tempo. Sem ela, nenhuma das três
+          contas fecha</td>
+        <td>Entrega de dado já cobrada, com dono e prazo na seção seguinte</td></tr>
+      <tr><td><b>A parcela B2B dentro das compras registradas</b></td>
+        <td>Isola o que a contaminação do rastreamento custa no recorte contratado</td>
+        <td>Depende de o site passar a enviar o tipo de vendedor ao GA4 no checkout. Corrigir o
+          gatilho de compra arruma a contagem daqui para a frente, mas não separa o que já foi
+          registrado</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Os sete números que decidem o Comitê 1</h2>
+    <span class="eyebrow">quatro dependem de vocês</span></div>
+  <p class="lead">Nenhum deles depende de ferramenta nova, e <b>seis dos sete estão vencidos</b>.
+    Quatro foram assumidos no kick-off para 09/09, com dono nomeado. A coluna do dono diz de que lado
+    está cada um: <b>quatro são entrega do Grupo OLX</b>, dois são compartilhados e um a V4 busca nos
+    dashboards internos que a OLX já liberou.</p>
+  <div class="quadro sete scrollx"><table>
+    <thead><tr><th>O número</th><th>Para que serve</th><th>Quem entrega</th><th>Prazo</th></tr></thead>
+    <tbody>
+      <tr><td><b>Ticket médio de entrada</b>, por vertical e segmento</td>
+        <td>Converte contrato novo em receita. Sem ele, volume não vira reais</td>
+        <td><b>OLX</b> · Matheus Rodrigues e Iuna Scheffler</td><td>09/09, vencido</td></tr>
+      <tr><td><b>Base ativa de anunciantes</b>, por vertical, mês a mês</td>
+        <td>É o denominador de churn, de CAC e de LTV</td>
+        <td>V4 · Leonardo Rosa, pelos dashboards</td><td>09/09, vencido</td></tr>
+      <tr><td><b>Contratos novos por mês</b>, por canal e vertical</td>
+        <td>É o volume de onde todo o fluxo desce, e o denominador que falta ao CAC</td>
+        <td>V4 e <b>OLX</b> · Leonardo Rosa com Carolina Dallolio</td><td>09/09, vencido</td></tr>
+      <tr><td><b>P&amp;L por vertical</b>, com mídia e imposto abertos</td>
+        <td>Converte receita em truput, que é a métrica sobre a qual a meta do projeto é medida</td>
+        <td><b>OLX</b> · Matheus Rodrigues</td><td>09/09, vencido</td></tr>
+      <tr><td><b>Churn desambiguado</b>: de logo ou de receita</td>
+        <td>Muda o ranking das alavancas. As duas leituras levam a decisões diferentes</td>
+        <td>V4 pelos dashboards, com Iuna Scheffler e Carolina Dallolio</td><td>em aberto</td></tr>
+      <tr><td><b>Net de receita de Imóveis</b>, mês a mês</td>
+        <td>Dimensiona a meta. A série recebida mostra a linha B&amp;A crescendo, o que ainda não
+          confirma o net negativo declarado</td>
+        <td><b>OLX</b> · Iuna Scheffler</td><td>10/09, vencido</td></tr>
+      <tr><td><b>Metas 2026 por etapa do fluxo</b></td>
+        <td>É a âncora contra a qual a meta do projeto é comparada</td>
+        <td><b>OLX</b> · Matheus Rodrigues e Iuna Scheffler</td><td>09/09, vencido</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="moldura">
+    <p><b>Quatro fontes foram declaradas concedidas em 10/09 e ainda não foram abertas na
+      ferramenta:</b> CRM comercial, Salesforce Marketing Cloud, Search Console e Business Manager.
+      <b>Três delas prendem 23 indicadores</b> do catálogo de métricas, 18 deles de prioridade
+      máxima, e <b>20 dependem do CRM comercial</b>. O Business Manager entra na lista por outro
+      motivo: conferir nível de permissão e a lista de contas do portfólio.</p>
+    <p><b>Esta parte é nossa, não de vocês.</b> Os e-mails <code>@olxbr</code> que dão acesso ao
+      Sales Cloud já foram liberados pela OLX; o que falta é a conferência, abrindo cada ferramenta,
+      e ela é da V4. O motivo de conferir assim, e não pelo e-mail de concessão, são dois precedentes
+      deste projeto, os dois já resolvidos: o portfólio do Meta apareceu sem ativo conectado, e o que
+      faltava era permissão do usuário logado, com a ingestão começando em 12/09 e a conferência
+      fechando em 14/09; e o GA4 chegou num nível em que a API de administração responde em leitura,
+      a interface de Administração não abre, e a escrita fica bloqueada, que é o que impede a V4 de
+      subir a retenção sozinha.</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Limitações declaradas</h2>
+    <span class="eyebrow">o método fecha com limitação, não com certeza</span></div>
+  <p class="lead">Um diagnóstico fecha declarando o que não foi possível apurar. O que não pode
+    acontecer é a limitação existir e não estar escrita. Estas são as desta entrega.</p>
+  <div class="quadro duas scrollx"><table>
+    <thead><tr><th>Limitação</th><th>Efeito na leitura</th></tr></thead>
+    <tbody>
+      <tr><td><b>59 dos 60 contêineres foram lidos em espaço de trabalho, não na versão
+        publicada</b></td>
+        <td>Os achados de configuração descrevem o rascunho. A exceção é o contêiner de Planos
+          Profissionais e PAYG, comparado com a versão publicada: 29 tags, 29 gatilhos e 98
+          variáveis, zero diferenças, e 5 achados confirmados em produção</td></tr>
+      <tr><td><b>Dois contêineres foram exportados duas vezes, e a soma bruta os conta em
+        dobro</b></td>
+        <td>O parque somado sobre os 62 arquivos dá 1.779 tags; deduplicado por contêiner, são
+          <b>1.642</b>. Nenhum achado muda, a régua de tamanho sim, e é a contagem deduplicada que
+          esta página usa</td></tr>
+      <tr><td><b>Quatro achados dependem de verificação no navegador</b></td>
+        <td>Seguem válidos como leitura de configuração, não como comportamento observado</td></tr>
+      <tr><td><b>Um achado cai se o site gravar o objeto de usuário por código próprio</b></td>
+        <td>A verificação não foi feita. Se gravar, o problema não existe; se não gravar, é a falha
+          de maior alcance do conjunto</td></tr>
+      <tr><td><b>A camada experiencial sobre pessoas e jornada não foi executada em nenhuma
+        trava</b></td>
+        <td>As oito estão pontuadas por metade do método. Faltam o cliente oculto no funil B2B e a
+          jornada real até o checkout</td></tr>
+      <tr><td><b>Nenhuma das duas contas de mídia separa B2B de B2C</b></td>
+        <td>Os <b>R$ 10,12 mi</b> apurados na janela de janeiro de 2025 a 14/09/2026 (Meta R$ 7,38 mi
+          em 21 meses contínuos, Google R$ 2,75 mi com 11 meses de dado: a série só começa em maio de
+          2025 e ainda tem um buraco entre novembro de 2025 e abril de 2026) são apuração real, mas <b>não são o investimento do recorte
+          contratado</b>, e nenhum CAC de mídia tem numerador válido. O lado Meta é piso, não total.
+          A diferença de CTR entre as duas contas não é achado de performance: elas contam clique de
+          forma diferente</td></tr>
+      <tr><td><b>A leitura de maturidade digital é parcial e datada</b></td>
+        <td>O próprio documento se declara provisório, de 04/09, apurado sobre 6 contêineres em 2 das
+          4 contas, todos de espaço de trabalho. A varredura de 11/09 ampliou o parque lido de 15
+          para 60 contêineres, então a maturidade precisa ser relida sobre o parque inteiro</td></tr>
+      <tr><td><b>As seis taxas da jornada do cliente profissional são declaradas [D]</b></td>
+        <td>Vêm de uma sessão que a própria OLX enquadrou como educacional, com material que ela
+          declarou não ser visão de funil. <b>Nenhuma tem denominador, volume absoluto nem período de
+          apuração.</b> A sessão esclareceu a base de duas delas, e mesmo essas seguem sem o
+          volume que as tornaria citáveis</td></tr>
+      <tr><td><b>Quatro fluxos de dados do GA4 estão fora do alcance da V4</b></td>
+        <td>Parte da medição tem destino não auditado</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Os nove diagnósticos, e a semana que fecha</h2>
     <span class="eyebrow">estado em 14 de setembro</span></div>
-  <p class="lead">A ordem abaixo é a do estado, não a do contrato: primeiro o que fechou, depois o
-    que está aberto, por último o que ainda abre. A numeração romana é a do contrato.</p>
+  <p class="lead">A ordem é a do estado, não a do contrato: primeiro o que fechou, depois o que está
+    aberto, por último o que ainda abre.</p>
 
   <ol class="nove">
     <li class="dg feito"><span class="dg-n">vii</span>
-      <div class="dg-topo"><h3>Rastreamento · GA4 e GTM</h3>
+      <div class="dg-topo"><h4>Rastreamento · GA4 e GTM</h4>
         <span class="st ok">fechado em 11 set</span></div>
-      <div>
-        <p>60 contêineres de GTM em 4 contas e 1.779 tags lidas uma a uma, mais a configuração do
-          GA4 por API. 43 achados, e o principal deles confirmado na versão que está em produção.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Cegueira, que é pré-condição das outras sete</span>
-          <a class="dg-doc" href="/diagnosticos/rastreamento">Ver documento ›</a></span>
-      </div></li>
+      <div><p>60 contêineres em 4 contas e <b>1.642 tags</b>, varridas por script e conferidas tag a
+        tag em cada achado, mais a configuração do GA4 lida por API. 43 achados: 21 críticos, 18
+        altos, 3 médios e 1 contraponto.</p>
+        <span class="dg-pe"><span><b>Pontua:</b> Cegueira, as cinco dimensões</span>
+          <a class="dg-doc" href="/diagnosticos/rastreamento">Documento integral ›</a></span></div></li>
 
     <li class="dg"><span class="dg-n">i</span>
-      <div class="dg-topo"><h3>CRM Marketing · Salesforce</h3>
+      <div class="dg-topo"><h4>CRM Marketing · Salesforce</h4>
         <span class="st andando">camada de conversa fechada</span>
         <span class="quando">fecha 17 set</span></div>
-      <div>
-        <p>As duas sessões de 09 e 10 de setembro com todo o time de CRM B2B fecharam a camada
-          experiencial com 16 achados. A camada de ferramenta depende de base, relatório de
-          performance e console do Marketing Cloud.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Interesse e Retenção</span>
-          <a class="dg-doc" href="/diagnosticos/crm-marketing">Ver documento ›</a></span>
-      </div></li>
+      <div><p>Duas sessões com todo o time de CRM B2B, 2h08 de registro, 16 achados: 4 críticos, 8
+        relevantes, 4 a esclarecer. Tudo declarado, nada apurado, e sem gravação na sessão de 09/09,
+        só transcrição automática. A camada analítica segue aberta: faltam base, relatório de
+        performance, console e a coorte de clientes novos.</p>
+        <span class="dg-pe"><span><b>Informa:</b> Retenção, Interesse, Cegueira, Qualificação e
+          Compromisso. Não pontua trava nenhuma ainda</span>
+          <a class="dg-doc" href="/diagnosticos/crm-marketing">Documento integral ›</a></span></div></li>
 
     <li class="dg"><span class="dg-n">ii</span>
-      <div class="dg-topo"><h3>Ambientes CRO e SEO · domínios B2B</h3>
+      <div class="dg-topo"><h4>Ambientes CRO e SEO · domínios B2B</h4>
         <span class="st andando">em curso</span><span class="quando">fecha 16 set</span></div>
-      <div>
-        <p>A camada pública já rodou antes do lote de acessos. O Search Console entrou em 10 de
-          setembro e é o que faltava para a leitura de busca orgânica.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Exposição e Interesse</span></span>
-      </div></li>
+      <div><p>Camada pública já rodada. O Search Console entrou em 10 de setembro e ainda não foi
+        aberto.</p><span class="dg-pe"><span><b>Pontua:</b> Exposição e Interesse</span></span></div></li>
 
     <li class="dg"><span class="dg-n">viii</span>
-      <div class="dg-topo"><h3>Páginas de captura e fluxos de conversão</h3>
+      <div class="dg-topo"><h4>Páginas de captura e fluxos de conversão</h4>
         <span class="st andando">em curso</span><span class="quando">fecha 18 set</span></div>
-      <div>
-        <p>Unbounce e Mouseflow concedidos. Falta um dado, não um acesso: o volume absoluto do
-          teste A/B em curso, sem o qual o resultado não tem denominador.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Interesse e Compromisso</span></span>
-      </div></li>
+      <div><p>Falta um dado, não um acesso: o volume absoluto do teste A/B em curso, sem o qual o
+        resultado não tem denominador.</p>
+        <span class="dg-pe"><span><b>Pontua:</b> Interesse e Compromisso</span></span></div></li>
 
     <li class="dg"><span class="dg-n">vi</span>
-      <div class="dg-topo"><h3>Mídia paga · Google e Meta</h3>
+      <div class="dg-topo"><h4>Mídia paga · Google e Meta</h4>
         <span class="st andando">em curso</span><span class="quando">fecha 18 set</span></div>
-      <div>
-        <p>As duas contas de Meta entraram na ingestão em 14 de setembro, o que era o risco de
-          prazo deste diagnóstico. Com Google e Meta na mesma série, a leitura de mídia passou a ser
-          comparável entre as duas.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Exposição, Atenção e Qualificação</span></span>
-      </div></li>
+      <div><p>As duas contas de Meta entraram na ingestão em 12 de setembro, o que era o risco de
+        prazo deste diagnóstico. O que falta agora não é extração, é o corte B2B.</p>
+        <span class="dg-pe"><span><b>Pontua:</b> Exposição, Atenção e Qualificação</span></span></div></li>
 
     <li class="dg"><span class="dg-n">ix</span>
-      <div class="dg-topo"><h3>Pré-vendas, qualificação e sales engagement</h3>
+      <div class="dg-topo"><h4>Pré-vendas, qualificação e sales engagement</h4>
         <span class="st andando">abriu em 14 set</span><span class="quando">fecha 17 set</span></div>
-      <div>
-        <p>É o único diagnóstico que sozinho pontua três travas, e o que mais cobra hora do time do
-          Grupo OLX: de 10 a 15 gravações de call e dois blocos de entrevista, em 16 e 17.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Qualificação, Compromisso e Decisão</span></span>
-      </div></li>
+      <div><p>É um dos dois que sozinhos pontuam três travas, e o único classificado como custo alto de
+        agenda do time: de 10 a 15 gravações de call e dois blocos de entrevista, em 16 e 17.</p>
+        <span class="dg-pe"><span><b>Pontua:</b> Qualificação, Compromisso e Decisão</span></span></div></li>
 
     <li class="dg"><span class="dg-n">iv</span>
-      <div class="dg-topo"><h3>Criativos, anúncios e mensagens</h3>
+      <div class="dg-topo"><h4>Criativos, anúncios e mensagens</h4>
         <span class="st espera">abre 15 set</span><span class="quando">fecha 18 set</span></div>
-      <div>
-        <p>Depende do acervo de peças e do racional de campanha por trás delas. Sem o acervo em 15
-          de setembro, este é o primeiro a não fechar em 18.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Atenção</span></span>
-      </div></li>
+      <div><p>Depende do acervo de peças e do racional de campanha. Sem o acervo em 15 de setembro,
+        é o primeiro a não fechar em 18.</p>
+        <span class="dg-pe"><span><b>Pontua:</b> Atenção</span></span></div></li>
 
     <li class="dg"><span class="dg-n">v</span>
-      <div class="dg-topo"><h3>Redes sociais e conteúdo orgânico</h3>
+      <div class="dg-topo"><h4>Redes sociais e conteúdo orgânico</h4>
         <span class="st espera">abre 15 set</span><span class="quando">fecha 18 set</span></div>
-      <div>
-        <p>Business Suite e LinkedIn já concedidos. Pouca entrevista: roda sobre o que está
-          publicado.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Exposição e Atenção</span></span>
-      </div></li>
+      <div><p>Business Suite e LinkedIn concedidos. Roda sobre o que está publicado, com pouca
+        entrevista.</p><span class="dg-pe"><span><b>Pontua:</b> Exposição e Atenção</span></span></div></li>
 
     <li class="dg"><span class="dg-n">iii</span>
-      <div class="dg-topo"><h3>GEO · IA e buscas generativas</h3>
+      <div class="dg-topo"><h4>GEO · IA e buscas generativas</h4>
         <span class="st espera">abre 16 set</span><span class="quando">fecha 18 set</span></div>
-      <div>
-        <p>Roda de fora, sobre linha de base zero, e não cobra nada do time. Fecha por último de
-          propósito: não é insumo para nomear a trava principal, é linha de base do Ciclo 2.</p>
-        <span class="dg-pe"><span><b>Informa:</b> Exposição e Atenção</span></span>
-      </div></li>
+      <div><p>Roda de fora, sobre linha de base zero, e não cobra nada do time. <b>Abre por último de
+        propósito</b>: é linha de base do Ciclo 2, não insumo para nomear a restrição.</p>
+        <span class="dg-pe"><span><b>Pontua:</b> Exposição e Atenção</span></span></div></li>
   </ol>
-</section>
 
-<section class="blk">
-  <div class="blk-h"><h2>A semana que fecha os nove</h2>
-    <span class="eyebrow">10 a 23 de setembro</span></div>
-  <p class="lead">O lote completo de acessos chegou em <b>10 de setembro</b> e disparou a contagem.
-    O kick-off previa até 15 dias corridos a partir dali; a entrega acontece em <b>9</b>.</p>
-
+  <h3 class="sub">O que acontece até o comitê</h3>
   <ul class="tempo">
-    <li class="passou"><span class="dia">qui 10 set</span><span class="oque"><b>Lote completo de
-      acessos recebido.</b> Abrem (vii) rastreamento, (ii) CRO e SEO e (viii) páginas de
-      captura.</span></li>
-    <li class="passou"><span class="dia">sex 11 set</span><span class="oque">Abrem (vi) mídia paga e
-      (i) CRM. <b>(vii) fecha</b> com a quarta rodada de leitura do GTM.</span></li>
-    <li class="hoje"><span class="dia">seg 14 set</span><span class="oque">Abre (ix) pré-vendas.
-      <b>Abre a consolidação causal</b>, que agora roda em paralelo aos diagnósticos, e não
-      depois deles.</span></li>
-    <li><span class="dia">ter 15 set</span><span class="oque">Abrem (iv) criativos e (v) conteúdo
-      orgânico. Pico de oito diagnósticos abertos ao mesmo tempo.</span></li>
-    <li><span class="dia">qua 16 set</span><span class="oque"><b>Bloco de entrevistas 1</b>, com
-      pré-vendas. Fecha (ii) e abre (iii) GEO. Começa a Árvore da Realidade Atual.</span></li>
-    <li><span class="dia">qui 17 set</span><span class="oque"><b>Bloco de entrevistas 2</b>, com
-      conteúdo e mídia. Fecham (ix) e (i).</span></li>
+    <li class="passou"><span class="dia">qui 10 set</span><span class="oque">Lote completo de
+      acessos recebido. Abrem rastreamento, CRO e SEO e páginas de captura.</span></li>
+    <li class="passou"><span class="dia">sex 11 set</span><span class="oque">Abrem mídia paga e CRM.
+      Fecha o rastreamento, com a quarta rodada de leitura e a confirmação em produção.</span></li>
+    <li class="hoje"><span class="dia">seg 14 set</span><span class="oque">Abre pré-vendas. Abre a
+      consolidação causal, que passa a rodar em paralelo aos diagnósticos.</span></li>
+    <li><span class="dia">ter 15 set</span><span class="oque">Abrem criativos e conteúdo orgânico:
+      sete diagnósticos abertos ao mesmo tempo. O plano da semana previa oito aqui, e são sete porque
+      o rastreamento fechou em 11, quatro dias antes do previsto.</span></li>
+    <li><span class="dia">qua 16 set</span><span class="oque">Bloco de entrevistas 1, com pré-vendas.
+      Fecha CRO e SEO, abre GEO, começa a Árvore da Realidade Atual. <b>Pico de oito diagnósticos
+      abertos ao mesmo tempo.</b></span></li>
+    <li><span class="dia">qui 17 set</span><span class="oque">Bloco de entrevistas 2, com conteúdo e
+      mídia. Fecham pré-vendas e CRM.</span></li>
     <li class="marco"><span class="dia">sex 18 set</span><span class="oque"><b>Fecham os cinco
-      últimos</b>, as oito travas ficam pontuadas, a trava principal é nomeada e o material passa
-      pela revisão de qualidade. Acaba o que depende da V4.</span></li>
+      últimos. As oito travas ficam pontuadas, a trava principal é nomeada e o material passa pela
+      revisão de qualidade.</b> Acaba o que depende da V4.</span></li>
     <li><span class="dia">seg 21 set</span><span class="oque">Prévia do material com a liderança da
       frente de receita, a pedido dela.</span></li>
+    <li><span class="dia">ter 22 set</span><span class="oque">Único dia para absorver o que a prévia
+      levantar. Ajuste de clareza cabe; mudança estrutural não, porque não há dia para reaprovar o
+      material antes do comitê.</span></li>
     <li class="marco"><span class="dia">qua 23 set</span><span class="oque"><b>Apresentação dos
-      diagnósticos e Comitê 1, na mesma sessão.</b> Sai com a trava principal nomeada em ata e o
-      plano de 30 dias com dono por ação.</span></li>
+      diagnósticos e Comitê 1, na mesma sessão.</b> Sai com a trava principal em ata e o plano de 30
+      dias, com dono e indicador por ação.</span></li>
   </ul>
-
-  <div class="depende">
-    <p><b>O que ainda depende do Grupo OLX nesta janela.</b> O gargalo deixou de ser acesso e passou
-      a ser agenda: boa parte do diagnóstico é feita em conjunto, em entrevista e validação de
-      achado.</p>
-    <p><b>Até 15 set:</b> o acervo de criativos e o racional de campanha, senão (iv) não fecha em
-      18. <b>16 e 17 set:</b> time de pré-vendas, de conteúdo e de mídia nos dois blocos de
-      entrevista. <b>23 set:</b> decisor presente no comitê, e um dono assumido para cada ação do
-      plano de 30 dias.</p>
-    <p><b>Sem data, e é a pendência mais silenciosa do projeto:</b> o funil com volumes e taxas por
-      etapa, e ticket, ciclo de venda e CAC. Não é acesso a ferramenta, é entrega de dado, e sem ele
-      não há matemática de forecast nem com os nove diagnósticos fechados. A série de receita, que
-      era o primeiro item desse bloco, chegou em 28 de agosto.</p>
-  </div>
 </section>
 
 <section class="blk">
-  <div class="blk-h"><h2>Biblioteca de documentos</h2>
-    <span class="eyebrow">documento integral, como foi escrito</span></div>
-  <p class="lead">Cada documento abaixo é o arquivo de trabalho do projeto publicado aqui na
-    íntegra, com a data da última alteração. Eles se citam entre si: quando um link aponta para
-    outro documento desta lista, ele abre aqui; quando aponta para registro interno do projeto, o
-    texto fica e o link não.</p>
+  <div class="blk-h"><h2>Registro de trabalho</h2>
+    <span class="eyebrow">a apuração inteira, como foi escrita</span></div>
+  <p class="lead">Abaixo está o material de trabalho que sustenta tudo o que esta página afirma,
+    publicado na íntegra e com a data da última alteração. <b>Não é o entregável, é a apuração</b>:
+    são cadernos de análise, organizados na ordem em que o trabalho aconteceu, com o nível de
+    detalhe técnico que o time da OLX precisa para conferir achado por achado.</p>
   <!--@biblioteca-->
 </section>
 
-<section class="blk">
-  <div class="blk-h"><h2>Como ler estes documentos</h2></div>
-  <p class="lead">São documentos de trabalho, não material de apresentação. Quatro convenções
-    explicam quase tudo que parece estranho neles.</p>
-  <div class="regras">
-    <div class="regra"><h3>Campo vazio é falta de dado, não omissão</h3>
-      <p>Quando um número não existe com fonte, ele fica vazio e vira pendência com dono e prazo.
-        Nenhum valor é aproximado para preencher lacuna.</p></div>
-    <div class="regra"><h3>Estimativa vem marcada</h3>
-      <p>O que é estimado aparece com a marca <code>[E]</code> ao lado. O que não tem a marca é
-        apurado ou declarado, e o documento diz qual dos dois.</p></div>
-    <div class="regra"><h3>Nota acima de 3 exige evidência formal</h3>
-      <p>No placar das travas, percepção de time sustenta nota até 3. Passar disso só com evidência
-        apurada, e é por isso que trava com diagnóstico aberto não passa de 3.</p></div>
-    <div class="regra"><h3>Diagnóstico fecha com limitação declarada</h3>
-      <p>Nenhum documento espera certeza total para fechar. O que não foi possível auditar fica
-        escrito no próprio documento, na seção de limitações.</p></div>
-  </div>
-</section>
-
+<script src="/assets/travas-data.js"></script>
+<script src="/assets/pontuacao.js"></script>
 <script>
 (function () {
   var hoje = new Date(); hoje.setHours(0, 0, 0, 0);
-  var fim = new Date(2026, 8, 18);
-  var d = Math.round((fim - hoje) / 86400000);
+  var d = Math.round((new Date(2026, 8, 18) - hoje) / 86400000);
   var el = document.getElementById("prazo");
   if (!el) return;
-  var quando = d === 0 ? "é hoje" : d === 1 ? "é amanhã" : d > 1 ? "em " + d + " dias" :
-               d === -1 ? "foi ontem" : "há " + Math.abs(d) + " dias";
-  el.textContent = "fechamento dos nove e revisão de qualidade, " + quando;
+  var quando = d === 0 ? "hoje" : d === 1 ? "amanhã" : d > 1 ? "em " + d + " dias" :
+               d === -1 ? "ontem" : "há " + Math.abs(d) + " dias";
+  el.textContent = "correções já escritas. O plano com dono e prazo sai " + quando +
+    ", com a trava principal";
 })();
 </script>

@@ -5,7 +5,14 @@
 >
 > | | |
 > |---|---|
-> | Cobertura GTM | [quarta rodada](#quarta-rodada--11092026--o-parque-inteiro-entra): **60 contêineres**, 4 contas, 1.779 tags |
+> | Cobertura GTM | [quarta rodada](#quarta-rodada--11092026--o-parque-inteiro-entra): **60 contêineres**, 4 contas, **1.642 tags** |
+>
+> ⚠️ **Correção de contagem, 14/09.** As somas da quarta rodada eram por **arquivo**, e são 62
+> arquivos para 60 contêineres: `GTM-546N2JV` e `GTM-TNX8FDS` foram exportados duas vezes. Deduplicado
+> por contêiner, o parque tem **1.642 tags** (não 1.779), **1.542 gatilhos** (não 1.634), **4.505
+> variáveis** (não 4.711) e **233 tags pausadas** (não 275). Nenhum achado muda: o que muda é a régua
+> de tamanho do parque. Conferido três vezes, por `dados/outputs/gtm-evidencias.json` e por recontagem
+> direta nos exports.
 > | Cobertura GA4 | [revisão do lado GA4](#revisão-do-lado-ga4--11092026--uma-correção-e-dois-achados): configuração lida por API, 11/09 |
 > | Achados | **43**, numerados em sequência contínua entre as rodadas |
 > | O que não está confirmado | [Ressalvas de leitura](#ressalvas-de-leitura), atualizadas em 11/09 |
@@ -763,19 +770,27 @@ O [achado 2](#-2-o-consentimento-concede-tudo-por-padrão-e-o-botão-de-recusar-
 isso no Master da OLX. Com o parque inteiro na mão, o padrão aparece inteiro, e ele é pior do que
 parecia.
 
-`setDefaultConsentState` aparece em **26 contêineres**. Em 22 deles o padrão é o correto: tudo
-`denied`, menos `security_storage`. Em **quatro** está tudo `granted`:
+`setDefaultConsentState` aparece em **26 contêineres**. Em 21 deles o padrão é o correto: tudo
+`denied`, menos `security_storage`. Em **cinco** está tudo `granted`:
+
+> ⚠️ **Correção de contagem, 14/09.** A versão anterior dizia 22 contra 4, e não somava aqui o
+> `GTM-NGG9336B`, Checkout Unificado - Master, que o [achado 28](#-28-o-master-da-conta-nova-também-concede-por-padrão)
+> já descreve com os sete tipos em `granted`. Recontagem direta nos exports: 26 declaram, 21 corretos,
+> 5 concedidos, e os cinco são OLX Master, ZapImóveis Master, VivaReal Master, Checkout Unificado
+> Master e `GTM-PQTNMNM3` (OLX - Teste Adopt).
 
 | Contêiner | ID | Conta | O que é |
 |---|---|---|---|
 | OLX - Container Master | `GTM-546N2JV` | `94905` | **Master da OLX** |
 | 1. ZapImóveis - Container MASTER | `GTM-W662TWW` | `2971905372` | **Master do ZapImóveis** |
 | 1. VivaReal - Container MASTER | `GTM-TWSJ9VM` | `4412254379` | **Master da VivaReal** |
+| Checkout Unificado - Master | `GTM-NGG9336B` | `6326134112` | **Master da conta nova**, ver [achado 28](#-28-o-master-da-conta-nova-também-concede-por-padrão) |
 | OLX - Teste Adopt | `GTM-PQTNMNM3` | `94905` | contêiner de teste, ativo |
 
-**Os três são os Masters das três verticais.** Não é um contêiner desviado: é exatamente o contêiner
-que carrega os outros, em cada vertical, que concede tudo por padrão. Os 22 que trazem a versão
-íntegra são os contêineres carregados, e nenhum deles instancia o template.
+**Quatro dos cinco são Masters**, os das três verticais mais o do Checkout Unificado. Não é um
+contêiner desviado: é exatamente o contêiner que carrega os outros que concede tudo por padrão. O
+quinto, `GTM-PQTNMNM3`, é um contêiner de teste e não carrega nada. Os 21 que trazem a versão íntegra
+são os contêineres carregados, e nenhum deles instancia o template.
 
 A leitura muda de escala. O que na primeira rodada era "o Master da OLX está com o consentimento
 encenado" agora é: **as três verticais do grupo concedem consentimento por padrão, cada uma pelo seu
@@ -785,8 +800,8 @@ Isso reforça, e agora em três contas independentes, a política implícita já
 responsabilidade de quem implementa cada superfície. O template correto circulou. Quem tinha o poder
 de fazê-lo rodar, editou para `granted`.
 
-**Correção:** trocar o padrão para `denied` nos quatro, e fazer a atualização de consentimento vir
-do CMP. É uma edição em quatro contêineres, e resolve o parque.
+**Correção:** trocar o padrão para `denied` nos cinco, e fazer a atualização de consentimento vir
+do CMP. É uma edição em cinco contêineres, quatro deles Masters, e resolve o parque.
 
 ---
 
@@ -864,8 +879,13 @@ contêiner. No parque inteiro, a conta é outra:
 |---|---:|
 | Tags do tipo Universal Analytics | **153** |
 | Delas, **ativas** | **114** |
-| Contêineres afetados | **19** de 60 |
+| Contêineres **com UA ativa** | **18** de 60 |
+| Contêineres com alguma tag UA, ativa ou pausada | **25** de 60 |
 | Propriedades UA distintas | **16** |
+
+> ⚠️ **Correção de contagem, 14/09.** A versão anterior dizia "19 de 60", que era contagem de
+> **arquivo**: `GTM-KGFGVFC` entra duas vezes, no espaço de trabalho e na versão publicada. Por
+> contêiner: **18** têm UA ativa e **25** têm alguma tag UA. As 153 e as 114 estão certas.
 
 Os piores:
 
@@ -1317,6 +1337,8 @@ exatamente.
 
 **Sobre o achado 26, o mais sensível em termos de exposição:** duas tags **ativas** na versão
 publicada mandam `user_email`, `user_phone`, `user_zip_code` e `user_gender` ao GA4 como propriedade
+>
+> ⚠️ **Precisão de 14/09.** As duas tags mandam `user_email`, `user_phone` e `user_zip_code`. O `user_gender` está só na `338 [TAG] GA4 - Settings`; a `339 [TAG] GA4 - Pageview` não o traz. Conferido na versão publicada 97.
 de usuário. São `[TAG] GA4 - Settings` (338) e `[TAG] GA4 - Pageview` (339). A terceira que faz o
 mesmo, a tag `75`, está pausada, o que mostra que alguém já reparou no problema em algum momento e
 pausou a tag errada: **as duas que continuam no ar fazem exatamente o que a pausada fazia.**

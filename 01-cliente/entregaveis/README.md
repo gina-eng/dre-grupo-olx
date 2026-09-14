@@ -57,8 +57,9 @@ Só o nível 3 permite fazer perguntas novas.
 ### Prazo
 
 Único, e vale para tudo: idealmente **26/08/2026**. As nove auditorias funcionam em cadeia.
-O lote completo de acessos ficou prometido para **03/09**, os nove diagnósticos rodam de 04 a
-**18/09**, a apresentação é em **24/09** e o Comitê 1 em **01/10**.
+O lote completo de acessos chegou em **10/09**, os nove diagnósticos fecham em **18/09**, e a
+apresentação e o Comitê 1 acontecem numa sessão única em **23/09**, confirmada pela OLX em
+11/09. As datas de 24/09 e 01/10, do planejamento de 03/09, não valem mais.
 
 ## Arquivos
 
