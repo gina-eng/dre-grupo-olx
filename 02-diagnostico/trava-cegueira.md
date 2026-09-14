@@ -1,12 +1,38 @@
 # Trava de Cegueira · diagnóstico
 
-**Pontuada em 11/09/2026** · Score **5 de 25** · Confiabilidade **parcial**
+**Repontuada em 14/09/2026** · soma bruta **9** · normalizado **15,0 de 25** · Confiabilidade **parcial**
+· pontuação anterior de 11/09: bruta 5, normalizada 8,3
 
-> **A OLX mede navegação em altíssimo detalhe e resultado de negócio em lugar nenhum.**
+> **A OLX tem duas medições que não se falam, e a digital enxerga 9% do lead B2B.**
 
-A Trava de Cegueira é **pré-condição, não restrição de receita**. Ela não disputa o posto de trava
-governante. O que um score de 5 significa é outra coisa, e precisa estar dita no Comitê 1: **enquanto
-ela não subir, o score das outras sete travas nasce com confiabilidade reduzida.**
+🔴 **Leia isto antes do número.** A trava **não melhorou entre 11 e 14/09**. Nada foi corrigido no
+sistema de medição. O que mudou foi a **nossa leitura**: a apresentação *Estrutura Comercial Inside
+Sales* foi entregue pela OLX em **28/08**, ficou 17 dias fora do repositório, e provou que existe uma
+camada de medição comercial que a V4 não tinha olhado. Citar "a Cegueira melhorou" no Comitê 1 seria
+falso.
+
+**A trava mudou de forma, não de tamanho.** Ela não é ausência de dado: são **dois sistemas de medição
+que não se falam**. O comercial mede o próprio funil todo mês; o digital mede navegação em altíssimo
+detalhe; e ninguém responde pela junção.
+
+A Trava de Cegueira continua sendo **pré-condição, não restrição de receita**. Ela não disputa o posto
+de trava governante. O que o score significa precisa estar dito no Comitê 1: **enquanto ela não subir,
+o score das outras sete travas nasce com confiabilidade reduzida.**
+
+## A evidência mais dura, apurada em 14/09
+
+Nos **mesmos quatro meses**, abril a julho de 2026:
+
+| | Registrado |
+|---|---:|
+| Leads B2B no dashboard comercial | **16.580** |
+| Envios de formulário no GA4, domínios B2B | **668** |
+| Esperado pela porta de formulário (44% do mix declarado pela OLX) | 7.295 |
+| **Cobertura da medição digital** | **9,2%** |
+
+E **zero ocorrências** de `generate_lead`, `purchase`, `qualify_lead` e `close_convert_lead` nos quatro
+meses. O recorte de 44% é justo porque vem do mix de canais de entrada que a própria OLX declara: o
+resto entra por WhatsApp, telefone e prospecção ativa, que legitimamente não passam por formulário.
 
 ---
 
@@ -48,12 +74,28 @@ queria, nem se virou cliente. De 862 mil primeiras visitas, é o único desfecho
 
 | | Dimensão | Nota | |
 |---|---|:---:|---|
-| **A** | Existência de dados básicos (lead, cliente, receita separados) | **1** | 🔴 |
-| **B** | CAC calculado e confiável | **0** | 🔴 |
-| **C** | LTV e payback calculados | **0** | 🔴 |
-| **D** | Fonte única de verdade (CRM/BI) vs. planilhas paralelas | **2** | 🔴 |
-| **E** | Cadência de leitura dos indicadores | **2** | 🔴 |
-| | **Total** | **5 / 25** | **Estruturalmente travada** |
+| **A** | Existência de dados básicos (lead, cliente, receita separados) | **2** | 🔴 era 1 |
+| **B** | CAC calculado e confiável | **1** | 🔴 era 0 |
+| **C** | LTV e payback calculados | **1** | 🔴 era 0 |
+| **D** | Fonte única de verdade (CRM/BI) vs. planilhas paralelas | **2** | 🟠 mantida |
+| **E** | Cadência de leitura dos indicadores | **3** | 🟠 era 2 |
+| | **Soma bruta** | **9** | de um máximo praticável de 15 |
+| | **Normalizado** | **15,0 / 25** | **Frágil**, no limite superior da faixa |
+
+> **Por que 15 e não 25 é o denominador.** A regra de evidência formal do repositório limita a nota a
+> 3 quando não há documento, dashboard ou processo escrito. Com as cinco dimensões nesse teto, o
+> máximo praticável é 15. Em material de comitê o número citado é o **normalizado, 15,0 de 25**,
+> nunca a soma bruta lida contra as faixas do playbook.
+
+### O que mudou, dimensão a dimensão
+
+| | Antes | Agora | Por quê |
+|---|:---:|:---:|---|
+| A | 1 | **2** | Lead, cliente e venda passaram a existir como dado, fora do sistema digital e cobrindo 39% da receita de RE e 17% de Autos |
+| B | 0 | **1** | O denominador existe: 720 contratos novos em jul/26. O CAC saiu de **impossível** para **não confiável** |
+| C | 0 | **1** | Três dos quatro ingredientes do LTV apareceram: ticket de entrada, ARPU de carteira e teto de margem. Falta a permanência |
+| D | 2 | **2** | Mantida. A evidência nova reforça: apareceu uma **terceira** camada paralela, o funil em Google Sheets |
+| E | 2 | **3** | **A leitura anterior estava errada.** Existe cadência mensal de funil, com evidência formal em documento |
 
 ### A · Dados básicos · nota 1
 

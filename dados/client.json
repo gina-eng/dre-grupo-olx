@@ -8,7 +8,7 @@
   "ciclo_atual": 1,
   "fase_atual": "Identificar",
   "semana_corrente": 3,
-  "version": 34,
+  "version": 35,
   "atualizado_em": "2026-09-14",
   "workspace_id": "5abc02b3-cf0c-464d-a003-5ee5b4985c61"
  },
@@ -2475,33 +2475,13 @@
  },
  "travas": {
   "cegueira": {
-   "score": 5,
+   "score": 9,
    "dimensoes": {
-    "A": {
-     "nome": "Existencia de dados basicos (lead, cliente, receita separados)",
-     "nota": 1,
-     "confiabilidade": "alta"
-    },
-    "B": {
-     "nome": "CAC calculado e confiavel",
-     "nota": 0,
-     "confiabilidade": "alta"
-    },
-    "C": {
-     "nome": "LTV e payback calculados",
-     "nota": 0,
-     "confiabilidade": "alta"
-    },
-    "D": {
-     "nome": "Fonte unica de verdade (CRM/BI) vs planilhas paralelas",
-     "nota": 2,
-     "confiabilidade": "parcial"
-    },
-    "E": {
-     "nome": "Cadencia de leitura dos indicadores",
-     "nota": 2,
-     "confiabilidade": "parcial"
-    }
+    "A": 2,
+    "B": 1,
+    "C": 1,
+    "D": 2,
+    "E": 3
    },
    "evidencias": [
     {
@@ -2559,14 +2539,16 @@
      "estimado": false
     }
    ],
-   "diagnosticado_em": "2026-09-11",
+   "diagnosticado_em": "2026-09-14",
    "score_maximo": 25,
-   "interpretacao": "Estruturalmente travada. Como Cegueira e pre-condicao e nao restricao de receita, a leitura correta nao e 'esta e a restricao', e sim: enquanto ela nao subir, o score das outras sete travas nao e confiavel.",
+   "interpretacao": "Fragil, no limite superior da faixa 11-15. A repontuacao de 14/09 NAO e melhora do sistema: nada foi corrigido entre 11 e 14/09. E correcao de leitura, provocada pela Estrutura Comercial Inside Sales, entregue em 28/08 e lida so agora. A trava mudou de FORMA: nao e ausencia de dado, sao dois sistemas de medicao que nao se falam. Segue sendo pre-condicao e nao restricao.",
    "confiabilidade": "parcial",
-   "hipotese_causal": "A empresa opera sob a politica implicita de TRATAR A MEDICAO COMO RESPONSABILIDADE DE QUEM IMPLEMENTA CADA SUPERFICIE, E NAO DE QUEM RESPONDE PELA RECEITA, o que gera UM SISTEMA QUE MEDE NAVEGACAO EM ALTISSIMO DETALHE E RESULTADO DE NEGOCIO EM LUGAR NENHUM, limitando A CAPACIDADE DE DIZER QUANTO CUSTA E QUANTO VALE UM ANUNCIANTE PROFISSIONAL, E PORTANTO DE DECIDIR ONDE INVESTIR.",
+   "hipotese_causal": "A empresa opera sob a politica implicita de TRATAR A MEDICAO COMO RESPONSABILIDADE DE QUEM IMPLEMENTA CADA SUPERFICIE, E NAO DE QUEM RESPONDE PELA RECEITA. O comercial mede o proprio funil, o digital mede navegacao, e ninguem responde pela juncao.",
    "potencial_governante": false,
    "output": "dados/outputs/dre-trava-cegueira.json",
-   "documento": "02-diagnostico/trava-cegueira.md"
+   "documento": "02-diagnostico/trava-cegueira.md",
+   "score_normalizado": 15.0,
+   "evidencia_chave_14_09": "Nos mesmos quatro meses (abr a jul/2026): 16.580 leads B2B no dashboard comercial contra 668 form_submit no GA4 dos dominios B2B. Pelo mix declarado pela propria OLX, 44% dos MQL entram por formulario, o que poe o esperado em 7.295: a medicao digital enxerga 9,2%. Zero ocorrencias de generate_lead, purchase, qualify_lead e close_convert_lead."
   },
   "exposicao": {
    "score": null,
@@ -2800,6 +2782,11 @@
    "data": "2026-09-14",
    "version": 34,
    "evento": "PROPAGACAO DOS ACHADOS DE 14/09 PARA O PORTAL INTEIRO. Tudo o que a sessao produziu foi levado para as abas que dependiam disso. (1) DIAGNOSTICOS, bloco 'Os sete numeros que decidem o Comite 1': QUATRO dos sete sairam do zero, todos respondidos pela Estrutura Comercial Inside Sales que estava conosco desde 28/08. Ticket de entrada, base ativa, contratos novos por mes e metas 2026 passam a 'respondido em parte', com o numero e o que ainda falta em cada um; o P&L ganha o selo 'teto estimado' com os 85,75%. Entraram tres molduras novas: a regua recalibrada (1 p.p. de run-rate vale R$ 367 mil em truput, nao R$ 428 mil de receita), o mergulho de julho com as duas hipoteses, e a atualizacao dos acessos com a dependencia do MyApps. (2) METRICAS: 18 notas refinadas com a conferencia de 14/09, e o investimento em midia passa a dizer que R$ 7,38 mi do Meta e PISO e nao total, porque a lista de contas do portfolio nunca veio. Placar em 9 medido, 3 concedido, 17 a conferir, 15 parcial, 15 declarado e 19 em falta, com 38 dos 78 tendo numero. (3) KICK-OFF: quatro perguntas sairam de pendente para evidencia existente, com a resposta no proprio hint (ticket medio, margem de contribuicao, estrutura do time e volumes do funil), e os blocos de dados A, G e H passaram a mostrar o estado real em vez do pedido original. Nada foi tocado nas contagens de diagnostico da sessao paralela."
+  },
+  {
+   "data": "2026-09-14",
+   "version": 35,
+   "evento": "TRAVA DE CEGUEIRA REPONTUADA, a segunda vez. Soma bruta de 5 para 9, normalizado de 8,3 para 15,0 de 25, o que muda a faixa de 'Estruturalmente travada' (0-10) para o TOPO de 'Fragil' (11-15). REGISTRADO EM DESTAQUE NO DOSSIE, porque e onde o material pode enganar: NAO HOUVE MELHORA NO SISTEMA entre 11 e 14/09. Nada foi corrigido. O que mudou foi a leitura da V4, provocada pela Estrutura Comercial Inside Sales, entregue pela OLX em 28/08 e lida so em 14/09. Dizer no Comite 1 que 'a Cegueira melhorou' seria falso. A TRAVA MUDOU DE FORMA, NAO DE TAMANHO: nao e ausencia de dado, sao DOIS SISTEMAS DE MEDICAO QUE NAO SE FALAM. EVIDENCIA NOVA E MAIS DURA DO DIAGNOSTICO: nos mesmos quatro meses de abr a jul/2026, o dashboard comercial registra 16.580 leads B2B e o GA4 registra 668 form_submit nos dominios B2B; pelo mix de canais de entrada que a propria OLX declara, 44% dos MQL entram por formulario, o que poe o esperado em 7.295 e a cobertura da medicao digital em 9,2%. Zero ocorrencias de generate_lead, purchase, qualify_lead e close_convert_lead nos quatro meses. DIMENSAO A DIMENSAO: A de 1 para 2 (lead, cliente e venda passaram a existir como dado, fora do sistema digital, cobrindo 39,3% da receita de RE e 16,9% de Autos); B de 0 para 1 (o denominador existe, 720 contratos novos em jul/26, e o CAC saiu de impossivel para nao confiavel); C de 0 para 1 (ticket de entrada, ARPU de carteira e teto de margem apareceram, falta so a permanencia, presa na ambiguidade do churn da PENDENCIA 22); D mantida em 2, com evidencia nova que reforca, uma terceira camada paralela em Google Sheets e a inconsistencia de 2,1% em Autos; E de 2 para 3, e esta e a correcao mais relevante, porque a leitura de 11/09 afirmava que a cadencia so le resultado e isso ESTAVA ERRADO: existe cadencia mensal de funil por vertical e por papel, com evidencia formal em documento. Nao chega a 4 porque nao e governada: o funil caiu 39% entre junho e julho e o material da propria OLX nao traz leitura nem acao. A politica implicita foi refinada para incluir a juncao: ninguem responde por ligar as duas medicoes. Entregaveis: dados/outputs/dre-trava-cegueira.json, dados/outputs/dre-diagnostico-travas.json, portal/assets/travas-data.js regerado pelo script, e 02-diagnostico/trava-cegueira.md."
   }
  ],
  "connectors": {
