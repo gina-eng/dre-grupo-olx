@@ -138,6 +138,9 @@ dialog::backdrop{background:rgba(15,18,22,.55)}
 .cob-declarado{background:transparent;color:var(--warn);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
 .cob-falta{background:var(--muted);color:var(--muted-fg);border-color:var(--border-strong)}
 td.nota{color:var(--muted-fg);font-size:.78rem}
+td.valor{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--fg);
+  font-variant-numeric:tabular-nums}
+td.vazio{font-family:var(--mono);font-size:.8rem;color:var(--border-strong);text-align:center}
 
 .bar-cob{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--muted);min-width:9rem}
 .bar-cob i{display:block;height:100%}
@@ -198,23 +201,29 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
   </div>
 
   <div class="warnbox">
-    <h3>Nenhum indicador está medido hoje</h3>
-    <p>Dos 78, <b>zero</b> estão em Medido. Não é descuido de coleta: é o mesmo achado que pontuou a
-      Trava de Cegueira em <b>5 de 25</b>, estruturalmente travada. A única série auditável do projeto,
-      a receita mensal por linha de negócio de jan/2025 a jul/2026, não é um destes 78 indicadores: ela
-      é a régua contra a qual todos eles serão conferidos.</p>
-    <p style="margin-top:.6rem">A leitura prática é melhor do que o zero sugere. Os <b>35 Concedido</b>
-      viraram trabalho da V4 quando o lote de acessos entrou em 10/09, e saem sem pedir nada novo. O que
-      exige a OLX são os <b>25 em Falta</b>, e dentro deles o bloco que a planilha de metas precisa:
-      ticket médio de entrada, base ativa de anunciantes e a separação entre churn de logo e de receita.</p>
-    <p style="margin-top:.6rem">Nove marcas de mídia subiram para Parcial quando as duas contas de Meta
-      passaram a responder ao conector. Na recoleta de <b>14/09</b>, sobre jan/2025 a set/2026, o Meta trouxe
-      90 campanhas, <b>1.079 anúncios</b> com métrica por peça e <b>R$ 7,38 mi</b> de investimento, onde antes
-      havia zero: 2,7 vezes o Google no mesmo período, o que inverte a leitura que o projeto carregava.</p>
-    <p style="margin-top:.6rem">Duas ressalvas que impedem promover essas nove a Medido. A <b>série mensal só
-      está completa no Meta</b>, com 21 meses contínuos; o Google tem 11 e faltam nov/2025 a abr/2026 inteiros.
-      E <b>nenhuma das duas contas separa B2B de B2C</b>, então nada disso é ainda o investimento do recorte
-      contratado. Enquanto essa separação não existir, mídia não fecha o numerador de nenhum CAC.</p>
+    <h3>O pago declarado é 20 vezes maior que o pago medido</h3>
+    <p>O slide de fluxos apresentado em 28/08 declara a origem do contato como CRM 29% · Direto 36% ·
+      <b>Pago 16%</b> · Orgânico 5% · Outros 11%. O GA4 dos domínios <code>*.grupoolx.com.br</code>, sobre
+      987.566 sessões de jan/2025 a set/2026, mede <b>Pago 0,8%</b>. Vinte vezes menos, com R$ 10,12 milhões
+      de mídia rodando no período.</p>
+    <p style="margin-top:.6rem">As duas leituras não medem a mesma coisa, o slide fala de origem de contato
+      e o GA4 de sessão, mas a distância é grande demais para ser só isso. O próprio slide anota que campanha
+      paga para WhatsApp "entra tudo como Direto", e a auditoria de rastreamento achou o evento de compra no
+      gatilho errado. A hipótese mais simples é que o pago existe e não está sendo atribuído.</p>
+  </div>
+
+  <div class="card tpl">
+    <p style="font-size:.88rem;margin-bottom:.7rem"><b>Por que 26 indicadores têm número e 52 não.</b></p>
+    <p style="font-size:.86rem;color:var(--muted-fg)">Os <b>9 em Medido</b> saíram do GA4 e do V4MOS hoje, e
+      são reproduzíveis. Os <b>14 em Parcial</b> têm número, mas o número ainda não é do recorte contratado:
+      a mídia não separa B2B de B2C, e o Google tem seis meses ausentes na série. Os <b>4 em Declarado</b> têm
+      número dito em reunião, sem lastro. Os <b>26 em Concedido</b> não têm número porque a fonte foi liberada
+      em 10/09 e ninguém extraiu ainda: é fila de trabalho da V4, não pedido à OLX. Os <b>25 em Falta</b> são
+      os que dependem da OLX, e <b>18 deles são P0</b>.</p>
+    <p style="font-size:.86rem;color:var(--muted-fg);margin-top:.7rem">Para a planilha de metas, o bloqueio
+      está concentrado: <b>ticket médio de entrada</b>, <b>base ativa de anunciantes</b>, <b>contratos novos
+      por mês</b> e a separação entre <b>churn de logo e de receita</b>. Sem esses quatro, o funil não vira
+      receita e a meta não tem régua.</p>
   </div>
 </section>
 
@@ -285,6 +294,7 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
       <button class="fbtn" type="button" data-p="P2" aria-pressed="false">P2</button>
       <span style="width:.6rem"></span>
       <details id="ccolapso" open><summary>Filtrar por cobertura</summary><span id="cfilters"></span></details>
+      <button class="fbtn" id="so-valor" type="button" aria-pressed="false">Só com número</button>
       <span style="width:.6rem"></span>
       <details id="tcolapso" open><summary>Filtrar por camada</summary><span id="tfilters"></span></details>
       <input id="q" type="text" placeholder="Buscar métrica, fonte ou definição…" aria-label="Buscar">
@@ -295,10 +305,11 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
   <div class="card scrollx" style="margin-top:1rem">
     <table>
       <thead><tr>
-        <th>Métrica</th><th style="width:6.5rem">Cobertura</th><th style="width:5rem">Unidade</th>
-        <th style="width:14rem">Fonte principal</th>
-        <th style="width:6rem">Granul.</th><th style="width:4rem">Prio.</th><th>O que mede</th>
-        <th style="width:22rem">Procedência da marca</th>
+        <th>Métrica</th><th style="width:6.5rem">Cobertura</th>
+        <th style="width:15rem">Valor</th><th style="width:4.5rem">Un.</th>
+        <th style="width:12rem">Fonte principal</th>
+        <th style="width:4rem">Prio.</th><th style="width:18rem">O que mede</th>
+        <th style="width:24rem">De onde vem o número</th>
       </tr></thead>
       <tbody id="body"></tbody>
     </table>
@@ -365,7 +376,7 @@ cobertura ela está hoje</b>: o que já temos, o que já dá para extrair e o qu
   <div class="dlg-b"><textarea id="dlg-txt" readonly aria-label="Dicionário de métricas em CSV"></textarea></div>
 </dialog>
 
-<script src="/assets/metrics-data.js?v=f96e4ae0"></script>
+<script src="/assets/metrics-data.js?v=8788da97"></script>
 <script>
 const ORDEM = ["T1 Retenção","T2 Decisão","T3 Compromisso","T4 Qualificação","T5 Interesse","T6 Atenção","T7 Exposição","Unit Economics"];
 const MACRO = {};
@@ -403,7 +414,9 @@ function visible(){
     (!fp.size || fp.has(r[6])) &&
     (!ft.size || ft.has(r[0])) &&
     (!fc.size || fc.has(r[8])) &&
-    (!q || (r[2] + " " + r[4] + " " + r[7] + " " + r[9]).toLowerCase().includes(q)));
+    (!soValor || r[10] !== "-") &&
+    (!q || (r[2] + " " + r[4] + " " + r[7] + " " + r[9] + " " + r[10] + " " + r[11])
+       .toLowerCase().includes(q)));
 }
 
 function render(){
@@ -422,12 +435,12 @@ function render(){
       tr.innerHTML =
         '<td class="met">' + esc(r[2]) + "</td>" +
         '<td><span class="tag-cob cob-' + r[8] + '">' + esc(COBLAB[r[8]]) + "</span></td>" +
+        '<td class="' + (r[10] === "-" ? "vazio" : "valor") + '">' + esc(r[10]) + "</td>" +
         '<td class="un">' + esc(r[3]) + "</td>" +
         '<td class="fonte">' + esc(r[4]) + "</td>" +
-        '<td class="gran">' + esc(r[5]) + "</td>" +
         '<td><span class="tag ' + (r[6] === "P0" ? "tag-p0" : r[6] === "P1" ? "tag-p1" : "") + '">' + r[6] + "</span></td>" +
         '<td class="mede">' + esc(r[7]) + "</td>" +
-        '<td class="nota">' + esc(r[9]) + "</td>";
+        '<td class="nota">' + esc(r[11]) + "</td>";
       body.appendChild(tr);
     });
   });
@@ -441,6 +454,13 @@ document.addEventListener("click", e => {
         key = b.dataset.p || b.dataset.c || b.dataset.t;
   if (set.has(key)) set.delete(key); else set.add(key);
   b.setAttribute("aria-pressed", set.has(key) ? "true" : "false");
+  render();
+});
+const svBtn = document.getElementById("so-valor");
+let soValor = false;
+svBtn.addEventListener("click", () => {
+  soValor = !soValor;
+  svBtn.setAttribute("aria-pressed", soValor ? "true" : "false");
   render();
 });
 qEl.addEventListener("input", render);
@@ -498,7 +518,7 @@ function say(m){
 
 function buildCsv(){
   const head = ["trava","macrofase","metrica","unidade","fonte","granularidade","prioridade",
-                "o_que_mede","cobertura","procedencia_da_marca"];
+                "o_que_mede","cobertura","procedencia_da_marca","valor","de_onde_vem_o_numero"];
   const q = s => '"' + String(s).replace(/"/g, '""') + '"';
   return [head.map(q).join(",")].concat(visible().map(r => r.map(q).join(","))).join("\n");
 }
