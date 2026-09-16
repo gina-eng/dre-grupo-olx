@@ -75,6 +75,12 @@ BIBLIOTECA = [
          resumo="60 contêineres de GTM em 4 contas e 1.779 tags lidas uma a uma, mais a "
                 "configuração do GA4 por API. 43 achados numerados, e o achado 1 confirmado "
                 "na versão que está em produção."),
+    dict(slug="midia-paga", grupo="entregues",
+         origem="02-diagnostico/diagnostico-vi-midia-paga.md",
+         titulo="(vi) Mídia Paga · Google e Meta", selo="plataforma fechada · 16 set", tom="ok",
+         resumo="Cinco contas de Google Ads exportadas direto da interface, R$ 70,96 milhões e 177 "
+                "campanhas, lidas por oito frentes com verificação adversarial. O parque é 4,1 vezes "
+                "maior do que o projeto media, e a coluna de conversão da plataforma não conta negócio."),
     dict(slug="crm-marketing", grupo="entregues",
          origem="02-diagnostico/auditoria-i-crm-marketing.md",
          titulo="(i) CRM Marketing · Salesforce", selo="experiencial fechada", tom="andando",

@@ -226,7 +226,7 @@ sincronização.
 
 | O que mudou | Estado | Onde ficou |
 |---|---|---|
-| **O Meta passou a ingerir em 12/09**, recoletado em 14/09: 90 campanhas, 1.079 anúncios, R$ 7,38 mi, **2,7x o Google** | ✅ fechado | Os sete documentos foram corrigidos: `fluxo-de-receita.md`, `diagnostico-travas.md`, `checklist-dados-e-acessos.md`, `acessos-e-ferramentas.md`, `PENDENCIAS.md`, `sprint-diagnosticos` e a `SKILL.md` da `dre-v4mos` |
+| **O Meta passou a ingerir em 12/09**, recoletado em 14/09: 90 campanhas, 1.079 anúncios, R$ 7,38 mi, ~~**2,7x o Google**~~ **(a razão foi corrigida em 16/09, ver [diagnóstico (vi)](diagnostico-vi-midia-paga.md): o V4MOS cobre 15,7% do Google)** | ✅ fechado | Os sete documentos foram corrigidos: `fluxo-de-receita.md`, `diagnostico-travas.md`, `checklist-dados-e-acessos.md`, `acessos-e-ferramentas.md`, `PENDENCIAS.md`, `sprint-diagnosticos` e a `SKILL.md` da `dre-v4mos` |
 | **O GA4 respondeu pela API em 14/09**: nove indicadores viraram medido | 🔴 **aberto** | Segue só em `portal/assets/metrics-data.js`. Nenhum `.md` de diagnóstico registra os nove |
 | A camada experiencial da **auditoria (i) CRM** fechou em 10/09, 16 achados | ✅ fechado | Commitada com as duas atas, as duas transcrições e o JSON |
 | A **Trava de Cegueira** foi pontuada em 5 de 25 em 11/09 | ✅ fechado | `dre-diagnostico-travas.json` regerado, e o asset do portal com ele |

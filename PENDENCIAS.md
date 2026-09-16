@@ -223,7 +223,12 @@ fechou a pendência com dado em volume.
 | **Meta Ads** | ✅ Ingerindo. 90 campanhas, 1.079 anúncios, R$ 7.375.303,34, 1,88 bi de impressões, 29,4 mi de cliques, 1,41 bi de alcance, CPM R$ 3,91 e CTR 1,56%, em **21 meses contínuos** |
 
 **O achado que a resolução produziu, e que vale mais que a resolução:** o investimento do Meta é
-**2,7 vezes o do Google** na mesma janela. Todo o material do projeto anterior a 12/09 foi escrito
+**2,7 vezes o do Google** na mesma janela.
+
+> 🔴 **Corrigido em 16/09 pelo [diagnóstico (vi)](02-diagnostico/diagnostico-vi-midia-paga.md).** A comparação
+> era inválida: todo o Meta que o V4MOS vê contra **15,7% do Google**. O export direto das 5 contas da MCC dá
+> **R$ 17,45 mi de Google** na mesma janela, e o buraco de nov/2025 a abr/2026 não era falha de ingestão, era
+> uma conta parada. **A razão entre Meta e Google não é conhecida.** Todo o material do projeto anterior a 12/09 foi escrito
 quando o Meta devolvia `data: []`, isto é, sobre uma leitura de mídia invertida. O Meta é também a
 única série mensal de mídia contínua que o projeto tem, e portanto a única utilizável no forecast.
 
@@ -335,6 +340,39 @@ dono desde 24/08.
 **Ação atualizada:** obter do time de mídia, por escrito, o significado de `pf`, `sc` e `ppl` na
 convenção, e a lista de qual conta e qual campanha é captação de anunciante.
 **Responsável:** Mirella Mendonça + Michelle Morais · **Prazo:** antes do Comitê 1 de 23/09
+
+---
+
+### ✅ Atualização de 16/09 · a leitura de `_pf` estava errada, e a pendência muda de objeto
+
+O export direto das 5 contas de Google Ads trouxe o que faltava: **a URL de destino de cada anúncio**,
+que é dado de negócio e não nomenclatura. O teste, em [diagnóstico (vi)](02-diagnostico/diagnostico-vi-midia-paga.md#2--a-pendência-12-estava-errada-e-agora-dá-para-provar):
+
+| | |
+|---|---|
+| Campanhas com o token `pf` na última posição | **73 de 73** das que seguem a convenção |
+| Dentro da conta B2B (`conta-1-zapmais-b2b`) | **25 de 25** |
+
+**Um token que aparece em 100% dos dois lados não separa os dois lados.** `_pf` não significa pessoa
+física. O separador real é o **penúltimo** token, e a URL confirma sem uma única travessia em 101
+observações: `go` só aponta para `zapmais.com.br`, `anuncie.zapimoveis.com.br` e `conteudo.zapmais.com`;
+`vr` só para `vivareal.com.br`.
+
+**A conclusão de negócio sobrevive, por outro caminho e com outro número:** não é que 90% da mídia seja
+B2C por causa de `_pf`. É que **o B2B é 3,46% do parque de R$ 70,91 mi**, e isso se prova por conta e
+por destino, não por sufixo.
+
+**O que fica aberto, e é o novo objeto desta pendência:**
+
+1. **104 das 177 campanhas não seguem a convenção**, e carregam parte relevante do gasto.
+2. A convenção **não descreve o canal**: `_pc_` cobre quatro tipos de campanha diferentes, e há `_mt_`
+   (Meta) dentro de conta de Google.
+3. **No Meta a pergunta continua indecidível.** Não há URL de destino no material, e 90,4% do
+   investimento está em campanhas `_pf`. O mesmo teste não pode ser feito.
+
+**Ação revista:** manter o pedido do significado dos tokens, e acrescentar o pedido do **export direto
+do Meta com URL de destino**, que é o que tornaria o Meta decidível pelo mesmo método.
+**Responsável:** Mirella Mendonça + time de mídia · **Prazo:** antes do Comitê 1, **23/09**
 
 
 ---
@@ -1332,6 +1370,108 @@ falha em dois tempos. O script que organiza agora falha alto na colisão em vez 
 
 **Ação:** reexportar o gráfico da visão geral com a métrica *Impressões* nas contas 1, 3, 4 e 5.
 **Responsável:** Operador V4 · **Prazo:** junto com o pedido dos `customer ID`, **23/09**
+
+---
+
+## 🔴 42. A coluna `Conversions` do Google Ads não conta negócio, e é ela que dá o lance
+
+Achado da seção 4 do [diagnóstico (vi)](02-diagnostico/diagnostico-vi-midia-paga.md).
+
+O parque de 5 contas declara **158.663.191 conversões** e **R$ 5.511.285.299.051** de valor de
+conversão, para R$ 70,91 mi de investimento. R$ 5,51 trilhões é cerca de 4.400 anos do faturamento do
+grupo.
+
+**A prova não depende de julgamento.** A campanha `pmaxssbr_gg_pm_bg_tf_tp_wb_re_vr_pf`, na
+`conta-4-vivareal-brasil`, declara **94.045.472 conversões contra 54.038.831 impressões**: 1,74
+conversão por impressão. Uma por impressão já seria implausível; 1,74 é impossível. Essa campanha
+sozinha responde por 59,3% das conversões do parque com 1,2% do investimento.
+
+**Por que é pendência e não só achado.** O problema não é de relatório, é de **leilão**: as campanhas
+de maior gasto usam Target CPA e Maximize Conversions, ou seja, **o Google está dando lance contra
+este sinal**, com dinheiro real, todos os dias. Enquanto o sinal estiver assim:
+
+| O que fica inutilizável | Alcance |
+|---|---|
+| Qualquer CPA, CAC ou ROAS da plataforma | as 5 contas |
+| A nota de otimização | as 5 contas |
+| Qualquer leitura de tendência que atravesse a quebra | o custo por conversão da `conta-4` sai de R$ 0,10 no 1T/2025 para R$ 3,27 no 3T/2026 |
+
+Conversa com a [auditoria (vii)](02-diagnostico/auditoria-vii-rastreamento.md), achados 1 e 7, mas
+**não é explicado por eles**: dupla contagem dobra, e dobrar não leva de milhares a 94 milhões.
+
+**O bloqueio é específico e barato de remover:** não existe **relatório de ações de conversão** em
+nenhuma das 5 contas, então ninguém no projeto consegue nomear o evento que está sendo contado.
+
+**Ação:** pedir o relatório de ações de conversão das 5 contas, com nome, categoria, origem, janela de
+atribuição e a marcação de "conversão principal". É uma tela por conta.
+**Responsável:** Operador V4 + time de mídia da OLX · **Prazo:** antes do Comitê 1, **23/09**
+
+---
+
+## 🔴 43. R$ 7,38 mi de Meta chegam sem um único desfecho, e R$ 2,19 mi deles não têm dono
+
+Achado da seção 7 do [diagnóstico (vi)](02-diagnostico/diagnostico-vi-midia-paga.md).
+
+**Parte 1, o Meta não tem numerador.** Os registros de campanha do Meta no V4MOS têm oito campos:
+`name`, `objective`, `spend`, `impressions`, `clicks`, `reach`, `cpm`, `ctr`. **Nenhum de conversão,
+lead ou receita.** R$ 7.375.303,34 e 1,88 bi de impressões entram no projeto sem um lead atribuído, e
+**42,2% desse investimento está em campanhas cujo objetivo declarado é conversão**. Não há export
+direto de Meta no repositório: nenhuma afirmação sobre Meta tem segunda fonte.
+
+**Parte 2, cinco campanhas que ninguém explicou.**
+
+| Campanha | Objetivo | Investimento |
+|---|---|---:|
+| `folocalizanewpplbr_mt_ct_bo_fm_ao_cr_at_ol_pf` | OUTCOME_LEADS | R$ 667.499,59 |
+| `founidaspplbr_mt_ct_bo_fm_ao_cr_at_ol_pf` | LEAD_GENERATION | R$ 602.718,63 |
+| `folocalizapplbr_mt_ct_bo_fm_ao_cr_at_ol_pf` | OUTCOME_LEADS | R$ 485.122,23 |
+| `founidasnewpplbr_mt_ct_bo_fm_ao_cr_at_ol_pf` | OUTCOME_LEADS | R$ 437.332,12 |
+| `founidasnewautospplbr_mt_ct_bo_fm_ao_cr_at_ol_pf` | OUTCOME_LEADS | R$ 105,84 |
+| **Total** | | **R$ 2.192.778,41** |
+
+São **29,7% de todo o investimento de Meta**, nomeadas por duas locadoras de veículos, com objetivo de
+geração de lead e token de marca `ol`. **As duas leituras possíveis mudam o diagnóstico em direções
+opostas:**
+
+| Se for | Então |
+|---|---|
+| Captação de frota para OLX Autos | é **mídia B2B que ninguém no projeto contabilizou**, e o recorte contratado é maior do que 3,46% |
+| Parceria comercial com as locadoras | é **receita de mídia**, não custo de aquisição, e não entra em CAC nenhum |
+
+**Ação:** duas perguntas numa mensagem só. (1) Export direto do Meta com conversões e URL de destino.
+(2) O que são as campanhas Localiza e Unidas.
+**Responsável:** Operador V4 + Mirella Mendonça · **Prazo:** antes do Comitê 1, **23/09**
+
+---
+
+## 🟠 44. O V4MOS mede 15,7% do Google e ninguém tinha percebido, porque ele mede uma conta só
+
+Achado da seção 3 do [diagnóstico (vi)](02-diagnostico/diagnostico-vi-midia-paga.md).
+
+| Janela 01/01/2025 a 14/09/2026 | Google Ads |
+|---|---:|
+| Gasto real das 5 contas da MCC | **R$ 17.445.178,92** |
+| O que o V4MOS reporta | R$ 2.746.029,59 |
+| **Cobertura** | **15,7%** |
+| Do que ele vê, quanto é B2B | R$ 42.245,79, ou **1,5%** |
+
+E o que ele vê não é amostra: **de abril/2025 a junho/2026 a série mensal do V4MOS é, centavo por
+centavo, a `conta-3-vivareal-sp`**, a conta de performance regional de São Paulo do VivaReal. As
+diferenças por trimestre são de R$ 0,12 a R$ 0,59.
+
+Isso resolve de passagem uma anomalia registrada no [mapa dos números](02-diagnostico/mapa-de-numeros.md):
+**o buraco de nov/2025 a abr/2026 não era falha de ingestão**, era essa conta parada. O 1T/2026 dela é
+R$ 0,00 no próprio export do Google.
+
+**A consequência é de método:** todo diagnóstico de mídia de Google escrito neste projeto antes de
+16/09 foi feito sobre uma conta regional de B2C. A frase "o Meta pesa 2,7 vezes o Google", que estava
+em **sete arquivos**, vinha daí e já foi corrigida em todos.
+
+**Ação:** duas frentes. (1) Com a OLX: obter os `customer ID` e pedir que a MCC inteira seja vinculada
+ao conector. (2) Internamente: rodar `/dre-v4mos` de novo depois do vínculo e conferir a cobertura
+contra o export, que agora existe como referência. Enquanto não fechar, **o V4MOS não é fonte de
+investimento de Google para forecast**.
+**Responsável:** Operador V4 + time de mídia da OLX · **Prazo:** antes do Comitê 1, **23/09**
 
 ---
 

@@ -36,6 +36,10 @@ que os acessos novos do lado da OLX devem ser concedidos.
 > campanhas e R$ 2.746.029,59 no Google. **O Meta pesa 2,7 vezes o Google**, o inverso da leitura
 > que este documento carregava desde agosto.
 >
+> 🔴 **Corrigido em 16/09 pelo [diagnóstico (vi)](../02-diagnostico/diagnostico-vi-midia-paga.md).** O export
+> direto mostrou **5 contas de Google Ads** e R$ 17,45 mi na mesma janela: o V4MOS cobre **15,7%** do Google e
+> **1,5% do que ele vê é B2B**. A razão entre Meta e Google não é conhecida.
+>
 > Duas ressalvas seguem de pé, e são as que importam para o diagnóstico (vi):
 >
 > - **Nenhuma das três contas separa B2B de B2C.** 90,4% do investimento de Meta está em campanhas

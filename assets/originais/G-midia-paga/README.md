@@ -14,13 +14,13 @@ Exports diretos da interface do **Google Ads**, uma pasta por conta vinculada à
 | Conta usada | operador V4, com o acesso concedido no lote de 10/09 |
 | Janela | de cada conta, do primeiro dado até 16/09/2026 |
 | Volume | 5 contas · 177 campanhas · **R$ 70,91 mi** acumulados |
-| Leitura | [`02-diagnostico/diagnostico-vi-midia-paga.md`](../../02-diagnostico/diagnostico-vi-midia-paga.md) |
-| Estado de máquina | [`dados/outputs/google-ads-parque.json`](../../dados/outputs/google-ads-parque.json), gerado por [`build_google_ads_parque.py`](../../.claude/scripts/build_google_ads_parque.py) |
+| Leitura | [`02-diagnostico/diagnostico-vi-midia-paga.md`](../../../02-diagnostico/diagnostico-vi-midia-paga.md) |
+| Estado de máquina | [`dados/outputs/google-ads-parque.json`](../../../dados/outputs/google-ads-parque.json), gerado por [`build_google_ads_parque.py`](../../../.claude/scripts/build_google_ads_parque.py) |
 
 > 🔴 **O export não traz `customer ID` nem o nome oficial da conta.** A identidade de cada uma foi
 > **inferida**, por domínio de destino dos anúncios e por convenção de nome de campanha, e a
 > evidência está declarada na tabela abaixo. Amarrar cada pasta ao seu `customer ID` é
-> [pendência 41](../../PENDENCIAS.md).
+> [pendência 41](../../../PENDENCIAS.md).
 
 ## As cinco contas
 
@@ -115,4 +115,4 @@ que o diagnóstico usa, e nenhum relatório de campanha, grupo, anúncio ou pala
 Cada conta afetada ainda tem uma série de impressões: o que se perdeu foram as variantes.
 
 **Como repor:** reexportar o gráfico da visão geral com a métrica *Impressões* nas contas 1, 3, 4 e 5.
-Quatro cliques por conta. Está em [pendência 41](../../PENDENCIAS.md).
+Quatro cliques por conta. Está em [pendência 41](../../../PENDENCIAS.md).

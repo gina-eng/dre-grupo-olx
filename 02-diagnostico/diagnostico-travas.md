@@ -15,6 +15,11 @@
 > R$ 2,75 mi e 23 campanhas do Google na mesma janela. **O Meta pesa 2,7 vezes o Google**, o
 > inverso da leitura que este documento tinha em 04/09.
 >
+> 🔴 **Essa frase foi corrigida em 16/09 pelo [diagnóstico (vi)](diagnostico-vi-midia-paga.md).** A comparação
+> punha todo o Meta que o V4MOS enxerga contra **15,7% do Google**: o export direto das 5 contas da MCC dá
+> **R$ 17,45 mi de Google** na mesma janela. A razão entre os dois **não é conhecida**, porque o lado do Meta
+> também é só o que o conector ingere.
+>
 > Duas dimensões descreviam a si mesmas como 'sem nenhum dado', e não é mais verdade: **(A) Alcance
 > mensal** em Exposição e **(A) CTR / resposta inicial** em Atenção. As duas seguem `null`, e as
 > justificativas foram reescritas: o que as segura agora é **falta de recorte B2B e de base de

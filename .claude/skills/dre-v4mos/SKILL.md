@@ -97,8 +97,14 @@ referencia atual do projeto:
 | **Google Ads** (MCC 526-656-0190) | 23 campanhas, R$ 2.746.029,59, 56,4 mi de impressoes, 10,17 mi de cliques, CTR 18,03%, CPA R$ 3,06. **So 11 dos 21 meses tem dado**: faltam nov/2025 a abr/2026 |
 | **Meta Ads** (612188193108418 e 1742214902479721) | 90 campanhas, 1.079 anuncios, R$ 7.375.303,34, 1,88 bi de impressoes, 29,4 mi de cliques, 1,41 bi de alcance, CPM R$ 3,91, CTR 1,56%. **21 meses continuos** |
 
-O Meta investe **2,7 vezes** o Google na mesma janela, e e a unica serie mensal de midia sem buraco,
-portanto a unica utilizavel em `/dre-forecast`.
+> 🔴 **CORRIGIDO EM 16/09, LEIA ANTES DE USAR.** A frase abaixo esta errada e foi mantida so como historico.
+> O V4MOS cobre **15,7%** do investimento de Google do grupo: de abril/2025 a junho/2026 a serie mensal dele e,
+> centavo por centavo, **uma conta so**, a de performance regional de SP do VivaReal. O buraco de nov/2025 a
+> abr/2026 nao e falha de ingestao, e essa conta parada. **Nao use o Google do V4MOS como investimento do grupo,
+> nem a razao Meta/Google.** Ver `02-diagnostico/diagnostico-vi-midia-paga.md`.
+
+~~O Meta investe **2,7 vezes** o Google na mesma janela, e e a unica serie mensal de midia sem buraco,
+portanto a unica utilizavel em `/dre-forecast`.~~
 
 **Historico, porque ele explica dois defeitos ja corrigidos.** Ate 08/09 o Meta devolvia zero nos
 seis endpoints, com os dois controles de sanidade passando, isto e, acesso nao concedido e nao falha

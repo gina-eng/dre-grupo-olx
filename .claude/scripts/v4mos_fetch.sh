@@ -413,6 +413,15 @@ ads = {}
 for r in ads_data:
     ad_id = r.get('ad_id')
     if not ad_id: continue
+    # Mesmo recorte de data do laco de campanhas. Sem esta linha a camada de anuncio
+    # agrega tudo que a API devolve e nao reconcilia com a de campanha: em 14/09/2026 o
+    # cache trazia 54.559.083 cliques nos anuncios contra 29.407.990 nas campanhas, +85,5%.
+    # Ver 02-diagnostico/diagnostico-vi-midia-paga.md secao 7.2: isto corrige a assimetria,
+    # e NAO fecha sozinho a divergencia (impressoes e gasto da camada de anuncio ja vinham
+    # MENORES que os da camada de campanha, o que aponta uma segunda causa no endpoint).
+    dt_ad = parse_iso(r.get('date_start') or r.get('date_stop'))
+    if dt_ad and not in_range(dt_ad):
+        continue
     if ad_id not in ads:
         ads[ad_id] = {
             'ad_id': ad_id,

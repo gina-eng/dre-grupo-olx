@@ -1,0 +1,476 @@
+{
+ "meta": {
+  "investimento": 7375303.34,
+  "campanhas": 90,
+  "impressoes": 1884960898,
+  "cliques": 29407990,
+  "campos_de_desfecho": 0,
+  "campos_disponiveis": [
+   "name",
+   "objective",
+   "spend",
+   "impressions",
+   "clicks",
+   "reach",
+   "cpm",
+   "ctr"
+  ],
+  "share_objetivo_conversao": 0.422,
+  "localiza_unidas": {
+   "campanhas": 5,
+   "investimento": 2192778.41,
+   "share_do_meta": 0.297,
+   "objetivos": [
+    "OUTCOME_LEADS",
+    "LEAD_GENERATION"
+   ],
+   "questao": "se for captacao de frota para OLX Autos e midia B2B nao contabilizada; se for parceria comercial e receita de midia, nao custo de aquisicao"
+  },
+  "camada_de_anuncio_nao_reconcilia": {
+   "cliques": {
+    "campanha": 29407990,
+    "anuncio": 54559083,
+    "delta": 0.855
+   },
+   "impressoes": {
+    "campanha": 1884960898,
+    "anuncio": 1321526150,
+    "delta": -0.299
+   },
+   "investimento": {
+    "campanha": 7375303.34,
+    "anuncio": 6744117.0,
+    "delta": -0.086
+   },
+   "causa_identificada": "o laco de agregacao de anuncios em .claude/scripts/v4mos_fetch.sh nao aplicava o recorte de data que o laco de campanhas aplica",
+   "corrigido_em": "2026-09-16",
+   "ressalva": "a correcao nao fecha sozinha a divergencia; ha ao menos uma segunda causa no endpoint",
+   "consequencia": "os 1.079 anuncios e 1.079 criativos do V4MOS nao sustentam nenhuma afirmacao ate reconciliar"
+  }
+ },
+ "parque_google": {
+  "contas": 5,
+  "campanhas": 177,
+  "campanhas_no_ar": 31,
+  "investimento_soma_campanhas": 70908579.42,
+  "investimento_linha_total_account": 70962596.39,
+  "divergencia": {
+   "conta-1-zapmais-b2b": 20980.39,
+   "conta-5-vivareal-app": 33036.57,
+   "causa": "campanha removida cujo gasto fica no total da conta e nao aparece na lista"
+  },
+  "b2b": {
+   "conta": "conta-1-zapmais-b2b",
+   "investimento": 2455122.45,
+   "share": 0.0346,
+   "campanhas": 56,
+   "no_ar": 9
+  },
+  "janela_v4mos_2025_01_a_2026_09": {
+   "gasto_real": 17445178.92,
+   "v4mos_reporta": 2746029.59,
+   "cobertura": 0.157,
+   "invisivel": 14699149.33,
+   "b2b_real": 1304256.78,
+   "b2b_no_v4mos": 42245.79,
+   "b2b_share_no_v4mos": 0.0154
+  }
+ },
+ "taxonomia": {
+  "pendencia_afetada": 12,
+  "campanhas_com_convencao": 73,
+  "de": 177,
+  "token_pf_ultima_posicao": {
+   "total": 73,
+   "de": 73,
+   "na_conta_b2b": 25,
+   "de_b2b": 25
+  },
+  "conclusao": "o token pf aparece em 100% das campanhas padronizadas dos dois lados, logo nao pode significar pessoa fisica",
+  "separador_real": "penultimo token",
+  "evidencia_url": {
+   "go": {
+    "campanhas": 25,
+    "observacoes": 68,
+    "dominios": [
+     "www.zapmais.com.br",
+     "anuncie.zapimoveis.com.br",
+     "conteudo.zapmais.com"
+    ]
+   },
+   "vr": {
+    "campanhas": 48,
+    "observacoes": 33,
+    "dominios": [
+     "www.vivareal.com.br"
+    ]
+   },
+   "travessias": 0
+  },
+  "aberto": "104 de 177 campanhas nao seguem a convencao; no Meta a pergunta segue indecidivel por falta de URL de destino"
+ },
+ "v4mos_e_conta3": {
+  "achado": "de abril de 2025 a junho de 2026 a serie mensal de Google do V4MOS e, centavo por centavo, a conta-3-vivareal-sp",
+  "conferencia": [
+   {
+    "trimestre": "2025-Q2",
+    "v4mos": 288038.25,
+    "conta_3": 288038.46,
+    "delta": 0.21
+   },
+   {
+    "trimestre": "2025-Q3",
+    "v4mos": 269423.46,
+    "conta_3": 269423.84,
+    "delta": 0.38
+   },
+   {
+    "trimestre": "2025-Q4",
+    "v4mos": 62938.23,
+    "conta_3": 62938.35,
+    "delta": 0.12
+   },
+   {
+    "trimestre": "2026-Q1",
+    "v4mos": null,
+    "conta_3": 0.0,
+    "delta": null
+   },
+   {
+    "trimestre": "2026-Q2",
+    "v4mos": 315486.89,
+    "conta_3": 315487.48,
+    "delta": 0.59
+   }
+  ],
+  "resolve": "o buraco de nov/2025 a abr/2026 na serie de Google nao e falha de ingestao, e a conta-3 parada"
+ },
+ "integridade_conversao": {
+  "conversoes_declaradas_parque": 158663191,
+  "valor_conversao_declarado": 5511285299051.0,
+  "custo_por_conversao_aparente": 0.45,
+  "prova_de_impossibilidade": {
+   "campanha": "pmaxssbr_gg_pm_bg_tf_tp_wb_re_vr_pf",
+   "conta": "conta-4-vivareal-brasil",
+   "custo": 835386.75,
+   "conversoes": 94045472.16,
+   "impressoes": 54038831,
+   "conversoes_por_impressao": 1.74,
+   "share_das_conversoes_do_parque": 0.593,
+   "share_do_investimento": 0.012
+  },
+  "valor_conversao_por_conta": {
+   "conta-1-zapmais-b2b": 16505444433.0,
+   "conta-2-vivareal-marca": 297317112083.0,
+   "conta-3-vivareal-sp": 5756601088.0,
+   "conta-4-vivareal-brasil": 5191706141446.0,
+   "conta-5-vivareal-app": 0.0
+  },
+  "consequencia": "nenhum CPA, CAC ou ROAS calculado sobre a coluna Conversions tem significado de negocio, em nenhuma das 5 contas",
+  "agravante": "as campanhas de maior gasto usam Target CPA e Maximize Conversions, ou seja o lance e dado contra este sinal",
+  "nao_explicado_por": "achado 7 da auditoria (vii), dupla contagem: dobrar nao leva de milhares a 94 milhoes",
+  "bloqueio": "nao ha relatorio de acoes de conversao em nenhuma conta; ninguem consegue nomear o evento contado"
+ },
+ "superficie_criativa_b2b": {
+  "campanhas_no_ar": 9,
+  "anuncios_responsivos_vivos": 7,
+  "em_campanhas": 6,
+  "grupos_de_ativos_vivos": 3,
+  "em_campanhas_pmax": 2,
+  "total_unidades": 10,
+  "criterio": "anuncio, grupo de anuncios e campanha todos com status Enabled",
+  "campanhas_no_ar_detalhe": [
+   {
+    "campanha": "sebroffbr_gg_se_po_pp_ao_wb_re_go_pf",
+    "custo": 539672.33,
+    "conversoes": 10740.72,
+    "custo_conv": 50.25
+   },
+   {
+    "campanha": "pmaxoff26br_gg_pc_po_pp_ao_wb_re_go_pf",
+    "custo": 159114.36,
+    "conversoes": 10081.04,
+    "custo_conv": 15.78
+   },
+   {
+    "campanha": "senbwppbr_gg_pc_po_pp_ao_wb_re_go_pf",
+    "custo": 117493.68,
+    "conversoes": 3407.05,
+    "custo_conv": 34.49
+   },
+   {
+    "campanha": "sebroffsp_gg_se_po_pp_ao_wb_re_go_pf",
+    "custo": 55409.28,
+    "conversoes": 523.76,
+    "custo_conv": 105.79
+   },
+   {
+    "campanha": "pmaxon26br_gg_pc_po_pp_ao_wb_re_go_pf",
+    "custo": 22179.98,
+    "conversoes": 1.0,
+    "custo_conv": 22179.98
+   },
+   {
+    "campanha": "senb26sp_gg_pc_po_pp_ao_wb_re_go_pf",
+    "custo": 10764.75,
+    "conversoes": 95.08,
+    "custo_conv": 113.21
+   },
+   {
+    "campanha": "senbonbr_gg_se_po_pp_ao_wb_re_go_pf",
+    "custo": 1944.66,
+    "conversoes": 37.0,
+    "custo_conv": 52.56
+   },
+   {
+    "campanha": "sebronbr_gg_se_po_pp_ao_wb_re_go_pf",
+    "custo": 1836.8,
+    "conversoes": 15.0,
+    "custo_conv": 122.45
+   },
+   {
+    "campanha": "senboffbr_gg_se_po_pp_ao_wb_re_go_pf Venda On - 2024",
+    "custo": 0.0,
+    "conversoes": 0.0,
+    "custo_conv": null
+   }
+  ],
+  "contraste_on_off": {
+   "fator": 1405,
+   "ressalva": "usa a coluna Conversions, desqualificada acima; prova diferenca de MEDICAO, nao de eficiencia de venda"
+  }
+ },
+ "conta_4_arquitetura": {
+  "investimento": 63330730.81,
+  "por_tipo": {
+   "Search": 43506661.69,
+   "Performance Max": 19798028.4,
+   "Demand Gen": 23934.78,
+   "Display": 2105.94
+  },
+  "dsa_por_nome": 40895366.79,
+  "sem_controle_de_termo": 60693395.19,
+  "share": 0.958,
+  "contaminacao_b2b": 0.00033,
+  "leitura": "escolha de arquitetura legitima; vira achado porque os formatos que menos dao controle humano sao os que mais dependem do sinal de conversao, e o sinal esta quebrado"
+ },
+ "reconciliacao_funil": {
+  "fonte_do_funil": "02-diagnostico/dashboards-aquisicao-pro.md",
+  "janela": "2025-09-01 a 2026-09-15",
+  "dashboard_investimento_declarado": 951500.0,
+  "vendas": 645,
+  "cac_publicado": 1475.19,
+  "faixa_cac": [
+   {
+    "metodo": "piso, 4T/25 a 3T/26 fechados, exclui set/2025",
+    "gasto_conta_1": 997016.56,
+    "cac": 1545.76,
+    "estimado": false
+   },
+   {
+    "metodo": "ponto medio, mais set/2025 a 1/3 do 3T/25",
+    "gasto_conta_1": 1038874.1,
+    "cac": 1610.66,
+    "estimado": true
+   },
+   {
+    "metodo": "teto, mais o 3T/2025 inteiro",
+    "gasto_conta_1": 1122589.17,
+    "cac": 1740.45,
+    "estimado": false
+   }
+  ],
+  "achado": "mesmo no piso, uma unica conta de Google gasta 4,8% mais do que o dashboard atribui a toda a midia paga B2B",
+  "numero_descartado": {
+   "valor": 1985.37,
+   "motivo": "derivava de tratar o mix 70,2/24,7 como particao dos R$ 951,5 mil; o mix soma 94,9% e a fonte nega que o custo de Meta esteja la"
+  },
+  "decomposicao": {
+   "etapas": [
+    {
+     "etapa": "investimento",
+     "antes": 451162,
+     "agora": 951500,
+     "delta": 1.109
+    },
+    {
+     "etapa": "impressoes",
+     "antes": 17822998,
+     "agora": 32170511,
+     "delta": 0.805
+    },
+    {
+     "etapa": "cliques",
+     "antes": 397232,
+     "agora": 738057,
+     "delta": 0.858
+    },
+    {
+     "etapa": "sessoes",
+     "antes": 510017,
+     "agora": 803276,
+     "delta": 0.575
+    },
+    {
+     "etapa": "mql",
+     "antes": 15450,
+     "agora": 16532,
+     "delta": 0.07
+    },
+    {
+     "etapa": "sql",
+     "antes": 3607,
+     "agora": 3427,
+     "delta": -0.05
+    },
+    {
+     "etapa": "venda",
+     "antes": 733,
+     "agora": 645,
+     "delta": -0.12
+    }
+   ],
+   "passos": [
+    {
+     "passo": "impressao_clique",
+     "antes": 0.0223,
+     "agora": 0.0229,
+     "variacao": 0.029
+    },
+    {
+     "passo": "clique_sessao",
+     "antes": 1.2839,
+     "agora": 1.0884,
+     "variacao": -0.152
+    },
+    {
+     "passo": "sessao_mql",
+     "antes": 0.0303,
+     "agora": 0.0206,
+     "variacao": -0.321
+    },
+    {
+     "passo": "mql_sql",
+     "antes": 0.2335,
+     "agora": 0.2073,
+     "variacao": -0.112
+    },
+    {
+     "passo": "sql_venda",
+     "antes": 0.2032,
+     "agora": 0.1882,
+     "variacao": -0.074
+    }
+   ],
+   "custos": [
+    {
+     "metrica": "cpm",
+     "antes": 25.31,
+     "agora": 29.58,
+     "variacao": 0.168
+    },
+    {
+     "metrica": "cpc",
+     "antes": 1.14,
+     "agora": 1.29,
+     "variacao": 0.135
+    },
+    {
+     "metrica": "custo_por_mql",
+     "antes": 29.2,
+     "agora": 57.56,
+     "variacao": 0.971
+    },
+    {
+     "metrica": "custo_por_sql",
+     "antes": 125.07,
+     "agora": 277.65,
+     "variacao": 1.22
+    },
+    {
+     "metrica": "cac",
+     "antes": 615.54,
+     "agora": 1475.19,
+     "variacao": 1.397
+    }
+   ],
+   "leitura": "a midia comprou exposicao bem (CPM +16,8%, CTR estavel) e o sistema quebrou depois do clique; a maior perda isolada e sessao->MQL, -32,1%",
+   "vendas_por_milhao_de_impressao": {
+    "antes": 41.1,
+    "agora": 20.0,
+    "variacao": -0.512
+   },
+   "base": "periodo anterior reconstruido a partir das variacoes publicadas no dashboard, todo ele estimado"
+  },
+  "convergencia": "mesma direcao do achado central dos dashboards de aquisicao: a perda esta depois do topo, nao antes dele"
+ },
+ "afirmacoes_do_repositorio_a_corrigir": [
+  {
+   "afirmacao": "o Meta pesa 2,7 vezes o Google",
+   "arquivos": [
+    "02-diagnostico/fluxo-de-receita.md",
+    "02-diagnostico/mapa-de-numeros.md",
+    "02-diagnostico/diagnostico-travas.md",
+    "PENDENCIAS.md",
+    "01-cliente/acessos-e-ferramentas.md",
+    "04-execucao/sprint-diagnosticos-10-a-18-09.md",
+    ".claude/skills/dre-v4mos/SKILL.md"
+   ],
+   "por_que_erra": "compara todo o Meta que o V4MOS ve com 15,7% do Google",
+   "correcao": "a razao entre Meta e Google nao e conhecida: o lado do Meta tambem e so o que o V4MOS ingere, e nao ha export direto de Meta para conferir. Contra o parque real de Google na janela, R$ 17,45 mi contra R$ 7,38 mi, o Google e 2,4 vezes maior"
+  }
+ ],
+ "nao_pode_ir_ao_comite": [
+  "CAC de midia B2B como numero unico: vai como faixa de R$ 1.476 a R$ 1.740, com o metodo de cada extremo",
+  "qualquer ROAS ou valor de conversao de Google Ads",
+  "qualquer contagem de conversao do Google tratada como lead ou venda",
+  "a frase 'o Meta pesa 2,7 vezes o Google'",
+  "qualquer numero de desfecho do Meta, porque nao existe nenhum",
+  "os 1,41 bilhao de alcance e a frequencia derivada dele: e soma de alcances",
+  "as series mensais de impressao como grafico de exposicao",
+  "o mix 70,2/24,7 como particao do investimento B2B",
+  "as cartas de demografia, enquanto a soma dos percentuais passar de 100%",
+  "'a conta-1 e a conta B2B' como fato: e inferencia forte, com customer ID pendente",
+  "a pendencia 12 como resolvida: o que se provou e que _pf nao significa pessoa fisica"
+ ],
+ "o_que_falta_para_fechar": [
+  {
+   "n": 1,
+   "item": "relatorio de acoes de conversao das 5 contas",
+   "dono": "time de midia"
+  },
+  {
+   "n": 2,
+   "item": "export direto do Meta, com conversoes e URL de destino",
+   "dono": "time de midia"
+  },
+  {
+   "n": 3,
+   "item": "parcela de impressoes de busca, perdida por orcamento e por classificacao",
+   "dono": "time de midia"
+  },
+  {
+   "n": 4,
+   "item": "customer ID das 5 contas",
+   "dono": "time de midia"
+  },
+  {
+   "n": 5,
+   "item": "o que sao as campanhas Localiza e Unidas",
+   "dono": "Mirella Mendonca"
+  },
+  {
+   "n": 6,
+   "item": "relatorio de localizacao",
+   "dono": "time de midia"
+  }
+ ],
+ "travas": {
+  "Cegueira": "a trava que mais muda: nenhum numero de eficiencia de midia no projeto era confiavel antes de 16/09",
+  "Exposicao": "existe investimento B2B isolado pela primeira vez, mas nao ha parcela de impressoes em nenhuma conta",
+  "Atencao": "10 unidades criativas no ar em toda a aquisicao paga B2B",
+  "Qualificacao": "o passo que mais caiu e sessao->MQL, -32,1%, com a compra de exposicao funcionando; candidato forte, nao confirmavel com o material atual",
+  "Conversao": "nada a acrescentar",
+  "Retencao": "nada a acrescentar"
+ }
+}

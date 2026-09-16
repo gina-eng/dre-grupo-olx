@@ -192,6 +192,10 @@ no lote de 10/09, a ingestão começou em **12/09** e a recoleta sobre 01/01/202
 com série mensal de 21 meses contínuos. (vi) não fecha só com Google: fecha com os dois lados, e o
 Meta é o lado maior, **2,7 vezes o investimento do Google**.
 
+> 🔴 **Corrigido em 16/09.** O export direto das 5 contas da MCC mostrou R$ 17,45 mi de Google na mesma janela:
+> o V4MOS cobre 15,7% do Google, e o Meta não é o lado maior. Ver
+> [diagnóstico (vi)](../02-diagnostico/diagnostico-vi-midia-paga.md).
+
 **O risco mudou de lugar, não desapareceu.** O que ameaça o fechamento de (vi) em 18/09 agora não é
 ingestão, é **recorte**: nenhuma das contas separa B2B de B2C, e sem uma frase do time de mídia
 dizendo qual campanha é captação de anunciante, (vi) fecha com o retrato da mídia do grupo inteiro
