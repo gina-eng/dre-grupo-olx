@@ -87,6 +87,12 @@ BIBLIOTECA = [
          titulo="Fluxo de receita ponta a ponta", selo="em construção", tom="andando",
          resumo="O mapa do sistema que produz receita, etapa a etapa, com volume e taxa onde "
                 "existe dado apurado e vazio declarado onde não existe."),
+    dict(slug="dashboards-aquisicao", grupo="sistema",
+         origem="02-diagnostico/dashboards-aquisicao-pro.md",
+         titulo="Dashboards de aquisição PRO", selo="recebido · 16 set", tom="ok",
+         resumo="Os dois relatórios de Looker do Grupo OLX, lidos print a print: 13 meses de "
+                "funil por canal, o primeiro CAC de mídia com numerador B2B, e três "
+                "reconciliações, uma delas contra a própria apresentação de Inside Sales."),
     dict(slug="travas", grupo="sistema",
          origem="02-diagnostico/diagnostico-travas.md",
          titulo="Placar das 8 travas", selo="2 de 8 fechadas", tom="andando",

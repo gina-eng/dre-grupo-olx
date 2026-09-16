@@ -46,8 +46,8 @@ evidência de abertura**, e é por isso que a maior parte da tabela continua com
 | # | Item | Status | Obs. |
 |---|---|---|---|
 | A1 | Receita mensal dos últimos **24 meses**, aberta por linha de negócio / segmento / produto | 🟡 | **Recebido em 28/08.** 20 meses (jan/25 a jul/26) contra 24, 39 linhas sobre 4 unidades. Falta 2024. [Leitura](serie-de-receita-2025-2026.md) |
-| A2 | Funil comercial completo (volumes e taxas de conversão por etapa), últimos **12–24 meses** | 🟡 | **Recebido em 28/08, versionado em 14/09.** 4 meses (abr a jul/26) contra 12–24, e só Inside Sales, que cobre 39% da receita de RE e 17% de Autos. [Leitura](estrutura-comercial-inside-sales.md) |
-| A3 | Ticket médio, ciclo de vendas e CAC por canal (se disponível) | 🟡 | Ticket de entrada (R$ 707 RE, R$ 602 Autos) e lead time (1,2 a 2,4 dias) recebidos. **CAC por canal continua ausente.** [Leitura](estrutura-comercial-inside-sales.md) |
+| A2 | Funil comercial completo (volumes e taxas de conversão por etapa), últimos **12–24 meses** | 🟡 | **Duas fontes, e elas divergem.** Inside Sales (28/08): 4 meses, 39% da receita de RE e 17% de Autos, [leitura](estrutura-comercial-inside-sales.md). Dashboards de aquisição (16/09): **13 meses de lead→MQL→SQL→venda por canal**, [leitura](dashboards-aquisicao-pro.md). As duas discordam em até 27% no mesmo mês ([pendência 36](../PENDENCIAS.md)) |
+| A3 | Ticket médio, ciclo de vendas e CAC por canal (se disponível) | 🟡 | Ticket de entrada (R$ 707 RE, R$ 602 Autos) e lead time (1,2 a 2,4 dias) recebidos. **Primeiro CAC com numerador B2B em 16/09: R$ 1.475 por venda de mídia paga**, sobre R$ 951,5 mil de investimento, [leitura](dashboards-aquisicao-pro.md). Falta CAC dos demais canais e o investimento de mídia online, que a página devolve em branco |
 | A4 | Estrutura organizacional de Marketing, Pré-Vendas e Vendas (organograma e responsabilidades) | 🟡 | 101 HCs de Inside Sales por célula e papel (hunter e farmer). Falta Marketing e Pré-Vendas. [Leitura](estrutura-comercial-inside-sales.md) |
 | A5 | Planejamento estratégico / OKRs vigentes e metas comerciais | 🟡 | Mapa Estratégico 2026 e mapa de OKRs com % de atingimento por vertical. **Sem meta comercial em número absoluto.** [Leitura](estrutura-comercial-inside-sales.md) |
 | A6 | Definição atual de ICP e segmentação de mercado | 🟡 | Segmentação por porte operada de fato: RE usa PP (<25), P (25–80), M (80–600), G (650+); Autos usa P (<10), M (11–50), G (50+). Não é ICP, é corte de carteira. [Leitura](estrutura-comercial-inside-sales.md) |
@@ -70,6 +70,15 @@ evidência de abertura**, e é por isso que a maior parte da tabela continua com
 > Sales, que responde por 39% da receita de Real Estate e 17% de Autos. Para o forecast falta série
 > longa, movimento mensal de base (entrada e saída) e CAC.
 
+> 🟢 **16/09: o bloco A recebeu a maior entrada de dado desde a série A1.** Dezesseis capturas dos
+> dois relatórios de Looker do Grupo OLX, Aquisição Offline PRO e Aquisição Online PRO, com 13 meses
+> de funil por canal, receita, investimento de mídia e status de lead. Leitura em
+> [`dashboards-aquisicao-pro.md`](dashboards-aquisicao-pro.md).
+>
+> **A ressalva é a forma, não o conteúdo:** vieram como **print, não como link**. Dá para ler, não
+> dá para filtrar, exportar nem atualizar, e dois rótulos chegaram cobertos pelo próprio render do
+> gráfico. A2 e A3 sobem de patamar, mas nenhum dos dois fecha enquanto o acesso não vier.
+
 ## B. CRM Marketing
 *Alimenta o diagnóstico (i), Salesforce Marketing Cloud.*
 
@@ -77,7 +86,7 @@ evidência de abertura**, e é por isso que a maior parte da tabela continua com
 |---|---|---|---|
 | B1 | Acesso de visualização | 🟠 | Declarado concedido no lote de 10/09, **sem conferência na ferramenta** ([pendência 18](../PENDENCIAS.md)). O Sales Cloud depende do e-mail `@olxbr` habilitado no MyApps |
 | B2 | Arquitetura de Data Extensions e lógica de segmentação atual | 🟡 | **Descrita nas sessões de 09 e 10/09**, incluindo o comparativo DEX legado vs. Campana e as regras de segmentação em uso. Os slides foram apresentados em tela e **não recebidos** |
-| B3 | Relatórios de performance de e-mail dos últimos 12 meses (entregabilidade, open, CTR, conversão) | ⚪ | O pedido mudou de sentido: **o e-mail está desligado na aquisição desde a migração**, então a série de 12 meses é de ciclo de vida, não de aquisição |
+| B3 | Relatórios de performance de e-mail dos últimos 12 meses (entregabilidade, open, CTR, conversão) | 🟡 | O pedido mudou de sentido: **o e-mail está desligado na aquisição desde a migração**, então a série de 12 meses é de ciclo de vida, não de aquisição. O que chegou em 16/09 é o **resultado de canal**, não a entregabilidade: e-mail com 732 MQL e 70 vendas em 12,5 meses, contra 29.815 MQL do WhatsApp, [leitura](dashboards-aquisicao-pro.md) |
 | B4 | Tamanho e saúde da base opt-in | 🟡 | A **saúde** foi descrita e é ruim: CEP ausente em mais de 50%, nomes duplicados e `undefined`, documento em campo de nome. O **tamanho** não foi dito em nenhuma das duas sessões |
 
 > ⚠️ **O bloco B foi desenhado para uma ferramenta e o GTM mostrou quatro.** Além do Salesforce

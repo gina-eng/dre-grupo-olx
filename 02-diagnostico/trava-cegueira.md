@@ -233,6 +233,12 @@ já está esperando. Falta o site empurrar.
 - **Camada experiencial sobre as ferramentas, não sobre o time.** A V4 testou o sistema, não
   entrevistou quem o usa. As entrevistas de 16 e 17/09 podem mudar a leitura da dimensão E.
 - **Dashboards internos nunca verificados.** Existem, e os links são ação pendente desde 28/08.
+  **Atualizado em 16/09:** dois deles foram vistos, em captura de tela, e estão lidos em
+  [`dashboards-aquisicao-pro.md`](dashboards-aquisicao-pro.md). **A pontuação acima não foi
+  recalculada**, e a evidência nova puxa em duas direções opostas: o funil B2B com 13 meses de
+  volume e taxa por canal alivia a dimensão A, e a divergência de até 27% contra o Inside Sales
+  ([pendência 36](../PENDENCIAS.md)) agrava a D, porque confirma **dois sistemas de medição que não
+  se falam** com um terceiro número em jogo. Repontuar exige rodar `/dre-diagnostico-trava` de novo.
 - **Sem acesso a Salesforce Marketing Cloud nem ao CRM comercial**, o que limita as dimensões D e A.
 
 Por isso a confiabilidade é **parcial**, e não alta.

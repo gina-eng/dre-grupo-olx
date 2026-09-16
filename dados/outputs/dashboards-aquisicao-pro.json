@@ -1,0 +1,817 @@
+{
+ "meta": {
+  "fonte": "16 capturas de tela do Looker Studio do Grupo OLX",
+  "capturado_em": "2026-09-16",
+  "versionado_em": "2026-09-16",
+  "diretorio": "assets/originais/A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/",
+  "leitura": "02-diagnostico/dashboards-aquisicao-pro.md",
+  "natureza": "declarado pelo cliente, exibido em dashboard proprio, nao auditado pela V4",
+  "itens_do_checklist": [
+   "A2",
+   "A3",
+   "B3"
+  ],
+  "pendencias_afetadas": [
+   30,
+   31,
+   32
+  ],
+  "relatorios": {
+   "offline": {
+    "id": "38f3663c-700b-4072-905a-8138a0fd94c2",
+    "nome": "Aquisicao Offline PRO \\ Marketing",
+    "paginas_versionadas": 11
+   },
+   "online": {
+    "id": "f378f073-cbf8-4d92-9e46-27ebd5ea3d1a",
+    "nome": "Aquisicao Online PRO \\ Marketing",
+    "paginas_versionadas": 5
+   }
+  },
+  "link_recebido": false,
+  "nota_link": "Chegou como print, nao como link. Item 3 da pendencia 32 segue aberto para o link."
+ },
+ "offline": {
+  "janela": {
+   "inicio": "2025-09-01",
+   "fim": "2026-09-15",
+   "meses": 12.5
+  },
+  "verticais": [
+   "Autos",
+   "Imoveis"
+  ],
+  "funil": {
+   "leads_total": 131782,
+   "mql": 87368,
+   "sql": 50450,
+   "venda": 12068,
+   "taxa_lead_mql": 0.663,
+   "taxa_mql_sql": 0.577,
+   "taxa_sql_venda": 0.239,
+   "taxa_ponta_a_ponta": 0.0916
+  },
+  "receita": {
+   "receita_total": 14000000,
+   "ticket_medio": 1010.0,
+   "life_time": 4.0,
+   "receita_ltv": 46000000,
+   "receita_recorrente": 11400000,
+   "receita_oneshot": 798600,
+   "definicao_desconhecida": true,
+   "nota": "Nao se sabe se receita_total e primeira fatura, contrato ou MRR incremental. Pergunta 2 da secao 8."
+  },
+  "status_lead": {
+   "desqualificado": {
+    "leads": 62478,
+    "pct": 0.474,
+    "mql": 34486,
+    "delta_leads": -0.457
+   },
+   "qualificado": {
+    "leads": 50464,
+    "pct": 0.383,
+    "mql": 50455,
+    "delta_leads": -0.038
+   },
+   "trabalhando": {
+    "leads": 18840,
+    "pct": 0.143,
+    "mql": 2427,
+    "delta_leads": 16.034,
+    "estoque_anterior_estimado": 1106,
+    "estimado": true,
+    "alerta": "unica linha que cresce em quatro digitos; separar fila real de mudanca de taxonomia antes de usar"
+   }
+  },
+  "canais": [
+   {
+    "canal": "Direto",
+    "mql": 27251,
+    "taxa_qualificacao": 0.75,
+    "sql": 20346,
+    "taxa_conversao": 0.32,
+    "venda": 6400,
+    "receita_total_exibida": "R$ 8M",
+    "receita_arredondada_pelo_dashboard": true,
+    "delta_venda_380d": -0.13,
+    "mql_para_venda": 0.2349
+   },
+   {
+    "canal": "CRM",
+    "mql": 30575,
+    "taxa_qualificacao": 0.67,
+    "sql": 20577,
+    "taxa_conversao": 0.18,
+    "venda": 3700,
+    "receita_total_exibida": "R$ 4M",
+    "receita_arredondada_pelo_dashboard": true,
+    "delta_venda_380d": -0.364,
+    "mql_para_venda": 0.121
+   },
+   {
+    "canal": "Outros canais",
+    "mql": 10936,
+    "taxa_qualificacao": 0.45,
+    "sql": 4925,
+    "taxa_conversao": 0.22,
+    "venda": 1100,
+    "receita_total_exibida": "R$ 1M",
+    "receita_arredondada_pelo_dashboard": true,
+    "delta_venda_380d": -0.387,
+    "mql_para_venda": 0.1006
+   },
+   {
+    "canal": "Midia Paga",
+    "mql": 16532,
+    "taxa_qualificacao": 0.21,
+    "sql": 3427,
+    "taxa_conversao": 0.19,
+    "venda": 645,
+    "receita_total_exibida": "R$ 844K",
+    "receita_arredondada_pelo_dashboard": false,
+    "delta_venda_380d": -0.121,
+    "mql_para_venda": 0.039
+   },
+   {
+    "canal": "SEO",
+    "mql": 2070,
+    "taxa_qualificacao": 0.57,
+    "sql": 1171,
+    "taxa_conversao": 0.22,
+    "venda": 262,
+    "receita_total_exibida": "R$ 390K",
+    "receita_arredondada_pelo_dashboard": false,
+    "delta_venda_380d": -0.081,
+    "mql_para_venda": 0.1266
+   },
+   {
+    "canal": "Nao se aplica",
+    "mql": 4,
+    "taxa_qualificacao": 1.0,
+    "sql": 4,
+    "taxa_conversao": 0.5,
+    "venda": 2,
+    "receita_total_exibida": "R$ 871",
+    "receita_arredondada_pelo_dashboard": false,
+    "delta_venda_380d": null,
+    "mql_para_venda": 0.5
+   }
+  ],
+  "serie_mensal": [
+   {
+    "mes": "2025-08",
+    "mql": 7976,
+    "mql_ocluido": false,
+    "sql": 4274,
+    "venda": 1165,
+    "taxa_qualificacao": 0.54,
+    "taxa_conversao": 0.27
+   },
+   {
+    "mes": "2025-09",
+    "mql": 7968,
+    "mql_ocluido": false,
+    "sql": 3981,
+    "venda": 1077,
+    "taxa_qualificacao": 0.5,
+    "taxa_conversao": 0.27
+   },
+   {
+    "mes": "2025-10",
+    "mql": null,
+    "mql_ocluido": true,
+    "sql": 4208,
+    "venda": 1102,
+    "taxa_qualificacao": 0.58,
+    "taxa_conversao": 0.26,
+    "mql_faixa": [
+     7306,
+     7315
+    ],
+    "nota": "rotulo coberto pelo render; soma dos dois meses ocluidos fixada em 14475 pela reconciliacao com o total de 87368"
+   },
+   {
+    "mes": "2025-11",
+    "mql": 6428,
+    "mql_ocluido": false,
+    "sql": 3866,
+    "venda": 1037,
+    "taxa_qualificacao": 0.6,
+    "taxa_conversao": 0.27
+   },
+   {
+    "mes": "2025-12",
+    "mql": 4065,
+    "mql_ocluido": false,
+    "sql": 2257,
+    "venda": 647,
+    "taxa_qualificacao": 0.56,
+    "taxa_conversao": 0.29
+   },
+   {
+    "mes": "2026-01",
+    "mql": 7406,
+    "mql_ocluido": false,
+    "sql": 3706,
+    "venda": 891,
+    "taxa_qualificacao": 0.5,
+    "taxa_conversao": 0.24
+   },
+   {
+    "mes": "2026-02",
+    "mql": 6330,
+    "mql_ocluido": false,
+    "sql": 3932,
+    "venda": 632,
+    "taxa_qualificacao": 0.62,
+    "taxa_conversao": 0.16
+   },
+   {
+    "mes": "2026-03",
+    "mql": 8219,
+    "mql_ocluido": false,
+    "sql": 5063,
+    "venda": 1045,
+    "taxa_qualificacao": 0.62,
+    "taxa_conversao": 0.21
+   },
+   {
+    "mes": "2026-04",
+    "mql": 8140,
+    "mql_ocluido": false,
+    "sql": 5127,
+    "venda": 1232,
+    "taxa_qualificacao": 0.63,
+    "taxa_conversao": 0.24
+   },
+   {
+    "mes": "2026-05",
+    "mql": 6771,
+    "mql_ocluido": false,
+    "sql": 4438,
+    "venda": 1132,
+    "taxa_qualificacao": 0.66,
+    "taxa_conversao": 0.26
+   },
+   {
+    "mes": "2026-06",
+    "mql": 7265,
+    "mql_ocluido": false,
+    "sql": 3968,
+    "venda": 1064,
+    "taxa_qualificacao": 0.55,
+    "taxa_conversao": 0.27
+   },
+   {
+    "mes": "2026-07",
+    "mql": 6780,
+    "mql_ocluido": false,
+    "sql": 4073,
+    "venda": 982,
+    "taxa_qualificacao": 0.6,
+    "taxa_conversao": 0.24
+   },
+   {
+    "mes": "2026-08",
+    "mql": null,
+    "mql_ocluido": true,
+    "sql": 3957,
+    "venda": 886,
+    "taxa_qualificacao": 0.55,
+    "taxa_conversao": 0.22,
+    "mql_faixa": [
+     7160,
+     7169
+    ],
+    "nota": "rotulo coberto pelo render; soma dos dois meses ocluidos fixada em 14475 pela reconciliacao com o total de 87368"
+   },
+   {
+    "mes": "2026-09",
+    "mql": 3521,
+    "mql_ocluido": false,
+    "sql": 1874,
+    "venda": 341,
+    "taxa_qualificacao": 0.53,
+    "taxa_conversao": 0.18
+   }
+  ],
+  "midia_paga": {
+   "investimento": 951500,
+   "delta_investimento_380d": 1.109,
+   "impressoes": 32170511,
+   "delta_impressoes_380d": 0.805,
+   "cliques": 738057,
+   "delta_cliques_380d": 0.858,
+   "sessoes_pos": 803276,
+   "delta_sessoes_380d": 0.575,
+   "mql": 16532,
+   "delta_mql_380d": 0.07,
+   "sql": 3427,
+   "delta_sql_380d": -0.05,
+   "venda": 645,
+   "delta_venda_380d": -0.12,
+   "receita_total": 844200,
+   "ticket_medio": 1310.0,
+   "receita_ltv": 3400000,
+   "life_time": 4.0,
+   "cac_midia": 1475.2,
+   "cac_midia_periodo_anterior": 615.6,
+   "cac_periodo_anterior_estimado": true,
+   "delta_cac": 1.396,
+   "receita_primeira_venda_por_cliente": 1308.8,
+   "ltv_por_cliente": 5271.3,
+   "mix_investimento": {
+    "google": 0.702,
+    "meta": 0.247
+   },
+   "objetivo_novo_cliente": 0.964,
+   "desqualificacao_contato_sem_sucesso": 0.866,
+   "ressalva": "piso, nao total: a pagina online equivalente devolve investimento em branco"
+  },
+  "crm": {
+   "total_canal": 30575,
+   "whatsapp": {
+    "mql": 29815,
+    "pct_do_crm": 0.975,
+    "sql": 20227,
+    "venda": 3582,
+    "receita_total": 3500000,
+    "delta_mql_380d": -0.034,
+    "delta_venda_380d": -0.346
+   },
+   "email": {
+    "mql": 732,
+    "pct_do_crm": 0.024,
+    "sql": 332,
+    "venda": 70,
+    "receita_total": 58300,
+    "delta_mql_380d": -0.548,
+    "delta_venda_380d": -0.634
+   },
+   "push_central": {
+    "mql": 28,
+    "pct_do_crm": 0.0009,
+    "sql": 18,
+    "venda": 4,
+    "receita_total": 12100,
+    "delta_mql_380d": -0.97,
+    "delta_venda_380d": -0.953
+   },
+   "reconciliacao": "29815 + 732 + 28 = 30575, exato contra o canal CRM da visao geral",
+   "nota": "quantifica a pendencia 31: a dependencia da Blip na aquisicao de CRM e de 97,5%, nao de 100% declarado"
+  }
+ },
+ "online": {
+  "janela_funil": {
+   "inicio": "2026-09-01",
+   "fim": "2026-09-13"
+  },
+  "portal": "ZAP/VR",
+  "objetivo": "Novo Cliente",
+  "filtro_fraude": "Nao",
+  "funil": {
+   "sessoes_pos": 19618,
+   "sessoes_ident": 7413,
+   "sessoes_vitrine": 3665,
+   "sessoes_checkout": 850,
+   "venda": 317,
+   "taxa_ponta_a_ponta": 0.0162
+  },
+  "receita": {
+   "ticket_medio": 63.95,
+   "receita_bruta": 25600,
+   "receita_liquida": 23800,
+   "receita_recorrente": 20300,
+   "receita_ltv": 78100,
+   "life_time": 3.9
+  },
+  "canais_setembro": [
+   {
+    "canal": "Midia Paga",
+    "sessoes_pos": 6685,
+    "sessoes_ident": 2549,
+    "sessoes_vitrine": 896,
+    "sessoes_checkout": 167
+   },
+   {
+    "canal": "Direto",
+    "sessoes_pos": 4772,
+    "sessoes_ident": 2150,
+    "sessoes_vitrine": 1525,
+    "sessoes_checkout": 345
+   },
+   {
+    "canal": "Outros",
+    "sessoes_pos": 4103,
+    "sessoes_ident": 1669,
+    "sessoes_vitrine": 765,
+    "sessoes_checkout": 233
+   },
+   {
+    "canal": "SEO",
+    "sessoes_pos": 3873,
+    "sessoes_ident": 1025,
+    "sessoes_vitrine": 472,
+    "sessoes_checkout": 102
+   },
+   {
+    "canal": "CRM",
+    "sessoes_pos": 185,
+    "sessoes_ident": 20,
+    "sessoes_vitrine": 7,
+    "sessoes_checkout": 3
+   }
+  ],
+  "serie_mensal": [
+   {
+    "mes": "2025-08",
+    "sessoes_pos": 106900,
+    "venda": 1017,
+    "taxa": 0.0095,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2025-09",
+    "sessoes_pos": 103500,
+    "venda": 859,
+    "taxa": 0.0083,
+    "venda_estimada": true,
+    "nota": "rotulo de venda coberto no render; derivado de sessoes x taxa exibida"
+   },
+   {
+    "mes": "2025-10",
+    "sessoes_pos": 101200,
+    "venda": 797,
+    "taxa": 0.0079,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2025-11",
+    "sessoes_pos": 93900,
+    "venda": 594,
+    "taxa": 0.0063,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2025-12",
+    "sessoes_pos": 91200,
+    "venda": 457,
+    "taxa": 0.005,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-01",
+    "sessoes_pos": 100200,
+    "venda": 862,
+    "taxa": 0.0086,
+    "venda_estimada": true,
+    "nota": "rotulo de venda coberto no render; derivado de sessoes x taxa exibida"
+   },
+   {
+    "mes": "2026-02",
+    "sessoes_pos": 62700,
+    "venda": 641,
+    "taxa": 0.0102,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-03",
+    "sessoes_pos": 69200,
+    "venda": 881,
+    "taxa": 0.0127,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-04",
+    "sessoes_pos": 62300,
+    "venda": 650,
+    "taxa": 0.0104,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-05",
+    "sessoes_pos": 53000,
+    "venda": 700,
+    "taxa": 0.0132,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-06",
+    "sessoes_pos": 51600,
+    "venda": 781,
+    "taxa": 0.0151,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-07",
+    "sessoes_pos": 54900,
+    "venda": 702,
+    "taxa": 0.0128,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-08",
+    "sessoes_pos": 51800,
+    "venda": 714,
+    "taxa": 0.0138,
+    "venda_estimada": false
+   },
+   {
+    "mes": "2026-09",
+    "sessoes_pos": 19618,
+    "venda": 317,
+    "taxa": 0.0162,
+    "venda_estimada": false
+   }
+  ],
+  "achado_trafego": {
+   "sessoes_ago25": 106900,
+   "sessoes_ago26": 51800,
+   "variacao": -0.515,
+   "taxa_ago25": 0.0095,
+   "taxa_ago26": 0.0138,
+   "venda_ago25": 1017,
+   "venda_ago26": 714,
+   "variacao_venda": -0.298,
+   "degrau": "entre 2026-02 e 2026-03 o trafego cai de ~100 mil para ~65 mil e nao volta"
+  },
+  "midia_paga": {
+   "sessoes_pos": 6685,
+   "venda": 77,
+   "investimento": null,
+   "nota": "a pagina devolve investimento, impressoes e cliques em branco"
+  }
+ },
+ "reconciliacoes": {
+  "contra_inside_sales": {
+   "fonte_b": "02-diagnostico/estrutura-comercial-inside-sales.md",
+   "regra": "regra 8 do metodo: divergencia acima de 5% e dado inconsistente",
+   "meses": [
+    {
+     "mes": "2026-04",
+     "inside_sales": 968,
+     "looker": 1232,
+     "divergencia": -0.214
+    },
+    {
+     "mes": "2026-05",
+     "inside_sales": 1344,
+     "looker": 1132,
+     "divergencia": 0.187
+    },
+    {
+     "mes": "2026-06",
+     "inside_sales": 1177,
+     "looker": 1064,
+     "divergencia": 0.106
+    },
+    {
+     "mes": "2026-07",
+     "inside_sales": 720,
+     "looker": 982,
+     "divergencia": -0.267
+    }
+   ],
+   "status": "aberta",
+   "nota": "em maio e junho o Inside Sales declara mais vendas do que a aquisicao inteira registra, o que e impossivel se for subconjunto"
+  },
+  "mergulho_de_julho": {
+   "hipotese_a": "julho estava incompleto na apresentacao de 28/08",
+   "hipotese_b": "julho foi quebra real",
+   "evidencia_nova": "no Looker, com julho fechado, jul/26 tem 982 vendas contra 1064 em junho: -7,7%. Nao ha cliff no total.",
+   "leitura": "pesa a favor de (a), nao fecha, porque as duas fontes divergem ate 27% em meses normais",
+   "status": "aberta"
+  },
+  "contra_receita_declarada": {
+   "receita_aquisicao_mes": 1120000,
+   "nucleo_b2b_run_rate_mes": 68000000,
+   "razao": 0.016,
+   "razao_com_ltv": 0.054,
+   "status": "pergunta, nao achado",
+   "bloqueio": "depende de saber o que receita_total mede e se o dashboard cobre key account e enterprise"
+  }
+ },
+ "perguntas_abertas": [
+  {
+   "n": 1,
+   "pergunta": "link de leitura dos dois relatorios",
+   "dono": "Michelle Morais"
+  },
+  {
+   "n": 2,
+   "pergunta": "definicao de receita_total, receita_ltv e life_time no BigQuery",
+   "dono": "Marketing Data"
+  },
+  {
+   "n": 3,
+   "pergunta": "o dashboard cobre key account e enterprise?",
+   "dono": "Marketing Data"
+  },
+  {
+   "n": 4,
+   "pergunta": "definicao de status_lead e distribuicao de idade dos 18.840 em Trabalhando",
+   "dono": "Comercial"
+  },
+  {
+   "n": 5,
+   "pergunta": "por que o trafego online cai pela metade entre fev e mar/26",
+   "dono": "Produto + Marketing Data"
+  },
+  {
+   "n": 6,
+   "pergunta": "por que Inside Sales e Looker divergem ate 27% no mesmo mes",
+   "dono": "Comercial + Marketing Data"
+  },
+  {
+   "n": 7,
+   "pergunta": "investimento de midia B2B online, ausente na pagina",
+   "dono": "Midia"
+  }
+ ],
+ "ressalvas": [
+  "Print, nao extracao: tudo lido de imagem; rotulos cobertos pelo render estao marcados como estimados com o metodo de derivacao",
+  "Receita por canal vem arredondada pelo proprio dashboard; so Midia Paga e SEO tem precisao para conta",
+  "Campanha Tematica/Desconto e Product Marketing sao cortes transversais, nao somaveis aos canais",
+  "Janela de 12,5 meses; setembro esta pela metade",
+  "filtro fraude: Nao existe no relatorio online e nao no offline; os dois nao medem a mesma populacao"
+ ],
+ "inventario_de_capturas": [
+  {
+   "relatorio": "offline",
+   "page_id": "bkuet5st3c",
+   "arquivo": "offline/01-visao-geral-offline-12m.png",
+   "titulo": "Visão Geral OFFLINE · Autos+Imóveis · 01/09/2025–15/09/2026",
+   "master_bytes": 1722331,
+   "proxy_bytes": 437251,
+   "largura": 2968,
+   "altura": 6294,
+   "sha256_master": "f7e10b715cd84d8f7f7363f303ae65721aba00e8942c87d617e3097b0a814eac"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "bkuet5st3c",
+   "arquivo": "offline/02-visao-geral-offline-set26.png",
+   "titulo": "Visão Geral OFFLINE · todas as verticais · 01–15/09/2026",
+   "master_bytes": 1618234,
+   "proxy_bytes": 409074,
+   "largura": 2968,
+   "altura": 6294,
+   "sha256_master": "366544c904690e608fe1bac3b2ea4dcdb56eb5a0db442774ef74b3856d3d27ad"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "nbvfsqx1sc",
+   "arquivo": "offline/03-mql-detalhamento.png",
+   "titulo": "MQL Detalhamento · status do lead",
+   "master_bytes": 1413527,
+   "proxy_bytes": 366368,
+   "largura": 2968,
+   "altura": 3694,
+   "sha256_master": "d765703d149ca88a49336a5294318e3b2612f8ac50b14cc3c18656a6097fb3a1"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "9lepmrhuid",
+   "arquivo": "offline/04-vendas-detalhamento.png",
+   "titulo": "Vendas Detalhamento · periodicidade e receita",
+   "master_bytes": 1172727,
+   "proxy_bytes": 296343,
+   "largura": 2968,
+   "altura": 3694,
+   "sha256_master": "b4c46bebcc0ba7c372ff33ea7fbf817db92afa28c3ecd18ffe0990c7e2473ed1"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "wnm5ff67uc",
+   "arquivo": "offline/05-canais-pagos-performance.png",
+   "titulo": "Canais Pagos Performance · investimento, cliques, MQL, venda",
+   "master_bytes": 1629352,
+   "proxy_bytes": 413033,
+   "largura": 2968,
+   "altura": 6694,
+   "sha256_master": "1b18f1873847f9e39afe9b48dce5dc5879d2a5baf5968aab10ebb217998067e7"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "wkcrdirnld",
+   "arquivo": "offline/06-direto-seo-outros.png",
+   "titulo": "Direto / SEO / Outros · não impulsionados",
+   "master_bytes": 1365919,
+   "proxy_bytes": 348948,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "e00b93b6b2808c87aab151b5f7ce33f137ed74ec6208135ec19bc2524fa6e8fd"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "f1kkizi12c",
+   "arquivo": "offline/07-whatsapp-crm.png",
+   "titulo": "WhatsApp CRM",
+   "master_bytes": 1415150,
+   "proxy_bytes": 372426,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "96f4fda166f205d768ac609fac59eac13890ee6e066a04b9258884ec8df93271"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "qx5hcr3hvc",
+   "arquivo": "offline/08-email-marketing-crm.png",
+   "titulo": "E-mail Marketing CRM",
+   "master_bytes": 1403118,
+   "proxy_bytes": 358178,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "25e47483b82b77f2edfefd696189e2888af85fcf99e6412e4bd35e200a3be2ab"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "62t94ohmod",
+   "arquivo": "offline/09-push-central-crm.png",
+   "titulo": "Push/Central CRM",
+   "master_bytes": 1268907,
+   "proxy_bytes": 335707,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "7bb6c84bed2636cb7cb4fdc865e3d376577585c1671d462ca1c93313387990aa"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "2zwl9pss9c",
+   "arquivo": "offline/10-product-marketing.png",
+   "titulo": "Product Marketing · banner, post e referral dentro do produto",
+   "master_bytes": 1319374,
+   "proxy_bytes": 336210,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "3d0cbcf9f5a81fce7fcde8cb4483118dbe69bd5a153f764bba62e938a7609cb1"
+  },
+  {
+   "relatorio": "offline",
+   "page_id": "cxy11oqnfd",
+   "arquivo": "offline/11-campanha-tematica-desconto.png",
+   "titulo": "Campanha Temática / Desconto",
+   "master_bytes": 2102682,
+   "proxy_bytes": 547639,
+   "largura": 2968,
+   "altura": 8094,
+   "sha256_master": "a1903772dbebda46e294ebbb5bd5709ca2c0aa604073f5056a1895f59b9abbe3"
+  },
+  {
+   "relatorio": "online",
+   "page_id": "sy62keooid",
+   "arquivo": "online/12-visao-geral-online.png",
+   "titulo": "Visão Geral ONLINE · ZAP/VR · 01–13/09/2026",
+   "master_bytes": 1402896,
+   "proxy_bytes": 376841,
+   "largura": 3336,
+   "altura": 5594,
+   "sha256_master": "52d01aff7bacf3eaa6a119d79a53be381181824311a4eaab1d91c634e9cc25a3"
+  },
+  {
+   "relatorio": "online",
+   "page_id": "wnm5ff67uc",
+   "arquivo": "online/13-canais-pagos-performance.png",
+   "titulo": "Canais Pagos Performance · online",
+   "master_bytes": 1223769,
+   "proxy_bytes": 302563,
+   "largura": 2968,
+   "altura": 6694,
+   "sha256_master": "c69a2eebc48551ec971e494e99440c0ff3492af3457fe17372df2d13f5c6e021"
+  },
+  {
+   "relatorio": "online",
+   "page_id": "2zwl9pss9c",
+   "arquivo": "online/14-canalpro-product-marketing.png",
+   "titulo": "CanalPro Product Marketing",
+   "master_bytes": 948150,
+   "proxy_bytes": 246679,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "97200a950bcffe0e204f8b8ea1cc93e2fd12d029fcc1bad3b42fcef7eebf9f5d"
+  },
+  {
+   "relatorio": "online",
+   "page_id": "f1kkizi12c",
+   "arquivo": "online/15-whatsapp-crm.png",
+   "titulo": "WhatsApp CRM · online",
+   "master_bytes": 734307,
+   "proxy_bytes": 178417,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "87142d9834164bc57eac6dd2143f71b3eef483e6c3d423a88cc26b163df07354"
+  },
+  {
+   "relatorio": "online",
+   "page_id": "qx5hcr3hvc",
+   "arquivo": "online/16-email-marketing-crm.png",
+   "titulo": "E-mail Marketing CRM · online",
+   "master_bytes": 1026803,
+   "proxy_bytes": 277131,
+   "largura": 2968,
+   "altura": 4694,
+   "sha256_master": "61e8b3e5c4249db998955e65d140aa4c7c93d72505c7ab44d158550a58e8c6f0"
+  }
+ ]
+}

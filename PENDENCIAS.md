@@ -520,7 +520,7 @@ de calendário: são contagem que começa na entrega dos acessos. O gatilho esco
 
 > Cronograma reajustado em [04-execucao/cronograma-e-marcos.md](04-execucao/cronograma-e-marcos.md);
 > grade dia a dia em
-> [04-execucao/sprint-diagnosticos-09-a-23-09.md](04-execucao/sprint-diagnosticos-09-a-23-09.md).
+> [04-execucao/sprint-diagnosticos-10-a-18-09.md](04-execucao/sprint-diagnosticos-10-a-18-09.md).
 
 ---
 
@@ -995,6 +995,14 @@ retenção preventiva, upsell nem recuperação. Só transacional e billing, que
 A OLX tem o dado: o funil B2B com MQL, SQL e vendas, por vertical e por período, existe no Looker
 sobre BigQuery (28/08 e 10/09, 01:02:16). É extração, não construção.
 
+> **16/09: o funil chegou, a coorte não.** Os prints do
+> [dashboard de aquisição](02-diagnostico/dashboards-aquisicao-pro.md) dão 13 meses de MQL, SQL e
+> venda por canal, e mostram o CRM com **-36,4% de venda** contra os 380 dias anteriores, a maior
+> queda de qualquer canal. Isso **dimensiona o efeito agregado** e é coerente com a parada das
+> jornadas. O que continua faltando são as **três linhas de coorte** da tabela acima: clientes novos
+> no Campana por mês, churn contra a coorte anterior e receita da coorte. Sem elas o achado não
+> entra em forecast, porque queda de canal não separa efeito de CRM de efeito de migração.
+
 **Cuidado de leitura:** a comparação de coortes vai carregar o efeito da própria migração, não só o
 da ausência de CRM. Pedir junto qualquer outra mudança de preço, produto ou política comercial na
 janela, senão a diferença vira causa única por descuido.
@@ -1004,9 +1012,16 @@ janela, senão a diferença vira causa única por descuido.
 
 ---
 
-## 🔴 31. A saída da Blip não está decidida, e 100% da aquisição de CRM depende dela
+## 🔴 31. A saída da Blip não está decidida, e 97,5% da aquisição de CRM depende dela
 
 Achado 4 da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md).
+
+> **Atualizado em 16/09: a dependência saiu de declaração e virou número.** As três páginas de CRM
+> do [dashboard de aquisição](02-diagnostico/dashboards-aquisicao-pro.md) somam exatamente o canal
+> CRM da visão geral, e o WhatsApp responde por **29.815 dos 30.575 MQL**, ou **97,5%**, mais
+> **3.582 das 3.656 vendas**. E-mail traz 732 MQL, Push/Central traz 28. Ou seja: a decisão sobre a
+> Blip decide o destino de 29,8 mil MQL e 3,6 mil vendas por ano, e não há segundo canal para onde
+> escoar, porque os outros dois estão desligados na prática.
 
 Duas pessoas da OLX, na mesma sala, em 09/09:
 
@@ -1034,12 +1049,12 @@ disparo ou é substituída, e com que data. Não é a V4 que decide, mas é a V4
 
 Quatro entregas foram prometidas em 09 e 10/09 e, até **14/09**, nenhuma chegou:
 
-| # | O que | DRI declarado |
-|---|---|---|
-| 1 | Acesso ao **Miro** com o mapeamento de todas as jornadas, B2B e B2C | Michelle Morais |
-| 2 | Planilha de **links, logins e acessos** a dashboards e plataformas internas | Michelle Morais |
-| 3 | Link do dashboard do **Looker** com resultados de canais de marketing e CRM | Michelle Morais |
-| 4 | Link do dashboard de **CRM offline**, que teve um bug corrigido em 09/09 | Michelle Morais |
+| # | O que | DRI declarado | Status |
+|---|---|---|---|
+| 1 | Acesso ao **Miro** com o mapeamento de todas as jornadas, B2B e B2C | Michelle Morais | ⚪ |
+| 2 | Planilha de **links, logins e acessos** a dashboards e plataformas internas | Michelle Morais | ⚪ |
+| 3 | Link do dashboard do **Looker** com resultados de canais de marketing e CRM | Michelle Morais | 🟡 **print recebido em 16/09, link não** |
+| 4 | Link do dashboard de **CRM offline**, que teve um bug corrigido em 09/09 | Michelle Morais | ⚪ |
 
 Somam-se os **slides** apresentados nas duas sessões (fluxo de disparo, comparativo DEX legado vs.
 Campana, plano de migração de jornadas), que não foram enviados.
@@ -1050,7 +1065,15 @@ como fonte citável** em comitê enquanto o Miro não chegar. É o mesmo problem
 ([pendência 20](#-20-o-slide-fluxos-não-está-versionado-e-todo-o-mix-de-canais-depende-dele)), e já
 é a segunda vez.
 
-**Ação:** cobrar as quatro no grupo, em uma mensagem só, com o pedido do bloco A junto.
+> **16/09: o item 3 chegou pela metade.** Vieram **16 capturas de tela** dos dois relatórios de
+> aquisição PRO, offline e online, já versionadas e lidas em
+> [`dashboards-aquisicao-pro.md`](02-diagnostico/dashboards-aquisicao-pro.md). É a maior entrada de
+> dado do projeto desde a série A1, e destravou A2, A3 e B3. **Mas print não é acesso:** não filtra,
+> não exporta, não atualiza, e dois rótulos do próprio gráfico chegaram cobertos pelo render. O
+> item continua aberto **para o link**.
+
+**Ação:** cobrar as três restantes no grupo, em uma mensagem só, com o pedido do bloco A junto, e
+pedir o **link** dos dois relatórios de aquisição em vez de novos prints.
 **Responsável:** Operador V4 + Michelle Morais · **Prazo:** **17/09**, para entrar em (i)
 
 ---
@@ -1121,7 +1144,12 @@ Achado 9 da [auditoria (i)](02-diagnostico/auditoria-i-crm-marketing.md).
 > passar a ter."*
 
 O canal de custo marginal quase zero saiu na migração, e ficou só o canal pago, prestes a ficar mais
-caro, carregando 99% a 100% da aquisição de CRM.
+caro, carregando **97,5% da aquisição de CRM**: 29.815 MQL e 3.582 vendas em 12,5 meses, medidos no
+[dashboard de aquisição](02-diagnostico/dashboards-aquisicao-pro.md). O e-mail, que seria a
+alternativa barata, entregou 732 MQL no mesmo período, **2,4%**, e caiu 54,8%.
+
+Com o volume em mãos, a conta da nova regra da Meta passa a ser fazível assim que o custo unitário
+de disparo chegar: é preço × volume, e o volume agora existe.
 
 **O que não se sabe:** quanto a OLX gasta hoje em disparo de WhatsApp, e qual o impacto da nova
 regra sobre esse gasto. Sem os dois, não dá para dizer se isto é ajuste de rodapé ou alavanca de
@@ -1130,6 +1158,131 @@ margem, e a meta do projeto é **margem**.
 **Ação:** pedir o custo mensal de disparo de WhatsApp dos últimos 12 meses e a estimativa de
 impacto que a OLX já tenha feito. Se não houver estimativa, isso é achado, não lacuna.
 **Responsável:** Operador V4 + Michelle Morais · **Prazo:** antes do Comitê 1, **23/09**
+
+---
+
+## 🔴 36. Inside Sales e Looker divergem até 27% na mesma venda, no mesmo mês
+
+Achado da [leitura dos dashboards de aquisição](02-diagnostico/dashboards-aquisicao-pro.md), 16/09.
+
+Duas fontes da própria OLX contam a venda B2B do mesmo mês e não chegam ao mesmo número:
+
+| Mês | Inside Sales (apresentação de 28/08) | Looker Aquisição Offline (16/09) | Divergência |
+|---|---:|---:|---:|
+| abr/26 | 968 | 1.232 | -21,4% |
+| mai/26 | 1.344 | 1.132 | **+18,7%** |
+| jun/26 | 1.177 | 1.064 | **+10,6%** |
+| jul/26 | 720 | 982 | -26,7% |
+
+Em **maio e junho o Inside Sales declara mais vendas do que a aquisição inteira registra**, o que é
+aritmeticamente impossível se o Inside Sales for subconjunto da aquisição. Em abril e julho, o sinal
+inverte.
+
+**Pela regra 8 do método, divergência acima de 5% é dado inconsistente.** Aqui ela chega a 27% e
+troca de sinal, o que descarta a explicação simples de recorte e aponta para **duas definições de
+"venda" convivendo**: provavelmente data de referência diferente (fechamento contra faturamento) e
+escopo de time diferente.
+
+**Consequência prática:** enquanto isso não tiver resposta, **não existe número de venda B2B citável
+em comitê**. Qualquer meta, forecast ou linha de base construída sobre um dos dois será contestável
+com o outro, e os dois são da OLX.
+
+**Ação:** levar a tabela acima ao grupo do projeto e pedir a definição de cada fonte: o que conta
+como venda, em que data, e que times entram. É reconciliação, não construção.
+**Responsável:** Operador V4 + Carolina Dallolio (comercial) + Marketing Data · **Prazo:** antes do
+Comitê 1, **23/09**
+
+---
+
+## 🔴 37. Metade do tráfego online sumiu entre fevereiro e março, e ninguém explicou
+
+Achado da [leitura dos dashboards de aquisição](02-diagnostico/dashboards-aquisicao-pro.md), 16/09.
+
+No relatório **Aquisição Online PRO** (ZAP/VR, objetivo Novo Cliente), as sessões pós-clique caem de
+patamar num degrau e não voltam:
+
+| | ago/25 | fev/26 | mar/26 | ago/26 |
+|---|---:|---:|---:|---:|
+| Sessões | 106,9 mil | 100,2 mil `[jan]` | **69,2 mil** | **51,8 mil** |
+| Taxa de venda | 0,95% | 1,02% | 1,27% | 1,38% |
+| Venda | 1.017 | 641 | 881 | 714 |
+
+São **-51,5% de sessões em 12 meses**, com a taxa de conversão subindo de 0,95% para 1,38% e a venda
+caindo 29,8%. A melhora de conversão absorveu parte da queda, não toda.
+
+**Queda de metade do tráfego com conversão subindo junto tem três explicações típicas, e nenhuma é
+"a campanha piorou":** ou o tráfego não qualificado foi cortado de propósito (mudança de mídia ou de
+página), ou a origem mudou, ou **o rastreamento parou de contar parte das sessões**. A terceira tem
+precedente neste projeto: a [auditoria (vii)](02-diagnostico/auditoria-vii-rastreamento.md) já achou
+o `purchase` preso ao `begin_checkout` ([pendência 28](#-28-o-begin_checkout-do-anunciante-privado-do-zapimóveis-nunca-dispara)).
+
+Um indício de reclassificação: no recorte de setembro, o canal **Direto** aparece com sessões
+identificadas **+51,2%** e sessões de vitrine **+222,4%**, o que é movimento de rótulo, não de
+comportamento de usuário.
+
+**Por que isto é do DR-E:** o funil online é onde o autosserviço acontece, e metade da sua entrada
+desapareceu dentro da janela que o diagnóstico está usando como linha de base. Se for artefato de
+medição, a linha de base está errada. Se for real, é a maior perda de exposição do sistema e muda a
+ordem das travas.
+
+**Ação:** pedir ao time de Marketing Data o que mudou entre fev e mar/26: mídia, página de origem,
+tagueamento ou definição de sessão. Uma resposta, não um relatório.
+**Responsável:** Operador V4 + Marketing Data · **Prazo:** antes do Comitê 1, **23/09**
+
+---
+
+## 🟠 38. Dezoito mil leads em "Trabalhando", e não se sabe se é fila ou taxonomia
+
+Achado da [leitura dos dashboards de aquisição](02-diagnostico/dashboards-aquisicao-pro.md), 16/09.
+
+Na página **MQL Detalhamento**, o status `Trabalhando` tem **18.840 leads, 14,3% do topo do funil**, e
+cresceu **+1.603,4%** contra o período anterior. O estoque saiu de cerca de 1.106 para 18.840 `[E]`. É
+a única linha do dashboard que cresce em quatro dígitos, num período em que todo o resto cai.
+
+**Duas leituras, decisões opostas:**
+
+| | O que seria | O que fazer |
+|---|---|---|
+| **(a) Taxonomia** | Status novo, ou regra de expiração que deixou de rodar | Nada. É classificação, não fila |
+| **(b) Fila real** | 18,8 mil leads parados em atendimento: capacidade estourada | Vira candidato forte a trava, e o impulso controlado muda de alvo |
+
+A hipótese (b) tem indício externo: a [leitura do Inside Sales](02-diagnostico/estrutura-comercial-inside-sales.md)
+achou, em jul/26, **Autos hunter recebendo 74% mais lead com a taxa de abordagem caindo de 100% para
+58%**. É a mesma assinatura, no mesmo período. E explicaria a contradição central do funil offline: a
+qualificação **melhorou** (50% → 66%) enquanto a conversão final **piorou** (27% → 22%).
+
+**Ação:** pedir a definição de `status_lead` e a **distribuição de idade** dos 18.840 leads em
+Trabalhando. É uma tela, não um projeto. Enquanto não vier, o número não entra em comitê como achado.
+**Responsável:** Operador V4 + Marketing Data · **Prazo:** antes do Comitê 1, **23/09**
+
+---
+
+## 🟠 39. Não se sabe o que o dashboard de aquisição mede, e a resposta muda a tese do projeto
+
+Achado da [leitura dos dashboards de aquisição](02-diagnostico/dashboards-aquisicao-pro.md), 16/09.
+
+O relatório **Aquisição Offline PRO** declara **R$ 14,0 mi** de receita em 12,5 meses, ou **R$ 1,12
+mi/mês**. O núcleo de assinatura B2B, pela série A1, roda em **R$ 68,0 mi/mês**. A aquisição inteira
+seria **1,6%** do faturamento B2B mensal, ou 5,4% se contado o LTV projetado.
+
+**Se a razão estiver certa, ela reordena a conversa de trava:** diria que o sistema de receita do
+Grupo OLX é de **base instalada**, não de aquisição, e que uma injeção no topo do funil mexe em 1,6%
+do problema.
+
+**Só que não se sabe se ela está certa**, e faltam duas definições para saber:
+
+| # | O que falta | Por que muda tudo |
+|---|---|---|
+| 1 | O que `receita_total` mede: primeira fatura, contrato assinado ou MRR incremental | Se for primeira fatura, comparar com run-rate mensal é comparar coisas diferentes e a razão é artefato |
+| 2 | Se o dashboard cobre **key account e enterprise** ou só o que passa por marketing | Pela [leitura do Inside Sales](02-diagnostico/estrutura-comercial-inside-sales.md), fora do Inside Sales estão 61% da receita de Imóveis e 83% de Autos |
+
+Junto vai a terceira, menor mas necessária para o CAC: **a página de mídia paga online devolve
+investimento em branco**. Os R$ 951,5 mil apurados no offline são **piso do investimento B2B, não
+total**, e o CAC de R$ 1.475 por venda herda essa ressalva.
+
+**Ação:** três perguntas numa mensagem só ao time de Marketing Data. Nenhuma exige trabalho novo do
+lado deles: são definições de campo e escopo de fonte.
+**Responsável:** Operador V4 + Marketing Data · **Prazo:** antes do Comitê 1, **23/09**
 
 ---
 

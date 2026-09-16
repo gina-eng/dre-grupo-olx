@@ -17,12 +17,16 @@ Material bruto que veio do **data room do Grupo OLX** (Google Drive). Nada aqui 
 | Lote | `drive-download-20260824T172625Z-1-003` |
 | Volume | 9 arquivos, 457 MB no original (14 MB versionados, ver abaixo) |
 
-> Contagem do lote de 24/08. O repositório tem hoje **22 arquivos** nesta pasta: o lote, mais o
-> bloco H (export do GTM, 01/09) e o bloco A (captura de tela de 28/08 e a série de receita
-> recebida por e-mail na mesma data). A procedência de cada um está na seção do seu bloco.
+> Contagem do lote de 24/08. O repositório tem hoje **93 arquivos versionados** nesta pasta: o lote,
+> mais o bloco H (63 exports de GTM de 01 e 11/09) e o bloco A (captura de tela de 28/08, a série de
+> receita recebida por e-mail na mesma data, e as 16 capturas dos dashboards de aquisição de 16/09).
+> A procedência de cada um está na seção do seu bloco.
+>
+> *A contagem anterior deste parágrafo dizia 22 e estava defasada desde o commit dos exports de GTM.*
 
 > Nem tudo aqui veio desse lote. Do **bloco A**, a jornada foi apresentada em reunião e capturada
-> da tela, e a série de receita chegou por e-mail: nenhum dos dois saiu do Drive.
+> da tela, a série de receita chegou por e-mail e os dashboards de aquisição vieram em captura de
+> tela do Looker: nenhum dos três saiu do Drive.
 
 Este é o **primeiro lote** que efetivamente abriu com a conta corporativa nova. Ele confirma que o
 data room está acessível: o item ficou aberto em `dados/acessos.json` até aqui e agora está fechado.
@@ -37,6 +41,7 @@ de cada arquivo está registrado nas tabelas abaixo, então nada se perde.
 ```
 assets/originais/
 ├── A-visao-de-negocio-e-fluxo-de-receita/  bloco A · série de receita (A1) + jornada (A2)
+│   └── dashboards-aquisicao-pro/    16 capturas do Looker · offline/ e online/ · A2, A3 e B3
 ├── E-criativos-ads-e-mensagens/     bloco E · alimenta o diagnóstico (iv)
 ├── H-rastreamento-gtm/              bloco H · alimenta a auditoria (vii) · uma subpasta por conta
 ├── I-paginas-de-captura/            bloco I · alimenta o diagnóstico (viii)
@@ -62,8 +67,9 @@ room ou peça a quem tem `_masters/` local. Não recomprima a partir do proxy.
 
 ## Bloco A · Visão de negócio e fluxo de receita
 
-Dois itens, de procedências diferentes, que se completam: um dá as **taxas** do fluxo sem volume,
-o outro dá o **volume** de receita sem taxas. Juntos ainda não fecham o A2, mas fecham o A1.
+Três itens, de procedências diferentes. Os dois primeiros se completam sem fechar o A2: um dá as
+**taxas** do fluxo sem volume, o outro dá o **volume** de receita sem taxas. O terceiro, que chegou
+em 16/09, é o que traz volume **e** taxa por etapa, em série mensal.
 
 ### A1 · Série de receita 2025–2026
 
@@ -108,6 +114,58 @@ fecha e as sete ambiguidades que ele abre estão em
 
 > Os seis percentuais do slide são **declarados**, não apurados. Não viram dado antes de bater
 > contra CRM, faturamento e plataformas.
+
+### A2 + A3 + B3 · Dashboards de aquisição PRO
+
+**Item:** os dois relatórios de Looker Studio que o Grupo OLX usa para acompanhar aquisição, um por
+modelo de venda.
+**Cobre:** **A2** (funil com volume e taxa, 13 meses, por canal), **A3** (primeiro CAC com numerador
+B2B) e **B3** (resultado dos canais de CRM). Não cobre movimento de base, churn nem margem.
+
+| Origem | Detalhe |
+|---|---|
+| Como chegou | **Capturas de tela**, não link. Enviadas pelo operador ao repositório em **16/09/2026** |
+| Prometido em | Sessão de CRM de **10/09**, por Michelle Morais, item 3 da [pendência 32](../../PENDENCIAS.md) |
+| Relatório offline | `Aquisição Offline PRO \\ Marketing` · id `38f3663c-700b-4072-905a-8138a0fd94c2` · 11 páginas |
+| Relatório online | `Aquisição Online PRO \\ Marketing` · id `f378f073-cbf8-4d92-9e46-27ebd5ea3d1a` · 5 páginas |
+| Conta | `datastudio.google.com/u/6`, conta do operador V4 |
+
+| Arquivo | Página | Dimensão | Master | Proxy no git |
+|---|---|---|---|---|
+| `offline/01-visao-geral-offline-12m.png` | Visão Geral OFFLINE · Autos+Imóveis · 01/09/2025–15/09/2026 | 2968×6294 | 1.7 MB | 0.44 MB |
+| `offline/02-visao-geral-offline-set26.png` | Visão Geral OFFLINE · todas as verticais · 01–15/09/2026 | 2968×6294 | 1.6 MB | 0.41 MB |
+| `offline/03-mql-detalhamento.png` | MQL Detalhamento · status do lead | 2968×3694 | 1.4 MB | 0.37 MB |
+| `offline/04-vendas-detalhamento.png` | Vendas Detalhamento · periodicidade e receita | 2968×3694 | 1.2 MB | 0.30 MB |
+| `offline/05-canais-pagos-performance.png` | Canais Pagos Performance · investimento, cliques, MQL, venda | 2968×6694 | 1.6 MB | 0.41 MB |
+| `offline/06-direto-seo-outros.png` | Direto / SEO / Outros · não impulsionados | 2968×4694 | 1.4 MB | 0.35 MB |
+| `offline/07-whatsapp-crm.png` | WhatsApp CRM | 2968×4694 | 1.4 MB | 0.37 MB |
+| `offline/08-email-marketing-crm.png` | E-mail Marketing CRM | 2968×4694 | 1.4 MB | 0.36 MB |
+| `offline/09-push-central-crm.png` | Push/Central CRM | 2968×4694 | 1.3 MB | 0.34 MB |
+| `offline/10-product-marketing.png` | Product Marketing · banner, post e referral dentro do produto | 2968×4694 | 1.3 MB | 0.34 MB |
+| `offline/11-campanha-tematica-desconto.png` | Campanha Temática / Desconto | 2968×8094 | 2.1 MB | 0.55 MB |
+| `online/12-visao-geral-online.png` | Visão Geral ONLINE · ZAP/VR · 01–13/09/2026 | 3336×5594 | 1.4 MB | 0.38 MB |
+| `online/13-canais-pagos-performance.png` | Canais Pagos Performance · online | 2968×6694 | 1.2 MB | 0.30 MB |
+| `online/14-canalpro-product-marketing.png` | CanalPro Product Marketing | 2968×4694 | 0.9 MB | 0.25 MB |
+| `online/15-whatsapp-crm.png` | WhatsApp CRM · online | 2968×4694 | 0.7 MB | 0.18 MB |
+| `online/16-email-marketing-crm.png` | E-mail Marketing CRM · online | 2968×4694 | 1.0 MB | 0.28 MB |
+| **Total** | | | **21,8 MB** | **5,6 MB** |
+
+**Proxy no git, master fora**, pela mesma regra dos vídeos do bloco E. O que está versionado é um
+**PNG de paleta indexada em 256 cores**, na resolução original: para captura de interface, que é
+cor chapada e texto, isso é visualmente indistinguível do original e pesa um quarto. O master PNG de
+24 bits fica em `_masters/A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/`, bloqueado
+pelo `.gitignore`, e o SHA-256 de cada um está na tabela de integridade no fim deste arquivo.
+
+> **Uma página veio duplicada.** O arquivo da Visão Geral ONLINE foi baixado duas vezes, com hash
+> idêntico. Está versionado uma vez só. Por isso são 16 arquivos e 17 downloads.
+
+A leitura da V4, com o funil de 13 meses, o CAC de mídia, as três reconciliações e as quatro
+pendências que isto abriu, está em
+[`02-diagnostico/dashboards-aquisicao-pro.md`](../../02-diagnostico/dashboards-aquisicao-pro.md).
+
+> ⚠️ **Print não é acesso.** Não filtra, não exporta, não atualiza, e dois rótulos de MQL chegaram
+> cobertos pelo próprio render do gráfico, resolvidos por reconciliação aritmética e marcados `[E]`.
+> O pedido do **link** continua aberto na pendência 32.
 
 ## Bloco E · Criativos, anúncios e mensagens
 
@@ -425,3 +483,19 @@ Drive. Serve para provar que o arquivo não mudou e para reencontrar a origem.
 | `H-rastreamento-gtm/conta-94905-br-olx-com-br/gtm-tw8n3ln_workspace8.json` | `8e92cf159d7acaf2…` | não veio do data room, export da interface do GTM em 11/09, conta `94905` |
 | `H-rastreamento-gtm/conta-94905-br-olx-com-br/gtm-tw9twpt5_workspace3.json` | `dbc3f86e2ed3acd6…` | não veio do data room, export da interface do GTM em 01/09, conta `94905` |
 | `H-rastreamento-gtm/conta-94905-br-olx-com-br/gtm-wgktt96_workspace249.json` | `a0e88645f3724bb5…` | não veio do data room, export da interface do GTM em 11/09, conta `94905` |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/01-visao-geral-offline-12m.png` | `f7e10b715cd84d8f…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/02-visao-geral-offline-set26.png` | `366544c904690e60…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/03-mql-detalhamento.png` | `d765703d149ca88a…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/04-vendas-detalhamento.png` | `b4c46bebcc0ba7c3…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/05-canais-pagos-performance.png` | `1b18f1873847f9e3…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/06-direto-seo-outros.png` | `e00b93b6b2808c87…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/07-whatsapp-crm.png` | `96f4fda166f205d7…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/08-email-marketing-crm.png` | `25e47483b82b77f2…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/09-push-central-crm.png` | `7bb6c84bed2636cb…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/10-product-marketing.png` | `3d0cbcf9f5a81fce…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/offline/11-campanha-tematica-desconto.png` | `a1903772dbebda46…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/online/12-visao-geral-online.png` | `52d01aff7bacf3ea…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/online/13-canais-pagos-performance.png` | `c69a2eebc48551ec…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/online/14-canalpro-product-marketing.png` | `97200a950bcffe0e…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/online/15-whatsapp-crm.png` | `87142d9834164bc5…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
+| `A-visao-de-negocio-e-fluxo-de-receita/dashboards-aquisicao-pro/online/16-email-marketing-crm.png` | `61e8b3e5c4249db9…` | não veio do data room, captura do Looker do Grupo OLX em 16/09 |
