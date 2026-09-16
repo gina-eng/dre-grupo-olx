@@ -1,0 +1,101 @@
+Campaign report
+"October 1, 2016 - September 16, 2026"
+Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimization score,Campaign type,Bid strategy type,Conv. value,Cost,Conversions,Conv. rate,Cost / conv.,Impr.,Clicks,CTR,Conv. (Platform Comparable),Conv. value / Cost (Platform Comparable)
+Paused,dsacomprasa360g3_gg_pc_bg_lc_ao_wb_re_vr_pf,300.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"24,982,887,903.47",17528.13,"21,310.26",26.00%,0.82,"366,774","81,976",22.35%,0.00,0.00
+Paused,Imob_GO,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Enabled,pmaxaluguelsa360br_gg_pm_bg_la_ao_wb_re_vr_pf,8000.00, --,Daily,BRL,Eligible,some asset groups disapproved; unknown; unknown,90.74,Performance Max,Target CPA,"106,079,065,214.28",4888095.77,"4,908,218.76",18.21%,1.00,"113,370,767","25,111,741",22.15%,0.00,0.00
+Paused,dsacomprabr2_gg_se_bg_lc_ao_wb_re_vr_pf,1750.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"94,560,436,686.55",98877.12,"151,463.20",27.05%,0.65,"2,708,898","559,938",20.67%,0.00,0.00
+Paused,SEM_Compra_Genérico,1200.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"82,349.17",144724.25,"82,349.17",22.54%,1.76,"5,402,439","365,319",6.76%,0.00,0.00
+Paused,Imob_MA,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_PA,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,DSA_Aluguel_Teste_RE_BH,1330.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"18,044.44",24902.50,"18,044.44",13.44%,1.38,"700,617","134,265",19.16%,0.00,0.00
+Paused,pmaxcomprasa360sp_gg_pc_bg_lc_ao_wb_re_vr_pf,2600.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"200,324,607,665.65",209573.17,"352,479.80",25.19%,0.59,"6,383,702","1,307,792",20.49%,0.00,0.00
+Paused,dsaaluguelsa360rjmg_gg_pc_bg_la_ao_wb_re_vr_pf,2000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"161,854,472.58",69955.03,"102,548.41",35.48%,0.68,"989,291","289,064",29.22%,0.00,0.00
+Enabled,Cat_to_URL,20000.00, --,Daily,BRL,Ended,campaign ended; some ads disapproved, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,pmaxaluguelsa360rjmg_gg_pm_bg_la_ao_wb_re_vr_pf,1800.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"176,391,651.06",75797.60,"120,351.19",27.64%,0.63,"1,867,010","406,581",21.78%,0.00,0.00
+Paused,pmaxbr_gg_pm_bg_ld_ao_wb_re_vr_pf,10000.00, --,Daily,BRL,Paused,campaign paused; some asset groups limited by policy, --,Performance Max,Target CPA,"97,381,305,567.06",494725.63,"613,261.75",24.86%,0.81,"8,810,109","1,921,516",21.81%,0.00,0.00
+Paused,SEM - Aluguel_SP,650.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"71,839.58",117925.42,"71,839.58",22.10%,1.64,"4,273,946","325,037",7.61%,0.00,0.00
+Paused,Imob_PI,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,VivaReal_Google_Trafego_Discovery_AON_BR,1800.00, --,Daily,BRL,Paused,campaign paused, --,Demand Gen,Maximize Conversions,629.00,23934.78,629.00,1.85%,38.05,"659,484","31,846",4.83%,0.00,0.00
+Paused,pmaxcomprasa360br2_gg_pm_bg_lc_ao_wb_re_vr_pf,3500.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"251,545,448,525.60",207969.98,"344,512.64",24.27%,0.60,"6,509,561","1,301,998",20.00%,0.00,0.00
+Paused,pmaxssbr_gg_pm_bg_tf_tp_wb_re_vr_pf,400.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"507,104,619,565.17",835386.75,"94,045,472.16",668.02%,0.01,"54,038,831","13,410,018",24.82%,0.00,0.00
+Paused,Imob_PR,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_SE,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_MS,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_AC,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,dsaaluguelsa360br_gg_se_bg_la_ao_wb_re_vr_pf,6500.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"9,560,642.32",575266.81,"609,527.47",18.45%,0.94,"11,389,482","3,303,428",29.00%,0.00,0.00
+Paused,pmaxaluguelsa360scpr_gg_pm_bg_la_ao_wb_re_vr_pf,1300.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"181,253,581.30",79440.30,"111,649.48",31.56%,0.71,"1,478,770","345,766",23.38%,0.00,0.00
+Paused,Imob_CE,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_PB,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,pmaxcomprasa360scpr_gg_pm_bg_lc_ao_wb_re_vr_pf,650.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"27,453,598,803.62",37667.19,"51,468.08",18.45%,0.73,"1,394,182","271,426",19.47%,0.00,0.00
+Paused,dsacomprabr_gg_se_bg_lc_ao_wb_re_vr_pf,1300.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"829,392,350,423.92",3007176.07,"3,229,483.33",15.91%,0.93,"93,838,706","20,295,904",21.63%,0.00,0.00
+Enabled,pmaxcomprasa360br_gg_pm_bg_lc_ao_wb_re_vr_pf,5000.00, --,Daily,BRL,Eligible,some asset groups disapproved; some asset groups limited by policy; unknown; unknown,90.68,Performance Max,Target CPA,"803,392,420,442.24",3401930.02,"3,396,528.75",13.32%,1.00,"116,674,868","23,536,941",20.17%,0.00,0.00
+Paused,dsacompra24br_gg_se_bg_lc_ao_wb_re_vr_pf,300.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"328,824,820.16",22045.40,"2,400.98",5.07%,9.18,"196,952","47,383",24.06%,0.00,0.00
+Paused,Imob_AM,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_SC,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_ES,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,DSA_Geral_Corona,20000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"2,279,182.16",2431310.25,"2,279,182.16",9.48%,1.07,"140,148,461","24,054,279",17.16%,0.00,0.00
+Paused,SEM - Aluguel_Genérico,1500.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"70,447.86",113643.89,"70,447.86",20.41%,1.61,"5,504,244","345,247",6.27%,0.00,0.00
+Paused,pmaxbr_gg_pm_bg_ld_ao_wb_re_vr_pf - old,10000.00, --,Daily,BRL,Paused,campaign paused; some asset groups limited by policy, --,Performance Max,Target CPA,"637,857,230.10",2295018.98,"1,867,767.39",11.00%,1.23,"78,685,287","16,975,246",21.57%,0.00,0.00
+Paused,Imob_NA,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,DSA_VivaReal_ Geral,20000.00, --,Daily,BRL,Paused,campaign paused; All ad groups paused; some ads disapproved, --,Search,Target CPA,"10,402,188.00",8444288.40,"10,402,188.00",12.98%,0.81,"439,181,433","80,136,564",18.25%,0.00,0.00
+Enabled,dsageral25br_gg_se_bg_ld_ao_wb_re_vr_pf,1500.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,85.99,Search,Target CPA,"1,974,463,073.15",642844.25,"286,014.00",8.77%,2.25,"19,291,705","3,261,160",16.90%,0.00,0.00
+Paused,dsacomprasa360br_gg_se_bg_lc_ao_wb_re_vr_pf,8700.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"4,819,056.37",1086844.01,"723,049.84",11.08%,1.50,"25,981,856","6,527,291",25.12%,0.00,0.00
+Enabled,pmax24br_gg_pc_bg_ld_ao_wb_re_vr_pf,10000.00, --,Daily,BRL,Eligible,some asset groups disapproved; unknown; unknown,91.14,Performance Max,Target CPA,"1,825,675,401,697.29",6556735.31,"6,607,368.60",13.97%,0.99,"184,792,884","32,291,483",17.47%,0.00,0.00
+Paused,dsacomprasa360rjmg_gg_pc_bg_lc_ao_wb_re_vr_pf,710.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"16,611,325,652.94",33514.60,"47,046.39",23.43%,0.71,"928,062","200,828",21.64%,0.00,0.00
+Paused,pmaxcomprasa360g3_gg_pm_bg_lc_ao_wb_re_vr_pf,200.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"5,256,533,752.40",14792.92,"11,004.76",11.45%,1.34,"453,969","77,509",17.07%,0.00,0.00
+Enabled,senbcompramcmvbr_gg_pc_bg_lc_ao_wb_re_vr_pf,2000.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,77.91,Search,Target CPA,"546,995,579.54",56181.95,"14,317.75",7.16%,3.92,"1,115,273","199,939",17.93%,0.00,0.00
+Enabled,DSA_VivaReal_Geral - tCPA,20000.00, --,Daily,BRL,Ended,campaign ended; some ads disapproved, --,Search,Target CPA,"326,630.00",165561.20,"326,630.00",15.97%,0.51,"10,668,870","2,045,461",19.17%,0.00,0.00
+Paused,SEM - Aluguel_RJ,650.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"19,812.56",42619.88,"19,812.56",17.97%,2.15,"2,000,284","110,281",5.51%,0.00,0.00
+Paused,teste,2000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,dsacomprasa360sp_gg_pc_bg_lc_ao_wb_re_vr_pf,500.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"54,009,103,794.26",77691.99,"115,750.87",26.30%,0.67,"2,168,162","440,117",20.30%,0.00,0.00
+Enabled,senbgeralr_gg_pc_bg_ld_ao_wb_re_vr_pf,9700.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,83.70,Search,Target CPA,"1,257,851,557.55",1280197.64,"492,103.46",9.41%,2.60,"25,524,749","5,230,576",20.49%,0.00,0.00
+Paused,Imob_AP,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_TO,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,GSP_B2B,200.00, --,Daily,BRL,Paused,campaign paused, --,Display,CPC (enhanced),71.00,2105.94,71.00,0.42%,29.66,"93,592","16,825",17.98%,0.00,0.00
+Paused,DSA - Imobiliárias Minisite,60.00, --,Daily,BRL,Paused,campaign paused, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,SEM_iBuyer,250.00, --,Daily,BRL,Paused,campaign paused; most ads disapproved, --,Search,Manual CPC,333.00,6623.06,333.00,5.47%,19.89,"49,311","6,084",12.34%,0.00,0.00
+Paused,pmaxcomprasa360rjmg_gg_pm_bg_lc_ao_wb_re_vr_pf,1500.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"39,845,641,342.15",57372.12,"87,765.88",18.35%,0.65,"2,106,212","433,784",20.60%,0.00,0.00
+Enabled,Teste Ordenação 10% 2018-06-04,20000.00, --,Daily,BRL,Ended,campaign ended; some ads disapproved, --,Search,CPC (enhanced),"2,945.00",1334.68,"2,945.00",12.65%,0.45,"123,835","23,272",18.79%,0.00,0.00
+Paused,pmaxaluguelsa360sp_gg_pm_bg_la_ao_wb_re_vr_pf #4,1.00, --,Daily,BRL,Paused,campaign paused; No asset groups, --,Performance Max,Target CPA,0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_BA,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,pmaxaluguelsa360br2_gg_pm_bg_la_ao_wb_re_vr_pf,5500.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"886,605,930.16",293601.47,"461,528.08",34.03%,0.64,"5,203,107","1,306,089",25.10%,0.00,0.00
+Paused,Teste_Migração_Campinas,650.00, --,Daily,BRL,Paused,campaign paused, --,Search,CPC (enhanced),"247,891.00",280022.85,"247,891.00",11.30%,1.13,"9,797,471","2,194,560",22.40%,0.00,0.00
+Paused,SEM - Compra_RJ,650.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"14,132.90",34927.98,"14,132.90",19.08%,2.47,"1,108,274","74,073",6.68%,0.00,0.00
+Paused,Imob_MG,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,DSA_Compra,8000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"7,227,571.41",9661130.99,"7,227,571.41",11.20%,1.34,"395,799,977","64,533,575",16.30%,0.00,0.00
+Paused,SEM - Compra_SP,650.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"23,999.57",46297.92,"23,999.57",21.20%,1.93,"1,667,392","113,204",6.79%,0.00,0.00
+Enabled,dsaaluguelbr_gg_se_bg_la_ao_wb_re_vr_pf,1500.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,88.14,Search,Target CPA,"280,363,000,065.14",6837183.62,"7,599,300.42",23.48%,0.90,"121,933,222","32,359,490",26.54%,0.00,0.00
+Paused,Imob_RJ,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Enabled,Exp_DSA_RJ,20000.00, --,Daily,BRL,Ended,campaign ended, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,pmaxaluguelsa360g3_gg_pm_bg_la_ao_wb_re_vr_pf,300.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"31,192,767.97",19567.56,"22,410.39",23.14%,0.87,"438,642","93,120",21.23%,0.00,0.00
+Paused,C_SP_Campinas,500.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"272,515.00",365713.76,"272,515.00",17.33%,1.34,"8,494,202","1,572,539",18.51%,0.00,0.00
+Paused,Imob_RO,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_DF,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_RR,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,dsaaluguelsa360g3_gg_pc_bg_la_ao_wb_re_vr_pf,400.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"27,359,705.71",16897.25,"19,151.57",28.46%,0.88,"270,281","67,303",24.90%,0.00,0.00
+Paused,dsacomprasa360scpr_gg_pc_bg_lc_ao_wb_re_vr_pf,250.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"9,089,803,412.76",23732.63,"25,583.72",19.25%,0.93,"722,896","132,904",18.38%,0.00,0.00
+Paused,Imob_PE,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,dsaaluguel24br_gg_se_bg_la_ao_wb_re_vr_pf,500.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"74,331,460.66",20606.72,"2,787.82",6.77%,7.39,"152,883","41,205",26.95%,0.00,0.00
+Enabled,VivaReal_Google_Conversao_DSA_Compra_TesteSA,1300.00, --,Daily,BRL,Ended,campaign ended, --,Search,Target CPA,0.00,448.02,72.31,1.91%,6.20,"19,064","3,786",19.86%,0.00,0.00
+Paused,Imob_AL,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,DSA_Geral_Corona_G1,4000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"25,888.00",48899.96,"25,888.00",11.41%,1.89,"1,342,710","226,879",16.90%,0.00,0.00
+Paused,Imob_RN,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Enabled,Teste Ordenação 50% 2018-06-13,20000.00, --,Daily,BRL,Ended,campaign ended; some ads disapproved, --,Search,CPC (enhanced),"176,800.00",109076.50,"176,800.00",11.64%,0.62,"7,631,177","1,519,408",19.91%,0.00,0.00
+Paused,Imob_RS,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,dsageralbr_gg_se_bg_ld_ao_wb_re_vr_pf,1.00, --,Daily,BRL,Paused,campaign paused; No keywords; No ads, --,Search,Maximize Conversions,0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,Imob_MT,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,DSA_Aluguel,14000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"5,092,969.35",7209725.66,"5,092,969.35",14.78%,1.42,"206,948,114","34,453,982",16.65%,0.00,0.00
+Paused,Imob_SP,150.00, --,Daily,BRL,Paused,campaign paused; No ad agroups, --,Search,CPC (enhanced),0.00,0.00,0.00,0.00%,0.00,0,0, --,0.00,0
+Paused,dsaaluguelbr2_gg_se_bg_la_ao_wb_re_vr_pf,2000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"482,346,266.78",167576.33,"227,605.13",34.86%,0.74,"3,144,452","652,942",20.76%,0.00,0.00
+Paused,dsaaluguelsa360sp_gg_pc_bg_la_ao_wb_re_vr_pf,3100.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"528,468,253.19",172879.90,"267,217.29",39.53%,0.65,"2,423,243","675,931",27.89%,0.00,0.00
+Enabled,VivaReal_Google_Conversao_DSA_Aluguel_SA360_Teste,1500.00, --,Daily,BRL,Ended,campaign ended, --,Search,Target CPA,0.00,955.12,"1,090.00",19.53%,0.88,"21,866","5,580",25.52%,0.00,0.00
+Paused,pmaxaluguelsa360sp_gg_pc_bg_la_ao_wb_re_vr_pf,3650.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,"11,223,065,410.30",330353.63,"475,475.10",31.48%,0.69,"5,891,344","1,472,694",25.00%,0.00,0.00
+Paused,SEM_B2B,350.00, --,Daily,BRL,Paused,campaign paused, --,Search,CPC (enhanced),817.00,12005.12,817.00,6.37%,14.69,"129,525","12,829",9.90%,0.00,0.00
+Paused,dsaaluguelsa360scpr_gg_pc_bg_la_ao_wb_re_vr_pf,1000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"78,992,417.00",37524.83,"50,710.68",32.02%,0.74,"676,637","158,383",23.41%,0.00,0.00
+Total: Campaigns, --, --, --, --,BRL, --,, --, --, --,"5,191,706,141,446.37",63330730.82,"153,822,853.72",35.98%,0.41,"2,143,689,057","407,094,361",18.99%,0.00,0.00
+Total: Account,,,,,BRL,,,,,,"5,191,706,141,446.38",63330730.82,"153,822,853.72",35.98%,0.41,"2,143,689,057","407,094,361",18.99%,0.00,0.00
+Total: Performance Max,,,,,BRL,,,,Performance Max,,"3,877,195,009,146.33",19798028.41,"113,477,262.82",80.65%,0.17,"588,099,245","120,263,704",20.45%,0.00,0.00
+Total: Search,,,,,BRL,,,,Search,,"1,314,511,131,600.04",43506661.69,"40,344,890.90",14.07%,1.08,"1,554,836,736","286,781,986",18.44%,0.00,0.00
+Total: Display,,,,,BRL,,,,Display,,71.00,2105.94,71.00,0.42%,29.66,"93,592","16,825",17.98%,0.00,0.00
+Total: Demand Gen,,,,,BRL,,,,Demand Gen,,629.00,23934.78,629.00,1.85%,38.05,"659,484","31,846",4.83%,0.00,0.00

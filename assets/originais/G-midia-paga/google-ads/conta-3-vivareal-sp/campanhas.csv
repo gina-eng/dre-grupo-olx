@@ -1,0 +1,16 @@
+Campaign report
+"May 16, 2025 - September 16, 2026"
+Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimization score,Campaign type,Bid strategy type,Conv. value,Conversions,Conv. rate,Cost / conv.,Impr.,Clicks,CTR,Cost
+Enabled,senbaluguelsp_gg_pc_bg_ld_ao_wb_re_vr_pf,5000.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,81.32,Search,Target CPA,"473,385,319.33","80,446.32",9.53%,3.79,"4,183,202","843,970",20.18%,304721.13
+Enabled,pmaxaluguelsp_gg_pm_bg_la_ao_wb_re_vr_pf,5000.00, --,Daily,BRL,Eligible,some asset groups disapproved,93.04,Performance Max,Target CPA,"313,022,661.59","85,948.86",8.80%,4.23,"4,160,027","951,600",22.87%,363191.03
+Enabled,senbcompramcmvsp_gg_pc_bg_lc_ao_wb_re_vr_pf,1500.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,84.26,Search,Target CPA,"176,807,349.77","2,387.19",7.50%,4.81,"223,534","31,818",14.23%,11488.38
+Paused,pmaxgeralbr_gg_pc_bg_ld_ao_wb_re_vr_pf,3000.00, --,Daily,BRL,Paused,campaign paused, --,Performance Max,Target CPA,66.99,"4,500.51",11.14%,1.89,"260,447","27,094",10.40%,8487.99
+Enabled,senbcomprasp_gg_pc_bg_lc_ao_wb_re_vr_pf,3000.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,82.13,Search,Target CPA,"732,980,253.90","13,055.61",4.16%,4.70,"1,672,158","314,068",18.78%,61320.46
+Enabled,pmaxcomprasp_gg_pm_bg_lc_ao_wb_re_vr_pf,6000.00, --,Daily,BRL,Eligible,some asset groups limited by policy,93.19,Performance Max,Target CPA,"2,717,961,983.02","79,515.50",5.31%,4.80,"6,856,362","1,472,748",21.48%,381905.56
+Enabled,pmaxsp_gg_pc_bg_ld_ao_wb_re_vr_pf,9660.00, --,Daily,BRL,Eligible,some asset groups disapproved,94.18,Performance Max,Target CPA,"1,342,388,353.88","172,853.18",6.07%,3.71,"11,314,533","2,219,887",19.62%,641894.14
+Paused,Campaign #1,50.00, --,Daily,BRL,Paused,campaign paused, --,Search,Maximize clicks,0.00,0.00,0.00%,0.00,0,0, --,0.00
+Paused,dsageralbr_gg_se_bg_ld_ao_wb_re_vr_pf,5000.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target CPA,"55,100.01","381,402.05",13.98%,1.60,"18,154,693","2,728,470",15.03%,611912.67
+Total: Campaigns, --, --, --, --,BRL, --,, --, --, --,"5,756,601,088.48","820,109.21",8.84%,2.91,"46,824,956","8,589,655",18.34%,2384921.36
+Total: Account,,,,,BRL,,,,,,"5,756,601,088.48","820,109.21",8.84%,2.91,"46,824,956","8,589,655",18.34%,2384921.36
+Total: Search,,,,,BRL,,,,Search,,"1,383,228,023.00","477,291.16",12.18%,2.07,"24,233,587","3,918,326",16.17%,989442.65
+Total: Performance Max,,,,,BRL,,,,Performance Max,,"4,373,373,065.48","342,818.05",6.39%,4.07,"22,591,369","4,671,329",20.68%,1395478.71

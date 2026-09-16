@@ -1,0 +1,25 @@
+Campaign report
+"October 1, 2016 - September 16, 2026"
+Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimization score,Campaign subtype,Campaign type,Bid strategy type,Cost,Conversions,Conv. rate,Cost / conv.,Clicks,CTR,Unique users,Impr.,TrueView views,Avg. CPM,TrueView avg. CPV,Likes,Comments,Shares
+Paused,"YT - Black Friday - Installs - Customer Match, teaser e RLSA",25.00, --,Daily,BRL,Paused,campaign paused; most ads disapproved, --,Video views,Video,Maximum CPV,1137.40,367.00,1.73%,3.10,559,0.74%,,"75,471","21,177",15.07,0.05,0,0,0
+Paused,YT - Black Friday - Installs - Assuntos e Interesses em Imóveis,100.00, --,Daily,BRL,Paused,campaign paused; most ads disapproved, --,Video views,Video,Maximum CPV,209.26,39.00,0.94%,5.37,108,0.71%,,"15,267","4,141",13.71,0.05,0,0,0
+Paused,YT - In-Stream - POI - App Installs - Wi-fi,80.00, --,Daily,BRL,Paused,campaign paused; most ads disapproved, --,Video views,Video,Maximum CPV,2885.20,"6,846.00",7.58%,0.42,"1,403",0.62%,,"225,624","90,266",12.79,0.03,0,0,0
+Paused,Google Upgraded - Universal App Campaign #1,2.11, --,Daily,BRL,Paused,campaign paused; most ads under review, --,App installs,App,Target CPA,0.00,0.00,0.00%,0.00,0, --,,0,0,0,0,0,0,0
+Paused,UAC - RJ,250.00, --,Daily,BRL,Paused,campaign paused, --,App installs,App,Target CPA,13405.59,"12,404.00",22.56%,1.08,"54,868",2.76%,,"1,988,483",60,6.74,0.02,0,0,0
+Paused,App Instalação - iOS,500.00, --,Daily,BRL,Paused,campaign paused; most ads limited by policy, --,App installs,App,Target CPA,28486.49,"12,693.00",51.59%,2.24,"24,569",3.50%,,"702,891",1,40.53,0.09,0,0,0
+Paused,App Install - Android,500.00, --,Daily,BRL,Paused,campaign paused; most ads limited by policy, --,App installs,App,Target CPA,418402.46,"584,210.00",44.97%,0.72,"770,926",2.89%,,"26,655,668","44,487",15.70,0.03,0,0,0
+Paused,MGDN,10.00, --,Daily,BRL,Paused,campaign paused, --,Standard,Display,CPC (enhanced),0.00,0.00,0.00%,0.00,0, --,,0,0,0,0,0,0,0
+Paused,App Instalação - Android1,950.00, --,Daily,BRL,Paused,campaign paused; most ads limited by policy, --,App installs,App,Target CPA,27146.89,"36,913.00",25.36%,0.74,"110,981",3.79%,,"2,924,531",903,9.28,0.01,0,0,0
+Paused,YT - App VivaPro Install - CHAT - Customer Match,10.00, --,Daily,BRL,Paused,campaign paused; most ads disapproved, --,Video views,Video,Maximum CPV,588.94,101.00,0.61%,5.83,349,0.86%,,"40,503","16,429",14.54,0.04,0,0,0
+Paused,UAC - Minas Gerais,250.00, --,Daily,BRL,Paused,campaign paused, --,App installs,App,Target CPA,13750.28,"11,606.00",13.42%,1.18,"86,504",2.81%,,"3,078,368",0,4.47,0,0,0,0
+Paused,YT - Black Friday - Landing Page SP,2.00, --,Daily,BRL,Paused,campaign paused; most ads disapproved, --,Video views,Video,Maximum CPV,472.35,0.00,0.00%,0.00,22,0.08%,,"27,121","11,426",17.42,0.04,0,0,0
+Paused,UAC_PR,50.00, --,Daily,BRL,Paused,campaign paused, --,App installs,App,Target CPA,6687.87,"5,185.00",11.47%,1.29,"45,215",2.60%,,"1,738,985",0,3.85,0,0,0,0
+Paused,App Instalação - Android,1500.00, --,Daily,BRL,Paused,campaign paused, --,App installs,App,Target CPA,941280.72,"848,237.00",9.79%,1.11,"8,668,405",2.17%,,"399,988,418",0,2.35,0,0,0,0
+Paused,YT - In-Stream - CHAT - App Installs - Wi-fi,10.00, --,Daily,BRL,Paused,campaign paused; All ad groups paused; most ads disapproved, --,Video views,Video,Maximum CPV,423.40,541.00,2.82%,0.78,190,0.46%,,"41,528","19,171",10.20,0.02,0,0,0
+Paused,Google Upgraded - Universal App Campaign #2,98.68, --,Daily,BRL,Paused,campaign paused, --,App installs,App,Target CPA,0.00,0.00,0.00%,0.00,0, --,,0,0,0,0,0,0,0
+Paused,App engajamento - Android,300.00, --,Daily,BRL,Paused,campaign paused; most ads limited by policy, --,App installs,App,Target CPA,0.82,2.00,6.45%,0.41,5,1.50%,,333,1,2.47,0.03,0,0,0
+Total: Campaigns, --, --, --, --,BRL, --,, --,Standard, --, --,1454877.68,"1,519,144.00",14.49%,0.96,"9,764,104",2.23%,,"437,503,191","208,062",3.33,0.03,0,0,0
+Total: Account,,,,,BRL,,,,,,,1487914.24,"1,567,053.00",14.89%,0.95,"9,799,132",2.24%,,"437,874,484","208,062",3.40,0.03,0,0,0
+Total: Display,,,,,BRL,,,,,Display,,0.00,0.00,0.00%,0.00,0, --,,0,0,0,0,0,0,0
+Total: App,,,,,BRL,,,,,App,,1449161.14,"1,511,250.00",14.64%,0.96,"9,761,473",2.23%,,"437,077,677","45,452",3.32,0.03,0,0,0
+Total: Video,,,,,BRL,,,,,Video,,5716.55,"7,894.00",4.85%,0.72,"2,631",0.62%,,"425,514","162,610",13.43,0.04,0,0,0

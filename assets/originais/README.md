@@ -43,6 +43,7 @@ assets/originais/
 ├── A-visao-de-negocio-e-fluxo-de-receita/  bloco A · série de receita (A1) + jornada (A2)
 │   └── dashboards-aquisicao-pro/    16 capturas do Looker · offline/ e online/ · A2, A3 e B3
 ├── E-criativos-ads-e-mensagens/     bloco E · alimenta o diagnóstico (iv)
+├── G-midia-paga/google-ads/         bloco G · 5 contas do Google Ads · alimenta o diagnóstico (vi)
 ├── H-rastreamento-gtm/              bloco H · alimenta a auditoria (vii) · uma subpasta por conta
 ├── I-paginas-de-captura/            bloco I · alimenta o diagnóstico (viii)
 └── _masters/                        vídeos originais · FORA do git
@@ -266,6 +267,20 @@ deliberado ou três entregas soltas da agência, e essa distinção muda a leitu
 página e etapa) e I4 (ferramenta de comportamento).
 
 ---
+
+## Bloco G · Mídia Paga
+
+**Cinco contas de Google Ads** vinculadas à MCC do Viva Real, exportadas da interface em **16/09/2026**:
+177 campanhas e **R$ 70,96 mi** de investimento acumulado, de 2016 a hoje. Uma delas, a `conta-1`, é o
+produto do anunciante profissional (ZAP+ / CanalPro) e vale **3,5%** do parque: é o recorte contratado
+do DR-E. As outras quatro compram o consumidor final.
+
+O inventário completo, a evidência que identifica cada conta, a conferência contra a linha
+`Total: Account` e a perda de cinco séries mensais na organização estão no
+**[README do bloco G](G-midia-paga/README.md)**.
+
+A leitura da V4 está em
+[`02-diagnostico/diagnostico-vi-midia-paga.md`](../../02-diagnostico/diagnostico-vi-midia-paga.md).
 
 ## Bloco H · Rastreamento (GTM)
 

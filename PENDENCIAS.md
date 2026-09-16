@@ -1286,6 +1286,55 @@ lado deles: são definições de campo e escopo de fonte.
 
 ---
 
+## 🟠 41. As cinco contas de Google Ads não têm `customer ID`, e cinco séries se perderam na organização
+
+Duas lacunas operacionais do lote de Google Ads de 16/09, ambas baratas de fechar.
+
+**Parte 1, a identidade das contas.** O export da interface do Google Ads **não traz `customer ID`
+nem o nome oficial da conta**: traz só o relatório. As cinco pastas de
+[`assets/originais/G-midia-paga/google-ads/`](assets/originais/G-midia-paga/README.md) foram
+identificadas **por inferência**, e a evidência de cada uma está declarada no README do bloco:
+domínio de destino dos anúncios, convenção de nome de campanha e data do primeiro dado.
+
+A inferência é sólida para separar B2B de B2C, que é o que o diagnóstico precisa. Ela **não** basta
+para duas coisas:
+
+| O que exige o `customer ID` | Por quê |
+|---|---|
+| Amarrar cada pasta ao que o V4MOS ingere | Hoje a amarração é por nome de campanha, e um nome (`dsageralbr_gg_se_bg_ld_ao_wb_re_vr_pf`) existe em **duas** contas |
+| Fechar a [pendência 12](#-12-as-campanhas-visíveis-no-google-ads-parecem-ser-b2c-não-b2b) | O GA4 apontou, em 31/08, **7 contas** de Google Ads vinculadas à propriedade ZapImóveis (`9221562141`, `6794249680`, `7581320191`, `6386557247`, `1973081572`, `5004050899`, `4632447364`), e a V4 tinha acesso a uma, a `526-656-0190`. O export de 16/09 mostrou **5 contas** na MCC do Viva Real. Sem `customer ID` não dá para dizer se são as mesmas, se há sobreposição, ou se ainda faltam contas |
+
+**Ação:** pedir a lista de contas da MCC com `customer ID`, nome e status. É uma tela do Google Ads.
+**Responsável:** Operador V4, junto ao time de mídia da OLX · **Prazo:** antes do Comitê 1, **23/09**
+
+**Parte 2, as cinco séries perdidas.** Erro do operador V4, não da OLX. Ao renomear os arquivos por
+conta, quatro contas tinham **mais de uma** série mensal de impressões exportada, os nomes de destino
+colidiram e a cópia posterior sobrescreveu a anterior. A pasta de origem foi apagada na mesma
+execução, antes de a conferência de hash acusar. Não há cópia: não estavam no data room, foram
+exportadas pelo próprio operador.
+
+| Conta | Arquivos perdidos |
+|---|---|
+| `conta-1-zapmais-b2b` | 2 séries mensais de impressões |
+| `conta-3-vivareal-sp` | 1 |
+| `conta-4-vivareal-brasil` | 1 |
+| `conta-5-vivareal-app` | 1 |
+
+**O que custa:** pouco. São gráficos de impressão mensal, e cada conta afetada ainda tem **uma**
+série de impressões. A série trimestral de custo, cliques e conversões sobreviveu inteira em
+`overview/time-series.csv` de cada conta, e é a que o diagnóstico (vi) usa. Nenhum relatório de
+campanha, grupo, anúncio, ativo ou palavra-chave foi tocado: os **31 relatórios** foram conferidos
+byte a byte por SHA-256 contra a origem antes de ela ser removida.
+
+**A lição operacional, registrada porque é a terceira vez que forma se perde neste projeto:**
+renomear em lote sem verificar colisão de destino, e apagar a origem antes de conferir, são a mesma
+falha em dois tempos. O script que organiza agora falha alto na colisão em vez de sobrescrever.
+
+**Ação:** reexportar o gráfico da visão geral com a métrica *Impressões* nas contas 1, 3, 4 e 5.
+**Responsável:** Operador V4 · **Prazo:** junto com o pedido dos `customer ID`, **23/09**
+
+---
+
 ## Itens resolvidos
 
 *(mover para cá com data e responsável quando fechados)*

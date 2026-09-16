@@ -1,0 +1,9 @@
+Campaign report
+"July 4, 2024 - September 16, 2026"
+Campaign status,Campaign,Budget,Budget name,Budget type,Currency code,Status,Status reasons,Optimization score,Campaign type,Bid strategy type,Conv. value,Conversions,Conv. rate,Cost / conv.,Impr.,Clicks,CTR,Cost
+Enabled,sebrexatabr_gg_pc_bg_ld_ao_wb_re_vr_pf,2500.00, --,Daily,BRL,Eligible (Limited),bidding strategy limited; app deep links have issues,83.75,Search,Target Impression Share,0.00,"56,359.01",11.82%,0.73,"938,141","476,985",50.84%,41112.23
+Enabled,sebrbr_gg_pc_bg_ld_ao_wb_re_vr_pf,2500.00, --,Daily,BRL,Eligible (Limited),app deep links have issues,86.68,Search,Target CPA,"297,317,112,082.85","2,284,969.04",34.28%,0.54,"19,974,446","6,666,576",33.38%,1229227.41
+Paused,seexbrbr_gg_pc_bg_ld_ao_wb_re_vr_pf,3200.00, --,Daily,BRL,Paused,campaign paused, --,Search,Target Impression Share,0.00,"45,478.90",15.32%,0.28,"577,129","296,909",51.45%,12587.49
+Total: Campaigns, --, --, --, --,BRL, --,, --, --, --,"297,317,112,082.85","2,386,806.94",32.08%,0.54,"21,489,716","7,440,470",34.62%,1282927.13
+Total: Account,,,,,BRL,,,,,,"297,317,112,082.85","2,386,806.94",32.08%,0.54,"21,489,716","7,440,470",34.62%,1282927.13
+Total: Search,,,,,BRL,,,,Search,,"297,317,112,082.85","2,386,806.94",32.08%,0.54,"21,489,716","7,440,470",34.62%,1282927.13
