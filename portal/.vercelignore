@@ -1,5 +1,6 @@
 _src/
 build.py
+md.py
 README.md
 PUBLICACAO.md
 diretrizes/
