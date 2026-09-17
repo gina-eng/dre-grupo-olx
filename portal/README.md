@@ -13,6 +13,7 @@ portal/
 ├── diagnosticos/       Acompanhamento dos nove + biblioteca de documentos
 ├── assets/             base.css · shell.css · shell.js · logo.svg · dados
 ├── _src/               Fragmentos-fonte (não publicados)
+├── diretrizes/         Diretrizes visuais do portal (não publicadas)
 ├── build.py            Gera as páginas a partir de _src/ e da BIBLIOTECA
 ├── md.py               Markdown → HTML, sem dependência externa
 └── vercel.json         cleanUrls, noindex e cabeçalhos de segurança
@@ -63,6 +64,11 @@ Três coisas valem a pena saber antes de acrescentar uma linha:
 - **Todo HTML dentro do Markdown é escapado**, então documento com `<script>` no meio do texto sai
   como texto. Âncoras de título seguem a regra do GitHub, que é o que faz `#secao` continuar
   apontando para o lugar certo.
+## Diretrizes visuais
+
+Cor, tipografia, layout e o catálogo de componentes estão descritos em
+[diretrizes/](diretrizes/). Leia antes de criar uma aba nova ou um componente novo.
+A folha de espécimes viva é `diretrizes/amostra.html`, aberta pelo servidor local.
 
 ## Rodar local
 

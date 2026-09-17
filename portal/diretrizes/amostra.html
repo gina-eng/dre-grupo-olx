@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Amostra · Diretrizes do Portal DR-E</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<!-- CSS real do portal: os tokens desta folha nunca divergem do que está publicado. -->
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/shell.css">
+<style>
+/* Componentes que hoje vivem duplicados nos fragmentos de _src/ e ainda não foram
+   promovidos para base.css. Cópia fiel, para a amostra mostrar o sistema inteiro. */
+section.blk{margin-top:3.5rem;scroll-margin-top:5rem}
+.blk-h{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding-bottom:.55rem;border-bottom:2px solid var(--fg)}
+.blk-h h2{font-size:1.4rem;flex:1}
+.lead{margin-top:.9rem;color:var(--muted-fg);font-size:.94rem;max-width:68ch}
+.stats{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;grid-template-columns:repeat(2,1fr);margin-top:1.5rem}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--card);padding:1.15rem 1.2rem}
+.stat b{display:block;font-size:1.85rem;font-weight:600;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{display:block;margin-top:.25rem;font-size:.8rem;color:var(--muted-fg)}
+.two{display:grid;gap:.75rem;margin-top:1.5rem}
+@media(min-width:900px){.two{grid-template-columns:1fr 1fr}}
+.note{padding:1.15rem 1.25rem}
+.note h3{font-size:.98rem;margin-bottom:.5rem}
+.note ul{margin:0;padding-left:1.05rem;font-size:.87rem;color:var(--muted-fg);display:grid;gap:.4rem}
+.note.warn{border-color:color-mix(in srgb,var(--warn) 40%,var(--border));background:var(--warn-bg)}
+.note.warn h3{color:var(--warn)}
+.note.warn ul{color:color-mix(in srgb,var(--warn) 80%,var(--fg))}
+.rule{display:flex;gap:.9rem;align-items:flex-start;padding:.95rem 1.15rem;margin-top:.6rem}
+.rule .k{font-family:var(--mono);font-size:.7rem;color:var(--brand-ink);letter-spacing:.1em;
+  text-transform:uppercase;padding-top:.15rem;white-space:nowrap;min-width:7.5rem}
+.rule p{font-size:.89rem}
+.vazio{border:1px dashed var(--border-strong);border-radius:var(--radius);padding:2.5rem 1.5rem;
+  text-align:center;color:var(--muted-fg);background:var(--muted);margin-top:1.5rem}
+.vazio b{display:block;color:var(--fg);font-size:.95rem;margin-bottom:.3rem}
+.vazio span{font-size:.85rem}
+.fases{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin-top:1.5rem}
+.fase{border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem;background:var(--card)}
+.fase .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-fg)}
+.fase h3{margin:.3rem 0 .35rem;font-size:1rem}
+.fase p{margin:0;font-size:.85rem;color:var(--muted-fg);line-height:1.5}
+.fase .st{display:inline-block;margin-top:.6rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;
+  text-transform:uppercase;padding:.12rem .45rem;border-radius:9999px;border:1px solid var(--border);color:var(--muted-fg)}
+.fase.ativa{border-color:color-mix(in srgb,var(--brand) 45%,transparent)}
+.fase.ativa .st{background:var(--brand);border-color:var(--brand);color:#fff}
+.tag-ok{background:var(--ok-bg);border-color:color-mix(in srgb,var(--ok) 35%,transparent);color:var(--ok)}
+.tag-off{background:var(--muted);border-color:var(--border);color:var(--muted-fg)}
+.pbar{width:160px;height:5px;border-radius:99px;background:var(--muted);overflow:hidden;display:inline-block;vertical-align:middle}
+.pbar i{display:block;height:100%;background:var(--brand)}
+
+/* Só da amostra: a régua de tokens. */
+.sw{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;margin-top:1.5rem;
+  grid-template-columns:repeat(auto-fit,minmax(11rem,1fr))}
+.sw div{background:var(--card);padding:.85rem .9rem}
+.sw i{display:block;height:2.5rem;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.sw b{display:block;margin-top:.5rem;font-family:var(--mono);font-size:.7rem;font-weight:500}
+.sw span{display:block;font-size:.74rem;color:var(--muted-fg);margin-top:.1rem}
+.esc{margin-top:1.5rem;display:grid;gap:.9rem}
+.esc > div{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;
+  border-bottom:1px solid var(--border);padding-bottom:.7rem}
+.esc .rot{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--muted-fg);min-width:11rem}
+.linha{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:1.5rem}
+.vermelho{margin-top:1.5rem;border-radius:var(--radius);padding:2rem 1.5rem;color:#fff;
+  background:radial-gradient(80% 60% at 20% 10%, rgba(214,17,49,.85), transparent 60%),
+    radial-gradient(70% 50% at 85% 20%, rgba(183,0,38,.85), transparent 55%),
+    radial-gradient(100% 70% at 50% 110%, rgba(120,0,4,.90), transparent 60%),
+    linear-gradient(135deg,#970013,#d6002e)}
+.vermelho h3{color:#fff;font-size:1.2rem}
+.vermelho p{color:rgba(255,255,255,.85);font-size:.9rem;margin-top:.5rem;max-width:44rem}
+.vermelho .st-pill{display:inline-block;margin-top:1rem;font-family:var(--mono);font-size:.7rem;
+  padding:.15rem .5rem;border-radius:9999px;background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.26)}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../index.html" aria-label="Início">
+      <img class="logo-escuro" src="../assets/logo-dark.svg" alt="Destrava Receita" width="722" height="279">
+      <img class="logo-claro" src="../assets/logo.svg" alt="Destrava Receita" width="722" height="279">
+    </a>
+    <nav class="tabs" aria-label="Seções"><a class="tab" href="#" aria-current="page">Amostra</a></nav>
+    <span class="spacer"></span>
+    <button class="icobtn" id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+</header>
+
+<div class="crumb"><div class="crumb-in">
+  <h1>Folha de espécimes</h1>
+  <p class="desc">Todo componente do portal numa página só, carregando o CSS real. Use o botão Tema para conferir os dois modos.</p>
+  <span class="meta">diretrizes · não publicada</span>
+</div></div>
+
+<main class="wrap"><div class="page">
+
+<section class="blk">
+  <div class="blk-h"><h2>Cor</h2><span class="eyebrow">tokens de base.css</span></div>
+  <p class="lead">Toda cor do portal sai daqui. <b>--brand</b> preenche, <b>--brand-ink</b> escreve: vermelho sólido em texto pequeno não passa em contraste.</p>
+  <div class="sw">
+    <div><i style="background:var(--bg)"></i><b>--bg</b><span>fundo da página</span></div>
+    <div><i style="background:var(--card)"></i><b>--card</b><span>superfície</span></div>
+    <div><i style="background:var(--muted)"></i><b>--muted</b><span>apoio, hover</span></div>
+    <div><i style="background:var(--border)"></i><b>--border</b><span>fio padrão</span></div>
+    <div><i style="background:var(--brand)"></i><b>--brand</b><span>preencher</span></div>
+    <div><i style="background:var(--brand-deep)"></i><b>--brand-deep</b><span>hover primário</span></div>
+    <div><i style="background:var(--brand-ink)"></i><b>--brand-ink</b><span>escrever</span></div>
+    <div><i style="background:var(--accent)"></i><b>--accent</b><span>realce discreto</span></div>
+    <div><i style="background:var(--ok)"></i><b>--ok</b><span>fechado</span></div>
+    <div><i style="background:var(--ok-bg)"></i><b>--ok-bg</b><span>fundo de fechado</span></div>
+    <div><i style="background:var(--warn)"></i><b>--warn</b><span>atenção</span></div>
+    <div><i style="background:var(--warn-bg)"></i><b>--warn-bg</b><span>fundo de atenção</span></div>
+  </div>
+  <div class="vermelho">
+    <h3>Superfície Destrava Receita</h3>
+    <p>Única exceção aos tokens. Texto sempre branco, borda sempre branca com alfa, e nenhum
+      <code>saturate()</code>: ele derruba o contraste do texto para cerca de 2,4:1.</p>
+    <span class="st-pill">pílula de estado</span>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Tipografia</h2><span class="eyebrow">IBM Plex Sans e Mono</span></div>
+  <p class="lead">A mono marca o que é dado e não é prosa: rótulo, data, número tabular, tag, identificador. Todo o resto é sans.</p>
+  <div class="esc">
+    <div><span class="rot">título de seção</span><span style="font-size:1.4rem;font-weight:600;letter-spacing:-.01em">Árvore de Produção de Receita</span></div>
+    <div><span class="rot">título de cartão</span><span style="font-size:1rem;font-weight:600">Por que 90 dias</span></div>
+    <div><span class="rot">corpo 16px/1.55</span><span>O menor intervalo em que uma mudança estrutural aparece em métrica de receita.</span></div>
+    <div><span class="rot">lead</span><span style="font-size:.94rem;color:var(--muted-fg)">Texto de apoio, cor secundária, largura máxima de 68ch.</span></div>
+    <div><span class="rot">rótulo mono</span><span class="eyebrow">próximo marco</span></div>
+    <div><span class="rot">número grande</span><span style="font-size:1.85rem;font-weight:600;letter-spacing:-.035em;font-variant-numeric:tabular-nums">78</span></div>
+    <div><span class="rot">data mono</span><span class="num" style="font-size:.8rem">24 ago 2026 → 24 ago 2027</span></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Grade de fio</h2><span class="eyebrow">a assinatura do portal</span></div>
+  <p class="lead">Grade com <code>gap:1px</code> sobre fundo <b>--border</b>: as linhas de 1px nascem do espaço entre as células, sem borda em cada uma e sem sombra.</p>
+  <div class="stats">
+    <div class="stat"><b>4</b><span>ciclos de 90 dias</span></div>
+    <div class="stat"><b>12</b><span>comitês: 3 por ciclo</span></div>
+    <div class="stat"><b>9</b><span>diagnósticos contratados</span></div>
+    <div class="stat"><b>78</b><span>métricas no dicionário</span></div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Estado</h2><span class="eyebrow">quatro, sempre os mesmos</span></div>
+  <p class="lead">Pendência não é erro: o que está em aberto usa o vermelho de marca, não um vermelho de alarme.</p>
+  <div class="linha">
+    <span class="tag tag-ok">concedido</span>
+    <span class="tag tag-p1">parcial</span>
+    <span class="tag tag-crit">pendente</span>
+    <span class="tag tag-off">inexistente</span>
+    <span class="tag tag-p0">P0</span>
+    <span class="tag">neutro</span>
+  </div>
+  <div class="linha">
+    <button class="btn btn-primary" type="button">Ação principal</button>
+    <button class="btn" type="button">Ação secundária</button>
+    <button class="icobtn" type="button">Ícone</button>
+    <span class="pbar"><i style="width:62%"></i></span>
+    <span class="num" style="font-size:.78rem;color:var(--muted-fg)">54/88</span>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Cartões</h2><span class="eyebrow">.card mais um papel</span></div>
+  <div class="two">
+    <div class="card note">
+      <h3>Bloco de leitura</h3>
+      <ul>
+        <li>Título em h3 e uma lista de argumentos, nunca um parágrafo longo.</li>
+        <li>Cor de texto secundária, tamanho .87rem.</li>
+      </ul>
+    </div>
+    <div class="card note warn">
+      <h3>Aviso</h3>
+      <ul>
+        <li>Fundo --warn-bg, fio e título em --warn.</li>
+        <li>Reservado a risco de calendário e leitura ainda não confirmada.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card rule"><span class="k">Quality gate</span>
+    <p>Rótulo mono à esquerda com largura mínima fixa, texto à direita. Usado para
+      <b>regra contratual</b> e para definição do método.</p></div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Tabela</h2><span class="eyebrow">sempre em .card.scrollx</span></div>
+  <div class="card scrollx" style="margin-top:1.5rem">
+    <table>
+      <thead><tr><th>Métrica</th><th style="width:6rem">Unidade</th><th style="width:8rem">Prioridade</th><th style="width:12rem">Fonte</th></tr></thead>
+      <tbody>
+        <tr><td>Receita nova por mês</td><td class="num">R$</td><td><span class="tag tag-p0">P0</span></td><td>ERP</td></tr>
+        <tr><td>Taxa de conversão da proposta</td><td class="num">%</td><td><span class="tag tag-p1">P1</span></td><td>CRM</td></tr>
+        <tr><td>Ticket médio do anunciante</td><td class="num">R$</td><td><span class="tag tag-p0">P0</span></td><td>ERP</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="blk-h"><h2>Fases e vazio</h2><span class="eyebrow">o ciclo e o que falta</span></div>
+  <div class="fases">
+    <div class="fase ativa"><span class="n">Fase 1</span><h3>Identificar</h3>
+      <p>Fluxo de receita, travas pontuadas com evidência, maturidade lida por prática.</p>
+      <span class="st">em andamento</span></div>
+    <div class="fase"><span class="n">Fase 2</span><h3>Otimizar</h3>
+      <p>A restrição nomeada em comitê e o que se extrai dela sem investimento novo.</p>
+      <span class="st">aguarda Comitê 1</span></div>
+  </div>
+  <div class="vazio">
+    <b>Formato visual em definição</b>
+    <span>Assim o portal admite que algo ainda não existe, em vez de esconder a seção.</span>
+  </div>
+</section>
+
+</div></main>
+
+<footer><div class="wrap">
+  <p><strong>Folha de espécimes</strong> · diretrizes visuais do Portal DR-E · não publicada.</p>
+  <p style="margin-top:.4rem">Carrega o CSS real de <code>../assets/</code>. Se algo aqui divergir do portal, o portal está certo.</p>
+</div></footer>
+
+<script src="../assets/shell.js"></script>
+</body>
+</html>
